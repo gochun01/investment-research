@@ -1,10 +1,10 @@
 {
   "last_updated": "2026-03-26",
   "summary": {
-    "active_stereo": 5,
+    "active_stereo": 6,
     "active_events": 6,
     "active_seeds": 3,
-    "total_active": 14,
+    "total_active": 15,
     "next_check": "2026-03-28 (Core PCE → TC-001, TC-003)"
   },
   "cards": {
@@ -13,21 +13,17 @@
     "TC-003": {"title": "이란 교란", "phase": 1, "status": "tracking", "next": "3/28"},
     "TC-004": {"title": "ISA/ETF", "phase": 0, "status": "tracking", "next": "4/15"},
     "TC-005": {"title": "VW 방산", "phase": 0, "status": "tracking", "next": "4/30"},
+    "TC-006": {"title": "SK하이닉스 ADR", "phase": 1, "status": "tracking", "next": "4/15"},
     "SD-001": {"title": "GENIUS Act", "status": "watching", "count": 1},
-    "SD-002": {"title": "AI 분열", "status": "watching", "count": 1},
+    "SD-002": {"title": "AI 분열→ADR", "status": "watching", "count": 2, "note": "1회 더 → TC 승격"},
     "SD-003": {"title": "자동차→방산", "status": "watching", "count": 1}
   },
   "upcoming_week": [
     {"date": "3/28", "event": "Core PCE", "affects": ["TC-001", "TC-003"], "importance": "high"},
     {"date": "3/31", "event": "이란 대응 데드라인", "affects": ["TC-003"], "importance": "high"}
   ],
-  "phase_changes_today": [],
-  "kc_alerts_today": [],
-  "heartbeat_additions": [
-    {"card": "TC-001", "indicator": "Brent", "watch": 120, "alert": 135, "hard": 150},
-    {"card": "TC-002", "indicator": "KRW", "watch": 1530, "alert": 1550, "hard": 1600},
-    {"card": "TC-003", "indicator": "Brent", "watch": 110, "alert": 120, "hard": 150},
-    {"card": "TC-003", "indicator": "VIX", "watch": 30, "alert": 35, "hard": 45},
-    {"card": "TC-004", "indicator": "KOSPI", "watch": 5000, "alert": 4700, "hard": 4200}
+  "cross_card_links": [
+    {"from": "TC-006", "to": "TC-001", "link": "301 전자장비=반도체. ADR과 관세 동시."},
+    {"from": "TC-006", "to": "TC-002", "link": "ADR 달러 유입 → KRW 강세 역방향."}
   ]
 }
