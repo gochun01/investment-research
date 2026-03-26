@@ -1,0 +1,86 @@
+{
+  "id": "EVT-2026-03-24-천궁-2-이란-전쟁-두바이에서-실전",
+  "subject": "천궁-2 이란 전쟁 두바이에서 실전 입증 — K-방산 초대형 호재",
+  "created": "2026-03-24",
+  "status": "active",
+  "parent_event": "",
+  "child_events": [],
+  "fingerprint": {
+    "domain": "방산/국방 + 지정학(중동) + 통상(방산 수출)",
+    "geography": "한국(생산) → UAE 두바이(실전) → 글로벌 방산 시장",
+    "touched_assets": [
+      "한화에어로스페이스 012450 (1차 — 방산 대장)",
+      "LIG넥스원 079550 (1차 — 천궁 개발/생산사)",
+      "한화시스템 (2차 — 천궁 레이더)",
+      "Raytheon RTX (대조 — Patriot 경쟁사)",
+      "미국 방산ETF ITA (대조 — 글로벌 방산)"
+    ],
+    "stakeholders": [
+      "한화에어로스페이스",
+      "LIG넥스원",
+      "한화시스템",
+      "방위사업청(DAPA)",
+      "UAE군",
+      "사우디/이라크/카타르(잠재 구매국)",
+      "Raytheon(Patriot 경쟁)",
+      "국방과학연구소(ADD)"
+    ],
+    "secondary_stakeholders": [
+      {
+        "from": "LIG넥스원 수주 급증",
+        "to": "방산 하청업체(부품 공급망), 대전/경남 지역경제"
+      },
+      {
+        "from": "UAE 추가 도입 요청",
+        "to": "GCC 국가(카타르, 쿠웨이트, 바레인) 도입 검토 가속"
+      },
+      {
+        "from": "Patriot 경쟁력 약화",
+        "to": "미 의회 방산 로비(한국 방산 견제?), 록히드마틴"
+      },
+      {
+        "from": "방산 수출 급증",
+        "to": "한국 경상수지 개선, 원화 강세 요인"
+      }
+    ],
+    "time_character": "충격+구조적"
+  },
+  "timeline": [
+    {
+      "date": "2026-03-24",
+      "type": "initial_analysis",
+      "source": "reaction-monitor",
+      "summary": "천궁-2 이란 전쟁 두바이에서 실전 입증 — K-방산 초대형 호재",
+      "pattern": {
+        "direction": "수렴",
+        "proportionality": "비례",
+        "propagation": "A (가격→서사→정책, 시장 주도)"
+      },
+      "state_file": "history/2026-03-24.json",
+      "key_finding": "5개 계층이 호재 방향으로 수렴. 그러나 '수렴 속의 분열'이 존재 — 실전 입증(구조적 호재)과 밸류에이션 과열(단기 리스크)이 공존. 가격은 이미 '뉴스에 팔기' 단계에 진입 (고점 대비 LIG -23%). 서사·정책·전문가는 여전히 호재지만 가격은 이미 조정 중"
+    }
+  ],
+  "unresolved_at_creation": [
+    {
+      "id": "UQ-014",
+      "question": "LIG넥스원 2026 실적(매출 5~6조)이 PSR 35배를 정당화하는가?"
+    },
+    {
+      "id": "UQ-015",
+      "question": "카타르/쿠웨이트 등 GCC 신규 계약 체결 여부"
+    },
+    {
+      "id": "UQ-016",
+      "question": "Raytheon/미국 방산의 대응 — 가격 인하, 로비, 또는 침묵 지속?"
+    },
+    {
+      "id": "UQ-017",
+      "question": "천궁-III 개발 일정 (2034년 배치)이 앞당겨지는가?"
+    }
+  ],
+  "resolution": {
+    "date": null,
+    "outcome": null,
+    "lessons_learned": null
+  }
+}

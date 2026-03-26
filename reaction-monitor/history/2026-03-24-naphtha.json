@@ -1,0 +1,452 @@
+{
+  "issue": "한국 나프타 원료 수급 문제",
+  "date": "2026-03-24",
+  "depth": "Standard",
+
+  "fingerprint": {
+    "domain": "에너지/석유화학 + 통상 + 지정학(중동 의존)",
+    "geography": "한국 중심 (중동 원유 60% 의존 → 호르무즈 봉쇄 직격)",
+    "touched_assets": [
+      "나프타 가격 (1차)", "LG화학 051910 (1차)", "롯데케미칼 011170 (1차)",
+      "한화솔루션 009830 (1차)", "SK이노 096770 (2차)", "S-Oil 010950 (2차)",
+      "WTI/Brent (2차)", "KRW/USD (2차)",
+      "미국 에틸렌/에탄 크래커 (대조 — 나프타 비의존)"
+    ],
+    "stakeholders": [
+      "석유화학 기업 (LG화학, 롯데케미칼, 한화솔루션, 여천NCC)",
+      "정유사 (SK이노, S-Oil, GS칼텍스)",
+      "산업통상자원부", "한국석유공사",
+      "하류 산업 (자동차, 건설, 가전, 플라스틱 가공)",
+      "중동 원유 수출국"
+    ],
+    "time_character": "구조적"
+  },
+
+  "channels": {
+    "price": [
+      {"asset": "나프타 (톤당 USD)", "type": "1차", "reason": "쟁점의 직접 대상. 633→1,141달러 급등"},
+      {"asset": "LG화학 051910", "type": "1차", "reason": "석유화학 대장주. 여수 NCC 가동 중단"},
+      {"asset": "롯데케미칼 011170", "type": "1차", "reason": "석유화학 순수 비중 최대. 원가 직격"},
+      {"asset": "한화솔루션 009830", "type": "1차", "reason": "석유화학+태양광. 나프타 원가 영향"},
+      {"asset": "SK이노 096770", "type": "2차", "reason": "정유→나프타 생산자. 수출 vs 내수 전환 압력"},
+      {"asset": "S-Oil 010950", "type": "2차", "reason": "정유+샤힌 프로젝트. 대체 원료 전환 수혜 가능"},
+      {"asset": "WTI/Brent", "type": "2차", "reason": "나프타 원가의 상위 지표"},
+      {"asset": "KRW/USD", "type": "2차", "reason": "달러 결제 원료. 환율 악화 시 이중 부담"}
+    ],
+    "narrative": [
+      {"source": "아시아투데이", "role": "프레임설정", "reason": "호르무즈 사태→나프타 조달선 다변화 프레임"},
+      {"source": "파이낸셜뉴스", "role": "깊이분석", "reason": "LG화학 임원 인터뷰. 정부 비축 체계 요구"},
+      {"source": "서울경제", "role": "깊이분석", "reason": "정유사 가동률 하향+석화 2개월치 재고 분석"},
+      {"source": "FT/Asia Business Daily", "role": "글로벌", "reason": "FT 보도 — 한국+일본 위기 글로벌 시각"},
+      {"source": "Korea Herald", "role": "글로벌", "reason": "정부 나프타 수출 제한 검토 영문 보도"},
+      {"source": "머니투데이", "role": "반대쪽", "reason": "위기가 기회? 석화 제품 가격 반등→수익성 회복론"}
+    ],
+    "expert": [
+      {"name": "LG화학 경영진", "role": "실무자", "reason": "여수 2공장 가동 중단 당사자. 비축 체계 요구"},
+      {"name": "여천NCC", "role": "실무자", "reason": "국내 최대 에틸렌 생산. 불가항력 선언 4일 만에"},
+      {"name": "NH투자증권 최영광", "role": "권위", "reason": "LG화학 목표주가 하향 (52만→41만)"},
+      {"name": "신영증권 신홍주", "role": "반대입장", "reason": "롯데케미칼 흑자전환 전망. 상승사이클 도래론"},
+      {"name": "ChemAnalyst", "role": "권위", "reason": "글로벌 석유화학 전문 분석 — 불가항력 분석"}
+    ],
+    "policy": [
+      {"institution": "산업통상자원부", "role": "1차", "reason": "나프타 수출 제한, 비축유 방출, 특별산업위기지역 지정"},
+      {"institution": "당정 협의", "role": "1차", "reason": "여야 합동 대책 — 수출물량 내수 전환, 추경 반영"},
+      {"institution": "석유화학 업계", "role": "2차", "reason": "러시아산 원유 수입 허용 요구. 비축 체계 제도화 요구"}
+    ],
+    "positioning": [
+      {"indicator": "석유화학주 주가 흐름", "reason": "시장이 위기/기회 중 어디에 베팅하는지"},
+      {"indicator": "나프타 재고 (2주~1개월)", "reason": "실제 수급 바로미터"},
+      {"indicator": "NCC 가동률 (65~70%)", "reason": "생산 차질 정도 직접 지표"},
+      {"indicator": "대체 원료 전환 (LPG/에탄)", "reason": "구조적 대응 속도"}
+    ],
+    "sns": {
+      "status": "제한적 활성",
+      "reason": "Q1: 석화 업계 내부자 발언 일부 있음. Q2: 리테일 관심 낮음(산업 B2B). Q3: 의원 SNS 발언 가능. → 업계 내부자 + 의원 타겟만 수집 대상",
+      "collected": false,
+      "note": "이번 수집에서 미수집. 다음 수집 시 BATCH 2에서 보충 필요"
+    }
+  },
+
+  "reactions": {
+    "price": [
+      {
+        "asset": "나프타 (톤당)",
+        "before": "$633 (2월 27일)",
+        "after": "$1,141 (3월 20일)",
+        "change_pct": 80.3,
+        "speed": "수일",
+        "volume_change": "—",
+        "source": "tradingeconomics.com / 글로벌이코노믹",
+        "timestamp": "2026-03-20",
+        "note": "전쟁 발발 후 +60~93% 급등. 아시아 인도분 기준. 호르무즈 봉쇄가 직접 원인"
+      },
+      {
+        "asset": "LG화학 051910",
+        "before": "417,500원 (2/27)",
+        "after": "314,500원 (3/24)",
+        "change_pct": -24.7,
+        "speed": "수일",
+        "volume_change": "급증",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 발발(3/4) 307,000원 급락. 여수 2공장 가동 중단. 저점 290,000(3/23)"
+      },
+      {
+        "asset": "롯데케미칼 011170",
+        "before": "95,900원 (2/27)",
+        "after": "80,000원 (3/24)",
+        "change_pct": -16.6,
+        "speed": "수일",
+        "volume_change": "급증",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 발발 71,800원 급락 → 82,000원 반등(제품가 반등) → 80,000원. 원가↑+제품가↑ 혼재"
+      },
+      {
+        "asset": "한화솔루션 009830",
+        "before": "53,000원 (2/27)",
+        "after": "45,200원 (3/24)",
+        "change_pct": -14.7,
+        "speed": "수일",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 발발 39,950원 급락 → 51,800원 반등 → 다시 하락. 석유화학 비중에 따라 변동"
+      },
+      {
+        "asset": "SK이노 096770",
+        "before": "127,700원 (2/27)",
+        "after": "110,000원 (3/24)",
+        "change_pct": -13.9,
+        "speed": "수일",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "정유사. 나프타 수출→내수 전환 압력. 수출 제한 시 마진 하락"
+      },
+      {
+        "asset": "S-Oil 010950",
+        "before": "110,000원 (2/27)",
+        "after": "108,000원 (3/24)",
+        "change_pct": -1.8,
+        "speed": "수일",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "샤힌 프로젝트(COTC) 수혜 기대. 나프타 비의존 에탄 크래커. 상대적 선방"
+      },
+      {
+        "asset": "WTI",
+        "before": "$93.39 (3/16 FRED)",
+        "after": "$91.20 (3/24)",
+        "change_pct": -2.3,
+        "speed": "당일",
+        "volume_change": "—",
+        "source": "Yahoo Finance / FRED",
+        "timestamp": "2026-03-24",
+        "note": "합의 시그널에 소폭 하락. 그러나 $90+ 유지 = 전쟁 프리미엄 잔존"
+      },
+      {
+        "asset": "Brent",
+        "before": "—",
+        "after": "$102.78 (3/24)",
+        "change_pct": 0,
+        "speed": "—",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "아시아 벤치마크. $100+ 유지"
+      },
+      {
+        "asset": "KRW/USD",
+        "before": "—",
+        "after": "1,495.08 (3/24)",
+        "change_pct": 0,
+        "speed": "—",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "1,500원 근접. 달러 결제 나프타 수입 비용 추가 부담. 이중 악재"
+      }
+    ],
+    "narrative": [
+      {
+        "source": "아시아투데이",
+        "role": "프레임설정",
+        "frame": "호르무즈 사태에 석화업계 비상. 나프타 조달선 다변화 시급",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.asiatoday.co.kr/kn/view.php?key=20260320010006219",
+        "timestamp": "2026-03-20"
+      },
+      {
+        "source": "파이낸셜뉴스",
+        "role": "깊이분석",
+        "frame": "나프타 공급 막히고 가격 급등. 정부 차원 비축 체계 필요 — LG화학 임원",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.fnnews.com/news/202603191836509210",
+        "timestamp": "2026-03-19"
+      },
+      {
+        "source": "서울경제",
+        "role": "깊이분석",
+        "frame": "정유사 가동률 하향 검토. 석화업계 나프타 2개월치. 연쇄 불가항력 위기",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.sedaily.com/article/20016577",
+        "timestamp": "2026-03-20"
+      },
+      {
+        "source": "FT / Asia Business Daily",
+        "role": "글로벌",
+        "frame": "Hormuz Closure Triggers Naphtha Shortage — Crisis for Korean and Japanese Petrochemical",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.asiae.co.kr/en/article/2026031514562766480",
+        "timestamp": "2026-03-15"
+      },
+      {
+        "source": "Korea Herald",
+        "role": "글로벌",
+        "frame": "Seoul reviews naphtha export restrictions amid Mideast supply disruptions",
+        "tone": "중",
+        "original_analysis": true,
+        "url": "https://www.koreaherald.com/article/10701493",
+        "timestamp": "2026-03-19"
+      },
+      {
+        "source": "머니투데이/더퍼블릭",
+        "role": "반대쪽",
+        "frame": "위기가 기회? 석화 제품 가격 반등으로 수익성 회복 신호 본격 반영",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://www.thepublic.kr/news/articleView.html?idxno=298384",
+        "timestamp": "2026-03-22"
+      }
+    ],
+    "expert": [
+      {
+        "name": "LG화학 경영진",
+        "role": "실무자",
+        "affiliation": "LG화학",
+        "qualification": "여수 NCC 2공장 가동 중단 당사자",
+        "statement": "원유·LNG처럼 나프타도 정부 차원 비축 체계 필요. 러시아산 수입 허용도 검토해야",
+        "direction": "부",
+        "channel": "인터뷰",
+        "source": "https://www.fnnews.com/news/202603191836509210",
+        "timestamp": "2026-03-19"
+      },
+      {
+        "name": "여천NCC",
+        "role": "실무자",
+        "affiliation": "여천NCC (국내 최대 에틸렌)",
+        "qualification": "전쟁 발발 4일 만에 불가항력 선언",
+        "statement": "나프타 공급 불가항력(Force Majeure) 선언. 에틸렌 가동률 65%로 하향",
+        "direction": "부",
+        "channel": "공시",
+        "source": "https://www.chemanalyst.com/NewsAndDeals/NewsDetails/petrochemical-producers-struggle-with-supply-force-majeure-41352",
+        "timestamp": "2026-03-08"
+      },
+      {
+        "name": "NH투자증권 최영광",
+        "role": "권위",
+        "affiliation": "NH투자증권",
+        "qualification": "석유화학 섹터 커버 애널리스트",
+        "statement": "LG화학 목표주가 52만→41만 하향. 양극재 신규 고객 확대는 긍정적이나 석화 리스크 반영",
+        "direction": "부",
+        "channel": "리포트",
+        "source": "https://www.businesspost.co.kr/BP?command=article_view&num=426593",
+        "timestamp": "2026-03"
+      },
+      {
+        "name": "신영증권 신홍주",
+        "role": "반대입장",
+        "affiliation": "신영증권",
+        "qualification": "석유화학 섹터 커버 애널리스트",
+        "statement": "롯데케미칼 흑자전환 전망. 2026년부터 2015~2018년 유사 상승사이클 도래. 목표 105,000원",
+        "direction": "긍",
+        "channel": "리포트",
+        "source": "https://www.biztribune.co.kr/news/articleView.html?idxno=339958",
+        "timestamp": "2026-03"
+      },
+      {
+        "name": "ChemAnalyst",
+        "role": "권위",
+        "affiliation": "ChemAnalyst (글로벌 석화 분석)",
+        "qualification": "글로벌 석유화학 시장 전문 분석 플랫폼",
+        "statement": "동북아 에틸렌 가동률 3월 70% 예상 (2월 80%). 한국 NCC는 65%까지 하락 가능",
+        "direction": "부",
+        "channel": "분석 보고서",
+        "source": "https://www.chemanalyst.com/NewsAndDeals/NewsDetails/are-feedstock-shortages-and-war-risks-pushing-petrochemical-41387",
+        "timestamp": "2026-03"
+      }
+    ],
+    "policy": [
+      {
+        "institution": "산업통상자원부",
+        "action": "나프타 수출 제한 검토 → 시행. 정유사 수출물량 내수 전환. 비축유 방출 시 나프타 배분. 나프타 생산·수입 의무보고제 도입",
+        "binding_level": "행정명령",
+        "market_implication": "공급 안정화 시도. 그러나 근본적 해결(호르무즈 정상화) 전까지는 미봉책",
+        "source": "https://www.youthdaily.co.kr/news/article.html?no=216066",
+        "timestamp": "2026-03-19"
+      },
+      {
+        "institution": "당정 협의 (여야)",
+        "action": "여수·서산 특별산업위기지역 지정 검토. 추경 반영 추진. 금융·세제·고용 지원 확대. 울산 포함",
+        "binding_level": "입법 검토",
+        "market_implication": "석화 기업 직접 지원. 고용 유지 + 재정 지원. 추경 통과 여부가 핵심",
+        "source": "https://www.ebn.co.kr/news/articleView.html?idxno=1703148",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "institution": "석유화학 업계 (요구)",
+        "action": "러시아산 원유 수입 허용 요구. 나프타 국가 비축 체계 제도화 요구",
+        "binding_level": "요구 (미반영)",
+        "market_implication": "러시아산 허용 시 공급 다변화 가능. 그러나 대러 제재 문제로 정부 결정 지연",
+        "source": "https://biz.heraldcorp.com/article/10698107",
+        "timestamp": "2026-03-23"
+      }
+    ],
+    "positioning": [
+      {
+        "indicator": "석유화학주 흐름",
+        "value": "LG화학 -24.7%, 롯데케미칼 -16.6%, 한화솔루션 -14.7%",
+        "change": "전쟁 발발 후 급락. 반등 시도 있으나 고점 미회복",
+        "implication": "시장은 '위기'에 무게. '기회(제품가 반등)' 쪽은 소수",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "S-Oil 상대 성과",
+        "value": "-1.8% (vs 석화 -15~25%)",
+        "change": "석화 대비 현저한 선방",
+        "implication": "샤힌 프로젝트(에탄 크래커) = 나프타 비의존 전환 수혜. 시장이 대체 원료 전환을 가치 부여",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "나프타 재고",
+        "value": "약 2주~1개월분 (3/12 기준)",
+        "change": "급감 중",
+        "implication": "4월 초 셧다운 공포. 재고 소진 시 강제 가동 중단",
+        "source": "https://www.sedaily.com/article/20016577",
+        "timestamp": "2026-03-12"
+      },
+      {
+        "indicator": "NCC 가동률",
+        "value": "한국 65%, 동북아 70% (3월 예상, 2월 80%)",
+        "change": "-15%p 급락",
+        "implication": "에틸렌 생산량 감소 → 하류 산업 연쇄 차질",
+        "source": "ChemAnalyst",
+        "timestamp": "2026-03"
+      }
+    ]
+  },
+
+  "pattern": {
+    "direction_alignment": "수렴",
+    "direction_detail": {
+      "price": "↓ (석화주 -15~25%, 나프타 +80%)",
+      "narrative": "↓ (6개 매체 중 5개 위기 프레임. 1개만 기회론)",
+      "expert": "↓ (4/5 부정. 1명 반등론)",
+      "policy": "대응 (수출 제한, 비축유 방출, 특별위기지역 검토)",
+      "positioning": "↓ (석화주 급락, 재고 2주, 가동률 65%)"
+    },
+    "direction_rationale": "5개 계층 모두 위기 방향으로 수렴. 유일한 반대 신호는 '제품가 반등→수익성 회복' 소수론. 시장·매체·전문가·정부 모두 위기 인식 공유",
+
+    "time_structure": "C (정책주도) — 외부 충격→정부 대응 순서",
+    "time_sequence": [
+      {"order": 1, "layer": "정책-전쟁", "event": "이란 호르무즈 봉쇄 선언", "timestamp": "2026-03-04"},
+      {"order": 2, "layer": "가격", "event": "석화주 급락 (LG화학 417K→307K)", "timestamp": "2026-03-04"},
+      {"order": 3, "layer": "전문가", "event": "여천NCC 불가항력 선언 (4일 만에)", "timestamp": "2026-03-08"},
+      {"order": 4, "layer": "서사", "event": "FT 'Hormuz→나프타 위기' 글로벌 보도", "timestamp": "2026-03-15"},
+      {"order": 5, "layer": "전문가", "event": "LG화학 여수 2공장 가동 중단", "timestamp": "2026-03-17"},
+      {"order": 6, "layer": "정책-국내", "event": "산업부 나프타 수출 제한 시행", "timestamp": "2026-03-19"},
+      {"order": 7, "layer": "서사", "event": "'나프타 쇼크' 하류 산업 도미노 프레임 확산", "timestamp": "2026-03-23"},
+      {"order": 8, "layer": "정책-국내", "event": "당정 특별위기지역 지정 + 추경 검토", "timestamp": "2026-03-23"}
+    ],
+    "time_rationale": "외부 충격(호르무즈 봉쇄)이 먼저 → 가격 즉시 반응 → 기업 불가항력 선언 → 정부 후속 대응. 정부 대응이 충격 발생 후 2주 뒤에나 나옴. 시장이 정부보다 빠르게 반응",
+
+    "proportionality": "비례",
+    "proportionality_rationale": "나프타 +80% 급등 + 호르무즈 봉쇄(전 세계 석유 20% 통과)라는 이벤트 규모 대비 석화주 -15~25% 하락은 비례적. NCC 가동률 65%까지 하락은 실물 생산 차질이 실제로 발생한 것. 가격 반응이 과잉이 아니라 실체가 있는 위기",
+
+    "propagation": "C (정책→서사→가격) + A (가격이 서사보다 선행)",
+    "propagation_rationale": "호르무즈 봉쇄(정책) → 나프타 가격 급등(가격) → 매체 보도(서사) → 정부 대응(정책). 가격이 서사보다 먼저 반응(A 요소). 그러나 근본 원인이 정책(전쟁)이므로 C 경로가 지배적",
+    "next_observation": "4월 초 나프타 재고 소진 여부. 셧다운 실제 발생 시 하류 산업 도미노 확인. CLARITY가 아닌 호르무즈 정상화가 유일한 해소 조건"
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-001",
+      "question": "4월 초 나프타 재고 소진 및 NCC 셧다운 실제 발생 여부",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "2026-04-07까지 주요 NCC 셧다운 공시 여부 확인",
+      "check_channels": {"narrative": ["서울경제", "파이낸셜뉴스"], "expert": ["여천NCC", "LG화학"]},
+      "created": "2026-03-24",
+      "deadline": "2026-04-07",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-002",
+      "question": "러시아산 원유 수입 허용 결정 여부",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "산업부 또는 외교부의 러시아산 원유 수입 관련 공식 입장 발표",
+      "check_channels": {"policy": ["산업통상자원부"], "narrative": ["한경", "헤럴드경제"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-003",
+      "question": "하류 산업(자동차, 건설, 가전) 실제 생산 차질 발생 여부",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "현대차/기아 생산 계획 조정 공시, 또는 플라스틱 가공업체 가동률 데이터",
+      "check_channels": {"narrative": ["글로벌이코노믹", "뉴스CJ"], "price": ["현대차", "기아"]},
+      "created": "2026-03-24",
+      "deadline": "2026-04-01",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-004",
+      "question": "석화 제품가 반등이 원가 상승을 상쇄하는지 (위기인가 기회인가)",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "에틸렌-나프타 스프레드(마진) 데이터. 스프레드 확대 시 기회, 축소 시 위기",
+      "check_channels": {"positioning": ["에틸렌-나프타 스프레드"], "narrative": ["머니투데이"]},
+      "created": "2026-03-24",
+      "deadline": "2026-03-31",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-005",
+      "question": "대체 원료(LPG, 에탄) 전환 실효성 — 단기 vs 장기",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "S-Oil 샤힌 프로젝트 가동 시점 확인 + LPG 크래커 전환 실적 데이터",
+      "check_channels": {"price": ["S-Oil"], "narrative": ["Nikkei Asia", "Argus Media"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+  "next_check": "4월 초 NCC 셧다운 여부 / 러시아산 수입 결정 / 하류 산업 생산 차질 공시 / 에틸렌-나프타 스프레드"
+}

@@ -1,0 +1,99 @@
+{
+  "issues": [
+    {
+      "id": "ISS-RM-2026-W13-001",
+      "detected_at": "2026-03-24",
+      "detected_by": "core/validate.py → R-03 체크",
+      "category": "CAT-1",
+      "severity": "medium",
+      "title": "에틸렌 하류 도미노 수집에서 반대입장 전문가 누락 (R-03)",
+      "description": "에틸렌 부족→하류 도미노 수집에서 전문가 8명 중 반대입장(role: 반대입장) 0명. 바이오타임즈의 'K-바이오 견조' 프레임이 반대쪽이지만 서사(narrative)로 분류되어 전문가에는 미포함. 도미노에 반대하는 전문가를 찾지 못한 것이 수집 한계인지 실제로 없는 것인지 불분명.",
+      "evidence": "validate.py WARN: reactions.expert — 반대입장 전문가 없음. state.json reactions.expert에 role=반대입장 항목 0건.",
+      "proposed_fix": "다음 유사 수집 시: (1) '도미노 과장론' 또는 '영향 제한적' 입장의 애널리스트를 타겟 검색 추가. (2) 서사에 반대쪽 매체가 있으면 해당 매체에서 인용된 전문가를 전문가 계층에도 이중 등록 검토. (3) R-07 체크리스트에 '반대입장을 서사에서만 충족하지 말고 전문가에서도 1명+ 확보' 강화.",
+      "target_file": "SKILL.md → 전문가 선정 체크리스트",
+      "status": "open",
+      "fixed_at": null,
+      "fix_applied": null,
+      "related_issues": []
+    },
+    {
+      "id": "ISS-RM-2026-W13-002",
+      "detected_at": "2026-03-24",
+      "detected_by": "core/validate.py → reactions.expert",
+      "category": "CAT-1",
+      "severity": "medium",
+      "title": "전문가 유형/반대입장 부족: 반대입장 전문가 없음 — R-03 위반 가능",
+      "description": "반대입장 전문가 없음 — R-03 위반 가능",
+      "evidence": "validate.py WARN: reactions.expert — 반대입장 전문가 없음 — R-03 위반 가능",
+      "proposed_fix": "SKILL.md 또는 수집 프로세스에서 reactions.expert 관련 규칙 보강",
+      "target_file": "SKILL.md",
+      "status": "duplicate",
+      "fixed_at": null,
+      "fix_applied": null,
+      "related_issues": []
+    },
+    {
+      "id": "ISS-RM-2026-W13-003",
+      "detected_at": "2026-03-24",
+      "detected_by": "core/validate.py → channels.sns (F-05)",
+      "category": "CAT-1",
+      "severity": "medium",
+      "title": "channels.sns (F-05): SNS 상태가 '제한적 활성' (활성)인데 collected=false. 활성 판단 시 최소 프록시 검색 2",
+      "description": "SNS 상태가 '제한적 활성' (활성)인데 collected=false. 활성 판단 시 최소 프록시 검색 2회 필요",
+      "evidence": "validate.py WARN: channels.sns (F-05) — SNS 상태가 '제한적 활성' (활성)인데 collected=false. 활성 판단 시 최소 프록시 검색 2회 필요",
+      "proposed_fix": "SKILL.md 또는 수집 프로세스에서 channels.sns (F-05) 관련 규칙 보강",
+      "target_file": "SKILL.md",
+      "status": "open",
+      "fixed_at": null,
+      "fix_applied": null,
+      "related_issues": []
+    },
+    {
+      "id": "ISS-RM-2026-W13-004",
+      "detected_at": "2026-03-24",
+      "detected_by": "core/validate.py → Self-Audit Q2",
+      "category": "CAT-1",
+      "severity": "medium",
+      "title": "Self-Audit Q2: 서사와 전문가 양쪽에 반대 입장이 1건+ 있는가? (R-03 + F-01) — 전문가에 반대입장 없음 (F-",
+      "description": "서사와 전문가 양쪽에 반대 입장이 1건+ 있는가? (R-03 + F-01) — 전문가에 반대입장 없음 (F-01)",
+      "evidence": "validate.py WARN: Self-Audit Q2 — 서사와 전문가 양쪽에 반대 입장이 1건+ 있는가? (R-03 + F-01) — 전문가에 반대입장 없음 (F-01)",
+      "proposed_fix": "SKILL.md 또는 수집 프로세스에서 Self-Audit Q2 관련 규칙 보강",
+      "target_file": "SKILL.md",
+      "status": "open",
+      "fixed_at": null,
+      "fix_applied": null,
+      "related_issues": []
+    },
+    {
+      "id": "ISS-RM-2026-W13-005",
+      "detected_at": "2026-03-24",
+      "detected_by": "core/validate.py → pattern.direction_alignment",
+      "category": "CAT-4",
+      "severity": "medium",
+      "title": "방향 판정값 비정규: '수렴 (호재 방향, 과열 경고 병존)' — 유효 값: {'침묵', '수렴', '분열', '괴리'}",
+      "description": "'수렴 (호재 방향, 과열 경고 병존)' — 유효 값: {'침묵', '수렴', '분열', '괴리'}",
+      "evidence": "validate.py WARN: pattern.direction_alignment — '수렴 (호재 방향, 과열 경고 병존)' — 유효 값: {'침묵', '수렴', '분열', '괴리'}",
+      "proposed_fix": "SKILL.md 또는 수집 프로세스에서 pattern.direction_alignment 관련 규칙 보강",
+      "target_file": "SKILL.md",
+      "status": "open",
+      "fixed_at": null,
+      "fix_applied": null,
+      "related_issues": []
+    }
+  ],
+  "weekly_review": {
+    "last_review": null,
+    "next_review": "2026-03-30",
+    "review_day": "monday"
+  },
+  "summary": {
+    "total_open": 4,
+    "by_severity": {
+      "medium": 4
+    },
+    "by_category": {
+      "CAT-1": 3,
+      "CAT-4": 1
+    }
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "date": "2026-03-26",
+  "scan_id": "SCAN-20260326-002",
+  "sources_used": [
+    {"axis": "A", "tool": "Tavily", "query": "Reuters Bloomberg CNBC market stocks oil gold today 2026-03-26 US tariff auto Korea EU regulation China", "result_count": 10},
+    {"axis": "A", "tool": "WebSearch", "query": "증시 급등 급락 유가 환율 금 자동차 관세 한국 오늘 2026년 3월 26일", "result_count": 10},
+    {"axis": "B", "tool": "Tavily", "query": "central bank regulation sanctions tariff policy auto industry Korea EU China 2026-03-26", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "금리 결정 규제 관세 제재 자동차 한국 EU 중국 정부 발표 오늘 2026년 3월", "result_count": 10},
+    {"axis": "C", "tool": "Tavily", "query": "supply chain shortage disruption force majeure auto semiconductor chip Korea 2026-03-26", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "공급 차질 물량 부족 자동차 반도체 수급 불안 한국 중국 2026년 3월", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "GENIUS Act 스테이블코인 규제 시행 2026년 3월 진행 상황", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "AI 투자 심리 분열 승자 패자 2026년 3월 AI bubble winner loser", "result_count": 10},
+    {"axis": "D", "tool": "Tavily", "query": "Korea auto industry tariff EU regulation China EV overcapacity exports squeeze Hyundai Kia 2026", "result_count": 10}
+  ],
+  "seeds": {
+    "heartbeat": [],
+    "macro": null,
+    "ghs": null,
+    "user_seed": "미 관세+EU 규제+중국 물량공세, 벼랑 끝 몰리는 한국車"
+  },
+  "raw_headlines": [
+    "[A] Reuters: Morning Bid — Reality check. Brent ~$105, WTI ~$93. Global shares unsteady, ceasefire hopes fading.",
+    "[A] 국제금 시세: $4,548.07/oz (+1.6%). 중앙은행 매입, 지정학, 탈달러화.",
+    "[A] 한국 증시: 코스피·코스닥 하락 마감. 변동성 확대.",
+    "[A] 유로/파운드 급락. 달러 강세.",
+    "[A] 한국 연료가격 상한 인상 + 세금감면 확대 (3/26)",
+    "[A] 고유가→EV 수요 가속. MG(SAIC) 프랑스 EV 주문 +12.7%.",
+    "[A/B] Trump tells Iran 'get serious soon'. Ceasefire plan dismissed by Tehran.",
+    "[B] Section 301: 16개국 조사, 60개국 강제노동 조사. 가중 관세율 28%로 3배.",
+    "[B] 대법원 IEEPA 관세 위헌 → Section 122로 15% 글로벌 관세 150일.",
+    "[B] EU 중국 EV 관세: 10% 기본 + 7.8~35.3% 추가. 5년 확정.",
+    "[B] 중국, 보아오 포럼서 외국 기업 환영 강조. 개방 메시지.",
+    "[B] 한국은행 기준금리 2.5% 동결 (1월). 인플레 압력 시 인상 가능.",
+    "[B] ECB: 에너지 가격 충격으로 인플레 재점화 우려. 인하 기대 후퇴.",
+    "[B] GENIUS Act 시행 중. FDIC 3월 스테이블코인 초안 발표 예정.",
+    "[B] CBDC 금지법 상원 통과 (89-10). 민간 스테이블코인 중심.",
+    "[C] 헬륨: 카타르 30% 차단. 반도체 팹 3개월 임계. TSMC 2개월 재고.",
+    "[C] 반도체 공급망 5대 단층선: 헬륨+황+브롬+LNG+에너지.",
+    "[C] 중국 NDRC 연료 수출 전면 금지. 아시아 공급 공백.",
+    "[C] 걸프 공급 우회로 재편: 사우디/UAE/오만.",
+    "[C] Rohm+도시바+미쓰비시 파워반도체 통합 협상 개시.",
+    "[C] 현대·기아 미국 EV 전략 후퇴: 아이오닉6 단종, 기아 EV 지연.",
+    "[C] 한국 반도체주: 전쟁 전 +50% → 급반락. SK하이닉스 400% 1년 상승 후.",
+    "[D] GENIUS Act: FDIC 초안 3월. Q2 시행 본격화. 시장 영향 아직 제한적.",
+    "[D] AI 투자 분열: 알리바바 '데이터센터 버블' 경고. 승자/패자 분류 본격화.",
+    "[D] 자동차 관세 누적 $35.4B: 도요타 $9.1B, 현대·기아 $1B+. EV 구조조정 $70B."
+  ],
+  "issues": [
+    {
+      "id": "IS-20260326-201",
+      "title": "이란 휴전안 거부 + 전쟁 지속, Brent $105",
+      "summary": "이란이 트럼프 15-point 휴전안 거부. Brent $105, WTI $93. 글로벌 주식 불안정. 사우디가 전쟁 지속 압박 보도.",
+      "root_cause": "미-이란 전쟁 장기화",
+      "scan_axis": "A",
+      "sources": ["Reuters Morning Bid", "AP", "KSAT"],
+      "market_contact": ["Brent", "WTI", "S&P500", "금", "방산", "KRW"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["Brent", "WTI", "S&P500", "금", "방산", "KRW"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "트럼프 최초 공식 휴전안 제시 후 이란 거부. 사우디 전쟁 지속 압박 신규 보도. 전쟁의 외교적 전환점 실패 — 새로운 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "휴전 실패 → 전쟁 장기화 → 호르무즈 봉쇄 지속 → LNG/헬륨 차단 → 반도체·비료·에너지 가격 → 글로벌 인플레 (5단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "W-2026-03-26-UQ-020~025에서 다각도 추적 중. 오늘 휴전 거부는 새 전개."}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260326-004"
+    },
+    {
+      "id": "IS-20260326-202",
+      "title": "한국車 3면 포위: 미 관세 + EU 규제 + 중국 물량공세",
+      "summary": "미국 Section 301/122 관세, EU 중국 EV 최대 35.3% 관세(한국차에도 간접 영향), 중국 EV 수출 6배 성장. 현대·기아 관세비용 $1B+, EV 전략 후퇴.",
+      "root_cause": "글로벌 자동차 산업 구조 재편 (보호무역 + 중국 과잉생산)",
+      "scan_axis": "A/B/D",
+      "sources": ["Automotive News", "IEA ETP 2026", "OICA", "ECFR", "Reuters"],
+      "market_contact": ["현대차", "기아", "한국 자동차부품", "유럽 자동차", "EV 밸류체인", "KRW"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["현대차", "기아", "자동차부품", "EV", "KRW"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "3면 동시 압박: (1)미국 15% 글로벌관세+Section 301, (2)EU 중국EV 관세가 한국에 간접 영향(중국산 부품 비중), (3)중국 EV 수출 6배 성장으로 글로벌 시장 잠식. 복합적 새 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "관세+규제+중국공세 → 현대·기아 수익 악화 → 한국 자동차부품 도미노 → 고용·지역경제 → 경상수지 → KRW (5단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전히 새로운 클러스터. Section 301은 W-UQ-030/033에서 추적 중이나, '3면 포위' 프레임은 신규."}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260326-003"
+    },
+    {
+      "id": "IS-20260326-203",
+      "title": "Section 301 16개국 재개 + 15% 글로벌 관세 150일",
+      "summary": "대법원 IEEPA 위헌 → Section 122로 15% 관세. Section 301로 16개국 구조적 과잉생산 조사. 방글라데시·캄보디아까지 포함. 가중 관세율 3배(28%).",
+      "root_cause": "미국 보호무역주의 2.0",
+      "scan_axis": "B",
+      "sources": ["TBS Business Standard", "WTO MC14 분석"],
+      "market_contact": ["S&P500", "신흥국 주식", "달러", "무역의존 수출국"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["S&P500", "신흥국", "달러", "반도체", "자동차", "철강"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "IEEPA 위헌 후 Section 122로 전환 — 법적 근거 변경. Section 301 16개국 동시 조사는 트럼프 1기 대비 규모 확대. 새로운 힘의 투입."},
+        "G3": {"score": 2, "type": "free", "chain": "Section 301 → 한국 반도체/자동차/철강 관세 → 수출 타격 → 기업실적 → KOSPI → KRW (5단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "W-2026-03-26-UQ-030/033에서 추적 중. 오늘의 WTO MC14 맥락은 후속 정보."}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260326-204",
+      "title": "헬륨 3개월 임계점 — 반도체 팹 비상재고 소진 중",
+      "summary": "카타르 Ras Laffan 피격으로 글로벌 헬륨 30% 차단. TSMC 2개월 재고. SK하이닉스 다변화 주장하나 실제 재고 부족 우려. 한국 산업부 14개 핵심소재 긴급 검토. 브롬(이스라엘)·황(호르무즈) 동시 위기.",
+      "root_cause": "호르무즈 봉쇄 → 반도체 핵심소재 차단",
+      "scan_axis": "C",
+      "sources": ["SCI.AI", "Intellinews", "Al Jazeera", "Naked Capitalism/FT"],
+      "market_contact": ["삼성전자", "SK하이닉스", "TSMC", "NVIDIA", "반도체 ETF", "헬륨"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["삼성전자", "SK하이닉스", "TSMC", "NVIDIA", "SOXX"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "3개월 임계점 최초 공식화. TSMC 2개월 재고 공개. 한국 정부 14개 소재 긴급 검토. 임계값 돌파 임박 — 새로운 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "헬륨 고갈 → 반도체 팹 감산 → AI 하드웨어 지연 → 빅테크 capex 차질 → 글로벌 AI 성장 둔화 → 나스닥 (5단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "W-UQ-050/051에서 추적 중. 3개월 임계점은 새 정보."}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260326-004"
+    },
+    {
+      "id": "IS-20260326-205",
+      "title": "금 $4,548 신고가 — 중앙은행 매입·탈달러화·지정학",
+      "summary": "금 현물 $4,548.07 (+1.6%). 1월 $5,100 최고치 후 조정. 3대 요인: 중앙은행 매입, 지정학 긴장, 탈달러화.",
+      "root_cause": "안전자산 수요 + 탈달러화",
+      "scan_axis": "A",
+      "sources": ["국제뉴스", "토스뱅크"],
+      "market_contact": ["금"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["금", "달러"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 상승 추세의 가속. 신고가지만 1월 $5,100 대비 조정 구간."},
+        "G3": {"score": 1, "type": "free", "chain": "금 신고가 → 금광주 상승 → 실물 수요 증가 (2단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 4,
+      "status": "약함",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260326-206",
+      "title": "현대·기아 미국 EV 전략 후퇴 (아이오닉6 단종, 기아 EV 지연)",
+      "summary": "약한 수요, 높은 가격, 관세 불확실성으로 현대 아이오닉6 단종, 기아 한국산 EV 출시 지연. 조지아 공장 생산분만 유지.",
+      "root_cause": "미국 EV 수요 둔화 + 관세 불확실성",
+      "scan_axis": "B/C",
+      "sources": ["Automobilwoche/OICA"],
+      "market_contact": ["현대차", "기아", "EV 밸류체인", "배터리"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["현대차", "기아", "LG에너지", "SK온"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "아이오닉6 단종 최초 발표. EV 전략 축소 공식화 — 방향 전환."},
+        "G3": {"score": 1, "type": "free", "chain": "EV 출시 지연 → 미국 시장점유율 하락 → 조지아 공장 가동률 (2단계)"},
+        "G3.5": "SNAPSHOT",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260326-003"
+    },
+    {
+      "id": "IS-20260326-207",
+      "title": "고유가→글로벌 EV 전환 가속 (전쟁 부스트)",
+      "summary": "유가 $100+ 지속 → 프랑스 MG EV 주문 +12.7%. ADB: 고유가는 항상 EV 전환 촉진. 유럽 2유로/리터 돌파 시 소비자 심리 전환.",
+      "root_cause": "에너지 가격 충격 → 소비자 행동 변화",
+      "scan_axis": "A/C",
+      "sources": ["COMCAM Energy", "ADB Albert Park", "Bloomberg Intelligence"],
+      "market_contact": ["EV", "배터리", "충전인프라", "내연기관", "정유"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["EV", "배터리", "충전", "정유", "자동차"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 추세의 가속. 고유가→EV는 알려진 패턴이나 프랑스 +12.7% 구체적 데이터가 가속 확인."},
+        "G3": {"score": 2, "type": "free", "chain": "고유가 → EV 수요 급증 → 중국 EV 수출 확대 → 유럽/한국 내연기관 위축 → 구조적 산업재편 (4단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260326-004"
+    },
+    {
+      "id": "IS-20260326-208",
+      "title": "일본 파워반도체 3사 통합 (Rohm+도시바+미쓰비시)",
+      "summary": "Nikkei: Rohm, 도시바, 미쓰비시전기 파워반도체 사업 통합 협상 개시. Infineon 이어 세계 2위 그룹 목표. 데소 인수 제안과 겹침.",
+      "root_cause": "자동차 전장화 + AI 수요 → 파워반도체 재편",
+      "scan_axis": "C",
+      "sources": ["Nikkei via Energy News"],
+      "market_contact": ["파워반도체", "자동차부품"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["파워반도체", "자동차부품"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "3사 통합 최초 보도. 일본 반도체 산업 구조 전환 — 새로운 힘."},
+        "G3": {"score": 1, "type": "free", "chain": "일본 파워반도체 통합 → 글로벌 SiC/GaN 경쟁 구도 변화 (2단계)"},
+        "G3.5": "SNAPSHOT",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 4,
+      "status": "약함",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260326-209",
+      "title": "한국 연료가격 상한 인상 + 세금감면 확대",
+      "summary": "한국 정부 3/26 자정부터 연료가격 상한 인상, 동시에 연료세 감면 확대. 이란 전쟁 영향 완화책.",
+      "root_cause": "이란 전쟁 → 한국 소비자 에너지비용 충격",
+      "scan_axis": "A/B",
+      "sources": ["Energy News OE Digital"],
+      "market_contact": ["정유", "KRW"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["정유", "소비"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 에너지 대응의 연장. 세금감면 확대는 가속이나 방향 전환은 아님."},
+        "G3": {"score": 1, "type": "free", "chain": "세금감면 → 재정부담 → 추경 확대 (2단계)"},
+        "G3.5": "SNAPSHOT",
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 4,
+      "status": "약함",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260326-210",
+      "title": "GENIUS Act 규제 시행 + FDIC 초안 발표",
+      "summary": "GENIUS Act 시행 중. FDIC 3월 스테이블코인 초안 발표 예정. CBDC 금지법 통과 (89-10). 시장 영향 아직 제한적.",
+      "root_cause": "크립토 규제 프레임워크",
+      "scan_axis": "B",
+      "sources": ["Congress.gov", "Morgan Lewis", "Nestree"],
+      "market_contact": ["크립토"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["크립토", "스테이블코인"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "FDIC 초안은 새 단계이나 법 자체는 작년 통과. 기존 추세의 진행."},
+        "G3": {"score": 1, "type": "free", "chain": "GENIUS Act → 스테이블코인 제도화 → 금융 통합 (2단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 2,
+      "status": "탈락",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260326-211",
+      "title": "AI 투자 분열 심화 — 데이터센터 과잉 경고",
+      "summary": "알리바바 조 차이 회장 '데이터센터 버블' 경고. Fidelity '승자/패자 분류' 시작. 2026 AI capex $2000억 현금 소모 예상.",
+      "root_cause": "AI 투자 사이클 성숙",
+      "scan_axis": "A/B",
+      "sources": ["삼성SDS", "글로벌이코노믹", "kjob"],
+      "market_contact": ["빅테크", "데이터센터", "반도체"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["빅테크", "데이터센터", "반도체", "NVIDIA"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 과열 우려의 강화. 알리바바 회장 발언은 내부자 경고로 의미 있으나 방향 전환은 아직."},
+        "G3": {"score": 1, "type": "free", "chain": "AI 과잉투자 → capex 조정 → 반도체 수요 둔화 (2단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 4,
+      "status": "약함",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260326-212",
+      "title": "ECB 인하 기대 후퇴 (에너지 인플레 영향)",
+      "summary": "CBI 분석: 에너지 충격으로 유로존 인플 재점화. ECB 인하 기대 후퇴. 유가 장기화 시 +0.6~0.7%p.",
+      "root_cause": "이란 전쟁 → 유럽 에너지 인플레",
+      "scan_axis": "B",
+      "sources": ["Central Bank of Ireland QB1 2026"],
+      "market_contact": ["유로", "유럽채권", "ECB"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["유로", "유럽채권", "DAX", "유럽은행"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 우려의 정량화. CBI가 +0.6~0.7%p 구체 수치 제시. 가속."},
+        "G3": {"score": 1, "type": "free", "chain": "인플레 재점화 → ECB 동결/인상 → 유럽 성장 둔화 (2단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "W-UQ-025에서 추적 중"}
+      },
+      "total_score": 2,
+      "status": "탈락",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260326-213",
+      "title": "자동차 관세 누적비용 $35.4B (도요타 $9.1B, 현대·기아 $1B+)",
+      "summary": "2025년 이후 누적 관세비용 $35.4B. 도요타 FY2026 ¥1.45T($9.1B). BMW/Honda/현대·기아/VW 각 $1B+. EV 구조조정 $70B 접근.",
+      "root_cause": "미국 보호무역 → 글로벌 자동차 비용 구조 변화",
+      "scan_axis": "A/B",
+      "sources": ["Automotive News via Crain's Chicago"],
+      "market_contact": ["도요타", "현대차", "기아", "BMW", "VW", "자동차부품"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["도요타", "현대차", "기아", "BMW", "VW"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "$35.4B 누적 수치 최초 집계. 기존 추세의 정량화."},
+        "G3": {"score": 2, "type": "free", "chain": "관세 $35.4B → 가격 인상 → 수요 감소 → 공장 구조조정 → 고용 (4단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260326-003"
+    },
+    {
+      "id": "IS-20260326-214",
+      "title": "중국 EV 수출 EU 점유율 20% + 남반구 확대",
+      "summary": "IEA: 중국 EV 수출 6배 성장 전망. EU 20%, 브라질/태국 80%+. EU 관세에도 하이브리드로 우회. 한국·일본·유럽 자동차 글로벌 입지 잠식.",
+      "root_cause": "중국 산업 과잉생산 + 국가 지원 EV 전략",
+      "scan_axis": "B/C",
+      "sources": ["IEA ETP 2026", "ECFR", "TopWay Shipping"],
+      "market_contact": ["현대차", "기아", "BYD", "유럽 자동차", "EV 밸류체인"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["현대차", "기아", "유럽 자동차", "EV", "배터리"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "IEA 6배 전망 신규 발표. 하이브리드 우회 전략 확인. 기존 추세의 가속."},
+        "G3": {"score": 2, "type": "free", "chain": "중국 EV 확산 → 한국/유럽 시장 잠식 → 공장 축소 → 부품 도미노 → 고용 (4단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260326-003"
+    },
+    {
+      "id": "IS-20260326-215",
+      "title": "한국 반도체주 급락 (전쟁 전 +50% → 급반락)",
+      "summary": "SK하이닉스 등 한국 반도체주 1~2월 +50% 상승 후 전쟁으로 급반락. 200일 MA 대비 40% 상회 → 모멘텀 반전. 취약 지역 위치 + 고밸류가 원인.",
+      "root_cause": "모멘텀 과열 + 지정학 리스크 노출",
+      "scan_axis": "A",
+      "sources": ["Energy News OE Digital/Nikkei"],
+      "market_contact": ["SK하이닉스", "삼성전자", "KOSPI"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["SK하이닉스", "삼성전자", "KOSPI"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "모멘텀 반전은 기존 과열의 결과. 전쟁이 촉발했으나 구조적 변화보다는 조정."},
+        "G3": {"score": 1, "type": "free", "chain": "반도체주 하락 → KOSPI 하락 → 외국인 자금 이탈 (2단계)"},
+        "G3.5": "SNAPSHOT",
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "", "overlap": ""}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": null
+    }
+  ],
+  "clusters": [
+    {
+      "id": "CL-20260326-003",
+      "root_label": "한국車 3면 포위 (미 관세 + EU 규제 + 중국 물량공세)",
+      "issues": ["IS-20260326-202", "IS-20260326-206", "IS-20260326-213", "IS-20260326-214"],
+      "priority_score": 10,
+      "market_contact_combined": ["현대차", "기아", "자동차부품", "EV 밸류체인", "배터리", "LG에너지", "SK온", "도요타", "BMW", "VW", "BYD", "KRW"],
+      "rm_input_title": "한국車 3면 포위 — 미 관세($35.4B 누적) + EU 중국EV 규제 + 중국 물량공세(6배) + 현대·기아 EV 후퇴"
+    },
+    {
+      "id": "CL-20260326-004",
+      "root_label": "이란 전쟁 → 에너지·공급망 충격 지속 + EV 가속",
+      "issues": ["IS-20260326-201", "IS-20260326-204", "IS-20260326-207"],
+      "priority_score": 10,
+      "market_contact_combined": ["Brent", "WTI", "S&P500", "금", "방산", "KRW", "삼성전자", "SK하이닉스", "TSMC", "NVIDIA", "EV", "배터리", "헬륨", "비료"],
+      "rm_input_title": "이란 전쟁 지속 — 휴전 실패 + Brent $105 + 헬륨 3개월 임계 + 고유가→EV 가속"
+    }
+  ],
+  "independent": ["IS-20260326-203", "IS-20260326-215"],
+  "blind_spot_checks": {
+    "Q1_missing_asset": "부동산: 오늘 시그널 없음. 크립토: GENIUS Act 진행 중이나 Gate 2점. 시그널 약함.",
+    "Q2_geo_balance": "글로벌 6건 / 한국 3건. 보충 불필요.",
+    "Q3_backlog_promotion": "BL-002 AI 투자 분열 재등장 (IS-211). Gate 4점이나 1회차. 승격 미달. appearance_count +1.",
+    "Q4_diversity": "전쟁/에너지 3건, 무역/관세 3건, 중국 EV 2건, 반도체 1건. 4개 root_cause 확보. OK."
+  },
+  "user_selection": null,
+  "handoff": null
+}

@@ -1,0 +1,44 @@
+{
+  "id": "TC-001",
+  "type": "stereo",
+  "title": "Section 301 — 관세 법체계 3단 진화",
+  "source": "SA-20260326-001",
+  "created": "2026-03-26",
+  "status": "tracking",
+  "phase": 1,
+  "scp": 4,
+
+  "trigger": {
+    "condition": "301 청문회(4/28) → 관세 범위 확정 OR Section 122 만료(7/24) 전 관세 부과",
+    "current": "조사 중. 코멘트 마감 4/15.",
+    "fired": false
+  },
+  "kc": {
+    "watch": "한국 대미 수출 -5% YoY",
+    "alert": "301 관세율 확정 공고",
+    "hard": "301 철회 OR 한미 합의 면제 확인",
+    "fired": false
+  },
+  "scenarios": {
+    "A": {"label": "교란해소+역풍지연", "prob": "25%"},
+    "B": {"label": "교착+역풍가시화", "prob": "35%", "base": true},
+    "C": {"label": "이중충격", "prob": "15%"},
+    "D": {"label": "교란해소+역풍동시", "prob": "25%", "key": true}
+  },
+
+  "events": ["EC-003", "EC-004", "EC-005", "EC-006"],
+  "rm_watches": ["W-UQ-030", "W-UQ-031", "W-UQ-032", "W-UQ-033"],
+  "psf_link": "L_trade (emerging)",
+  "macro_ref": "B1 trend_note",
+
+  "heartbeat_thresholds": [
+    {"indicator": "Brent", "symbol": "BZ=F", "watch": 120, "alert": 135, "hard": 150, "direction": "above"},
+    {"indicator": "DXY", "symbol": "DX-Y.NYB", "watch": 103, "alert": 106, "hard": 110, "direction": "above"}
+  ],
+
+  "check_log": [
+    {"date": "2026-03-26", "observation": "시장 무반응(과소). 조사 진행 중. Phase 1 유지.", "next_check": "2026-04-15"}
+  ],
+
+  "close_condition": "301 관세 확정 → 시나리오 확정 OR 301 철회 → KC 발동 OR 6개월 무변화 → 아카이브"
+}

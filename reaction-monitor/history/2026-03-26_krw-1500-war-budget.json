@@ -1,0 +1,79 @@
+{
+  "issue": "이란 전쟁의 한국 전이 — KRW 1,500 구조적 고환율 + 25조 전쟁추경",
+  "date": "2026-03-26",
+  "depth": "Standard",
+  "scanner_origin": {"scan_id": "SCAN-20260326-001", "cluster_id": "CL-KR-adhoc", "issues": ["IS-008", "IS-009"]},
+
+  "fingerprint": {
+    "domain": "환율/통화 + 재정정책 + 에너지 수입의존",
+    "geography": "한국 (미국·중동 전이)",
+    "touched_assets": ["KRW", "KOSPI", "KOSDAQ", "한국 국채", "정유주", "항공주", "유틸리티"],
+    "stakeholders": ["한국은행(BOK)", "기획재정부", "국민연금(NPS)", "여당", "수출기업(삼성/현대)", "수입기업(정유/항공)", "저소득 가구"],
+    "secondary_stakeholders": [
+      {"from": "KRW 약세", "to": "해외여행자, 유학생 가정, 달러 부채 기업"},
+      {"from": "25조 추경", "to": "국채 발행 증가 → 금리 상승 압력 → 부동산 차입자"},
+      {"from": "에너지 수입 비용 증가", "to": "전기료 → 제조업 원가 → 소비자 물가"}
+    ],
+    "time_character": "구조적 + 정책 대응"
+  },
+
+  "reactions": {
+    "price": [
+      {"asset": "USD/KRW", "value": 1506.48, "change": "+6.48 (vs 3/25 1500)", "source": "Yahoo KRW=X", "note": "★ 17년 최저. 2009년 이후 첫 1,500대 이틀 연속. FRED 3/20: 1,504.15."},
+      {"asset": "KOSPI", "value": 5545.36, "change": "전일 대비 소폭 조정", "source": "Yahoo ^KS11", "note": "전쟁 전 ~5,700에서 하락. 외국인+기관 순매도."},
+      {"asset": "KOSDAQ", "value": 1154.06, "change": "", "source": "Yahoo ^KQ11", "note": "3/25 +3.4% 급반등 후 횡보."},
+      {"asset": "Brent", "value": 98.13, "note": "한국 에너지 순수입 GDP 4%+. $100 Brent 시 경상수지 → GDP 6.5%→4.7% 축소(RBC)."}
+    ],
+    "narrative": [
+      {"source": "서울경제/헤럴드경제", "frame": "환율안정 3대 극약처방 — RIA(귀환투자계좌), 국민연금 환헤지, NDF 규제 완화. 1,500원 '뉴노멀' 논의.", "tone": "위기+대응"},
+      {"source": "Seoul Economic Daily (영문)", "frame": "RIA 3/23 출시. 해외주식 매도 후 국내 투자 시 양도세 100% 면제. 3월에만 리테일 $400M 국내 환류.", "tone": "정책 대응"},
+      {"source": "아시아경제 (영문)", "frame": "여당·정부, 25조 전쟁추경 발표. 초과세수 활용. 농축수산물 할인, K패스 확대, 저소득층 지역화폐.", "tone": "재정 확장"},
+      {"source": "RBC Capital Markets", "frame": "KRW 경로는 binary — 유가 하락 시 1,400↓, 유가 유지 시 slow bleed 1,500+. WGBI 편입(6~12개월)이 구원투수.", "tone": "조건부"},
+      {"source": "MEXC/WhalesBook", "frame": "원화 약세 → 스테이블코인 잔고 55% 급감($575M→$188M). 해외→국내 자금 환류. KOSPI +37% YTD.", "tone": "역설적 호재"},
+      {"source": "한국은행/뉴시스", "frame": "환율 상승 70%가 국민연금·개인 해외투자. 경상수지 흑자인데 자본수지 적자가 더 큼. 구조적.", "tone": "구조 진단"},
+      {"source": "김소영(미주중앙일보)", "frame": "위기 가능성은 작지만 내수기업·자영업 어려움 커질 것. 반도체 제외 수출 경쟁력 약화.", "tone": "경고"}
+    ],
+    "expert": [
+      {"name": "한국은행", "role": "정책", "statement": "환율 상승 70%가 국민연금+개인 해외투자. 구조적 달러 수요. 특정 환율 방어 아닌 변동성 완화 정책.", "direction": "구조적"},
+      {"name": "RBC Capital Markets (Abbas Keshvani)", "role": "분석자", "statement": "KRW는 유가에 binary. $100 Brent 시 경상수지 GDP 6.5%→4.7%. 당국은 1,480 방어선 포기한 듯. WGBI 편입이 6~12개월 내 구원.", "direction": "조건부"},
+      {"name": "한국자본시장연구원", "role": "분석자", "statement": "해외자산 선호 강화 = 구조적 달러 수요 확대. 성장 동력 약화와 투자 제약이 원인.", "direction": "구조적"},
+      {"name": "여당·기재부", "role": "정책", "statement": "25조 추경 편성. 농축수산물 할인, K패스 청소년 확대, 저소득층 지역화폐. 고유가 민생 대응.", "direction": "재정 확장"},
+      {"name": "김소영 교수", "role": "분석자", "statement": "위기 가능성은 작지만 내수·자영업 타격 확대. 반도체 외 수출 경쟁력 약화가 구조적 문제.", "direction": "경고"}
+    ],
+    "policy": [
+      {"institution": "기재부·여당", "action": "25조 전쟁추경 확정. 초과세수 활용. K패스 전국민 확대 + 청소년. 농축수산물 할인. 저소득층 지역화폐.", "binding": "당정 협의 완료 (3/26)"},
+      {"institution": "금융위", "action": "RIA(귀환투자계좌) 3/23 출시. 해외주식 매도→국내투자 시 양도세 100% 면제. 3월 환류 $400M.", "binding": "시행 중"},
+      {"institution": "한국은행", "action": "기준금리 2.5% 6연속 동결. 환율 방어보다 변동성 완화. 외환보유고 활용 개입.", "binding": "현행 유지"},
+      {"institution": "국민연금", "action": "환헤지 비율 조정 논의. 해외투자 $771조(+70조/년). 구조적 달러 수요의 핵심 원인.", "binding": "논의 중"}
+    ],
+    "positioning": [
+      {"indicator": "KRW 월평균", "value": "3월 1,483.4원 (20일 기준). 1998 외환위기 3월(1,488.87) 접근.", "source": "Seoul Economic Daily"},
+      {"indicator": "KRW 연간 범위", "value": "2026년 1,427(2월)~1,506(3월). 변동폭 80원.", "source": "exchange-rates.org"},
+      {"indicator": "리테일 자금 환류", "value": "3월 $400M 국내 환류. 기존 월평균 $4B 해외유출 대비 드라마틱 전환.", "source": "RBC"},
+      {"indicator": "스테이블코인 잔고", "value": "$575M(2025.07)→$188M(2026.03). -55%. 원화 약세→국내 자산 환류.", "source": "WhalesBook"},
+      {"indicator": "에너지 수입 비중", "value": "GDP 4%+. $100 Brent 시 경상수지 1.8%p 축소.", "source": "RBC"}
+    ]
+  },
+
+  "pattern": {
+    "direction_alignment": "수렴 (위기 방향)",
+    "direction_detail": {
+      "price": "↓ (KRW 1,506, KOSPI 하락, 에너지 비용 상승)",
+      "narrative": "↓ (구조적 고환율 + 전쟁 전이 + 뉴노멀 논의)",
+      "expert": "↓ (구조적 진단 일치. RBC/한은/자본시장연구원)",
+      "policy": "→ (25조 추경 + RIA + 금리 동결 = 대응 모드)",
+      "positioning": "↓↑ (KRW 약세 지속이나 리테일 환류 $400M 역방향)"
+    },
+    "direction_rationale": "5계층이 '위기' 방향으로 수렴하되, 정책(25조 추경, RIA)이 대응 중이고 리테일 자금 환류라는 역방향 흐름이 존재. 구조적 원인(국민연금 70%, 수출 경쟁력 약화)은 정책으로 해결 안 되는 장기 문제. 전쟁이 끝나면 유가 하락→경상수지 개선→KRW 반등 가능하나, 구조적 자본유출은 지속.",
+    "time_structure": "C (정책 주도) — 전쟁 충격 → 환율 1,500 돌파 → 정부 극약처방(RIA+추경)",
+    "proportionality": "비례 — 17년 최저 환율에 25조 추경은 규모 비례. 그러나 구조적 문제(NPS 해외투자)에 대한 근본 대응은 아님.",
+    "propagation": "A (시장 주도) — 유가→수입비용→경상수지→환율 순서. 정책이 뒤따름."
+  },
+
+  "unresolved": [
+    {"id": "UQ-040", "question": "25조 추경이 국회 통과하는가? 야당 협조 여부.", "status": "open", "resolve_type": "condition", "resolve_condition": "국회 본회의 추경안 의결", "created": "2026-03-26", "deadline": "2026-04-15"},
+    {"id": "UQ-041", "question": "RIA 효과 — $400M 환류가 지속되는가, 3월 한시적인가?", "status": "open", "resolve_type": "data", "resolve_condition": "4월 리테일 해외→국내 자금 흐름 데이터", "created": "2026-03-26", "deadline": "2026-04-30"},
+    {"id": "UQ-042", "question": "KRW 1,500이 뉴노멀로 고착되는가? WGBI 편입이 구원투수?", "status": "open", "resolve_type": "condition", "resolve_condition": "WGBI 편입 결정 (FTSE Russell) 또는 KRW 1,450 이하 복귀", "created": "2026-03-26", "deadline": "2026-09-30"},
+    {"id": "UQ-043", "question": "이란 전쟁 종결 시 KRW 반등 폭은? 유가 $80 시 경상수지 회복→1,400대?", "status": "open", "resolve_type": "condition", "resolve_condition": "이란 휴전 + Brent $80 이하 + KRW 1,450 이하", "created": "2026-03-26", "deadline": ""}
+  ]
+}

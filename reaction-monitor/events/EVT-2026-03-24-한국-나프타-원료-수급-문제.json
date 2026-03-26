@@ -1,0 +1,77 @@
+{
+  "id": "EVT-2026-03-24-한국-나프타-원료-수급-문제",
+  "subject": "한국 나프타 원료 수급 문제",
+  "created": "2026-03-24",
+  "status": "active",
+  "parent_event": "",
+  "child_events": [
+    "EVT-2026-03-24-한국도-이란산-원유-수입길-열려",
+    "EVT-2026-03-24-에틸렌-부족-선박-후판-바이오-화"
+  ],
+  "fingerprint": {
+    "domain": "에너지/석유화학 + 통상 + 지정학(중동 의존)",
+    "geography": "한국 중심 (중동 원유 60% 의존 → 호르무즈 봉쇄 직격)",
+    "touched_assets": [
+      "나프타 가격 (1차)",
+      "LG화학 051910 (1차)",
+      "롯데케미칼 011170 (1차)",
+      "한화솔루션 009830 (1차)",
+      "SK이노 096770 (2차)",
+      "S-Oil 010950 (2차)",
+      "WTI/Brent (2차)",
+      "KRW/USD (2차)",
+      "미국 에틸렌/에탄 크래커 (대조 — 나프타 비의존)"
+    ],
+    "stakeholders": [
+      "석유화학 기업 (LG화학, 롯데케미칼, 한화솔루션, 여천NCC)",
+      "정유사 (SK이노, S-Oil, GS칼텍스)",
+      "산업통상자원부",
+      "한국석유공사",
+      "하류 산업 (자동차, 건설, 가전, 플라스틱 가공)",
+      "중동 원유 수출국"
+    ],
+    "time_character": "구조적"
+  },
+  "timeline": [
+    {
+      "date": "2026-03-24",
+      "type": "initial_analysis",
+      "source": "reaction-monitor",
+      "summary": "한국 나프타 원료 수급 문제",
+      "pattern": {
+        "direction": "수렴",
+        "proportionality": "비례",
+        "propagation": "C (정책→서사→가격) + A (가격이 서사보다 선행)"
+      },
+      "state_file": "history/2026-03-24.json",
+      "key_finding": "5개 계층 모두 위기 방향으로 수렴. 유일한 반대 신호는 '제품가 반등→수익성 회복' 소수론. 시장·매체·전문가·정부 모두 위기 인식 공유"
+    }
+  ],
+  "unresolved_at_creation": [
+    {
+      "id": "UQ-001",
+      "question": "4월 초 나프타 재고 소진 및 NCC 셧다운 실제 발생 여부"
+    },
+    {
+      "id": "UQ-002",
+      "question": "러시아산 원유 수입 허용 결정 여부"
+    },
+    {
+      "id": "UQ-003",
+      "question": "하류 산업(자동차, 건설, 가전) 실제 생산 차질 발생 여부"
+    },
+    {
+      "id": "UQ-004",
+      "question": "석화 제품가 반등이 원가 상승을 상쇄하는지 (위기인가 기회인가)"
+    },
+    {
+      "id": "UQ-005",
+      "question": "대체 원료(LPG, 에탄) 전환 실효성 — 단기 vs 장기"
+    }
+  ],
+  "resolution": {
+    "date": null,
+    "outcome": null,
+    "lessons_learned": null
+  }
+}

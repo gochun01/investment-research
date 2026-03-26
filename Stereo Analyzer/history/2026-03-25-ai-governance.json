@@ -1,0 +1,105 @@
+{
+  "id": "SA-20260325-003",
+  "date": "2026-03-25",
+  "input": {"type": "keyword", "content": "AI국무위원 AI이사 도입 의사결정 핵심 파트너로"},
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "scp": 3,
+    "scp_basis": "AI를 도구에서 의사결정 참여자로 격상. 거버넌스 구조 변화. 다만 아직 제안 단계, 법적 장벽 높음.",
+    "urgency": "WATCH",
+    "emotion": {"detected": false},
+    "routing": {"mode": "full", "focus_layers": ["L4","L5","L6"], "skip_layers": []}
+  },
+  "layers": {
+    "L1": {
+      "headline": "국무회의에 AI국무위원, 기업 이사회에 AI이사를 도입하여 의사결정 핵심 파트너로.",
+      "framing": ["권위호소", "긴급", "낙관", "숫자마법"]
+    },
+    "L2": {
+      "facts": [
+        {"fact": "매경 3+1 액션플랜 '국가운영' 축에 포함", "confidence": "🟢"},
+        {"fact": "국무회의에 AI국무위원 시스템 도입 제안", "confidence": "🟢"},
+        {"fact": "기업 이사회에 AI이사 도입 제안", "confidence": "🟢"},
+        {"fact": "영국·루마니아에서 이미 도입", "confidence": "🟡"},
+        {"fact": "이재명 대통령 '뜻깊다' 축사", "confidence": "🟢"},
+        {"fact": "정재계 500명 참석", "confidence": "🟢"}
+      ],
+      "unsaid": [
+        "AI국무위원의 구체적 형태 (자문? 의결권?), 누가 만들고 운영하는가 — 일체 없음",
+        "법적 근거: 국무위원은 헌법 기관. AI에게 지위 부여 시 헌법 개정 필요 여부 미검토",
+        "AI이사의 법적 책임: 상법상 선관주의의무+손해배상. AI에게 물을 수 있는가?",
+        "해외 사례 상세: 영국·루마니아가 '자문'인지 '의결'인지 구분 없이 '도입' 표현",
+        "실패 사례: 알고리즘 편향, 블랙박스 문제, DAO Hack(2016) 등 미언급"
+      ]
+    },
+    "L3": {
+      "players": [
+        {"name": "매일경제", "position": "제안자", "benefit": "AI 거버넌스 아젠다 선점", "hidden_motive": "창간 60주년 브랜딩"},
+        {"name": "AI 기업 (네이버/카카오/OpenAI)", "position": "미언급 수혜자", "benefit": "AI국무위원/이사 = 자사 제품 납품 시장", "hidden_motive": "거대 B2G/B2B 시장 창출"},
+        {"name": "기존 국무위원/이사", "position": "잠재적 위협", "benefit": "권한 희석 가능", "hidden_motive": "저항 예상"},
+        {"name": "법조계", "position": "미언급", "benefit": "AI 책임 귀속 논쟁 → 법률 수요", "hidden_motive": "프레임워크 재설계"},
+        {"name": "노동계", "position": "미언급", "benefit": "AI 의사결정 → 고용 결정 영향", "hidden_motive": "'AI가 해고를 결정하면?'"},
+        {"name": "데이터 기업 (팔란티어/구글)", "position": "침묵 (FB-2)", "benefit": "국가 의사결정 데이터 접근권 = 거대한 권력", "hidden_motive": "데이터 주권"},
+        {"name": "시민사회/윤리 단체", "position": "침묵 (FB-2)", "benefit": "AI 편향·투명성·설명가능성", "hidden_motive": "반드시 나올 플레이어"}
+      ]
+    },
+    "L4": {
+      "why_now": "매경 60주년 행사 + AI 역량의 질적 도약 + 글로벌 AI 거버넌스 트렌드",
+      "surface_cause": "매경 창간 60주년. 가장 파격적인 제안 필요.",
+      "structural_cause": "AI가 '질문에 답하기'를 넘어 '판단 보조'로 진입. 글로벌 AI 거버넌스 논의 가속.",
+      "causal_tree": "AI역량도약 + 글로벌거버넌스트렌드 + 한국AI위기론 → 매경60주년 행사 → 파격제안 필요 → AI국무위원"
+    },
+    "L5": {
+      "system": "AI 거버넌스 — '도구→파트너' 전환",
+      "verdict": "🔀전환",
+      "verdict_basis": "AI의 위치가 도구에서 의사결정 참여자로 바뀌면 권력 구조 자체가 변함. 다만 SCP 3: 제안 단계, 법적 장벽 높음.",
+      "precedent": "영국 AI Safety Institute(자문), 루마니아 Ion(법안검토 보조). 모두 자문 수준. 의결권 사례는 세계 어디에도 없음. DAO(2016): 코드 의사결정, 소규모 작동, 해킹 시 대혼란."
+    },
+    "L6": {
+      "short_term": "AI 거버넌스 담론 활성화 + AI기업 주가 테마 + '법적 인격' 논쟁 시작.",
+      "mid_term": "패턴[규제→회피→혁신]: 'AI 자문위원'으로 축소 가능성 높음. 패턴[기술대체→일자리→반발]: AI이사가 구조조정 판단에 연루 시 정치적 반발.",
+      "long_term": "실현(10%): 세계 최초 + 윤리 논쟁 폭발. 축소(60%): 자문 수준. 좌절(30%): 헌법/상법 + 노동계 반발.",
+      "scenarios": [
+        {"condition": "삼성/SK 이사회 AI이사 실험 도입", "result": "민간 선행 → 정부 후속", "probability": "15%"},
+        {"condition": "AI 자문위원 수준으로 축소", "result": "영국과 동일. 파격 아님.", "probability": "60%"},
+        {"condition": "헌법/상법 장벽 + 반발로 무산", "result": "소멸", "probability": "25%"}
+      ],
+      "korea_transmission": {
+        "exposure": "AI국무위원 운영 기업 선정 = 국가 데이터 접근권. 네이버? 삼성? OpenAI?",
+        "path_if_realized": "운영 기업이 국가 의사결정 데이터에 접근 → 데이터 주권 논쟁 → 국민 감시 우려",
+        "key_question": "기술 문제가 아니라 '누가 만들고, 누가 책임지고, 누가 통제하는가'의 권력 문제"
+      }
+    },
+    "L7": {
+      "investment_implication": "AI 거버넌스 테마 단기 자극. 실현 확률 10%이므로 구조적 투자 근거 없음.",
+      "kill_condition": "국회 AI거버넌스 특별법 발의 → 격상. 대기업 AI이사 실험 → 민간 선행.",
+      "tracking": [
+        {"metric": "국회 AI 관련 법안 발의", "current": "0건", "trigger": "1건+", "next_check": "4월 정기국회"},
+        {"metric": "대기업 AI이사 실험 공시", "current": "0건", "trigger": "1건+", "next_check": "수시"}
+      ],
+      "signal_or_noise": "현재 노이즈에 가까움. 대기업 AI이사 실험 도입 시 → 시그널. 6개월 후속 없으면 → 노이즈 확정."
+    }
+  },
+  "emergent_questions": [
+    {"question": "AI국무위원이 잘못된 판단을 내리면 누가 책임지는가?", "lens": "반전", "answer": "답을 모름. 이것이 해결되지 않으면 도입 자체가 불가."},
+    {"question": "AI국무위원을 누가 만들고 운영하는가?", "lens": "침묵", "answer": "운영 주체 = 국가 의사결정 영향력. 기술 문제가 아니라 권력 문제."},
+    {"question": "과거 비인간 의사결정자 도입 사례는?", "lens": "역사", "answer": "DAO(2016): 코드 의사결정. 소규모 작동, 해킹 시 대혼란."}
+  ],
+  "uncertainty_map": {
+    "L1": 5, "L2": 4, "L3": 3, "L4": 3, "L5": 4, "L6": 2, "L7": 3,
+    "weakest": "L6",
+    "strengthen_by": "영국 AI Safety Institute + 루마니아 Ion 사례 상세 조사"
+  },
+  "feedback": {
+    "executed": ["FB-1", "FB-2", "FB-4"],
+    "fb1_result": "L4→L2: 법적 근거 미검토, 실패 사례 미언급 추가",
+    "fb2_result": "L5→L3: 데이터 기업(팔란티어/구글), 시민사회/윤리 단체 추가",
+    "fb4_delta": "처음 '파격적 AI 거버넌스 혁신' → 분석 후 '기술이 아니라 권력·책임·민주주의의 문제'. 핵심은 '누가 만들고, 누가 책임지고, 누가 통제하는가'."
+  },
+  "self_check": {
+    "items": 15,
+    "passed": 15,
+    "failed_items": [],
+    "notes": "FB-2 실행(F-01) ✅, L6 패턴 2개(L-01) ✅, L2 🟡 1건(L-02) ✅, 한국 경로(L-03) ✅"
+  }
+}

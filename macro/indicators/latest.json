@@ -1,0 +1,508 @@
+{
+  "meta": {
+    "date": "2026-03-26",
+    "prev_date": "2026-03-25",
+    "fred_date": "2026-03-25",
+    "market_date": "2026-03-26",
+    "collector": "macro-weekly-agent",
+    "version": "3.0",
+    "next_update": "2026-04-02"
+  },
+  "regime": {
+    "verdict": "TRANSITION",
+    "symbol": "🟡",
+    "risk_asset_count": "1/5",
+    "note": "Only B5 (HY OAS) in risk-asset direction. B1-B4 all risk-off. Mechanical: 🔴 Contraction. Mitigated to 🟡 by L7/L8 green + HY calm.",
+    "quadrant": "Q2 Reflation",
+    "quadrant_basis": "ISM 52.4 (>50 = growth up) + Core PCE 3.05% (>2.5% = inflation up)",
+    "l7_score": 0.17,
+    "l7_gate": "🟢 normal (<0.60)",
+    "l8_score": 0.0,
+    "l8_gate": "🟢 normal (<0.60)",
+    "dominant_path": "Normal 1 (Fed path) — pause mode, hike risk emerging",
+    "disruption_1": "Disruption 1 (yen carry) PARTIALLY ACTIVE 🟡 — USD/JPY +7.1% but VIX<30",
+    "disruption_2": "Disruption 2 (oil) PARTIALLY ACTIVE 🟡 — Brent +43% 30d but BEI -3bp (not yet confirming)",
+    "keystone": "Core PCE 3.05% — Fed hike territory (>2.5%). Keystone REVERSE direction.",
+    "narrative": "Good news = Bad — strong PMI 52.4 + sticky inflation = rate hike bets rising"
+  },
+  "layer_A": {
+    "A1": {
+      "name": "Core PCE YoY",
+      "value": 3.05,
+      "unit": "%",
+      "index_value": 128.394,
+      "index_date": "2026-01-01",
+      "prev_index": 124.587,
+      "prev_index_date": "2025-01-01",
+      "yoy_calc": "(128.394-124.587)/124.587 = 3.05%",
+      "prev": 2.4,
+      "prev_note": "Prior sheet estimate based on earlier data. Actual YoY from index = 3.05%.",
+      "change": "+0.65pp (re-calculated from index)",
+      "direction": "↑ re-accelerating",
+      "status": "✗",
+      "keystone_state": "REVERSE — A1 >2.5%, Fed hike territory. Inflation re-acceleration.",
+      "source": "FRED PCEPILFE",
+      "source_date": "2026-01-01 (released 2026-03-13)",
+      "confidence": "🟢"
+    },
+    "A2": {
+      "name": "China Credit Impulse",
+      "value": "1.01T CNY (Feb 2026), 5.61T CNY (Jan+Feb cumulative)",
+      "unit": "CNY",
+      "detail": "Feb loans lowest since 2020. Private demand weak. Government borrowing props headline social financing.",
+      "prev": "Easing mode",
+      "change": "Weakening — credit slump worsening despite PBOC easing",
+      "direction": "↓ weakening",
+      "status": "△",
+      "source": "Tavily (Yicai, Caixin, Intellinews)",
+      "source_date": "2026-03-16",
+      "confidence": "🟡"
+    }
+  },
+  "layer_B": {
+    "B1": {
+      "name": "Real Rate 10Y TIPS",
+      "value": 2.06,
+      "unit": "%",
+      "prev": 1.80,
+      "prev_date": "2026-03-20",
+      "change": "+26bp",
+      "direction": "↑ rising",
+      "status": "✗",
+      "verdict": "B1 ✗ — 2.06%, +26bp from prev 1.80% (3/20). Rising trend. Security premium + inflation re-acceleration.",
+      "source": "FRED DFII10",
+      "source_date": "2026-03-24",
+      "confidence": "🟢"
+    },
+    "B2": {
+      "name": "DXY",
+      "value": 99.80,
+      "unit": "index",
+      "prev": 97.5,
+      "prev_date": "2026-03-20",
+      "change": "+2.4%",
+      "direction": "↑ rebounding",
+      "status": "✗",
+      "verdict": "B2 ✗ — DXY 99.80, +2.4% WoW. 4wk MA turning up. Dollar strengthening on safe haven + hike bets.",
+      "source": "Yahoo DX-Y.NYB",
+      "source_date": "2026-03-26",
+      "confidence": "🟢"
+    },
+    "B3": {
+      "name": "USD/JPY",
+      "value": 159.56,
+      "unit": "JPY",
+      "prev": 149.0,
+      "prev_date": "2026-03-20",
+      "change": "+7.1%",
+      "direction": "↑ yen weakening sharply",
+      "status": "✗",
+      "verdict": "B3 ✗ — 159.56, +7.1% WoW. Override threshold (±3%) BREACHED. Disruption 1 partially active (VIX 27 <30 threshold).",
+      "source": "Yahoo JPY=X",
+      "source_date": "2026-03-26",
+      "confidence": "🟢"
+    },
+    "B4": {
+      "name": "Net Liquidity",
+      "value": 5745.65,
+      "unit": "B USD",
+      "components": {
+        "WALCL": 6655939,
+        "WALCL_unit": "M USD",
+        "WALCL_date": "2026-03-18",
+        "TGA": 909509,
+        "TGA_unit": "M USD",
+        "TGA_date": "2026-03-24",
+        "RRP": 777,
+        "RRP_unit": "M USD",
+        "RRP_date": "2026-03-25",
+        "formula": "WALCL - TGA - RRP = 6655939 - 909509 - 777 = 5745653 M = $5.746T"
+      },
+      "prev": 5910,
+      "prev_date": "2026-03-20",
+      "change": "-2.8%",
+      "direction": "↓ declining",
+      "status": "✗",
+      "verdict": "B4 ✗ — $5.746T, -2.8%. TGA surge ($910B vs $722B prev) draining net liquidity. RRP near zero no longer a tailwind.",
+      "source": "FRED WALCL + Firecrawl TGA + FRED RRP",
+      "source_date": "2026-03-18/24/25",
+      "confidence": "🟢"
+    },
+    "B5": {
+      "name": "HY OAS",
+      "value": 319,
+      "unit": "bp",
+      "raw_fred_value": 3.19,
+      "prev": 319,
+      "prev_date": "2026-03-20",
+      "change": "0bp",
+      "direction": "→ flat",
+      "status": "✓",
+      "verdict": "B5 ✓ — 319bp, flat. Below 350bp threshold + not expanding. Credit market calm despite geopolitical stress and rate fears.",
+      "source": "FRED BAMLH0A0HYM2",
+      "source_date": "2026-03-24",
+      "confidence": "🟢"
+    },
+    "summary": {
+      "risk_asset_direction": "1/5",
+      "detail": "B5 ✓ only. B1 ✗ (real rates +26bp), B2 ✗ (DXY +2.4%), B3 ✗ (JPY override +7.1%), B4 ✗ (Net Liq -2.8%).",
+      "mechanical_regime": "🔴 Contraction (1/5 per RULES.md §1)",
+      "override_note": "L7=0.17 🟢, L8=0 🟢. No systemic stress. HY 319bp calm. Mechanical 🔴 but qualitative factors favor 🟡 Transition."
+    }
+  },
+  "layer_C": {
+    "C1": {
+      "name": "VIX",
+      "value": 27.04,
+      "unit": "index",
+      "prev": 24,
+      "prev_date": "2026-03-20",
+      "change": "+3.04",
+      "cross_check": "B5 mismatch ⚠",
+      "detail": "VIX 27 (elevated) vs HY 319bp (calm). Geopolitical fear + rate uncertainty vs credit calm.",
+      "history_5d": {"2026-03-20": 26.78, "2026-03-23": 26.15, "2026-03-24": 26.95, "2026-03-25": 25.33, "2026-03-26": 27.04},
+      "L7_acute_check": "VIX >25 for 5 consecutive days = YES. L7 acute trigger monitoring.",
+      "source": "Yahoo ^VIX",
+      "source_date": "2026-03-26",
+      "confidence": "🟢"
+    },
+    "C2": {
+      "name": "MOVE Index",
+      "value": 97.59,
+      "unit": "index",
+      "prev": 110,
+      "prev_date": "2026-03-20",
+      "change": "-12.4",
+      "cross_check": "B1 partial mismatch — MOVE declining while real rates rising",
+      "detail": "Bond vol declining. Post-FOMC clarity. Rates rising orderly, not disruptively.",
+      "source": "Yahoo ^MOVE",
+      "source_date": "2026-03-26",
+      "confidence": "🟢"
+    },
+    "C3": {
+      "name": "T10Y2Y",
+      "value": 0.49,
+      "unit": "%",
+      "prev": 0.56,
+      "prev_date": "2026-03-20",
+      "change": "-7bp",
+      "cross_check": "B1 consistent — curve flattening as short end rises faster",
+      "source": "FRED T10Y2Y",
+      "source_date": "2026-03-25",
+      "confidence": "🟢"
+    },
+    "C4": {
+      "name": "US M2",
+      "value": 22695.9,
+      "unit": "B USD",
+      "cross_check": "B4 partial — M2 expanding but Net Liq declining (TGA drain offsets)",
+      "source": "FRED WM2NS",
+      "source_date": "2026-03-02",
+      "confidence": "🟢"
+    },
+    "C5": {
+      "name": "ISM PMI",
+      "value": 52.4,
+      "unit": "index",
+      "prev": 51.6,
+      "change": "+0.8",
+      "direction": "↑ expanding",
+      "cross_check": "A1 consistent — expansion + inflation pressure (prices paid surging)",
+      "detail": "Feb 2026. New orders 55.8. Employment slowing to 8mo low. Supplier delivery times lengthened to Oct 2022 levels.",
+      "source": "Tavily (ISM, TradingEconomics, S&P Global)",
+      "source_date": "2026-03-01",
+      "confidence": "🟡"
+    },
+    "C6": {
+      "name": "Unemployment Rate",
+      "value": 4.4,
+      "unit": "%",
+      "prev": 4.4,
+      "change": "0",
+      "cross_check": "A1 consistent — not yet 5% keystone trigger",
+      "detail": "Stable at 4.4%. Keystone transition watch at 4.7%+ (2mo consecutive).",
+      "source": "FRED UNRATE",
+      "source_date": "2026-02-01",
+      "confidence": "🟢"
+    },
+    "C7": {
+      "name": "Brent Crude",
+      "value": 101.11,
+      "unit": "USD/bbl",
+      "prev": 88,
+      "prev_date": "2026-03-20",
+      "change": "+14.9%",
+      "direction": "↑ surging",
+      "cross_check": "A1 mismatch ⚠ — oil surge pressures inflation. Disruption 2 partially active.",
+      "bz_30d": {"low": 70.77, "low_date": "2026-02-24", "high": 112.19, "high_date": "2026-03-20", "current": 101.11, "change_30d": "+42.9%"},
+      "note": "Iran-Israel conflict + supply disruption. Off peak ($112) but still $100+.",
+      "source": "Yahoo BZ=F",
+      "source_date": "2026-03-26",
+      "confidence": "🟢"
+    },
+    "C8": {
+      "name": "BEI 10Y Breakeven",
+      "value": 2.31,
+      "unit": "%",
+      "prev": 2.34,
+      "prev_date": "2026-03-20",
+      "change": "-3bp",
+      "cross_check": "B1 consistent — inflation expectations slightly easing despite oil",
+      "detail": "BEI stable. Market pricing oil shock as temporary. Disruption 2 not yet feeding through to expectations.",
+      "source": "FRED T10YIE",
+      "source_date": "2026-03-25",
+      "confidence": "🟢"
+    },
+    "C9": {
+      "name": "USD/CNY",
+      "value": 6.9083,
+      "unit": "CNY",
+      "prev": 6.90,
+      "change": "+0.1%",
+      "cross_check": "A2 consistent — yuan stable despite credit weakness",
+      "source": "Yahoo CNY=X",
+      "source_date": "2026-03-26",
+      "confidence": "🟢"
+    },
+    "C10": {
+      "name": "Fed Funds Rate",
+      "value": 3.64,
+      "unit": "%",
+      "prev": 3.64,
+      "change": "0",
+      "cross_check": "B1 consistent — rate on hold at 3.50-3.75% range",
+      "detail": "FOMC 3/18 held. Dot plot: 3.4% end 2026. FedWatch: ~75% no change, >50% hike probability for 2026.",
+      "source": "FRED DFF",
+      "source_date": "2026-03-24",
+      "confidence": "🟢"
+    },
+    "summary": {
+      "mismatches": 2,
+      "detail": "C1 VIX 27 vs B5 HY 319bp — geopolitical fear vs credit calm. C7 Brent $101 vs A1 Core PCE — oil → inflation pressure, disruption 2.",
+      "note": "C2 MOVE 97.6 declining (post-FOMC calm). C5 ISM 52.4 expanding (reflationary). No systemic stress signals."
+    }
+  },
+  "layer_D": {
+    "D1": {
+      "name": "SLOOS",
+      "value": "Moderate tightening",
+      "source": "Web (quarterly)",
+      "source_date": "2025-Q4",
+      "change": "Unchanged",
+      "confidence": "🟡",
+      "note": "Next release April 2026"
+    },
+    "D2": {
+      "name": "Bank Reserves",
+      "value": 3020.0,
+      "unit": "B USD",
+      "raw_value_m": 3019995,
+      "prev": 3020,
+      "prev_date": "2026-03-20",
+      "change": "~0",
+      "direction": "→ flat at critical level",
+      "note": "⚠️ At $3.02T — critical threshold $3.0T. Breaching = short-term liquidity crunch early warning.",
+      "source": "FRED WRESBAL",
+      "source_date": "2026-03-18",
+      "confidence": "🟢"
+    },
+    "D3": {
+      "name": "Reverse Repo (RRP)",
+      "value": 0.777,
+      "unit": "B USD",
+      "prev": 0.3,
+      "prev_date": "2026-03-20",
+      "change": "+0.477B",
+      "direction": "→ near zero, effectively exhausted",
+      "note": "RRP fully drained. No longer provides liquidity tailwind.",
+      "source": "FRED RRPONTSYD",
+      "source_date": "2026-03-25",
+      "confidence": "🟢"
+    },
+    "D4": {
+      "name": "TGA Balance",
+      "value": 909.5,
+      "unit": "B USD",
+      "prev": 722,
+      "prev_date": "2026-03-20",
+      "change": "+26.0%",
+      "direction": "↑ building sharply",
+      "note": "TGA surged to $910B from $722B. Tax season inflows + debt issuance. Key Net Liquidity drain.",
+      "source": "Firecrawl fiscaldata.treasury.gov",
+      "source_date": "2026-03-24",
+      "confidence": "🟢"
+    },
+    "D5": {
+      "name": "Fed Balance Sheet",
+      "value": 6655.9,
+      "unit": "B USD",
+      "raw_value_m": 6655939,
+      "prev": 6620,
+      "prev_date": "2026-03-20",
+      "change": "+0.5%",
+      "direction": "→ stable (QT to RMP transition)",
+      "source": "FRED WALCL",
+      "source_date": "2026-03-18",
+      "confidence": "🟢"
+    },
+    "D6": {
+      "name": "SOFR",
+      "value": 3.64,
+      "unit": "%",
+      "prev": 3.65,
+      "prev_date": "2026-03-20",
+      "change": "-1bp",
+      "direction": "→ stable",
+      "note": "Aligned with DFF at 3.64%. SOFR-DFF gap = 0bp. L7 SOFR component = 0.",
+      "source": "FRED SOFR",
+      "source_date": "2026-03-25",
+      "confidence": "🟢"
+    },
+    "D7": {
+      "name": "Fiscal Deficit/GDP",
+      "value": "5.8%",
+      "detail": "CBO Feb 2026: 5.8% in FY2026, rising to 6.7% by 2036. $1T deficit in first 5 months of FY2026. 10yr avg 7.1%. Structural.",
+      "prev": "~6%+",
+      "change": "Unchanged structural",
+      "source": "Tavily (CBO, CRFB, Investopedia, Brookings)",
+      "source_date": "2026-02 (CBO estimate)",
+      "confidence": "🟡"
+    },
+    "D8": {
+      "name": "Term Premium (ACM 10Y)",
+      "value": 0.74,
+      "unit": "%",
+      "prev": 0.50,
+      "prev_date": "2026-03-20",
+      "change": "+24bp",
+      "direction": "↑ rising",
+      "note": "ACM model 0.74% (3/20). StreetStats composite 0.87%. Rising — fiscal dominance pressure.",
+      "source": "Tavily (MacroMicro, StreetStats)",
+      "source_date": "2026-03-20",
+      "confidence": "🟡"
+    },
+    "D9": {
+      "name": "CFTC JPY Net Position",
+      "value": -41400,
+      "unit": "contracts",
+      "prev": -16600,
+      "prev_date": "2026-03-13",
+      "change": "-24800 (shorts deepening)",
+      "direction": "↓ more short",
+      "note": "JPY shorts surging (-41.4K from -16.6K). Yen carry trade rebuilding aggressively despite B3 override +7.1%.",
+      "source": "Tavily (Investing.com COT, CFTC)",
+      "source_date": "2026-03-20",
+      "confidence": "🟡"
+    },
+    "D10": {
+      "name": "FedWatch",
+      "value": "Hold 70.6% (Dec meeting)",
+      "detail": "FOMC 3/18 held at 3.50-3.75%. Dot plot: 3.4% end 2026. Market: ~75% no change for year, but >50% pricing at least one hike. Major shift from prior -50bp cut expectation.",
+      "prev": "−50bp cut expected",
+      "change": "Cut → Hold/Hike — paradigm shift",
+      "source": "Tavily (CME FedWatch, Reuters, MEXC, ADM)",
+      "source_date": "2026-03-26",
+      "confidence": "🟡"
+    }
+  },
+  "layer_aux": {
+    "AUX_FRED": {
+      "X1_DGS10": {"name": "10Y Treasury", "value": 4.39, "unit": "%", "psf_mapping": "P1", "source": "FRED DGS10", "source_date": "2026-03-24", "confidence": "🟢"},
+      "X2_DFII5": {"name": "5Y TIPS", "value": 1.48, "unit": "%", "psf_mapping": "S1", "source": "FRED DFII5", "source_date": "2026-03-24", "confidence": "🟢"},
+      "X3_BAMLC0A0CM": {"name": "IG OAS", "value": 87, "unit": "bp", "raw": 0.87, "psf_mapping": "S2", "source": "FRED BAMLC0A0CM", "source_date": "2026-03-24", "confidence": "🟢"},
+      "X4_MANEMP": {"name": "Mfg Employment", "value": 12573, "unit": "thousands", "psf_mapping": "S4", "source": "FRED MANEMP", "source_date": "2026-02-01", "confidence": "🟢"},
+      "X5_INDPRO": {"name": "Industrial Production", "value": 102.551, "unit": "index", "psf_mapping": "S4", "source": "FRED INDPRO", "source_date": "2026-02-01", "confidence": "🟢"},
+      "X6_RSAFS": {"name": "Retail Sales", "value": 733537.0, "unit": "M USD", "psf_mapping": "S4", "source": "FRED RSAFS", "source_date": "2026-01-01", "confidence": "🟢"},
+      "X7_T10Y3M": {"name": "10Y-3M Spread", "value": 0.60, "unit": "%", "psf_mapping": "S5", "source": "FRED T10Y3M", "source_date": "2026-03-25", "confidence": "🟢"},
+      "X8_CIVPART": {"name": "Labor Participation", "value": 62.0, "unit": "%", "psf_mapping": "P4", "source": "FRED CIVPART", "source_date": "2026-02-01", "confidence": "🟢"}
+    },
+    "AUX_Yahoo": {
+      "X9_CLF": {"name": "WTI Crude", "value": 93.81, "unit": "USD/bbl", "psf_mapping": "P5", "source": "Yahoo CL=F", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X10_NGF": {"name": "Natural Gas", "value": 2.923, "unit": "USD/MMBtu", "psf_mapping": "P5", "source": "Yahoo NG=F", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X11_HYG": {"name": "HY ETF", "value": 79.205, "unit": "USD", "psf_mapping": "S2, L7", "source": "Yahoo HYG", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X12_LQD": {"name": "IG ETF", "value": 108.36, "unit": "USD", "psf_mapping": "S2, L8", "source": "Yahoo LQD", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X13_GCF": {"name": "Gold", "value": 4434.60, "unit": "USD/oz", "psf_mapping": "F1, P2", "source": "Yahoo GC=F", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X14_TLT": {"name": "Long Bond ETF", "value": 86.44, "unit": "USD", "psf_mapping": "F1, CorrFlip", "source": "Yahoo TLT", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X15_EEM": {"name": "EM ETF", "value": 56.275, "unit": "USD", "psf_mapping": "F3", "source": "Yahoo EEM", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X16_SPY": {"name": "S&P 500 ETF", "value": 652.34, "unit": "USD", "psf_mapping": "F3, CorrFlip", "source": "Yahoo SPY", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X17_SOXX": {"name": "Semiconductor ETF", "value": 338.34, "unit": "USD", "psf_mapping": "P3", "source": "Yahoo SOXX", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X18_BTC": {"name": "Bitcoin", "value": 69296.68, "unit": "USD", "psf_mapping": "F4", "source": "Yahoo BTC-USD", "source_date": "2026-03-26", "confidence": "🟢"}
+    },
+    "AUX_CoinGecko": {
+      "X19": {
+        "name": "Stablecoin Market Cap",
+        "value": 314687281275,
+        "value_display": "$314.7B",
+        "psf_mapping": "F4",
+        "source": "DeFiLlama (CoinGecko returned null)",
+        "source_date": "2026-03-26",
+        "confidence": "🟢",
+        "top": {"USDT": 184.1, "USDC": 78.6, "USDS": 8.7, "USDe": 5.9, "DAI": 4.6, "USD1": 4.4, "PYUSD": 3.9, "BUIDL": 2.6}
+      }
+    },
+    "AUX_DeFiLlama": {
+      "X20_defi_tvl": {"name": "DeFi TVL", "value": 94664030452, "display": "$94.7B", "change_7d": "-1.75%", "psf_mapping": "F4", "source": "DeFiLlama", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X21_stablecoin": {"name": "Stablecoin Detail", "total_mcap": 314687281275, "count": 359, "psf_mapping": "F4", "source": "DeFiLlama", "source_date": "2026-03-26", "confidence": "🟢"},
+      "X23_dex_volume": {"name": "DEX Volume", "vol_24h": 5710656202, "vol_24h_display": "$5.7B", "vol_7d": 45322562674, "vol_7d_display": "$45.3B", "psf_mapping": "F4", "source": "DeFiLlama", "source_date": "2026-03-26", "confidence": "🟢"}
+    },
+    "AUX_blockchain": {
+      "X22_btc_network": {
+        "name": "BTC Network Health",
+        "btc_price": 69304.44,
+        "hash_rate_7d": 932161009,
+        "daily_fees_7d": 188002,
+        "daily_txs_7d": 412055,
+        "active_addr_7d": 472314,
+        "security": "🟢",
+        "adoption": "🟡",
+        "fee_market": "🟢",
+        "psf_mapping": "F4",
+        "source": "blockchain-com",
+        "source_date": "2026-03-26",
+        "confidence": "🟢"
+      }
+    },
+    "AUX_timeseries": {
+      "VIX_5d": {"2026-03-20": 26.78, "2026-03-23": 26.15, "2026-03-24": 26.95, "2026-03-25": 25.33, "2026-03-26": 27.04},
+      "BZ_30d": {"start": 70.77, "start_date": "2026-02-24", "peak": 112.19, "peak_date": "2026-03-20", "current": 101.11, "change_30d": "+42.9%"},
+      "SPY_current": 652.34,
+      "TLT_current": 86.44,
+      "CorrFlip_check": "SPY 652.34, TLT 86.44 — no CorrFlip trigger (requires both <-1% daily)"
+    }
+  },
+  "l7_calculation": {
+    "inputs": {"HY_OAS_bp": 319, "VIX": 27.04, "SOFR": 3.64, "DFF": 3.64, "SOFR_gap_bp": 0, "MOVE": 97.59, "TED": null},
+    "normalized": {
+      "HY_n": 0.125,
+      "VIX_n": 0.456,
+      "SOFR_n": 0.0,
+      "MOVE_n": 0.147,
+      "TED_n": 0.0
+    },
+    "L7": 0.17,
+    "formula": "0.30*0.125 + 0.25*0.456 + 0.20*0.0 + 0.15*0.147 + 0.10*0.0 = 0.0375 + 0.114 + 0 + 0.022 + 0 = 0.174",
+    "gate": "🟢 normal (<0.60)"
+  },
+  "l8_calculation": {
+    "L8": 0.0,
+    "gate": "🟢 normal (<0.60)",
+    "note": "All L8 components ⚫ unavailable. Default 0."
+  },
+  "collection_summary": {
+    "total_target": 46,
+    "collected_mcp": 39,
+    "collected_web": 6,
+    "failed": 1,
+    "failed_detail": ["CoinGecko get_global_market_data returned null — DeFiLlama fallback used successfully"],
+    "sources_used": {
+      "FRED_MCP": 21,
+      "Yahoo_Finance_MCP": 16,
+      "DeFiLlama_MCP": 3,
+      "blockchain_com_MCP": 1,
+      "Firecrawl_MCP": 1,
+      "Tavily_search": 6,
+      "CoinGecko_MCP": "attempted, null response"
+    },
+    "confidence": {"green": 37, "yellow": 6, "red": 0, "black": 1}
+  }
+}

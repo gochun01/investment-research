@@ -1,0 +1,74 @@
+{
+  "id": "EVT-2026-03-24-크립토-전쟁이-SEC-호재-완전",
+  "subject": "크립토 — 전쟁이 SEC 호재 완전 상쇄",
+  "created": "2026-03-24",
+  "status": "active",
+  "parent_event": "",
+  "child_events": [],
+  "fingerprint": {
+    "domain": "산업규제(크립토) + 지정학(중동)",
+    "geography": "글로벌 (미국 SEC + 중동 전쟁 → 글로벌 크립토)",
+    "touched_assets": [
+      "BTC (1차)",
+      "ETH (1차)",
+      "COIN (2차)",
+      "스테이블코인 시총 (2차)",
+      "DeFi TVL (2차)",
+      "금 GC=F (대조)",
+      "유가 CL=F (대조)",
+      "VIX (대조)",
+      "S&P500 (대조)"
+    ],
+    "stakeholders": [
+      "SEC/CFTC",
+      "크립토 거래소",
+      "기관투자자",
+      "리테일",
+      "트럼프 행정부",
+      "이란"
+    ],
+    "time_character": "전개"
+  },
+  "timeline": [
+    {
+      "date": "2026-03-24",
+      "type": "initial_analysis",
+      "source": "reaction-monitor",
+      "summary": "크립토 — 전쟁이 SEC 호재 완전 상쇄",
+      "pattern": {
+        "direction": "괴리",
+        "proportionality": "과소",
+        "propagation": "C (정책→서사→가격) 이중 경로"
+      },
+      "state_file": "history/2026-03-24.json",
+      "key_finding": "SEC가 역사적 규제 명확화를 했는데 BTC는 $75K 돌파 실패 후 오히려 하락. 정책 호재 ↑ vs 가격 ↓ 괴리. 전쟁이 호재의 가격 반영을 차단"
+    }
+  ],
+  "unresolved_at_creation": [
+    {
+      "id": "UQ-001",
+      "question": "SEC 호재의 지연 반영 크기: 전쟁 안정화 시 한꺼번에 반영되는가, 이미 할인 소멸하는가?"
+    },
+    {
+      "id": "UQ-002",
+      "question": "CLARITY Act 4월 초 통과 여부"
+    },
+    {
+      "id": "UQ-003",
+      "question": "ETF 자금 흐름: 전쟁 전 $1.47B 유입 기조 복원 여부"
+    },
+    {
+      "id": "UQ-004",
+      "question": "Polymarket 이란 휴전 확률 단기 변화"
+    },
+    {
+      "id": "UQ-005",
+      "question": "MVRV 1.3의 지지력: 1.0 아래 시 온체인 저평가 진입"
+    }
+  ],
+  "resolution": {
+    "date": null,
+    "outcome": null,
+    "lessons_learned": null
+  }
+}

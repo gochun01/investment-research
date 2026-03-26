@@ -1,0 +1,45 @@
+{
+  "date": "2026-03-26",
+  "scan_id": "SCAN-20260326-001",
+  "version": "v1.0 (pre-improvement)",
+  "sources_used": [
+    {"axis": "A", "tool": "tavily", "query": "global market moving news today March 26 2026", "result_count": 8, "useful": 3, "note": "인도 주식 테이블 노이즈 다수"},
+    {"axis": "A", "tool": "tavily", "query": "증시 급등 급락 유가 환율 오늘 2026년 3월 26일", "result_count": 8, "useful": 5},
+    {"axis": "B", "tool": "tavily", "query": "central bank regulation sanctions tariff policy March 26 2026", "result_count": 8, "useful": 6, "note": "Section 301 핵심 발견"},
+    {"axis": "B", "tool": "websearch", "query": "금리 결정 규제 관세 제재 정부 발표 오늘 2026년 3월", "result_count": 10, "useful": 4},
+    {"axis": "C", "tool": "tavily", "query": "supply chain shortage disruption force majeure March 26 2026", "result_count": 8, "useful": 7, "note": "헬륨, 나프타, 비료 등 고품질"},
+    {"axis": "C", "tool": "websearch", "query": "공급 차질 물량 부족 가동 중단 수급 불안 에너지 식량 2026년 3월", "result_count": 10, "useful": 5},
+    {"axis": "D", "tool": "websearch", "query": "AI investment crypto regulation earnings surprise March 2026", "result_count": 10, "useful": 3},
+    {"axis": "D", "tool": "websearch", "query": "원달러 환율 1500 한국 시장 이슈 오늘 2026년 3월 26일", "result_count": 10, "useful": 6, "note": "환율 구조적 요인 발견"}
+  ],
+  "raw_count": 28,
+  "axis_distribution": {"A": 8, "B": 6, "C": 8, "D": 6},
+  "issues": [
+    {"id": "IS-001", "title": "이란 15-point 휴전안 거부 + 시장 반등", "axis": "A", "gate_total": 12, "status": "핵심", "cluster": "CL-001", "tag": "🆕후속"},
+    {"id": "IS-002", "title": "이란 비적성 선박 호르무즈 통행 허용", "axis": "A", "gate_total": 12, "status": "핵심", "cluster": "CL-001", "tag": "🆕후속"},
+    {"id": "IS-003", "title": "카타르 헬륨 force majeure → 반도체 재배분", "axis": "C", "gate_total": 10, "status": "핵심", "cluster": "CL-001"},
+    {"id": "IS-004", "title": "중국 휘발유·경유·항공유 수출 전면 금지", "axis": "C", "gate_total": 10, "status": "핵심", "cluster": "CL-001"},
+    {"id": "IS-005", "title": "아시아 석화 5사 동시 force majeure", "axis": "C", "gate_total": 5, "status": "후보", "cluster": "CL-001"},
+    {"id": "IS-006", "title": "Section 301 무역조사 16개국+60개국 재개", "axis": "B", "gate_total": 10, "status": "핵심", "cluster": "CL-002"},
+    {"id": "IS-007", "title": "Fed Barr 금리 장기 동결 시그널", "axis": "B", "gate_total": 8, "status": "핵심", "cluster": "CL-002"},
+    {"id": "IS-008", "title": "원달러 1500원 구조적 고환율", "axis": "D", "gate_total": 8, "status": "핵심", "cluster": null},
+    {"id": "IS-009", "title": "한국 전쟁추경 당정 협의", "axis": "B", "gate_total": 4, "status": "약함", "cluster": null}
+  ],
+  "clusters": [
+    {"id": "CL-001", "root_label": "미-이란 전쟁 + 원자재 충격", "issues": ["IS-001","IS-002","IS-003","IS-004","IS-005"], "priority": 12, "후속_ratio": "2/5 = 40%"},
+    {"id": "CL-002", "root_label": "트럼프 통상 + Fed 금리", "issues": ["IS-006","IS-007"], "priority": 10, "후속_ratio": "0/2 = 0%"}
+  ],
+  "blind_spot_checks": {
+    "Q1_missing_asset": "부동산 — Fed 금리(⑦)가 간접 커버. 별도 시그널 없음.",
+    "Q2_geo_balance": "글로벌 7건 / 한국 2건. 균형 OK.",
+    "Q3_backlog": "첫 스캔. 해당 없음.",
+    "Q4_diversity": "비전쟁 3건 (Section 301, Fed, KRW). OK."
+  },
+  "user_selection": ["CL-002"],
+  "backlogged": ["GENIUS Act 스테이블코인", "AI 투자 심리 분열", "US Treasury AI 규제 완화"],
+  "self_evaluation": {
+    "worked": ["B축이 핵심 발견(Section 301) 생산", "G5 중복 체크가 후속/반복 구분", "Q4 다양성이 이란 독점 방지"],
+    "failed": ["A축 Tavily 노이즈(인도 주식)", "Gate 점수 불투명", "CL-001 과대(5건, 후속 40%)", "history 미저장", "직렬 실행 느림", "한국어 Tavily 품질 낮음"],
+    "improvements_applied": "v1.1 → scan-sources.md, SKILL.md 갱신 완료"
+  }
+}

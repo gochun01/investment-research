@@ -1,0 +1,26 @@
+{
+  "id": "SA-20260326-006",
+  "date": "2026-03-26",
+  "title": "SK하이닉스 ADR — AI칩 패권의 실탄. 밸류에이션 체계 전환 + 301 교차.",
+  "source": "매경 단독 (2026-03-25)",
+  "pre_read": {"type": "STRUCT×EVENT", "scp": 3, "urgency": "WATCH"},
+  "prior_context": {"has_prior": true, "sources": ["SD-002 AI분열 씨앗", "SA-001 Section301 한국 반도체 노출"], "mode": "교차 참조"},
+  "one_line": "ADR은 자금 조달이 아니라 밸류에이션 기준점 자체를 바꾸겠다는 선언. 301(반도체 포함)과 동시 진행이 핵심 긴장.",
+  "key_facts": {
+    "sec_filing": "F-1 비공개 제출 (3/24)",
+    "cash_target": "순현금 100조 (현재 35조)",
+    "adr_size_est": "10~15조원 ($7~10B)",
+    "hbm_share": "57% (마이크론 21%)",
+    "op_income": "47.2조 (마이크론 14.6조)",
+    "per_gap": "마이크론의 절반",
+    "capex_2026": "40조"
+  },
+  "structural_causes": ["코리아 디스카운트 임계점", "AI capex 경쟁 가속", "미중 디커플링 속 미국 편 선언"],
+  "section301_cross": "301 대상 전자장비=반도체 포함. ADR로 미국 투자자 편입 = 관세 면제 로비 무기? 이중 리스크?",
+  "scenarios": {
+    "A": {"label": "ADR 성공 + 밸류에이션 재평가", "prob": "50%"},
+    "B": {"label": "ADR 성공 + 301 관세 동시", "prob": "30%"},
+    "C": {"label": "ADR 규모 부족", "prob": "20%"}
+  },
+  "feedback": {"FB4": "처음: 자금조달 → 지금: 밸류에이션 체계 전환 + 301 교차. ✅"}
+}
