@@ -36,8 +36,11 @@
     {"indicator": "DXY", "symbol": "DX-Y.NYB", "watch": 103, "alert": 106, "hard": 110, "direction": "above"}
   ],
 
+  "analysis_ids": ["SA-20260326-001", "SA-20260327-001"],
+
   "check_log": [
-    {"date": "2026-03-26", "observation": "시장 무반응(과소). 조사 진행 중. Phase 1 유지.", "next_check": "2026-04-15"}
+    {"date": "2026-03-26", "observation": "시장 무반응(과소). 조사 진행 중. Phase 1 유지.", "next_check": "2026-04-15"},
+    {"date": "2026-03-27", "observation": "파이프라인 풀 실행. 한국 301 16국 명시 포함 확인(core BURIED). $167B 환급 혼란+EU 제3극 신규. 시나리오 A 45%, Phase 1→2 접근. 4/15까지 19일.", "next_check": "2026-04-01"}
   ],
 
   "close_condition": "301 관세 확정 → 시나리오 확정 OR 301 철회 → KC 발동 OR 6개월 무변화 → 아카이브"
