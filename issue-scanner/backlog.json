@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-26T18:00:00+09:00",
+  "last_updated": "2026-03-27T09:00:00+09:00",
   "issues": [
     {
       "id": "BL-001",
@@ -7,25 +7,12 @@
       "title": "GENIUS Act 스테이블코인 규제 시행 (Q2)",
       "root_cause": "크립토 규제 프레임워크",
       "first_seen": "2026-03-26",
-      "last_seen": "2026-03-26",
-      "appearance_count": 2,
+      "last_seen": "2026-03-27",
+      "appearance_count": 3,
       "max_gate_score": 2,
       "promoted": false,
       "archived": false,
-      "note": "FDIC 초안 3월 발표 예정. Q2 시행 본격화. 시장 영향 아직 제한적."
-    },
-    {
-      "id": "BL-002",
-      "original_id": "IS-20260326-011",
-      "title": "AI 투자 심리 분열 — 승자/패자 가려지는 구간",
-      "root_cause": "AI 투자 사이클",
-      "first_seen": "2026-03-26",
-      "last_seen": "2026-03-26",
-      "appearance_count": 2,
-      "max_gate_score": 4,
-      "promoted": false,
-      "archived": false,
-      "note": "알리바바 '데이터센터 버블' 경고. Fidelity 승자/패자 분류. 2회차 재등장. Gate 4점."
+      "note": "OCC 2/25 시행규칙 제안. FDIC 예금보험 불가 선언. 시행일 2027/1/18. Gate 2점 미달로 승격 불가. 3회째 등장."
     },
     {
       "id": "BL-003",
@@ -38,25 +25,25 @@
       "max_gate_score": 2,
       "promoted": false,
       "archived": false,
-      "note": "금융기관 AI 사용 규제 축소 논의. 초기 단계."
+      "note": "금융기관 AI 사용 규제 축소 논의. 초기 단계. 오늘 미등장."
     },
     {
-      "id": "BL-004",
-      "original_id": "IS-20260326-208",
-      "title": "일본 파워반도체 3사 통합 (Rohm+도시바+미쓰비시)",
-      "root_cause": "자동차 전장화 + AI 수요 → 파워반도체 재편",
-      "first_seen": "2026-03-26",
-      "last_seen": "2026-03-26",
+      "id": "BL-005",
+      "original_id": "IS-20260327-009",
+      "title": "동남아 5개국 원전 부활 — 이란 전쟁 에너지 불안",
+      "root_cause": "에너지 안보 + 원전 재평가",
+      "first_seen": "2026-03-27",
+      "last_seen": "2026-03-27",
       "appearance_count": 1,
-      "max_gate_score": 4,
+      "max_gate_score": 3,
       "promoted": false,
       "archived": false,
-      "note": "금요일 공식 발표 예상. 자동차+AI 파워반도체 글로벌 재편."
+      "note": "동남아 원전은 수십 년간 금기였으나 이란 전쟁이 방향 전환 촉발. Gate 3점(약한 후보). 장기 추세."
     }
   ],
   "summary": {
-    "total_active": 4,
-    "repeat_3plus": 0,
+    "total_active": 3,
+    "repeat_3plus": 1,
     "oldest_unresolved": "2026-03-26",
     "archived_count": 0
   }

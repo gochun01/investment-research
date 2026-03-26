@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "date": "2026-03-27",
+    "cluster": "글로벌 통상 재편",
+    "cluster_id": 2,
+    "mode": "Full",
+    "source_issues": [
+      "⑤ 트럼프-시진핑 정상회담 ~1개월 연기 + IEEPA 위헌 후 $167B 관세 환급 행정혼란",
+      "⑥ EU 의회 트럼프 관세 딜(15%) 조건부 승인 + 보복관세 권한 확보"
+    ],
+    "mcp_sources": [
+      "tavily_search (16회)",
+      "fred_get_series (IEABC, BOPGSTB, IMPCH)",
+      "WebSearch (EU ACI)"
+    ]
+  },
+
+  "step1_three_question_test": {
+    "issue_5": {
+      "title": "트럼프-시진핑 정상회담 5/14-15 재일정 확정 + IEEPA $167B 환급 행정혼란",
+      "d1_new_numbers": {
+        "pass": true,
+        "evidence": [
+          "정상회담 5월 14-15일로 확정 (Bloomberg/AP 3/25). 기존 3/31-4/2에서 6주 연기.",
+          "IEEPA 환급 규모: $166-175B, 33만+ 수입자, 5300만 건 (Penn Wharton/Holland & Knight).",
+          "Section 122 임시관세 15%로 인상 (2/24 발효, 7/24 만료). 24개 주 위헌 소송 진행 중.",
+          "CBP CAPE 시스템 4단계 환급 절차 가동 중 (ACE 포털, CSV 업로드, ACH 지급).",
+          "CIT 3/4 전면 환급 명령 → 3/6 일시 정지 → 추가 소송 진행 중."
+        ],
+        "tag": "[D-1]"
+      },
+      "d2_new_actors": {
+        "pass": true,
+        "evidence": [
+          "CIT 판사 Richard K. Eaton — IEEPA 관세 전건 담당 지정. 전례 없는 일괄 관할.",
+          "USTR Section 301 조사 2건 동시 개시 (3/11 과잉생산 16국, 3/12 강제노동 60국) — IEEPA 대체 관세 법적 근거 확보 시도.",
+          "24개 미국 주 — Section 122 위헌 소송 공동 제기."
+        ],
+        "tag": "[D-2]"
+      },
+      "d3_direction_change": {
+        "pass": true,
+        "evidence": [
+          "미국 관세 정책 근본 전환: IEEPA(행정부 단독) → Section 122(150일 한시) + Section 301(의회 위임). 80년 만에 가장 큰 관세 법적 기반 변동.",
+          "미중 협상 레버리지 역전: 대법원 판결로 트럼프의 일방적 관세 위협 카드 소멸. 중국 희토류 레버리지 + 이란전 교착으로 시진핑 우위 평가 (ABC News).",
+          "회담 연기 표면 사유는 이란전이나, 실질적으로 관세 법적 공백 해소 시간 확보 목적 포함 (Pearls & Irritations 분석)."
+        ],
+        "tag": "[D-3]"
+      },
+      "verdict": "PASS — D-1, D-2, D-3 모두 충족. 수치, 주체, 방향 전환 삼중 확인.",
+      "noise_check": "모든 주요 매체 보도하나, 각도 상이 (이란전 초점 vs 관세법 초점 vs 레버리지 초점). 동조가 아닌 다각 보도 → 통과."
+    },
+
+    "issue_6": {
+      "title": "EU 의회 트럼프 관세 딜(15%) 조건부 승인 + 보복관세 권한 확보",
+      "d1_new_numbers": {
+        "pass": true,
+        "evidence": [
+          "EU-US 관세 딜 구조: 미국→EU 15%, EU→미국 산업재 0% (Euronews 3/26 투표).",
+          "EU-US 무역 규모: 1.6조 유로 (News Central Africa).",
+          "Sunset clause: 2028년 3월 자동 만료 (18개월). 연장 미합의 시 EU 관세 복원.",
+          "Sunrise clause: 미국의 Turnberry 약속 준수를 관세 혜택 조건으로 부과."
+        ],
+        "tag": "[D-1]"
+      },
+      "d2_new_actors": {
+        "pass": true,
+        "evidence": [
+          "독일 사민당 MEP Bernd Lange — 불균형 인정하면서도 수용 주도.",
+          "EU 의회가 Commission 원안에 safeguard 3건 추가 삽입 — 의회가 통상 조건 설정 주체로 부상.",
+          "Anti-Coercion Instrument (ACI) — 아직 미사용이나, 그린란드 사태 이후 발동 검토 단계. EU 보복 도구 현실화."
+        ],
+        "tag": "[D-2]"
+      },
+      "d3_direction_change": {
+        "pass": true,
+        "evidence": [
+          "기존: EU Commission 주도 무조건 수용 기조 → 변경: 의회가 조건부 승인 + 보복 카드 내장. 역사상 처음으로 EU 의회가 대미 통상 딜에 sunset/sunrise 조항 삽입.",
+          "Section 122 이후 미국이 15%로 추가 인상(기존 10%→15%)한 것이 의회 지연의 직접 원인. 미국 조치→EU 반응→다시 미국 조치의 순환 구조 형성."
+        ],
+        "tag": "[D-3]"
+      },
+      "verdict": "PASS — D-1, D-2, D-3 모두 충족.",
+      "noise_check": "유럽 매체 중심 보도. 미국 매체는 이란전/정상회담에 집중해 EU 딜 보도 약함 → 오히려 한 지역만 보도하는 '묻힌 것' 성격 겸비 → 통과."
+    }
+  },
+
+  "step2_exclusion_search": {
+    "method": "지배적 키워드 'Trump tariff Iran summit' 제외 후 검색",
+    "buried": [
+      {
+        "id": "BURIED-01",
+        "title": "WTO MC14 야운데 각료회의 개막 — 분쟁해결기구 복원 논의 + 'WTO 체제 불가역적 변화' 선언",
+        "source": "WTO 공식 (3/26), Reuters (3/26), USTR (3/23), Brookings (3/25)",
+        "fact": "WTO 사무총장 Okonjo-Iweala, MC14 개막에서 '다자체제가 불가역적으로 변했다(irrevocably changed)' 선언. 상소기구(Appellate Body) 2020년 이후 공석 지속, 2024년 복원 데드라인 불발. 연간 분쟁 건수 19건(2010-2019) → 8.5건(2020-2025)으로 반감. 한국이 개혁 논의 minister-facilitator로 참여. USTR은 MC14 직전 WTO 개혁 보고서 발표 — MFN 원칙, 특별차등대우 재검토 제안.",
+        "reason": "트럼프 관세/이란전에 완전히 묻힘. 그러나 WTO 분쟁해결 기능 마비는 미국 Section 301 남용의 구조적 배경. MC14에서 한국이 facilitator 역할을 하고 있어 한국 통상 전략에 직접 영향.",
+        "mt_tag": "[MT-07]",
+        "tag": "[BURIED]"
+      },
+      {
+        "id": "BURIED-02",
+        "title": "USTR Section 301 조사 2건 — 과잉생산 16국 + 강제노동 60국 (한국 포함)",
+        "source": "USTR (3/11, 3/12), PwC (3/2026), CRS (3/24), Mayer Brown (3/2026)",
+        "fact": "3/11: 16개국 제조업 과잉생산 조사 개시 (중국, EU, 한국, 일본, 인도, 베트남 등). 3/12: 60개국 강제노동 수입금지 미이행 조사 개시 (미국 수입의 99%). 의견제출 마감 4/15, 청문회 4/28-5/5. 목표: 7/24 Section 122 만료 전 Section 301 관세 부과 법적 기반 확보. J.P. Morgan 추정 — 현행 실효관세율 15.8%, 목표 18-20%.",
+        "reason": "IEEPA→Section 122→Section 301 전환의 실행 단계. 한국이 16국 리스트에 명시적으로 포함. 반도체, 자동차, 조선 등 한국 주력 산업이 '과잉생산' 조사 대상. 관세 딜/정상회담 뉴스에 묻혀 한국 내 보도 미약.",
+        "mt_tag": "[MT-06×MT-07]",
+        "tag": "[BURIED]"
+      }
+    ],
+    "noise_summary": "오늘 지배적 소음: '트럼프-시진핑 5월 회담 재확정' 헤드라인. 회담 일정 자체는 이미 예고된 것으로 D-1에서 새 수치(구체 날짜)만 추가됨. 실질 변화는 관세 법적 기반 전환과 Section 301 조사 가속."
+  },
+
+  "step3_megatrend_connection": {
+    "connections": [
+      {
+        "issue": "⑤ 트럼프-시진핑 회담 연기 + IEEPA 환급",
+        "primary_axis": "MT-06",
+        "axis_label": "미중 디커플링",
+        "cross_axis": "MT-07",
+        "cross_label": "글로벌 공급망 재편",
+        "tag": "[MT-06×MT-07]",
+        "reasoning": "IEEPA 위헌으로 미국의 대중 관세 일방 부과 능력 소멸 → 미중 디커플링 속도 조절 강제. 동시에 Section 301 과잉생산 조사(16국)는 디커플링을 중국 너머 글로벌 공급망 전체로 확대. 중국 희토류 레버리지 + 이란전 교착은 디커플링 역풍. 회담 연기 기간이 양측 법적/전략적 재정비 기간으로 작용."
+      },
+      {
+        "issue": "⑥ EU 관세 딜 조건부 승인",
+        "primary_axis": "MT-07",
+        "axis_label": "글로벌 공급망 재편",
+        "cross_axis": "MT-06",
+        "cross_label": "미중 디커플링",
+        "tag": "[MT-07×MT-06]",
+        "reasoning": "EU가 미국과 딜하면서도 보복 카드(ACI, sunset/sunrise)를 내장 — 미중 갈등 사이에서 EU가 '제3극' 통상 자율성 구축. EU-인도네시아 FTA(2025), EU-인도 FTA 협상(2027 목표), CETA 업그레이드, EU-Mercosur 협정 서명 등과 함께 공급망 다변화 가속. 캐나다 Carney의 '20개국 중견국 네트워크' 구상과 맞물림."
+      },
+      {
+        "issue": "BURIED-01: WTO MC14",
+        "primary_axis": "MT-07",
+        "axis_label": "글로벌 공급망 재편",
+        "tag": "[MT-07]",
+        "reasoning": "WTO 분쟁해결 마비 지속 → 양자/지역 FTA 및 일방적 관세 조치(Section 301 등)가 글로벌 표준으로 고착. '규칙 기반 다자체제 → 힘 기반 양자체제' 전환의 제도적 확인."
+      },
+      {
+        "issue": "BURIED-02: Section 301 조사 (한국 포함)",
+        "primary_axis": "MT-06",
+        "axis_label": "미중 디커플링",
+        "cross_axis": "MT-01",
+        "cross_label": "AI/반도체 capex 사이클",
+        "tag": "[MT-06×MT-01]",
+        "reasoning": "과잉생산 조사에 한국 포함 — 반도체 수출 비중 35-40%인 한국이 '과잉생산국'으로 지목되면 AI/반도체 capex 사이클에 직접 충격. 미국이 동맹국까지 관세 대상에 넣은 것은 디커플링이 미중 양자를 넘어 전방위화되는 신호."
+      }
+    ],
+    "axis_summary": {
+      "MT-06_미중디커플링": "4건 연관 — 이 축에서 뭔가 크게 움직이고 있다. IEEPA 위헌으로 법적 기반 전환, 희토류 레버리지 역전, Section 301 전방위 확대.",
+      "MT-07_공급망재편": "4건 연관 — 동시 활성화. EU 제3극화, WTO 마비, RCEP/CPTPP 대안 부상.",
+      "MT-01_AI반도체": "1건 연관(교차). 한국 반도체 과잉생산 조사 리스크.",
+      "cross_alert": "MT-06×MT-07 교차점 최대 활성화 — 미중 디커플링이 글로벌 공급망 재편과 동시 작동. 이 교차점에서 한국의 위치가 가장 취약(양쪽 모두에 노출)."
+    }
+  },
+
+  "step4_slow_shifts": {
+    "note": "오늘이 목요일이나 Full 모드 요청으로 실행. macro trend_note 미참조 (독립 실행).",
+    "shifts": [
+      {
+        "id": "SLOW-01",
+        "axis": "MT-06",
+        "metric": "미중 관세 강도 / 미국 대중 수입",
+        "direction": "추세 둔화 후 재가속 조짐",
+        "evidence": "FRED IMPCH: 미국 대중 수입 2025/7 $26.4B → 2025/11 $20.9B → 2026/1 $21.1B. 2025년 미중 무역적자 $308B로 2009년 이후 최저 (Globe and Mail). 그러나 무역 휴전(2025/10) 후 중국 대두 구매 재개, 희토류 수출 재개. Section 301 조사 개시로 '디커플링 재가속' 신호. 미국 실효관세율 2024말 2.4% → 2025/12 9.6% → 현재 15.8% (J.P. Morgan).",
+        "judgment": "추세 강화 — 3개월 전 대비 관세 강도 확연히 상승. 법적 기반만 바뀌었을 뿐 관세 수준 자체는 유지 내지 상승 추세.",
+        "tag": "[SLOW-SHIFT]"
+      },
+      {
+        "id": "SLOW-02",
+        "axis": "MT-07",
+        "metric": "글로벌 교역량",
+        "direction": "감속",
+        "evidence": "WTO Global Trade Outlook (3/2026): 세계 상품교역 성장률 2025년 4.6% → 2026년 1.9% 전망 (에너지 가격 고공행진 시 1.4%). 2025년 강세는 AI 관련 무역 급증($4.18T, +21.9% YoY)과 관세 전 선취매(frontloading)에 기인 — 두 요인 모두 2026년 지속 불가. 이란전 지속 시 추가 0.5%p 하방.",
+        "judgment": "추세 둔화 — 2025년 강한 성장에서 2026년 급감속. 구조적 원인(AI 수요 정상화)과 충격적 원인(이란전/에너지) 동시 작용.",
+        "tag": "[SLOW-SHIFT]"
+      },
+      {
+        "id": "SLOW-03",
+        "axis": "MT-01×MT-07",
+        "metric": "한국 반도체 수출 비중 / 수출 다변화",
+        "direction": "가속 (경고)",
+        "evidence": "한국 반도체 수출 비중: 2025/3 ~20% → 2026/3 35-40%. 2026/2 반도체 수출 +160.8% YoY, 전체 수출 +29% YoY. 경상흑자 33개월 연속. 그러나 반도체 제외 수출 증가율 11.7%에 불과. 자동차 -20.8%, 석유화학 부진. 대중국 +91.2%, 대미국 +69.9%로 G2 의존 심화. SK증권: '반도체 제외 시 수출 경기 다른 그림'.",
+        "judgment": "가속 (경고) — 반도체 초호황이 수출 다변화 착시 유발. 품목 집중도 위험 수준. Section 301 과잉생산 조사에 한국 반도체 포함 시 최대 취약점.",
+        "tag": "[SLOW-SHIFT]"
+      }
+    ]
+  },
+
+  "tested_issues": [
+    {
+      "id": "T-01",
+      "title": "트럼프-시진핑 정상회담 5/14-15 재확정 + IEEPA $167B 환급 행정혼란 + Section 301 전환",
+      "d_tag": "[D-1][D-2][D-3]",
+      "mt_tag": "[MT-06×MT-07]",
+      "fact": "정상회담 5/14-15 확정(6주 연기). IEEPA $166-175B 환급 진행 중(33만 수입자, 5300만 건). Section 122 임시 15% 관세 7/24 만료 예정. Section 301 조사 2건(16국 과잉생산 + 60국 강제노동) 7/24 전 관세 부과 목표. 미국 실효관세율 15.8%."
+    },
+    {
+      "id": "T-02",
+      "title": "EU 의회 미국 관세 딜(15%) 조건부 승인 — sunset(2028/3) + sunrise(준수 조건) + 보복 권한",
+      "d_tag": "[D-1][D-2][D-3]",
+      "mt_tag": "[MT-07×MT-06]",
+      "fact": "EU-US 무역 1.6조 유로. 미국→EU 15%, EU→미국 산업재 0%. 18개월 sunset 조항. 미국 약속 불이행 시 sunrise 조항으로 혜택 중단. ACI(반강압수단) 발동 검토 단계."
+    }
+  ],
+
+  "buried": [
+    {
+      "id": "BURIED-01",
+      "title": "WTO MC14 야운데 각료회의 — 분쟁해결 마비 공식화, 체제 불가역적 변화 선언",
+      "source": "WTO, Reuters, USTR, Brookings",
+      "reason": "이란전/관세에 묻힘. WTO 마비가 Section 301 남용의 구조적 배경. 한국 minister-facilitator 참여.",
+      "mt_tag": "[MT-07]"
+    },
+    {
+      "id": "BURIED-02",
+      "title": "USTR Section 301 과잉생산 16국 조사 — 한국 명시 포함, 7/24 관세 목표",
+      "source": "USTR, PwC, CRS, Mayer Brown",
+      "reason": "관세 딜/정상회담에 묻힘. 한국 반도체·자동차·조선이 과잉생산 조사 대상. 4/15 의견제출 마감.",
+      "mt_tag": "[MT-06×MT-01]"
+    }
+  ],
+
+  "slow_shifts": [
+    {
+      "axis": "MT-06",
+      "direction": "추세 강화",
+      "evidence": "미국 실효관세율 2024말 2.4% → 2025/12 9.6% → 현재 15.8%. 대중 수입 30% 감소(2009년 이후 최저). Section 301 16국 확대."
+    },
+    {
+      "axis": "MT-07",
+      "direction": "추세 둔화",
+      "evidence": "WTO 전망: 글로벌 상품교역 성장률 2025 4.6% → 2026 1.9%. 이란전 지속 시 1.4%. AI 무역 붐 정상화."
+    },
+    {
+      "axis": "MT-01×MT-07",
+      "direction": "가속 (경고)",
+      "evidence": "한국 반도체 수출 비중 20%→40%. 반도체 제외 수출 +11.7%에 불과. G2 수출 비중 50% 접근. 품목+지역 집중 위험."
+    }
+  ],
+
+  "rm_handoff": {
+    "total_items": 7,
+    "tested_issues_count": 2,
+    "buried_count": 2,
+    "slow_shifts_count": 3,
+    "priority_signal": "MT-06×MT-07 교차점 최대 활성화. 한국 Section 301 포함이 최대 묻힌 리스크."
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "date": "2026-03-27",
+  "scan_id": "SCAN-20260327-001",
+  "sources_used": [
+    {"axis": "A", "tool": "Tavily", "query": "Reuters Bloomberg CNBC market stocks oil gold bonds today 2026-03-27", "result_count": 10},
+    {"axis": "A", "tool": "WebSearch", "query": "증시 급등 급락 유가 환율 금 오늘 2026년 3월 27일", "result_count": 10},
+    {"axis": "B", "tool": "Tavily", "query": "central bank regulation sanctions tariff policy trade war 2026-03-27", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "금리 결정 규제 관세 제재 정부 발표 정책 2026년 3월 27일", "result_count": 10},
+    {"axis": "C", "tool": "Tavily", "query": "supply chain shortage disruption force majeure infrastructure semiconductor 2026-03-27", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "공급 차질 물량 부족 가동 중단 수급 불안 2026년 3월", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "GENIUS Act stablecoin regulation 2026 March progress FDIC", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "AI investment bubble winners losers data center 2026 March", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "일본 파워반도체 Rohm 도시바 미쓰비시 통합 2026년 3월", "result_count": 10}
+  ],
+  "seeds": {
+    "heartbeat": [],
+    "macro": "",
+    "ghs": []
+  },
+  "raw_headlines": [
+    "[A] S&P 500 -1.7% worst day since Jan, Dow -470pt, Nasdaq -2%+",
+    "[A] Brent $108.01 (+5.7%), WTI $92.88 (+1.73%)",
+    "[A] Gold $4,451 (-1.2%) bearish correction",
+    "[A] Trump threatens to obliterate Iran power plants, delays to April 6",
+    "[A] OECD: US inflation 4.2%, G20 avg 4%, ECB may hike Q2",
+    "[A] BlackRock CEO: oil at $150 could trigger global recession",
+    "[A] S&P on track for 5th straight losing week (longest in 4 years)",
+    "[A] 코스피 3일 반등 후 이란 재긴장 되돌림 위험",
+    "[B] EU parliament conditionally approves Trump tariff deal (15%)",
+    "[B] Section 301 investigation into 16 economies, Section 122 15% global tariff",
+    "[B] Trump-Xi summit postponed ~1 month, IEEPA $167B refund chaos",
+    "[B] OECD: ECB rate hike expected Q2 2026",
+    "[B] Southeast Asia 5 nations revive nuclear power plans",
+    "[B] 한국 기준금리 2.5% 동결 5차 연속",
+    "[C] Gulf aluminium force majeure, shipments halted",
+    "[C] 나프타 수급 차질 → LG화학 NCC 2공장 가동 중단",
+    "[C] 종량제 봉투 대란 — PE 부족, 사재기 확산",
+    "[C] 기아 모닝·레이 4월 생산 전면 중단 (대전 화재)",
+    "[C] 텅스텐 수급불안 → 반도체(NAND) 생산 차질 우려",
+    "[C] 정부 40개 핵심품목 공급망지원센터 가동",
+    "[C] 쿠웨이트 원유 재개 3~4개월 소요",
+    "[D] GENIUS Act — OCC 시행규칙 제안, FDIC 예금보험 불가",
+    "[D] AI Great Bifurcation — HW (Micron ATH) vs SW (Palantir/Oracle 급락)",
+    "[D] 일본 파워반도체 — 덴소 롬 1.3조엔 TOB, 롬-도시바 동맹 해체",
+    "[D] 유틸리티(NextEra, Vistra) 성장주 재평가",
+    "[D] AI 데이터센터 전력 수요 — US grid 2600GW interconnection queue"
+  ],
+  "issues": [
+    {
+      "id": "IS-20260327-001",
+      "title": "트럼프 이란 발전소 obliterate 위협 → 4/6 연기 + 협상 지속",
+      "summary": "트럼프가 이란 발전소 파괴를 위협한 뒤 4/6로 데드라인을 연기. 시장은 S&P -1.7%, Brent $108로 반응. 장후 유화 발언으로 유가 $100 부근 되돌림.",
+      "root_cause": "미-이란 전쟁 에스컬레이션",
+      "scan_axis": "A",
+      "sources": ["SMH/AP", "Economic Times", "Chosun English", "ABC Australia"],
+      "market_contact": ["Brent", "WTI", "S&P500", "금", "방산", "항공", "곡물"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["Brent", "WTI", "S&P500", "금", "방산", "항공", "곡물"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "obliterate 위협은 기존 공격의 에스컬레이션. 4/6 연기는 새 시간표. 협상+군사위협 병행이라는 새 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "트럼프 위협 → 유가 $108 → 이란 대응 → 호르무즈 재봉쇄 위험 → LNG/비료/인플레 도미노 (4단계+)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "기존 이란 전쟁의 새 에스컬레이션 단계"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260327-001"
+    },
+    {
+      "id": "IS-20260327-002",
+      "title": "OECD 미국 인플레 4.2% 상향 + ECB Q2 금리 인상 전망",
+      "summary": "OECD가 2026 미국 인플레 전망을 4.2%로 상향. ECB Q2 금리 인상 가능. 연초 인하 기대 완전 역전.",
+      "root_cause": "에너지 가격 충격 → 글로벌 인플레 + 금리 방향 전환",
+      "scan_axis": "A/B",
+      "sources": ["Taipei Times/OECD", "ABC Australia", "Economic Times"],
+      "market_contact": ["채권", "달러", "유로", "성장주", "금"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["채권", "달러", "유로", "성장주", "금"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "OECD가 ECB '인상' 전망은 방향 전환. 연초 인하 기대 완전 역전."},
+        "G3": {"score": 2, "type": "free", "chain": "인플레 상향 → ECB 인상 → 유로존 성장 둔화 → EM 자본유출 → 한국 수출 위축 (4단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "W-2026-03-26-UQ-025: ECB 금리 인하 기대 후퇴"}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260327-003"
+    },
+    {
+      "id": "IS-20260327-003",
+      "title": "EU 의회 트럼프 관세 딜(15%) 조건부 승인",
+      "summary": "EU 의회가 15% 관세 딜을 조건부 승인. 조건 미충족 시 보복관세 권한 확보.",
+      "root_cause": "IEEPA 위헌 → Section 122 전환 + 글로벌 통상 재편",
+      "scan_axis": "B",
+      "sources": ["HP Enterprise News/AFP", "Nikkei Asia"],
+      "market_contact": ["유럽주식", "달러/유로", "수출주"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["유럽주식", "달러/유로", "수출주", "한국 수출"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "EU 의회 최초 조건부 승인. 보복관세 권한 확보 = 새 레버리지."},
+        "G3": {"score": 1, "type": "free", "chain": "EU 승인 → 관세 15% 고정 → 수출기업 비용 안정 (2단계). 보복 시 확장."},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": null, "overlap": null}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260327-002"
+    },
+    {
+      "id": "IS-20260327-004",
+      "title": "트럼프-시진핑 정상회담 ~1개월 연기 + IEEPA $167B 환급 행정혼란",
+      "summary": "미중 정상회담 연기. IEEPA 위헌 후 $167B 환급 30만 기업 행정 혼란. Section 122로 전환 후 법적 불확실성 지속.",
+      "root_cause": "IEEPA 위헌 → 미국 통상정책 법적 혼란 + 미중 관계 공백",
+      "scan_axis": "B",
+      "sources": ["John Menadue/Pearls&Irritations", "TBS News Bangladesh", "Brookings PDF"],
+      "market_contact": ["달러/위안", "미중 무역주", "반도체", "중국 ETF"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["달러/위안", "미중 무역주", "반도체", "중국 ETF"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "$167B 환급 행정혼란은 최초. 정상회담 연기 = 대중 전략 재편 시간."},
+        "G3": {"score": 2, "type": "free", "chain": "$167B 환급 → 관세 법적 불확실성 → 기업 투자 동결 → 성장 둔화 (3단계). 정상회담 연기 → 미중 공백 → 통상 불확실성 (3단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": null, "overlap": null}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260327-002"
+    },
+    {
+      "id": "IS-20260327-005",
+      "title": "나프타 수급 차질 → LG화학 NCC 2공장 가동중단 → 종량제 봉투 대란",
+      "summary": "호르무즈 봉쇄로 나프타 수급 차질. LG화학 여수 NCC 2공장 가동 중단. PE 부족으로 종량제 봉투 사재기 확산.",
+      "root_cause": "미-이란 전쟁 → 호르무즈 봉쇄 → 나프타 도미노",
+      "scan_axis": "C",
+      "sources": ["MBC 뉴스데스크", "서울신문", "헤럴드경제", "thepublic"],
+      "market_contact": ["LG화학", "롯데케미칼", "PE", "소비재", "CPI"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["석유화학(LG화학, 롯데케미칼)", "PE", "소비재", "인플레"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "NCC 2공장 가동 중단 최초 공식 실행. 사재기 확산은 소비자 패닉 단계 진입."},
+        "G3": {"score": 2, "type": "free", "chain": "나프타 부족 → NCC 가동중단 → PE/PP 생산감소 → 비닐/포장재 부족 → 소비재 가격 상승 → CPI (5단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "기존 호르무즈 충격의 새 하류 도미노"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260327-001"
+    },
+    {
+      "id": "IS-20260327-006",
+      "title": "걸프 알루미늄 force majeure 선언 + 쿠웨이트 원유 재개 3~4개월",
+      "summary": "걸프 알루미늄 생산자 수출 중단, force majeure 선언. 쿠웨이트 원유 생산 재개에 3~4개월 전망.",
+      "root_cause": "미-이란 전쟁 → 걸프 산업 마비",
+      "scan_axis": "C",
+      "sources": ["Economic Times", "Arab Times", "bilyonaryo"],
+      "market_contact": ["알루미늄", "원유", "항공우주", "건설"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["알루미늄", "원유", "항공우주", "건설"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "알루미늄 force majeure는 기존 에너지 충격의 가속. 쿠웨이트 3~4개월은 추세 확인."},
+        "G3": {"score": 2, "type": "free", "chain": "알루미늄 차단 → 항공기/자동차 부품 → 생산 지연 → 소비자 가격 (3단계+)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "호르무즈 충격 확장판"}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260327-001"
+    },
+    {
+      "id": "IS-20260327-008",
+      "title": "텅스텐 수급불안 → 반도체(NAND) 생산 차질 우려",
+      "summary": "중국 희소금속 수출 통제 이후 텅스텐 부족 심화. NAND 공정 필수 소재로 반도체 생산 차질 우려.",
+      "root_cause": "중국 희소금속 통제 + 반도체 공급망",
+      "scan_axis": "C",
+      "sources": ["SPTA Times Korea"],
+      "market_contact": ["삼성전자", "SK하이닉스", "NAND"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["반도체(삼성전자, SK하이닉스)", "NAND"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "중국 통제 이후 누적. 새 이벤트 아니나 악화 확인."},
+        "G3": {"score": 2, "type": "free", "chain": "텅스텐 부족 → NAND 공정 차질 → SSD 가격 → 데이터센터/스마트폰 비용 (3단계+)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": null, "overlap": null}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260327-010",
+      "title": "BlackRock CEO 래리 핑크: 유가 $150 시 글로벌 리세션 경고",
+      "summary": "래리 핑크가 유가 $150 시나리오에서 글로벌 리세션을 경고. 현재 Brent $100~108 수준.",
+      "root_cause": "에너지 가격 충격 → 리세션 시나리오",
+      "scan_axis": "A",
+      "sources": ["Economic Times"],
+      "market_contact": ["Brent", "주식 전체", "채권", "금"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["Brent", "주식 전체", "채권", "금"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 리세션 우려의 강화 발언. 래리 핑크의 무게감."},
+        "G3": {"score": 1, "type": "free", "chain": "유가 $150 → 글로벌 리세션 → 위험자산 급락 (2단계)"},
+        "G3.5": "SNAPSHOT",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": null, "overlap": null}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": "CL-20260327-001"
+    },
+    {
+      "id": "IS-20260327-011",
+      "title": "AI 대분기(Great Bifurcation) — HW(Micron ATH) vs SW(Palantir 급락) + 유틸리티 재평가",
+      "summary": "AI 투자가 HW(메모리/인프라)와 SW(SaaS)로 분기. Micron 사상최고, Palantir/Oracle 급락. 전력 수요 폭발로 유틸리티 성장주 재평가.",
+      "root_cause": "AI 투자 사이클 2.0 — 인프라 vs 응용 분기",
+      "scan_axis": "D",
+      "sources": ["FinancialContent/MarketMinute", "CNBC", "KKR", "Quartz"],
+      "market_contact": ["Micron", "Palantir", "Oracle", "NextEra", "Vistra", "나스닥"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["반도체", "SaaS", "유틸리티", "나스닥"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "HW vs SW 분기 가시화. Micron ATH vs Palantir/Oracle 급락 = 로테이션 벡터."},
+        "G3": {"score": 1, "type": "free", "chain": "AI 인프라 수요 → 전력 수요 폭발 → 유틸리티 재평가 (2단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🔁backlog 승격", "overlap": "BL-002 AI 투자 심리 3회째 등장 + 대분기 가시화"}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260327-013",
+      "title": "일본 파워반도체 재편 — 덴소(토요타) 롬 1.3조엔 TOB + 롬-도시바 동맹 해체",
+      "summary": "덴소가 롬에 1.3조엔 TOB. 토요타의 반도체 수직통합 시도. 롬-도시바 전략적 동맹 해체 가능.",
+      "root_cause": "자동차 전장화 + AI 수요 → 일본 파워반도체 글로벌 재편",
+      "scan_axis": "D",
+      "sources": ["아주경제", "글로벌이코노믹", "알파비즈", "다음/뉴스"],
+      "market_contact": ["Rohm(6963.JP)", "Toshiba(6502.JP)", "Denso", "인피니온", "한국 반도체"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["반도체", "자동차 전장", "일본 주식"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "덴소 1.3조엔 TOB 최초. 토요타 반도체 수직통합 = 새 벡터."},
+        "G3": {"score": 1, "type": "free", "chain": "토요타 수직통합 → 일본 파워반도체 재편 → 인피니온/한국 경쟁 구도 변화 (2단계)"},
+        "G3.5": "SNAPSHOT",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🔁backlog 승격", "overlap": "BL-004 일본 파워반도체 2회째 등장 + TOB 구체화"}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260327-015",
+      "title": "S&P 500 5주 연속 하락 임박 — 4년 만 최장 연패",
+      "summary": "S&P 500이 5주 연속 하락 기록 임박. 2022년 이후 최장. 기술적 매도 신호.",
+      "root_cause": "이란 전쟁 불확실성 + 인플레 우려",
+      "scan_axis": "A",
+      "sources": ["SMH", "ABC Australia"],
+      "market_contact": ["S&P500", "주식 전체"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["S&P500", "주식 전체"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 하락 추세 확인. 새 벡터 아님."},
+        "G3": {"score": 1, "type": "free", "chain": "5주 연패 → 기술적 매도 신호 → 펀드 리밸런싱 촉발 (2단계)"},
+        "G3.5": "CUMULATIVE",
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": null, "overlap": null}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": null
+    }
+  ],
+  "clusters": [
+    {
+      "id": "CL-20260327-001",
+      "root_label": "이란 전쟁 에스컬레이션 + 원자재 도미노",
+      "issues": ["IS-20260327-001", "IS-20260327-005", "IS-20260327-006", "IS-20260327-010"],
+      "priority_score": 12,
+      "market_contact_combined": ["Brent", "WTI", "S&P500", "금", "방산", "항공", "곡물", "석유화학(LG화학)", "PE", "알루미늄", "소비재", "CPI"],
+      "rm_input_title": "이란 전쟁 에스컬레이션 4/6 데드라인 + 나프타→봉투 + 알루미늄 force majeure 원자재 도미노"
+    },
+    {
+      "id": "CL-20260327-002",
+      "root_label": "글로벌 통상 재편 — IEEPA 위헌/EU/미중",
+      "issues": ["IS-20260327-003", "IS-20260327-004"],
+      "priority_score": 10,
+      "market_contact_combined": ["유럽주식", "달러/유로", "달러/위안", "수출주", "반도체", "미중 ETF"],
+      "rm_input_title": "IEEPA 위헌 후 글로벌 관세 재편 — EU 조건부 승인 + 미중 정상회담 연기 + $167B 환급 혼란"
+    },
+    {
+      "id": "CL-20260327-003",
+      "root_label": "글로벌 인플레 레짐 전환 — OECD/ECB",
+      "issues": ["IS-20260327-002"],
+      "priority_score": 8,
+      "market_contact_combined": ["채권", "달러", "유로", "성장주", "금"],
+      "rm_input_title": "OECD 인플레 4.2% 상향 + ECB Q2 인상 전망 — 글로벌 금리 방향 전환"
+    }
+  ],
+  "independent": ["IS-20260327-011", "IS-20260327-013", "IS-20260327-008", "IS-20260327-015"],
+  "blind_spot_checks": {
+    "Q1_missing_asset": "부동산/BTC — 오늘 유의미한 단독 시그널 없음. 보충 스캔 불필요.",
+    "Q2_geo_balance": "글로벌 7건 / 한국 관련 2건+. 보충 불필요.",
+    "Q3_backlog_promotion": "BL-002(AI 투자 심리) Gate 8점 승격 → IS-011. BL-004(일본 파워반도체) Gate 8점 승격 → IS-013. BL-001(GENIUS Act) 3회째이나 Gate 2점 미달, backlog 유지.",
+    "Q4_diversity": "근인 5종 (이란 전쟁, 관세/통상, 인플레/통화, AI, 반도체 재편). 다양성 충분."
+  },
+  "user_selection": [],
+  "handoff": null
+}

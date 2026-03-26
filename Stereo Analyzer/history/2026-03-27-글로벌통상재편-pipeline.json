@@ -1,0 +1,46 @@
+{
+  "id": "SA-20260327-001",
+  "date": "2026-03-27",
+  "title": "글로벌 통상 재편 — IEEPA 환급 혼란 + EU 제3극 + Section 301 한국 포함",
+  "pipeline": "scanner(9) + macro(46) → rm(25) + core(20) + PSF(25) → Stereo",
+
+  "prior_context": {
+    "has_prior": true,
+    "linked": ["SA-20260326-001", "TC-001"],
+    "mode": "delta",
+    "prior_finding": "IEEPA→122→301 3단 진화. 트럼프는 영구 관세의 법적 경로를 열었다.",
+    "delta": "$167B 환급 역풍 + EU 제3극 승인 + 한국 301 16국 명시 포함(core BURIED)"
+  },
+
+  "pre_read": {
+    "type": "POLICY",
+    "type_secondary": "STRUCT",
+    "scp": 4,
+    "urgency": "WATCH→URGENT접근",
+    "mode": "delta"
+  },
+
+  "core_finding": "관세 법적 기반 이동 확인(SA-001). 새 발견: EU가 조건부 수용으로 제3극 통상 자율성을 제도화. $167B 환급이 부과만큼 경제 교란. 한국이 301 16국에 명시 포함 — 4/15까지 19일, 이란전에 묻힘.",
+
+  "scenarios": [
+    {"label": "A", "description": "Section 301 한국 관세 부과 (7/24)", "probability": "45%",
+     "trigger": "301 관세율 공고", "kc_source": "구조적+서사적", "recalibration": "5/14 미중 회담 후"},
+    {"label": "B", "description": "Section 301 한국 면제/경감", "probability": "20%",
+     "trigger": "한-미 합의 면제 조건 명시", "kc_source": "서사적+구조적"},
+    {"label": "C", "description": "EU 제3극화 가속 → 한-EU 재편", "probability": "25%",
+     "trigger": "EU ACI 발동 또는 IAA 발효", "kc_source": "구조적+서사적"},
+    {"label": "D", "description": "법적 공백 → 관세 급락", "probability": "10%",
+     "trigger": "Section 122 만료 + 301 미부과", "kc_source": "통계적"}
+  ],
+
+  "cross_card_links": ["TC-007(미장기채: 환급→재정→채권)", "TC-008(한국車: 301 자동차 직격)"],
+  "trigger_kc_checklist": "7/7 통과",
+
+  "feedback": {
+    "executed": ["FB-1", "FB-2", "FB-4", "FB-5"],
+    "fb4_delta": "이전: 3단 진화. 지금: 3단 진화+환급 역풍+EU 제3극+WTO 마비. 한국 301 명시 포함이 4/15까지 3주인데 묻힘."
+  },
+
+  "tags": ["POLICY", "STRUCT", "관세", "Section301", "IEEPA", "EU", "ACI", "한국", "MT-06", "MT-07", "pipeline-full"],
+  "related_ids": ["SA-20260326-001"]
+}
