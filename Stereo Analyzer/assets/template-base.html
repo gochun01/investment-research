@@ -1,0 +1,373 @@
+<!--
+  Stereo Analyzer Adaptive Report — CSS Design System
+  Dark theme, mobile responsive, Korean typography
+  7-Layer color system: Surface (blue), Subsurface (purple), L7 (gold)
+  Usage: render_adaptive.py reads this file for CSS reference
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stereo Analyzer Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  /* Base colors (shared with psf-monitor) */
+  --navy: #0d1117;
+  --dark: #161b22;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-bright: #f0f6fc;
+  --text-dim: #8b949e;
+
+  /* Accent colors (shared) */
+  --blue: #58a6ff;
+  --green: #4caf50;
+  --yellow: #ffd600;
+  --red: #ff5252;
+  --purple: #d2a8ff;
+  --cyan: #80deea;
+  --gold: #ffab00;
+
+  /* ===== Stereo Analyzer Specific ===== */
+
+  /* Layer colors: Surface (L1-L3) = blue tones */
+  --surface-blue: #1a3a5c;
+  --surface-text: #7ec8e3;
+  --surface-border: #2a5a8c;
+
+  /* Layer colors: Subsurface (L4-L6) = purple tones */
+  --subsurface-purple: #2a1a4a;
+  --subsurface-text: #ce93d8;
+  --subsurface-border: #4a2a7a;
+
+  /* Layer colors: L7 = gold */
+  --l7-gold-bg: #3a2800;
+  --l7-gold-text: #ffd600;
+  --l7-gold-border: #665200;
+
+  /* SCP badge colors */
+  --scp-high-bg: #3d0000;       /* SCP 4-5: red */
+  --scp-high-text: #ff5252;
+  --scp-mid-bg: #0a2540;        /* SCP 2-3: blue */
+  --scp-mid-text: #58a6ff;
+  --scp-low-bg: #1c2028;        /* SCP 0-1: gray */
+  --scp-low-text: #8b949e;
+
+  /* Framing tag colors */
+  --framing-bg: #2a1a3e;
+  --framing-text: #ce93d8;
+
+  /* Emotion block */
+  --emotion-bg: #1a1a2e;
+  --emotion-border: #2a2a4e;
+  --emotion-text: #b39ddb;
+
+  /* Confidence bar */
+  --conf-filled: #ffd600;
+  --conf-empty: #30363d;
+}
+
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== Body ===== */
+body {
+  background: var(--navy);
+  color: var(--text);
+  font-family: 'Noto Sans KR', -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ===== Topbar — Report Classification ===== */
+.topbar {
+  padding: 6px 16px;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.topbar.red { background: #5c0000; color: #ff5252; }     /* STRUCTURAL SHIFT (SCP 4-5) */
+.topbar.blue { background: #0a2540; color: #58a6ff; }    /* DEEP ANALYSIS (SCP 2-3) */
+.topbar.navy { background: #0d1117; color: #8b949e; border-bottom: 1px solid var(--border); } /* QUICK NOTE (SCP 0-1) */
+
+/* ===== Report Header ===== */
+.report-header {
+  padding: 20px 16px 12px;
+}
+.report-header h1 {
+  color: var(--text-bright);
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.report-header .meta {
+  color: var(--text-dim);
+  font-size: 0.8em;
+}
+
+/* ===== Badges ===== */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge.scp-high { background: var(--scp-high-bg); color: var(--scp-high-text); }
+.badge.scp-mid { background: var(--scp-mid-bg); color: var(--scp-mid-text); }
+.badge.scp-low { background: var(--scp-low-bg); color: var(--scp-low-text); }
+.badge.type-badge { background: #1a2733; color: var(--cyan); }
+.badge.urgency-badge { background: #2a1a00; color: var(--gold); }
+.badge.framing { background: var(--framing-bg); color: var(--framing-text); }
+
+/* ===== Exec Box — Core Finding ===== */
+.exec-box {
+  background: var(--dark);
+  border-left: 4px solid var(--gold);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+.exec-box .claim {
+  color: var(--text-bright);
+  font-size: 1.05em;
+  font-weight: 500;
+}
+.exec-box .sub {
+  color: var(--text-dim);
+  font-size: 0.82em;
+  margin-top: 6px;
+}
+
+/* ===== Section Sizes ===== */
+.section { margin: 12px 0; }
+.section-large { margin: 16px 0; }
+.section-small { margin: 8px 0; }
+
+/* ===== Section Titles — Layer Zone Colors ===== */
+.section-title {
+  color: var(--blue);
+  font-size: 0.9em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.section-title.surface { color: var(--surface-text); }
+.section-title.subsurface { color: var(--subsurface-text); }
+.section-title.l7 { color: var(--l7-gold-text); }
+
+/* ===== Layer Cards ===== */
+.card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+.card.surface { border-left: 3px solid var(--surface-text); }
+.card.subsurface { border-left: 3px solid var(--subsurface-text); }
+.card.l7 { border-left: 3px solid var(--l7-gold-text); }
+
+.card .layer-label {
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.card .layer-label.surface-label { color: var(--surface-text); }
+.card .layer-label.subsurface-label { color: var(--subsurface-text); }
+.card .layer-label.l7-label { color: var(--l7-gold-text); }
+
+.card .content { color: var(--text); font-size: 0.85em; }
+.card .detail { color: var(--text-dim); font-size: 0.82em; margin-top: 4px; }
+.card .fb-tag {
+  background: #1a2733;
+  color: var(--cyan);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.7em;
+  margin-left: 4px;
+}
+
+/* ===== Monitor Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82em;
+}
+th {
+  background: var(--dark);
+  color: var(--text-dim);
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #1c2028;
+}
+.num { font-family: 'DM Mono', monospace; color: var(--text-bright); }
+
+/* ===== Confidence Bar (for Uncertainty Map) ===== */
+.confidence-bar {
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 2px;
+}
+.confidence-bar .filled { color: var(--conf-filled); }
+.confidence-bar .empty { color: var(--conf-empty); }
+
+/* ===== Uncertainty Grid ===== */
+.uncertainty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 6px;
+}
+.uncertainty-cell {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.78em;
+}
+.uncertainty-cell .layer-name { color: var(--text-bright); font-weight: 600; }
+.uncertainty-cell .bar { font-family: 'DM Mono', monospace; color: var(--yellow); font-size: 0.85em; margin-top: 2px; }
+.uncertainty-cell.weakest { border-color: var(--red); background: #1a0000; }
+
+/* ===== Emotion Block ===== */
+.emotion-box {
+  background: var(--emotion-bg);
+  border: 1px solid var(--emotion-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+.emotion-box .emotion-label { color: var(--purple); font-size: 0.75em; font-weight: 600; }
+.emotion-box .emotion-content { font-size: 0.85em; margin-top: 4px; }
+
+/* ===== Noise Card ===== */
+.noise-card {
+  background: #1c2028;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.noise-card .verdict { color: var(--text-dim); font-size: 1em; font-weight: 600; }
+
+/* ===== Scenario Grid ===== */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.scenario-card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+}
+.scenario-card .condition { color: var(--text-bright); font-weight: 500; font-size: 0.85em; }
+.scenario-card .result { color: var(--text-dim); font-size: 0.8em; margin-top: 4px; }
+
+/* ===== Emergent Question Card ===== */
+.question-card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--purple);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+}
+.question-card .lens { color: var(--purple); font-size: 0.7em; font-weight: 600; text-transform: uppercase; }
+.question-card .q-text { color: var(--text-bright); font-size: 0.85em; margin-top: 2px; }
+.question-card .q-answer { color: var(--text-dim); font-size: 0.8em; margin-top: 4px; }
+
+/* ===== Tracking List ===== */
+.tracking-list { list-style: none; }
+.tracking-list li {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  font-size: 0.82em;
+}
+.tracking-list .indicator { color: var(--text-bright); font-weight: 500; }
+.tracking-list .check-date { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 0.8em; }
+
+/* ===== Signal/Noise Box ===== */
+.signal-noise-box {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 8px;
+}
+.signal-noise-box .signal { color: var(--green); font-size: 0.85em; }
+.signal-noise-box .noise { color: var(--text-dim); font-size: 0.85em; margin-top: 4px; }
+
+/* ===== Footer & Disclaimer ===== */
+.footer {
+  margin: 24px 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.72em;
+  text-align: center;
+}
+.disclaimer {
+  color: #484f58;
+  font-size: 0.68em;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .scenario-grid { grid-template-columns: 1fr; }
+  .uncertainty-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 480px) {
+  .container { padding: 8px; }
+  .report-header h1 { font-size: 1.1em; }
+  .exec-box { padding: 12px 14px; }
+  .section, .section-large, .section-small { margin: 8px 0; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <p style="color:var(--text-dim);font-size:0.8em;text-align:center;padding:40px 0;">
+      Stereo Analyzer Design System<br>
+      이 파일은 CSS 변수와 컴포넌트 클래스를 정의합니다.<br>
+      render_adaptive.py가 이 파일의 스타일을 참조합니다.<br><br>
+      Layer Color System:<br>
+      <span style="color:var(--surface-text)">Surface (L1-L3) = Blue Tones</span><br>
+      <span style="color:var(--subsurface-text)">Subsurface (L4-L6) = Purple Tones</span><br>
+      <span style="color:var(--l7-gold-text)">L7 Judgment = Gold</span>
+    </p>
+  </div>
+</body>
+</html>
