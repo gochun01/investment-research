@@ -193,10 +193,46 @@ Review Mode (자기 점검):
 7. 가드레일 자기 수정 금지: GUARDRAILS.md의 Red Zone을 스스로 변경할 수 없다.
 ```
 
+## Phase 0 Gate (분석 시작 전 차단문 — 최우선)
+
+```
+모든 Stereo 분석은 MCP 호출·데이터 수집·L1 작성보다 먼저
+아래 3단계를 반드시 실행해야 한다.
+Gate를 통과하지 않으면 Phase 1(수집) 진입을 금지한다.
+
+━━ Gate 1: history/ 스캔 ━━
+  Glob: history/*.json 전체 파일명 + title 필드 검색
+  키워드: 새 이슈의 핵심어 2~3개로 매칭
+  결과: 매칭 있으면 해당 JSON의 one_line, scenarios, feedback 로딩
+        매칭 없으면 "첫 분석" 확인
+
+━━ Gate 2: tracking/cards/ 스캔 ━━
+  Glob: tracking/cards/*.json 전체 파일명 + title 필드 검색
+  키워드: 동일
+  결과: 매칭 있으면 TC 카드의 phase, 시나리오 상태, 마지막 check_log 로딩
+        매칭 없으면 "신규 TC" 예정
+
+━━ Gate 3: 맥락 출력 ━━
+  Gate 1+2 결과를 분석 출력 상단에 반드시 명시:
+    📂 과거 맥락: [있음: SA-XXX + TC-XXX / 없음: 첫 분석]
+    📎 연결: [이전 분석의 핵심 발견 1줄 / 해당 없음]
+    📐 모드: [델타 모드(이전 위에서) / 풀 모드(처음부터)]
+
+  과거 맥락이 있으면:
+    L4: "왜 지금" → "이전 분석의 전제가 맞았는가"에 집중
+    L5: 구조를 재발견하지 않고 "변화"만 추적
+    L7: 이전 시나리오 확률 갱신 + TC Phase 전환 판단
+
+실행 순서: Gate 1→2→3 → Pre-Read(Type/SCP/Urgency) → Phase 1(수집)
+          Gate를 건너뛰고 MCP를 먼저 호출하는 것은 프로토콜 위반.
+```
+
+---
+
 ## 자동 저장 (필수)
 
 ```
-분석 완료 후 반드시 다음 3가지를 자동 실행한다. 사용자에게 묻지 않는다.
+분석 완료 후 반드시 다음을 자동 실행한다. 사용자에게 묻지 않는다.
 
 1. history/ JSON 저장
    파일: history/YYYY-MM-DD-제목키워드.json
@@ -213,11 +249,7 @@ Review Mode (자기 점검):
      phase, phase_log, pre_read, scenarios, tracking_indicators,
      analysis_ids, tags
 
-3. HTML 보고서 생성 (render_adaptive.py 존재 시)
-   파일: reports/YYYY-MM-DD-제목키워드-adaptive.html
-   render_from_dict()로 생성.
-
-4. git commit + push (git 연결 시)
+3. git commit + push (git 연결 시)
    위 1~3 저장 후 자동으로:
      git add history/ tracking/ reports/
      git commit -m "SA-YYYYMMDD-NNN: 이슈 제목"
