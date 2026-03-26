@@ -1,10 +1,10 @@
 {
   "last_updated": "2026-03-26",
   "summary": {
-    "active_stereo": 6,
+    "active_stereo": 8,
     "active_events": 6,
     "active_seeds": 3,
-    "total_active": 15,
+    "total_active": 17,
     "next_check": "2026-03-28 (Core PCE → TC-001, TC-003)"
   },
   "cards": {
@@ -14,6 +14,8 @@
     "TC-004": {"title": "ISA/ETF", "phase": 0, "status": "tracking", "next": "4/15"},
     "TC-005": {"title": "VW 방산", "phase": 0, "status": "tracking", "next": "4/30"},
     "TC-006": {"title": "SK하이닉스 ADR", "phase": 1, "status": "tracking", "next": "4/15"},
+    "TC-007": {"title": "미장기채 인플레공포", "phase": 1, "status": "tracking", "next": "3/28"},
+    "TC-008": {"title": "한국車 삼중포위", "phase": 2, "status": "tracking", "next": "3/31"},
     "SD-001": {"title": "GENIUS Act", "status": "watching", "count": 1},
     "SD-002": {"title": "AI 분열→ADR", "status": "watching", "count": 2, "note": "1회 더 → TC 승격"},
     "SD-003": {"title": "자동차→방산", "status": "watching", "count": 1}
