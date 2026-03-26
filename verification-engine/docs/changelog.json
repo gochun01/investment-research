@@ -1,0 +1,511 @@
+[
+  {
+    "date": "2026-03-20",
+    "title": "뉴스 기사 검증 체계 + 피드백 루프 + 변경 추적 시스템",
+    "trigger": "매경 '국민이 답했다 K주식이 가장 유망' 검증 중 구조적 빈틈 발견",
+    "sessions": [
+      {
+        "phase": "1. 이력 관리 도구 추가",
+        "description": "검증 결과를 저장만 하고 활용하지 못하는 문제 해결",
+        "changes": [
+          {
+            "type": "tool_added",
+            "id": "verify_check_triggers",
+            "reason": "invalidation_triggers의 도래 여부를 현재 날짜와 대조. 재검증 필요 여부 판단"
+          },
+          {
+            "type": "tool_added",
+            "id": "verify_record_outcome",
+            "reason": "검증 이후 실제 결과를 {vrf_id}_outcome.json으로 기록. 원본 불변"
+          },
+          {
+            "type": "tool_improved",
+            "id": "verify_list_history",
+            "reason": "문서 제목, doc_type, 6층 판정, 트리거 도래 여부, outcome 기록 여부 표시 추가. corrected/outcome 파일 목록 제외"
+          }
+        ]
+      },
+      {
+        "phase": "2. 프롬프트 주입 방식 시도 → 철회",
+        "description": "과거 이력을 프롬프트에 {past_context}로 주입하는 방식 구현했으나, '틀은 코드' 철학에 맞지 않아 제거",
+        "changes": [
+          {
+            "type": "code_added_then_removed",
+            "id": "_lookup_past_context()",
+            "reason": "과거 이력을 조회하여 프롬프트에 주입하는 헬퍼. Claude에게 '참고해줘'는 강제가 아니므로 제거"
+          },
+          {
+            "type": "code_added_then_removed",
+            "id": "{past_context} placeholder",
+            "files": [
+              "extract_claims.md",
+              "fact_check.md",
+              "logic_check.md",
+              "self_audit.md",
+              "mcp_server.py"
+            ],
+            "reason": "프롬프트 주입은 Claude가 무시할 수 있음. 규칙 추가 방식으로 교체"
+          },
+          {
+            "type": "code_added_then_removed",
+            "id": "verify_start() past_context 부착",
+            "reason": "engine._past_context에 이력 부착하던 로직 제거"
+          }
+        ]
+      },
+      {
+        "phase": "3. 코드 강제 피드백 루프 구축",
+        "description": "프롬프트 주입 대신, outcome 패턴을 분석하여 rules.json에 규칙을 추가하는 방식으로 교체",
+        "changes": [
+          {
+            "type": "tool_added",
+            "id": "verify_analyze_outcomes",
+            "reason": "축적된 outcome에서 실패 패턴(취약 층, 취약 섹터, 반복 target) 분석 → 규칙/체크리스트 추가 후보 자동 생성. 사용자 승인 후 verify_add_rule()로 적용"
+          },
+          {
+            "type": "design_decision",
+            "id": "feedback_loop_architecture",
+            "reason": "검증→저장→outcome 기록→패턴 분석→규칙 제안→승인→rules.json 추가→다음 검증에 코드가 강제 대입. '틀은 코드' 철학과 일치"
+          }
+        ]
+      },
+      {
+        "phase": "4. news_article 검증 체계 신설",
+        "description": "뉴스 기사를 검증할 doc_type, 규칙, 체크리스트가 없어서 전부 신설",
+        "changes": [
+          {
+            "type": "doc_type_added",
+            "id": "news_article",
+            "files": [
+              "core/engine.py",
+              "mcp_server.py"
+            ],
+            "reason": "기존 7개 doc_type에 뉴스 기사 유형 없었음"
+          },
+          {
+            "type": "evidence_type_added",
+            "id": "survey",
+            "files": [
+              "core/models.py",
+              "core/layers/fact.py",
+              "prompts/CLAUDE.md",
+              "mcp_server.py"
+            ],
+            "reason": "설문 데이터는 fact/estimate/opinion 어디에도 맞지 않음. survey 타입 추가하여 Fact 🟡 상한 적용"
+          },
+          {
+            "type": "mcp_source_added",
+            "scope": "news_article",
+            "sources": [
+              "Yahoo Finance",
+              "FRED",
+              "DART",
+              "Tavily/Firecrawl"
+            ],
+            "file": "core/layers/fact.py"
+          },
+          {
+            "type": "sector_mapping_added",
+            "id": "news_article → 뉴스_공통",
+            "file": "core/engine.py"
+          },
+          {
+            "type": "rule_added",
+            "id": "lr_031",
+            "scope": "common",
+            "name": "perception_as_reality",
+            "severity": "high",
+            "reason": "설문 선호를 실제 자금흐름으로 등치하면서 실증 데이터 없는 경우"
+          },
+          {
+            "type": "rule_added",
+            "id": "lr_032",
+            "scope": "common",
+            "name": "minority_framed_as_majority",
+            "severity": "high",
+            "reason": "50% 미만 응답을 제목/결론에서 다수 의견처럼 프레이밍"
+          },
+          {
+            "type": "rule_added",
+            "id": "lr_033",
+            "scope": "common",
+            "name": "counter_trend_omission",
+            "severity": "high",
+            "reason": "전망과 반대되는 직근 추세를 언급하지 않은 경우"
+          },
+          {
+            "type": "rule_added",
+            "id": "lr_news_001",
+            "scope": "news_article",
+            "name": "survey_sample_insufficient",
+            "severity": "high",
+            "reason": "설문 방법론(표본·기관·기간) 미공개"
+          },
+          {
+            "type": "rule_added",
+            "id": "lr_news_002",
+            "scope": "news_article",
+            "name": "editorial_as_fact",
+            "severity": "medium",
+            "reason": "기자 의견을 사실처럼 서술"
+          },
+          {
+            "type": "rule_added",
+            "id": "lr_news_003",
+            "scope": "news_article",
+            "name": "single_source_generalization",
+            "severity": "high",
+            "reason": "단일 설문/전문가를 '국민', '시장'으로 일반화"
+          },
+          {
+            "type": "checklist_added",
+            "id": "nr_news_001",
+            "scope": "norm/news_article",
+            "description": "설문 방법론 공개"
+          },
+          {
+            "type": "checklist_added",
+            "id": "nr_news_002",
+            "scope": "norm/news_article",
+            "description": "의견-팩트 구분"
+          },
+          {
+            "type": "checklist_added",
+            "id": "nr_news_003",
+            "scope": "norm/news_article",
+            "description": "데이터 출처 명시"
+          },
+          {
+            "type": "checklist_added",
+            "id": "nr_news_004",
+            "scope": "norm/news_article",
+            "description": "헤드라인-본문 정합성"
+          },
+          {
+            "type": "checklist_added",
+            "id": "nr_news_005",
+            "scope": "norm/news_article",
+            "description": "반론/균형 보도"
+          },
+          {
+            "type": "checklist_added",
+            "id": "om_news_001",
+            "scope": "omission/뉴스_공통",
+            "description": "직근 반대 추세 데이터"
+          },
+          {
+            "type": "checklist_added",
+            "id": "om_news_002",
+            "scope": "omission/뉴스_공통",
+            "description": "설문 비응답/반대 응답 비율"
+          },
+          {
+            "type": "checklist_added",
+            "id": "om_news_003",
+            "scope": "omission/뉴스_공통",
+            "description": "과거 유사 설문 비교"
+          },
+          {
+            "type": "checklist_added",
+            "id": "om_news_004",
+            "scope": "omission/뉴스_공통",
+            "description": "설문-실제 괴리 가능성 언급"
+          },
+          {
+            "type": "checklist_added",
+            "id": "om_news_005",
+            "scope": "omission/뉴스_공통",
+            "description": "이해관계자 반론"
+          }
+        ]
+      },
+      {
+        "phase": "5. 실전 검증 실행",
+        "description": "새 규칙·체크리스트를 적용하여 매경 기사를 검증 엔진으로 실행",
+        "changes": [
+          {
+            "type": "verification_executed",
+            "vrf_id": "vrf_20260320_093206_847",
+            "target": "매경 '국민이 답했다 K주식이 가장 유망'",
+            "doc_type": "news_article",
+            "verdict": "🔴 FLAGGED",
+            "claims": 10,
+            "findings": 17,
+            "rules_triggered": [
+              "lr_031",
+              "lr_032",
+              "lr_033",
+              "lr_news_003",
+              "lr_005",
+              "lr_020"
+            ],
+            "new_rules_activated": "6/6",
+            "html_report": "output/국민이-답했다-K주식이-가장-유망-verification-2026-03-20.html"
+          }
+        ]
+      },
+      {
+        "phase": "6. HTML 보고서 검토 → 보완사항 5건 도출",
+        "description": "생성된 HTML 보고서를 분석하여 렌더러 개선 필요 사항 식별",
+        "changes": [
+          {
+            "type": "issue_identified",
+            "id": "html_001",
+            "description": "Section VI(Omission) BBJ Break 내용 미렌더링",
+            "file": "core/html_renderer.py",
+            "status": "미수정"
+          },
+          {
+            "type": "issue_identified",
+            "id": "html_002",
+            "description": "Section II KEY NOTES에서 🔴 항목이 우선 표시되지 않음",
+            "file": "core/html_renderer.py",
+            "status": "미수정"
+          },
+          {
+            "type": "issue_identified",
+            "id": "html_003",
+            "description": "Temporal 종합 🟡 표시 원인(depends_on 전파) 설명 부재",
+            "status": "설계 의도이나 UX 개선 필요"
+          },
+          {
+            "type": "issue_identified",
+            "id": "html_004",
+            "description": "Finding Card에 suggested_fix 미등록",
+            "status": "검증 시 데이터 입력 필요"
+          },
+          {
+            "type": "issue_identified",
+            "id": "html_005",
+            "description": "report-class 배경색이 🔴일 때 gold가 아닌 red여야 함",
+            "file": "core/html_renderer.py",
+            "status": "미수정"
+          }
+        ]
+      },
+      {
+        "phase": "7. 변경 추적 시스템 구축",
+        "description": "변경 이력이 어디에도 기록되지 않는 문제 해결",
+        "changes": [
+          {
+            "type": "file_created",
+            "id": "docs/CHANGELOG.md",
+            "reason": "사람이 읽는 변경 이력"
+          },
+          {
+            "type": "file_created",
+            "id": "docs/changelog.json",
+            "reason": "코드가 읽을 수 있는 구조화된 변경 이력"
+          },
+          {
+            "type": "code_added",
+            "id": "_append_changelog()",
+            "file": "mcp_server.py",
+            "reason": "changelog.json 자동 기록 헬퍼"
+          },
+          {
+            "type": "code_modified",
+            "id": "verify_add_rule()",
+            "reason": "규칙 추가 시 changelog.json에 자동 기록"
+          },
+          {
+            "type": "code_modified",
+            "id": "verify_add_checklist_item()",
+            "reason": "체크리스트 추가 시 changelog.json에 자동 기록"
+          },
+          {
+            "type": "code_modified",
+            "id": "verify_analyze_outcomes()",
+            "reason": "outcome 분석 실행 시 changelog.json에 자동 기록"
+          },
+          {
+            "type": "code_modified",
+            "id": "html_renderer_5fixes",
+            "file": "core/html_renderer.py",
+            "fixes": [
+              "html_001: Section VI BBJ Break 렌더링 완전 개선",
+              "html_002: Section II KEY NOTES 🔴 우선 표시",
+              "html_003: depends_on 전파 설명 추가",
+              "html_004: Finding Card suggested_fix 자동 생성",
+              "html_005: report-class 배경색 종합판정 연동"
+            ],
+            "source": "html_report_review"
+          },
+          {
+            "type": "notion_db_created",
+            "dbs": {
+              "DB①_verification_memory": {
+                "notion_db_id": "45e66b17017f45899b50035439e7e55a",
+                "collection_id": "7122a851-07de-419b-bb87-331debdebe51"
+              },
+              "DB②_pattern_registry": {
+                "notion_db_id": "a6b5d868f771413ebe1020500e8bd2ab",
+                "collection_id": "1a982dae-21a0-4f84-97fb-216dcd0153c4"
+              },
+              "DB③_kc_tracker": {
+                "notion_db_id": "18b82429eb5c49efb39ac0f6dbd8ee1d",
+                "collection_id": "3d98b809-d53b-42cc-902f-fe3e66e171c2"
+              }
+            },
+            "relations": "DB① → DB②(related_patterns), DB① → DB③(related_kcs)",
+            "source": "notion_3db_setup"
+          },
+          {
+            "type": "code_created",
+            "files": [
+              "core/kc_lifecycle.py",
+              "core/pattern_registry.py"
+            ],
+            "tools_added": [
+              "verify_get_kc_status",
+              "verify_update_kc",
+              "verify_get_patterns",
+              "verify_promote_pattern"
+            ],
+            "finalize_enhanced": "verify_finalize()에 KC 자동 등록 + 패턴 자동 기록 연동",
+            "source": "feedback_loop_v2"
+          },
+          {
+            "type": "engine_upgrade",
+            "id": "smart_upgrade_4items",
+            "items": [
+              "1. outcome 반자동 수집: verify_check_triggers()에 expired 트리거 시 outcome 기록 안내 자동 표시",
+              "2. 간이 검증: verify_quick_check() 도구 추가. 제목+설명만으로 Fact+Logic 경량 검증",
+              "3. 규칙 활성도: core/rule_tracker.py + data/rule_activity.json + verify_rule_activity() 도구. finalize 시 자동 기록",
+              "5. doc_type별 검증 강도: claim_type_matrix.json에 _verification_depth 프리셋 8개 추가. verify_start() 응답에 포함"
+            ],
+            "tools_added": [
+              "verify_quick_check",
+              "verify_rule_activity"
+            ],
+            "files_created": [
+              "core/rule_tracker.py"
+            ],
+            "files_modified": [
+              "mcp_server.py",
+              "data/claim_type_matrix.json"
+            ],
+            "source": "history_analysis_improvement"
+          },
+          {
+            "type": "code_modified",
+            "id": "changelog_md_auto_sync",
+            "file": "mcp_server.py",
+            "source": "_sync_changelog_md() 추가. changelog.json 기록 시 CHANGELOG.md 자동 동기화"
+          },
+          {
+            "type": "project_created",
+            "id": "verification-collector",
+            "path": "C:/Users/이미영/Downloads/에이전트/verification-collector",
+            "tools": [
+              "collect_scan",
+              "collect_classify",
+              "collect_record",
+              "collect_status",
+              "collect_balance",
+              "collect_weekly_report"
+            ],
+            "tools_count": 6,
+            "mcp_registered": true,
+            "source": "collector_implementation"
+          },
+          {
+            "type": "ontology_applied",
+            "id": "megatrend_plate_structure_flow",
+            "description": "메가트렌드→판→구조→흐름 온톨로지 적용. 수집기+검증엔진+KC 레지스트리 3곳 반영",
+            "changes": {
+              "collector_sources_json": "5 메가트렌드(MT1~5) + 5 판(P1~5) + 5 구조(S1~5) + 5 흐름(F1~5) + 5 인과경로 + 5 교차사례",
+              "engine_rules_json": "lr_034(flow_without_plate) + lr_035(plate_to_flow_shortcut) 추가. 총 48개",
+              "engine_checklists_json": "om_psf_001~005 판구조흐름 Omission 체크리스트 5개 추가",
+              "engine_kc_lifecycle": "ontology_layer(plate/structure/flow) 필드 + 자동 추론 함수 추가"
+            },
+            "source": "ontology_design"
+          },
+          {
+            "type": "tuning_executed",
+            "rule_accuracy_count": 0,
+            "media_profiles_count": 3,
+            "collection_effectiveness_count": 3,
+            "source": "verify_tune"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-03-19",
+    "title": "보완사항 feature-proposals 작성",
+    "trigger": "시스템 점검",
+    "changes": [
+      {
+        "type": "file_created",
+        "id": "output/보완사항/feature-proposals.md",
+        "reason": "8개 기능 제안서 작성 (A~H). 검증 이력 저장, E2E 테스트, 신뢰 점수, 버전 비교, KC 모니터링, 멀티 문서, 피드백 루프, 요약 포맷"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-17",
+    "title": "초기 구축 v1.0",
+    "trigger": "프로젝트 시작",
+    "changes": [
+      {
+        "type": "initial",
+        "id": "v1.0",
+        "description": "6-Layer 검증 엔진 초기 구축",
+        "details": {
+          "mcp_tools": 12,
+          "rules_total": 34,
+          "rules_common": [
+            "lr_000",
+            "lr_013",
+            "lr_014",
+            "lr_015",
+            "lr_020",
+            "lr_024",
+            "lr_025"
+          ],
+          "rules_equity": [
+            "lr_001~lr_005",
+            "lr_021~lr_023"
+          ],
+          "rules_crypto": [
+            "lr_006",
+            "lr_007_v2"
+          ],
+          "rules_legal": [
+            "lr_008~lr_010",
+            "lr_026~lr_030"
+          ],
+          "rules_macro": [
+            "lr_011~lr_012"
+          ],
+          "rules_regulatory": [
+            "lr_rf_001~lr_rf_006"
+          ],
+          "norm_doc_types": [
+            "equity_research",
+            "crypto_research",
+            "legal_contract",
+            "regulatory_filing",
+            "macro_report",
+            "fund_factsheet",
+            "geopolitical"
+          ],
+          "omission_sectors": 18,
+          "doc_types_supported": [
+            "equity_research",
+            "crypto_research",
+            "legal_contract",
+            "fund_factsheet",
+            "regulatory_filing",
+            "macro_report",
+            "geopolitical"
+          ],
+          "html_renderer": "7+1 섹션 구조",
+          "design_philosophy": "틀은 코드, 두뇌는 프롬프트"
+        }
+      }
+    ]
+  }
+]

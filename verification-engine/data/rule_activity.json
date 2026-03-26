@@ -1,0 +1,125 @@
+{
+  "lr_031": {
+    "trigger_count": 2,
+    "applied_count": 1,
+    "first_triggered": "2026-03-24",
+    "last_triggered": "2026-03-24",
+    "last_applied": "2026-03-24",
+    "triggered_in": [
+      "vrf_20260324_182254_777",
+      "vrf_20260324_182254_777"
+    ]
+  },
+  "lr_news_001": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_news_002": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_news_003": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_000": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_013": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_014": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_015": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_020": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_024": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_025": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_032": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_033": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_034": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  },
+  "lr_035": {
+    "trigger_count": 0,
+    "applied_count": 1,
+    "first_triggered": "",
+    "last_triggered": "",
+    "last_applied": "2026-03-24",
+    "triggered_in": []
+  }
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>통합 입체 분석 — 정성+정량→시나리오 | 2026-03-26</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0a1628;--surface:#161b22;--surface-alt:#1c2333;--border:#30363d;--text:#e6edf3;--text-secondary:#b0b8c1;--muted:#8b949e;--accent:#58a6ff;--green:#4caf50;--yellow:#ff9800;--red:#f44336;--purple:#ab47bc;--gap-sm:.5rem;--gap-md:1rem;--gap-lg:1.5rem;--gap-xl:2.5rem;--radius-sm:4px;--radius-md:8px}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;max-width:900px;margin:0 auto}
+  .topbar{padding:.5rem 2rem;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;background:linear-gradient(90deg,#1565c0,var(--purple));color:#fff}
+  .report-header{padding:2rem 2rem 1.5rem;border-bottom:1px solid var(--border)}
+  .report-header h1{font-family:'Libre Baskerville',serif;font-size:1.5rem;font-weight:700;line-height:1.3;margin-bottom:.4rem}
+  .report-header .subtitle{font-size:.88rem;color:var(--text-secondary);margin-bottom:.75rem}
+  .report-header .meta{font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted)}
+  .content{padding:0 2rem 2rem}
+  h2{font-family:'Libre Baskerville',serif;font-size:1.1rem;font-weight:700;margin:var(--gap-xl) 0 var(--gap-md);padding-bottom:var(--gap-sm);border-bottom:1px solid var(--border)}
+  h3{font-size:.9rem;font-weight:600;margin:var(--gap-lg) 0 var(--gap-sm)}
+  p{font-size:.86rem;margin-bottom:var(--gap-sm)}
+  .num{font-family:'DM Mono',monospace;font-weight:500}
+  .badge{display:inline-block;padding:.22rem .6rem;border-radius:var(--radius-sm);font-family:'DM Mono',monospace;font-size:.72rem;font-weight:600;line-height:1}
+  .badge-green{background:rgba(76,175,80,.15);color:var(--green);border:1px solid rgba(76,175,80,.3)}
+  .badge-yellow{background:rgba(255,152,0,.15);color:var(--yellow);border:1px solid rgba(255,152,0,.3)}
+  .badge-red{background:rgba(244,67,54,.15);color:var(--red);border:1px solid rgba(244,67,54,.3)}
+  .badge-blue{background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.3)}
+  .badge-purple{background:rgba(171,71,188,.15);color:var(--purple);border:1px solid rgba(171,71,188,.3)}
+  table{width:100%;border-collapse:collapse;margin:var(--gap-md) 0;font-size:.8rem}
+  th{background:var(--surface);color:var(--muted);text-align:left;padding:.45rem .55rem;border:1px solid var(--border);font-weight:600}
+  td{padding:.45rem .55rem;border:1px solid var(--border);vertical-align:top}
+  tr:hover td{background:rgba(88,166,255,.04)}
+  .exec-box{background:linear-gradient(135deg,var(--surface),var(--surface-alt));border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:var(--radius-md);padding:1.2rem 1.4rem;margin:var(--gap-lg) 0}
+  .exec-box .claim{font-family:'Libre Baskerville',serif;font-size:1rem;font-weight:700;line-height:1.5;margin-bottom:.5rem}
+  .exec-box .verdict{font-family:'DM Mono',monospace;font-size:.76rem;color:var(--text-secondary)}
+  .comment{background:rgba(88,166,255,.06);border-left:3px solid var(--accent);padding:.7rem .9rem;margin:var(--gap-md) 0;font-size:.82rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .comment strong{color:var(--accent)}
+  .psf-box{background:rgba(171,71,188,.06);border-left:3px solid var(--purple);padding:.7rem .9rem;margin:var(--gap-md) 0;font-size:.82rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .psf-box strong{color:var(--purple)}
+  .macro-box{background:rgba(76,175,80,.06);border-left:3px solid var(--green);padding:.7rem .9rem;margin:var(--gap-md) 0;font-size:.82rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .macro-box strong{color:var(--green)}
+  .rm-box{background:rgba(255,152,0,.06);border-left:3px solid var(--yellow);padding:.7rem .9rem;margin:var(--gap-md) 0;font-size:.82rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .rm-box strong{color:var(--yellow)}
+  .alert-box{border-radius:var(--radius-md);padding:.9rem 1.1rem;margin:var(--gap-md) 0;font-size:.82rem}
+  .alert-box.warn{background:rgba(255,152,0,.1);border:1px solid rgba(255,152,0,.3);border-left:4px solid var(--yellow)}
+  .alert-box.danger{background:rgba(244,67,54,.1);border:1px solid rgba(244,67,54,.3);border-left:4px solid var(--red)}
+  .alert-box.info{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25);border-left:4px solid var(--accent)}
+  .scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:var(--gap-md);margin:var(--gap-md) 0}
+  .scenario-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.9rem}
+  .scenario-card .prob{font-family:'DM Mono',monospace;font-size:1.3rem;font-weight:700;margin-bottom:.2rem}
+  .scenario-card .label{font-size:.82rem;font-weight:600;margin-bottom:.4rem}
+  .scenario-card .desc{font-size:.76rem;color:var(--text-secondary)}
+  .clash-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-md);margin:var(--gap-md) 0}
+  .clash-side{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.9rem}
+  .clash-side.bull{border-top:3px solid var(--green)}
+  .clash-side.bear{border-top:3px solid var(--red)}
+  .clash-side h4{font-size:.85rem;margin-bottom:.4rem}
+  .flow-diagram{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.2rem;margin:var(--gap-md) 0;font-family:'DM Mono',monospace;font-size:.75rem;line-height:2;white-space:pre}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.1rem;margin:var(--gap-md) 0}
+  .layer-divider{font-family:'DM Mono',monospace;font-size:.76rem;color:var(--muted);letter-spacing:.1em;margin:var(--gap-xl) 0 var(--gap-md);text-align:center}
+  .sources{font-size:.75rem;color:var(--muted);margin-top:var(--gap-md)}
+  .sources a{color:var(--accent);text-decoration:none}
+  .sources li{margin-bottom:.25rem}
+  .disclaimer{text-align:center;color:var(--muted);font-size:.67rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+  .pos{color:var(--green)}.neg{color:var(--red)}.neu{color:var(--yellow)}
+  .kpi-row{display:flex;gap:var(--gap-sm);flex-wrap:wrap;margin:var(--gap-md) 0}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.5rem .7rem;text-align:center;flex:1;min-width:120px}
+  .kpi .k-label{font-size:.65rem;color:var(--muted);text-transform:uppercase}
+  .kpi .k-val{font-family:'DM Mono',monospace;font-size:1.1rem;font-weight:700;margin:.1rem 0}
+  .kpi .k-sub{font-size:.65rem;color:var(--text-secondary)}
+  @media(max-width:780px){body{max-width:100%}.topbar,.report-header,.content{padding-left:1rem;padding-right:1rem}.report-header h1{font-size:1.25rem}.clash-grid,.scenario-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>STEREO v2.0 INTEGRATED &mdash; reaction(정성) + PSF/macro(정량) &rarr; 시나리오</span>
+  <span>2026-03-26</span>
+</div>
+
+<div class="report-header">
+  <h1>교란이 빠지고 있다. 그러나 다음 역풍이 기다린다.</h1>
+  <div class="subtitle">이란 전쟁 교란 약화 구간에서 Section 301 + 실질금리 + KRW 구조 문제가 부상하는 교차점의 통합 해부.</div>
+  <div class="meta">
+    2026-03-26 | MACRO&times;POLICY | SCP 4 | SA-20260326-003 Integrated<br>
+    Pipeline: scanner(9건) &rarr; rm(3건, 정성) + macro(46지표) &rarr; PSF(3층, 정량) &rarr; Stereo 통합
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ══ Exec ══ -->
+  <div class="exec-box">
+    <div class="claim">
+      이란 전쟁의 교란(L3/L5)이 처음으로 약화 방향으로 돌아섰다.
+      Brent &lt;$100, 비적성 선박 통행, 15-point 외교 채널.
+      그러나 뒤에서 세 개의 역풍이 동시에 쌓이고 있다:
+      Section 301(영구 관세), 실질금리 2.06%(핵심 제약), KRW 1,506(구조적 유출).
+      시장은 교란 약화만 보고 있다. 역풍은 아직 가격에 없다.
+    </div>
+    <div class="verdict">
+      <span class="badge badge-yellow">🔀 교차점</span>
+      <span class="badge badge-purple">정성+정량 통합</span>
+      <span class="badge badge-red">역풍 3개 미반영</span>
+      <span class="badge badge-blue">시나리오 4분기</span>
+    </div>
+  </div>
+
+  <!-- ══ Data Sources ══ -->
+  <h2>통합 데이터 소스</h2>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="k-label">macro 레짐</div><div class="k-val neu">🟡 3/5</div><div class="k-sub">Transition</div></div>
+    <div class="kpi"><div class="k-label">B1 실질금리</div><div class="k-val neg">2.06%</div><div class="k-sub">12M +56bp</div></div>
+    <div class="kpi"><div class="k-label">Brent</div><div class="k-val pos">$99.40</div><div class="k-sub">&lt;$100 ★</div></div>
+    <div class="kpi"><div class="k-label">VIX</div><div class="k-val neu">25.33</div><div class="k-sub">경계선</div></div>
+    <div class="kpi"><div class="k-label">DXY</div><div class="k-val pos">99.63</div><div class="k-sub">&lt;100 약세</div></div>
+    <div class="kpi"><div class="k-label">KRW</div><div class="k-val neg">1,506</div><div class="k-sub">17년 최저</div></div>
+    <div class="kpi"><div class="k-label">HY OAS</div><div class="k-val pos">319bp</div><div class="k-sub">건전</div></div>
+  </div>
+
+  <table>
+    <tr><th>소스</th><th>제공하는 것</th><th>핵심 신호</th></tr>
+    <tr>
+      <td><strong>rm #1</strong> (이란+원자재)</td>
+      <td>5계층 정성 반응</td>
+      <td>괴리: 시장 낙관 vs 이란 거부 vs 공급 손상. 비적성 선박 통행 허용 ★</td>
+    </tr>
+    <tr>
+      <td><strong>rm #2</strong> (301+Fed)</td>
+      <td>5계층 정성 반응</td>
+      <td>과소: 16+60개국 조사인데 시장 무반응. Barr "some time". Fed 분열.</td>
+    </tr>
+    <tr>
+      <td><strong>rm #3</strong> (KRW+추경)</td>
+      <td>5계층 정성 반응</td>
+      <td>수렴(위기): NPS 70%. 25조 추경. RIA $400M. 구조적.</td>
+    </tr>
+    <tr>
+      <td><strong>macro</strong></td>
+      <td>46개 지표 정량</td>
+      <td>🟡 3/5. B1 2.06%↑. C7 $99↓. 교란2 약화 + 키스톤 binding.</td>
+    </tr>
+    <tr>
+      <td><strong>PSF</strong></td>
+      <td>P/S/F 3층 + Link + 축</td>
+      <td>L3/L5 약화↓. L_trade emerging. 괴리 3건. ⑨재정지배 가속.</td>
+    </tr>
+  </table>
+
+  <!-- ══ Core Tension ══ -->
+  <h2>핵심 긴장: 순풍 vs 역풍</h2>
+
+  <div class="clash-grid">
+    <div class="clash-side bull">
+      <h4>순풍 (교란 약화)</h4>
+      <ul style="font-size:.78rem;">
+        <li><strong>정량</strong> C7 Brent $99 (&lt;$100 ★). PSF L3/L5 약화↓.</li>
+        <li><strong>정성</strong> rm #1: 15-point 휴전안 + 비적성 선박 통행. 외교 채널 열림.</li>
+        <li><strong>정량</strong> B5 HY 319bp 건전. S2 안정. L8 비활성. 시스템 리스크 없음.</li>
+        <li><strong>정성</strong> rm #1: S&amp;P +0.54%. 소형주 주도 broad rally. Gold $4,524 복구.</li>
+        <li><strong>정량</strong> B2 DXY 99.63 약세 지속. 글로벌 유동성 중립.</li>
+      </ul>
+    </div>
+    <div class="clash-side bear">
+      <h4>역풍 (잠복 3개)</h4>
+      <ul style="font-size:.78rem;">
+        <li><strong>정량</strong> B1 DFII10 2.06%↑ (+56bp 12M). macro 핵심 제약. Fed 경로 잠김.</li>
+        <li><strong>정성</strong> rm #2: Section 301 16+60개국. 영구 관세 가능. 시장 무반응(과소). PSF P2 🟠.</li>
+        <li><strong>정성</strong> rm #2: Barr "some time". Miran 반대(4회 인하). Powell "nobody knows". Fed 분열.</li>
+        <li><strong>정성</strong> rm #3: KRW 1,506. NPS 70%. 구조적 자본유출. DXY↓에도 미반영.</li>
+        <li><strong>정량</strong> PSF L_trade emerging. 관세→인플레→A1↑ 잠복 경로.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="comment">
+    <strong>Stereo 판독:</strong> 정성(rm)은 "시장이 교란 약화에만 반응하고 역풍을 안 보고 있다"고 말한다. 정량(macro/PSF)은 "교란은 약화 방향이나 B1 상승과 L_trade 형성이 새 제약"이라고 말한다. <strong>정성과 정량이 같은 방향을 가리킨다: "지금은 순풍 구간이나 역풍이 대기 중."</strong>
+  </div>
+
+  <!-- ══ Integrated Path Analysis ══ -->
+  <h2>통합 경로 분석 &mdash; 정성+정량 교차</h2>
+
+  <table>
+    <tr><th>경로</th><th>정량 (macro/PSF)</th><th>정성 (rm)</th><th>통합 판정</th></tr>
+    <tr>
+      <td><strong>교란2 (유가)</strong></td>
+      <td>C7 $99↓. L3/L5 약화↓. BEI 2.51%↓.</td>
+      <td>rm #1: 비적성 선박 통행. 휴전 기대. Brent -5.9%.</td>
+      <td class="pos"><strong>약화 ★</strong> 정성+정량 일치. 교란 해소 접근.</td>
+    </tr>
+    <tr>
+      <td><strong>Fed 경로</strong></td>
+      <td>B1 2.06%↑. macro 키스톤 binding. 3/5.</td>
+      <td>rm #2: Barr "some time". Miran 반대. 금리 선물 인상 전환.</td>
+      <td class="neg"><strong>제약 강화</strong> 정성+정량 일치. 인하 차단.</td>
+    </tr>
+    <tr>
+      <td><strong>관세 잠복</strong></td>
+      <td>PSF P2 🟠. L_trade emerging.</td>
+      <td>rm #2: 16+60개국. IEEPA→301 3단 진화. 시장 과소 반응.</td>
+      <td class="neg"><strong>미반영 ★</strong> 정성(과소)+정량(emerging) 일치. 가장 위험한 괴리.</td>
+    </tr>
+    <tr>
+      <td><strong>KRW 구조</strong></td>
+      <td>PSF F1: DXY↓ 미반영. macro 범위 밖.</td>
+      <td>rm #3: NPS 70%. 1,506 = 17년 최저. RIA $400M = 0.7%.</td>
+      <td class="neg"><strong>구조적</strong> 정성(수렴위기)+정량(DXY 괴리) 일치. 전쟁 종결로도 1,400↓ 어려움.</td>
+    </tr>
+    <tr>
+      <td><strong>엔캐리</strong></td>
+      <td>B3 USD/JPY 159.49. PSF 교란1 경계.</td>
+      <td>rm 미수집 (별도 이슈 아님).</td>
+      <td class="neu"><strong>잠복 ⚠</strong> 정량만. 160 돌파 시 Override.</td>
+    </tr>
+  </table>
+
+  <!-- ══ Scenarios ══ -->
+  <h2>시나리오 분기 &mdash; 정성+정량 통합</h2>
+
+  <div class="scenario-grid">
+    <div class="scenario-card" style="border-top:3px solid var(--green)">
+      <div class="prob pos">25%</div>
+      <div class="label">A. 교란 해소 + 역풍 지연</div>
+      <div class="desc">
+        <strong>조건:</strong> 이란 휴전 성사 + Brent $80↓ + 301 지연(7월+)<br>
+        <strong>정량:</strong> L3/L5 비활성. C7↓. B1 하락 전환 가능.<br>
+        <strong>정성:</strong> rm 패턴 "수렴(호재)"로 전환.<br>
+        <strong>결과:</strong> macro 🟡→🟢. S&amp;P 6,800+. KRW 1,450. Gold $4,800+.<br>
+        <strong>시점:</strong> 4~8주.
+      </div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--yellow)">
+      <div class="prob neu">35%</div>
+      <div class="label">B. 교착 + 역풍 가시화</div>
+      <div class="desc">
+        <strong>조건:</strong> 이란 교착 + 301 청문회(4/28) + Fed 동결 유지<br>
+        <strong>정량:</strong> Brent $95~105. B1 2.0%+. L_trade 활성화 시작.<br>
+        <strong>정성:</strong> rm "분열" 패턴 지속. 시장 whipsaw.<br>
+        <strong>결과:</strong> macro 🟡 유지. S&amp;P 6,300~6,600. KRW 1,490~1,530.<br>
+        <strong>시점:</strong> 현재~3개월. <span class="badge badge-yellow">base case</span>
+      </div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--red)">
+      <div class="prob neg">15%</div>
+      <div class="label">C. 이중 충격 (확전+관세)</div>
+      <div class="desc">
+        <strong>조건:</strong> 이란 걸프 확대 + 301 관세 확정 + Fed 인상 베팅<br>
+        <strong>정량:</strong> Brent $130+. B1 2.3%+. L3 재활성. L_trade 활성. L7 발동.<br>
+        <strong>정성:</strong> rm "수렴(위기)" + PSF L8 접근.<br>
+        <strong>결과:</strong> macro 🟡→🔴. S&amp;P 5,800↓. KRW 1,550~1,600. 스태그플레이션.<br>
+        <strong>시점:</strong> 트리거 발생 시 즉시.
+      </div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--accent)">
+      <div class="prob" style="color:var(--accent)">25%</div>
+      <div class="label">D. 교란 해소 + 역풍 동시</div>
+      <div class="desc">
+        <strong>조건:</strong> 이란 휴전 + 그러나 301 확정 + Fed 동결 장기화<br>
+        <strong>정량:</strong> C7↓이나 L_trade 활성. B1 보합. 교란→관세 전환.<br>
+        <strong>정성:</strong> rm "전쟁 뉴스 사라짐 → 관세가 다음 dominant."<br>
+        <strong>결과:</strong> macro 🟡 유지(성격 변환). S&amp;P 섹터별 차별화. KRW 1,450~1,500.<br>
+        <strong>시점:</strong> 전쟁 종결 후 1~3개월. <span class="badge badge-blue">가장 중요한 시나리오</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <strong>시나리오 D가 핵심인 이유:</strong> 시장은 "전쟁 끝 = 모든 것 해결"로 프라이싱할 가능성이 높다. 그러나 전쟁이 끝나면 Section 301이 front-page가 되고, KRW의 구조적 문제가 더 선명해지고, Fed 동결이 유일한 이슈가 된다. <strong>"교란이 빠진 뒤에 드러나는 풍경"이 지금과 다를 수 있다.</strong>
+  </div>
+
+  <!-- ══ Convergence Map ══ -->
+  <h2>정성+정량 수렴 지도</h2>
+
+  <table>
+    <tr><th>신호</th><th>정량 (macro/PSF)</th><th>정성 (rm)</th><th>수렴?</th></tr>
+    <tr>
+      <td>교란 약화</td>
+      <td>L3/L5 약화↓. C7 &lt;$100.</td>
+      <td>rm #1: 휴전 기대. 비적성 선박.</td>
+      <td class="pos">✅ 수렴</td>
+    </tr>
+    <tr>
+      <td>실질금리 상승</td>
+      <td>B1 2.06%. trend 12M +56bp.</td>
+      <td>rm #2: Barr "some time". 인상 베팅.</td>
+      <td class="pos">✅ 수렴</td>
+    </tr>
+    <tr>
+      <td>관세 미반영</td>
+      <td>PSF P2 🟠. L_trade emerging.</td>
+      <td>rm #2: 과소 반응. 시장 무반응.</td>
+      <td class="pos">✅ 수렴 <strong>(가장 강한 신호)</strong></td>
+    </tr>
+    <tr>
+      <td>KRW 구조</td>
+      <td>F1 DXY↓ 미반영. macro 범위 밖.</td>
+      <td>rm #3: NPS 70%. 수렴(위기).</td>
+      <td class="pos">✅ 수렴</td>
+    </tr>
+    <tr>
+      <td>시스템 안정</td>
+      <td>S2 319bp 건전. L8 비활성.</td>
+      <td>rm #1: HY 개선. "지정학≠시스템 위기".</td>
+      <td class="pos">✅ 수렴</td>
+    </tr>
+  </table>
+
+  <div class="alert-box info">
+    <strong>5개 신호 모두 정성+정량 수렴.</strong> 이것은 드문 상태입니다. 보통 정성(매체·전문가)과 정량(지표·모델)은 어긋나기 마련인데, 오늘은 양쪽이 같은 방향을 가리킵니다. <strong>"교란 빠지는 중 + 역풍 쌓이는 중 + 시스템은 안정"</strong> &mdash; 이 합의가 유효한 기간이 투자 판단의 창(window)입니다.
+  </div>
+
+  <!-- ══ Timeline ══ -->
+  <h2>핵심 일정 &mdash; 시나리오 분기점</h2>
+
+  <table>
+    <tr><th>날짜</th><th>이벤트</th><th>정량 영향</th><th>정성 영향</th><th>시나리오</th></tr>
+    <tr><td class="num">3/28</td><td>Core PCE (2월)</td><td>A1 키스톤. 2.3%↓ 시 B1↓ 트리거.</td><td>Fed 인하 기대 부활 여부.</td><td>A vs B</td></tr>
+    <tr><td class="num">3/31</td><td>이란 대응 데드라인</td><td>L3/L5 방향 결정.</td><td>rm 패턴 전환 여부.</td><td>A vs C</td></tr>
+    <tr><td class="num">4/01</td><td>ISM PMI (3월)</td><td>C5. 48↓ 시 수축 확인.</td><td>스태그 서사 강화/약화.</td><td>B vs C</td></tr>
+    <tr><td class="num">4/15</td><td>Section 301 코멘트 마감</td><td>L_trade 활성화 가속.</td><td>시장이 관세 인식 시작.</td><td>B vs D ★</td></tr>
+    <tr><td class="num">4/28</td><td>Section 301 청문회</td><td>관세 범위·세율 윤곽.</td><td>rm 패턴 변동 예상.</td><td>D 확정?</td></tr>
+    <tr><td class="num">5/07</td><td>FOMC</td><td>B1 방향. 점도표.</td><td>Barr vs Miran.</td><td>A vs B vs C</td></tr>
+    <tr><td class="num neg">7/24</td><td>Section 122 만료</td><td>관세 공백 or 301 전환.</td><td>시장 프라이싱 전환점.</td><td>D 최종</td></tr>
+  </table>
+
+  <!-- ══ Uncertainty ══ -->
+  <h2>불확실성 지도</h2>
+
+  <table>
+    <tr><th>영역</th><th>확신도</th><th>근거</th></tr>
+    <tr><td>교란 약화 방향</td><td>■■■■□</td><td>정량(L3/L5)+정성(rm #1) 수렴. 단, 이란 재공격 시 역전.</td></tr>
+    <tr><td>실질금리 제약</td><td>■■■■■</td><td>정량(B1 2.06%)+정성(Barr 발언) 강한 수렴. 가장 확실.</td></tr>
+    <tr><td>관세 미반영</td><td>■■■■□</td><td>정량(P2)+정성(과소) 수렴. 단, 301이 실제 관세로 안 갈 수도.</td></tr>
+    <tr><td>KRW 구조</td><td>■■■□□</td><td>정성(NPS 70% 한은 발언)+정량(DXY 괴리). WGBI 시점 불확실.</td></tr>
+    <tr><td><strong>시나리오 D 실현</strong></td><td><strong>■■□□□</strong></td><td><strong>가장 중요하나 가장 불확실. 전쟁 종결 시점 + 301 확정 시점의 교차.</strong></td></tr>
+  </table>
+
+  <div class="alert-box warn">
+    <strong>약한 고리:</strong> 시나리오 D &mdash; "교란 해소 + 역풍 동시." 전쟁 종결 시점과 301 확정 시점이 겹치는가가 핵심인데, 두 가지 모두 외생 변수. 이것이 실현되면 시장의 narrative가 완전히 전환됨.<br>
+    <strong>보강:</strong> 4/15(301 코멘트) + 이란 외교 진행 동시 추적. 두 타임라인의 교차점이 시나리오 D의 트리거.
+  </div>
+
+  <!-- ══ FB-4 + FB-5 ══ -->
+  <h2>되먹임</h2>
+
+  <div class="comment">
+    <strong>FB-4 (최종 대조):</strong><br>
+    처음: "이란 전쟁으로 시장이 혼란. 유가 급등. 금 급락."<br>
+    지금: "교란은 약화 방향이다. 그러나 교란 뒤에 숨어있던 3개 역풍(301+B1+KRW)이 교란이 빠지는 순간 전면에 드러난다. 시나리오 D가 가장 중요하나 가장 불확실하다."<br>
+    &rarr; <strong>다르게 보인다. ✅</strong>
+  </div>
+  <div class="comment">
+    <strong>FB-5 (시간축 검증):</strong><br>
+    &bull; "교란 약화": 스냅샷 판단 OK (3/25~26 이틀간 Brent $102&rarr;$99).<br>
+    &bull; "B1 제약 강화": trend_note 12M +56bp. 스냅샷 아닌 추세 기반. ✅<br>
+    &bull; "301 구조 전환": IEEPA(2025)&rarr;301(2026.03) 14개월. 시간축 분해 완료. ✅<br>
+    &bull; "KRW 구조": 1,350&rarr;1,506 14개월 3단계. 시간축 분해 완료. ✅<br>
+    &rarr; <strong>"구조적" 판단에 3개월+ 근거 있음. 스냅샷 점프 아님. ✅</strong>
+  </div>
+
+  <!-- ══ Sources ══ -->
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li><strong>macro/indicators/latest.json</strong> (2026-03-26) &mdash; B1 2.06%, B2 99.63, B5 319bp, C7 $99.40, C1 25.33 + trend_notes</li>
+    <li><strong>psf-monitor/state.json</strong> (2026-03-26) &mdash; P1~P5, S1~S5, F1~F5, Links (L3/L5/L_trade/L7), axes, divergences 3건</li>
+    <li><strong>rm state.json #1</strong> (이란+원자재) &mdash; 괴리 패턴. 텔레그램 #80.</li>
+    <li><strong>rm state.json #2</strong> (301+Fed) &mdash; 분열+과소. 텔레그램 #82. Stereo SA-001.</li>
+    <li><strong>rm state.json #3</strong> (KRW+추경) &mdash; 수렴(위기). 텔레그램 #83. Stereo SA-002.</li>
+    <li><a href="https://apnews.com/live/iran-war-israel-trump-03-25-2026">AP &mdash; Iran war live</a></li>
+    <li><a href="https://www.coface.com/news-economy-and-insights/the-conflict-in-the-middle-east-is-causing-commodity-prices-to-soar">Coface &mdash; Commodity Shock</a></li>
+    <li><a href="https://www.congress.gov/crs_external_products/IF/PDF/IF10733/IF10733.19.pdf">CRS &mdash; US-Korea Trade</a></li>
+    <li><a href="https://www.rbccm.com/assets/rbccm/docs/fx/currency-report-card.pdf">RBC &mdash; KRW Currency Report</a></li>
+    <li><a href="https://news.bloomberglaw.com/banking-law/feds-barr-says-rates-may-need-to-hold-steady-for-some-time">Bloomberg &mdash; Fed Barr</a></li>
+    <li>FRED MCP (12건) / Yahoo Finance MCP (8건) / CoinGecko (1건) / DeFiLlama (1건) / Tavily (8건) / WebSearch (6건)</li>
+  </ul>
+
+</div>
+
+<div class="disclaimer">
+  Stereo Analyzer v2.0 Integrated | SA-20260326-003 | 2026-03-26<br>
+  Full Pipeline: scanner(9건) &rarr; rm(3건, 정성 5계층) + macro(46지표) &rarr; PSF(3층, 정량) &rarr; Stereo 통합 해부<br>
+  정성+정량 수렴 5/5. 시나리오 4분기. 역풍 3개 미반영.<br>
+  이 보고서는 통합 분석 결과이며, 투자 판단을 제공하지 않습니다.
+</div>
+
+</body>
+</html>

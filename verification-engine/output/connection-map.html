@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification Engine — Connection Map</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--bg:#f8f9fa;--surface:#fff;--card:#f1f3f5;--navy:#1B2A4A;--blue:#2C5697;--sky:#4472C4;--pale:#EDF2F9;--text:#1a1a1a;--sub:#555;--dim:#999;--border:#ddd;--line:#ccc;--red:#e74c3c;--green:#27ae60;--gold:#f39c12;--orange:#e67e22;--purple:#8e44ad;--teal:#1abc9c;
+--c-code:#2C5697;--c-data:#27ae60;--c-prompt:#f39c12;--c-schema:#8e44ad;--c-output:#e67e22;--c-entry:#e74c3c}
+[data-theme="dark"]{--bg:#0d1117;--surface:#161b22;--card:#1c2128;--navy:#e6edf3;--blue:#58a6ff;--sky:#79c0ff;--pale:#131d2b;--text:#e6edf3;--sub:#b1bac4;--dim:#6e7681;--border:#30363d;--line:#30363d;--red:#f85149;--green:#3fb950;--gold:#d29922;--orange:#f0883e;--purple:#bc8cff;--teal:#56d4dd;
+--c-code:#58a6ff;--c-data:#3fb950;--c-prompt:#d29922;--c-schema:#bc8cff;--c-output:#f0883e;--c-entry:#f85149}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif}
+.page{max-width:1100px;margin:0 auto;padding:24px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;padding-bottom:16px;border-bottom:3px solid var(--navy)}
+.header h1{font-size:22px;color:var(--navy)}
+.header .sub{font-size:13px;color:var(--dim)}
+.btn{background:var(--navy);color:#fff;border:none;font-size:11px;font-weight:600;padding:5px 12px;border-radius:4px;cursor:pointer;margin-left:6px}
+
+/* ===== MAP CONTAINER ===== */
+.map{position:relative;width:100%;min-height:1600px}
+
+/* ===== NODES ===== */
+.node{position:absolute;background:var(--surface);border:2px solid var(--border);border-radius:8px;padding:10px 14px;font-size:12px;z-index:10;transition:transform .2s,box-shadow .2s;cursor:default}
+.node:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.12);z-index:20}
+.node .n-label{font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:1.5px;margin-bottom:4px}
+.node .n-title{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:2px}
+.node .n-file{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--blue)}
+.node .n-desc{font-size:10.5px;color:var(--dim);margin-top:3px}
+
+.node.t-entry{border-color:var(--c-entry);border-width:3px}.node.t-entry .n-label{color:var(--c-entry)}
+.node.t-code{border-color:var(--c-code)}.node.t-code .n-label{color:var(--c-code)}
+.node.t-data{border-color:var(--c-data)}.node.t-data .n-label{color:var(--c-data)}
+.node.t-prompt{border-color:var(--c-prompt)}.node.t-prompt .n-label{color:var(--c-prompt)}
+.node.t-schema{border-color:var(--c-schema)}.node.t-schema .n-label{color:var(--c-schema)}
+.node.t-output{border-color:var(--c-output)}.node.t-output .n-label{color:var(--c-output)}
+
+/* ===== LEGEND ===== */
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;padding:12px 16px;background:var(--card);border-radius:6px;font-size:11px;align-items:center}
+.legend-item{display:flex;align-items:center;gap:5px}
+.legend-dot{width:12px;height:12px;border-radius:3px;border:2px solid}
+.legend-dot.l-entry{border-color:var(--c-entry)}.legend-dot.l-code{border-color:var(--c-code)}
+.legend-dot.l-data{border-color:var(--c-data)}.legend-dot.l-prompt{border-color:var(--c-prompt)}
+.legend-dot.l-schema{border-color:var(--c-schema)}.legend-dot.l-output{border-color:var(--c-output)}
+
+/* ===== SVG LINES ===== */
+svg.lines{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none}
+svg.lines line{stroke-width:1.5;opacity:.5}
+svg.lines line.import{stroke:var(--c-code);stroke-dasharray:none}
+svg.lines line.data-load{stroke:var(--c-data);stroke-dasharray:6,4}
+svg.lines line.prompt-ref{stroke:var(--c-prompt);stroke-dasharray:3,3}
+svg.lines line.inject{stroke:var(--purple);stroke-dasharray:8,3}
+svg.lines line.output-ref{stroke:var(--c-output);stroke-dasharray:none}
+svg.lines marker{overflow:visible}
+
+/* ===== PHASE BAND ===== */
+.phase-band{position:absolute;background:var(--pale);border:1px dashed var(--border);border-radius:8px;z-index:0;opacity:.5}
+.phase-band .pb-label{position:absolute;top:6px;left:12px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;color:var(--dim);letter-spacing:1px}
+
+@media print{.btn{display:none}.node:hover{transform:none;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="header">
+  <div><h1>6-Layer Verification Engine</h1><div class="sub">Connection Map &mdash; 31 files, all connections verified</div></div>
+  <div>
+    <button class="btn" onclick="var h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark')">DARK</button>
+    <button class="btn" onclick="window.print()">PRINT</button>
+  </div>
+</div>
+
+<div class="legend">
+  <strong>범례:</strong>
+  <div class="legend-item"><div class="legend-dot l-entry"></div>진입점</div>
+  <div class="legend-item"><div class="legend-dot l-code"></div>코드 (core/)</div>
+  <div class="legend-item"><div class="legend-dot l-data"></div>데이터 (data/)</div>
+  <div class="legend-item"><div class="legend-dot l-prompt"></div>프롬프트 (prompts/)</div>
+  <div class="legend-item"><div class="legend-dot l-schema"></div>스키마 (schemas/)</div>
+  <div class="legend-item"><div class="legend-dot l-output"></div>출력 (output/)</div>
+  <div class="legend-item" style="margin-left:auto;color:var(--dim)">━ import &nbsp; ╌ data load &nbsp; ┄ prompt ref &nbsp; ╸ inject</div>
+</div>
+
+<div class="map">
+
+<!-- ===== SVG CONNECTIONS ===== -->
+<svg class="lines" viewBox="0 0 1060 1560">
+<defs>
+  <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--dim)" opacity=".6"/></marker>
+  <marker id="ah-b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--c-code)" opacity=".6"/></marker>
+  <marker id="ah-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--c-data)" opacity=".6"/></marker>
+  <marker id="ah-y" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--c-prompt)" opacity=".6"/></marker>
+  <marker id="ah-p" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--purple)" opacity=".6"/></marker>
+  <marker id="ah-o" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="var(--c-output)" opacity=".6"/></marker>
+</defs>
+
+<!-- mcp_server → engine -->
+<line class="import" x1="350" y1="75" x2="350" y2="178" marker-end="url(#ah-b)"/>
+<!-- mcp_server → layers (NormLayer etc) -->
+<line class="import" x1="420" y1="75" x2="530" y2="248" marker-end="url(#ah-b)"/>
+
+<!-- engine → models -->
+<line class="import" x1="280" y1="230" x2="140" y2="230" marker-end="url(#ah-b)"/>
+<!-- engine → layers -->
+<line class="import" x1="400" y1="250" x2="530" y2="270" marker-end="url(#ah-b)"/>
+
+<!-- layers → models -->
+<line class="import" x1="530" y1="320" x2="140" y2="270" marker-end="url(#ah-b)" opacity=".3"/>
+
+<!-- norm.py → checklists.json -->
+<line class="data-load" x1="600" y1="350" x2="920" y2="220" marker-end="url(#ah-g)"/>
+<!-- logic.py → rules.json -->
+<line class="data-load" x1="680" y1="350" x2="920" y2="270" marker-end="url(#ah-g)"/>
+<!-- omission.py → checklists.json -->
+<line class="data-load" x1="780" y1="350" x2="920" y2="220" marker-end="url(#ah-g)"/>
+<!-- engine → claim_type_matrix -->
+<line class="data-load" x1="350" y1="260" x2="920" y2="320" marker-end="url(#ah-g)"/>
+
+<!-- mcp_server → CLAUDE.md (orchestrator) -->
+<line class="prompt-ref" x1="250" y1="75" x2="120" y2="488" marker-end="url(#ah-y)"/>
+<!-- mcp_server → SKILL.md (orchestrator) -->
+<line class="prompt-ref" x1="300" y1="75" x2="300" y2="488" marker-end="url(#ah-y)"/>
+<!-- mcp_server → Phase prompts (get_prompt) -->
+<line class="prompt-ref" x1="500" y1="75" x2="530" y2="488" marker-end="url(#ah-y)"/>
+
+<!-- CLAUDE.md ← all phase prompts -->
+<line class="prompt-ref" x1="200" y1="548" x2="440" y2="548" marker-end="url(#ah-y)" opacity=".3"/>
+<line class="prompt-ref" x1="200" y1="548" x2="440" y2="648" marker-end="url(#ah-y)" opacity=".3"/>
+<line class="prompt-ref" x1="200" y1="548" x2="440" y2="748" marker-end="url(#ah-y)" opacity=".3"/>
+<line class="prompt-ref" x1="200" y1="548" x2="440" y2="848" marker-end="url(#ah-y)" opacity=".3"/>
+
+<!-- Placeholder injection lines -->
+<line class="inject" x1="680" y1="548" x2="920" y2="448" marker-end="url(#ah-p)"/>
+<line class="inject" x1="680" y1="648" x2="920" y2="508" marker-end="url(#ah-p)"/>
+<line class="inject" x1="680" y1="748" x2="920" y2="568" marker-end="url(#ah-p)"/>
+
+<!-- fact_evidence flow: fact→logic, fact→temporal, fact→omission -->
+<line class="inject" x1="620" y1="580" x2="620" y2="630" marker-end="url(#ah-p)" opacity=".7"/>
+<line class="inject" x1="640" y1="580" x2="640" y2="700" marker-end="url(#ah-p)" opacity=".7"/>
+<line class="inject" x1="660" y1="580" x2="800" y2="800" marker-end="url(#ah-p)" opacity=".4"/>
+
+<!-- finalize → self_audit -->
+<line class="inject" x1="530" y1="970" x2="530" y2="1050" marker-end="url(#ah-p)"/>
+<!-- self_audit → Phase 5 -->
+<line class="output-ref" x1="530" y1="1120" x2="530" y2="1198" marker-end="url(#ah-o)"/>
+<!-- Phase 5 → component-catalog -->
+<line class="output-ref" x1="400" y1="1260" x2="170" y2="1350" marker-end="url(#ah-o)"/>
+<!-- Phase 5 → template -->
+<line class="output-ref" x1="600" y1="1290" x2="750" y2="1350" marker-end="url(#ah-o)"/>
+<!-- Phase 5 → generated html -->
+<line class="output-ref" x1="530" y1="1300" x2="530" y2="1420" marker-end="url(#ah-o)"/>
+<!-- io-contracts ← prompts -->
+<line class="prompt-ref" x1="680" y1="880" x2="920" y2="648" marker-end="url(#ah-p)" opacity=".3"/>
+</svg>
+
+<!-- ===== PHASE BANDS ===== -->
+<div class="phase-band" style="left:40px;top:460px;width:860px;height:420px"><div class="pb-label">PHASE 1 → 2 → 2.5 (검증)</div></div>
+<div class="phase-band" style="left:40px;top:910px;width:860px;height:230px"><div class="pb-label">PHASE 3+4 → 4.5 (마무리)</div></div>
+<div class="phase-band" style="left:40px;top:1170px;width:860px;height:140px"><div class="pb-label">PHASE 5 (HTML 보고서)</div></div>
+
+<!-- ===== NODES ===== -->
+
+<!-- ENTRY POINT -->
+<div class="node t-entry" style="left:200px;top:20px;width:380px">
+  <div class="n-label">ENTRY POINT</div>
+  <div class="n-title">mcp_server.py</div>
+  <div class="n-desc">MCP 도구 12개 &middot; 세션 관리 &middot; 프롬프트 로더 &middot; 플레이스홀더 주입</div>
+</div>
+
+<!-- CORE -->
+<div class="node t-code" style="left:30px;top:180px;width:180px">
+  <div class="n-label">CORE</div>
+  <div class="n-title">models.py</div>
+  <div class="n-desc">Claim, Verdict, Result, Evidence, KC, BBJ</div>
+</div>
+
+<div class="node t-code" style="left:250px;top:180px;width:200px">
+  <div class="n-label">CORE</div>
+  <div class="n-title">engine.py</div>
+  <div class="n-desc">파이프라인 오케스트레이터 &middot; 상태 관리 &middot; 집계</div>
+</div>
+
+<div class="node t-code" style="left:490px;top:210px;width:370px">
+  <div class="n-label">CORE / LAYERS</div>
+  <div class="n-title">6층 검증 구현</div>
+  <div class="n-file" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">
+    <span style="background:var(--pale);padding:2px 8px;border-radius:3px">① fact.py</span>
+    <span style="background:var(--pale);padding:2px 8px;border-radius:3px">② norm.py</span>
+    <span style="background:var(--pale);padding:2px 8px;border-radius:3px">③ logic.py</span>
+    <span style="background:var(--pale);padding:2px 8px;border-radius:3px">④ temporal.py</span>
+    <span style="background:var(--pale);padding:2px 8px;border-radius:3px">⑤ incentive.py</span>
+    <span style="background:var(--pale);padding:2px 8px;border-radius:3px">⑥ omission.py</span>
+  </div>
+</div>
+
+<!-- DATA -->
+<div class="node t-data" style="left:870px;top:180px;width:170px">
+  <div class="n-label">DATA</div>
+  <div class="n-title">data/</div>
+  <div class="n-file">checklists.json</div>
+  <div class="n-file">rules.json</div>
+  <div class="n-file">claim_type_matrix.json</div>
+</div>
+
+<!-- PROMPTS: CLAUDE + SKILL -->
+<div class="node t-prompt" style="left:50px;top:490px;width:180px">
+  <div class="n-label">원칙</div>
+  <div class="n-title">CLAUDE.md</div>
+  <div class="n-desc">4대 불변 원칙 &middot; 판정 체계 &middot; Tier &middot; KC/BBJ &middot; V-01~V-06</div>
+</div>
+
+<div class="node t-prompt" style="left:250px;top:490px;width:170px">
+  <div class="n-label">실행 흐름</div>
+  <div class="n-title">SKILL.md</div>
+  <div class="n-desc">Phase 0→5 &middot; 조건 분기 &middot; Finding &middot; HTML 규칙</div>
+</div>
+
+<!-- PHASE 1 -->
+<div class="node t-prompt" style="left:440px;top:490px;width:200px">
+  <div class="n-label">PHASE 1</div>
+  <div class="n-title">extract_claims.md</div>
+  <div class="n-file">{document} → claim 10~20개</div>
+</div>
+
+<!-- PHASE 2: 6 layers -->
+<div class="node t-prompt" style="left:440px;top:560px;width:170px">
+  <div class="n-label">PHASE 2①</div>
+  <div class="n-title">fact_check.md</div>
+  <div class="n-file">{mcp_sources}</div>
+</div>
+
+<div class="node t-prompt" style="left:630px;top:560px;width:170px">
+  <div class="n-label">PHASE 2②</div>
+  <div class="n-title">norm_check.md</div>
+  <div class="n-file">{checklist}</div>
+</div>
+
+<div class="node t-prompt" style="left:440px;top:630px;width:170px">
+  <div class="n-label">PHASE 2③</div>
+  <div class="n-title">logic_check.md</div>
+  <div class="n-file">{rules} {fact_evidence}</div>
+</div>
+
+<div class="node t-prompt" style="left:630px;top:630px;width:170px">
+  <div class="n-label">PHASE 2④</div>
+  <div class="n-title">temporal_check.md</div>
+  <div class="n-file">{fact_evidence}</div>
+</div>
+
+<div class="node t-prompt" style="left:440px;top:700px;width:170px">
+  <div class="n-label">PHASE 2⑤</div>
+  <div class="n-title">incentive_check.md</div>
+  <div class="n-file">{check_items}</div>
+</div>
+
+<div class="node t-prompt" style="left:630px;top:700px;width:170px">
+  <div class="n-label">PHASE 2⑥</div>
+  <div class="n-title">omission_check.md</div>
+  <div class="n-file">{omission_checklist}</div>
+</div>
+
+<!-- PHASE 2.5 -->
+<div class="node t-prompt" style="left:440px;top:790px;width:200px">
+  <div class="n-label">PHASE 2.5</div>
+  <div class="n-title">coverage_recheck.md</div>
+  <div class="n-file">{missing_items} → 재실행 (max 2)</div>
+</div>
+
+<!-- SCHEMAS -->
+<div class="node t-schema" style="left:870px;top:420px;width:170px">
+  <div class="n-label">SCHEMA</div>
+  <div class="n-title">io-contracts.md</div>
+  <div class="n-desc">12개 플레이스홀더 JSON 스키마</div>
+</div>
+
+<div class="node t-schema" style="left:870px;top:520px;width:170px">
+  <div class="n-label">SCHEMA</div>
+  <div class="n-title">component-catalog.md</div>
+  <div class="n-desc">12개 CSS 컴포넌트 + Tooltip</div>
+</div>
+
+<!-- PHASE 3+4 -->
+<div class="node t-prompt" style="left:440px;top:920px;width:200px">
+  <div class="n-label">PHASE 3+4</div>
+  <div class="n-title">finalize.md</div>
+  <div class="n-desc">유효기간 + KC→유효조건 + 무효화 트리거</div>
+  <div class="n-file">→ result_json 반환</div>
+</div>
+
+<!-- PHASE 4.5 -->
+<div class="node t-prompt" style="left:440px;top:1040px;width:200px">
+  <div class="n-label">PHASE 4.5</div>
+  <div class="n-title">self_audit.md</div>
+  <div class="n-desc">9항목 자기점검 → 사용자 승인 대기</div>
+  <div class="n-file">{result_json} {coverage_report}</div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="node t-output" style="left:340px;top:1198px;width:360px">
+  <div class="n-label">PHASE 5 &mdash; SKILL.md &sect;5</div>
+  <div class="n-title">HTML 보고서 생성</div>
+  <div class="n-desc">Finding Card (9필드) + 7+1 섹션 렌더링 + Tooltip + SHORT/FULL</div>
+  <div class="n-file">{data} → [slug]-verification-report.html</div>
+</div>
+
+<!-- OUTPUT -->
+<div class="node t-schema" style="left:50px;top:1340px;width:200px">
+  <div class="n-label">CSS REFERENCE</div>
+  <div class="n-title">component-catalog.md</div>
+  <div class="n-desc">변수 + topbar + nav + Finding Card + Tooltip + 다크모드</div>
+</div>
+
+<div class="node t-output" style="left:630px;top:1340px;width:220px">
+  <div class="n-label">HTML TEMPLATE</div>
+  <div class="n-title">template-verification.html</div>
+  <div class="n-desc">7섹션 골격 + CSS inline + JS</div>
+</div>
+
+<div class="node t-output" style="left:380px;top:1420px;width:280px;border-width:3px">
+  <div class="n-label">GENERATED OUTPUT</div>
+  <div class="n-title">[slug]-verification-report.html</div>
+  <div class="n-desc">최종 검증 보고서 &middot; 사용자 지정 경로 저장</div>
+</div>
+
+<!-- PLACEHOLDER INJECTION LABELS -->
+<div style="position:absolute;left:870px;top:380px;font-family:'DM Mono',monospace;font-size:10px;color:var(--purple);z-index:5">
+  ← 플레이스홀더 주입
+</div>
+
+</div><!-- /map -->
+
+</div><!-- /page -->
+</body>
+</html>

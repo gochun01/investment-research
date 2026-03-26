@@ -1,0 +1,254 @@
+{
+  "_fred_reference": {
+    "_comment": "RULES.md에서 사용하는 FRED 시리즈 ID 레퍼런스 테이블. 오조회 방지 + 유지보수용.",
+    "FEDFUNDS": "Federal Funds Effective Rate (실제 금리)",
+    "FEDTARMD": "FOMC SEP Fed Funds Rate Median (Dot Plot 중앙값)",
+    "REAINTRATREARAT10Y": "10-Year Real Interest Rate (실질금리)",
+    "T5YIE": "5-Year Breakeven Inflation Rate (기대인플레이션 5년)",
+    "T10YIE": "10-Year Breakeven Inflation Rate (기대인플레이션 10년)",
+    "BAMLH0A0HYM2": "ICE BofA US High Yield OAS (HY 스프레드)",
+    "DTWEXBGS": "Nominal Broad U.S. Dollar Index (달러 광의지수, DXY 대용)",
+    "PCEPILFE": "PCE Excluding Food and Energy (근원 PCE)",
+    "CPIAUCSL": "CPI for All Urban Consumers (소비자물가지수)",
+    "A191RL1Q225SBEA": "Real GDP (% Change from Preceding Period, 전기비연율)",
+    "DCOILWTICO": "Crude Oil Prices: WTI (서부텍사스유)",
+    "DHHNGSP": "Henry Hub Natural Gas Spot Price (천연가스)",
+    "UNRATE": "Civilian Unemployment Rate (실업률, Monthly, %)",
+    "PAYEMS": "Total Nonfarm Payrolls (비농업고용, Monthly, Thousands)",
+    "UMCSENT": "U. of Michigan Consumer Sentiment (소비자심리, Monthly, Index)",
+    "T10Y2Y": "10Y-2Y Treasury Spread (장단기금리차, Daily, %)",
+    "T10Y3M": "10Y-3M Treasury Spread (장단기금리차, Daily, %)",
+    "VIXCLS": "CBOE VIX (변동성지수, Daily, Index)",
+    "NASDAQCOM": "NASDAQ Composite (나스닥종합, Daily, Index)",
+    "SP500": "S&P 500 (Daily, Index)",
+    "WILL5000INDFC": "Wilshire 5000 Total Market (전체시장, Daily, Index)",
+    "MORTGAGE30US": "30-Year Fixed Mortgage Rate (모기지금리, Weekly, %)",
+    "CSUSHPINSA": "Case-Shiller Home Price Index (주택가격, Monthly, Index)",
+    "M2SL": "M2 Money Stock (통화량, Monthly, Billions $)",
+    "WALCL": "Fed Total Assets — Balance Sheet (연준자산, Weekly, Millions $)",
+    "RRPONTSYD": "Overnight Reverse Repo — ON RRP (역레포, Daily, Billions $)",
+    "GOLDAMGBD228NLBM": "Gold Price — London AM Fix (금, Daily, $/oz)"
+  },
+  "equity_research": [
+    {"id": "lr_001", "name": "growth_capex_mismatch", "condition": "매출성장률 > 0% AND CAPEX성장률 < -10%", "flag": "매출 성장 전망 대비 CAPEX 감소 비정합", "severity": "high"},
+    {"id": "lr_002", "name": "high_per_no_risk", "condition": "PER > 업종평균 × 2.5 AND 리스크 언급 = 0", "flag": "고평가 상태에서 리스크 요인 미언급", "severity": "high"},
+    {"id": "lr_003", "name": "revenue_profit_divergence", "condition": "매출성장률 > 0% AND 영업이익성장률 < -20%", "flag": "매출 증가에도 영업이익 급감. 수익성 괴리 설명 필요", "severity": "high"},
+    {"id": "lr_004", "name": "dcf_rate_stale", "condition": "DCF 사용 AND 기준금리 변동 > 50bp", "flag": "DCF 할인율 기준금리가 현재와 50bp 이상 괴리", "severity": "high"},
+    {"id": "lr_005", "name": "optimistic_without_downside", "condition": "상방 시나리오만 AND 하방 시나리오 = 0", "flag": "하방 시나리오 없는 일방적 전망", "severity": "high"},
+    {"id": "lr_021", "name": "dcf_terminal_growth_excessive", "condition": "DCF 밸류에이션에서 터미널 성장률(영구 성장률)이 해당 국가 명목 GDP 성장률을 초과하는 경우", "flag": "DCF 터미널 성장률이 GDP 성장률 초과 — 비현실적 가정. 터미널 성장률 1%p 차이로 목표가 20~40% 변동 가능", "severity": "high"},
+    {"id": "lr_022", "name": "kifrs_usgaap_comparison_risk", "condition": "한국 기업(K-IFRS)과 해외 기업(US-GAAP/IFRS) 수치를 직접 비교하면서 회계기준 차이를 언급하지 않은 경우. 특히 영업이익 정의(K-IFRS는 기타손익 포함 가능), 연결 범위, R&D 자본화 차이", "flag": "K-IFRS ↔ US-GAAP 회계기준 차이 미고려. 영업이익·연결범위·R&D 처리가 달라 수치 직접 비교 시 오류 가능", "severity": "high"},
+    {"id": "lr_023", "name": "fx_assumption_missing", "condition": "수출 비중 30% 이상인 기업 분석에서 원/달러 환율 가정이 명시되지 않은 경우. 환율 ±5% 변동이 영업이익에 5~10%p 영향", "flag": "환율 가정 미명시 — 수출 기업의 실적 전제 검증 불가. 환율 민감도 분석 부재", "severity": "medium"}
+  ],
+  "crypto_research": [
+    {"id": "lr_006", "name": "tvl_mcap_divergence", "condition": "TVL 30일 변화 < -30% AND 가격 목표 상향", "flag": "TVL 급감 중 가격 목표 상향. 근거 불충분", "severity": "high"},
+    {
+      "id": "lr_007_v2",
+      "name": "mvrv_cycle_context",
+      "condition": "MVRV > 3.0 AND 매수 추천",
+      "flag": "MVRV 고평가 구간 매수 추천 — 사이클 컨텍스트별 판정 분기",
+      "severity": "high",
+      "replaces": "lr_007",
+      "context_branches": [
+        {"condition": "사이클 경과 > 18개월", "verdict": "🔴", "message": "고평가 구간 매수. 사이클 말기 과열 리스크 미반영"},
+        {"condition": "사이클 경과 < 6개월", "verdict": "🟡", "message": "Bull 초기 가능성. 사이클 위치 추가 확인 필요"},
+        {"condition": "사이클 정보 없음", "verdict": "🟡", "message": "사이클 컨텍스트 미확인. 근거 추가 필요"}
+      ],
+      "data_sources": {
+        "mvrv": "CoinMetrics CapMVRVCur",
+        "cycle_start": "CoinGecko 365일 최저가 날짜 또는 CoinMetrics 시계열 최저점",
+        "cycle_months": "현재 날짜 - cycle_start (개월수 계산)"
+      }
+    }
+  ],
+  "금융_대체투자": [
+    {"id": "lr_011", "name": "redemption_risk_ignored", "condition": "환매율 > 게이팅 임계 AND 유동성 리스크 미언급", "flag": "환매 압력 과소평가", "severity": "high"},
+    {"id": "lr_012", "name": "hidden_distress", "condition": "PIK 비율 > 8% AND 부도율 낙관", "flag": "PIK 상승에도 부도율 낙관. 숨겨진 부실 미반영", "severity": "high"}
+  ],
+  "macro_report": [
+    {
+      "id": "lr_017",
+      "name": "interest_rate_forecast_no_source",
+      "condition": "금리 전망 주장 AND Fed Dot Plot(FEDTARMD) / 중앙은행 포워드가이던스 미인용",
+      "flag": "금리 전망의 1차 소스 부재. 자체 추정인지 공식 전망인지 불명확",
+      "severity": "high",
+      "data_sources": {
+        "fed_dot_plot": "FRED FEDTARMD",
+        "fed_funds_actual": "FRED FEDFUNDS",
+        "forward_guidance": "Tavily → 중앙은행 공식사이트"
+      }
+    },
+    {
+      "id": "lr_018",
+      "name": "gdp_forecast_no_consensus",
+      "condition": "GDP 전망 수치 AND IMF·OECD·컨센서스 미비교",
+      "flag": "성장 전망이 글로벌 컨센서스 대비 괴리 여부 미확인",
+      "severity": "medium",
+      "data_sources": {
+        "gdp_actual": "FRED A191RL1Q225SBEA",
+        "imf_weo": "Firecrawl/Tavily → imf.org/en/Publications/WEO",
+        "oecd": "Firecrawl/Tavily → data-explorer.oecd.org"
+      }
+    },
+    {
+      "id": "lr_019",
+      "name": "inflation_forecast_no_actual",
+      "condition": "인플레이션 전망 AND 최신 PCE/CPI 실측값 미비교",
+      "flag": "전망이 현재 실측 추세와 일치하는지 확인 불가",
+      "severity": "high",
+      "data_sources": {
+        "pce_core": "FRED PCEPILFE",
+        "cpi": "FRED CPIAUCSL",
+        "breakeven_5y": "FRED T5YIE",
+        "breakeven_10y": "FRED T10YIE"
+      }
+    }
+  ],
+  "geopolitical": [
+    {
+      "id": "lr_geo_001",
+      "name": "scenario_probability_sum",
+      "condition": "시나리오 확률 합계가 100%가 아닌 경우",
+      "flag": "시나리오 확률 합계 ≠ 100%",
+      "severity": "high"
+    },
+    {
+      "id": "lr_geo_002",
+      "name": "single_scenario_bias",
+      "condition": "Base/Bull/Bear 중 하나만 제시하고 나머지를 무시한 경우",
+      "flag": "단일 시나리오 편향 — 다면적 분석 부재",
+      "severity": "high"
+    },
+    {
+      "id": "lr_geo_003",
+      "name": "timeline_absent",
+      "condition": "지정학 이벤트에 대한 시간축(단기/중기/장기) 구분이 없는 경우",
+      "flag": "시간축 미명시 — 분석 시계열 불명확",
+      "severity": "medium"
+    },
+    {
+      "id": "lr_geo_004",
+      "name": "financial_spillover_absent",
+      "condition": "지정학 이벤트의 금융시장 2차 효과(환율, 금리, 원자재) 분석이 없는 경우",
+      "flag": "금융시장 연쇄효과 분석 부재",
+      "severity": "medium"
+    }
+  ],
+  "regulatory_filing": [
+    {"id": "lr_rf_001", "name": "problem_without_solution", "condition": "문제점을 인정하면서 해당 문제에 대한 해결 방안(예산·인력·제도)이 세부 추진과제에 없는 경우", "flag": "문제 인식 → 해결 방안 부재. 계획 문서의 논리적 결함", "severity": "high"},
+    {"id": "lr_rf_002", "name": "target_without_roadmap", "condition": "수치 목표(예: 사고 10% 감축)를 제시하면서 과제별 기여도·달성 경로를 명시하지 않은 경우", "flag": "목표만 있고 달성 경로 없음. 실행력 담보 불가", "severity": "high"},
+    {"id": "lr_rf_003", "name": "trend_worsening_ignored", "condition": "전년 대비 지표(재해율 등)가 악화되었는데 원인을 '의식 부족'등 정성적 표현으로만 기술한 경우", "flag": "악화 추세의 구조적 원인분석 부재. 대책의 실효성 검증 불가", "severity": "high"},
+    {"id": "lr_rf_004", "name": "unverified_effect_claim", "condition": "신규 도입 사항(AI 시스템 등)의 효과를 정량적으로 주장하면서 산출근거·파일럿 결과를 미제시한 경우", "flag": "효과 수치의 산출근거 부재. 기대효과와 검증된 효과 미구분", "severity": "medium"},
+    {"id": "lr_rf_005", "name": "regulation_update_gap", "condition": "내부 규정의 최종 개정일이 관련 법령 시행일보다 이전인 경우(예: 중처법 시행 후 위험성평가 규정 미개정)", "flag": "내부 규정이 법령 변경을 반영하지 않았을 가능성", "severity": "medium"},
+    {"id": "lr_rf_006", "name": "majority_accident_type_no_dedicated_measure", "condition": "특정 직종·유형의 재해가 전체의 50% 이상을 차지하는데 해당 유형 전용 대책이 없는 경우", "flag": "최다 재해유형 맞춤 대책 부재. 예방 효과 제한적", "severity": "high"}
+  ],
+  "common": [
+    {"id": "lr_000", "name": "self_contradiction", "condition": "동일 문서 내 주장A와 주장B가 논리적으로 모순", "flag": "문서 내 자체 모순 발견", "severity": "critical"},
+    {"id": "lr_013", "name": "time_window_mismatch", "condition": "'N일 변동' 주장에서 실제 시작~끝 구간이 N일이 아님 (예: 13일 변동을 '30일'로 표기)", "flag": "F-11: 시계열 구간 불일치. 실제 구간과 표기 구간이 다름", "severity": "high"},
+    {"id": "lr_014", "name": "baseline_cherry_pick", "condition": "변동률 기준점이 실제 MCP 값과 >5% 괴리 (유리한 방향으로 선택)", "flag": "F-12: 기준점 선택 편향. 변동률이 과대/과소 산출됨", "severity": "high"},
+    {"id": "lr_015", "name": "consecutive_condition_unverified", "condition": "'N일 연속 X 이상' 주장에서 기간 내 조건 미충족일이 존재", "flag": "F-13: 연속 조건 불일치. 개별 날짜 검증 시 중간에 조건 미충족", "severity": "high"},
+    {
+      "id": "lr_020",
+      "name": "conclusion_narrative_concealment",
+      "condition": "P1 Claim(결론 지탱 핵심 주장)이 정량 수치 없이 서술형으로만 표현됨",
+      "flag": "결론 근거가 검증 불가능한 서술형으로만 표현됨. 정량화 필요",
+      "severity": "high",
+      "trigger_examples": [
+        "방어력이 높다 → 구체적 수치(부실률, LTV 등) 없음",
+        "상당한 성장세 → % 수치 없음",
+        "유동성이 충분하다 → 구체적 커버리지 비율 없음",
+        "견조한 흐름 → 어떤 지표가 얼마인지 불명확"
+      ],
+      "linked_rule": "SKILL.md L1-03 수치 부재 처리 규칙과 쌍으로 작동"
+    },
+    {
+      "id": "lr_024",
+      "name": "sensitivity_analysis_absent",
+      "condition": "목표가 또는 핵심 전망 수치를 제시하면서 주요 가정(할인율, 환율, 성장률 등)의 민감도 분석을 제시하지 않은 경우",
+      "flag": "핵심 가정 민감도 분석 부재 — 가정 변동 시 결론 변화 범위를 알 수 없음",
+      "severity": "medium"
+    },
+    {
+      "id": "lr_025",
+      "name": "consensus_divergence_unexplained",
+      "condition": "목표가·투자의견·핵심 전망이 시장 컨센서스 대비 ±30% 이상 괴리하면서 괴리 사유를 설명하지 않은 경우. MCP(Yahoo Finance consensus, Tavily)로 컨센서스 확인",
+      "flag": "컨센서스 대비 극단적 괴리(±30%+) — 독창적 통찰인지 오류인지 판별 불가. 괴리 근거 부재",
+      "severity": "high",
+      "data_sources": {"consensus": "Yahoo Finance consensus estimates, Tavily 컨센서스 뉴스"}
+    },
+    {
+      "id": "lr_031",
+      "name": "perception_as_reality",
+      "condition": "설문·여론조사·인식 데이터를 근거로 실제 행동·자금흐름·시장 현상을 단정하면서, 실증 데이터(거래량, 자금유출입, 가격 추이 등)를 제시하지 않은 경우",
+      "flag": "인식(perception)을 현실(reality)로 등치. 설문 '선호'는 실제 '행동'과 다르다. 실증 데이터 없이 '머니무브', '투자 쏠림', '시장 전환' 등 단정 금지",
+      "severity": "high",
+      "trigger_examples": [
+        "'37.4%가 유망하다고 답했다' → '머니무브가 뚜렷하다' (자금흐름 데이터 없음)",
+        "'소비자 신뢰지수 상승' → '소비가 회복되고 있다' (실제 소매판매 데이터 없음)",
+        "'투자자 60%가 매수 의향' → '수급 개선 전망' (실제 순매수 데이터 없음)"
+      ]
+    },
+    {
+      "id": "lr_032",
+      "name": "minority_framed_as_majority",
+      "condition": "설문·조사에서 50% 미만인 응답을 제목·결론에서 마치 다수 의견 또는 확정적 전망처럼 프레이밍한 경우",
+      "flag": "소수 의견 다수 프레이밍. 실제 비율이 과반 미달인데 헤드라인/결론에서 대표성을 과장. 나머지 응답 비율도 함께 제시했는지 확인",
+      "severity": "high",
+      "trigger_examples": [
+        "37.4%(1위)를 '국민이 답했다'로 프레이밍 — 62.6%는 다른 답변",
+        "19.7%가 7000 전망 → 80.3%는 7000 미만 전망인데 '7000 돌파 기대' 강조",
+        "설문 1위(28%)를 '압도적 선택'으로 표현 — 2위(26%)와 2%p 차이"
+      ]
+    },
+    {
+      "id": "lr_033",
+      "name": "counter_trend_omission",
+      "condition": "상승/하락 전망을 제시하면서 직근(30일 이내) 반대 방향 추세를 언급하지 않은 경우. MCP로 직근 추세 확인",
+      "flag": "현재 추세 반대 데이터 누락. 전망과 직근 추세가 반대일 때 반드시 언급하고 괴리 사유를 설명해야 함",
+      "severity": "high",
+      "trigger_examples": [
+        "코스피 7000 상승 전망 — 직근 고점 대비 -7.7% 하락 중 미언급",
+        "부동산 반등 전망 — 직근 3개월 거래량 감소 미언급",
+        "금리 인하 기대 — 직근 채권 금리 상승 추세 미언급"
+      ]
+    },
+    {
+      "id": "lr_034",
+      "name": "flow_without_plate",
+      "condition": "단기 흐름(가격 변동, 자금 이동) 데이터만 제시하고, 그 흐름을 만들어낸 근본 원인(판: 레짐 전환, 지정학 질서, 기술 패러다임)을 언급하지 않은 경우",
+      "flag": "흐름만 보도하고 판(근본 원인)을 누락. '금값이 올랐다'만 말하고 '왜 올랐는지(지정학? 통화정책?)'를 안 말하면 맥락 부재",
+      "severity": "medium",
+      "trigger_examples": [
+        "'유가 13% 급등' — 이란 공격이라는 판(지정학)을 안 말함",
+        "'외국인 순매도 3일 연속' — 금리 구조 변화(달러 강세)라는 구조를 안 말함",
+        "'HBM 가격 30% 상승' — AI 인프라 투자(기술 패러다임)라는 판을 안 말함"
+      ]
+    },
+    {
+      "id": "lr_035",
+      "name": "plate_to_flow_shortcut",
+      "condition": "판(근본 원인)에서 바로 흐름(단기 결과)으로 건너뛰면서, 중간의 구조(시스템 변화)를 설명하지 않은 경우",
+      "flag": "판→흐름 단축 논리. '미중 갈등이 심화됐으므로 반도체 주가가 오른다'처럼 중간 구조(공급망 재편, 수출규제 강화)를 건너뛰면 인과 비약",
+      "severity": "high",
+      "trigger_examples": [
+        "'전쟁 → 주가 하락' — 전쟁이 어떤 구조(에너지 공급망? 금리?)를 바꿔서 주가에 영향하는지 미설명",
+        "'AI 혁명 → 삼성전자 매수' — AI가 어떤 구조(HBM 공급? 파운드리?)를 통해 삼성전자에 도달하는지 미설명",
+        "'고령화 → 경제 위기' — 고령화가 어떤 구조(고용? 소비? 재정?)를 통해 위기로 이어지는지 미설명"
+      ]
+    }
+  ],
+  "news_article": [
+    {"id": "lr_news_001", "name": "survey_sample_insufficient", "condition": "설문/여론조사 결과를 인용하면서 표본 크기가 500명 미만이거나, 표본 크기·조사 기관·조사 기간이 명시되지 않은 경우", "flag": "설문 방법론 불충분. 표본 크기·조사 기관·기간 미명시 시 통계적 유효성 판단 불가", "severity": "high"},
+    {"id": "lr_news_002", "name": "editorial_as_fact", "condition": "기자/편집진의 해석·전망을 사실 주장처럼 서술한 경우 ('~것으로 보인다', '~전망이다'를 단정형으로 제목에 배치)", "flag": "편집 의견의 사실 포장. 전망/해석과 확인된 사실을 구분하지 않음", "severity": "medium"},
+    {"id": "lr_news_003", "name": "single_source_generalization", "condition": "단일 설문·단일 전문가 의견을 '국민', '시장', '전문가들'처럼 일반화한 경우", "flag": "단일 소스 일반화. 한 설문/한 전문가 의견을 전체 의견처럼 확대", "severity": "high"}
+  ],
+  "legal_contract": [
+    {"id": "lr_008", "name": "one_sided_liability", "condition": "책임제한이 한쪽에만 적용", "flag": "책임제한 일방 유리. 불균형 계약 리스크", "severity": "high"},
+    {"id": "lr_009", "name": "vague_termination", "condition": "종료 조건에 정량적 기준 없음", "flag": "해지 조건 모호. 분쟁 리스크", "severity": "medium"},
+    {"id": "lr_010", "name": "fee_structure_unclear", "condition": "수수료 언급 있으나 수치 미제시", "flag": "수수료 구조 불명확", "severity": "medium"},
+    {"id": "lr_026", "name": "governing_law_mismatch", "condition": "계약 당사자의 소재지/국적과 준거법/관할이 불일치하면서 그 이유를 설명하지 않은 경우", "flag": "준거법-당사자 소재지 불일치. 집행 리스크 또는 의도적 유리관할 선택 가능성", "severity": "high"},
+    {"id": "lr_027", "name": "unlimited_liability_without_cap", "condition": "손해배상 조항에 상한(cap)이 없거나 '일체의 손해'를 배상한다는 무제한 책임 조항 존재", "flag": "손해배상 상한 미설정. 무제한 책임 리스크", "severity": "critical"},
+    {"id": "lr_028", "name": "auto_renewal_without_notice", "condition": "자동갱신 조항이 있으나 갱신 거절 통지 기한이 명시되지 않은 경우", "flag": "자동갱신 통지 기한 부재. 의도치 않은 계약 연장 리스크", "severity": "medium"},
+    {"id": "lr_029", "name": "ip_assignment_scope_unclear", "condition": "지식재산권 양도/귀속 조항에서 양도 범위(기존 IP vs 신규 IP vs 공동 IP)가 불명확한 경우", "flag": "IP 귀속 범위 모호. 분쟁 시 권리 주장 곤란", "severity": "high"},
+    {"id": "lr_030", "name": "penalty_vs_liquidated_damages", "condition": "위약벌 조항이 실제 손해와 현저히 불균형하거나, 위약금이 손해배상 예정액인지 위약벌인지 구분되지 않는 경우", "flag": "위약벌/손해배상예정액 구분 불명확. 법원 감액 가능성 또는 집행 불확실성", "severity": "medium"}
+  ]
+}

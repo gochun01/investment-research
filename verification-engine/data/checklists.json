@@ -1,0 +1,230 @@
+{
+  "norm": {
+    "equity_research": [
+      {"id": "nr_eq_001", "item": "risk_warning_exists", "description": "투자 리스크 경고 문구 존재", "regulation": "자본시장법 §178", "severity": "high", "scan_keywords": ["투자위험", "리스크", "원금손실", "투자 위험"]},
+      {"id": "nr_eq_002", "item": "conflict_disclosure_exists", "description": "이해충돌 공시 존재", "regulation": "금융투자업규정", "severity": "high", "scan_keywords": ["이해관계", "보유현황", "주간사"]},
+      {"id": "nr_eq_003", "item": "past_performance_disclaimer", "description": "과거 성과 면책 존재", "regulation": "금감원 모범규준", "severity": "medium", "scan_keywords": ["과거 수익률", "보장하지 않", "미래"]},
+      {"id": "nr_eq_004", "item": "target_price_basis", "description": "목표가 산출 근거 명시", "regulation": "금감원 모범규준", "severity": "medium", "scan_keywords": ["DCF", "PER", "밸류에이션", "목표주가 산출"]},
+      {"id": "nr_eq_005", "item": "rating_definition", "description": "투자의견 등급 정의 명시", "regulation": "자율규제", "severity": "low", "scan_keywords": ["매수", "중립", "매도", "투자의견"]}
+    ],
+    "crypto_research": [
+      {"id": "nr_cr_001", "item": "not_financial_advice", "description": "투자 자문 아님 면책 존재", "regulation": "업계 관행", "severity": "high", "scan_keywords": ["NFA", "not financial advice", "투자 자문 아님"]},
+      {"id": "nr_cr_002", "item": "token_holding_disclosure", "description": "토큰 보유 여부 공시", "regulation": "업계 관행", "severity": "high", "scan_keywords": ["disclosure", "보유", "포지션"]},
+      {"id": "nr_cr_003", "item": "data_source_attribution", "description": "데이터 출처 명시", "regulation": "업계 관행", "severity": "medium", "scan_keywords": ["출처", "source", "data from"]},
+      {"id": "nr_cr_004", "item": "risk_section_exists", "description": "리스크 섹션 존재", "regulation": "업계 관행", "severity": "medium", "scan_keywords": ["리스크", "risk", "위험 요인"]}
+    ],
+    "legal_contract": [
+      {"id": "nr_lc_001", "item": "jurisdiction_clause", "description": "관할 법원/중재 조항 존재", "regulation": "민법/중재법", "severity": "high", "scan_keywords": ["관할", "분쟁해결", "중재", "jurisdiction"]},
+      {"id": "nr_lc_002", "item": "liability_limitation", "description": "책임 제한 조항 존재", "regulation": "상법/민법", "severity": "high", "scan_keywords": ["책임", "liability", "제한", "limitation"]},
+      {"id": "nr_lc_003", "item": "termination_clause", "description": "종료/해지 조건 명시", "regulation": "계약법", "severity": "high", "scan_keywords": ["종료", "해지", "termination"]},
+      {"id": "nr_lc_004", "item": "privacy_clause", "description": "개인정보 처리 조항 존재", "regulation": "개인정보보호법", "severity": "medium", "scan_keywords": ["개인정보", "privacy", "data protection"]},
+      {"id": "nr_lc_005", "item": "force_majeure", "description": "불가항력 조항 존재", "regulation": "상법/민법", "severity": "medium", "scan_keywords": ["불가항력", "force majeure"]},
+      {"id": "nr_lc_006", "item": "confidentiality_clause", "description": "비밀유지 조항 존재", "regulation": "상법", "severity": "medium", "scan_keywords": ["비밀유지", "confidentiality"]},
+      {"id": "nr_lc_007", "item": "indemnification_clause", "description": "면책/배상 조항 존재", "regulation": "민법", "severity": "high", "scan_keywords": ["면책", "배상", "indemnification"]},
+      {"id": "nr_lc_008", "item": "governing_law_clause", "description": "준거법 조항 명시", "regulation": "국제사법", "severity": "high", "scan_keywords": ["준거법", "governing law", "적용법률", "applicable law"]},
+      {"id": "nr_lc_009", "item": "ip_ownership_clause", "description": "지식재산권 귀속 조항 존재", "regulation": "저작권법/특허법", "severity": "high", "scan_keywords": ["지식재산", "저작권", "특허", "IP", "intellectual property", "귀속"]},
+      {"id": "nr_lc_010", "item": "data_protection_dpa", "description": "개인정보 처리위탁 계약(DPA) 또는 처리 조건 명시", "regulation": "개인정보보호법 §26", "severity": "high", "scan_keywords": ["처리위탁", "DPA", "data processing", "수탁자", "위탁"]},
+      {"id": "nr_lc_011", "item": "warranty_disclaimer", "description": "보증/하자담보 조항 명시", "regulation": "민법 §580", "severity": "medium", "scan_keywords": ["보증", "warranty", "하자", "담보", "guarantee"]},
+      {"id": "nr_lc_012", "item": "assignment_restriction", "description": "계약 양도 제한 조항 존재", "regulation": "민법 §449", "severity": "medium", "scan_keywords": ["양도", "이전", "assignment", "transfer", "승계"]}
+    ],
+    "regulatory_filing": [
+      {"id": "nr_rf_001", "item": "budget_disclosure", "description": "안전보건 예산 현황(전년 집행액 + 금년 편성액) 기재", "regulation": "산안법 제14조③", "severity": "high", "scan_keywords": ["예산", "비용", "편성", "집행", "budget"]},
+      {"id": "nr_rf_002", "item": "organization_chart", "description": "안전보건 관리조직 구성·인원·역할 명시", "regulation": "산안법 제14조③", "severity": "high", "scan_keywords": ["조직", "관리체계", "관리책임자", "안전관리자", "보건관리자"]},
+      {"id": "nr_rf_003", "item": "prior_year_performance", "description": "전년도 활동 실적 기재", "regulation": "산안법 제14조③", "severity": "high", "scan_keywords": ["실적", "전년", "추진실적", "이행"]},
+      {"id": "nr_rf_004", "item": "next_year_plan", "description": "다음 연도 활동 계획 기재", "regulation": "산안법 제14조③", "severity": "high", "scan_keywords": ["계획", "추진과제", "세부", "일정"]},
+      {"id": "nr_rf_005", "item": "accident_statistics", "description": "재해 발생 현황(3년 이상 시계열) 기재", "regulation": "중처법 시행령 제4조", "severity": "high", "scan_keywords": ["재해", "사고", "재해율", "발생현황"]},
+      {"id": "nr_rf_006", "item": "risk_assessment_status", "description": "위험성평가 실시 현황 및 결과 기재", "regulation": "산안법 제36조", "severity": "high", "scan_keywords": ["위험성평가", "유해", "위험요인"]},
+      {"id": "nr_rf_007", "item": "safety_committee_record", "description": "산업안전보건위원회 운영 현황(분기별 개최·안건) 기재", "regulation": "산안법 제24조", "severity": "medium", "scan_keywords": ["산안위", "위원회", "심의", "의결"]},
+      {"id": "nr_rf_008", "item": "education_training_status", "description": "안전보건교육 이수 현황(법정시간 충족) 기재", "regulation": "산안법 제29조", "severity": "medium", "scan_keywords": ["교육", "이수", "법정시간", "특별교육"]},
+      {"id": "nr_rf_009", "item": "health_examination_status", "description": "건강진단 수검 현황 기재", "regulation": "산안법 시행규칙 제197조", "severity": "medium", "scan_keywords": ["건강검진", "건강진단", "수검", "특수검진"]}
+    ],
+    "macro_report": [
+      {"id": "nr_macro_001", "item": "data_source_attribution", "description": "데이터 출처 명시 (FRED, IMF, Bloomberg 등)", "regulation": "CFA V(A) 합리적 근거", "severity": "high", "scan_keywords": ["출처", "source", "FRED", "IMF", "Bloomberg", "데이터 기준"]},
+      {"id": "nr_macro_002", "item": "reference_date_specified", "description": "기준 시점 명시 (수치의 기준일)", "regulation": "CFA V(A)", "severity": "high", "scan_keywords": ["기준일", "기준 시점", "as of", "기준", "시점", "날짜"]},
+      {"id": "nr_macro_003", "item": "scenario_assumption_basis", "description": "시나리오 가정 근거 명시", "regulation": "업계 관행", "severity": "medium", "scan_keywords": ["가정", "assumption", "시나리오", "전제", "조건"]},
+      {"id": "nr_macro_004", "item": "not_investment_advice", "description": "투자 자문 아님 면책", "regulation": "업계 관행", "severity": "medium", "scan_keywords": ["투자 자문 아님", "자문이 아닙니다", "disclaimer", "면책", "참고용"]}
+    ],
+    "fund_factsheet": [
+      {"id": "nr_fund_001", "item": "benchmark_disclosure", "description": "벤치마크 지수 명시", "regulation": "자본시장법", "severity": "high", "scan_keywords": ["벤치마크", "benchmark", "비교지수", "KOSPI", "S&P"]},
+      {"id": "nr_fund_002", "item": "fee_structure_disclosure", "description": "보수 체계 명시 (총보수율, 판매보수, 성과보수)", "regulation": "자본시장법 §233", "severity": "high", "scan_keywords": ["보수", "수수료", "TER", "총보수", "성과보수", "fee"]},
+      {"id": "nr_fund_003", "item": "risk_rating_disclosure", "description": "펀드 위험 등급 명시", "regulation": "금감원 모범규준", "severity": "high", "scan_keywords": ["위험등급", "위험도", "risk rating", "1등급", "2등급"]},
+      {"id": "nr_fund_004", "item": "past_performance_disclaimer", "description": "과거 성과 면책 존재", "regulation": "금감원 모범규준", "severity": "medium", "scan_keywords": ["과거 수익률", "보장하지 않", "미래", "과거 성과"]},
+      {"id": "nr_fund_005", "item": "redemption_policy", "description": "환매 조건 명시", "regulation": "자본시장법", "severity": "medium", "scan_keywords": ["환매", "redemption", "출금", "인출"]}
+    ],
+    "geopolitical": [
+      {"id": "nr_geo_001", "item": "information_source_attribution", "description": "정보 출처 명시 (뉴스, 정부 발표, 싱크탱크)", "regulation": "업계 관행", "severity": "high", "scan_keywords": ["출처", "source", "according to", "발표", "보도", "싱크탱크"]},
+      {"id": "nr_geo_002", "item": "analysis_date_specified", "description": "분석 시점 명시", "regulation": "업계 관행", "severity": "high", "scan_keywords": ["분석일", "작성일", "기준일", "as of", "현재 기준"]},
+      {"id": "nr_geo_003", "item": "uncertainty_warning", "description": "불확실성 경고 (지정학은 예측 불가 요소 多)", "regulation": "업계 관행", "severity": "high", "scan_keywords": ["불확실", "uncertainty", "caveat", "예측 불가", "리스크", "변동 가능"]}
+    ],
+    "news_article": [
+      {"id": "nr_news_001", "item": "survey_methodology_disclosed", "description": "설문/여론조사 시 조사 방법론 공개 (표본 크기, 조사 기관, 조사 기간, 표본 추출 방법)", "regulation": "여론조사공정심의위원회 기준", "severity": "high", "scan_keywords": ["표본", "응답자", "조사", "설문", "명", "신뢰수준", "오차"]},
+      {"id": "nr_news_002", "item": "opinion_fact_separation", "description": "기자/편집진의 의견과 팩트(데이터·인용)가 구분되어 있음", "regulation": "언론중재법 기본원칙", "severity": "high", "scan_keywords": ["전망이다", "분석된다", "보인다", "것으로 보인다", "평가된다"]},
+      {"id": "nr_news_003", "item": "data_source_attribution", "description": "인용된 수치·데이터의 출처가 명시됨", "regulation": "업계 관행", "severity": "high", "scan_keywords": ["출처", "에 따르면", "조사 결과", "발표", "집계"]},
+      {"id": "nr_news_004", "item": "headline_body_consistency", "description": "제목이 본문 내용을 정확히 반영 (낚시성 제목 여부)", "regulation": "신문윤리강령", "severity": "high", "scan_keywords": []},
+      {"id": "nr_news_005", "item": "counterpoint_included", "description": "반대 의견 또는 반론이 포함되어 있음 (균형 보도)", "regulation": "신문윤리강령", "severity": "medium", "scan_keywords": ["반면", "다만", "우려", "비판", "반론", "한편"]}
+    ]
+  },
+  "omission": {
+    "반도체": [
+      {"id": "om_semi_001", "item": "수출규제", "impact": "critical", "keywords": ["수출규제", "export control", "entity list", "BIS", "대중 규제"]},
+      {"id": "om_semi_002", "item": "사이클 위치", "impact": "high", "keywords": ["사이클", "업황", "다운턴", "업턴", "cycle"]},
+      {"id": "om_semi_003", "item": "재고 수준", "impact": "high", "keywords": ["재고", "inventory", "재고조정"]},
+      {"id": "om_semi_004", "item": "CAPEX 추이", "impact": "medium", "keywords": ["CAPEX", "설비투자", "감가상각"]},
+      {"id": "om_semi_005", "item": "중국 의존도", "impact": "critical", "keywords": ["중국", "China", "지정학"]},
+      {"id": "om_semi_006", "item": "HBM/AI 수요", "impact": "high", "keywords": ["HBM", "AI", "데이터센터", "GPU"]},
+      {"id": "om_semi_007", "item": "CoWoS/패키징 병목", "impact": "high", "keywords": ["CoWoS", "패키징", "HBM", "어드밴스드패키징", "TSMC", "advanced packaging"]},
+      {"id": "om_semi_008", "item": "고객사 집중도", "impact": "high", "keywords": ["Apple", "NVIDIA", "의존도", "고객집중", "단일고객", "매출 비중"]}
+    ],
+    "크립토": [
+      {"id": "om_crypto_001", "item": "규제 리스크", "impact": "critical", "keywords": ["SEC", "규제", "소송", "증권성"]},
+      {"id": "om_crypto_002", "item": "스마트컨트랙트 리스크", "impact": "high", "keywords": ["audit", "감사", "exploit", "해킹"]},
+      {"id": "om_crypto_003", "item": "토크노믹스", "impact": "high", "keywords": ["토크노믹스", "언락", "unlock", "vesting"]},
+      {"id": "om_crypto_004", "item": "경쟁 프로토콜", "impact": "medium", "keywords": ["경쟁", "competitor", "alternative"]},
+      {"id": "om_crypto_005", "item": "온체인 활동", "impact": "high", "keywords": ["DAU", "트랜잭션", "TVL 추이"]},
+      {"id": "om_crypto_006", "item": "브릿지/크로스체인 리스크", "impact": "high", "keywords": ["브릿지", "bridge", "크로스체인", "cross-chain", "해킹", "exploit"]},
+      {"id": "om_crypto_007", "item": "중앙화 리스크", "impact": "high", "keywords": ["팀지갑", "멀티시그", "multisig", "발행자", "집중", "admin key"]},
+      {"id": "om_crypto_008", "item": "거버넌스 리스크", "impact": "medium", "keywords": ["DAO", "투표", "governance", "참여율", "집중도", "quorum"]}
+    ],
+    "바이오": [
+      {"id": "om_bio_001", "item": "임상 단계", "impact": "critical", "keywords": ["임상", "Phase", "clinical trial", "FDA"]},
+      {"id": "om_bio_002", "item": "파이프라인 경쟁", "impact": "high", "keywords": ["경쟁 약물", "파이프라인", "MOA"]},
+      {"id": "om_bio_003", "item": "특허 만료", "impact": "high", "keywords": ["특허", "patent cliff", "제네릭"]},
+      {"id": "om_bio_004", "item": "보험 급여", "impact": "medium", "keywords": ["급여", "보험", "reimbursement"]}
+    ],
+    "에너지": [
+      {"id": "om_energy_001", "item": "유가 시나리오", "impact": "critical", "keywords": ["유가", "WTI", "Brent", "OPEC"]},
+      {"id": "om_energy_002", "item": "에너지 전환", "impact": "high", "keywords": ["재생에너지", "ESG", "탄소"]},
+      {"id": "om_energy_003", "item": "지정학 리스크", "impact": "critical", "keywords": ["호르무즈", "중동", "러시아"]},
+      {"id": "om_energy_004", "item": "설비 투자 사이클", "impact": "medium", "keywords": ["CAPEX", "탐사", "시추"]}
+    ],
+    "부동산": [
+      {"id": "om_re_001", "item": "금리 민감도", "impact": "critical", "keywords": ["금리", "대출", "모기지", "LTV"]},
+      {"id": "om_re_002", "item": "공급 파이프라인", "impact": "high", "keywords": ["분양", "착공", "인허가"]},
+      {"id": "om_re_003", "item": "규제 환경", "impact": "high", "keywords": ["규제", "양도세", "종부세"]},
+      {"id": "om_re_004", "item": "공실률", "impact": "medium", "keywords": ["공실", "vacancy", "임대율"]}
+    ],
+    "금융_대체투자": [
+      {"id": "om_fin_001", "item": "유동성 미스매치", "impact": "critical", "keywords": ["유동성", "환매", "gating", "liquidity mismatch", "만기"]},
+      {"id": "om_fin_002", "item": "레버리지 수준", "impact": "critical", "keywords": ["레버리지", "leverage", "LTV", "차입"]},
+      {"id": "om_fin_003", "item": "카운터파티 리스크", "impact": "high", "keywords": ["카운터파티", "상대방", "연쇄", "contagion"]},
+      {"id": "om_fin_004", "item": "규제 환경 변화", "impact": "high", "keywords": ["SEC", "금감원", "BDC", "공시"]},
+      {"id": "om_fin_005", "item": "금리 민감도", "impact": "critical", "keywords": ["금리", "Fed", "인하", "스프레드"]},
+      {"id": "om_fin_006", "item": "밸류에이션 투명성", "impact": "high", "keywords": ["mark-to-model", "NAV", "감정평가", "공정가치"]}
+    ],
+    "산업안전": [
+      {"id": "om_safety_001", "item": "예산 현황 누락", "impact": "critical", "keywords": ["예산", "비용", "편성", "집행"]},
+      {"id": "om_safety_002", "item": "재해율 변동 원인분석 부재", "impact": "critical", "keywords": ["원인", "분석", "증가", "상승", "변동"]},
+      {"id": "om_safety_003", "item": "최다 재해유형 맞춤 대책 부재", "impact": "high", "keywords": ["이륜차", "넘어짐", "도보", "교통사고", "재해유형"]},
+      {"id": "om_safety_004", "item": "수급인(위탁업체) 안전관리 상세 부재", "impact": "high", "keywords": ["도급", "수급", "위탁", "하청", "협력업체"]},
+      {"id": "om_safety_005", "item": "목표 달성 경로(수단별 기여도) 미제시", "impact": "high", "keywords": ["목표", "감축", "달성", "기여", "로드맵"]},
+      {"id": "om_safety_006", "item": "규정 최신성(법령 개정 반영 여부) 미확인", "impact": "medium", "keywords": ["규정", "개정", "최신", "법령", "반영"]},
+      {"id": "om_safety_007", "item": "비정량적 효과 주장(검증 불가)", "impact": "medium", "keywords": ["기대", "예상", "효과", "향상", "개선"]}
+    ],
+    "법률_계약": [
+      {"id": "om_lc_001", "item": "상대방 불리 조항", "impact": "critical", "keywords": ["일방", "편면적", "불리", "면책", "배상 제한", "제한없는 책임"]},
+      {"id": "om_lc_002", "item": "숨은 비용", "impact": "high", "keywords": ["수수료", "위약금", "성과보수", "부대비용"]},
+      {"id": "om_lc_003", "item": "자동 갱신 조항", "impact": "medium", "keywords": ["자동갱신", "자동연장", "묵시갱신"]},
+      {"id": "om_lc_004", "item": "분쟁 해결 비용", "impact": "medium", "keywords": ["중재비용", "소송비용", "변호사"]},
+      {"id": "om_lc_005", "item": "준거법-집행 리스크", "impact": "critical", "keywords": ["준거법", "관할", "해외", "집행", "승인", "외국판결"]},
+      {"id": "om_lc_006", "item": "계약 해지 시 원상회복/정산", "impact": "high", "keywords": ["원상회복", "정산", "반환", "해지 시", "잔여", "미지급"]},
+      {"id": "om_lc_007", "item": "손해배상 상한(Cap) 부재", "impact": "critical", "keywords": ["상한", "cap", "한도", "최대", "무제한", "일체"]},
+      {"id": "om_lc_008", "item": "비경쟁/전직금지 조항", "impact": "high", "keywords": ["경업금지", "비경쟁", "전직금지", "non-compete", "경쟁사"]},
+      {"id": "om_lc_009", "item": "지식재산 귀속 모호", "impact": "critical", "keywords": ["IP", "지식재산", "저작권", "귀속", "공동", "양도"]}
+    ],
+    "매크로": [
+      {"id": "om_macro_001", "item": "FOMC 경로 언급", "impact": "critical", "keywords": ["Fed", "FOMC", "Dot Plot", "기준금리", "포워드가이던스", "금리 경로"]},
+      {"id": "om_macro_002", "item": "실질금리 기준값", "impact": "high", "keywords": ["실질금리", "real rate", "TIPS", "기대인플레이션", "r*"]},
+      {"id": "om_macro_003", "item": "GLI 방향성", "impact": "high", "keywords": ["GLI", "글로벌유동성", "확장", "수축", "레짐", "유동성 사이클"]},
+      {"id": "om_macro_004", "item": "달러 방향성(DXY)", "impact": "high", "keywords": ["DXY", "달러", "달러인덱스", "dollar", "DTWEXBGS"]},
+      {"id": "om_macro_005", "item": "신용 스프레드 수준", "impact": "high", "keywords": ["HY스프레드", "IG스프레드", "credit spread", "하이일드", "OAS"]},
+      {"id": "om_macro_006", "item": "시나리오 확률 합계 검증", "impact": "medium", "keywords": ["Base", "Bull", "Bear", "시나리오", "확률", "가능성"]},
+      {"id": "om_macro_007", "item": "유효기간 / 업데이트 조건", "impact": "low", "keywords": ["유효기간", "재검토", "트리거", "조건부", "업데이트"]}
+    ],
+    "지정학": [
+      {"id": "om_geo_001", "item": "에너지 경로 리스크", "impact": "critical", "keywords": ["호르무즈", "흑해", "파이프라인", "에너지", "LNG", "수에즈"]},
+      {"id": "om_geo_002", "item": "시나리오 확률 배분 근거", "impact": "high", "keywords": ["시나리오", "확률", "Base", "Bear", "가능성", "배분"]},
+      {"id": "om_geo_003", "item": "Base/Bull/Bear 전부 포함", "impact": "high", "keywords": ["Base", "Bull", "Bear", "낙관", "비관", "시나리오"]},
+      {"id": "om_geo_004", "item": "역사적 유사 사례", "impact": "medium", "keywords": ["유사", "전례", "역사", "과거", "사례", "analogous"]},
+      {"id": "om_geo_005", "item": "타임라인 명시", "impact": "medium", "keywords": ["단기", "중기", "장기", "1개월", "6개월", "timeline", "시계열"]},
+      {"id": "om_geo_006", "item": "2차 효과 — 금융시장 연쇄", "impact": "high", "keywords": ["금리", "환율", "원자재", "시장", "연쇄", "spillover", "전이"]}
+    ],
+    "SaaS_IT": [
+      {"id": "om_saas_001", "item": "ARR/NRR 성장 추이", "impact": "critical", "keywords": ["ARR", "NRR", "반복매출", "순수익유지율", "annual recurring"]},
+      {"id": "om_saas_002", "item": "Rule of 40 충족 여부", "impact": "high", "keywords": ["Rule of 40", "성장률+이익률", "효율성"]},
+      {"id": "om_saas_003", "item": "고객 집중도", "impact": "high", "keywords": ["상위고객", "집중도", "top customer", "의존도", "매출 비중"]},
+      {"id": "om_saas_004", "item": "번오프율(Churn)", "impact": "high", "keywords": ["Churn", "이탈률", "해지", "유지율", "retention"]},
+      {"id": "om_saas_005", "item": "AI 경쟁 위협", "impact": "high", "keywords": ["AI", "경쟁", "ChatGPT", "Copilot", "대체", "disruption"]}
+    ],
+    "2차전지_배터리": [
+      {"id": "om_batt_001", "item": "원재료 가격 변동", "impact": "critical", "keywords": ["리튬", "니켈", "코발트", "원재료", "광물", "lithium", "nickel"]},
+      {"id": "om_batt_002", "item": "기술 전환 리스크", "impact": "critical", "keywords": ["전고체", "LFP", "NCA", "NCM", "기술 전환", "차세대"]},
+      {"id": "om_batt_003", "item": "IRA/보조금 정책", "impact": "critical", "keywords": ["IRA", "보조금", "FEOC", "세액공제", "현지화", "미국"]},
+      {"id": "om_batt_004", "item": "수요 전망 vs 공급 과잉", "impact": "high", "keywords": ["과잉", "캐파", "증설", "공급과잉", "수요", "EV 판매"]},
+      {"id": "om_batt_005", "item": "고객사 집중도", "impact": "high", "keywords": ["Tesla", "현대", "고객", "의존도", "납품"]},
+      {"id": "om_batt_006", "item": "중국 CATL 경쟁", "impact": "high", "keywords": ["CATL", "BYD", "중국", "가격경쟁", "시장점유율"]}
+    ],
+    "방산": [
+      {"id": "om_def_001", "item": "수주잔고 / 백로그", "impact": "critical", "keywords": ["수주", "백로그", "backlog", "수주잔고", "계약"]},
+      {"id": "om_def_002", "item": "지정학 리스크 의존도", "impact": "critical", "keywords": ["전쟁", "분쟁", "NATO", "방위비", "안보", "지정학"]},
+      {"id": "om_def_003", "item": "정부 예산/국방비 추이", "impact": "high", "keywords": ["국방비", "국방예산", "방위비", "budget", "예산"]},
+      {"id": "om_def_004", "item": "수출 허가/규제", "impact": "high", "keywords": ["수출", "허가", "ITAR", "기술이전", "방산수출"]},
+      {"id": "om_def_005", "item": "납기 리스크", "impact": "medium", "keywords": ["납기", "지연", "공급망", "부품", "delivery"]}
+    ],
+    "조선": [
+      {"id": "om_ship_001", "item": "신조선가 / 클락슨 지수", "impact": "critical", "keywords": ["신조선가", "Clarkson", "선가", "CNPI", "선박가격"]},
+      {"id": "om_ship_002", "item": "수주-매출 시차", "impact": "high", "keywords": ["수주", "인도", "건조", "시차", "매출 인식"]},
+      {"id": "om_ship_003", "item": "원재료(후판) 가격", "impact": "high", "keywords": ["후판", "철강", "steel plate", "원재료"]},
+      {"id": "om_ship_004", "item": "환율 민감도", "impact": "high", "keywords": ["환율", "원달러", "FX", "환차손", "헤지"]},
+      {"id": "om_ship_005", "item": "인력 수급", "impact": "high", "keywords": ["인력", "용접공", "숙련공", "외국인", "노동력"]},
+      {"id": "om_ship_006", "item": "친환경 선박 전환", "impact": "medium", "keywords": ["LNG", "암모니아", "메탄올", "친환경", "IMO", "탈탄소"]}
+    ],
+    "자동차": [
+      {"id": "om_auto_001", "item": "EV 전환 속도 vs 전통차 수익성", "impact": "critical", "keywords": ["EV", "전기차", "전환", "ICE", "하이브리드", "BEV"]},
+      {"id": "om_auto_002", "item": "환율 민감도", "impact": "high", "keywords": ["환율", "원달러", "FX", "환차손", "수출"]},
+      {"id": "om_auto_003", "item": "관세/무역장벽", "impact": "critical", "keywords": ["관세", "tariff", "IRA", "USMCA", "무역", "보호주의"]},
+      {"id": "om_auto_004", "item": "인센티브/보조금 변화", "impact": "high", "keywords": ["보조금", "인센티브", "세액공제", "EV 보조금"]},
+      {"id": "om_auto_005", "item": "중국 시장 의존도", "impact": "high", "keywords": ["중국", "China", "시장점유율", "현지화"]}
+    ],
+    "은행_보험": [
+      {"id": "om_bank_001", "item": "NIM/금리 민감도", "impact": "critical", "keywords": ["NIM", "순이자마진", "금리", "예대마진", "기준금리"]},
+      {"id": "om_bank_002", "item": "건전성 지표(NPL, 충당금)", "impact": "critical", "keywords": ["NPL", "부실", "충당금", "연체율", "건전성"]},
+      {"id": "om_bank_003", "item": "BIS 비율", "impact": "high", "keywords": ["BIS", "자본적정성", "자본비율", "CET1"]},
+      {"id": "om_bank_004", "item": "부동산 PF 익스포져", "impact": "critical", "keywords": ["PF", "프로젝트파이낸싱", "부동산", "건설", "브릿지론"]},
+      {"id": "om_bank_005", "item": "규제 환경 변화", "impact": "high", "keywords": ["금융당국", "금감원", "바젤", "규제", "건전성 규제"]}
+    ],
+    "리츠_인프라": [
+      {"id": "om_reit_001", "item": "금리 민감도 / Cap Rate", "impact": "critical", "keywords": ["금리", "Cap Rate", "할인율", "자본환원율"]},
+      {"id": "om_reit_002", "item": "임대율 / 공실률", "impact": "critical", "keywords": ["임대율", "공실률", "vacancy", "점유율"]},
+      {"id": "om_reit_003", "item": "레버리지 / LTV", "impact": "high", "keywords": ["LTV", "레버리지", "부채비율", "차입"]},
+      {"id": "om_reit_004", "item": "임차인 신용도", "impact": "high", "keywords": ["임차인", "신용", "tenant", "앵커테넌트"]},
+      {"id": "om_reit_005", "item": "자산 재평가 리스크", "impact": "high", "keywords": ["감정평가", "재평가", "NAV", "공정가치"]}
+    ],
+    "유통_소비재": [
+      {"id": "om_retail_001", "item": "소비 심리 / 내수 경기", "impact": "critical", "keywords": ["소비심리", "소비자신뢰", "내수", "소매판매"]},
+      {"id": "om_retail_002", "item": "온라인 전환 / 이커머스 침식", "impact": "high", "keywords": ["이커머스", "온라인", "쿠팡", "플랫폼", "배달"]},
+      {"id": "om_retail_003", "item": "원가 / 환율 전가력", "impact": "high", "keywords": ["원가", "가격전가", "환율", "원재료", "마진"]},
+      {"id": "om_retail_004", "item": "인구구조 변화", "impact": "medium", "keywords": ["인구", "고령화", "1인가구", "인구 감소", "MZ"]}
+    ],
+    "통신": [
+      {"id": "om_telco_001", "item": "ARPU 추이", "impact": "critical", "keywords": ["ARPU", "가입자당매출", "요금", "가입자"]},
+      {"id": "om_telco_002", "item": "5G/6G 투자 회수", "impact": "high", "keywords": ["5G", "6G", "CAPEX", "네트워크", "투자회수"]},
+      {"id": "om_telco_003", "item": "규제(요금 인하 압력)", "impact": "high", "keywords": ["요금", "인하", "규제", "과기부", "통신비"]},
+      {"id": "om_telco_004", "item": "신사업(AI/클라우드) 기여도", "impact": "high", "keywords": ["AI", "클라우드", "IDC", "B2B", "신사업"]},
+      {"id": "om_telco_005", "item": "경쟁 강도", "impact": "medium", "keywords": ["경쟁", "점유율", "SKT", "KT", "LGU+"]}
+    ],
+    "뉴스_공통": [
+      {"id": "om_news_001", "item": "직근 반대 추세 데이터", "impact": "critical", "keywords": ["하락", "상승", "반등", "조정", "추세", "최근"]},
+      {"id": "om_news_002", "item": "설문 비응답/반대 응답 비율", "impact": "high", "keywords": ["나머지", "기타", "무응답", "모르겠다", "반대"]},
+      {"id": "om_news_003", "item": "과거 유사 설문과의 비교", "impact": "medium", "keywords": ["전년", "지난해", "이전 조사", "변화", "추이"]},
+      {"id": "om_news_004", "item": "설문과 실제 데이터 간 괴리 가능성 언급", "impact": "high", "keywords": ["실제", "괴리", "행동", "의향", "실현"]},
+      {"id": "om_news_005", "item": "이해관계자 반론/반대 시각", "impact": "high", "keywords": ["반면", "비판", "우려", "반론", "다른 시각"]}
+    ],
+    "_판구조흐름": [
+      {"id": "om_psf_001", "item": "판(Plate) 맥락 누락 — 흐름만 보도하고 근본 원인(판)을 언급하지 않음", "impact": "high", "keywords": ["레짐", "패러다임", "구조적", "근본", "체제", "전환"]},
+      {"id": "om_psf_002", "item": "구조(Structure) 변화 누락 — 판의 움직임이 어떤 시스템 변화를 일으키는지 미언급", "impact": "high", "keywords": ["공급망", "금리구조", "시장구조", "규제", "재편", "전환"]},
+      {"id": "om_psf_003", "item": "흐름(Flow) 데이터 누락 — 구조 변화의 측정 가능한 결과(가격·자금·무역 흐름)를 미제시", "impact": "high", "keywords": ["자금흐름", "환율", "유가", "수출", "ETF", "순매수"]},
+      {"id": "om_psf_004", "item": "인과 경로 단절 — 판→구조→흐름의 전파 경로 중 중간 단계를 건너뜀", "impact": "critical", "keywords": ["때문에", "따라서", "결과", "영향", "파급", "전파"]},
+      {"id": "om_psf_005", "item": "교차 영향 누락 — 하나의 이벤트가 다른 판/구조/흐름에 미치는 2차 효과를 미언급", "impact": "high", "keywords": ["연쇄", "파급", "2차", "간접", "spillover", "전이"]}
+    ]
+  }
+}

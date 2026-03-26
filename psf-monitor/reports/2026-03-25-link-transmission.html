@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSF Link 전송 경로 — 2026-03-25</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0d1117; --dark:#161b22; --border:#30363d;
+  --text:#c9d1d9; --bright:#f0f6fc; --dim:#8b949e;
+  --blue:#58a6ff; --green:#4caf50; --yellow:#ffd600;
+  --red:#ff5252; --purple:#d2a8ff; --cyan:#80deea; --orange:#f0883e;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--navy);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.7}
+.container{max-width:820px;margin:0 auto;padding:16px}
+.topbar{background:#0a2540;color:var(--blue);padding:6px 16px;font-size:.7em;font-weight:700;letter-spacing:2px}
+h1{color:var(--bright);font-size:1.25em;margin:16px 0 4px}
+.meta{color:var(--dim);font-size:.8em;margin-bottom:16px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.badge{padding:4px 12px;border-radius:4px;font-size:.73em;font-weight:600}
+.b-yellow{background:#4a3800;color:#ffd600}
+.b-red{background:#3d0000;color:#ff5252}
+.b-keyword{background:#2a1a3e;color:#ce93d8}
+
+/* 전파 지도 */
+.chain-box{background:var(--dark);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;position:relative;overflow:hidden}
+.chain-title{color:var(--bright);font-weight:700;font-size:.95em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.chain-title .icon{font-size:1.1em}
+
+.flow-row{display:flex;align-items:stretch;gap:0;margin:8px 0;flex-wrap:wrap}
+.node{background:#1a1e26;border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:120px;flex:1;position:relative}
+.node.active{border-color:var(--red);background:rgba(255,82,82,.06)}
+.node.weakening{border-color:var(--orange);background:rgba(240,136,62,.05)}
+.node.approaching{border-color:var(--yellow);background:rgba(255,214,0,.04)}
+.node.inactive{border-color:#262a33;opacity:.55}
+.node-label{font-size:.7em;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.node-value{color:var(--bright);font-size:.95em;font-weight:600;margin:3px 0}
+.node-sub{color:var(--dim);font-size:.75em}
+.node-verdict{font-size:.72em;margin-top:4px;font-weight:600}
+.v-active{color:var(--red)} .v-weak{color:var(--orange)} .v-approach{color:var(--yellow)}
+.v-inactive{color:#484f58} .v-healthy{color:var(--green)}
+
+.arrow{display:flex;align-items:center;justify-content:center;min-width:36px;color:var(--dim);font-size:.85em;flex-shrink:0}
+.arrow.lit{color:var(--red)}
+.arrow.dim{color:#2a2e38}
+.arrow-label{font-size:.6em;color:var(--dim);text-align:center;line-height:1.2}
+
+/* Link 카드 */
+.link-section{margin:20px 0}
+.link-section-title{color:var(--blue);font-size:.88em;font-weight:700;padding-bottom:4px;border-bottom:1px solid var(--border);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.link-card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:8px}
+.link-card.active{border-left:3px solid var(--red)}
+.link-card.weakening{border-left:3px solid var(--orange)}
+.link-card.approaching{border-left:3px solid var(--yellow)}
+.link-card.inactive{border-left:3px solid #262a33;opacity:.6}
+.link-header{display:flex;justify-content:space-between;align-items:center}
+.link-name{color:var(--bright);font-weight:700;font-size:.9em}
+.link-status{font-size:.72em;padding:2px 8px;border-radius:3px;font-weight:600}
+.st-active{background:#3d0000;color:#ff5252}
+.st-weak{background:#3a2200;color:#f0883e}
+.st-approach{background:#4a3800;color:#ffd600}
+.st-inactive{background:#1a1e26;color:#484f58}
+.link-path{color:var(--dim);font-size:.8em;margin-top:6px;font-family:'DM Mono',monospace}
+.link-path .p{color:var(--purple)} .link-path .s{color:var(--blue)} .link-path .f{color:var(--cyan)}
+.link-evidence{color:var(--text);font-size:.8em;margin-top:6px;padding:6px 10px;background:#12161d;border-radius:4px}
+.link-condition{color:var(--dim);font-size:.75em;margin-top:6px;font-style:italic}
+
+/* 요약 테이블 */
+.summary-table{width:100%;border-collapse:collapse;font-size:.8em;margin:12px 0}
+.summary-table th{background:var(--dark);color:var(--dim);padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);font-weight:600}
+.summary-table td{padding:8px 10px;border-bottom:1px solid #1c2028}
+.num{font-family:'DM Mono',monospace;color:var(--bright)}
+
+.footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--border);color:var(--dim);font-size:.72em;text-align:center}
+</style>
+</head>
+<body>
+<div class="topbar">SPECIAL REPORT — LINK TRANSMISSION MAP</div>
+<div class="container">
+
+<h1>PSF Link 전송 경로</h1>
+<div class="meta">2026-03-25 · state.json 기준 · 국면 🟡 경계 (다소 완화)</div>
+<div class="badges">
+  <span class="badge b-yellow">PSF 🟡 경계</span>
+  <span class="badge b-yellow">macro 🟡 Transition</span>
+  <span class="badge b-red">활성 Link 3개</span>
+  <span class="badge b-keyword">단일 체인 전파</span>
+</div>
+
+<!-- ===== 전파 지도 ===== -->
+<div class="chain-box">
+  <div class="chain-title"><span class="icon">🔴</span> 활성 전파 체인 — 지정학 → 에너지 → 인플레</div>
+
+  <!-- L5 Master -->
+  <div class="flow-row">
+    <div class="node active">
+      <div class="node-label">P-지정학</div>
+      <div class="node-value">🔴 전쟁 + 걸프 경고</div>
+      <div class="node-sub">호르무즈 폐쇄 지속</div>
+      <div class="node-sub">5일 군사 정지 ↔ 이란 확대</div>
+    </div>
+    <div class="arrow lit">
+      <div>──L5──→<br><span class="arrow-label">활성<br>마스터</span></div>
+    </div>
+    <div class="node weakening">
+      <div class="node-label">P-자원</div>
+      <div class="node-value">🟡 Brent $103</div>
+      <div class="node-sub">↓$4 (5일 정지 반영)</div>
+      <div class="node-sub">7~10mbpd 차단 지속</div>
+    </div>
+    <div class="arrow lit">
+      <div>──L3──→<br><span class="arrow-label">약화<br>감속 중</span></div>
+    </div>
+    <div class="node weakening">
+      <div class="node-label">S1 실질금리</div>
+      <div class="node-value" style="color:var(--red)">2.01% ↑</div>
+      <div class="node-sub">+13bp. 2% 돌파.</div>
+      <div class="node-sub">BEI 2.53%(↓10bp 되돌림)</div>
+    </div>
+    <div class="arrow" style="color:var(--orange)">
+      <div>──→<br><span class="arrow-label">전파<br>지연</span></div>
+    </div>
+    <div class="node" style="border-color:var(--orange)">
+      <div class="node-label">P-재정</div>
+      <div class="node-value">🟡 Fed 인하 차단</div>
+      <div class="node-sub">DFF 3.64% 동결</div>
+      <div class="node-sub">인하 0회 전망 지속</div>
+    </div>
+  </div>
+
+  <!-- L3.5 branch -->
+  <div style="margin:12px 0 0 0;padding:10px 14px;background:#1a1510;border:1px solid #3a2800;border-radius:8px">
+    <div style="color:var(--orange);font-size:.8em;font-weight:700;margin-bottom:4px">L3.5 공급충격 — 활성 (약화)</div>
+    <div style="color:var(--dim);font-size:.78em">Brent 30일 변동 >30% 유지. 호르무즈 폐쇄 지속이나 5일 정지로 공급 일부 기대.</div>
+    <div style="color:var(--red);font-size:.75em;margin-top:6px;font-weight:600">⚠ 걸프 에너지 공격 실행 시 → Brent $130+ → 전층 전파 → L7 → L8 경로 개방</div>
+  </div>
+
+  <!-- 분기 시나리오 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+    <div style="background:#0a1a0a;border:1px solid #2a5a2a;border-radius:8px;padding:10px">
+      <div style="color:var(--green);font-size:.78em;font-weight:700">🟢 5일 정지 → 협상 전환 시</div>
+      <div style="color:var(--dim);font-size:.75em;margin-top:4px">
+        L5 비활성 → L3 약화→비활성 → L3.5 비활성<br>
+        Brent $85~90 → BEI 2.3% 이하<br>
+        전체 체인 소멸. 🟡→🟢 국면 전환.
+      </div>
+    </div>
+    <div style="background:#1a0a0a;border:1px solid #5a2a2a;border-radius:8px;padding:10px">
+      <div style="color:var(--red);font-size:.78em;font-weight:700">🔴 걸프 공격 실행 시</div>
+      <div style="color:var(--dim);font-size:.75em;margin-top:4px">
+        L5 강화 → L3.5 폭발 → Brent $130+<br>
+        → L7 활성 → L8 경로 개방<br>
+        스태그플레이션. 🟡→🔴 위기 진입.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== L7 접근 ===== -->
+<div class="chain-box" style="border-color:var(--yellow)">
+  <div class="chain-title"><span class="icon">⚠️</span> L7 만성 — 접근 중</div>
+  <div class="flow-row">
+    <div class="node approaching">
+      <div class="node-label">F5 VIX</div>
+      <div class="node-value" style="color:var(--yellow)">25.84</div>
+      <div class="node-sub">25+ 지속이나 하락 방향(-0.9)</div>
+    </div>
+    <div class="arrow" style="color:var(--yellow)">
+      <div>──+──<br><span class="arrow-label">조건1<br>25+ 5일</span></div>
+    </div>
+    <div class="node" style="border-color:#2a3a2a">
+      <div class="node-label">HY OAS (HYG)</div>
+      <div class="node-value" style="color:var(--green)">319bp ↓</div>
+      <div class="node-sub">개선 중. 조건2 미충족.</div>
+    </div>
+    <div class="arrow dim">
+      <div>──→<br><span class="arrow-label">L7 만성<br>미활성</span></div>
+    </div>
+    <div class="node inactive">
+      <div class="node-label">L7 만성</div>
+      <div class="node-value">점수 0.16</div>
+      <div class="node-sub">안전 (0.60 미만)</div>
+    </div>
+  </div>
+  <div style="color:var(--dim);font-size:.78em;margin-top:8px">
+    해소 조건: VIX 25 하회 2일 연속 · 활성 조건: VIX 25+ 5일 + HYG -2%
+  </div>
+</div>
+
+<!-- ===== 비활성 경로 ===== -->
+<div class="link-section">
+  <div class="link-section-title"><span style="color:#484f58">✗</span> 비활성 경로 (전파 없음)</div>
+
+  <div class="link-card inactive">
+    <div class="link-header">
+      <span class="link-name">L1 금리→성장</span>
+      <span class="link-status st-inactive">비활성</span>
+    </div>
+    <div class="link-path"><span class="s">S1 2.01%↑</span> ──→ <span class="s">S4 PMI 49↓</span> ──→ <span class="f">F3 EM/DM 정체</span></div>
+    <div class="link-condition">S1 상승 중이나 S4로의 직접 전파 미입증</div>
+  </div>
+
+  <div class="link-card inactive">
+    <div class="link-header">
+      <span class="link-name">L2 달러→EM</span>
+      <span class="link-status st-inactive">비활성</span>
+    </div>
+    <div class="link-path"><span class="f">F1 DXY 99.3↓</span> ──→ <span class="f">F3 EM/DM 정체</span> ──→ <span class="s">S2 319bp↓</span></div>
+    <div class="link-condition">DXY 하락이나 EM 자금 유입 미관측</div>
+  </div>
+
+  <div class="link-card inactive">
+    <div class="link-header">
+      <span class="link-name">L4 신용→유동성</span>
+      <span class="link-status st-inactive">비활성</span>
+    </div>
+    <div class="link-path"><span class="s">S2 319bp↓</span> ──→ <span class="s">S3 SOFR-FF -2bp</span> ──→ <span class="f">F2 Net Liq 5.80T→</span></div>
+    <div class="link-condition">S2 개선 + S3 건전. 신용→유동성 스트레스 없음</div>
+  </div>
+
+  <div class="link-card inactive">
+    <div class="link-header">
+      <span class="link-name">L6 기술→구조</span>
+      <span class="link-status st-inactive">비활성</span>
+    </div>
+    <div class="link-path"><span class="p">P-기술</span> ──→ <span class="s">S4 PMI 49</span> ──→ <span class="s">S2 319bp</span></div>
+    <div class="link-condition">P-기술 변동 없음. AI capex 관련 새 신호 없음</div>
+  </div>
+
+  <div class="link-card inactive">
+    <div class="link-header">
+      <span class="link-name">L7 급성</span>
+      <span class="link-status st-inactive">비활성</span>
+    </div>
+    <div class="link-path"><span class="f">VIX 25.84</span> (30까지 16%) + HYG 미충족</div>
+    <div class="link-condition">급성 공포 징후 없음</div>
+  </div>
+
+  <div class="link-card inactive">
+    <div class="link-header">
+      <span class="link-name">L8 위기</span>
+      <span class="link-status st-inactive">비활성</span>
+    </div>
+    <div class="link-path"><span class="s">IG OAS 88bp 안정</span> + <span class="s">SOFR-FF -2bp</span></div>
+    <div class="link-condition">LQD -5% 미충족 + SOFR-FF 50bp 미충족. 거리 매우 멂.</div>
+  </div>
+
+  <div class="link-card inactive">
+    <div class="link-header">
+      <span class="link-name">CorrFlip 상관 붕괴</span>
+      <span class="link-status st-inactive">비활성</span>
+    </div>
+    <div class="link-path"><span class="f">SPY 656.3</span> + <span class="f">TLT 86.2</span> — 동시 급락 미관측</div>
+    <div class="link-condition">스태그플레이션/유동성 위기 징후 없음</div>
+  </div>
+</div>
+
+<!-- ===== 요약 테이블 ===== -->
+<div class="link-section">
+  <div class="link-section-title">📊 전체 Link 요약</div>
+  <table class="summary-table">
+    <thead><tr><th>Link</th><th>경로</th><th>상태</th><th>핵심 지표</th><th>전환 조건</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(255,82,82,.04)">
+        <td><b>L5</b></td><td class="link-path" style="font-size:.75em"><span class="p">P-지정학</span>→<span class="p">P-자원</span>→L3</td>
+        <td><span class="link-status st-active">활성 ★</span></td>
+        <td class="num">호르무즈 폐쇄</td>
+        <td style="font-size:.75em">협상 시작 시 비활성</td>
+      </tr>
+      <tr style="background:rgba(240,136,62,.04)">
+        <td><b>L3</b></td><td class="link-path" style="font-size:.75em"><span class="p">P-자원</span>→<span class="s">S1</span>→<span class="f">F1</span></td>
+        <td><span class="link-status st-weak">활성↓</span></td>
+        <td class="num">BEI 2.53%↓</td>
+        <td style="font-size:.75em">BEI 2.3% 이하</td>
+      </tr>
+      <tr style="background:rgba(240,136,62,.04)">
+        <td><b>L3.5</b></td><td style="font-size:.75em">Brent 30d >30%</td>
+        <td><span class="link-status st-weak">활성↓</span></td>
+        <td class="num">Brent $103↓</td>
+        <td style="font-size:.75em">30d <30% + 호르무즈 개방</td>
+      </tr>
+      <tr style="background:rgba(255,214,0,.04)">
+        <td><b>L7m</b></td><td class="link-path" style="font-size:.75em"><span class="f">VIX</span>+HYG</td>
+        <td><span class="link-status st-approach">접근</span></td>
+        <td class="num">VIX 25.84↓</td>
+        <td style="font-size:.75em">25 하회 2일 연속</td>
+      </tr>
+      <tr><td>L1</td><td class="link-path" style="font-size:.75em"><span class="s">S1</span>→<span class="s">S4</span>→<span class="f">F3</span></td><td><span class="link-status st-inactive">비활성</span></td><td class="num">—</td><td style="font-size:.75em">—</td></tr>
+      <tr><td>L2</td><td class="link-path" style="font-size:.75em"><span class="f">F1</span>→<span class="f">F3</span>→<span class="s">S2</span></td><td><span class="link-status st-inactive">비활성</span></td><td class="num">—</td><td style="font-size:.75em">—</td></tr>
+      <tr><td>L4</td><td class="link-path" style="font-size:.75em"><span class="s">S2</span>→<span class="s">S3</span>→<span class="f">F2</span></td><td><span class="link-status st-inactive">비활성</span></td><td class="num">—</td><td style="font-size:.75em">—</td></tr>
+      <tr><td>L6</td><td class="link-path" style="font-size:.75em"><span class="p">P-기술</span>→<span class="s">S4</span>→<span class="s">S2</span></td><td><span class="link-status st-inactive">비활성</span></td><td class="num">—</td><td style="font-size:.75em">—</td></tr>
+      <tr><td>L7a</td><td style="font-size:.75em">VIX>30 3d + HYG</td><td><span class="link-status st-inactive">비활성</span></td><td class="num">—</td><td style="font-size:.75em">—</td></tr>
+      <tr><td>L8</td><td style="font-size:.75em">LQD -5% + SOFR-FF>50</td><td><span class="link-status st-inactive">비활성</span></td><td class="num">—</td><td style="font-size:.75em">—</td></tr>
+      <tr><td>CF</td><td style="font-size:.75em">SPY<-1% + TLT<-1%</td><td><span class="link-status st-inactive">비활성</span></td><td class="num">—</td><td style="font-size:.75em">—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== Divergence ===== -->
+<div class="link-section">
+  <div class="link-section-title"><span style="color:var(--purple)">⚡</span> Divergence (층 간 불일치)</div>
+  <div class="link-card" style="border-left:3px solid var(--red)">
+    <div class="link-header">
+      <span class="link-name">P ↔ S 불일치</span>
+      <span class="link-status st-active">high</span>
+    </div>
+    <div class="link-evidence">P-지정학 🔴 (전쟁 + 걸프 공격 경고) vs S2 건전 (319bp 개선). 전쟁 심각도를 신용이 무시.</div>
+  </div>
+  <div class="link-card" style="border-left:3px solid var(--yellow)">
+    <div class="link-header">
+      <span class="link-name">F5 내부 괴리</span>
+      <span class="link-status st-approach">medium</span>
+    </div>
+    <div class="link-evidence">MOVE 98 (정상) vs VIX 25.8 (경계). 채권은 안심, 주식은 불안. 괴리 축소 중.</div>
+  </div>
+</div>
+
+<div class="footer">
+  PSF Link 전송 경로 · state.json 기준 · 2026-03-25<br>
+  <span style="color:#484f58;font-style:italic">관측 결과입니다. 투자 판단이 아닙니다.</span>
+</div>
+
+</div>
+</body>
+</html>

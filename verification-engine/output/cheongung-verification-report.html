@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>천궁-II 검증 보고서 | 2026-03-24</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0a1628;--surface:#111d32;--card:#162240;--border:#1e3054;
+    --text:#e8ecf4;--muted:#7a8ba8;--accent:#4a9eff;
+    --green:#22c55e;--yellow:#eab308;--red:#ef4444;--gray:#6b7280;
+    --gold:#d4a843;
+  }
+  [data-theme="light"] {
+    --navy:#f5f7fa;--surface:#ffffff;--card:#f0f2f5;--border:#d1d5db;
+    --text:#1a1a2e;--muted:#6b7280;--accent:#2563eb;
+    --green:#16a34a;--yellow:#ca8a04;--red:#dc2626;--gray:#9ca3af;
+    --gold:#b8860b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;transition:background .3s,color .3s;}
+
+  .topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.6rem 2rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--muted);position:sticky;top:0;z-index:100;}
+  .topbar .class-tag{background:var(--navy);color:var(--accent);padding:.2rem .6rem;border-radius:3px;font-family:'DM Mono',monospace;font-weight:500;}
+  .theme-toggle{background:none;border:1px solid var(--border);color:var(--muted);padding:.25rem .6rem;border-radius:4px;cursor:pointer;font-size:.72rem;font-family:'DM Sans',sans-serif;}
+  .theme-toggle:hover{color:var(--accent);border-color:var(--accent);}
+
+  .container{max-width:820px;margin:0 auto;padding:2rem;}
+  h1{font-family:'Libre Baskerville',serif;font-size:1.6rem;margin-bottom:.3rem;color:var(--text);}
+  h2{font-family:'Libre Baskerville',serif;font-size:1.15rem;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);color:var(--text);}
+  .subtitle{color:var(--muted);font-size:.85rem;margin-bottom:2rem;}
+
+  .exec-box{background:var(--surface);border-left:4px solid var(--accent);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0;}
+  .exec-claim{font-family:'Libre Baskerville',serif;font-size:1.05rem;line-height:1.6;margin-bottom:.75rem;}
+  .verdict-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem;margin:1rem 0;}
+  .v-cell{text-align:center;padding:.5rem .3rem;border-radius:6px;background:var(--card);border:1px solid var(--border);font-size:.75rem;}
+  .v-label{display:block;color:var(--muted);font-size:.65rem;margin-bottom:.2rem;}
+  .v-icon{font-size:1.1rem;}
+
+  .claim-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:1rem 0;}
+  .claim-table th{background:var(--surface);color:var(--muted);text-align:left;padding:.5rem .6rem;border:1px solid var(--border);font-weight:600;}
+  .claim-table td{padding:.5rem .6rem;border:1px solid var(--border);vertical-align:top;}
+  .claim-table tr:hover td{background:rgba(74,158,255,.06);}
+
+  .contested{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+  .contested h3{font-size:.95rem;color:var(--yellow);margin-bottom:.75rem;font-family:'DM Sans',sans-serif;}
+  .contested p{font-size:.82rem;color:var(--text);margin-bottom:.5rem;}
+  .contested .evidence{font-size:.78rem;color:var(--muted);border-left:2px solid var(--border);padding-left:.75rem;margin-top:.5rem;}
+
+  .risk-card{background:var(--card);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:.75rem 0;}
+  .risk-card h4{font-size:.85rem;color:var(--red);margin-bottom:.4rem;}
+  .risk-card p{font-size:.8rem;}
+
+  .kc-item{display:flex;gap:.75rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border);font-size:.82rem;}
+  .kc-badge{background:rgba(234,179,8,.15);color:var(--yellow);padding:.2rem .5rem;border-radius:4px;font-size:.7rem;font-weight:600;white-space:nowrap;}
+  .uq-item{padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.82rem;}
+  .uq-item::before{content:'?';display:inline-block;width:1.3rem;height:1.3rem;line-height:1.3rem;text-align:center;border-radius:50%;background:rgba(234,179,8,.15);color:var(--yellow);font-weight:700;font-size:.7rem;margin-right:.5rem;}
+
+  .meta{font-size:.75rem;color:var(--muted);margin-top:.5rem;}
+  .disclaimer{font-size:.7rem;color:var(--gray);text-align:center;margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);}
+
+  @media print{.topbar,.theme-toggle{display:none;}.container{max-width:100%;padding:1rem;}}
+  @media(max-width:600px){.container{padding:1rem;}.verdict-grid{grid-template-columns:repeat(3,1fr);}.topbar{padding:.4rem 1rem;flex-wrap:wrap;gap:.3rem;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>검증 엔진 · 6-Layer</span>
+  <span class="class-tag">RESEARCH NOTE</span>
+  <span>2026-03-24 · vrf_20260324_182254_777</span>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 테마</button>
+</div>
+
+<div class="container">
+
+<h1>천궁-II 검증: 확인된 것과 확인되지 않은 것</h1>
+<p class="subtitle">reaction-monitor 수집 보고서에 대한 6층 검증 결과</p>
+
+<!-- §1 핵심 판정 -->
+<div class="exec-box">
+  <div class="exec-claim">
+    주가 데이터는 정확하다. 그러나 요격률(96% vs 92.5% 측정 범위 미분리), 미사일 단가($1.1M — 1차 소스 부재), PSR(35배가 실제로는 PER일 가능성)의 핵심 수치가 불완전하고, ITAR 리스크와 전쟁 수혜 일반 vs 천궁 특화 구분이 누락되어 있다.
+  </div>
+  <div class="verdict-grid">
+    <div class="v-cell"><span class="v-label">① 사실</span><span class="v-icon">🟡</span></div>
+    <div class="v-cell"><span class="v-label">② 규범</span><span class="v-icon">🟢</span></div>
+    <div class="v-cell"><span class="v-label">③ 논리</span><span class="v-icon">🟡</span></div>
+    <div class="v-cell"><span class="v-label">④ 시점</span><span class="v-icon">🟡</span></div>
+    <div class="v-cell"><span class="v-label">⑤ 이해충돌</span><span class="v-icon">🟢</span></div>
+    <div class="v-cell"><span class="v-label">⑥ 누락</span><span class="v-icon">🟡</span></div>
+  </div>
+  <div class="meta">Claim 11건: 🟢 4건 · 🟡 7건 · 🔴 0건 | 유효기간: ~2026-05-15 (LIG넥스원 Q1 실적 전)</div>
+</div>
+
+<!-- §2 확인된 사실 -->
+<h2>확인됨 — MCP 직접 확인된 수치</h2>
+
+<table class="claim-table">
+<tr><th>항목</th><th>보고서 값</th><th>MCP 확인</th><th>판정</th></tr>
+<tr><td>한화에어로 2/27</td><td>1,195,000원</td><td style="font-family:'DM Mono',monospace;">1,195,000 ✓</td><td>🟢</td></tr>
+<tr><td>한화에어로 3/24</td><td>1,335,000원</td><td style="font-family:'DM Mono',monospace;">1,335,000 ✓</td><td>🟢</td></tr>
+<tr><td>LIG넥스원 2/27</td><td>509,000원</td><td style="font-family:'DM Mono',monospace;">509,000 ✓</td><td>🟢</td></tr>
+<tr><td>LIG넥스원 3/24</td><td>641,000원</td><td style="font-family:'DM Mono',monospace;">641,000 ✓</td><td>🟢</td></tr>
+<tr><td>사우디 계약</td><td>$3.2B</td><td>Korea Herald + KED Global + Asian Military Review (Tier 2 × 3)</td><td>🟢</td></tr>
+<tr><td>이라크 계약</td><td>$2.8B</td><td>Breaking Defense + KED Global ($2.6B과 $0.2B 차이)</td><td>🟢</td></tr>
+</table>
+<div class="meta">가격: Yahoo Finance MCP 직접 조회. 계약: Tier 2 매체 2~3개 교차 확인.</div>
+
+<!-- §3 논쟁 수치 -->
+<h2>논쟁 — 확인이 불완전한 핵심 수치</h2>
+
+<div class="contested">
+  <h3>🟡 요격률: 96% vs 92.5% — 측정 범위가 다르다</h3>
+  <p><strong>96%</strong> = 천궁-II 2개 포대 단독 요격률 (60발 발사, 58발 요격). 유용원 의원 공개.</p>
+  <p><strong>92.5%</strong> = UAE 전체 방공 시스템 합산 (Patriot + THAAD + 천궁 + 이스라엘). UAE 군 공식.</p>
+  <p>두 수치가 보고서에 공존하지만 <strong>차이의 원인이 설명되지 않았다.</strong> 독자가 96%를 전체 요격률로 오해할 수 있는 구조.</p>
+  <div class="evidence">Seoul Economic Daily EN (Tier 2) + UPI (Tier 2). Eurasian Times: 탄도미사일 174발 중 161 격추 + 드론 689기 중 645 격추. 보고서의 186발은 분류 기준 불명.</div>
+</div>
+
+<div class="contested">
+  <h3>🟡 미사일 단가: 천궁 $1.1M vs Patriot $3.7M</h3>
+  <p><strong>천궁 $1.1M</strong> — 다수 한국 매체 인용. DAPA·LIG넥스원 공식 발표 아님. 1차 소스 미확인.</p>
+  <p><strong>Patriot $3.7M</strong> — DoD FY2026 예산: $3.8M. FY2025: $4.2M. 수출가: $6.25~7M. 보고서 수치는 범위 하단.</p>
+  <p>"1/3 가격" 비교 방향은 맞으나, 양쪽 모두 정확한 단가의 1차 출처가 Tier 3 수준.</p>
+  <div class="evidence">천궁: 잡학서가/betanews (Tier 3). Patriot: Norsk Luftvern — DoD Budget 인용 (Tier 2).</div>
+</div>
+
+<div class="contested">
+  <h3>🟡 PSR 35배 — 실제로는 PER(P/E)일 가능성</h3>
+  <p>보고서: "PSR 21.7배→35.3배. 록히드마틴의 3배." (글로벌이코노믹 인용)</p>
+  <p>교차 확인: <strong>P/E 34.85</strong> (Yahoo Finance). <strong>EV/Sales 2.76배</strong> (ROIC AI).</p>
+  <p>35배는 PSR이 아니라 <strong>P/E(PER)</strong>에 가까움. EV/Sales 2.76배라면 "과열"이 아닌 정상 범위. 보고서의 "PSR 35배 과열" 판단이 <strong>지표 오기에 기반했을 가능성.</strong></p>
+  <div class="evidence">Yahoo Finance Statistics: P/E 34.85. ROIC AI: EV/Sales 2.76. ainvest: "P/E jumped from 21.7 to 35.3".</div>
+</div>
+
+<!-- §4 누락된 리스크 -->
+<h2>누락 — 보고서에 없는 리스크</h2>
+
+<div class="risk-card">
+  <h4>ITAR 제약 (국제무기거래규정)</h4>
+  <p>천궁-II에 미국 기술이 포함되어 있다면 제3국 수출에 미국 승인이 필요하다. "K-방산 파이프라인 가속"의 잠재 병목이나 보고서에 전혀 미언급.</p>
+</div>
+
+<div class="risk-card">
+  <h4>전쟁 수혜 일반 vs 천궁 특화 미분리</h4>
+  <p>3/3 한화에어로 +20%는 전쟁 발발 자체의 방산주 수혜. 천궁 실전 입증(3/5)과 시간축에서 분리되지 않음. A 경로(시장 선행) 판정의 근거가 약함.</p>
+</div>
+
+<div class="risk-card">
+  <h4>이라크 계약 금액 불일치</h4>
+  <p>Breaking Defense: $2.8B vs KED Global: $2.6B. $0.2B(약 2,800억원) 차이의 원인이 미설명.</p>
+</div>
+
+<!-- §5 핵심 전제 & 미해소 질문 -->
+<h2>핵심 전제 (KC) & 미해소 질문</h2>
+
+<div class="kc-item">
+  <span class="kc-badge">KC</span>
+  <div><strong>KC-CHEONGUNG-PRICING:</strong> 실전 입증 호재가 이미 가격에 반영됨. 추가 호재(GCC 신규 계약) 없으면 조정 지속.</div>
+</div>
+<div class="kc-item">
+  <span class="kc-badge">KC</span>
+  <div><strong>KC-KDEFENSE-BACKLOG:</strong> $72B 수주잔고가 천궁 단독 기여인지 K-방산 생태계 전체인지 분리 필요.</div>
+</div>
+<div class="kc-item">
+  <span class="kc-badge">KC</span>
+  <div><strong>KC-LIG-PSR:</strong> PSR 35배가 P/E 오기일 경우 밸류에이션 해석이 완전히 달라짐. EV/Sales 2.76배면 정상.</div>
+</div>
+
+<div style="margin-top:1.5rem;">
+<div class="uq-item"><strong>UQ-014:</strong> LIG넥스원 2026 실적이 PSR/PER을 정당화하는가? (기한: 5/15)</div>
+<div class="uq-item"><strong>UQ-015:</strong> 카타르/쿠웨이트 등 GCC 신규 계약 체결 여부</div>
+<div class="uq-item"><strong>UQ-016:</strong> Raytheon/미국 방산의 대응 — 침묵 지속? 가격 인하? 로비?</div>
+<div class="uq-item"><strong>UQ-017:</strong> 천궁-III 개발 일정(2034년 배치)이 앞당겨지는가?</div>
+</div>
+
+<p class="disclaimer">
+  본 결과는 법률/투자 자문이 아님. 검토 보조용.<br>
+  데이터 기준: 2026-03-24. 유효기간: ~2026-05-15 (LIG넥스원 Q1 실적 발표 전).<br>
+  무효화 트리거: LIG 실적 발표 / GCC 신규 계약 / Raytheon 대응<br>
+  검증 엔진 · 6-Layer v2 · vrf_20260324_182254_777
+</p>
+
+</div>
+
+<script>
+function toggleTheme(){
+  const html=document.documentElement;
+  if(html.getAttribute('data-theme')==='light'){
+    html.removeAttribute('data-theme');
+  }else{
+    html.setAttribute('data-theme','light');
+  }
+}
+</script>
+</body>
+</html>

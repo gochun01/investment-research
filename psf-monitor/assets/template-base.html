@@ -1,0 +1,401 @@
+<!--
+  PSF-Monitor Adaptive Report — CSS Design System
+  Dark theme, mobile responsive, Korean typography
+  Usage: render_adaptive.py reads this file for CSS injection
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSF Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  /* Base colors */
+  --navy: #0d1117;
+  --dark: #161b22;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-bright: #f0f6fc;
+  --text-dim: #8b949e;
+
+  /* Accent colors */
+  --blue: #58a6ff;
+  --green: #4caf50;
+  --yellow: #ffd600;
+  --red: #ff5252;
+  --purple: #d2a8ff;
+  --cyan: #80deea;
+
+  /* Regime colors */
+  --regime-green-bg: #003d00;
+  --regime-green-text: #4caf50;
+  --regime-yellow-bg: #4a3800;
+  --regime-yellow-text: #ffd600;
+  --regime-red-bg: #3d0000;
+  --regime-red-text: #ff5252;
+
+  /* Keyword badge */
+  --keyword-bg: #2a1a3e;
+  --keyword-text: #ce93d8;
+}
+
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== Body ===== */
+body {
+  background: var(--navy);
+  color: var(--text);
+  font-family: 'Noto Sans KR', -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ===== Topbar — Report Classification ===== */
+.topbar {
+  padding: 6px 16px;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.topbar.red { background: #5c0000; color: #ff5252; }
+.topbar.blue { background: #0a2540; color: #58a6ff; }
+.topbar.navy { background: #0d1117; color: #8b949e; border-bottom: 1px solid var(--border); }
+.topbar.gold { background: #3a2800; color: #ffd600; }
+
+/* ===== Report Header ===== */
+.report-header {
+  padding: 20px 16px 12px;
+}
+.report-header h1 {
+  color: var(--text-bright);
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.report-header .meta {
+  color: var(--text-dim);
+  font-size: 0.8em;
+}
+
+/* ===== Badges ===== */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge.regime-green { background: var(--regime-green-bg); color: var(--regime-green-text); }
+.badge.regime-yellow { background: var(--regime-yellow-bg); color: var(--regime-yellow-text); }
+.badge.regime-red { background: var(--regime-red-bg); color: var(--regime-red-text); }
+.badge.keyword { background: var(--keyword-bg); color: var(--keyword-text); }
+
+/* ===== Chip (inline tag) ===== */
+.chip {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.72em;
+  font-weight: 500;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+/* ===== Exec Box — Core Claim ===== */
+.exec-box {
+  background: var(--dark);
+  border-left: 4px solid var(--yellow);
+  padding: 16px 20px;
+  margin: 16px;
+  border-radius: 0 8px 8px 0;
+}
+.exec-box .claim {
+  color: var(--text-bright);
+  font-size: 1.05em;
+  font-weight: 500;
+}
+.exec-box .sub {
+  color: var(--text-dim);
+  font-size: 0.82em;
+  margin-top: 6px;
+}
+
+/* ===== Section Sizes ===== */
+.section {
+  margin: 12px 16px;
+}
+.section-large {
+  margin: 16px;
+}
+.section-medium {
+  margin: 12px 16px;
+}
+.section-small {
+  margin: 8px 16px;
+}
+.section-title {
+  color: var(--blue);
+  font-size: 0.9em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== Card (observation, link, axis) ===== */
+.card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+.card.critical { border-left: 3px solid var(--red); }
+.card.high { border-left: 3px solid var(--yellow); }
+.card.medium { border-left: 3px solid var(--text-dim); }
+.card.low { border-left: 3px solid var(--border); }
+.card .rank {
+  color: var(--yellow);
+  font-family: 'DM Mono', monospace;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.card .signal { color: var(--text-bright); font-weight: 500; }
+.card .detail { color: var(--text-dim); font-size: 0.82em; margin-top: 4px; }
+
+/* ===== Monitor Table ===== */
+.monitor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82em;
+}
+.monitor-table th {
+  background: var(--dark);
+  color: var(--text-dim);
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+.monitor-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #1c2028;
+}
+.num { font-family: 'DM Mono', monospace; color: var(--text-bright); }
+.up { color: var(--red); }
+.down { color: var(--green); }
+.flat { color: var(--text-dim); }
+
+/* ===== Link Grid ===== */
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.link-card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.8em;
+}
+.link-card.active { border-color: var(--red); }
+.link-card.approaching { border-color: var(--yellow); }
+.link-card .status { font-weight: 600; }
+
+/* ===== Axis Grid ===== */
+.axis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+.axis-card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.8em;
+  text-align: center;
+}
+.axis-card .axis-name { color: var(--text-bright); font-weight: 600; }
+.axis-card .axis-status { margin-top: 4px; }
+
+/* ===== Scenario Grid ===== */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.scenario-card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+}
+.scenario-card .prob {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.1em;
+  color: var(--yellow);
+}
+.scenario-card .name {
+  color: var(--text-bright);
+  font-weight: 600;
+  margin-top: 4px;
+}
+.scenario-card .desc {
+  color: var(--text-dim);
+  font-size: 0.8em;
+  margin-top: 4px;
+}
+
+/* ===== Alert Box ===== */
+.alert-box {
+  background: var(--regime-red-bg);
+  border: 1px solid #5c0000;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+.alert-box .alert-title {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 0.85em;
+}
+.alert-box .alert-body {
+  color: var(--text);
+  font-size: 0.82em;
+  margin-top: 4px;
+}
+.alert-box.warning {
+  background: var(--regime-yellow-bg);
+  border-color: #665200;
+}
+.alert-box.warning .alert-title { color: var(--yellow); }
+
+/* ===== Divergence Card ===== */
+.divergence {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+.divergence .type {
+  color: var(--purple);
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.divergence .desc {
+  color: var(--text);
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+/* ===== Open Questions List ===== */
+.question-list { list-style: none; }
+.question-list li {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  font-size: 0.82em;
+}
+.question-list .deadline {
+  color: var(--yellow);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8em;
+}
+
+/* ===== Dashboard (P/S/F) ===== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+.dashboard-col {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.dashboard-col .layer-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.dashboard-col .layer-label.plate { color: var(--purple); }
+.dashboard-col .layer-label.structure { color: var(--blue); }
+.dashboard-col .layer-label.flow { color: var(--cyan); }
+.dashboard-col .item {
+  font-size: 0.78em;
+  margin-bottom: 3px;
+}
+.dashboard-col .verdict {
+  color: var(--text-dim);
+  font-size: 0.72em;
+  margin-top: 4px;
+}
+
+/* ===== Footer & Disclaimer ===== */
+.footer {
+  margin: 24px 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.72em;
+  text-align: center;
+}
+.disclaimer {
+  color: #484f58;
+  font-size: 0.68em;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .container { padding: 8px; }
+  .report-header h1 { font-size: 1.1em; }
+  .exec-box { margin: 8px; padding: 12px 14px; }
+  .section, .section-large, .section-medium, .section-small { margin: 8px; }
+  .link-grid { grid-template-columns: 1fr; }
+  .scenario-grid { grid-template-columns: 1fr; }
+  .axis-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <p style="color:var(--text-dim);font-size:0.8em;text-align:center;padding:40px 0;">
+      PSF-Monitor Design System<br>
+      이 파일은 CSS 변수와 컴포넌트 클래스를 정의합니다.<br>
+      render_adaptive.py가 이 파일의 스타일을 참조합니다.
+    </p>
+  </div>
+</body>
+</html>

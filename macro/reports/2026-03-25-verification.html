@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>macro 시스템 검증 보고서 — 2026-03-25</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1117;--dark:#161b22;--border:#30363d;--text:#c9d1d9;--bright:#f0f6fc;--dim:#8b949e;--blue:#58a6ff;--green:#4caf50;--yellow:#ffd600;--red:#ff5252;--purple:#d2a8ff;--cyan:#80deea;--orange:#f0883e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--navy);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.7}
+.container{max-width:820px;margin:0 auto;padding:16px}
+.topbar{background:#4a3800;color:var(--yellow);padding:6px 16px;font-size:.7em;font-weight:700;letter-spacing:2px}
+h1{color:var(--bright);font-size:1.2em;margin:16px 0 4px}
+.meta{color:var(--dim);font-size:.8em;margin-bottom:16px}
+h2{color:var(--blue);font-size:1em;margin:24px 0 10px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+h3{color:var(--purple);font-size:.9em;margin:16px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.badge{padding:4px 12px;border-radius:4px;font-size:.73em;font-weight:600}
+.b-red{background:#3d0000;color:#ff5252}.b-yellow{background:#4a3800;color:#ffd600}.b-green{background:#003d00;color:#4caf50}.b-keyword{background:#2a1a3e;color:#ce93d8}
+
+/* Score */
+.score-hero{background:var(--dark);border:1px solid var(--border);border-radius:12px;padding:20px;margin:16px 0;text-align:center}
+.score-num{font-family:'DM Mono',monospace;font-size:3em;font-weight:700;color:var(--yellow)}
+.score-label{color:var(--dim);font-size:.85em;margin-top:4px}
+.score-weak{color:var(--red);font-size:.85em;margin-top:8px;font-weight:600}
+
+.score-bar-wrap{margin:8px 0}
+.score-bar-label{display:flex;justify-content:space-between;font-size:.78em;margin-bottom:3px}
+.score-bar-label .name{color:var(--text)}
+.score-bar-label .val{font-family:'DM Mono',monospace;color:var(--bright)}
+.score-bar{height:20px;border-radius:10px;background:#1a1e26;border:1px solid var(--border);overflow:hidden}
+.score-fill{height:100%;border-radius:10px;transition:width .5s}
+.sf-green{background:linear-gradient(90deg,#1a5c1a,#4caf50)}
+.sf-yellow{background:linear-gradient(90deg,#4a3800,#ffd600)}
+.sf-red{background:linear-gradient(90deg,#5c0000,#ff5252)}
+
+/* Checklist */
+.check-group{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:8px 0}
+.check-title{color:var(--bright);font-weight:700;font-size:.88em;margin-bottom:8px;display:flex;justify-content:space-between}
+.check-verdict{font-size:.72em;padding:2px 8px;border-radius:3px}
+.cv-pass{background:#003d00;color:#4caf50}.cv-partial{background:#4a3800;color:#ffd600}.cv-fail{background:#3d0000;color:#ff5252}
+.check-item{font-size:.8em;margin:4px 0;padding-left:8px}
+.ci-pass{border-left:2px solid var(--green)}.ci-fail{border-left:2px solid var(--red)}.ci-warn{border-left:2px solid var(--yellow)}
+
+/* Gap Table */
+table{width:100%;border-collapse:collapse;font-size:.8em;margin:8px 0}
+th{background:var(--dark);color:var(--dim);padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:8px 10px;border-bottom:1px solid #1c2028}
+.num{font-family:'DM Mono',monospace;color:var(--bright)}
+.sev-high{color:var(--red);font-weight:600}.sev-med{color:var(--yellow)}.sev-low{color:var(--green)}
+
+/* Sprint */
+.sprint{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:8px 0}
+.sprint-title{color:var(--bright);font-weight:700;font-size:.88em;margin-bottom:8px}
+.sprint-item{font-size:.8em;margin:4px 0;padding-left:12px;border-left:2px solid var(--blue)}
+
+.card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--border);color:var(--dim);font-size:.72em;text-align:center}
+</style>
+</head>
+<body>
+<div class="topbar">VERIFICATION REPORT — MACRO SYSTEM #1</div>
+<div class="container">
+
+<h1>macro 시스템 검증 보고서</h1>
+<div class="meta">2026-03-25 · 전면 검증 (STAGE 1~5) · 검증 회차 #1</div>
+<div class="badges">
+  <span class="badge b-yellow">종합 40/100</span>
+  <span class="badge b-red">약한 고리: 컨텍스트 관리</span>
+  <span class="badge b-keyword">자율 Level 1</span>
+  <span class="badge b-yellow">갭 8건</span>
+</div>
+
+<!-- Score Hero -->
+<div class="score-hero">
+  <div class="score-num">40</div>
+  <div class="score-label">종합 점수 /100 (MIN 기준 — 곱셈 구조의 약한 고리)</div>
+  <div class="score-weak">⚠ 약한 고리: 조건 4. 컨텍스트 관리 (40점)</div>
+</div>
+
+<!-- 5 Condition Bars -->
+<h2>STAGE 4: 5대 조건 스코어카드</h2>
+
+<div class="score-bar-wrap">
+  <div class="score-bar-label"><span class="name">1. 맥락 품질 (기억계층)</span><span class="val">67</span></div>
+  <div class="score-bar"><div class="score-fill sf-yellow" style="width:67%"></div></div>
+</div>
+<div class="score-bar-wrap">
+  <div class="score-bar-label"><span class="name">2. 지침 정밀도 (지침계층)</span><span class="val">86</span></div>
+  <div class="score-bar"><div class="score-fill sf-green" style="width:86%"></div></div>
+</div>
+<div class="score-bar-wrap">
+  <div class="score-bar-label"><span class="name">3. 도구 접근성 (MCP/API)</span><span class="val">80</span></div>
+  <div class="score-bar"><div class="score-fill sf-green" style="width:80%"></div></div>
+</div>
+<div class="score-bar-wrap">
+  <div class="score-bar-label"><span class="name">4. 컨텍스트 관리 (실행계층)</span><span class="val" style="color:var(--red)">40 ← 약한 고리</span></div>
+  <div class="score-bar"><div class="score-fill sf-red" style="width:40%"></div></div>
+</div>
+<div class="score-bar-wrap">
+  <div class="score-bar-label"><span class="name">5. 피드백 루프 (진화계층)</span><span class="val">50</span></div>
+  <div class="score-bar"><div class="score-fill sf-yellow" style="width:50%"></div></div>
+</div>
+
+<!-- STAGE 1: Alignment -->
+<h2>STAGE 1: 설계 ↔ 구현 정합성</h2>
+
+<div class="check-group">
+  <div class="check-title">1-A. 기억계층 정합성 <span class="check-verdict cv-partial">🟡 부분 통과</span></div>
+  <div class="check-item ci-pass">✅ indicators/ 디렉토리 존재 (latest.json + 스냅샷)</div>
+  <div class="check-item ci-pass">✅ reports/ 디렉토리 존재 (MD + HTML)</div>
+  <div class="check-item ci-pass">✅ core/ 디렉토리 존재 (Python 3개)</div>
+  <div class="check-item ci-fail">❌ history/ 미존재 (스냅샷이 indicators/에 혼재)</div>
+  <div class="check-item ci-fail">❌ history/audits/ 미존재</div>
+  <div class="check-item ci-fail">❌ config/ 미존재 (event-calendar 등)</div>
+  <div class="check-item ci-pass">✅ latest.json 스키마 일치 — validate.py 12항목 PASS</div>
+  <div class="check-item ci-pass">✅ JSON 파싱 정상, 날짜 형식 일관</div>
+  <div class="check-item ci-fail">❌ active-watches.json 미존재</div>
+  <div class="check-item ci-fail">❌ active-kc.json 미존재</div>
+  <div class="check-item ci-fail">❌ system-issues.json 미존재</div>
+</div>
+
+<div class="check-group">
+  <div class="check-title">1-B. 지침계층 정합성 (7단계) <span class="check-verdict cv-partial">🟡 부분 통과</span></div>
+  <table>
+    <thead><tr><th>스킬/문서</th><th>WHY</th><th>WHAT</th><th>WHEN</th><th>HOW</th><th>FMT</th><th>FAIL</th><th>EVO</th><th>점수</th></tr></thead>
+    <tbody>
+      <tr><td>PLUGIN-weekly-macro</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td class="num" style="color:var(--green)">7/7</td></tr>
+      <tr><td>SKILL-macro-framework</td><td>✅</td><td>✅</td><td>—</td><td>✅</td><td>—</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td class="num">3/5</td></tr>
+      <tr><td>SKILL-macro-indicators</td><td>✅</td><td>✅</td><td>—</td><td>✅</td><td>✅</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td class="num">3/5</td></tr>
+      <tr><td>RULES.md</td><td>✅</td><td>✅</td><td>—</td><td>✅</td><td>✅</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td class="num">3/5</td></tr>
+      <tr><td>OPERATIONS.md</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>—</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td class="num">4/7</td></tr>
+    </tbody>
+  </table>
+  <div style="font-size:.78em;color:var(--dim);margin-top:6px">주력(PLUGIN) 7/7 ✅ | 보조 평균 ~3.3 ⚠️ — 보조 문서에 FAIL/EVOLVE 미적용</div>
+</div>
+
+<div class="check-group">
+  <div class="check-title">1-C. 실행계층 정합성 <span class="check-verdict cv-partial">🟡 부분 통과</span></div>
+  <div class="check-item ci-fail">❌ CLAUDE.md에 선별 로딩 규칙 미명시</div>
+  <div class="check-item ci-fail">❌ 로딩 전략(주간/월간/분기별) 미정의</div>
+  <div class="check-item ci-fail">❌ global-macro.skill (26KB) 구버전 잔류 → 컨텍스트 낭비</div>
+  <div class="check-item ci-pass">✅ core/render_report.py 존재</div>
+  <div class="check-item ci-fail">❌ assets/template-base.html 미존재</div>
+  <div class="check-item ci-fail">❌ references/component-catalog.md 미존재</div>
+</div>
+
+<div class="check-group">
+  <div class="check-title">1-D. 진화계층 정합성 <span class="check-verdict cv-fail">🔴 미구현</span></div>
+  <div class="check-item ci-pass">✅ errors.md 생성됨 (V-01~V-14 + R-01~R-06)</div>
+  <div class="check-item ci-pass">✅ PLUGIN에 Self-Audit Q1~Q5 내장</div>
+  <div class="check-item ci-fail">❌ system-issues.json 미존재</div>
+  <div class="check-item ci-fail">❌ 이슈 1건도 적재된 적 없음</div>
+  <div class="check-item ci-fail">❌ history/audits/ 미존재</div>
+  <div class="check-item ci-fail">❌ 주간 리뷰 1회도 실행 안 됨</div>
+  <div style="font-size:.78em;color:var(--red);margin-top:6px;font-weight:600">구조는 준비됐으나 실운영 0회. "설계만 있고 작동 이력 없음"</div>
+</div>
+
+<div class="check-group">
+  <div class="check-title">1-E. 자율계층 정합성 <span class="check-verdict cv-partial">🟡 부분 통과</span></div>
+  <div class="check-item ci-pass">✅ GUARDRAILS.md 존재 (Green/Yellow/Red + 이상 감지)</div>
+  <div class="check-item ci-pass">✅ validate.py가 세션 시작 검증 부분 대체</div>
+  <div class="check-item ci-fail">❌ system-autonomy 스킬 없음 (주간 실행 모델)</div>
+  <div class="check-item ci-fail">❌ 자율 행동 로그 미적용</div>
+  <div class="check-item ci-fail">❌ 에스컬레이션 1회도 테스트 안 됨</div>
+  <div style="font-size:.78em;color:var(--dim);margin-top:6px">현재 자율 수준: Level 0~1 경계</div>
+</div>
+
+<!-- STAGE 2: Operation -->
+<h2>STAGE 2: 구현 동작 검증</h2>
+
+<div class="check-group">
+  <div class="check-title">T-1: 주간 루틴 (수집→판정→저장) <span class="check-verdict cv-pass">✅ 통과</span></div>
+  <div class="check-item ci-pass">✅ MCP 수집 21건 (FRED 8 + Yahoo 10 + CoinGecko 1 + DeFiLlama 1 + Tavily 1)</div>
+  <div class="check-item ci-pass">✅ latest.json 갱신 — 27개 지표 + regime + layer_aux</div>
+  <div class="check-item ci-pass">✅ validate.py 12항목 전부 PASS</div>
+  <div class="check-item ci-pass">✅ snapshot.py → 2026-03-25.json 생성</div>
+  <div class="check-item ci-pass">✅ render_report.py → MD + HTML 생성</div>
+</div>
+
+<div class="check-group">
+  <div class="check-title">T-2: L7 계산 검증 <span class="check-verdict cv-pass">✅ 통과</span></div>
+  <div class="check-item ci-pass">✅ 보고값 0.16 vs 계산값 0.17 — 차이 0.013 (허용 오차 ±0.03)</div>
+  <div class="check-item ci-pass">✅ B layer 점수: 보고 3.0 = 계산 3.0 일치</div>
+</div>
+
+<div class="check-group">
+  <div class="check-title">T-3: 세션 간 기억 연속성 <span class="check-verdict cv-partial">🟡 부분</span></div>
+  <div class="check-item ci-pass">✅ latest.json에 prev_date(3/22) + prev 값 존재</div>
+  <div class="check-item ci-pass">✅ snapshot.py delta로 비교 가능</div>
+  <div class="check-item ci-fail">❌ Watch 연속성 불가 (active-watches.json 없음)</div>
+</div>
+
+<!-- STAGE 3: Cross-check -->
+<h2>STAGE 3: 횡단 정합성</h2>
+
+<div class="check-group">
+  <div class="check-title">3-A. 용어 일관성 <span class="check-verdict cv-pass">✅ 통과</span></div>
+  <div class="check-item ci-pass">✅ "레짐", "키스톤", "L7/L8" — 전 문서 일관</div>
+  <div class="check-item ci-warn">⚠️ "교란 경로" vs "이벤트 인과 체인" — 동일 개념, 표현 차이 (경미)</div>
+</div>
+
+<div class="check-group">
+  <div class="check-title">3-B. 데이터 흐름 연결성 <span class="check-verdict cv-partial">🟡 부분</span></div>
+  <table>
+    <thead><tr><th>From</th><th>To</th><th>연결</th></tr></thead>
+    <tbody>
+      <tr><td>MCP 수집</td><td>latest.json</td><td style="color:var(--green)">✅</td></tr>
+      <tr><td>latest.json</td><td>validate.py</td><td style="color:var(--green)">✅</td></tr>
+      <tr><td>latest.json</td><td>snapshot.py</td><td style="color:var(--green)">✅</td></tr>
+      <tr><td>latest.json</td><td>render_report.py</td><td style="color:var(--green)">✅</td></tr>
+      <tr><td>latest.json</td><td>psf-monitor state.json</td><td style="color:var(--green)">✅</td></tr>
+      <tr><td>Self-Audit</td><td>errors.md</td><td style="color:var(--yellow)">⚠️ 구조만</td></tr>
+      <tr><td>errors.md</td><td>system-issues.json</td><td style="color:var(--red)">❌ 파일 없음</td></tr>
+      <tr><td>system-issues</td><td>주간 리뷰</td><td style="color:var(--red)">❌ 미운영</td></tr>
+      <tr><td>주간 리뷰</td><td>audits/</td><td style="color:var(--red)">❌ 미존재</td></tr>
+    </tbody>
+  </table>
+  <div style="font-size:.78em;color:var(--yellow);margin-top:6px">수집→검증→렌더 체인 ✅ 정상 | 피드백 체인 ❌ 단절</div>
+</div>
+
+<!-- STAGE 5: Gap Analysis -->
+<h2>STAGE 5: 갭 분석 + 개선 계획</h2>
+
+<table>
+  <thead><tr><th>#</th><th>갭 설명</th><th>출처</th><th>심각도</th><th>비용</th><th>WSJF</th><th>순위</th></tr></thead>
+  <tbody>
+    <tr><td>G-2</td><td>global-macro.skill 26KB 잔류</td><td>S1-C</td><td class="sev-high">high</td><td class="num">5분</td><td class="num">12.0</td><td class="num">1</td></tr>
+    <tr><td>G-3</td><td>system-issues.json 미존재</td><td>S1-D</td><td class="sev-high">high</td><td class="num">10분</td><td class="num">11.0</td><td class="num">2</td></tr>
+    <tr><td>G-4</td><td>history/audits/ 미존재</td><td>S1-D</td><td class="sev-med">medium</td><td class="num">5분</td><td class="num">8.0</td><td class="num">3</td></tr>
+    <tr><td>G-1</td><td>컨텍스트 로딩 전략 미정의</td><td>S1-C</td><td class="sev-high">high</td><td class="num">30분</td><td class="num">6.5</td><td class="num">4</td></tr>
+    <tr><td>G-8</td><td>assets/template-base.html 없음</td><td>S1-C</td><td class="sev-low">low</td><td class="num">10분</td><td class="num">4.0</td><td class="num">5</td></tr>
+    <tr><td>G-6</td><td>config/ 디렉토리 미존재</td><td>S1-A</td><td class="sev-med">medium</td><td class="num">30분</td><td class="num">3.5</td><td class="num">6</td></tr>
+    <tr><td>G-5</td><td>Watch/KC 관리 체계 없음</td><td>S1-A</td><td class="sev-med">medium</td><td class="num">1시간</td><td class="num">2.3</td><td class="num">7</td></tr>
+    <tr><td>G-7</td><td>보조 문서 FAIL/EVOLVE 미적용</td><td>S1-B</td><td class="sev-low">low</td><td class="num">2시간</td><td class="num">1.2</td><td class="num">8</td></tr>
+  </tbody>
+</table>
+
+<!-- Sprint Plan -->
+<h3>개선 스프린트</h3>
+
+<div class="sprint" style="border-color:var(--red)">
+  <div class="sprint-title" style="color:var(--red)">Sprint 1 (즉시) — 40→60점 목표</div>
+  <div class="sprint-item"><b>G-2</b> global-macro.skill → 아카이브 이동 또는 삭제</div>
+  <div class="sprint-item"><b>G-1</b> CLAUDE.md에 컨텍스트 로딩 전략 추가</div>
+  <div class="sprint-item"><b>G-3</b> system-issues.json 빈 파일 생성</div>
+  <div class="sprint-item"><b>G-4</b> history/audits/ 디렉토리 + README 생성</div>
+</div>
+
+<div class="sprint" style="border-color:var(--yellow)">
+  <div class="sprint-title" style="color:var(--yellow)">Sprint 2 (1주 내) — 60→75점 목표</div>
+  <div class="sprint-item"><b>G-8</b> assets/template-base.html 생성</div>
+  <div class="sprint-item"><b>G-6</b> config/ + event-calendar.json 생성</div>
+  <div class="sprint-item"><b>G-5</b> Watch/KC 관리 체계 설계</div>
+</div>
+
+<div class="sprint" style="border-color:var(--green)">
+  <div class="sprint-title" style="color:var(--green)">Sprint 3 (2주 내) — 75→85점 목표</div>
+  <div class="sprint-item"><b>G-7</b> 보조 문서(framework/indicators/rules)에 FAIL/EVOLVE 추가</div>
+  <div class="sprint-item">최종 스코어카드 재산출</div>
+</div>
+
+<!-- psf-monitor comparison -->
+<h2>psf-monitor 대비 비교</h2>
+
+<table>
+  <thead><tr><th>항목</th><th>macro</th><th>psf-monitor</th><th>갭</th></tr></thead>
+  <tbody>
+    <tr><td>종합 점수</td><td class="num" style="color:var(--yellow)">40</td><td class="num" style="color:var(--green)">85+</td><td style="color:var(--red)">-45</td></tr>
+    <tr><td>7단계 (주력)</td><td class="num" style="color:var(--green)">7/7</td><td class="num" style="color:var(--green)">7/7</td><td style="color:var(--green)">동일</td></tr>
+    <tr><td>코드</td><td class="num">3개 (39KB)</td><td class="num">6개 (65KB)</td><td>render_adaptive 차이</td></tr>
+    <tr><td>기억 파일</td><td>latest.json만</td><td>state + projection + history</td><td style="color:var(--red)">구조 차이</td></tr>
+    <tr><td>F-테이블</td><td style="color:var(--green)">✅ F-01~F-08</td><td style="color:var(--green)">✅ F-01~F-12</td><td style="color:var(--green)">양쪽 보유</td></tr>
+    <tr><td>Self-Audit</td><td style="color:var(--green)">✅ Q1~Q5</td><td style="color:var(--green)">✅ Q1~Q5</td><td style="color:var(--green)">양쪽 보유</td></tr>
+    <tr><td>GUARDRAILS</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">양쪽 보유</td></tr>
+    <tr><td>로딩 전략</td><td style="color:var(--red)">❌</td><td style="color:var(--green)">✅ D/W/M/Q</td><td style="color:var(--red)">macro 미정의</td></tr>
+    <tr><td>피드백 운영</td><td style="color:var(--red)">0회</td><td style="color:var(--green)">운영 중</td><td style="color:var(--red)">macro 미착수</td></tr>
+    <tr><td>자율 보고서</td><td style="color:var(--red)">❌</td><td style="color:var(--green)">✅ 4-Phase</td><td style="color:var(--red)">macro 없음</td></tr>
+    <tr><td>자율 Level</td><td class="num">L1</td><td class="num">L3</td><td style="color:var(--red)">2단계 차이</td></tr>
+  </tbody>
+</table>
+
+<!-- Autonomy Level -->
+<h2>자율성 수준 판정</h2>
+
+<div class="card">
+  <div style="display:flex;gap:8px;margin-bottom:8px">
+    <span class="badge b-green">L0→L1 ✅</span>
+    <span class="badge b-yellow">L1→L2 진행 중</span>
+    <span class="badge" style="background:#1a1e26;color:#484f58">L2→L3 미착수</span>
+  </div>
+  <div style="font-size:.8em">
+    <div class="check-item ci-pass">✅ latest.json 존재 + 스키마 일치</div>
+    <div class="check-item ci-pass">✅ 스냅샷 자동 저장 (snapshot.py)</div>
+    <div class="check-item ci-fail">❌ Watch 체크→갱신 사이클 미운영 (4주 안정 필요)</div>
+    <div class="check-item ci-fail">❌ Self-Audit→이슈 적재 자동 판별 미운영</div>
+    <div class="check-item ci-fail">❌ GUARDRAILS 적용 + 실행 로그 미운영</div>
+  </div>
+  <div style="font-size:.82em;color:var(--yellow);margin-top:8px;font-weight:600">현재: Level 1 (자율 감지) — 스캔 가능, 실행은 수동</div>
+</div>
+
+<!-- Score Tracking -->
+<h2>스코어 추적</h2>
+
+<table>
+  <thead><tr><th>회차</th><th>맥락</th><th>지침</th><th>도구</th><th>컨텍스트</th><th>피드백</th><th>종합</th><th>갭</th><th>Level</th></tr></thead>
+  <tbody>
+    <tr style="background:rgba(255,214,0,.05)">
+      <td><b>#1 (현재)</b></td>
+      <td class="num">67</td><td class="num">86</td><td class="num">80</td>
+      <td class="num" style="color:var(--red)">40</td><td class="num">50</td>
+      <td class="num" style="color:var(--yellow)"><b>40</b></td>
+      <td class="num">8</td><td>L1</td>
+    </tr>
+    <tr style="color:var(--dim)">
+      <td>Sprint 1 후 (목표)</td>
+      <td>67</td><td>86</td><td>80</td><td style="color:var(--yellow)">60</td><td style="color:var(--yellow)">67</td>
+      <td style="color:var(--yellow)"><b>60</b></td><td>4</td><td>L1</td>
+    </tr>
+    <tr style="color:var(--dim)">
+      <td>Sprint 2 후 (목표)</td>
+      <td>83</td><td>86</td><td>80</td><td>80</td><td>67</td>
+      <td style="color:var(--green)"><b>67</b></td><td>1</td><td>L2</td>
+    </tr>
+    <tr style="color:var(--dim)">
+      <td>Sprint 3 후 (목표)</td>
+      <td>83</td><td>93</td><td>80</td><td>80</td><td>83</td>
+      <td style="color:var(--green)"><b>80</b></td><td>0</td><td>L2</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  macro 시스템 검증 보고서 #1 · 08-1 검증 프레임워크 적용 · 2026-03-25<br>
+  <span style="color:#484f58;font-style:italic">다음 검증: Sprint 1 완료 후 재산출</span>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{
+  "rule_accuracy": [],
+  "media_profile": {},
+  "last_tuned": "2026-03-20 15:46:02",
+  "media_profiles": [
+    {
+      "author": "서대문우체국 지원과",
+      "total_verifications": 1,
+      "strength": "incentive 층에서 문제 없음",
+      "weakness": "logic 층에서 1/1회 🔴",
+      "top_triggered_rules": [],
+      "suggestion": "서대문우체국 지원과의 문서는 logic 층에서 1/1회(≥50%) 🔴. logic 층 검증을 강화하고, 나머지 층은 경량화 가능."
+    },
+    {
+      "author": "매일경제",
+      "total_verifications": 1,
+      "strength": "모든 층에서 문제 발견",
+      "weakness": "logic 층에서 1/1회 🔴",
+      "top_triggered_rules": [
+        {
+          "rule": "lr_031",
+          "count": 2
+        },
+        {
+          "rule": "lr_032",
+          "count": 1
+        },
+        {
+          "rule": "lr_news_003",
+          "count": 1
+        }
+      ],
+      "suggestion": "매일경제의 문서는 logic 층에서 1/1회(≥50%) 🔴. logic 층 검증을 강화하고, 나머지 층은 경량화 가능."
+    },
+    {
+      "author": "김대호 박사",
+      "total_verifications": 1,
+      "strength": "temporal, incentive 층에서 문제 없음",
+      "weakness": "fact 층에서 1/1회 🔴",
+      "top_triggered_rules": [
+        {
+          "rule": "lr_news_002",
+          "count": 1
+        }
+      ],
+      "suggestion": "김대호 박사의 문서는 fact 층에서 1/1회(≥50%) 🔴. fact 층 검증을 강화하고, 나머지 층은 경량화 가능."
+    }
+  ],
+  "collection_effectiveness": [
+    {
+      "doc_type": "regulatory_filing",
+      "total": 1,
+      "avg_reds_per_verification": 2.0,
+      "unique_rules_triggered": 0,
+      "learning_value": "high",
+      "suggestion": "학습 가치 high. 🔴 평균 2.0건/검증, 고유 규칙 0종 활성화. 수집 유지."
+    },
+    {
+      "doc_type": "news_article",
+      "total": 2,
+      "avg_reds_per_verification": 2.5,
+      "unique_rules_triggered": 7,
+      "learning_value": "high",
+      "suggestion": "학습 가치 high. 🔴 평균 2.5건/검증, 고유 규칙 7종 활성화. 수집 유지."
+    },
+    {
+      "doc_type": "",
+      "total": 1,
+      "avg_reds_per_verification": 1.0,
+      "unique_rules_triggered": 0,
+      "learning_value": "medium",
+      "suggestion": "학습 가치 medium. 🔴 평균 1.0건/검증. 수집량 유지하되 다른 하위 유형 탐색."
+    }
+  ]
+}

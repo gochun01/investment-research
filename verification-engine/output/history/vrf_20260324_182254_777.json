@@ -1,0 +1,749 @@
+{
+  "vrf_id": "vrf_20260324_182254_777",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟢",
+      "logic": "🟡",
+      "temporal": "🟡",
+      "incentive": "🟢",
+      "omission": "🟡"
+    },
+    "critical_flags": [],
+    "valid_until": "2026-05-15",
+    "validity_condition": "LIG넥스원 분기 실적 발표 전까지. GCC 신규 계약 체결 시 재검증",
+    "claims_count": 11
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260324_182254_777",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-24T18:22:54.759602",
+      "engine_version": "6layer_v2",
+      "document": {
+        "title": "천궁-2 이란 전쟁 두바이 실전 입증 — reaction-monitor 수집 보고서 검증",
+        "document_type": "news_article",
+        "target_id": "천궁-II / LIG넥스원 / 한화에어로",
+        "sector_id": "지정학",
+        "author_id": "",
+        "institution_id": "",
+        "source_url": "",
+        "date_published": "2026-03-24",
+        "date_accessed": "2026-03-24"
+      },
+      "previous_verification": ""
+    },
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "출처 태깅 대체로 양호. URL 포함. Tier 구분은 명시적이지 않으나 role(프레임설정/깊이분석/글로벌/반대쪽)로 간접 구분"
+      },
+      "incentive": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "reaction-monitor는 분석 주체가 아닌 수집 시스템. 이해충돌 구조 해당 없음. 수집 대상 매체의 편향은 R-03(양면 수집)으로 관리되고 있음"
+      },
+      "omission": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "문서 전체에서 누락된 리스크: (1) ITAR 제약 (2) 전쟁 수혜 일반 vs 천궁 특화 구분 (3) 이라크 계약 $2.8B vs $2.6B 금액 차이 미설명 (4) 천궁-II의 기술적 한계(사거리, 동시교전 수) 미언급",
+        "bbj_breaks": [
+          {
+            "break_text": "ITAR 제약 + 전쟁 수혜 일반 vs 천궁 특화 구분 + 이라크 계약 금액 불일치",
+            "in_document": false,
+            "verdict": "🟡"
+          }
+        ]
+      }
+    },
+    "claims": [
+      {
+        "claim_id": "c001",
+        "text": "천궁-II 요격률 96% (60여 발 발사 중 96% 요격)",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "reactions.expert[유용원]",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "96%는 천궁-II 단독 요격률(2개 포대, 60발). UAE 전체 방공(Patriot+THAAD+천궁+이스라엘) 합산은 92.5%. 차이의 원인은 보고서에 미설명. 수치 자체는 유용원 의원(Tier 2) + Seoul Economic Daily EN(Tier 2)에서 교차 확인",
+            "evidence": [
+              {
+                "source": "Seoul Economic Daily EN",
+                "value": "96% hit rate (Cheongung-II specific)",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "유용원 의원 (UPI 인용)",
+                "value": "60+ missiles, 96% intercept",
+                "retrieved_at": "2026-03-05"
+              }
+            ],
+            "data_reference_date": "2026-03-05",
+            "gap_days": 19,
+            "material_change": false
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "96%와 92.5%가 동일 보고서에 공존. 두 수치의 측정 범위 차이(천궁 단독 vs 전체 방공) 미설명은 논리적 불완전"
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "3/5 발표. 수집일 3/24. gap 19일. 요격률은 과거 사실이므로 시점 변동 없음",
+            "data_reference_date": "2026-03-05",
+            "gap_days": 19,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c002",
+        "text": "UAE 공식 요격률 92.5% (186발 중 172발 요격)",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "reactions.policy[UAE군]",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "UAE 공식: 174 탄도미사일 중 161 격추 + 689 드론 중 645 격추. 보고서의 '186발 중 172발'은 탄도미사일+순항미사일 합산으로 보이나 정확한 분류 미명시. Tier 1(UAE 군 발표)이나 원문 확인 불가",
+            "evidence": [
+              {
+                "source": "Eurasian Times",
+                "value": "174 ballistic missiles: 161 destroyed. 689 drones: 645 intercepted",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "보고서 기록",
+                "value": "186발 중 172발 (92.5%)",
+                "retrieved_at": "2026-03-24"
+              }
+            ],
+            "data_reference_date": "2026-03-10",
+            "gap_days": 14,
+            "material_change": false
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "186발 vs Eurasian Times 174+689=863발. 분류 기준 불일치. 보고서 186발이 무엇의 합산인지 불명확"
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "",
+            "data_reference_date": "2026-03-10",
+            "gap_days": 14,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c003",
+        "text": "천궁 요격탄 1발당 약 $1.1M (110만 달러, 한화 약 16억원)",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "수집 원문 인용",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "$1.1M/발 — 다수 한국 매체에서 인용(잡학서가, betanews 등). 그러나 DAPA 또는 LIG넥스원 공식 발표가 아닌 매체 추정. 1차 소스 미확인",
+            "evidence": [
+              {
+                "source": "잡학서가 / betanews",
+                "value": "약 $1.1M (20~25억원)",
+                "retrieved_at": "2026-03-24"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "$1.1M vs Patriot $3.7M 비교는 논리적으로 유효. 가격 비교의 전제(동일 성능 구간) 충족"
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "가격 시점 불명. 환율 변동에 따라 원화 환산 달라짐. 1,495원/$ 기준 16억원 = $1.07M. 보고서 $1.1M과 소폭 차이",
+            "data_reference_date": "2026-03-24",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c004",
+        "text": "Patriot 요격탄 1발당 약 $3.7M (370만 달러)",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "수집 원문 인용",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "보고서: $3.7M. MCP 조회 결과: DoD FY2026 예산 기준 $3.8M, FY2025 기준 $4.2M, 수출가 $6.25~7M. 보고서 $3.7M은 범위 내이나 출처에 따라 $3.8~4.2M이 더 정확. 방향은 맞으나 정확한 수치는 출처에 따라 다름",
+            "evidence": [
+              {
+                "source": "Norsk Luftvern (DoD Budget)",
+                "value": "$3.8M (FY2026), $4.2M (FY2025)",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "보고서",
+                "value": "$3.7M",
+                "retrieved_at": "2026-03-24"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "DoD FY2025 $4.2M vs FY2026 $3.8M. 연도별 변동 있음. 보고서 $3.7M은 어느 연도 기준인지 미명시"
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c005",
+        "text": "한화에어로스페이스 2/27 1,195,000원 → 3/24 1,335,000원 (+11.7%)",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "reactions.price[한화에어로]",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Yahoo Finance MCP 직접 조회. 2/27: 1,195,000원 ✅, 3/24: 1,335,000원 ✅. 변동률 (1335-1195)/1195 = 11.72% ≈ 11.7% ✅",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "query": "012450.KS 2026-02-27",
+                "value": "1195000",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "Yahoo Finance",
+                "query": "012450.KS current",
+                "value": "1335000",
+                "retrieved_at": "2026-03-24"
+              }
+            ],
+            "data_reference_date": "2026-03-24",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "",
+            "data_reference_date": "2026-03-24",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c006",
+        "text": "LIG넥스원 2/27 509,000원 → 3/24 641,000원 (+25.9%)",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "reactions.price[LIG넥스원]",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Yahoo Finance MCP 직접 조회. 2/27: 509,000원 ✅, 3/24: 641,000원 ✅. 변동률 (641-509)/509 = 25.93% ≈ 25.9% ✅",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "query": "079550.KS 2026-02-27",
+                "value": "509000",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "Yahoo Finance",
+                "query": "079550.KS current",
+                "value": "641000",
+                "retrieved_at": "2026-03-24"
+              }
+            ],
+            "data_reference_date": "2026-03-24",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "",
+            "data_reference_date": "2026-03-24",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c007",
+        "text": "사우디아라비아 천궁-II $3.2B (10개 포대) 계약 체결",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "reactions.policy[사우디/이라크]",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Korea Herald + KED Global + Asian Military Review 3개 독립 Tier 2 소스에서 교차 확인. $3.2B, 10개 포대, 2024년 2월 계약. 보고서 기록 정확",
+            "evidence": [
+              {
+                "source": "Korea Herald",
+                "value": "LIG Nex1 $3.2bn deal with Saudi Arabia",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "KED Global",
+                "value": "$3.2bn missile defense deal",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "Asian Military Review",
+                "value": "Saudi air defence win",
+                "retrieved_at": "2026-03-24"
+              }
+            ],
+            "data_reference_date": "2024-02-07",
+            "gap_days": 776,
+            "material_change": false
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "N/A",
+            "reason": "사실진술에 logic 미적용",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "계약일 2024년 2월. 현재 2026년 3월. 776일 경과. 계약 자체는 사실이나 인도 진행 상황은 미확인",
+            "data_reference_date": "2024-02-07",
+            "gap_days": 776,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "사실진술에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c008",
+        "text": "이라크 천궁-II $2.8B (8개 포대) 계약 체결",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "reactions.policy[사우디/이라크]",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Breaking Defense(Tier 2) + KED Global(Tier 2) 교차 확인. $2.8B(Breaking) / $2.6B(KED). 금액에 $0.2B 차이 있으나 계약 존재 자체는 확인. 보고서는 $2.8B 기록",
+            "evidence": [
+              {
+                "source": "Breaking Defense",
+                "value": "$2.8B deal for Cheongung-II",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "KED Global",
+                "value": "$2.6 billion deal on M-SAM",
+                "retrieved_at": "2026-03-24"
+              }
+            ],
+            "data_reference_date": "2024-09-12",
+            "gap_days": 558,
+            "material_change": false
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "N/A",
+            "reason": "사실진술에 logic 미적용",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "계약 보도 2024년 9월. 558일 경과. Breaking Defense URL도 2024/09. 금액 $2.8B vs $2.6B 차이 미설명",
+            "data_reference_date": "2024-09-12",
+            "gap_days": 558,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "사실진술에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c009",
+        "text": "LIG넥스원 PSR 21.7배(2024) → 35.3배(2026.02)",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "reactions.positioning[PSR]",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "보고서: PSR 21.7→35.3배. WebSearch: P/E 34.85(Yahoo Finance statistics), ainvest에서 \"P/E jumped from 21.7 to 35.3\". 이것은 PSR이 아니라 P/E(PER)일 가능성. 보고서 출처(글로벌이코노믹)가 PSR이라 했으나 실제로는 P/E를 PSR로 혼용했을 수 있음. EV/Sales는 2.76배(ROIC AI). 35배는 P/E에 가까움",
+            "evidence": [
+              {
+                "source": "Yahoo Finance Statistics",
+                "value": "P/E 34.85",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "ROIC AI",
+                "value": "EV/Sales 2.76",
+                "retrieved_at": "2026-03-24"
+              },
+              {
+                "source": "ainvest",
+                "value": "P/E 21.7→35.3",
+                "retrieved_at": "2026-03-24"
+              }
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-LIG-PSR",
+                "premise": "PSR 35배가 P/E 오기일 경우 밸류에이션 해석이 달라짐. EV/Sales 2.76배면 과열이 아닌 정상 범위",
+                "verdict": "🟡"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "PSR 35배로 과열 판정했으나 실제로는 P/E(PER)일 가능성. EV/Sales 2.76배면 과열이 아님. 지표 혼용이 판단을 왜곡할 수 있음",
+            "rules_triggered": [
+              "lr_031: 지표 혼용 오류"
+            ]
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "PSR/PER 시점 \"2024말\" → \"2026.02\". 현재 3월. 주가 변동으로 현재 배수는 달라짐",
+            "data_reference_date": "2026-02-28",
+            "gap_days": 24,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c010",
+        "text": "실전 입증이 가격을 선행. 가격이 서사보다 3주 먼저 반응(A 경로)",
+        "claim_type": "인과주장",
+        "evidence_type": "estimate",
+        "location": "pattern.time_structure",
+        "depends_on": [
+          "c005",
+          "c006"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "인과주장에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "인과주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "타임라인 데이터로 확인: 3/3 주가 급등 → 3/5 유용원 공개 → 3/10 글로벌 매체. 가격이 서사를 선행한 것은 데이터로 뒷받침됨. A 경로 판정은 논리적으로 유효",
+            "kc_extracted": [
+              {
+                "kc_id": "KC-CHEONGUNG-PRICING",
+                "premise": "천궁 실전 입증 호재가 이미 가격에 반영됨. 추가 호재(GCC 신규 계약)가 없으면 조정 지속",
+                "verdict": "🟡"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "타임라인 데이터 기준일 3/3~3/24. 수집일 3/24. gap 0~21일. 진행 중인 이벤트이므로 temporal 이슈 없음",
+            "data_reference_date": "2026-03-24",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "인과주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "A 경로(시장 주도) 판정에서 누락: 3/3 전쟁 발발 자체가 방산주 전체를 끌어올린 것이지 천궁 실전 입증이 아닐 수 있음. 한화에어로 3/3 +20%는 전쟁 수혜 일반이지 천궁 특화가 아님. 이 구분이 보고서에 약함",
+            "bbj_breaks": [
+              {
+                "break_text": "전쟁 발발 자체의 방산주 수혜 vs 천궁 실전 입증 특화 호재를 분리하지 않음",
+                "in_document": false,
+                "verdict": "🟡"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "claim_id": "c011",
+        "text": "실전 입증으로 K-방산 수출 파이프라인이 가속. 수주잔고 $72B 돌파",
+        "claim_type": "인과주장",
+        "evidence_type": "estimate",
+        "location": "pattern.direction_rationale + positioning[수주잔고]",
+        "depends_on": [
+          "c001",
+          "c002",
+          "c007",
+          "c008"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "인과주장에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "인과주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "\"실전 입증→파이프라인 가속\"은 합리적 추론이나 인과가 직접 증명되지 않음. 수주잔고 $72B는 천궁 실전 입증 이전부터 누적된 것(K2, K9, FA-50 포함). 천궁이 $72B의 원인이라는 단정은 과장. 천궁이 기여한 것은 맞으나 \"전체 파이프라인을 끌어올림\"은 인과 과대",
+            "rules_triggered": [
+              "lr_031: 인과 과대 표현"
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-KDEFENSE-BACKLOG",
+                "premise": "$72B 수주잔고가 천궁 단독 기여인지, K-방산 생태계 전체인지 분리 필요",
+                "verdict": "🟡"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "수주잔고 $72B 출처의 정확한 시점 불명. \"2026-03\"으로만 기록. 수주잔고는 분기별 변동하므로 정확 시점 필요",
+            "data_reference_date": "2026-03-01",
+            "gap_days": 23,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "인과주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "\"K-방산 파이프라인 가속\"에서 누락: 미국의 대한국 방산 견제 가능성. ITAR(국제무기거래규정) 제약 — 천궁에 미국 기술이 포함되어 있다면 제3국 수출에 미국 승인 필요. 이 리스크가 전혀 언급 안 됨",
+            "bbj_breaks": [
+              {
+                "break_text": "ITAR 제약: 천궁에 미국 기술 포함 시 제3국 수출에 미국 승인 필요. 이 리스크 미언급",
+                "in_document": false,
+                "verdict": "🟡"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "summary": {
+      "layer_verdicts": {
+        "fact": "🟡",
+        "norm": "🟢",
+        "logic": "🟡",
+        "temporal": "🟡",
+        "incentive": "🟢",
+        "omission": "🟡"
+      },
+      "critical_flags": [],
+      "valid_until": "2026-05-15",
+      "validity_condition": "LIG넥스원 분기 실적 발표 전까지. GCC 신규 계약 체결 시 재검증",
+      "invalidation_triggers": [
+        {
+          "event": "LIG넥스원 2026 Q1 실적 발표",
+          "expected_date": "2026-05-15",
+          "impact": "PSR 정당화 여부 확정"
+        },
+        {
+          "event": "카타르/쿠웨이트 천궁-II 계약 체결",
+          "expected_date": "",
+          "impact": "파이프라인 가속 확인"
+        },
+        {
+          "event": "Raytheon Patriot 가격 인하 또는 대응 발표",
+          "expected_date": "",
+          "impact": "경쟁 구조 변화"
+        }
+      ],
+      "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+    }
+  }
+}

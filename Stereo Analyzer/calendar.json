@@ -1,0 +1,11 @@
+{
+  "last_updated": "2026-03-26",
+  "events": [
+    {"id": "EC-001", "date": "2026-03-28", "event": "Core PCE (2월)", "affects": ["TC-001", "TC-003"], "importance": "high", "note": "A1 키스톤. 2.3%↓ 시 Fed 인하 접근 → TC-001 Fed 경로 변화. TC-003 교란 해소 가속."},
+    {"id": "EC-002", "date": "2026-04-01", "event": "ISM PMI (3월)", "affects": ["TC-003"], "importance": "high", "note": "49→48↓ 시 수축 확인 → 스태그플레이션 경로. PSF S4 영향."},
+    {"id": "EC-003", "date": "2026-04-15", "event": "Section 301 코멘트 마감", "affects": ["TC-001"], "importance": "critical", "note": "한국 기업/정부 의견 제출 데드라인. L_trade 활성화 여부 결정."},
+    {"id": "EC-004", "date": "2026-04-28", "event": "Section 301 청문회", "affects": ["TC-001"], "importance": "critical", "note": "관세 범위·세율 윤곽. 시장 반영 시작점."},
+    {"id": "EC-005", "date": "2026-05-07", "event": "FOMC", "affects": ["TC-001", "TC-002"], "importance": "high", "note": "Barr vs Miran. 점도표. TC-001 Fed 방향, TC-002 한미 금리차."},
+    {"id": "EC-006", "date": "2026-07-24", "event": "Section 122 만료", "affects": ["TC-001"], "importance": "critical", "note": "관세 공백 or 301 전환. 데드라인."}
+  ]
+}

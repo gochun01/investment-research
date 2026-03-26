@@ -1,0 +1,282 @@
+{
+  "vrf_id": "vrf_20260320_165427_437",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟢",
+      "norm": "🟢",
+      "logic": "🟡",
+      "temporal": "🟢",
+      "incentive": "🟡",
+      "omission": "🟡"
+    },
+    "critical_flags": [],
+    "valid_until": "2026-06-05",
+    "validity_condition": "AI CAPEX sustained AND NVDA market share maintained",
+    "claims_count": 4
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260320_165427_437",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-20T16:54:27.430185",
+      "engine_version": "6layer_v2",
+      "document": {
+        "title": "Nvidia Earnings Prove Why Its Earned Its Spot",
+        "document_type": "equity_research",
+        "target_id": "NVDA",
+        "sector_id": "",
+        "author_id": "Bill Gunderson",
+        "institution_id": "Seeking Alpha",
+        "source_url": "https://seekingalpha.com/nvidia",
+        "date_published": "2026-03-05",
+        "date_accessed": "2026-03-20"
+      },
+      "previous_verification": ""
+    },
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "투자 리스크 경고 존재",
+        "checklist_matched": [
+          "nr_eq_001"
+        ],
+        "checklist_missed": []
+      },
+      "incentive": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "Seeking Alpha 기고자. NVDA 보유 미공시"
+      },
+      "omission": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "하방 없음. 중국 수출규제 미언급",
+        "checklist_matched": [],
+        "checklist_missed": [
+          "om_semi_005"
+        ]
+      }
+    },
+    "claims": [
+      {
+        "claim_id": "c001",
+        "text": "Nvidia quarterly revenue $68.1B, 73% YoY growth",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "Summary",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Yahoo Finance: $68.1B confirmed",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "value": "$68.1B"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 15d",
+            "data_reference_date": "2026-03-05",
+            "gap_days": 15,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c002",
+        "text": "Five-year growth 18%, return potential 103.73%",
+        "claim_type": "예측",
+        "evidence_type": "estimate",
+        "location": "Summary",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "예측에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "예측에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "lr_005: 하방 시나리오 없음. AI CAPEX 지속 전제",
+            "rules_triggered": [
+              "lr_005: optimistic_without_downside"
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-NVDA-1",
+                "premise": "AI CAPEX 18% growth sustained",
+                "current_status": "Hyperscaler CAPEX +32% YoY",
+                "verdict": "🟡"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "예측에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c003",
+        "text": "PEG 0.96, target price $376.31",
+        "claim_type": "수치주장",
+        "evidence_type": "estimate",
+        "location": "Valuation",
+        "depends_on": [
+          "c002"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "lr_024: 민감도 분석 부재",
+            "rules_triggered": [
+              "lr_024: sensitivity_analysis_absent"
+            ]
+          },
+          "temporal": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c004",
+        "text": "Market Cap $4.38T, PE FWD 21.78",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "Metrics",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Yahoo Finance confirmed",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "value": "$4.38T"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 15d",
+            "data_reference_date": "2026-03-05",
+            "gap_days": 15,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      }
+    ],
+    "summary": {
+      "layer_verdicts": {
+        "fact": "🟢",
+        "norm": "🟢",
+        "logic": "🟡",
+        "temporal": "🟢",
+        "incentive": "🟡",
+        "omission": "🟡"
+      },
+      "critical_flags": [],
+      "valid_until": "2026-06-05",
+      "validity_condition": "AI CAPEX sustained AND NVDA market share maintained",
+      "invalidation_triggers": [
+        {
+          "event": "NVDA Q1 FY2027 earnings",
+          "expected_date": "2026-05-28",
+          "impact": "Revenue growth confirmation"
+        }
+      ],
+      "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+    }
+  }
+}

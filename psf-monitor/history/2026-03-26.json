@@ -1,0 +1,252 @@
+{
+  "last_updated": "2026-03-26",
+  "updated_by": "psf (macro latest.json 3/26 매핑)",
+  "freshness": "fresh",
+  "quality": {
+    "sources_used": ["FRED", "Yahoo Finance", "CoinGecko", "DeFiLlama", "Tavily", "WebSearch"],
+    "sources_attempted_failed": ["CoinGecko global_market_data (null 반환)"],
+    "mcp_count": 20,
+    "estimate_count": 2,
+    "mcp_ratio": 0.91,
+    "note": "macro latest.json(3/26) 기반 매핑 + Tavily/WebSearch 정성 보강."
+  },
+  "regime": "🟡 경계 (유지)",
+
+  "macro_interface": {
+    "macro_date": "2026-03-26",
+    "macro_regime": "🟡 Transition (3/5)",
+    "alignment": "이행+경계 = 양쪽 불확실 (유지)",
+    "macro_auto_triggered": false,
+    "trigger_reason": null
+  },
+
+  "observations": [
+    {
+      "rank": 1,
+      "signal": "Brent $102.55→$98.13(-$4.42), $100 하회 ★",
+      "source": "MCP:Yahoo BZ=F + Tavily (AP, Euronews)",
+      "magnitude": "전쟁 후 첫 $100 하회. 교란2 약화 핵심 시그널.",
+      "cause": "이란 '비적성 선박 호르무즈 통행 허용' + 15-point 휴전안 전달 기대",
+      "path": "P-지정학(완화 시그널) → P-자원(Brent↓$100) → L3(BEI 2.51%↓) → S1(상방 압력 완화)",
+      "axis_relevance": "②에너지: 교란 약화 방향이나 $98은 전쟁 전 $66 대비 +49%. 축 건재.",
+      "severity": "high"
+    },
+    {
+      "rank": 2,
+      "signal": "DFII10 2.01%→2.06%(+5bp), 핵심 제약 추가 강화",
+      "source": "MCP:FRED DFII10",
+      "magnitude": "실질금리 2% 돌파 후 추가 상승. 2023년 이후 고점 영역 확대.",
+      "cause": "Barr 'some time 동결' + 관세(Section 301) 인플레 우려 + 유가 높은 기저",
+      "path": "S1(실질금리↑) → B1(위험자산 역풍) → Fed 경로 비활성 심화",
+      "axis_relevance": "⑨재정지배: 금융억압 약화 방향 지속. 실질금리 2%+ 5일 연속이면 구조적 전환 신호.",
+      "severity": "high"
+    },
+    {
+      "rank": 3,
+      "signal": "이란 15-point 휴전안 거부 + 비적성 선박 통행 허용 — 이중 시그널",
+      "source": "MCP:Tavily (AP, Al Jazeera, DW)",
+      "magnitude": "전쟁 외교 첫 공식 접촉. 거부했지만 채널 열림 + 호르무즈 부분 재개.",
+      "cause": "트럼프 파키스탄 경유 15-point 안 전달. 이란 '극단적' 거부하나 비적성 선박 허용.",
+      "path": "P-지정학(외교 시작) → P-자원(호르무즈 부분 재개) → C7(Brent↓) → L5 약화 시작?",
+      "axis_relevance": "⑧지정학: 교착→분기. 외교 채널 열렸으나 실질 진전 미확인.",
+      "severity": "critical"
+    },
+    {
+      "rank": 4,
+      "signal": "Section 301 무역조사 16개국+60개국 동시 개시 — P2 활성화 ★",
+      "source": "MCP:Tavily (Lexology, Mayer Brown, JDSupra)",
+      "magnitude": "IEEPA 무효화 후 대체 관세 경로. 영구 관세 가능. 시장 미반영.",
+      "cause": "대법원 IEEPA 위헌 → Section 122(한시) → Section 301(영구). 7/24 데드라인.",
+      "path": "P-통상(활성화) → 수입원가↑ → A1(Core PCE)↑ 가능성 → Fed 인하 추가 차단",
+      "axis_relevance": "⑧미중: 중국 포함 16개국 대상. 한국 반도체/자동차/철강 타격 가능. ★ P2 활성화.",
+      "severity": "high"
+    },
+    {
+      "rank": 5,
+      "signal": "USD/JPY 158.67→159.49(+0.82), 160 접근",
+      "source": "MCP:Yahoo JPY=X",
+      "magnitude": "교란1(엔캐리) 잠복→경계 격상.",
+      "cause": "달러 강세 소폭 반등 + 금리 차 유지",
+      "path": "B3(160 접근) → 교란1 발동 시 → Override (전체 경로 무력화)",
+      "axis_relevance": "직접 축 연관 없음. 시스템 교란 리스크.",
+      "severity": "medium"
+    },
+    {
+      "rank": 6,
+      "signal": "Gold $4,414→$4,524(+$110, +2.5%)",
+      "source": "MCP:Yahoo GC=F",
+      "magnitude": "유가 하락에도 금 상승. 불확실성 프리미엄 + 강제 청산 복구.",
+      "cause": "전쟁 초기 마진콜 강제 청산(-13%)에서 복구 중. Goldman $5,400 연말 전망.",
+      "path": "F1(금↑) → 안전자산 수요 지속 = 위험완화 미확정",
+      "axis_relevance": "UC-001 업데이트: 실질금리 2.06% 상승에도 금 $4,524. 상충 심화.",
+      "severity": "medium"
+    }
+  ],
+
+  "plates": {
+    "P1_fiscal": {"signal": "🟡", "summary": "DFF 3.64% 동결. DFII10 2.06%↑. Fed 인하 차단 심화. Barr 'some time'."},
+    "P2_trade": {"signal": "🟡→🟠", "summary": "★ Section 301 16+60개국 조사 개시. IEEPA 무효→122(한시)→301(영구). 전주 ⚫→🟠."},
+    "P3_geopolitics": {"signal": "🔴→🟠", "summary": "15-point 안 거부했으나 비적성 선박 통행 허용. 외교 채널 열림. 교착→분기."},
+    "P4_regulation": {"signal": "🟡", "summary": "SEC 크립토 해석 시행 중. CLARITY Act 4/7. GENIUS Act Q2 시행."},
+    "P5_resources": {"signal": "🟡", "summary": "★ Brent $98 ($100↓). 호르무즈 부분 재개 시그널. 비료/LNG는 복구 수개월."},
+    "verdict": "변동 (P2 활성화, P3 분기)"
+  },
+
+  "structure": {
+    "S1": {"label": "실질금리", "value": 2.06, "direction": "↑", "verdict": "긴장 ↑", "source": "[MCP:FRED DFII10]", "note": "★ 2.01→2.06. 핵심 제약 강화."},
+    "S2": {"label": "HY OAS", "value": 319, "unit": "bp", "direction": "→", "verdict": "건전", "source": "[MCP:FRED BAMLH0A0HYM2]", "ig_oas": null},
+    "S3": {"label": "SOFR-FF", "value": -1, "unit": "bp", "direction": "→", "verdict": "건전", "source": "[MCP:FRED SOFR, DFF]"},
+    "S4": {"label": "ISM PMI", "value": 49, "direction": "→", "verdict": "긴장", "source": "[추정 — 4/1 발표]"},
+    "S5": {"label": "T10Y2Y", "value": 0.49, "direction": "→", "verdict": "건전", "source": "[MCP:FRED T10Y2Y]"},
+    "verdict": "건전~긴장 (S1 악화)"
+  },
+
+  "flow": {
+    "F1": {"label": "DXY/Gold", "value": 99.63, "direction": "→", "verdict": "이동 (약세 유지)", "source": "[MCP:Yahoo DX-Y.NYB]", "gold": 4524, "tlt": null},
+    "F2": {"label": "Net Liq", "value": "5.80T", "direction": "→", "verdict": "정체", "source": "[MCP:FRED 계산]", "walcl": 6.656, "tga": 0.853, "rrp": 0.001},
+    "F3": {"label": "EM/DM", "value": "SPY 659.19", "direction": "→", "verdict": "정체", "source": "[MCP:Yahoo SPY]"},
+    "F4": {"label": "크립토", "btc": 70960, "tvl": null, "direction": "↑ 소폭", "verdict": "횡보→반등", "source": "[MCP:CoinGecko]"},
+    "F5": {"label": "VIX/MOVE", "vix": 25.33, "move": 97.59, "direction": "↓", "verdict": "경계 (개선 중)", "source": "[MCP:Yahoo ^VIX, ^MOVE]"},
+    "verdict": "정체~이동 (유지)"
+  },
+
+  "links": {
+    "L1": {"status": "inactive", "note": "S1↑이나 S4 전파 미확인."},
+    "L2": {"status": "inactive", "note": "DXY 하락이나 EM 유입 미확인."},
+    "L3_energy_inflation": {"status": "active (약화↓)", "evidence": "BEI 2.51%(↓2bp). Brent $98(<$100). 감속.", "note": "★ $100 하회로 L3 비활성 접근. BEI 2.3% 이하 시 비활성 전환."},
+    "L3.5_supply_shock": {"status": "active (약화↓)", "evidence": "Brent $98(↓$4.4). 비적성 선박 통행 허용.", "note": "호르무즈 부분 재개 시그널. 물리적 복구는 아직. L3.5 유지하나 약화 방향."},
+    "L4": {"status": "inactive", "note": "S2 건전, S3 건전."},
+    "L5_geopolitics_energy": {"status": "active (약화↓)", "evidence": "15-point 안 + 비적성 선박 통행. 그러나 이란 거부 + 쿠웨이트공항 피폭.", "note": "★ 마스터 Link 약화 시작. 외교 채널 열림이 핵심 변화."},
+    "L6": {"status": "inactive", "note": "변동 없음."},
+    "L7_acute": {"status": "inactive", "note": "VIX < 30."},
+    "L7_chronic": {"status": "approaching (약화↓)", "note": "VIX 25.33. 25 경계선이나 하락 방향. 25↓ 2일 연속 시 해소."},
+    "L8_crisis": {"status": "inactive", "note": "SOFR/HY 안정."},
+    "corrflip": {"status": "inactive", "note": "SPY/TLT 동시 하락 미관측. 금 상승."},
+    "new_L_trade": {"status": "emerging ★", "note": "Section 301 → 수입원가↑ → A1↑ 잠재 경로. 아직 비활성이나 7/24 데드라인."},
+    "other": {
+      "L1_rate_growth": "비활성.",
+      "L2_dollar_em": "비활성.",
+      "L4_credit_liquidity": "비활성.",
+      "L6_tech_structure": "비활성."
+    }
+  },
+
+  "divergences": [
+    {
+      "type": "P↔S",
+      "description": "P-지정학 🟠(외교 시작이나 공격 지속) vs S2 건전(319bp). 괴리 축소 방향이나 잔존.",
+      "severity": "high→medium"
+    },
+    {
+      "type": "S1↔Gold",
+      "description": "실질금리 2.06%↑(금 억제 요인) vs Gold $4,524↑(+$110). 상충 심화.",
+      "severity": "medium"
+    },
+    {
+      "type": "P2↔Price",
+      "description": "★ 신규: Section 301 16+60개국(P2 🟠) vs 주가 +0.54%(가격 무반응). 과소 반응.",
+      "severity": "high"
+    }
+  ],
+
+  "unclassified": [
+    {
+      "id": "UC-001",
+      "signal": "Gold $4,524 — 실질금리 2.06% 상승에도 금 +$110. 상충 심화.",
+      "hypotheses": ["강제 청산 복구 주도", "중앙은행 구매 지속(Goldman $5,400 전망)", "불확실성 프리미엄 > 실질금리 압력"],
+      "status": "open",
+      "update": "3/25 $4,414 → 3/26 $4,524. 상충 확대."
+    },
+    {
+      "id": "UC-002",
+      "signal": "MOVE 97.59(정상) vs VIX 25.33(경계). 비대칭 축소 중.",
+      "hypotheses": ["채권이 먼저 위기 아님 판단", "주식은 이란+관세 이중 리스크 반영"],
+      "status": "open",
+      "update": "양쪽 하락. 괴리 축소 방향."
+    },
+    {
+      "id": "UC-003",
+      "signal": "★ 신규: Section 301 시장 무반응. 16+60개국 조사인데 가격 변동 없음.",
+      "hypotheses": ["이란 전쟁이 관심 흡수", "조사 단계라 실제 관세 아님", "7/24 데드라인까지 시간 있음"],
+      "status": "open"
+    }
+  ],
+
+  "axis_status": {
+    "1_ai": {"status": "건재", "kc": "H2-2026 AI ROI pilot→revenue 전환 실패 시 capex 감속", "note": "변화 없음. AI 심리 분열 backlog 등록(scanner)."},
+    "2_energy": {"status": "건재 (판 약화↓)", "kc": "호르무즈 6개월+ 시 GDP -1.3%p", "note": "★ Brent $100↓ + 비적성 통행. 교란 약화 방향이나 축 자체 건재."},
+    "3_aging": {"status": "건재", "kc": "해당 없음", "note": "변화 없음."},
+    "4_blockchain": {"status": "건재", "kc": "2026 내 시장구조법 미통과 시 지연", "note": "CLARITY Act 4/7, GENIUS Act Q2."},
+    "8_uscn": {"status": "격화→분기", "note": "★ 15-point 외교 채널 + Section 301. 군사(완화)+통상(긴축) 이중 구조."},
+    "9_fiscal": {"status": "가속", "note": "DFII10 2.06%. 금융억압 약화 방향 지속."}
+  },
+
+  "next_questions": [
+    {
+      "id": "NQ-001",
+      "question": "이란 15-point 안에 대한 counterproposal 또는 추가 거부?",
+      "deadline": "2026-03-31",
+      "resolve_type": "condition",
+      "resolve_condition": "이란 공식 대안 제출 or 완전 결렬",
+      "check_sources": ["Tavily"],
+      "status": "open",
+      "update": "기존 '5일 정지 만료' → 15-point 안으로 전개. rm W-UQ-020 연동."
+    },
+    {
+      "id": "NQ-002",
+      "question": "호르무즈 비적성 선박 통행이 실제 교통량 회복으로 이어지는가?",
+      "deadline": "2026-04-07",
+      "resolve_type": "condition",
+      "resolve_condition": "Kpler 일일 통행량 50%+ 회복",
+      "check_sources": ["Tavily", "Yahoo BZ=F"],
+      "status": "open",
+      "update": "신규. rm W-UQ-022 연동."
+    },
+    {
+      "id": "NQ-003",
+      "question": "VIX 25 하회 — L7 만성 접근 해소?",
+      "deadline": "2026-03-30",
+      "resolve_type": "threshold",
+      "resolve_condition": "VIX 종가 25 하회 2일 연속",
+      "check_sources": ["Yahoo ^VIX"],
+      "status": "open",
+      "update": "25.33. 경계선. 하락 방향."
+    },
+    {
+      "id": "NQ-004",
+      "question": "DFII10 2%+ 지속 — 구조적 전환?",
+      "deadline": "2026-04-10",
+      "resolve_type": "threshold",
+      "resolve_condition": "2% 상회 10영업일 시 구조적",
+      "check_sources": ["FRED DFII10"],
+      "status": "open",
+      "update": "2.01→2.06. 상승 지속. 현재 ~5일차."
+    },
+    {
+      "id": "NQ-005",
+      "question": "Section 301이 시장에 반영되는 시점?",
+      "deadline": "2026-04-28",
+      "resolve_type": "condition",
+      "resolve_condition": "청문회(4/28) 후 관세 범위 윤곽 → 시장 반응",
+      "check_sources": ["Tavily", "Yahoo ^GSPC"],
+      "status": "open",
+      "update": "신규. rm W-UQ-030 연동. UC-003 연관."
+    }
+  ],
+
+  "accumulation": {
+    "weekly": {
+      "period": "2026-W13 (3/24~3/30)",
+      "signal_counts": {"axis_2_energy": 2, "axis_4_blockchain": 0, "axis_8_geopolitics": 2, "axis_9_fiscal": 1, "axis_8_trade": 1},
+      "unresolved_count": 5,
+      "questions_open": 5
+    }
+  },
+
+  "step6_audit": {
+    "gaps_found": 0,
+    "gaps_resolved": 0,
+    "critical_discovery": "P2(통상) 활성화 — Section 301이 전쟁에 묻혀 시장 무반응(UC-003). P3은 외교 채널 열림으로 분기. L3/L3.5/L5 동시 약화 방향이나 물리적 공급 복구 미확인.",
+    "note": "issue-scanner CL-002 결과와 교차 확인 완료. scanner가 B축에서 잡은 Section 301이 PSF P2에 매핑됨."
+  }
+}

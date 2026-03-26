@@ -1,0 +1,242 @@
+[
+  {
+    "pattern_id": "pt_001",
+    "pattern_type": "logic_gap",
+    "description": "매일경제 — lr_031: perception_as_reality trigger",
+    "author_scope": "매일경제",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_031: perception_as_reality"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_093206_847",
+        "target": "KOSPI",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_002",
+    "pattern_type": "logic_gap",
+    "description": "매일경제 — lr_032: minority_framed_as_majority trigger",
+    "author_scope": "매일경제",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_032: minority_framed_as_majority"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_093206_847",
+        "target": "KOSPI",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_003",
+    "pattern_type": "author_bias",
+    "description": "매일경제 — lr_news_003: single_source_generalization trigger",
+    "author_scope": "매일경제",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_news_003: single_source_generalization"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_093206_847",
+        "target": "KOSPI",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_004",
+    "pattern_type": "omission_repeat",
+    "description": "매일경제 — lr_033: counter_trend_omission trigger",
+    "author_scope": "매일경제",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_033: counter_trend_omission"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_093206_847",
+        "target": "KOSPI",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_005",
+    "pattern_type": "logic_gap",
+    "description": "매일경제 — lr_020: conclusion_narrative_concealment(방산·원전·바이오 부분) trigger",
+    "author_scope": "매일경제",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_020: conclusion_narrative_concealment(방산·원전·바이오 부분)"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_093206_847",
+        "target": "KOSPI",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_006",
+    "pattern_type": "logic_gap",
+    "description": "매일경제 — lr_031: perception_as_reality(연쇄) trigger",
+    "author_scope": "매일경제",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_031: perception_as_reality(연쇄)"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_093206_847",
+        "target": "KOSPI",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_007",
+    "pattern_type": "omission_repeat",
+    "description": "매일경제 — lr_005: optimistic_without_downside trigger",
+    "author_scope": "매일경제",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_005: optimistic_without_downside"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_093206_847",
+        "target": "KOSPI",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_008",
+    "pattern_type": "author_bias",
+    "description": "김대호 박사 — lr_news_002: editorial_as_fact trigger",
+    "author_scope": "김대호 박사",
+    "sector_scope": "뉴스_공통",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_news_002: editorial_as_fact"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-20",
+    "last_detected": "2026-03-20",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260320_100644_500",
+        "target": "MACRO_GEOPOLITICAL",
+        "date": "2026-03-20"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_009",
+    "pattern_type": "logic_gap",
+    "description": " — lr_031: 지표 혼용 오류 trigger",
+    "author_scope": "ALL",
+    "sector_scope": "지정학",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_031: 지표 혼용 오류"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-24",
+    "last_detected": "2026-03-24",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260324_182254_777",
+        "target": "천궁-II / LIG넥스원 / 한화에어로",
+        "date": "2026-03-24"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  },
+  {
+    "pattern_id": "pt_010",
+    "pattern_type": "logic_gap",
+    "description": " — lr_031: 인과 과대 표현 trigger",
+    "author_scope": "ALL",
+    "sector_scope": "지정학",
+    "doc_type_scope": "news_article",
+    "matched_rules": [
+      "lr_031: 인과 과대 표현"
+    ],
+    "detection_count": 1,
+    "status": "flag",
+    "first_detected": "2026-03-24",
+    "last_detected": "2026-03-24",
+    "evidence_list": [
+      {
+        "vrf_id": "vrf_20260324_182254_777",
+        "target": "천궁-II / LIG넥스원 / 한화에어로",
+        "date": "2026-03-24"
+      }
+    ],
+    "proposed_action": "",
+    "promoted_as": ""
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "kc_id": "kc_001",
+    "premise": "예방 활동 강화로 1건 이상 감축",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "매크로"
+    ],
+    "related_targets": [],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260319_232522_680",
+    "all_vrf_ids": [
+      "vrf_20260319_232522_680"
+    ]
+  },
+  {
+    "kc_id": "kc_002",
+    "premise": "예산 부족이 위험요인 즉각 조치 방해",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "매크로"
+    ],
+    "related_targets": [],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260319_232522_680",
+    "all_vrf_ids": [
+      "vrf_20260319_232522_680"
+    ]
+  },
+  {
+    "kc_id": "KC-1",
+    "premise": "설문 선호 = 실제 자금 이동",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "뉴스_공통"
+    ],
+    "related_targets": [
+      "KOSPI"
+    ],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260320_093206_847",
+    "all_vrf_ids": [
+      "vrf_20260320_093206_847",
+      "vrf_20260320_100644_500"
+    ]
+  },
+  {
+    "kc_id": "KC-2",
+    "premise": "37.4%가 다수 의견",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "뉴스_공통"
+    ],
+    "related_targets": [
+      "KOSPI"
+    ],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260320_093206_847",
+    "all_vrf_ids": [
+      "vrf_20260320_093206_847",
+      "vrf_20260320_100644_500"
+    ]
+  },
+  {
+    "kc_id": "KC-3",
+    "premise": "반도체 영업이익 상승 지속",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "뉴스_공통"
+    ],
+    "related_targets": [
+      "KOSPI"
+    ],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260320_093206_847",
+    "all_vrf_ids": [
+      "vrf_20260320_093206_847"
+    ]
+  },
+  {
+    "kc_id": "KC-4",
+    "premise": "방산·원전·바이오 영업이익도 상승",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "뉴스_공통"
+    ],
+    "related_targets": [
+      "KOSPI"
+    ],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260320_093206_847",
+    "all_vrf_ids": [
+      "vrf_20260320_093206_847"
+    ]
+  },
+  {
+    "kc_id": "KC-5",
+    "premise": "영업이익 상승 → KOSPI 7000 도달",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "뉴스_공통"
+    ],
+    "related_targets": [
+      "KOSPI"
+    ],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260320_093206_847",
+    "all_vrf_ids": [
+      "vrf_20260320_093206_847"
+    ]
+  },
+  {
+    "kc_id": "KC-6",
+    "premise": "국내 주식 선호 → 실제 자금 유입",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "뉴스_공통"
+    ],
+    "related_targets": [
+      "KOSPI"
+    ],
+    "cycle_count": 0,
+    "created_at": "2026-03-20",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260320_093206_847",
+    "all_vrf_ids": [
+      "vrf_20260320_093206_847"
+    ]
+  },
+  {
+    "kc_id": "KC-CHEONGUNG-PRICING",
+    "premise": "천궁 실전 입증 호재가 이미 가격에 반영됨. 추가 호재(GCC 신규 계약)가 없으면 조정 지속",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "지정학"
+    ],
+    "related_targets": [
+      "천궁-II / LIG넥스원 / 한화에어로"
+    ],
+    "cycle_count": 0,
+    "ontology_layer": "flow",
+    "created_at": "2026-03-24",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260324_182254_777",
+    "all_vrf_ids": [
+      "vrf_20260324_182254_777"
+    ]
+  },
+  {
+    "kc_id": "KC-KDEFENSE-BACKLOG",
+    "premise": "$72B 수주잔고가 천궁 단독 기여인지, K-방산 생태계 전체인지 분리 필요",
+    "indicator": "",
+    "indicator_source": "",
+    "threshold": {},
+    "current_value": null,
+    "current_value_date": "",
+    "status": "active",
+    "trend_direction": "unknown",
+    "sector_scope": [
+      "지정학"
+    ],
+    "related_targets": [
+      "천궁-II / LIG넥스원 / 한화에어로"
+    ],
+    "cycle_count": 0,
+    "ontology_layer": "flow",
+    "created_at": "2026-03-24",
+    "resolved_at": "",
+    "revived_at": "",
+    "origin_vrf_id": "vrf_20260324_182254_777",
+    "all_vrf_ids": [
+      "vrf_20260324_182254_777"
+    ]
+  }
+]

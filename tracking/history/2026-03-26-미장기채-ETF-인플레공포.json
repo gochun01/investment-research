@@ -1,0 +1,99 @@
+{
+  "id": "SA-20260326-001",
+  "date": "2026-03-26",
+  "title": "인플레 공포에 미 장기채 ETF 투자자 눈물",
+
+  "input_summary": "매경 기사: 이란전쟁발 인플레 공포로 TLT/TMF 급락, 서학개미 손실",
+  "input_type": "text",
+
+  "pre_read": {
+    "type": "MACRO",
+    "type_secondary": "NARR",
+    "scp": 2,
+    "scp_basis": "SCP 2 — 금리 인하 기대 → 동결/인상 전환. 구조 내 중요 변수의 변화이나 구조 자체 파괴는 아님",
+    "urgency": "WATCH",
+    "urgency_basis": "30Y 5% 돌파 여부가 1~2주 내 분기점",
+    "mode": "full",
+    "emotion_detected": false
+  },
+
+  "core_finding": "안전자산의 배신이 아니라, 장기채를 안전자산으로 오인한 전제의 붕괴. 진짜 채권을 밀어내리는 힘은 인플레 기대 자체가 아니라 재정 공급 우려 + 전쟁 비용 + 통화정책 불확실성이 합산된 텀 프리미엄 팽창.",
+
+  "layer_summary": {
+    "L1": "공포+대비효과 프레이밍. '장기채=안전자산' 전제를 기사 자체가 공유하며 의문시하지 않음",
+    "L2": "TLT -5.3%, TMF -15.39%, 30Y 4.94%, 10Y 4.39%, BEI 5Y 2.51%. 미언급 4건: 듀레이션 의미, BEI 온건함, 재정적자 구조, 달러 양면성",
+    "L3": "서학개미(피해), 매경(트래픽), 미 재무부(발행비용 증가), Fed(관망), 채권숏(수혜). 5개 플레이어",
+    "L4": "이란전쟁은 트리거. 본체는 재정적자 $1.9T + 관세 인플레 + 인하 기대 붕괴의 삼중 구조. BEI 2.51%로 온건 → 텀 프리미엄이 금리 상승 주도",
+    "L5": "repeat — 2022 TLT -31%, 2023.10 30Y 5.1% 돌파와 동일 패턴. 금리인하 기대→몰빵→기대 붕괴→듀레이션 리스크 현실화",
+    "L6": "단기: 30Y 5% 돌파시 매도 가속. 중기: 환차익-채권손실 교차점, 모기지 7%+ 고착. 장기: 60/40 포트폴리오 무력화, 대안자산 수혜",
+    "L7": "시나리오 3개: A.전쟁장기화+유가$110+(35%) B.휴전→반등(25%) C.현상유지횡보(40%). KC: 30Y 5.2%×3d 돌파시 포지션 재검토"
+  },
+
+  "emergent_questions_count": 3,
+  "top_emergent_question": "BEI 5Y=2.51%가 인플레 공포의 실체라면, 왜 2022~23년 BEI 3%+보다 낮은가? 공포는 인플레 자체인가, Fed 인하 기대 붕괴인가?",
+
+  "uncertainty": {
+    "weakest_layer": "L6",
+    "weakest_reason": "전쟁 경로에 따른 유가 시나리오 불확실. 전쟁 종료 시점이 L6 전체를 뒤집음",
+    "strengthen_by": "이란-미국 외교 채널 동향 + 호르무즈 해협 통항량 데이터",
+    "average_confidence": 3.7
+  },
+
+  "feedback": {
+    "executed": ["FB-1", "FB-4"],
+    "fb4_changed": true,
+    "fb4_delta": "처음: 전쟁→인플레→채권하락 단선적 인과. 지금: 전쟁은 트리거일 뿐, 재정적자+관세+인하기대붕괴 삼중 구조가 본체. BEI 온건한데 금리 폭등 = 텀 프리미엄 팽창"
+  },
+
+  "self_check": {
+    "passed": 8,
+    "total": 8
+  },
+
+  "data_sources": {
+    "mcp": ["FRED DGS30/DGS10/DGS2/T10Y2Y/T5YIE/T10YIE/DCOILBRENTEU/DFEDTARU", "Yahoo Finance TLT/EDV/ZROZ"],
+    "search": ["Tavily (매경 원문, 관련 기사 7건)"],
+    "cross_verified": true
+  },
+
+  "key_numbers": {
+    "TLT": 86.84,
+    "EDV": 65.23,
+    "ZROZ": 64.53,
+    "DGS30": 4.94,
+    "DGS10": 4.39,
+    "DGS2": 3.90,
+    "T10Y2Y_spread": 0.49,
+    "BEI_5Y": 2.51,
+    "BEI_10Y": 2.31,
+    "Brent": 103.79,
+    "Fed_upper": 3.75
+  },
+
+  "scenarios": [
+    {
+      "label": "A",
+      "description": "전쟁 장기화 + 유가 $110+",
+      "probability": "35%",
+      "trigger": "Brent>$110 × 5d",
+      "kc": "Brent<$80×3d"
+    },
+    {
+      "label": "B",
+      "description": "휴전 → 장기채 반등",
+      "probability": "25%",
+      "trigger": "이란 공식 휴전 + 30Y<4.5%",
+      "kc": "30Y>5.0%×5d"
+    },
+    {
+      "label": "C",
+      "description": "현상유지 횡보",
+      "probability": "40%",
+      "trigger": "30Y 4.8~5.0% 밴드 2주+ 유지",
+      "kc": "30Y 5.2% 돌파×3d(→A) / 30Y 4.5% 이탈×3d(→B)"
+    }
+  ],
+
+  "tags": ["MACRO", "NARR", "장기채", "TLT", "TMF", "인플레", "이란전쟁", "텀프리미엄", "서학개미"],
+  "related_ids": []
+}

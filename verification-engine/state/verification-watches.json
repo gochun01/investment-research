@@ -1,0 +1,15 @@
+{
+  "watches": [],
+  "summary": {
+    "total_active": 0,
+    "next_due": "",
+    "types": {}
+  },
+  "conversion_rules": {
+    "_comment": "invalidation_triggers → Watch 변환 규칙",
+    "expected_date_within_7d": "verification_urgent — 즉시 체크",
+    "expected_date_within_30d": "verification_follow_up — 주 1회",
+    "expected_date_beyond_30d": "verification_monitor — 2주 1회",
+    "no_date": "verification_watch — 조건 충족까지 2주 1회"
+  }
+}

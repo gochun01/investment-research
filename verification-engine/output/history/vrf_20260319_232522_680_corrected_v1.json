@@ -1,0 +1,667 @@
+{
+  "meta": {
+    "id": "vrf_20260319_232522_680",
+    "schema_version": "v2.0",
+    "created_at": "2026-03-19T23:25:22.679959",
+    "engine_version": "6layer_v2",
+    "document": {
+      "title": "2026년도 서대문우체국 산업안전보건 기본계획",
+      "document_type": "regulatory_filing",
+      "target_id": "",
+      "sector_id": "매크로",
+      "author_id": "서대문우체국 지원과",
+      "institution_id": "서대문우체국 (우정사업본부)",
+      "source_url": "",
+      "date_published": "2026-03",
+      "date_accessed": "2026-03-19"
+    },
+    "previous_verification": ""
+  },
+  "document_level_verdicts": {
+    "norm": {
+      "verdict": "🟡",
+      "reason": "",
+      "notes": "[수정됨] [필수 추가] Ⅰ. 추진개요에 \"예산 현황\" 섹션 추가: 전년도 안전보건 예산 집행 실적 + 금년도 편성 현황. 산안법 제14조③ 법정 기재사항.",
+      "checklist_matched": [
+        "안전보건관리체계",
+        "산안위 운영",
+        "위험성평가",
+        "건강진단",
+        "교육 이수"
+      ],
+      "checklist_missed": [
+        "안전보건 예산 현황 미기재(산안법 제14조③)"
+      ]
+    },
+    "incentive": {
+      "verdict": "🟢",
+      "reason": "",
+      "notes": "기관 내부 계획으로 외부 이해관계 충돌 없음. 문제점(예산부족)을 자체 인정한 점은 긍정적.",
+      "relationships_checked": [
+        "기관 내부 자체계획"
+      ],
+      "disclosure_in_document": true
+    },
+    "omission": {
+      "verdict": "🔴",
+      "reason": "",
+      "notes": "[수정됨] [추가 검토] 전략1에 \"수급인(위탁업체) 안전보건 관리\" 항목 추가: ① 우체국물류지원단·구내식당 직원 안전교육 현황, ② 위탁업체 재해발생 시 대응 절차, ③ 도급계약 시 안전보건 비용 별도 계상 여부.",
+      "bbj_breaks": [
+        {
+          "break_text": "안전보건 예산 규모가 문서 전체에서 미언급. 산안법 제14조는 \"예산 현황\" 포함을 명시. 예산 없는 계획은 실행력 담보 불가.",
+          "in_document": false,
+          "verdict": "🔴"
+        },
+        {
+          "break_text": "이륜차·도보 넘어짐이 최다 재해유형이나 이륜차 대체수단(전기이륜차 등) 검토, 배달경로 안전도 평가 부재.",
+          "in_document": false,
+          "verdict": "🟡"
+        },
+        {
+          "break_text": "비정규직·위탁직원(물류지원단, 구내식당 등) 안전보건 관리체계가 협의체 이외에 구체 기술 없음.",
+          "in_document": false,
+          "verdict": "🟡"
+        },
+        {
+          "break_text": "2025년 재해율 상승(3.2%→4.3%) 원인분석이 \"관심·안전수칙 의식 강화 필요\"로만 기술. 구조적 원인(인력, 물량, 노후장비) 분석 부재.",
+          "in_document": false,
+          "verdict": "🔴"
+        }
+      ]
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "c001",
+      "text": "상시근로자 184명, 안전관리자 1명(자체선임), 보건관리자 1명(위탁), 산업보건의 1명(위탁)",
+      "claim_type": "수치주장",
+      "evidence_type": "fact",
+      "location": "조직현황",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "문서 내 조직현황표에 명시. 산안법 시행령상 300인 미만 사업장 기준 충족.",
+          "evidence": [
+            {
+              "source": "문서 내 표",
+              "query": "상시근로자/관리체제",
+              "value": "184명",
+              "retrieved_at": "2026-03-19"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "안전관리자 배치 기준 충족. 보건관리자 위탁은 적법(300인 미만). 다만 안전팀장이 보건업무 겸직 중이라 실효성 우려. [수정: [검토 권고] 보건업무 겸직의 한계를 명시하고, 중장기적으로 보건관리자 자체선임 또는 위탁 범위 확대(현재 월 1회 → 격주) 검토 계획 기재.]",
+          "checklist_matched": [
+            "안전관리자 선임",
+            "보건관리자 위탁 적법"
+          ],
+          "checklist_missed": [
+            "보건전담인력 부재"
+          ]
+        },
+        "logic": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "수치주장에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "수치주장에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c002",
+      "text": "2025년 재해율 4.3% (8건 발생). 2023년 4.2%, 2024년 3.2%로 증감 반복",
+      "claim_type": "수치주장",
+      "evidence_type": "fact",
+      "location": "재해발생 현황",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "문서 내 재해발생 현황표 확인: 2023년 8건(4.2%), 2024년 6건(3.2%), 2025년 8건(4.3%).",
+          "evidence": [
+            {
+              "source": "문서 내 표",
+              "query": "재해발생 현황",
+              "value": "2025: 8건/184명=4.3%",
+              "retrieved_at": "2026-03-19"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "수치주장에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "3년 시계열 데이터 제시. 일관성 확인.",
+          "data_reference_date": "2025-12-31",
+          "gap_days": 78,
+          "material_change": false
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "수치주장에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "수치주장에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c003",
+      "text": "2026년 목표: 중대재해 Zero, 안전사고 10% 감축 (8건→7건)",
+      "claim_type": "예측",
+      "evidence_type": "estimate",
+      "location": "안전보건 목표",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "문서 명시: 중대재해 Zero, 안전사고 10% 감축(8건→7건).",
+          "evidence": [
+            {
+              "source": "문서",
+              "query": "안전보건 목표",
+              "value": "8건→7건",
+              "retrieved_at": "2026-03-19"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "예측에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "[보완됨] 10% 감축(8→7건)은 1건 감소. 2024년 6건→2025년 8건으로 오히려 증가. 구체적 감축 수단별 기여도 불명. | [보완 권고] 목표에 달성 경로 추가: \"10대 과제별 예상 감축 기여도\" 또는 \"집배직 사고 3건→2건(이륜차 안전교육 강화), 기타 5건→5건(현상유지)\" 등 세분화된 목표 로드맵 제시.",
+          "kc_extracted": [
+            {
+              "kc_id": "kc_001",
+              "premise": "예방 활동 강화로 1건 이상 감축",
+              "current_status": "2024→2025 오히려 2건 증가. 기존 예방체계 실효성 미입증",
+              "verdict": "🟡"
+            }
+          ]
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "예측에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c004",
+      "text": "일반건강검진·특수건강검진 수검률 100% 달성 (2025년)",
+      "claim_type": "수치주장",
+      "evidence_type": "fact",
+      "location": "추진실적",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "문서 내 표: 일반검진 184명 100%, 특수검진 2명 100%."
+        },
+        "norm": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "산안법 시행규칙 제197조 건강진단 의무 충족."
+        },
+        "logic": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "수치주장에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "수치주장에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c005",
+      "text": "관리감독자 및 담당자 안전보건교육 이수율 100% (2025년)",
+      "claim_type": "수치주장",
+      "evidence_type": "fact",
+      "location": "추진실적",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "문서 내 표: 총괄책임자 1명, 관리감독자 10명, 담당자 173명 전원 이수."
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "수치주장에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "수치주장에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "수치주장에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c006",
+      "text": "산업안전보건위원회 분기별 1회 운영, 2025년 4회 개최",
+      "claim_type": "사실진술",
+      "evidence_type": "fact",
+      "location": "위원회 운영",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "2025년 4회(분기별) 개최 일시·안건 상세 기재."
+        },
+        "norm": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "분기별 1회, 노사 동수 12명 구성. 산안법 제24조 충족.",
+          "checklist_matched": [
+            "분기별 개최",
+            "노사 동수 구성",
+            "회의록 작성"
+          ],
+          "checklist_missed": []
+        },
+        "logic": {
+          "verdict": "N/A",
+          "reason": "사실진술에 logic 미적용",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "사실진술에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "사실진술에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c007",
+      "text": "위험성평가 12건 중 11건 조치완료, 미조치 1건은 26년 대수선 예정",
+      "claim_type": "수치주장",
+      "evidence_type": "fact",
+      "location": "위험성평가",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "[소스 보완] [보완 검토] 미조치 1건(충정로 발코니출입문)의 ① 위험성 점수, ② 이월 사유(예산 부족?), ③ 26년 대수선 확정 일정, ④ 이월 기간 중 임시 안전조치 여부를 명시.",
+          "evidence": [
+            {
+              "source": "문서",
+              "query": "위험성평가",
+              "value": "11/12건 완료",
+              "retrieved_at": "2026-03-19"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "수치주장에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "수치주장에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "수치주장에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c008",
+      "text": "안전예산 부족으로 급박한 위험요인 개선 시 즉각적 조치 어려움",
+      "claim_type": "사실진술",
+      "evidence_type": "opinion",
+      "location": "문제점",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "문서 자체적으로 인정. 정량 데이터(예산 규모, 부족액) 미제시."
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "사실진술에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "🔴",
+          "reason": "",
+          "notes": "[보완됨] 안전예산 부족을 문제점으로 인정하면서 2026년 계획에 예산 확보 방안 없음. 문제 인식→해결 부재는 계획의 논리적 결함. | [추가 필요] Ⅳ장에 \"안전보건 예산 확보 계획\" 섹션 신설. 내용: ① 2026년 안전보건 예산 총액 및 항목별 배분, ② 긴급 위험요인 대응을 위한 예비비 편성, ③ 본부 추가 예산 요청 계획. 산안법 제14조③ \"예산 현황\" 기재 의무 충족 필요.",
+          "kc_extracted": [
+            {
+              "kc_id": "kc_002",
+              "premise": "예산 부족이 위험요인 즉각 조치 방해",
+              "current_status": "2026년 계획에 예산 확보 구체안 없음",
+              "verdict": "🔴"
+            }
+          ]
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "사실진술에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "사실진술에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c009",
+      "text": "뇌심혈관 정밀검진 지원 기준 완화: 1개 이상 검진 시 24만원 한도 실비 지원",
+      "claim_type": "사실진술",
+      "evidence_type": "fact",
+      "location": "건강관리",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "패키지1 10만원, 패키지2 24만원 한도 상세 기재."
+        },
+        "norm": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "산안법 시행규칙 제209조 뇌심혈관질환 예방 조치 부합."
+        },
+        "logic": {
+          "verdict": "N/A",
+          "reason": "사실진술에 logic 미적용",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "사실진술에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "사실진술에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c010",
+      "text": "AI 기반 챗봇시스템 도입으로 현장 대응시간 20분→10초 단축 기대",
+      "claim_type": "예측",
+      "evidence_type": "estimate",
+      "location": "신규 추진사항",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "[소스 보완] [보완 권고] \"20분→10초\" 수치에 산출 근거 추가: ① 측정 방법(어떤 업무의 평균 소요시간?), ② 파일럿 테스트 결과 또는 유사 사례 참조. 미검증 수치는 \"기대효과(검증 전)\"로 표기.",
+          "evidence": [
+            {
+              "source": "문서(본부 연계)",
+              "query": "AI 챗봇 효과",
+              "value": "20분→10초",
+              "retrieved_at": "2026-03-19"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "예측에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "20분→10초는 극단적 효과 추정. 구현 여부·정확도·한계 미언급."
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "예측에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c011",
+      "text": "안전보건관리규정 최초작성 2014.09.24, 최근 개정 2024.05.29, 상반기 내 개정 예정",
+      "claim_type": "사실진술",
+      "evidence_type": "fact",
+      "location": "규정현황",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "규정 3건의 최초작성일·개정일 명시."
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "사실진술에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "N/A",
+          "reason": "사실진술에 logic 미적용",
+          "notes": ""
+        },
+        "temporal": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "위험성평가 실시규정(2021.03.03)이 5년간 미개정. 중처법 시행(2022.1) 이후 변경 반영 여부 불명. [수정: [수정 필요] 위험성평가 실시규정 개정 일정을 2026년 계획에 포함. 중처법 시행(2022.1) 이후 변경사항 반영 여부 점검 후 상반기 내 개정.]",
+          "data_reference_date": "2021-03-03",
+          "gap_days": 1843,
+          "material_change": false
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "사실진술에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "사실진술에 omission 미적용",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "claim_id": "c012",
+      "text": "집배업무 과정에서 다수 안전사고 발생 — 8건 중 5건이 집배직",
+      "claim_type": "수치주장",
+      "evidence_type": "fact",
+      "location": "재해 세부내역",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "2025년 세부내역표: 집배 5건, 계리 2건, 행정 1건. 집배직 62.5%.",
+          "evidence": [
+            {
+              "source": "문서 내 표",
+              "query": "직종별 사고",
+              "value": "집배 5/8=62.5%",
+              "retrieved_at": "2026-03-19"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "N/A",
+          "reason": "수치주장에 norm 미적용",
+          "notes": ""
+        },
+        "logic": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "[보완됨] 집배직 사고 62.5%이나 10대 과제에 이륜차 전용 대책(전기이륜차 전환 등) 미포함. 최다 유형(도보 넘어짐 3건) 구체 대책 부족. | [추가 권고] 10대 과제에 \"⑪ 집배원 이동 안전 강화\" 신설: ① 이륜차 안전장비(ABS, 미끄럼방지 타이어) 교체 계획, ② 배달경로 위험지점(계단·경사로) DB 구축, ③ 우천·동절기 도보 배달 시 미끄럼방지 안전화 지급."
+        },
+        "temporal": {
+          "verdict": "",
+          "reason": "",
+          "notes": ""
+        },
+        "incentive": {
+          "verdict": "N/A",
+          "reason": "수치주장에 incentive 미적용",
+          "notes": ""
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "수치주장에 omission 미적용",
+          "notes": ""
+        }
+      }
+    }
+  ],
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟡",
+      "logic": "🔴",
+      "temporal": "🟡",
+      "incentive": "🟢",
+      "omission": "🔴"
+    },
+    "critical_flags": [
+      "c008: 안전예산 부족을 문제점으로 인정하면서 2026년 계획에 예산 확보 방안 없음. 문제 인식→해결 부재는 계획의 논리적 결함.",
+      "문서/omission: 핵심 생략 다수 발견."
+    ],
+    "valid_until": "2026-12-31",
+    "validity_condition": "2026년 산업안전보건 기본계획 유효기간",
+    "invalidation_triggers": [
+      {
+        "event": "중대재해 발생",
+        "expected_date": "수시",
+        "impact": "계획 전면 재검토 필요"
+      },
+      {
+        "event": "산안법/중처법 개정",
+        "expected_date": "2026 하반기",
+        "impact": "규정 적합성 재평가"
+      }
+    ],
+    "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+  }
+}

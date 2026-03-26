@@ -1,0 +1,55 @@
+{
+  "_comment": "정기 이벤트 캘린더. verify_scan()에서 자동 체크. 수동 관리.",
+  "events": [
+    {
+      "id": "CAL-FOMC-20260430",
+      "name": "FOMC 금리 결정",
+      "date": "2026-04-30",
+      "type": "monetary_policy",
+      "impact": "high",
+      "alert_days_before": [3, 1, 0],
+      "related_layers": ["fact", "temporal"],
+      "note": "금리 전제가 포함된 검증의 temporal 유효성에 영향"
+    },
+    {
+      "id": "CAL-CPI-20260415",
+      "name": "미국 CPI 발표 (3월분)",
+      "date": "2026-04-15",
+      "type": "macro_data",
+      "impact": "medium",
+      "alert_days_before": [1, 0],
+      "related_layers": ["fact", "temporal"],
+      "note": "인플레이션 수치 포함 검증의 fact 층 재검증 필요 여부"
+    },
+    {
+      "id": "CAL-CLARITY-202604",
+      "name": "CLARITY Act 의회 투표",
+      "date": "2026-04-07",
+      "type": "regulation",
+      "impact": "high",
+      "alert_days_before": [3, 1, 0],
+      "related_layers": ["norm", "logic"],
+      "note": "SEC 크립토 분류 관련 검증의 norm/logic 전제에 영향"
+    },
+    {
+      "id": "CAL-LIG-Q1-20260515",
+      "name": "LIG넥스원 2026 Q1 실적 발표",
+      "date": "2026-05-15",
+      "type": "earnings",
+      "impact": "high",
+      "alert_days_before": [7, 1, 0],
+      "related_layers": ["fact", "logic"],
+      "note": "PSR/PER 정당화 여부. 천궁 검증 invalidation trigger"
+    },
+    {
+      "id": "CAL-IRAN-WAIVER-20260419",
+      "name": "이란 원유 제재 면제 만료",
+      "date": "2026-04-19",
+      "type": "geopolitical",
+      "impact": "high",
+      "alert_days_before": [7, 3, 1, 0],
+      "related_layers": ["fact", "temporal", "logic"],
+      "note": "나프타/에너지 관련 검증 전제 변경 가능"
+    }
+  ]
+}

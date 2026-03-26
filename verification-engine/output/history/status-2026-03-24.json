@@ -1,0 +1,48 @@
+{
+  "last_updated": "2026-03-24",
+  "last_verification": {
+    "vrf_id": "vrf_20260324_state_분석",
+    "title": "Deep Question Analysis — Track 1 충돌해부 + Track 2 묻힌분석(40개 에너지 자산)",
+    "doc_type": "geopolitical",
+    "date": "2026-03-24",
+    "summary_verdicts": {
+      "fact": "🟡",
+      "norm": "🟡",
+      "logic": "🟡",
+      "temporal": "🟢",
+      "incentive": "🟢",
+      "omission": "🟡"
+    },
+    "critical_flags_count": 3
+  },
+  "kc_summary": {
+    "total": 10,
+    "active": 10,
+    "approaching": 0,
+    "recently_triggered": 0,
+    "approaching_list": []
+  },
+  "pattern_summary": {
+    "total": 10,
+    "proposed": 0,
+    "proposed_list": []
+  },
+  "watch_summary": {
+    "total_active": 0,
+    "due_now": [],
+    "next_due": ""
+  },
+  "issues_summary": {
+    "total_open": 0,
+    "by_severity": {},
+    "by_category": {}
+  },
+  "tuning": {
+    "last_tuned": "2026-03-20 15:46:02",
+    "dead_rules": 0
+  },
+  "calendar": {
+    "today": [],
+    "upcoming": []
+  }
+}

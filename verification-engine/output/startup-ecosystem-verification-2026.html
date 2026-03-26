@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6-Layer Verification — 한국 창업 단기실적 집착, 인재도 아이디어도 떠난다</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root,[data-theme="light"]{--bg:#fafaf8;--surface:#fff;--card:#f5f5f2;--navy:#1B2A4A;--darkBlue:#2C5697;--blue:#4472C4;--lightBlue:#D6E4F0;--paleBlue:#EDF2F9;--text:#1a1a1a;--sub:#4a4a4a;--dim:#8a8a8a;--border:#d8d8d4;--red:#c0392b;--green:#1a7a4c;--gold:#b8860b;--line:#e2e2de;--topbar-bg:#1B2A4A;--topbar-text:#fff;--topbar-dim:#8ea8cc;--exec-bg:#EDF2F9;--key-bg:#fdf6ec;--key-text:#5a4a20;--alert-bg:#fef2f2;--alert-text:#6b2020;--tag-bull-bg:#e8f5e9;--tag-bear-bg:#fef2f2;--tag-caution-bg:#fff8e1;--nav-bg:rgba(255,255,255,.92);--shadow:rgba(27,42,74,.06)}
+[data-theme="dark"]{--bg:#0d1117;--surface:#161b22;--card:#1c2128;--navy:#c9d1d9;--darkBlue:#58a6ff;--blue:#79c0ff;--lightBlue:#1f3a5f;--paleBlue:#131d2b;--text:#e6edf3;--sub:#b1bac4;--dim:#6e7681;--border:#30363d;--red:#f85149;--green:#3fb950;--gold:#d29922;--line:#21262d;--topbar-bg:#010409;--topbar-text:#e6edf3;--topbar-dim:#6e7681;--exec-bg:#131d2b;--key-bg:#1c1a10;--key-text:#d29922;--alert-bg:#1a0e0e;--alert-text:#f85149;--tag-bull-bg:#0d2818;--tag-bear-bg:#1a0e0e;--tag-caution-bg:#1c1a10;--nav-bg:rgba(13,17,23,.95);--shadow:rgba(0,0,0,.3)}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'DM Sans',-apple-system,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}::selection{background:var(--lightBlue)}.page{max-width:780px;margin:0 auto;padding:0 32px}
+.topbar{background:var(--topbar-bg);padding:14px 0;position:sticky;top:0;z-index:100}.topbar-inner{max-width:780px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}.topbar-brand{font-family:'Libre Baskerville',serif;font-size:15px;font-weight:700;color:var(--topbar-text)}.topbar-right{display:flex;align-items:center;gap:10px}.topbar-division{font-size:12px;color:var(--topbar-dim)}.ctrl-btn{background:none;border:1px solid rgba(255,255,255,.2);color:var(--topbar-text);font-size:11px;font-weight:600;padding:4px 11px;border-radius:3px;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}.ctrl-btn:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.08)}.ctrl-btn.active{background:rgba(255,255,255,.15)}
+.float-nav{position:fixed;right:16px;top:70px;width:172px;background:var(--nav-bg);border:1px solid var(--border);border-radius:6px;padding:14px 16px;z-index:90;box-shadow:0 2px 12px var(--shadow);max-height:calc(100vh - 100px);overflow-y:auto}.float-nav-title{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:2px;margin-bottom:10px}.float-nav .nav-item{display:block;font-size:11.5px;color:var(--dim);cursor:pointer;padding:4px 0 4px 10px;border-left:2px solid transparent;transition:all .2s;line-height:1.4}.float-nav .nav-item:hover{color:var(--darkBlue)}.float-nav .nav-item.active{color:var(--darkBlue);border-left-color:var(--darkBlue);font-weight:600}
+.report-header{padding:48px 0 32px;border-bottom:3px solid var(--navy)}.report-class{display:inline-block;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:2px;margin-bottom:16px}.report-title{font-family:'Libre Baskerville',serif;font-size:28px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:10px}.report-subtitle{font-size:16px;color:var(--darkBlue);font-weight:500;margin-bottom:16px}.report-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--dim)}.meta-label{font-weight:600;color:var(--sub)}
+.section{padding:36px 0;border-bottom:1px solid var(--line)}.section:last-of-type{border-bottom:none}.section-num{font-family:'DM Mono',monospace;font-size:12px;color:var(--darkBlue);letter-spacing:2px;margin-bottom:6px}.section-title{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:18px;line-height:1.4}.section p{font-size:14.5px;color:var(--sub);margin-bottom:14px;max-width:680px}.section p strong{color:var(--text);font-weight:600}.subsection{margin-top:24px}.subsection-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.exec-box{background:var(--exec-bg);border-left:4px solid var(--darkBlue);padding:24px 28px;margin:20px 0;border-radius:0 6px 6px 0}.exec-box p{font-size:14.5px;color:var(--navy);margin-bottom:10px}.exec-box p:last-child{margin-bottom:0}.exec-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--darkBlue);margin-bottom:8px}
+.key-finding{background:var(--key-bg);border-left:4px solid var(--gold);padding:24px 28px;margin:20px 0;border-radius:0 6px 6px 0}.key-finding p{color:var(--key-text)}
+.alert-box{background:var(--alert-bg);border-left:4px solid var(--red);padding:24px 28px;margin:20px 0;border-radius:0 6px 6px 0}.alert-box p{color:var(--alert-text)}
+.v{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:3px;vertical-align:middle}.v.g{background:var(--tag-bull-bg);color:var(--green)}.v.y{background:var(--tag-caution-bg);color:var(--gold)}.v.r{background:var(--tag-bear-bg);color:var(--red)}.v.k{background:var(--card);color:var(--dim)}
+.finding-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px 24px;margin:14px 0;position:relative}.finding-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:6px 0 0 6px}.finding-card.f-red::before{background:var(--red)}.finding-card.f-gold::before{background:var(--gold)}.finding-card.f-blue::before{background:var(--darkBlue)}.finding-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}.finding-id{font-family:'DM Mono',monospace;font-size:12px;font-weight:700;color:var(--navy)}.finding-row{display:flex;gap:8px;margin-bottom:6px;font-size:13px;color:var(--sub);line-height:1.6}.finding-label{font-size:11px;min-width:20px;flex-shrink:0}.finding-fix{background:var(--card);border-radius:4px;padding:12px 16px;margin-top:10px;font-size:13px;color:var(--sub);line-height:1.7}.finding-fix-header{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:6px}.finding-fix-header.definitive{color:var(--green)}.finding-fix-header.recommended{color:var(--gold)}.finding-fix-header.advisory{color:var(--red)}
+.channel-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px 24px;cursor:pointer;transition:all .2s;position:relative;margin:10px 0}.channel-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:6px 0 0 6px}.channel-card.ch-green::before{background:var(--green)}.channel-card.ch-gold::before{background:var(--gold)}.channel-card:hover{border-color:var(--darkBlue);box-shadow:0 2px 8px var(--shadow)}.ch-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px}.ch-name{font-size:15px;font-weight:700;color:var(--navy)}.ch-tags{display:flex;gap:6px}.ch-tag{font-size:10px;font-weight:600;padding:3px 10px;border-radius:3px}.ch-tag.verified{background:var(--tag-bull-bg);color:var(--green)}.ch-tag.med{background:var(--tag-caution-bg);color:var(--gold)}.ch-chain{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--sub);background:var(--card);padding:12px 16px;border-radius:4px;margin:10px 0;line-height:1.7}.ch-detail{max-height:0;overflow:hidden;transition:max-height .5s ease;font-size:13.5px;color:var(--sub);line-height:1.8}.channel-card.open .ch-detail{max-height:1200px;padding-top:12px}.ch-expand{font-size:11px;color:var(--dim);margin-top:6px}.channel-card.open .ch-expand{display:none}
+.table-wrap{overflow-x:auto;margin:16px 0}.monitor-table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}.monitor-table th{background:var(--topbar-bg);color:var(--topbar-text);padding:8px 14px;text-align:left;font-weight:600;font-size:11px;letter-spacing:1px}.monitor-table td{padding:8px 14px;border-bottom:1px solid var(--line);font-family:'DM Mono',monospace;font-size:12.5px;color:var(--sub)}.monitor-table tr:nth-child(even) td{background:var(--card)}.val-current{font-weight:700;color:var(--navy)}.val-warn{color:var(--gold)}.val-alert{color:var(--red);font-weight:600}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.scenario-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:18px 14px;text-align:center}.scenario-name{font-size:13px;font-weight:700;margin-bottom:10px}.scenario-krw{font-family:'DM Mono',monospace;font-size:20px;font-weight:700;margin-bottom:4px}.scenario-desc{font-size:11.5px;color:var(--sub);margin-bottom:10px;line-height:1.5}
+.kc-chain{background:var(--card);padding:16px 20px;border-radius:6px;margin:12px 0;font-family:'DM Mono',monospace;font-size:13px;line-height:2.2;color:var(--sub)}.kc-chain .step{color:var(--darkBlue);font-weight:600}.kc-chain .arrow{color:var(--gold);font-weight:700;margin:0 4px}.kc-chain .neg{color:var(--red);font-weight:600}
+.layer-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.layer-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 16px;text-align:center}.layer-card .layer-name{font-size:11px;font-weight:700;color:var(--dim);letter-spacing:1px;margin-bottom:6px}.layer-card .layer-verdict{font-size:24px;margin-bottom:4px}.layer-card .layer-label{font-size:12px;font-weight:600;color:var(--navy)}
+.source-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;margin:2px;background:var(--paleBlue);color:var(--darkBlue)}
+.omission-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 20px;margin:10px 0}.omission-item .oi-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}.omission-item .oi-body{font-size:13px;color:var(--sub);line-height:1.7}.omission-item .oi-source{font-size:11px;color:var(--dim);margin-top:6px}
+.tip{position:relative;border-bottom:1.5px dotted var(--darkBlue);cursor:help;font-weight:600}.tip::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--topbar-bg);color:var(--topbar-text);font-size:12px;font-weight:400;line-height:1.5;padding:8px 14px;border-radius:5px;white-space:normal;width:max-content;max-width:280px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.15)}.tip::before{content:'';position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--topbar-bg);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:201;pointer-events:none}.tip:hover::after,.tip:hover::before{opacity:1;visibility:visible}
+.footer{padding:32px 0;border-top:3px solid var(--navy);margin-top:40px}.footer-disclaimer{font-size:11.5px;color:var(--dim);line-height:1.7;margin-bottom:16px}.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--dim);flex-wrap:wrap;gap:8px}.footer-brand{font-family:'Libre Baskerville',serif;font-weight:700;color:var(--navy)}
+.section.full-only{display:block}body.short-mode .section.full-only{display:none}
+.short-notice{display:none;background:var(--paleBlue);border:1px dashed var(--darkBlue);border-radius:6px;padding:14px 20px;margin:16px 0;font-size:13px;color:var(--darkBlue);text-align:center}body.short-mode .short-notice{display:block}
+@media(max-width:700px){.page{padding:0 16px}.report-title{font-size:22px}.topbar-division{display:none}.scenario-grid{grid-template-columns:1fr}.float-nav{right:8px;width:140px;padding:10px 12px}.float-nav .nav-item{font-size:10.5px}.layer-summary{grid-template-columns:repeat(2,1fr)}}
+@media print{.topbar,.float-nav,.ctrl-btn,.short-notice{display:none!important}.channel-card .ch-detail{max-height:none!important;padding-top:12px!important}.ch-expand{display:none!important}body{font-size:12px}.section.full-only{display:block!important}.tip{border-bottom:none!important}.tip::after,.tip::before{display:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner"><div class="topbar-brand">6-Layer Verification Engine</div><div class="topbar-right"><div class="topbar-division">News Verification &middot; v1.2</div><button class="ctrl-btn" id="viewToggle">SHORT</button><button class="ctrl-btn" id="themeToggle">&#9684; DARK</button><button class="ctrl-btn" id="printBtn">&#9112; PRINT</button></div></div></header>
+
+<nav class="float-nav"><div class="float-nav-title">CONTENTS</div>
+<div class="nav-item" data-target="s1">I. Summary</div>
+<div class="nav-item" data-target="s2">II. 6-Layer</div>
+<div class="nav-item" data-target="s3">III. Findings</div>
+<div class="nav-item" data-target="s4">IV. Fact Check</div>
+<div class="nav-item" data-target="s5">V. Logic &amp; KC</div>
+<div class="nav-item" data-target="s6">VI. Omission</div>
+<div class="nav-item" data-target="s7">VII. Dashboard</div>
+</nav>
+
+<main class="page">
+
+<div class="report-header">
+  <div class="report-class" style="background:var(--gold)">PLAUSIBLE &mdash; CONDITIONAL</div>
+  <div class="report-title">한국은 창업도 단기실적 집착,<br>인재도 아이디어도 떠난다</div>
+  <div class="report-subtitle">매일경제 A6면 &middot; 실리콘밸리 특파원 현지 취재</div>
+  <div class="report-meta">
+    <span><span class="meta-label">검증일:</span> 2026-03-19</span>
+    <span><span class="meta-label">출처:</span> 매일경제 원호섭 기자 (2026.03.18)</span>
+    <span><span class="meta-label">유형:</span> 시장_동향</span>
+    <span><span class="meta-label">유효기간:</span> ~2026-06-30</span>
+  </div>
+</div>
+<div class="short-notice">&#128203; 요약 모드 &mdash; I &middot; III &middot; VII만 표시. <strong>FULL</strong>로 전체 보기</div>
+
+<!-- ===== SECTION I ===== -->
+<article class="section" id="s1">
+  <div class="section-num">SECTION I</div>
+  <div class="section-title">Executive Summary</div>
+  <div class="exec-box"><div class="exec-label">VERIFICATION VERDICT</div>
+    <p><span class="v y">YELLOW</span> <strong>조건부 신뢰 (PLAUSIBLE)</strong></p>
+    <p>기사의 <strong>수치(투자 건수, 금액, 감소율)는 MCP 3개 소스</strong>(THE VC, 벤처스퀘어, 삼정KPMG)로 교차확인 완료. 사실관계 정확.</p>
+    <p>다만 <strong>"인재도 아이디어도 떠났다"는 헤드라인은 과장</strong>. 미국 이주 창업자만 인터뷰한 <strong>표본 편향</strong>, 투자 금액 유지(5.3%&darr;)&middot;시드 투자 2배 증가&middot;IPO 회복 등 <strong>반론 5건이 누락</strong>됨.</p>
+  </div>
+  <div class="key-finding"><div class="exec-label">FINDING SUMMARY</div>
+    <p><span class="source-badge">THE VC</span> <span class="source-badge">벤처스퀘어</span> <span class="source-badge">삼정KPMG</span> <span class="source-badge">Tavily</span> &mdash; MCP 4개 소스</p>
+    <p><strong>Finding 7건</strong> &mdash; <span class="v y">YELLOW 7</span> &middot; <span class="v r">RED 0</span></p>
+  </div>
+</article>
+
+<!-- ===== SECTION II ===== -->
+<article class="section full-only" id="s2">
+  <div class="section-num">SECTION II</div>
+  <div class="section-title">6-Layer 독립 판정</div>
+  <div class="layer-summary">
+    <div class="layer-card"><div class="layer-name">&#9312; FACT</div><div class="layer-verdict">&#128994;</div><div class="layer-label">GREEN</div></div>
+    <div class="layer-card"><div class="layer-name">&#9313; NORM</div><div class="layer-verdict">&#128994;</div><div class="layer-label">GREEN</div></div>
+    <div class="layer-card"><div class="layer-name">&#9314; LOGIC</div><div class="layer-verdict">&#128993;</div><div class="layer-label">YELLOW</div></div>
+    <div class="layer-card"><div class="layer-name">&#9315; TEMPORAL</div><div class="layer-verdict">&#128994;</div><div class="layer-label">GREEN</div></div>
+    <div class="layer-card"><div class="layer-name">&#9316; INCENTIVE</div><div class="layer-verdict">&#128993;</div><div class="layer-label">YELLOW</div></div>
+    <div class="layer-card"><div class="layer-name">&#9317; OMISSION</div><div class="layer-verdict">&#128993;</div><div class="layer-label">YELLOW</div></div>
+  </div>
+  <div class="table-wrap">
+  <table class="monitor-table">
+    <tr><th>Layer</th><th>판정</th><th>핵심 근거</th><th>MCP 소스</th></tr>
+    <tr><td>&#9312; Fact</td><td class="val-current">&#128994;</td><td>투자 건수&middot;금액&middot;감소율&middot;AI 비중 모두 교차확인</td><td>THE VC, 벤처스퀘어, 삼정KPMG</td></tr>
+    <tr><td>&#9313; Norm</td><td class="val-current">&#128994;</td><td>실명 인터뷰(곽석영, 안재만), 출처 명시(딜 보고서)</td><td>&mdash;</td></tr>
+    <tr><td>&#9314; Logic</td><td class="val-warn">&#128993;</td><td>RCPS=대출 단순화. 상환권 관행+회수 압박이 본질</td><td>VC 펀드 만기 데이터</td></tr>
+    <tr><td>&#9315; Temporal</td><td class="val-current">&#128994;</td><td>2025년 최신 통계 기반. KPMG Q4 2025 보고서 정합</td><td>삼정KPMG</td></tr>
+    <tr><td>&#9316; Incentive</td><td class="val-warn">&#128993;</td><td>미국 이주자만 인터뷰 &mdash; 한국 잔류 관점 부재</td><td>&mdash;</td></tr>
+    <tr><td>&#9317; Omission</td><td class="val-warn">&#128993;</td><td>투자금액 유지, IPO 회복, 시드 2배 증가 등 5건 누락</td><td>THE VC, 삼정KPMG</td></tr>
+  </table>
+  </div>
+</article>
+
+<!-- ===== SECTION III ===== -->
+<article class="section" id="s3">
+  <div class="section-num">SECTION III</div>
+  <div class="section-title">Actionable Findings</div>
+
+  <div class="finding-card f-gold">
+    <div class="finding-header"><div class="finding-id">F-01 &middot; LOGIC</div><span class="v y">YELLOW</span></div>
+    <div class="finding-row"><span class="tip" data-tip="Redeemable Convertible Preference Shares &mdash; 상환전환우선주. 투자자가 원금 상환을 요구할 수 있는 전환우선주">RCPS</span> = 대출이라는 <strong>단순화된 인과</strong>. RCPS 자체는 글로벌 표준 VC 투자 수단. 한국의 문제는 <strong>상환권 행사 관행 + 2026년 펀드 만기 회수 압박</strong>.</div>
+    <div class="finding-fix"><div class="finding-fix-header recommended">MCP 보완</div>
+      2026년 만기 도래 대형 펀드: 한국투자파트너스 Re-Up(2,850억, 2026.01), 에이티넘 성장기업(2,030억, 2026.03), SBVA 알파벳스트(1,973억, 2026.12) 등 &mdash; 회수 압박이 단기실적 집착의 구조적 원인.<br>출처: VC 투자 현황 갈무리 Report (2025.09)
+    </div>
+  </div>
+
+  <div class="finding-card f-gold">
+    <div class="finding-header"><div class="finding-id">F-02 &middot; LOGIC</div><span class="v y">YELLOW</span></div>
+    <div class="finding-row">"<span class="tip" data-tip="Exit &mdash; 투자자가 투자금을 회수하는 방법. IPO(상장), M&amp;A(인수합병), 세컨더리(지분매각) 등">엑시트</span> = IPO만 가능" 논리에 <strong>IPO 시장 회복 신호 누락</strong>.</div>
+    <div class="finding-fix"><div class="finding-fix-header recommended">MCP 보완</div>
+      2025년 프리IPO 투자 33.3% 증가(56건, 8,632억). IPO 공모 4.5조 돌파. 금융위 기술특례상장 AI&middot;우주&middot;에너지 확대 발표.<br>출처: THE VC 2025 통계
+    </div>
+  </div>
+
+  <div class="finding-card f-blue">
+    <div class="finding-header"><div class="finding-id">F-03 &middot; INCENTIVE</div><span class="v y">YELLOW</span></div>
+    <div class="finding-row"><strong>인터뷰 표본 편향</strong> &mdash; 곽석영(미국 이주), 안재만 베슬AI(미국 진출). <strong>미국을 선택한 사람만</strong> 인터뷰. 한국 잔류 창업자, 한국 VC 관점 완전 부재.</div>
+    <div class="finding-fix"><div class="finding-fix-header advisory">CONTEXT</div>
+      "떠났다"는 결론을 뒷받침하기 위해 떠난 사람만 취재한 구조. 한국에서 성공적으로 투자받은 스타트업(리벨리온 3,200억, 퓨리오사AI 등) 사례가 균형 잡힌 관점을 위해 필요.
+    </div>
+  </div>
+
+  <div class="finding-card f-gold">
+    <div class="finding-header"><div class="finding-id">F-04 &middot; OMISSION</div><span class="v y">YELLOW</span></div>
+    <div class="finding-row"><strong>투자 금액은 전년과 유사</strong> &mdash; 건수 33.2%&darr;이지만 금액은 5.3%&darr;에 불과. 평균 투자 92.6억(47.3%&uarr;). "돈이 떠난 게 아니라 <strong>소수에 집중</strong>"이 정확한 진단.</div>
+    <div class="finding-fix"><div class="finding-fix-header recommended">MCP 데이터</div>
+      THE VC: "투자 금액은 전년과 유사한 수준 유지. 투자 건수 감소로 자금 쏠림 현상이 더욱 뚜렷." 중앙값 40억(전년 20억 대비 2배). 벤처스퀘어: "소수 기업에 자금이 집중되는 현상이 더욱 두드러졌다."
+    </div>
+  </div>
+
+  <div class="finding-card f-gold">
+    <div class="finding-header"><div class="finding-id">F-05 &middot; OMISSION</div><span class="v y">YELLOW</span></div>
+    <div class="finding-row"><strong>프리IPO 33.3%&uarr; + IPO 공모 4.5조 돌파</strong> &mdash; 회수 시장 개선 신호가 기사에 완전 누락.</div>
+    <div class="finding-fix"><div class="finding-fix-header recommended">MCP 데이터</div>
+      THE VC: "프리IPO 투자 건수 전년 대비 33.3% 증가 56건, 투자 금액 85.5% 증가 8,632억원." 금융위 기술특례상장 확대(AI, 우주, ESS, 신재생에너지) 발표로 2026 IPO 시장 기대감 상승.
+    </div>
+  </div>
+
+  <div class="finding-card f-gold">
+    <div class="finding-header"><div class="finding-id">F-06 &middot; OMISSION</div><span class="v y">YELLOW</span></div>
+    <div class="finding-row"><strong>시드 라운드 평균 8&rarr;16.9억 (2배 증가)</strong> &mdash; 초기 건수는 줄었지만 건당 투자 규모가 확대. "초기 창업이 죽었다"가 아니라 "<strong>선별 집중</strong>".</div>
+    <div class="finding-fix"><div class="finding-fix-header recommended">MCP 데이터</div>
+      THE VC 초기 동향: "시드 라운드 투자 평균 금액이 지난해 8.0억에서 올해 16.9억으로 두 배 이상 증가." TIPS 지원단가도 2년5억&rarr;2년8억 상향, 후속R&D 3년15억 신설.
+    </div>
+  </div>
+
+  <div class="finding-card f-gold">
+    <div class="finding-header"><div class="finding-id">F-07 &middot; OMISSION</div><span class="v y">YELLOW</span></div>
+    <div class="finding-row"><strong>삼정KPMG "한국 벤처시장 개선 가능성"</strong> 전망 누락. 기사는 부정적 전망만 제시.</div>
+    <div class="finding-fix"><div class="finding-fix-header recommended">MCP 데이터</div>
+      삼정KPMG Q4 2025: "민간의 AI 등 투자 확대 및 금융권의 생산적 금융 기조, 증시 상승에 따른 IPO 개선 가능성과 함께 2026년 모태펀드 존속기간 연장 등 벤처투자 관련 규제 개선과 세제 지원 등으로 국내 벤처시장의 개선 가능성."
+    </div>
+  </div>
+</article>
+
+<!-- ===== SECTION IV ===== -->
+<article class="section full-only" id="s4">
+  <div class="section-num">SECTION IV</div>
+  <div class="section-title">Fact Ground: 주요 수치 대조</div>
+
+  <div class="channel-card ch-green">
+    <div class="ch-header"><div class="ch-name">C-01. 투자 건수 1,155건 / 6조5,724억</div><div class="ch-tags"><span class="ch-tag verified">VERIFIED</span></div></div>
+    <div class="ch-chain">THE VC + 벤처스퀘어 + 삼정KPMG &mdash; 3개 소스 동일 수치 확인</div>
+    <div class="ch-expand">&#9660; 상세</div>
+    <div class="ch-detail">
+      <p>THE VC: "2025년 국내 비상장 스타트업 및 중소기업 대상 투자 건수는 1,155건, 투자 금액은 6조 5,724억 원"</p>
+      <p>벤처스퀘어: 동일 수치 인용</p>
+      <p>삼정KPMG: "한국의 벤처투자와 회수는 '25년 들어 회복세"</p>
+    </div>
+  </div>
+
+  <div class="channel-card ch-green">
+    <div class="ch-header"><div class="ch-name">C-02. 건수 33.2% 감소 / 평균 92.6억 (47.3%&uarr;)</div><div class="ch-tags"><span class="ch-tag verified">VERIFIED</span></div></div>
+    <div class="ch-chain">THE VC: "전년 대비 33.2% 감소" / "평균 투자 금액 92.6억 원, 전년 대비 47.3% 급증"</div>
+    <div class="ch-expand">&#9660; 상세</div>
+    <div class="ch-detail"><p>중앙값도 20억&rarr;40억 (2배). 2022년(87.7억) 상회. 투자 혹한기 이전 수준 회복.</p></div>
+  </div>
+
+  <div class="channel-card ch-green">
+    <div class="ch-header"><div class="ch-name">C-03. 초기 스타트업 749&rarr;327개 반토막</div><div class="ch-tags"><span class="ch-tag verified">VERIFIED</span></div></div>
+    <div class="ch-chain">THE VC 초기 동향: "749개&rarr;327개, 56.3% 감소. 투자 금액 1.2조&rarr;4,490억"</div>
+    <div class="ch-expand">&#9660; 상세</div>
+    <div class="ch-detail"><p>단, 시드 평균 8&rarr;16.9억 2배 증가. 건수 감소 ≠ 초기 창업 소멸. 선별 집중 현상.</p></div>
+  </div>
+
+  <div class="channel-card ch-green">
+    <div class="ch-header"><div class="ch-name">C-04. AI 투자 비중 9.4%&rarr;23.6%</div><div class="ch-tags"><span class="ch-tag verified">VERIFIED</span></div></div>
+    <div class="ch-chain">THE VC: "AI 투자 금액 비중 2022년 9.4%&rarr;2025년 23.6%로 확대"</div>
+    <div class="ch-expand">&#9660; 상세</div>
+    <div class="ch-detail"><p>글로벌: CB인사이츠 기준 AI 투자 비중 51%, 미국 85%. 한국은 리벨리온&middot;퓨리오사AI 등 AI반도체 중심.</p></div>
+  </div>
+
+  <div class="channel-card ch-gold">
+    <div class="ch-header"><div class="ch-name">C-05. AI 트레이너 58.2% 미국 / 스타트업 55% 미국</div><div class="ch-tags"><span class="ch-tag med">PARTIAL</span></div></div>
+    <div class="ch-chain">기사 인용: "딜 '글로벌 채용 현황 보고서 2025'" &mdash; 1차 소스 직접 대조 불가</div>
+    <div class="ch-expand">&#9660; 상세</div>
+    <div class="ch-detail"><p>기사가 특정 보고서를 인용했으나, 해당 보고서 원문에 직접 접근하여 대조하지 못함. 수치 자체는 합리적 범위이나 1차 소스 미확인으로 🟡.</p></div>
+  </div>
+</article>
+
+<!-- ===== SECTION V ===== -->
+<article class="section full-only" id="s5">
+  <div class="section-num">SECTION V</div>
+  <div class="section-title">Logic Ground: 인과 체인 &amp; <span class="tip" data-tip="Kill Condition &mdash; 이 전제가 거짓이 되면 기사의 결론이 무너지는 조건">KC</span></div>
+
+  <div class="subsection">
+    <div class="subsection-title">기사의 인과 체인</div>
+    <div class="kc-chain">
+      <span class="step">RCPS 중심 투자</span> <span class="arrow">&rarr;</span> 대출 성격 (상환권 행사 관행)<br>
+      <span class="arrow">&rarr;</span> <span class="step">단기실적 집착</span> (3~5년 내 회수 압박)<br>
+      <span class="arrow">&rarr;</span> <span class="step">IPO만 유일한 엑시트</span> (M&amp;A 부재)<br>
+      <span class="arrow">&rarr;</span> 혁신보다 실적 중시 &rarr; <span class="neg">인재&middot;아이디어 이탈</span><br>
+      <span class="arrow">&rarr;</span> <span class="neg">미국으로 집중</span>
+    </div>
+    <p><strong>판정: 🟡</strong> &mdash; 각 링크에 부분적 진실이 있으나, RCPS=대출 단순화, IPO 회복 신호 누락, 미국 편향 취재로 인과 체인이 과장.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">KC (Kill Conditions)</div>
+    <div class="finding-card f-blue">
+      <div class="finding-header"><div class="finding-id">KC-1</div><span class="v y">HIGH</span></div>
+      <div class="finding-row"><strong>RCPS 상환권 관행 변화</strong> &mdash; VC 협회 자율 규약, 상환권 행사 제한 움직임이 있으면 "대출 성격" 전제 약화</div>
+    </div>
+    <div class="finding-card f-blue">
+      <div class="finding-header"><div class="finding-id">KC-2</div><span class="v y">HIGH</span></div>
+      <div class="finding-row"><strong>M&amp;A 시장 활성화</strong> &mdash; 대기업의 스타트업 인수 증가 시 엑시트 다변화로 "IPO만 가능" 전제 무력화</div>
+    </div>
+    <div class="finding-card f-blue">
+      <div class="finding-header"><div class="finding-id">KC-3</div><span class="v k">MEDIUM</span></div>
+      <div class="finding-row"><strong>2026 상반기 초기 투자 반등</strong> &mdash; TIPS 지원단가 상향 + 기술특례상장 확대 효과 시 "떠났다" 전제 약화</div>
+    </div>
+  </div>
+</article>
+
+<!-- ===== SECTION VI ===== -->
+<article class="section full-only" id="s6">
+  <div class="section-num">SECTION VI</div>
+  <div class="section-title">Omission Ground: 기사가 빠뜨린 것</div>
+
+  <div class="omission-item">
+    <div class="oi-title">&#9312; 투자 금액은 떠나지 않았다</div>
+    <div class="oi-body">건수 33.2%&darr;이지만 금액 5.3%&darr;. 평균 92.6억(47.3%&uarr;), 중앙값 40억(2배). <strong>"돈이 떠난 게 아니라 소수 검증 기업에 쏠린 것."</strong></div>
+    <div class="oi-source">THE VC 2025 통계, 벤처스퀘어</div>
+  </div>
+
+  <div class="omission-item">
+    <div class="oi-title">&#9313; 회수 시장은 개선 중</div>
+    <div class="oi-body">프리IPO 투자 56건(33.3%&uarr;), 8,632억(85.5%&uarr;). IPO 공모 4.5조 돌파. 기술특례상장 AI&middot;우주&middot;에너지 확대.</div>
+    <div class="oi-source">THE VC, 금융위원회</div>
+  </div>
+
+  <div class="omission-item">
+    <div class="oi-title">&#9314; 초기 창업은 "선별 집중"이지 "소멸"이 아니다</div>
+    <div class="oi-body">시드 평균 8&rarr;16.9억(2배). TIPS 지원단가 2년5억&rarr;2년8억 상향, 후속R&D 3년15억 신설. 건수 감소 ≠ 생태계 붕괴.</div>
+    <div class="oi-source">THE VC 초기 동향, 중기부</div>
+  </div>
+
+  <div class="omission-item">
+    <div class="oi-title">&#9315; 한국 AI 투자 급성장</div>
+    <div class="oi-body">AI 투자 비중 9.4%&rarr;23.6%. 리벨리온 3,200억, 퓨리오사AI 등 AI반도체 대형 딜 다수. 반도체/디스플레이 투자 259.3%&uarr;.</div>
+    <div class="oi-source">THE VC, 삼정KPMG</div>
+  </div>
+
+  <div class="omission-item">
+    <div class="oi-title">&#9316; 글로벌 전문기관 "한국 벤처시장 개선 가능성"</div>
+    <div class="oi-body">삼정KPMG: "민간 AI 투자 확대, 금융권 생산적 금융, IPO 개선, 모태펀드 존속기간 연장, 규제 개선, 세제 지원으로 개선 가능성."</div>
+    <div class="oi-source">삼정KPMG 글로벌 벤처투자 Q4 2025</div>
+  </div>
+</article>
+
+<!-- ===== SECTION VII ===== -->
+<article class="section" id="s7">
+  <div class="section-num">SECTION VII</div>
+  <div class="section-title">Dashboard &amp; 최종 판정</div>
+
+  <div class="exec-box"><div class="exec-label">FINAL VERDICT</div>
+    <p><span class="v y">YELLOW &mdash; 조건부 신뢰</span></p>
+    <p><strong>사실관계:</strong> 핵심 수치 MCP 3개 소스 교차확인. 정확.</p>
+    <p><strong>결론 과장:</strong> "인재도 아이디어도 떠났다"는 표본 편향(미국 이주자만 인터뷰) + 반론 5건 누락에 기반. 정확한 진단은 <strong>"자금이 소수에 쏠리고, 초기 접근성이 낮아졌다"</strong>.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">시나리오</div>
+    <div class="scenario-grid">
+      <div class="scenario-card" style="border-top:3px solid var(--green)">
+        <div class="scenario-name" style="color:var(--green)">BULL</div>
+        <div class="scenario-krw" style="color:var(--green)">생태계 회복</div>
+        <div class="scenario-desc">M&amp;A 활성화 + 기술특례상장 확대 + RCPS 관행 개선 &rarr; 엑시트 다변화. 초기 투자 반등.</div>
+      </div>
+      <div class="scenario-card" style="border-top:3px solid var(--gold)">
+        <div class="scenario-name" style="color:var(--gold)">BASE</div>
+        <div class="scenario-krw" style="color:var(--gold)">양극화 지속</div>
+        <div class="scenario-desc">AI&middot;반도체에 자금 집중 지속. 초기 건수 감소 but 건당 규모 확대. 구조적 변화는 느림.</div>
+      </div>
+      <div class="scenario-card" style="border-top:3px solid var(--red)">
+        <div class="scenario-name" style="color:var(--red)">BEAR</div>
+        <div class="scenario-krw" style="color:var(--red)">인재 유출 가속</div>
+        <div class="scenario-desc">글로벌 금리 불확실성 + 회수 압박 심화 + AI 인재 미국 쏠림 &rarr; 초기 생태계 위축 고착.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">재검증 트리거</div>
+    <div class="table-wrap">
+    <table class="monitor-table">
+      <tr><th>이벤트</th><th>예상 시점</th><th>영향</th></tr>
+      <tr><td>2026 상반기 투자 통계</td><td class="val-current">2026-07</td><td>초기 투자 반등 여부 &rarr; KC-3 트리거</td></tr>
+      <tr><td>TIPS 2026 결과 발표</td><td class="val-warn">2026 하반기</td><td>지원단가 상향 효과 실증</td></tr>
+      <tr><td>대기업 M&amp;A 동향</td><td>상시</td><td>엑시트 다변화 &rarr; KC-2 트리거</td></tr>
+      <tr><td>VC 협회 RCPS 가이드라인</td><td>미정</td><td>상환권 관행 변화 &rarr; KC-1 트리거</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">유효 조건</div>
+    <div class="key-finding">
+      <p>1. RCPS 상환권 행사 관행이 현행 유지</p>
+      <p>2. 대기업 스타트업 M&amp;A가 활성화되지 않은 상태 유지</p>
+      <p>3. 2026 상반기 초기 투자 건수가 반등하지 않음</p>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-disclaimer">본 검증 보고서는 정보 제공 목적으로 작성되었으며, 법률&middot;투자 자문이 아닙니다. 검토 보조 목적으로만 사용하십시오.<br>MCP 소스: THE VC &middot; 벤처스퀘어 &middot; 삼정KPMG &middot; Tavily. LLM은 비교자 역할만 수행합니다.</div>
+  <div class="footer-bottom">
+    <div class="footer-brand">6-Layer Verification Engine v1.2</div>
+    <div>2026-03-19 &middot; Valid until: 2026-06-30</div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+document.getElementById('themeToggle').addEventListener('click',function(){var h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');this.textContent=d?'\u25D0 DARK':'\u25D1 LIGHT'});
+if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark');document.getElementById('themeToggle').textContent='\u25D1 LIGHT'}
+document.getElementById('viewToggle').addEventListener('click',function(){document.body.classList.toggle('short-mode');var s=document.body.classList.contains('short-mode');this.textContent=s?'FULL':'SHORT';this.classList.toggle('active',s)});
+document.getElementById('printBtn').addEventListener('click',function(){window.print()});
+document.querySelectorAll('.nav-item').forEach(function(d){d.addEventListener('click',function(){var el=document.getElementById(this.getAttribute('data-target'));if(el)el.scrollIntoView({behavior:'smooth',block:'start'})})});
+document.querySelectorAll('.channel-card').forEach(function(c){c.addEventListener('click',function(){this.classList.toggle('open')})});
+var secs=document.querySelectorAll('.section[id]'),navs=document.querySelectorAll('.nav-item');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navs.forEach(function(l){l.classList.remove('active')});var t=e.target.id;navs.forEach(function(n){if(n.getAttribute('data-target')===t)n.classList.add('active')})}})},{rootMargin:'-20% 0px -70% 0px'});secs.forEach(function(s){io.observe(s)})}
+</script>
+</body>
+</html>

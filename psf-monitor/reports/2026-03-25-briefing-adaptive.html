@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSF Briefing — 2026-03-25</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>:root {
+  --navy:#0d1117;--dark:#161b22;--border:#30363d;
+  --text:#c9d1d9;--text-bright:#f0f6fc;--text-dim:#8b949e;
+  --blue:#58a6ff;--green:#4caf50;--yellow:#ffd600;
+  --red:#ff5252;--purple:#d2a8ff;--cyan:#80deea;
+  --regime-green-bg:#003d00;--regime-green-text:#4caf50;
+  --regime-yellow-bg:#4a3800;--regime-yellow-text:#ffd600;
+  --regime-red-bg:#3d0000;--regime-red-text:#ff5252;
+  --keyword-bg:#2a1a3e;--keyword-text:#ce93d8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--navy);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.7}
+.container{max-width:780px;margin:0 auto;padding:16px}
+.topbar{padding:6px 16px;font-size:.7em;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-align:center}
+.topbar.red{background:#5c0000;color:#ff5252}
+.topbar.blue{background:#0a2540;color:#58a6ff}
+.topbar.navy{background:#0d1117;color:#8b949e;border-bottom:1px solid var(--border)}
+.topbar.gold{background:#3a2800;color:#ffd600}
+.report-header{padding:20px 16px 12px}
+.report-header h1{color:var(--text-bright);font-size:1.3em;margin-bottom:6px}
+.report-header .meta{color:var(--text-dim);font-size:.8em}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.badge{padding:4px 12px;border-radius:4px;font-size:.75em;font-weight:600;white-space:nowrap}
+.badge.regime-green{background:var(--regime-green-bg);color:var(--regime-green-text)}
+.badge.regime-yellow{background:var(--regime-yellow-bg);color:var(--regime-yellow-text)}
+.badge.regime-red{background:var(--regime-red-bg);color:var(--regime-red-text)}
+.badge.keyword{background:var(--keyword-bg);color:var(--keyword-text)}
+.exec-box{background:var(--dark);border-left:4px solid var(--yellow);padding:16px 20px;margin:16px;border-radius:0 8px 8px 0}
+.exec-box .claim{color:var(--text-bright);font-size:1.05em;font-weight:500}
+.exec-box .sub{color:var(--text-dim);font-size:.82em;margin-top:6px}
+.section{margin:12px 16px}
+.section-large{margin:16px}
+.section-small{margin:8px 16px}
+.section-title{color:var(--blue);font-size:.9em;font-weight:700;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+.card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.card.critical{border-left:3px solid var(--red)}
+.card.high{border-left:3px solid var(--yellow)}
+.card.medium{border-left:3px solid var(--text-dim)}
+.card .rank{color:var(--yellow);font-family:'DM Mono',monospace;font-weight:700;margin-right:8px}
+.card .signal{color:var(--text-bright);font-weight:500}
+.card .detail{color:var(--text-dim);font-size:.82em;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:.82em}
+th{background:var(--dark);color:var(--text-dim);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:8px 12px;border-bottom:1px solid #1c2028}
+.num{font-family:'DM Mono',monospace;color:var(--text-bright)}
+.up{color:var(--red)}.down{color:var(--green)}.flat{color:var(--text-dim)}
+.link-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.link-card{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px 12px;font-size:.8em}
+.link-card.active{border-color:var(--red)}
+.link-card.approaching{border-color:var(--yellow)}
+.link-card .status{font-weight:600}
+.axis-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.axis-card{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:10px;font-size:.8em;text-align:center}
+.axis-card .axis-name{color:var(--text-bright);font-weight:600}
+.axis-card .axis-status{margin-top:4px}
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scenario-card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px}
+.scenario-card .prob{font-family:'DM Mono',monospace;font-size:1.1em;color:var(--yellow)}
+.scenario-card .name{color:var(--text-bright);font-weight:600;margin-top:4px}
+.scenario-card .desc{color:var(--text-dim);font-size:.8em;margin-top:4px}
+.divergence{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.divergence .type{color:var(--purple);font-size:.75em;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.divergence .desc{color:var(--text);font-size:.85em;margin-top:4px}
+.question-list{list-style:none}
+.question-list li{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-bottom:6px;font-size:.82em}
+.question-list .deadline{color:var(--yellow);font-family:'DM Mono',monospace;font-size:.8em}
+.alert-box{background:var(--regime-red-bg);border:1px solid #5c0000;border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.alert-box .alert-title{color:var(--red);font-weight:700;font-size:.85em}
+.alert-box .alert-body{color:var(--text);font-size:.82em;margin-top:4px}
+.alert-box.warning{background:var(--regime-yellow-bg);border-color:#665200}
+.alert-box.warning .alert-title{color:var(--yellow)}
+.footer{margin:24px 16px;padding-top:12px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.72em;text-align:center}
+.disclaimer{color:#484f58;font-size:.68em;margin-top:8px;font-style:italic}
+@media(max-width:600px){.link-grid,.scenario-grid{grid-template-columns:1fr}.axis-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.container{padding:8px}.report-header h1{font-size:1.1em}.exec-box{margin:8px;padding:12px 14px}.section,.section-large,.section-small{margin:8px}}</style>
+</head>
+<body>
+<div class="topbar blue">SPECIAL REPORT</div>
+<div class="container">
+<div class="report-header">
+  <h1>PSF Briefing — 2026-03-25</h1>
+  <div class="meta">복합형 (대립 + 분기) · 10개 섹션 · 자율 판단</div>
+  <div class="badges">
+    <span class="badge regime-yellow">PSF 🟡 경계 (다소 완화)</span>
+    <span class="badge regime-yellow">macro 🟡 Transition (3.5/5)</span>
+    <span class="badge keyword">이행+이행 = 양쪽 불확실</span>
+  </div>
+</div>
+<div class="section-large"><div class="section-title">Executive Verdict</div><div class="exec-box"><div class="claim">🟡 경계 (다소 완화) — 미국 5일 군사행동 정지 → Brent $106→$103(-$4), BEI 2.63→2.53%(-10bp)</div><div class="sub">P-지정학(정지) → P-자원(Brent↓) → L3(BEI↓) → S1(실질금리 영향 지연)</div></div></div>
+<div class="section-large"><div class="section-title">국면 대시보드</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div class="card"><div style="color:var(--purple);font-weight:600;margin-bottom:6px">P 판</div><div style="font-size:.78em;margin-bottom:3px">🟡 fiscal — DFF 3.64% 동결. DFII10 2%+. Fed 인하 차단 지속.</div><div style="font-size:.78em;margin-bottom:3px">⚫ trade — 뉴스 부재. 전쟁에 묻힘.</div><div style="font-size:.78em;margin-bottom:3px">🔴 geopolitics — 5일 정지 ↔ 이란 걸프 공격 경고. 교착→분기 지속.</div><div style="font-size:.78em;margin-bottom:3px">🟡 regulation — SEC 크립토 해석 시행 중. CLARITY Act 4/7 투표 대기.</div><div style="font-size:.78em;margin-bottom:3px">🟡 resources — Brent $103(↓). 호르무즈 폐쇄 지속. 5일 정지로 일시 완화.</div><div style="color:var(--text-dim);font-size:.72em;margin-top:4px">판정: 변동</div></div><div class="card"><div style="color:var(--blue);font-weight:600;margin-bottom:6px">S 구조</div><div style="font-size:.78em;margin-bottom:3px"><span class="num">실질금리 2.01</span> ↑ <span style="color:var(--text-dim)">긴장</span></div><div style="font-size:.78em;margin-bottom:3px"><span class="num">HY OAS 319bp</span> ↓ <span style="color:var(--text-dim)">건전</span></div><div style="font-size:.78em;margin-bottom:3px"><span class="num">SOFR-FF -2bp</span> → <span style="color:var(--text-dim)">건전</span></div><div style="font-size:.78em;margin-bottom:3px"><span class="num">ISM PMI 49</span> ↓ <span style="color:var(--text-dim)">긴장</span></div><div style="font-size:.78em;margin-bottom:3px"><span class="num">T10Y2Y 0.51</span> → <span style="color:var(--text-dim)">건전</span></div><div style="color:var(--text-dim);font-size:.72em;margin-top:4px">판정: 건전~긴장</div></div><div class="card"><div style="color:var(--cyan);font-weight:600;margin-bottom:6px">F 흐름</div><div style="font-size:.78em;margin-bottom:3px">DXY ↓ <span style="color:var(--text-dim)">이동</span></div><div style="font-size:.78em;margin-bottom:3px">Net Liq → <span style="color:var(--text-dim)">정체</span></div><div style="font-size:.78em;margin-bottom:3px">EM/DM → <span style="color:var(--text-dim)">정체</span></div><div style="font-size:.78em;margin-bottom:3px">크립토 → <span style="color:var(--text-dim)">횡보</span></div><div style="font-size:.78em;margin-bottom:3px">VIX/MOVE ↓ <span style="color:var(--text-dim)">경계→정상 접근</span></div><div style="color:var(--text-dim);font-size:.72em;margin-top:4px">판정: 정체~이동</div></div></div></div>
+<div class="section-large"><div class="section-title">긴장 구조</div><div class="divergence"><div class="type">P↔S</div><div class="desc">P-지정학 🔴(전쟁+걸프 공격 경고) vs S2 건전(319bp 개선). 전쟁 심각도를 신용이 무시.</div></div><div class="divergence"><div class="type">F5 내부</div><div class="desc">MOVE 98(정상) vs VIX 25.8(경계). 채권은 안심, 주식은 불안. 괴리 축소 중.</div></div></div>
+<div class="section-large"><div class="section-title">핵심 관측</div><div class="card critical"><span class="rank">#4</span><span class="signal">이란 걸프 에너지 인프라 공격 경고 (사우디/UAE 대상)</span><div class="detail">이란 IRGC의 사우디/UAE 에너지 시설 공격 시사. 걸프국 군사대응권 유보 경고.</div><div class="detail" style="color:var(--purple)">②에너지: 축 자체는 건재하나 판(P)이 위험. ⑧지정학: 연합 재편 가속.</div></div></div>
+<div class="section"><div class="section-title">주요 변화</div><div class="card high"><span class="rank">#1</span><span class="signal">미국 5일 군사행동 정지 → Brent $106→$103(-$4), BEI 2.63→2.53%(-10bp)</span><div class="detail">미국 이란 공격 5일 일시 정지 신호. 호르무즈 여전히 실질 폐쇄.</div><div class="detail" style="color:var(--purple)">②에너지: 일시적 압력 완화. 축 자체 건재. ⑧미중/지정학: 교착 지속.</div></div><div class="card high"><span class="rank">#2</span><span class="signal">DFII10 1.88→2.01%(+13bp), 2% 돌파</span><div class="detail">BEI 하락(-10bp)에도 명목 금리 유지 → 실질 금리 상승</div><div class="detail" style="color:var(--purple)">⑨재정지배: 실질금리 2%+ 지속 시 금융억압 약화 방향. 분기 점검 대상.</div></div></div>
+<div class="section"><div class="section-title">Link 상태</div><div class="link-grid"><div class="link-card active"><div class="status">L3_energy_inflation</div><div style="color:var(--text-dim);font-size:.78em;margin-top:2px">active (약화)</div><div style="color:var(--text);font-size:.78em;margin-top:2px">유가 하락 반영. L3 비활성 전환에는 BEI 2.3% 이하 필요.</div></div><div class="link-card active"><div class="status">L3.5_supply_shock</div><div style="color:var(--text-dim);font-size:.78em;margin-top:2px">active (약화)</div><div style="color:var(--text);font-size:.78em;margin-top:2px">Brent 30일 변동 여전히 &gt;30%. L3.5 유지.</div></div><div class="link-card active"><div class="status">L5_geopolitics_energy</div><div style="color:var(--text-dim);font-size:.78em;margin-top:2px">active</div><div style="color:var(--text);font-size:.78em;margin-top:2px">마스터 Link. 5일 정지가 협상으로 전환되면 비활성.</div></div><div class="link-card approaching"><div class="status">L7_chronic</div><div style="color:var(--text-dim);font-size:.78em;margin-top:2px">approaching</div><div style="color:var(--text);font-size:.78em;margin-top:2px">VIX 25.84. 25+ 지속이나 하락 방향. 25 하회 시 해소.</div></div></div></div>
+<div class="section"><div class="section-title">축 상태</div><div class="axis-grid"><div class="axis-card"><div class="axis-name">①AI</div><div class="axis-status" style="color:var(--green)">건재</div></div><div class="axis-card"><div class="axis-name">②에너지</div><div class="axis-status" style="color:var(--green)">건재 (판 차단)</div></div><div class="axis-card"><div class="axis-name">③고령화</div><div class="axis-status" style="color:var(--green)">건재</div></div><div class="axis-card"><div class="axis-name">④블록체인</div><div class="axis-status" style="color:var(--green)">건재</div></div><div class="axis-card"><div class="axis-name">⑨재정</div><div class="axis-status" style="color:var(--yellow)">가속</div></div><div class="axis-card"><div class="axis-name">⑧미중</div><div class="axis-status" style="color:var(--red)">격화</div></div></div></div>
+<div class="section-small"><div class="section-title">보조 관측</div><div class="card medium"><span class="rank">#3</span><span class="signal">MOVE 108.84→98.15(-10.69), 100 하회</span><div class="detail">군사 정지 신호 + 걸프 원유 일부 풀림 기대</div><div class="detail" style="color:var(--purple)">직접 축 연관 없음. 시스템 스트레스 지표로서 긴장 완화 신호.</div></div><div class="card medium"><span class="rank">#5</span><span class="signal">HY OAS 327→319bp(-8bp), IG OAS 88bp</span><div class="detail">시장은 '지정학 공포≠시스템 위기'로 판단 중.</div><div class="detail" style="color:var(--purple)">직접 축 연관 없음. 시스템 건강 지표.</div></div></div>
+<div class="section"><div class="section-title">감시 + 시나리오</div><table><thead><tr><th>질문</th><th>기한</th><th>유형</th></tr></thead><tbody><tr><td>5일 군사 정지 만료(~3/27) 후 미국 행동은?</td><td class="num">2026-03-28</td><td>date</td></tr><tr><td>이란 걸프 에너지 인프라 공격이 실행되는가?</td><td class="num">2026-03-31</td><td>condition</td></tr><tr><td>VIX 25 하회하여 L7 만성 접근 해소되는가?</td><td class="num">2026-03-30</td><td>threshold</td></tr><tr><td>DFII10 2%+ 지속 여부 — 일시적 or 구조적?</td><td class="num">2026-04-10</td><td>threshold</td></tr></tbody></table><div class="scenario-grid" style="margin-top:12px"><div class="scenario-card"><div class="prob">40%</div><div class="name">교착→점진 이완</div><div class="desc">전쟁 장기화 교착이 가장 높은 확률. 양측 모두 완전 승리 불가. 외교 채널은 파괴됐으나 경제적 피로가 협상을 강제.</div></div><div class="scenario-card"><div class="prob">15%</div><div class="name">조기 종결 + 정책 피벗</div><div class="desc">트럼프 최후통첩이 실제 외교 돌파구로 이어질 낮은 확률. 이란 정권 내부 균열 또는 중국 중재 재시도.</div></div><div class="scenario-card"><div class="prob">35%</div><div class="name">스태그플레이션 확정</div><div class="desc">GDP 0.7% + Core PCE 3.1% 조합이 이미 출현. 전쟁 6개월+ 장기화 시 에너지 비용이 실물에 본격 전이. Allianz 'stagflation light' 전망과 일치. 71% 펀드매니저가 스태그 예상(BofA 서베이).</div></div><div class="scenario-card"><div class="prob">10%</div><div class="name">호르무즈 완전 폐쇄 + 엔캐리 청산 동시</div><div class="desc">48시간 최후통첩이 실제 공격으로 → 이란 완전 폐쇄 → Brent $150+ → 엔캐리 청산 → 글로벌 유동성 위기. 2022+2024 동시 발생 시나리오.</div></div></div></div>
+<div class="section-small"><div class="section-title">미해소 질문</div><ul class="question-list"><li><span class="deadline">2026-03-28</span> 5일 군사 정지 만료(~3/27) 후 미국 행동은?</li><li><span class="deadline">2026-03-31</span> 이란 걸프 에너지 인프라 공격이 실행되는가?</li><li><span class="deadline">2026-03-30</span> VIX 25 하회하여 L7 만성 접근 해소되는가?</li><li><span class="deadline">2026-04-10</span> DFII10 2%+ 지속 여부 — 일시적 or 구조적?</li><li style="border-color:var(--purple)"><span style="color:var(--purple)">[미분류]</span> Gold $4,414 — 지정학 피크에서 하락 후 반등. 지정학 헤지 vs 실질금리 상승 상충.</li><li style="border-color:var(--purple)"><span style="color:var(--purple)">[미분류]</span> MOVE 급락(-10.7) vs VIX 소폭 하락(-0.9). 채권/주식 공포 비대칭 해소.</li></ul></div>
+
+<div class="footer">
+  MCP 17건 · 비율 89% · 상세 → state.json
+  <div class="disclaimer">이 보고서는 관측 결과입니다. 투자 판단이나 행동 권고가 아닙니다. 모든 수치는 수집 시점 기준이며 실시간이 아닙니다.</div>
+</div>
+</div></body></html>

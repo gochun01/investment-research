@@ -1,0 +1,47 @@
+{
+  "id": "TC-006",
+  "type": "stereo",
+  "title": "SK하이닉스 ADR — 밸류에이션 체계 전환 + 301 교차",
+  "source": "SA-20260326-006",
+  "created": "2026-03-26",
+  "status": "tracking",
+  "phase": 1,
+  "scp": 3,
+
+  "trigger": {
+    "condition": "ADR 상장 완료 + PER 20x+ 달성 (밸류에이션 재평가 확인)",
+    "current": "SEC F-1 제출(3/24). 연내 상장 목표. 규모 미확정.",
+    "fired": false
+  },
+  "kc": {
+    "watch": "ADR 규모 $100억 미만 공시 (ETF 편입 불가)",
+    "alert": "301 반도체 관세 확정 + ADR 면제 불포함",
+    "hard": "HBM 점유율 50%↓ (마이크론/삼성 추격) OR ADR 철회",
+    "fired": false
+  },
+  "scenarios": {
+    "A": {"label": "ADR 성공 + 밸류에이션 재평가", "prob": "50%"},
+    "B": {"label": "ADR 성공 + 301 관세 동시", "prob": "30%"},
+    "C": {"label": "ADR 규모 부족", "prob": "20%"}
+  },
+  "cross_refs": ["TC-001 (Section 301 — 전자장비=반도체)", "TC-002 (KRW — ADR 달러 유입 역방향)"],
+
+  "events": ["EC-003", "EC-004"],
+  "rm_watches": [],
+
+  "heartbeat_thresholds": [
+    {"indicator": "SK하이닉스", "symbol": "000660.KS", "watch": 850000, "alert": 800000, "hard": 700000, "direction": "below", "note": "ADR 기대 반영 하한"}
+  ],
+
+  "open_questions": [
+    "TSMC ADR: 상장 후 PER 변화 추이 + 본토 괴리율 수치",
+    "232(25%) + 301 이중 관세 시 하이닉스 실효세율",
+    "ADR 달러 유입 경로: 한국 환류 vs 미국 내 재투자"
+  ],
+
+  "check_log": [
+    {"date": "2026-03-26", "observation": "SEC F-1 제출. 주총 100조 선언. 주가 100만 회복. Phase 1.", "next_check": "2026-04-15"}
+  ],
+
+  "close_condition": "ADR 상장 완료 → 시나리오 확정 OR ADR 철회 → KC 발동 OR 6개월 무변화 → 아카이브"
+}

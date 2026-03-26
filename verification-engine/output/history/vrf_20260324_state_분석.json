@@ -1,0 +1,367 @@
+{
+  "vrf_id": "vrf_20260324_state_분석",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟡",
+      "logic": "🟡",
+      "temporal": "🟢",
+      "incentive": "🟢",
+      "omission": "🟡"
+    },
+    "overall_verdict": "🟡 PLAUSIBLE",
+    "critical_flags": [
+      "C-06: Base Q4 Brent $80~95는 IB 컨센서스 base($71~80.50)보다 높음. 레이블 'Base~Risk'로 수정 권장",
+      "OPEC+ 증산, SPR 추가 방출, 미국 셰일 반응 등 수요측·정책대응 누락",
+      "NK·멕시코 선례 적용 한계: 실제 전쟁 중 보류와 평시 위협→보류는 다른 맥락"
+    ],
+    "valid_until": "2026-03-29",
+    "validity_condition": "호르무즈 봉쇄 지속 + 40개 시설 미복구 + OPEC+ 대규모 증산 없음",
+    "claims_count": 10
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260324_state_분석",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-24",
+      "engine_version": "6layer_v2_manual",
+      "document": {
+        "title": "Deep Question Analysis — Track 1 충돌해부 + Track 2 묻힌분석(40개 에너지 자산)",
+        "document_type": "geopolitical",
+        "target_id": "IRAN_WAR_ANALYSIS",
+        "sector_id": "지정학",
+        "author_id": "deep-question",
+        "institution_id": "01-세상의소리 파이프라인",
+        "source_url": "reports/분석/state_분석.json",
+        "date_published": "2026-03-24",
+        "date_accessed": "2026-03-24"
+      },
+      "previous_verification": ""
+    },
+    "claims": [
+      {
+        "claim_id": "C-01",
+        "text": "북한 선례: '합의' 후 18개월 보류",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "tracks_selected.track1.finding",
+        "depends_on": [],
+        "verdicts": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "싱가포르(2018.6)→하노이 결렬(2019.2)=8개월. 대화 완전 종료(2019말)까지 ~18개월. 맥락 부합하나 단순화",
+            "evidence": "CFR Chronology, Reuters timeline, NPR 2019.2.28, CNBC 2019.2.28",
+            "tier": "Tier 2 (뉴스 교차확인)"
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "역사적 비교, 시점 명확",
+            "evidence": "2018-2019 공개 기록"
+          }
+        }
+      },
+      {
+        "claim_id": "C-02",
+        "text": "멕시코 선례: 관세 보류 패턴",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "tracks_selected.track1.finding",
+        "depends_on": [],
+        "verdicts": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "트럼프 멕시코 관세 위협·보류 패턴은 역사적 사실. 구체 일자·횟수 미인용",
+            "evidence": "공개 기록으로 확인 가능하나 MCP 전용 소스 부재",
+            "tier": "Tier 2"
+          }
+        }
+      },
+      {
+        "claim_id": "C-03",
+        "text": "IEA: 40개 에너지 자산 심각 손상, 9개국",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "tracks_selected.track2.finding",
+        "depends_on": [],
+        "verdicts": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "IEA 비롤 2026-03-23 캔버라 National Press Club 연설. CNBC·UPI·NYPost·Euronews·AGBI 모두 확인",
+            "evidence": "CNBC 2026-03-23, UPI 2026-03-23, NYPost 2026-03-23, Euronews 2026-03-23, AGBI 2026-03-23, IntelliNews 2026-03-23",
+            "tier": "Tier 1 (IEA 공식 발언)"
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "발언 24시간 이내",
+            "evidence": "2026-03-23"
+          }
+        }
+      },
+      {
+        "claim_id": "C-04",
+        "text": "규모가 1970s×2 + 2022 합친 규모",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "tracks_selected.track2.finding",
+        "depends_on": ["C-03"],
+        "verdicts": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "비롤 원문: 'two oil crises of the 1970s and the 2022 gas crisis, put together'. AGBI: 과거 10M bpd vs 현재 11M bpd",
+            "evidence": "CNBC, UPI, Euronews, AGBI 교차확인",
+            "tier": "Tier 1 (IEA 공식 발언)"
+          }
+        }
+      },
+      {
+        "claim_id": "C-05",
+        "text": "석유화학·비료·헬륨 경로 단절",
+        "claim_type": "인과주장",
+        "evidence_type": "fact",
+        "location": "tracks_selected.track2.effect_chain",
+        "depends_on": ["C-03"],
+        "verdicts": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "비롤 원문: 'petrochemicals, fertilizers, sulfur, helium — their trade is all interrupted'",
+            "evidence": "CNBC, UPI, Euronews, AGBI",
+            "tier": "Tier 1"
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "IEA가 직접 경로별 단절 확인. 인과 비약 없음"
+          }
+        }
+      },
+      {
+        "claim_id": "C-06",
+        "text": "Base Q4 Brent $75~85 → $80~95 상향",
+        "claim_type": "예측",
+        "evidence_type": "estimate",
+        "location": "projection_adjustments.brent_adjustment",
+        "depends_on": ["C-03", "C-05"],
+        "verdicts": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "evidence_type=estimate이므로 🟢 상한 불가. GS base Q4: $71, risk: $93. StanChart Q4: $80.50. BofA 연간: $77.50. 문서의 $80~95는 컨센서스 base보다 높고 risk scenario 영역",
+            "evidence": "FRED DCOILBRENTEU (3/16: $101.04), Goldman Sachs 2026-03-22 note, StanChart forecast, BofA forecast",
+            "tier": "Tier 2"
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "인과 체인(40개 손상→복구 수년→유가 고착)은 건전. 단 'Base'라 명명한 $80~95는 IB 컨센서스에서 'risk' 시나리오에 해당. 레이블링 문제",
+            "notes": "F-001: Base→'Base~Risk' 또는 'Upside Base'로 수정 권장"
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "Q4 전망으로서 시점 적절"
+          }
+        }
+      },
+      {
+        "claim_id": "C-07",
+        "text": "3/29 트럼프 공격 재개 안 함 (65%)",
+        "claim_type": "예측",
+        "evidence_type": "estimate",
+        "location": "pm_predictions[0]",
+        "depends_on": ["C-01", "C-02"],
+        "verdicts": {
+          "logic": {
+            "verdict": "🟡",
+            "reason": "NK·멕시코 선례에서 유추. 논리적으로 합당하나 실제 전쟁 중 보류와 평시 위협→보류는 다른 맥락. 65%의 정량적 근거 약함",
+            "notes": "F-003"
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "verify 날짜 2026-03-29 명시. 5일 유예와 일치"
+          }
+        }
+      },
+      {
+        "claim_id": "C-08",
+        "text": "Q3까지 Brent $80 이하 불가 (70%)",
+        "claim_type": "예측",
+        "evidence_type": "estimate",
+        "location": "pm_predictions[1]",
+        "depends_on": ["C-03", "C-06"],
+        "verdicts": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "StanChart Q3: $85. GS base는 Q3 미명시. '$80 이하 불가'는 단정적 표현",
+            "evidence": "StanChart Q3 forecast: $85/bbl",
+            "tier": "Tier 2"
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "40개 시설 복구 수년 기반. 논리 타당하나 OPEC+ 증산·SPR 추가 방출 시 하방 가능성 미고려"
+          }
+        }
+      },
+      {
+        "claim_id": "C-09",
+        "text": "시나리오 확률: Base 45%, Bear 30%, Bull 15%, Crisis 10%",
+        "claim_type": "예측",
+        "evidence_type": "estimate",
+        "location": "projection_adjustments",
+        "depends_on": ["C-07"],
+        "verdicts": {
+          "logic": {
+            "verdict": "🟡",
+            "reason": "합계 100% 정합. Base 40→45% 상향 근거('트럼프 보류 패턴')가 제시되나, 보류 패턴은 시나리오 확률 상향보다는 전쟁 단기 격화 회피 근거에 가까움"
+          }
+        }
+      },
+      {
+        "claim_id": "C-10",
+        "text": "전쟁 종결 ≠ 유가 정상화",
+        "claim_type": "인과주장",
+        "evidence_type": "estimate",
+        "location": "tracks_selected.track2.conclusion",
+        "depends_on": ["C-03", "C-05"],
+        "verdicts": {
+          "logic": {
+            "verdict": "🟢",
+            "reason": "IEA '복구에 시간 필요' + 40개 시설 물리적 손상 + NYPost '복구까지 가격 상승 유지'. 인과 견고",
+            "evidence": "IEA Birol statement, NYPost 2026-03-23"
+          },
+          "omission": {
+            "verdict": "🟡",
+            "reason": "결론 자체는 타당하나 '정상화 불가' 기간을 특정하지 않음. OPEC+ 보상 증산·SPR 방출이 부분적 정상화를 앞당길 가능성 미검토"
+          }
+        }
+      }
+    ],
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟡",
+        "reason": "IEA·Al Arabiya 출처 언급하나 보고서명·날짜 부분적. 면책 고지 없음(내부 분석이므로 감경)",
+        "checklist_matched": [],
+        "checklist_missed": []
+      },
+      "incentive": {
+        "verdict": "🟢",
+        "reason": "내부 분석 시스템(deep-question). 상업적 이해관계 없음. 트럼프·이란 양측 인센티브 분석 포함. Bear·Bull 균형 시도",
+        "disclosure_issues": []
+      },
+      "omission": {
+        "verdict": "🟡",
+        "reason": "공급측 분석 견고하나 수요측·정책대응 누락",
+        "missing_items": [
+          "OPEC+ 여유 생산능력 및 증산 대응",
+          "IEA SPR 추가 방출 효과 (이미 400M 배럴 방출 중, 추가 논의)",
+          "미국 셰일 생산 반응 (GS: Permian basin record levels)",
+          "중국 수요 둔화 (IEA: 수요 전망 210kb/d 하향)"
+        ],
+        "bbj_breaks": [
+          {
+            "id": "BBJ-1",
+            "description": "호르무즈 즉시 재개통 + 즉각 휴전: 전쟁 프리미엄 $20+ 증발, Brent $80 이하 급락",
+            "impact": "극대",
+            "probability": "15~20%",
+            "document_mentions": false
+          },
+          {
+            "id": "BBJ-2",
+            "description": "OPEC+ 대규모 증산 + SPR 추가 방출 동시: Q3~Q4 유가 하방 압력",
+            "impact": "대",
+            "probability": "20~25%",
+            "document_mentions": false
+          }
+        ]
+      }
+    },
+    "kc": [
+      {
+        "kc_id": "KC-L1",
+        "level": "L1",
+        "description": "40개 시설이 실제로 복구 수년 소요",
+        "status": "🟡 미확인",
+        "evidence": "IEA 비롤 '시간이 걸릴 것' 발언. 구체적 복구 일정 미공개",
+        "invalidates": ["C-06", "C-08", "C-10"]
+      },
+      {
+        "kc_id": "KC-L2",
+        "level": "L2",
+        "description": "호르무즈 해협 봉쇄 지속",
+        "status": "참 (현시점)",
+        "evidence": "IEA: 통행량 거의 0. 비롤: '호르무즈 재개통이 가장 중요한 해법'",
+        "invalidates": ["C-06", "C-08"]
+      },
+      {
+        "kc_id": "KC-L3",
+        "level": "L3",
+        "description": "OPEC+ 여유 생산능력 미가동",
+        "status": "🟡 미확인",
+        "evidence": "MCP 직접 조회 불가. IEA 400M 배럴 방출 중이나 '충분치 않다' 언급",
+        "invalidates": ["C-08"]
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "F-001",
+        "layer": "L1/L3",
+        "verdict": "🟡",
+        "location": "projection_adjustments.brent_adjustment",
+        "original_text": "Base Q4 Brent $75~85 → $80~95",
+        "error_type": "logic_gap",
+        "evidence": "GS base Q4: $71, risk: $93. StanChart Q4: $80.50. 문서의 $80~95는 IB base보다 높고 risk 영역",
+        "fix_confidence": "권장",
+        "suggested_fix": "'Base' → 'Base~Risk' 또는 'Upside Base'로 레이블 수정. 또는 범위를 $75~95로 확대하여 GS base($71) 포괄"
+      },
+      {
+        "finding_id": "F-002",
+        "layer": "L6",
+        "verdict": "🟡",
+        "location": "문서 전체",
+        "original_text": "(누락)",
+        "error_type": "omission_gap",
+        "evidence": "IEA 400M 배럴 SPR 방출 + 추가 방출 논의 중. GS: Permian basin record levels. IEA: 수요 전망 210kb/d 하향",
+        "fix_confidence": "권장",
+        "suggested_fix": "Bear 시나리오에 OPEC+ 증산·SPR 추가 방출·셰일 반응·수요 둔화 요인 명시적 반영. Bear 확률 재검토"
+      },
+      {
+        "finding_id": "F-003",
+        "layer": "L3",
+        "verdict": "🟡",
+        "location": "pm_predictions[0]",
+        "original_text": "3/29 트럼프 공격 재개 안 함 (65%)",
+        "error_type": "logic_gap",
+        "evidence": "NK·멕시코는 평시 위협→보류. 현재는 실제 전쟁 24일차. 맥락 차이 큼",
+        "fix_confidence": "경고만",
+        "suggested_fix": "선례 적용 한계를 주석으로 부착. '실전쟁 중 보류는 선례 부재' 명시"
+      }
+    ],
+    "valid_until": "2026-03-29",
+    "validity_condition": "호르무즈 봉쇄 지속 + 40개 시설 미복구 + OPEC+ 대규모 증산 없음",
+    "invalidation_triggers": [
+      "호르무즈 재개통 (통행량 50%+ 복구)",
+      "미-이란 공식 휴전 합의",
+      "OPEC+ 3M bpd 이상 긴급 증산 결정"
+    ],
+    "self_audit": {
+      "limitations": [
+        "FRED Brent 최신 데이터 3/16까지. 3/17~3/24 가격은 Tavily 뉴스로만 확인 ($113+)",
+        "NK '18개월' 검증에서 전용 MCP(외교 데이터베이스) 부재. 뉴스로만 교차확인",
+        "OPEC+ 현재 여유생산능력 수치를 직접 MCP로 조회 불가"
+      ],
+      "coverage_gaps": [
+        "수요측 분석 전반 부재"
+      ],
+      "improvements": [
+        "C-06 Base 레이블을 Base~Risk로 수정 권장",
+        "Bear 시나리오에 OPEC+/SPR/셰일 대응 명시적 반영 권장"
+      ]
+    },
+    "mcp_sources_used": [
+      {"source": "FRED DCOILBRENTEU", "tier": 2, "date": "2026-03-16", "freshness": "7일 이내"},
+      {"source": "FRED DCOILWTICO", "tier": 2, "date": "2026-03-16", "freshness": "7일 이내"},
+      {"source": "FRED DHHNGSP", "tier": 2, "date": "2026-02-11", "freshness": "30일 초과"},
+      {"source": "Tavily: Trump Iran deal/ceasefire", "tier": 2, "date": "2026-03-23", "freshness": "24시간 이내"},
+      {"source": "Tavily: IEA 40 energy assets", "tier": 2, "date": "2026-03-23", "freshness": "24시간 이내"},
+      {"source": "Tavily: Iran denies talks", "tier": 2, "date": "2026-03-23", "freshness": "24시간 이내"},
+      {"source": "Tavily: Brent crude forecast Q4", "tier": 2, "date": "2026-03-23", "freshness": "24시간 이내"},
+      {"source": "Tavily: Trump NK summit timeline", "tier": 2, "date": "various", "freshness": "역사적 자료"}
+    ]
+  }
+}

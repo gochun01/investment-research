@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>천궁-II 실전 입증 — 시장은 이미 알고 있었다 | 2026-03-24</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--surface:#111d32;--card:#162240;--border:#1e3054;--text:#e8ecf4;--muted:#7a8ba8;--accent:#4a9eff;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--gray:#6b7280;--gold:#d4a843;}
+[data-theme="light"]{--navy:#f5f7fa;--surface:#fff;--card:#f0f2f5;--border:#d1d5db;--text:#1a1a2e;--muted:#6b7280;--accent:#2563eb;--green:#16a34a;--yellow:#ca8a04;--red:#dc2626;--gray:#9ca3af;--gold:#b8860b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;transition:background .3s,color .3s;}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.6rem 2rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--muted);position:sticky;top:0;z-index:100;}
+.class-tag{background:var(--accent);color:#fff;padding:.2rem .6rem;border-radius:3px;font-family:'DM Mono',monospace;font-weight:700;font-size:.7rem;}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:.2rem .5rem;border-radius:4px;cursor:pointer;font-size:.7rem;}
+.c{max-width:800px;margin:0 auto;padding:2rem 2rem 4rem;}
+h1{font-family:'Libre Baskerville',serif;font-size:1.55rem;line-height:1.4;margin-bottom:.2rem;}
+h2{font-family:'Libre Baskerville',serif;font-size:1.1rem;margin:2.5rem 0 .75rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);}
+.sub{color:var(--muted);font-size:.82rem;margin-bottom:1.5rem;}
+
+.core{background:var(--surface);border-left:4px solid var(--accent);padding:1.2rem 1.4rem;border-radius:0 8px 8px 0;margin:1.5rem 0;font-family:'Libre Baskerville',serif;font-size:1rem;line-height:1.7;}
+.badges{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0;}
+.badge{padding:.3rem .7rem;border-radius:5px;font-size:.72rem;font-weight:600;border:1px solid;}
+.b-g{background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.3);}
+.b-y{background:rgba(234,179,8,.1);color:var(--yellow);border-color:rgba(234,179,8,.3);}
+.b-a{background:rgba(74,158,255,.1);color:var(--accent);border-color:rgba(74,158,255,.3);}
+
+.tl{position:relative;padding-left:2rem;margin:1rem 0;}
+.tl::before{content:'';position:absolute;left:.55rem;top:0;bottom:0;width:2px;background:var(--border);}
+.ti{position:relative;margin-bottom:.6rem;font-size:.8rem;}
+.ti::before{content:'';position:absolute;left:-1.7rem;top:.4rem;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--navy);}
+.ti.peak::before{border-color:var(--green);background:var(--green);}
+.ti.drop::before{border-color:var(--red);}
+.ti.news::before{border-color:var(--yellow);}
+.td{color:var(--muted);font-size:.7rem;}
+
+.num-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0;}
+.num-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center;}
+.num-card .val{font-family:'DM Mono',monospace;font-size:1.3rem;font-weight:700;margin:.3rem 0;}
+.num-card .label{font-size:.72rem;color:var(--muted);}
+.num-card .delta{font-size:.78rem;font-weight:600;}
+.up{color:var(--green);}
+.dn{color:var(--red);}
+
+.voice{background:var(--card);border-radius:8px;padding:1rem 1.2rem;margin:.6rem 0;font-size:.82rem;}
+.voice .who{font-weight:700;color:var(--accent);font-size:.78rem;margin-bottom:.3rem;}
+.voice .what{line-height:1.6;}
+.voice.counter{border-left:3px solid var(--yellow);}
+
+.pipe-row{display:grid;grid-template-columns:auto 1fr auto;gap:.5rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.82rem;}
+.pipe-flag{font-size:.7rem;padding:.15rem .4rem;border-radius:3px;font-weight:600;}
+.pf-done{background:rgba(34,197,94,.15);color:var(--green);}
+.pf-new{background:rgba(234,179,8,.15);color:var(--yellow);}
+
+.silence{background:var(--surface);border:1px dashed var(--border);border-radius:8px;padding:1rem 1.2rem;margin:1rem 0;font-size:.82rem;}
+.silence .icon{font-size:1.2rem;margin-bottom:.3rem;}
+
+.uq{list-style:none;padding:0;}
+.uq li{padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.8rem;}
+.uq li::before{content:'?';display:inline-block;width:1.2rem;height:1.2rem;line-height:1.2rem;text-align:center;border-radius:50%;background:rgba(234,179,8,.15);color:var(--yellow);font-weight:700;font-size:.65rem;margin-right:.4rem;}
+.meta{font-size:.72rem;color:var(--muted);margin-top:.4rem;}
+.disc{font-size:.68rem;color:var(--gray);text-align:center;margin-top:3rem;padding-top:.75rem;border-top:1px solid var(--border);}
+@media(max-width:600px){.c{padding:1rem;}.num-grid{grid-template-columns:1fr;}}
+@media print{.topbar{display:none;}.c{padding:1rem;max-width:100%;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>reaction-monitor</span>
+  <span class="class-tag">SPECIAL REPORT</span>
+  <span>2026-03-24 · Standard</span>
+  <button class="theme-btn" onclick="document.documentElement.toggleAttribute('data-theme')||document.documentElement.setAttribute('data-theme',document.documentElement.getAttribute('data-theme')?'':'light')">🌓</button>
+</div>
+
+<div class="c">
+
+<h1>천궁-II 실전 입증 — 시장은 이미 알고 있었다</h1>
+<p class="sub">K-방산 역사상 최대 단일 이벤트에 대한 5계층 시장 반응 수집</p>
+
+<!-- §1 Core -->
+<div class="core">
+시장은 천궁-II 실전 입증을 서사보다 3주 먼저 가격에 반영했다. LIG넥스원은 5거래일 만에 +78% 폭등한 뒤 이미 -23% 조정에 들어갔다. 서사·정책·전문가는 여전히 호재를 말하지만, 가격은 이미 "뉴스에 팔기" 단계다.
+</div>
+
+<div class="badges">
+  <span class="badge b-g">방향: 수렴 (호재)</span>
+  <span class="badge b-a">전파: A 시장주도</span>
+  <span class="badge b-g">비례: 비례반응</span>
+  <span class="badge b-y">포지셔닝: 폭등→조정</span>
+</div>
+
+<!-- §2 가격이 말하는 것 -->
+<h2>가격이 말하는 것 — 시장이 서사보다 빨랐다</h2>
+
+<div class="num-grid">
+  <div class="num-card">
+    <div class="label">LIG넥스원</div>
+    <div class="val">641,000<span style="font-size:.7rem;color:var(--muted);">원</span></div>
+    <div class="delta up">전쟁 전 대비 +25.9%</div>
+    <div class="meta">고점 834K(3/6) 대비 -23% 조정 중</div>
+  </div>
+  <div class="num-card">
+    <div class="label">한화에어로스페이스</div>
+    <div class="val">1,335,000<span style="font-size:.7rem;color:var(--muted);">원</span></div>
+    <div class="delta up">전쟁 전 대비 +11.7%</div>
+    <div class="meta">고점 1,488K(3/13) 대비 -10% 조정 중</div>
+  </div>
+</div>
+
+<div class="tl">
+  <div class="ti"><span class="td">3/01~03</span> 이란 UAE 미사일 공격 → 천궁-II 실전 투입</div>
+  <div class="ti peak"><span class="td">3/03</span> <strong>LIG넥스원 +30% 급등</strong> — 실전 뉴스 전부터 전쟁 수혜 선반영</div>
+  <div class="ti news"><span class="td">3/03</span> 매거진한경 '4조원어치 천궁-II 첫 요격 성공'</div>
+  <div class="ti news"><span class="td">3/05</span> 유용원 의원 '96% 요격률' 최초 공개</div>
+  <div class="ti peak"><span class="td">3/06</span> <strong>LIG넥스원 834K 고점</strong> (5거래일 +78%)</div>
+  <div class="ti news"><span class="td">3/10</span> Army Recognition · Eurasian Times 글로벌 확산</div>
+  <div class="ti"><span class="td">3/중</span> UAE 추가 요격탄 30발 긴급 수송 요청</div>
+  <div class="ti drop"><span class="td">3/17~24</span> <strong>조정 시작</strong>. LIG 834K → 641K (-23%)</div>
+  <div class="ti news"><span class="td">3/24</span> 글로벌이코노믹 '거품 경고'. Financial Post '3배 고평가'</div>
+</div>
+
+<p style="font-size:.82rem;margin-top:.75rem;">
+<strong>핵심:</strong> 가격이 3/3에 먼저 움직이고, 서사(3/5 유용원)가 뒤따르고, 글로벌 매체(3/10)는 더 늦었다. 과열 경고(3/24)는 가격 조정(-23%)보다 3주 뒤에야 나왔다. 서사가 가격을 후행하는 전형적 A 경로.
+</p>
+
+<!-- §3 세계가 말하는 것 -->
+<h2>세계가 말하는 것 — 7개 매체, 5:2 긍정 우세</h2>
+
+<div class="voice">
+  <div class="who">Financial Times</div>
+  <div class="what">"이란 전쟁으로 Patriot 경쟁 제품을 더 저렴한 값에 제시한 한국 방산 기업이 부상하고 있다."</div>
+</div>
+<div class="voice">
+  <div class="who">Eurasian Times</div>
+  <div class="what">"S-400에서 영감받은 한국 방공 시스템이 UAE 실전 데뷔에서 96% 요격률 달성."</div>
+</div>
+<div class="voice">
+  <div class="who">Washington Institute (미국 싱크탱크)</div>
+  <div class="what">"한국과 중동의 방산 현지화 전략이 새로운 전략적 적합성을 보인다."</div>
+</div>
+<div class="voice counter">
+  <div class="who">글로벌이코노믹 (반대쪽)</div>
+  <div class="what">"LIG넥스원 PSR 21.7배→35.3배 수직 상승. 고성장 기술주 수준. 작은 실망에도 급락 가능."</div>
+</div>
+<div class="voice counter">
+  <div class="who">Financial Post (반대쪽)</div>
+  <div class="what">"韓방산주가 미국 록히드마틴보다 3배 고평가. 일제 급락."</div>
+</div>
+
+<p class="meta">독립 소스 7개. 정보 계단 아님 — 각 매체 독자 분석 포함. 반대쪽 2개 포함(R-03).</p>
+
+<!-- §4 돈이 움직이는 곳 -->
+<h2>돈이 움직이는 곳 — 수주잔고 $72B, 중동 파이프라인</h2>
+
+<div class="num-grid">
+  <div class="num-card">
+    <div class="label">K-방산 수주잔고</div>
+    <div class="val up">$72B</div>
+    <div class="meta">사상 최초 돌파. 한화+KAI+LIG+현대로템 합산</div>
+  </div>
+  <div class="num-card">
+    <div class="label">LIG넥스원 PSR</div>
+    <div class="val" style="color:var(--yellow);">35.3<span style="font-size:.7rem;">배</span></div>
+    <div class="meta">2024년 21.7배에서 수직 상승. 록히드마틴의 3배</div>
+  </div>
+</div>
+
+<div class="pipe-row">
+  <span class="pipe-flag pf-done">계약</span>
+  <span><strong>UAE</strong> — 4조원 (10개 포대). 실전 후 추가 30발 긴급 수송 + 추가 포대 요청</span>
+  <span class="meta">운용 중</span>
+</div>
+<div class="pipe-row">
+  <span class="pipe-flag pf-done">계약</span>
+  <span><strong>사우디</strong> — $3.2B (10개 포대). 실전 입증으로 인도 가속 기대</span>
+  <span class="meta">인도 중</span>
+</div>
+<div class="pipe-row">
+  <span class="pipe-flag pf-done">계약</span>
+  <span><strong>이라크</strong> — $2.8B (8개 포대)</span>
+  <span class="meta">계약 체결</span>
+</div>
+<div class="pipe-row">
+  <span class="pipe-flag pf-new">문의</span>
+  <span><strong>카타르 · 쿠웨이트 · 바레인</strong> — 실전 입증 후 도입 문의 개시</span>
+  <span class="meta">미체결</span>
+</div>
+
+<p style="font-size:.82rem;margin-top:.75rem;">
+UAE(운용)+사우디(인도)+이라크(계약) = LIG넥스원 중동 수주잔고 ~10.2조원. 2028년 수출 비중 52% 전망. 카타르/쿠웨이트가 추가되면 파이프라인 다시 확대.
+</p>
+
+<!-- §5 경쟁사의 침묵 -->
+<h2>경쟁사의 침묵 — Raytheon이 말하지 않는 것</h2>
+
+<div class="silence">
+  <div class="icon">🔇</div>
+  <strong>Raytheon (Patriot 제조사)</strong> — Patriot과의 직접 비교에 대한 공식 반응 미발견. 천궁 실전 성공에 대한 코멘트 없음.
+  <p style="margin-top:.5rem;color:var(--muted);font-size:.78rem;">
+    경쟁사의 의도적 침묵 가능. 공개 반박은 자사 제품 약점 인정이 되므로 무대응 전략. 그러나 미 의회 로비 채널에서의 움직임은 미확인. — 침묵이 가장 의미 있는 반응일 수 있다.
+  </p>
+</div>
+
+<p style="font-size:.82rem;">
+Patriot 1발 $3.7~4.2M vs 천궁 ~$1.1M. 1/3 가격에 96% 요격률. 이 숫자 앞에서 Raytheon이 할 수 있는 말이 많지 않다. 향후 관찰 포인트: 가격 인하, 의회 로비, 또는 침묵 지속.
+</p>
+
+<!-- §6 미해소 -->
+<h2>열린 질문 — 4건</h2>
+
+<ul class="uq">
+  <li><strong>UQ-014:</strong> LIG넥스원 2026 실적이 PSR 35배를 정당화하는가? <span class="meta">(기한: 5/15)</span></li>
+  <li><strong>UQ-015:</strong> 카타르/쿠웨이트 GCC 신규 계약 체결 여부</li>
+  <li><strong>UQ-016:</strong> Raytheon의 대응 — 침묵 지속? 가격 인하? 로비?</li>
+  <li><strong>UQ-017:</strong> 천궁-III 개발 일정(2034년 배치)이 앞당겨지는가?</li>
+</ul>
+
+<p class="meta" style="margin-top:1rem;">Watch 4건 등록 완료 (W-UQ-014~017). 다음 도래: 3/29.</p>
+
+<p class="disc">
+  본 보고서는 정보 제공 목적이며 투자 판단의 근거로 사용할 수 없습니다.<br>
+  데이터 기준: 2026-03-24. 출처: Yahoo Finance, WebSearch, 각 매체 URL.<br>
+  reaction-monitor · Market Reaction Monitor · Standard
+</p>
+
+</div>
+
+<script>
+document.querySelector('.theme-btn').onclick=()=>{
+  const h=document.documentElement;
+  h.getAttribute('data-theme')==='light'?h.removeAttribute('data-theme'):h.setAttribute('data-theme','light');
+};
+</script>
+</body>
+</html>

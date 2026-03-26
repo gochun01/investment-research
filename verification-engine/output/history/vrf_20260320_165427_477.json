@@ -1,0 +1,283 @@
+{
+  "vrf_id": "vrf_20260320_165427_477",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟢",
+      "logic": "🟡",
+      "temporal": "🟡",
+      "incentive": "🟡",
+      "omission": "🔴"
+    },
+    "critical_flags": [
+      "문서/omission: Published 2/27. Iran war 3/2. Energy shock entirely unaccounted. All GDP/inflation forecasts potentially invalidated"
+    ],
+    "valid_until": "2026-04-27",
+    "validity_condition": "Iran war impact minimal AND oil stable",
+    "claims_count": 4
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260320_165427_477",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-20T16:54:27.470341",
+      "engine_version": "6layer_v2",
+      "document": {
+        "title": "Goldman Sachs Forecasts for Worlds Biggest Economies 2026",
+        "document_type": "macro_report",
+        "target_id": "GLOBAL_GDP",
+        "sector_id": "매크로",
+        "author_id": "Goldman Sachs Research",
+        "institution_id": "Goldman Sachs",
+        "source_url": "https://goldmansachs.com/forecast",
+        "date_published": "2026-02-27",
+        "date_accessed": "2026-03-20"
+      },
+      "previous_verification": ""
+    },
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "Sources + dates explicit",
+        "checklist_matched": [
+          "nr_macro_001",
+          "nr_macro_002"
+        ],
+        "checklist_missed": []
+      },
+      "incentive": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "Goldman Sachs investment bank. Market direction interest"
+      },
+      "omission": {
+        "verdict": "🔴",
+        "reason": "",
+        "notes": "Published 2/27. Iran war 3/2. Energy shock entirely unaccounted. All GDP/inflation forecasts potentially invalidated"
+      }
+    },
+    "claims": [
+      {
+        "claim_id": "c001",
+        "text": "Global GDP 2.9% in 2026 vs consensus 2.7%",
+        "claim_type": "수치주장",
+        "evidence_type": "estimate",
+        "location": "Lead",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "IMF 3.3% vs GS 2.9%. Estimate ceiling",
+            "evidence": [
+              {
+                "source": "IMF",
+                "tier": 1,
+                "value": "3.3%"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "Feb 27 pub. Pre-Iran war. Gap 21d + war shock",
+            "data_reference_date": "2026-02-27",
+            "gap_days": 21,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c002",
+        "text": "US GDP 2.8% vs consensus 2.2%",
+        "claim_type": "수치주장",
+        "evidence_type": "estimate",
+        "location": "US",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "GS above consensus +0.6%p"
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "Pre-war",
+            "data_reference_date": "2026-02-27",
+            "gap_days": 21,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c003",
+        "text": "Core PCE 3% to 2.2% by Dec 2026",
+        "claim_type": "예측",
+        "evidence_type": "estimate",
+        "location": "US",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "예측에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "예측에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "lr_033: Tariff fade premise. Iran war oil impact unaccounted (pre-war pub)",
+            "rules_triggered": [
+              "lr_033: counter_trend_omission"
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-GS-1",
+                "premise": "Tariff inflation fades mid-2026",
+                "current_status": "15% universal tariff ongoing",
+                "verdict": "🟡"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "예측에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c004",
+        "text": "China 4.8% vs consensus 4.6%",
+        "claim_type": "수치주장",
+        "evidence_type": "estimate",
+        "location": "China",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "IMF 4.6% vs GS 4.8%. Direction aligned",
+            "evidence": [
+              {
+                "source": "IMF",
+                "tier": 1,
+                "value": "4.6%"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      }
+    ],
+    "summary": {
+      "layer_verdicts": {
+        "fact": "🟡",
+        "norm": "🟢",
+        "logic": "🟡",
+        "temporal": "🟡",
+        "incentive": "🟡",
+        "omission": "🔴"
+      },
+      "critical_flags": [
+        "문서/omission: Published 2/27. Iran war 3/2. Energy shock entirely unaccounted. All GDP/inflation forecasts potentially invalidated"
+      ],
+      "valid_until": "2026-04-27",
+      "validity_condition": "Iran war impact minimal AND oil stable",
+      "invalidation_triggers": [
+        {
+          "event": "War impact update",
+          "expected_date": "2026-04-01",
+          "impact": "GDP revision"
+        },
+        {
+          "event": "Q1 GDP flash",
+          "expected_date": "2026-04-30",
+          "impact": "2.8% verification"
+        }
+      ],
+      "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+    }
+  }
+}

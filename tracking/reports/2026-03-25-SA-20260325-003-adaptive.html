@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stereo Analysis — 국무회의에 AI국무위원, 기업 이사회에 AI이사를 도입하여 의사결정 핵심 파트너로.</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>:root {
+  --navy:#0d1117;--dark:#161b22;--border:#30363d;
+  --text:#c9d1d9;--text-bright:#f0f6fc;--text-dim:#8b949e;
+  --blue:#58a6ff;--green:#4caf50;--yellow:#ffd600;
+  --red:#ff5252;--purple:#d2a8ff;--cyan:#80deea;--gold:#ffab00;
+  --surface-blue:#1a3a5c;--surface-text:#7ec8e3;
+  --subsurface-purple:#2a1a4a;--subsurface-text:#ce93d8;
+  --l7-gold-bg:#3a2800;--l7-gold-text:#ffd600;
+  --scp-high-bg:#3d0000;--scp-high-text:#ff5252;
+  --scp-mid-bg:#0a2540;--scp-mid-text:#58a6ff;
+  --scp-low-bg:#1c2028;--scp-low-text:#8b949e;
+  --framing-bg:#2a1a3e;--framing-text:#ce93d8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--navy);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.7}
+.container{max-width:780px;margin:0 auto;padding:16px}
+.topbar{padding:6px 16px;font-size:.7em;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-align:center}
+.topbar.red{background:#5c0000;color:#ff5252}
+.topbar.blue{background:#0a2540;color:#58a6ff}
+.topbar.navy{background:#0d1117;color:#8b949e;border-bottom:1px solid var(--border)}
+.report-header{padding:20px 16px 12px}
+.report-header h1{color:var(--text-bright);font-size:1.3em;margin-bottom:6px}
+.report-header .meta{color:var(--text-dim);font-size:.8em}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.badge{padding:4px 12px;border-radius:4px;font-size:.75em;font-weight:600;white-space:nowrap}
+.badge.scp-high{background:var(--scp-high-bg);color:var(--scp-high-text)}
+.badge.scp-mid{background:var(--scp-mid-bg);color:var(--scp-mid-text)}
+.badge.scp-low{background:var(--scp-low-bg);color:var(--scp-low-text)}
+.badge.type-badge{background:#1a2733;color:var(--cyan)}
+.badge.urgency-badge{background:#2a1a00;color:var(--gold)}
+.badge.framing{background:var(--framing-bg);color:var(--framing-text)}
+.exec-box{background:var(--dark);border-left:4px solid var(--gold);padding:16px 20px;margin:16px 0;border-radius:0 8px 8px 0}
+.exec-box .claim{color:var(--text-bright);font-size:1.05em;font-weight:500}
+.exec-box .sub{color:var(--text-dim);font-size:.82em;margin-top:6px}
+.section{margin:12px 0}.section-large{margin:16px 0}.section-small{margin:8px 0}
+.section-title{color:var(--blue);font-size:.9em;font-weight:700;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+.section-title.surface{color:var(--surface-text)}.section-title.subsurface{color:var(--subsurface-text)}.section-title.l7{color:var(--l7-gold-text)}
+.card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.card.surface{border-left:3px solid var(--surface-text)}
+.card.subsurface{border-left:3px solid var(--subsurface-text)}
+.card.l7{border-left:3px solid var(--l7-gold-text)}
+.card .layer-label{font-size:.75em;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.card .layer-label.surface-label{color:var(--surface-text)}
+.card .layer-label.subsurface-label{color:var(--subsurface-text)}
+.card .layer-label.l7-label{color:var(--l7-gold-text)}
+.card .content{color:var(--text);font-size:.85em}
+.card .detail{color:var(--text-dim);font-size:.82em;margin-top:4px}
+.card .fb-tag{background:#1a2733;color:var(--cyan);padding:2px 6px;border-radius:3px;font-size:.7em;margin-left:4px}
+table{width:100%;border-collapse:collapse;font-size:.82em}
+th{background:var(--dark);color:var(--text-dim);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:8px 12px;border-bottom:1px solid #1c2028}
+.num{font-family:'DM Mono',monospace;color:var(--text-bright)}
+.emotion-box{background:#1a1a2e;border:1px solid #2a2a4e;border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.emotion-box .emotion-label{color:var(--purple);font-size:.75em;font-weight:600}
+.emotion-box .emotion-content{font-size:.85em;margin-top:4px}
+.uncertainty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px}
+.uncertainty-cell{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center;font-size:.78em}
+.uncertainty-cell .layer-name{color:var(--text-bright);font-weight:600}
+.uncertainty-cell .bar{font-family:'DM Mono',monospace;color:var(--yellow);font-size:.85em;margin-top:2px}
+.uncertainty-cell.weakest{border-color:var(--red);background:#1a0000}
+.noise-card{background:#1c2028;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.noise-card .verdict{color:var(--text-dim);font-size:1em;font-weight:600}
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scenario-card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px}
+.scenario-card .condition{color:var(--text-bright);font-weight:500;font-size:.85em}
+.scenario-card .result{color:var(--text-dim);font-size:.8em;margin-top:4px}
+.question-card{background:var(--dark);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:8px;padding:10px 14px;margin-bottom:6px}
+.question-card .lens{color:var(--purple);font-size:.7em;font-weight:600;text-transform:uppercase}
+.question-card .q-text{color:var(--text-bright);font-size:.85em;margin-top:2px}
+.question-card .q-answer{color:var(--text-dim);font-size:.8em;margin-top:4px}
+.tracking-list{list-style:none}
+.tracking-list li{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-bottom:6px;font-size:.82em}
+.tracking-list .indicator{color:var(--text-bright);font-weight:500}
+.tracking-list .check-date{color:var(--gold);font-family:'DM Mono',monospace;font-size:.8em}
+.signal-noise-box{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-top:8px}
+.signal-noise-box .signal{color:var(--green);font-size:.85em}
+.signal-noise-box .noise{color:var(--text-dim);font-size:.85em;margin-top:4px}
+.footer{margin:24px 0;padding-top:12px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.72em;text-align:center}
+.disclaimer{color:#484f58;font-size:.68em;margin-top:8px;font-style:italic}
+@media(max-width:600px){.scenario-grid{grid-template-columns:1fr}.uncertainty-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:480px){.container{padding:8px}.report-header h1{font-size:1.1em}.exec-box{padding:12px 14px}.section,.section-large,.section-small{margin:8px 0}}</style>
+</head>
+<body>
+<div class="topbar blue">DEEP ANALYSIS</div>
+<div class="container">
+<div class="report-header">
+  <h1>🔬 입체 분석 │ 국무회의에 AI국무위원, 기업 이사회에 AI이사를 도입하여 의사결정 핵심 파트너로.</h1>
+  <div class="meta">SA-20260325-003 · 2026-03-25 · 복합 분석 (POLICY×STRUCT) · 9개 섹션</div>
+</div>
+<div class="section"><div class="section-title">Pre-Read</div><div class="badges"><span class="badge type-badge">POLICY×STRUCT</span><span class="badge scp-mid">SCP 3</span><span class="badge urgency-badge">WATCH</span><span class="badge" style="background:var(--dark);color:var(--text-dim);border:1px solid var(--border)">full</span></div><div style="color:var(--text-dim);font-size:.78em;margin-top:6px">SCP: AI를 도구에서 의사결정 참여자로 격상. 거버넌스 구조 변화. 다만 아직 제안 단계, 법적 장벽 높음.</div></div>
+<div class="section-large"><div class="exec-box"><div class="claim">[POLICY×STRUCT SCP3] 국무회의에 AI국무위원, 기업 이사회에 AI이사를 도입하여 의사결정 핵심 파트너로. → AI 거버넌스 테마 단기 자극. 실현 확률 10%이므로 구조적 투자 근거 없음.</div></div></div>
+<div class="section-large"><div class="section-title surface">━━ SURFACE (보이는 것) ━━</div><div class="card surface"><div class="layer-label surface-label">L1 헤드라인 디코딩</div><div class="content">국무회의에 AI국무위원, 기업 이사회에 AI이사를 도입하여 의사결정 핵심 파트너로.</div><div style="margin-top:6px"><span class="badge framing">[권위호소]</span> <span class="badge framing">[긴급]</span> <span class="badge framing">[낙관]</span> <span class="badge framing">[숫자마법]</span> </div></div><div class="card surface"><div class="layer-label surface-label">L2 팩트 스켈레톤</div><table><thead><tr><th>#</th><th>팩트</th><th>신뢰도</th><th>출처</th></tr></thead><tbody><tr><td class="num"></td><td>매경 3+1 액션플랜 '국가운영' 축에 포함</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>국무회의에 AI국무위원 시스템 도입 제안</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>기업 이사회에 AI이사 도입 제안</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>영국·루마니아에서 이미 도입</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>이재명 대통령 '뜻깊다' 축사</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>정재계 500명 참석</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr></tbody></table><div style="margin-top:8px;color:var(--text-dim);font-size:.82em">📦 기사가 말하지 않은 것:</div><div style="font-size:.82em;padding-left:12px">├── AI국무위원의 구체적 형태 (자문? 의결권?), 누가 만들고 운영하는가 — 일체 없음</div><div style="font-size:.82em;padding-left:12px">├── 법적 근거: 국무위원은 헌법 기관. AI에게 지위 부여 시 헌법 개정 필요 여부 미검토</div><div style="font-size:.82em;padding-left:12px">├── AI이사의 법적 책임: 상법상 선관주의의무+손해배상. AI에게 물을 수 있는가?</div><div style="font-size:.82em;padding-left:12px">├── 해외 사례 상세: 영국·루마니아가 '자문'인지 '의결'인지 구분 없이 '도입' 표현</div><div style="font-size:.82em;padding-left:12px">├── 실패 사례: 알고리즘 편향, 블랙박스 문제, DAO Hack(2016) 등 미언급</div></div><div class="card surface"><div class="layer-label surface-label">L3 이해관계 지도</div><table><thead><tr><th>플레이어</th><th>입장</th><th>이익</th><th>숨은 동기</th></tr></thead><tbody><tr><td style="color:var(--text-bright)">매일경제</td><td>제안자</td><td>AI 거버넌스 아젠다 선점</td><td style="color:var(--text-dim)">창간 60주년 브랜딩</td></tr><tr><td style="color:var(--text-bright)">AI 기업 (네이버/카카오/OpenAI)</td><td>미언급 수혜자</td><td>AI국무위원/이사 = 자사 제품 납품 시장</td><td style="color:var(--text-dim)">거대 B2G/B2B 시장 창출</td></tr><tr><td style="color:var(--text-bright)">기존 국무위원/이사</td><td>잠재적 위협</td><td>권한 희석 가능</td><td style="color:var(--text-dim)">저항 예상</td></tr><tr><td style="color:var(--text-bright)">법조계</td><td>미언급</td><td>AI 책임 귀속 논쟁 → 법률 수요</td><td style="color:var(--text-dim)">프레임워크 재설계</td></tr><tr><td style="color:var(--text-bright)">노동계</td><td>미언급</td><td>AI 의사결정 → 고용 결정 영향</td><td style="color:var(--text-dim)">'AI가 해고를 결정하면?'</td></tr><tr><td style="color:var(--text-bright)">데이터 기업 (팔란티어/구글)</td><td>침묵 (FB-2)</td><td>국가 의사결정 데이터 접근권 = 거대한 권력</td><td style="color:var(--text-dim)">데이터 주권</td></tr><tr><td style="color:var(--text-bright)">시민사회/윤리 단체</td><td>침묵 (FB-2)</td><td>AI 편향·투명성·설명가능성</td><td style="color:var(--text-dim)">반드시 나올 플레이어</td></tr></tbody></table></div></div>
+<div class="section-large"><div class="section-title subsurface">━━ SUBSURFACE (보이지 않는 것) ━━</div><div class="card subsurface"><div class="layer-label subsurface-label">L4 인과 역추적</div><div class="content" style="color:var(--text-bright)">왜 지금: 매경 60주년 행사 + AI 역량의 질적 도약 + 글로벌 AI 거버넌스 트렌드</div><div class="detail">├── 직접 트리거: 매경 창간 60주년. 가장 파격적인 제안 필요.</div><div class="detail">├── 구조적 원인: AI가 '질문에 답하기'를 넘어 '판단 보조'로 진입. 글로벌 AI 거버넌스 논의 가속.</div><div class="detail">└── 타이밍: </div><div style="margin-top:8px;font-size:.8em;color:var(--text-dim);white-space:pre-wrap;font-family:DM Mono,monospace">AI역량도약 + 글로벌거버넌스트렌드 + 한국AI위기론 → 매경60주년 행사 → 파격제안 필요 → AI국무위원</div></div><div class="card subsurface"><div class="layer-label subsurface-label">L5 구조 레이어</div><div class="content">소속 시스템: AI 거버넌스 — '도구→파트너' 전환</div><div class="content">판정: ❓ — AI의 위치가 도구에서 의사결정 참여자로 바뀌면 권력 구조 자체가 변함. 다만 SCP 3: 제안 단계, 법적 장벽 높음.</div><div class="detail">전례: 영국 AI Safety Institute(자문), 루마니아 Ion(법안검토 보조). 모두 자문 수준. 의결권 사례는 세계 어디에도 없음. DAO(2016): 코드 의사결정, 소규모 작동, 해킹 시 대혼란.</div></div><div class="card subsurface"><div class="layer-label subsurface-label">L6 2차 효과 체인</div><div class="detail">├── [단기] AI 거버넌스 담론 활성화 + AI기업 주가 테마 + '법적 인격' 논쟁 시작.</div><div class="detail">├── [중기] 패턴[규제→회피→혁신]: 'AI 자문위원'으로 축소 가능성 높음. 패턴[기술대체→일자리→반발]: AI이사가 구조조정 판단에 연루 시 정치적 반발.</div><div class="detail">└── [장기] 실현(10%): 세계 최초 + 윤리 논쟁 폭발. 축소(60%): 자문 수준. 좌절(30%): 헌법/상법 + 노동계 반발.</div><div style="margin-top:8px"><div class="scenario-grid"><div class="scenario-card"><div class="condition">삼성/SK 이사회 AI이사 실험 도입</div><div class="result">민간 선행 → 정부 후속</div></div><div class="scenario-card"><div class="condition">AI 자문위원 수준으로 축소</div><div class="result">영국과 동일. 파격 아님.</div></div><div class="scenario-card"><div class="condition">헌법/상법 장벽 + 반발로 무산</div><div class="result">소멸</div></div></div></div></div></div>
+<div class="section"><div class="section-title" style="color:var(--purple)">🔍 돌발 질문 (Emergent Questions)</div><div class="question-card"><div class="lens">[반전]</div><div class="q-text">AI국무위원이 잘못된 판단을 내리면 누가 책임지는가?</div><div class="q-answer">→ 답을 모름. 이것이 해결되지 않으면 도입 자체가 불가.</div></div><div class="question-card"><div class="lens">[침묵]</div><div class="q-text">AI국무위원을 누가 만들고 운영하는가?</div><div class="q-answer">→ 운영 주체 = 국가 의사결정 영향력. 기술 문제가 아니라 권력 문제.</div></div><div class="question-card"><div class="lens">[역사]</div><div class="q-text">과거 비인간 의사결정자 도입 사례는?</div><div class="q-answer">→ DAO(2016): 코드 의사결정. 소규모 작동, 해킹 시 대혼란.</div></div></div>
+<div class="section-large"><div class="section-title l7">L7 판단 프레임</div><div class="card l7"><div class="layer-label l7-label">L7 JUDGMENT FRAME</div><div class="content" style="color:var(--text-bright)">📍 투자 함의: AI 거버넌스 테마 단기 자극. 실현 확률 10%이므로 구조적 투자 근거 없음.</div><div class="content" style="color:var(--red);margin-top:6px">🚨 Kill Condition: 국회 AI거버넌스 특별법 발의 → 격상. 대기업 AI이사 실험 → 민간 선행.</div><div style="margin-top:8px"><div style="color:var(--text-dim);font-size:.82em;margin-bottom:4px">📡 추적 지표:</div><ul class="tracking-list"><li><span class="indicator">국회 AI 관련 법안 발의</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">0건</span> <span style="color:var(--text-dim)">→ 트리거: 1건+</span> <span class="check-date">[4월 정기국회]</span></li><li><span class="indicator">대기업 AI이사 실험 공시</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">0건</span> <span style="color:var(--text-dim)">→ 트리거: 1건+</span> <span class="check-date">[수시]</span></li></ul></div><div class="signal-noise-box"><div class="signal">현재 노이즈에 가까움. 대기업 AI이사 실험 도입 시 → 시그널. 6개월 후속 없으면 → 노이즈 확정.</div></div></div></div>
+<div class="section"><div class="section-title">📊 불확실성 지도</div><div class="uncertainty-grid"><div class="uncertainty-cell"><div class="layer-name">L1</div><div class="bar">■■■■■</div></div><div class="uncertainty-cell"><div class="layer-name">L2</div><div class="bar">■■■■□</div></div><div class="uncertainty-cell"><div class="layer-name">L3</div><div class="bar">■■■□□</div></div><div class="uncertainty-cell"><div class="layer-name">L4</div><div class="bar">■■■□□</div></div><div class="uncertainty-cell"><div class="layer-name">L5</div><div class="bar">■■■■□</div></div><div class="uncertainty-cell weakest"><div class="layer-name">L6</div><div class="bar">■■□□□</div></div><div class="uncertainty-cell"><div class="layer-name">L7</div><div class="bar">■■■□□</div></div></div><div style="margin-top:8px;font-size:.82em;color:var(--red)">⚠️ 약한 고리: L6 — </div><div style="font-size:.82em;color:var(--text-dim)">📡 보강: 영국 AI Safety Institute + 루마니아 Ion 사례 상세 조사</div></div>
+<div class="section-small"><div class="section-title">🔄 되먹임 기록</div><div class="card"><div class="content">실행된 FB: FB-1, FB-2, FB-4</div><div class="detail">FB-1 (L4→L2): L4→L2: 법적 근거 미검토, 실패 사례 미언급 추가</div><div class="detail">FB-2 (L5→L3): L5→L3: 데이터 기업(팔란티어/구글), 시민사회/윤리 단체 추가</div><div class="detail" style="color:var(--text-bright);margin-top:6px">FB-4 최종 대조: 처음 '파격적 AI 거버넌스 혁신' → 분석 후 '기술이 아니라 권력·책임·민주주의의 문제'. 핵심은 '누가 만들고, 누가 책임지고, 누가 통제하는가'.</div></div></div>
+<div class="section-small"><div class="section-title">✅ 자기 점검</div><div class="card"><div class="content" style="color:var(--yellow)">15/12 통과</div></div></div>
+
+<div class="footer">
+  Stereo Analyzer v2.0 · SA-20260325-003
+  <div class="disclaimer">이 보고서는 분석 결과입니다. 투자 판단이나 행동 권고가 아닙니다.</div>
+</div>
+</div></body></html>
