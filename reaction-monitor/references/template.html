@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시장 반응 수집 — {{TITLE}} | {{DATE}}</title>
+<style>
+  :root {
+    --price:#42a5f5;--narrative:#ff9800;--expert:#ab47bc;
+    --policy:#ef5350;--positioning:#66bb6a;
+    --converge:#4caf50;--diverge:#ff9800;--decouple:#f44336;--silence:#9e9e9e;
+    --bg:#0d1117;--surface:#161b22;--border:#30363d;
+    --text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:2rem;max-width:1100px;margin:0 auto;}
+  h1{font-size:1.5rem;margin-bottom:.3rem;}
+  h2{font-size:1.2rem;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+  h3{font-size:1rem;margin:1.5rem 0 .5rem;}
+  .meta{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem;}
+  .status-bar{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0 2rem;}
+  .badge{padding:.35rem .75rem;border-radius:6px;font-size:.8rem;font-weight:600;}
+  .b-dec{background:rgba(244,67,54,.15);color:var(--decouple);border:1px solid rgba(244,67,54,.3);}
+  .b-div{background:rgba(255,152,0,.15);color:var(--diverge);border:1px solid rgba(255,152,0,.3);}
+  .b-con{background:rgba(76,175,80,.15);color:var(--converge);border:1px solid rgba(76,175,80,.3);}
+  .b-sil{background:rgba(158,158,158,.15);color:var(--silence);border:1px solid rgba(158,158,158,.3);}
+  .b-pol{background:rgba(239,83,80,.15);color:var(--policy);border:1px solid rgba(239,83,80,.3);}
+  .b-std{background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.3);}
+  .fp{display:grid;grid-template-columns:110px 1fr;gap:.3rem .75rem;background:var(--surface);padding:1rem;border-radius:8px;border:1px solid var(--border);font-size:.85rem;}
+  .fp-l{color:var(--muted);font-weight:600;}
+  table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.82rem;}
+  th{background:var(--surface);color:var(--muted);text-align:left;padding:.5rem .6rem;border:1px solid var(--border);font-weight:600;}
+  td{padding:.5rem .6rem;border:1px solid var(--border);vertical-align:top;}
+  tr:hover td{background:rgba(88,166,255,.04);}
+  .lt{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-weight:700;margin-right:.3rem;}
+  .t-p{background:rgba(66,165,245,.15);color:var(--price);}
+  .t-n{background:rgba(255,152,0,.15);color:var(--narrative);}
+  .t-e{background:rgba(171,71,188,.15);color:var(--expert);}
+  .t-po{background:rgba(239,83,80,.15);color:var(--policy);}
+  .t-ps{background:rgba(102,187,106,.15);color:var(--positioning);}
+  .pos{color:#66bb6a;}.neg{color:#ef5350;}.neu{color:#ff9800;}.spl{color:#ab47bc;}
+  .comment{background:rgba(88,166,255,.06);border-left:3px solid var(--accent);padding:.75rem 1rem;margin:1rem 0;font-size:.85rem;border-radius:0 6px 6px 0;}
+  .comment strong{color:var(--accent);}
+  .pb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+  .pb h3{margin-top:0;color:var(--accent);}
+  .dg{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin:.75rem 0;text-align:center;}
+  .dc{padding:.5rem;border-radius:6px;background:rgba(255,255,255,.03);border:1px solid var(--border);}
+  .dl{font-size:.7rem;color:var(--muted);display:block;}
+  .dv{font-size:1.1rem;font-weight:700;margin-top:.2rem;}
+  .tl{position:relative;padding-left:2rem;margin:1rem 0;}
+  .tl::before{content:'';position:absolute;left:.6rem;top:0;bottom:0;width:2px;background:var(--border);}
+  .ti{position:relative;margin-bottom:.75rem;font-size:.82rem;}
+  .ti::before{content:'';position:absolute;left:-1.65rem;top:.45rem;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);}
+  .ti.war::before{border-color:var(--policy);}
+  .ti.sec::before{border-color:var(--positioning);}
+  .td{color:var(--muted);font-size:.75rem;}
+  .uq{list-style:none;padding:0;}
+  .uq li{padding:.75rem 0;border-bottom:1px solid var(--border);font-size:.85rem;}
+  .uq-open::before{content:'⏳';margin-right:.5rem;}
+  .uq-resolved::before{content:'✅';margin-right:.5rem;}
+  .uq-meta{font-size:.75rem;color:var(--muted);margin-top:.3rem;}
+  .uq-type{display:inline-block;padding:.1rem .4rem;border-radius:3px;font-size:.7rem;font-weight:600;margin-left:.3rem;}
+  .uq-date{background:rgba(66,165,245,.15);color:var(--price);}
+  .uq-condition{background:rgba(255,152,0,.15);color:var(--diverge);}
+  .uq-data{background:rgba(102,187,106,.15);color:var(--positioning);}
+  .uq-threshold{background:rgba(171,71,188,.15);color:var(--expert);}
+  .uq-help{font-size:.78rem;color:var(--accent);font-style:italic;}
+  .src{font-size:.78rem;color:var(--muted);margin-top:1rem;}
+  .src a{color:var(--accent);text-decoration:none;}
+  .src a:hover{text-decoration:underline;}
+  .src li{margin-bottom:.3rem;}
+  @media(max-width:600px){body{padding:1rem;}.dg{grid-template-columns:repeat(3,1fr);}.fp{grid-template-columns:90px 1fr;}}
+</style>
+</head>
+<body>
+
+<h1>시장 반응 수집 — {{TITLE}}</h1>
+<div class="meta">{{DATE}} | {{DEPTH}} | Market Reaction Monitor</div>
+
+<div class="status-bar">
+  <span class="badge b-dec">방향: {{DIRECTION}}</span>
+  <span class="badge b-div">비례: {{PROPORTIONALITY}}</span>
+  <span class="badge b-pol">전파: {{PROPAGATION}}</span>
+  <span class="badge b-std">{{UQ_SUMMARY}}</span>
+</div>
+
+<!-- §1 -->
+<h2>§1 쟁점 지문</h2>
+<div class="fp">
+  <span class="fp-l">영역</span><span>{{FP_DOMAIN}}</span>
+  <span class="fp-l">지리</span><span>{{FP_GEO}}</span>
+  <span class="fp-l">접촉 자산</span><span>{{FP_ASSETS}}</span>
+  <span class="fp-l">이해관계자</span><span>{{FP_STAKEHOLDERS}}</span>
+  <span class="fp-l">시간 성격</span><span>{{FP_TIME}}</span>
+</div>
+
+<!-- §2 -->
+<h2>§2 선정 채널</h2>
+{{CHANNELS_TABLE}}
+
+<!-- §3 -->
+<h2>§3 수집된 반응</h2>
+
+<h3><span class="lt t-p">가격 반응</span></h3>
+{{PRICE_TABLE}}
+
+<h3><span class="lt t-n">서사 반응</span></h3>
+{{NARRATIVE_TABLE}}
+
+<h3><span class="lt t-e">전문가 반응</span></h3>
+{{EXPERT_TABLE}}
+
+<h3><span class="lt t-po">정책 반응</span></h3>
+{{POLICY_TABLE}}
+
+<h3><span class="lt t-ps">포지셔닝 반응</span></h3>
+{{POSITIONING_TABLE}}
+
+<!-- §4 -->
+<h2>§4 패턴 판독</h2>
+
+<div class="pb">
+<h3>렌즈 1: 방향 일치도 — {{DIRECTION}}</h3>
+{{DIRECTION_GRID}}
+<p style="font-size:.85rem;margin-top:.5rem;">{{DIRECTION_RATIONALE}}</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 2: 시간 구조 — {{TIME_STRUCTURE}}</h3>
+{{TIMELINE}}
+<p style="font-size:.85rem;margin-top:.5rem;">{{TIME_RATIONALE}}</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 3: 비례성 — {{PROPORTIONALITY}}</h3>
+<p style="font-size:.85rem;">{{PROP_RATIONALE}}</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 4: 전파 경로 — {{PROPAGATION}}</h3>
+<p style="font-size:.85rem;">{{PROPAGATION_RATIONALE}}</p>
+<p style="font-size:.85rem;color:var(--accent);margin-top:.5rem;"><strong>후속 관찰:</strong> {{NEXT_OBSERVATION}}</p>
+</div>
+
+<!-- §5 -->
+<h2>§5 미해소 질문</h2>
+{{UNRESOLVED}}
+<p style="font-size:.82rem;color:var(--muted);margin-top:.75rem;"><strong>다음 확인:</strong> {{NEXT_CHECK}}</p>
+
+<!-- Sources -->
+<h2>Sources</h2>
+{{SOURCES}}
+
+<p style="text-align:center;color:var(--muted);font-size:.7rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);">
+  Market Reaction Monitor | reaction-monitor | {{DATE}} | Phase 0 미해소 자동 체크 활성
+</p>
+</body>
+</html>
