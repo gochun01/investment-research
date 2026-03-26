@@ -7,13 +7,19 @@
 
   "issue_summary": "미국 IEEPA 15→25% 관세, EU IAA 역내생산 강제, 중국 BYD 수출 공세가 동시 임계. 한국 자동차 수출모델→현지생산모델 전환 가속. 현대차 이미 대응 중($6.3B 투자+120만대 CAPA).",
 
-  "phase": 1,
+  "phase": 2,
   "phase_log": [
     {
       "phase": 1,
       "date": "2026-03-26",
       "trigger": "매경 칼럼 + issue→reaction→stereo 파이프라인 실행",
       "note": "SA-20260326-002에서 생성. CUMULATIVE 구조."
+    },
+    {
+      "phase": 2,
+      "date": "2026-03-26",
+      "trigger": "파이프라인 풀 실행. SCP 3→4 상향. core-extractor 수출 -29.4% 확인.",
+      "note": "SA-20260326-007. 5 Agent 병렬. 총 111 MCP. 시나리오 D(SDV) 신규 추가."
     }
   ],
 
