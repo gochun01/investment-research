@@ -1,0 +1,30 @@
+{
+  "id": "SA-20260326-002",
+  "date": "2026-03-26",
+  "title": "DXY↓인데 KRW↓ — macro가 못 보는 것을 PSF로 해부",
+  "pipeline": "scanner → rm → macro → PSF → Stereo (PSF+macro 교차)",
+  "pre_read": {"type": "MACRO×POLICY", "scp": 3, "urgency": "WATCH"},
+  "one_line": "1,500의 70%는 NPS 구조적 자본유출. macro 5경로 밖의 한국 고유 변수. DXY↓=KRW↑ 공식이 깨짐.",
+  "key_discovery": "macro 8축·5경로 어디에도 NPS 해외투자가 없다. 이것이 시스템 사각지대.",
+  "macro_cross": {
+    "B1_DFII10": {"value": 2.06, "krw_impact": "한미 금리차 고정 → KRW↓"},
+    "B2_DXY": {"value": 99.63, "krw_impact": "약세이나 KRW 미반영 ★ 괴리"},
+    "C7_Brent": {"value": 98.13, "krw_impact": "경상수지 악화 → KRW↓"},
+    "regime": "🟡 Transition 3/5"
+  },
+  "psf_cross": {
+    "P_impact": "하방 3 vs 상방 1 (P3 조건부)",
+    "S1_key": "실질금리 2.06% = 유일한 S층 핵심",
+    "F1_anomaly": "DXY↓인데 KRW↓ = NPS가 DXY 효과 상쇄",
+    "L3_L5_weakening": "에너지+지정학 Link 약화 = KRW 반등 조건 형성 중",
+    "L_trade_emerging": "301 잠복 = 새 역풍"
+  },
+  "scenarios": {
+    "A_ceasefire": {"prob": "35%", "krw": "1,450~1,480"},
+    "B_stalemate": {"prob": "40%", "krw": "1,490~1,530 (뉴노멀)"},
+    "C_escalation": {"prob": "15%", "krw": "1,550~1,600"},
+    "WGBI": {"prob": "??", "krw": "구조적 강세 전환. $50~80B. 유일한 해법."}
+  },
+  "uncertainty_weakest": "L6 — WGBI 편입 시점",
+  "feedback_fb4": "처음: 전쟁 때문 → 지금: 70% NPS 구조적. macro 사각지대. DXY-KRW 디커플링. ✅ 다르게 보인다."
+}

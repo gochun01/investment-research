@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KRW 1,506 입체 해부 — PSF+macro 교차 | Stereo Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0a1628;--surface:#161b22;--surface-alt:#1c2333;--border:#30363d;--text:#e6edf3;--text-secondary:#b0b8c1;--muted:#8b949e;--accent:#58a6ff;--green:#4caf50;--yellow:#ff9800;--red:#f44336;--purple:#ab47bc;--gap-sm:.5rem;--gap-md:1rem;--gap-lg:1.5rem;--gap-xl:2.5rem;--radius-sm:4px;--radius-md:8px}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;max-width:860px;margin:0 auto}
+  .topbar{padding:.5rem 2rem;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;background:#1565c0;color:#fff}
+  .report-header{padding:2rem 2rem 1.5rem;border-bottom:1px solid var(--border)}
+  .report-header h1{font-family:'Libre Baskerville',serif;font-size:1.5rem;font-weight:700;line-height:1.3;margin-bottom:.4rem}
+  .report-header .subtitle{font-size:.88rem;color:var(--text-secondary);margin-bottom:.75rem}
+  .report-header .meta{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted)}
+  .content{padding:0 2rem 2rem}
+  h2{font-family:'Libre Baskerville',serif;font-size:1.1rem;font-weight:700;margin:var(--gap-xl) 0 var(--gap-md);padding-bottom:var(--gap-sm);border-bottom:1px solid var(--border)}
+  h3{font-size:.92rem;font-weight:600;margin:var(--gap-lg) 0 var(--gap-sm)}
+  p{font-size:.86rem;margin-bottom:var(--gap-sm)}
+  .num{font-family:'DM Mono',monospace;font-weight:500}
+  .badge{display:inline-block;padding:.25rem .65rem;border-radius:var(--radius-sm);font-family:'DM Mono',monospace;font-size:.73rem;font-weight:600;line-height:1}
+  .badge-green{background:rgba(76,175,80,.15);color:var(--green);border:1px solid rgba(76,175,80,.3)}
+  .badge-yellow{background:rgba(255,152,0,.15);color:var(--yellow);border:1px solid rgba(255,152,0,.3)}
+  .badge-red{background:rgba(244,67,54,.15);color:var(--red);border:1px solid rgba(244,67,54,.3)}
+  .badge-blue{background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.3)}
+  .badge-purple{background:rgba(171,71,188,.15);color:var(--purple);border:1px solid rgba(171,71,188,.3)}
+  table{width:100%;border-collapse:collapse;margin:var(--gap-md) 0;font-size:.8rem}
+  th{background:var(--surface);color:var(--muted);text-align:left;padding:.45rem .55rem;border:1px solid var(--border);font-weight:600}
+  td{padding:.45rem .55rem;border:1px solid var(--border);vertical-align:top}
+  .exec-box{background:linear-gradient(135deg,var(--surface),var(--surface-alt));border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:var(--radius-md);padding:1.25rem 1.5rem;margin:var(--gap-lg) 0}
+  .exec-box .claim{font-family:'Libre Baskerville',serif;font-size:1rem;font-weight:700;line-height:1.5;margin-bottom:.5rem}
+  .exec-box .verdict{font-family:'DM Mono',monospace;font-size:.78rem;color:var(--text-secondary)}
+  .alert-box{border-radius:var(--radius-md);padding:.9rem 1.15rem;margin:var(--gap-md) 0;font-size:.83rem}
+  .alert-box.warn{background:rgba(255,152,0,.1);border:1px solid rgba(255,152,0,.3);border-left:4px solid var(--yellow)}
+  .alert-box.danger{background:rgba(244,67,54,.1);border:1px solid rgba(244,67,54,.3);border-left:4px solid var(--red)}
+  .alert-box.info{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25);border-left:4px solid var(--accent)}
+  .comment{background:rgba(88,166,255,.06);border-left:3px solid var(--accent);padding:.7rem .9rem;margin:var(--gap-md) 0;font-size:.83rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .comment strong{color:var(--accent)}
+  .psf-box{background:rgba(171,71,188,.06);border-left:3px solid var(--purple);padding:.7rem .9rem;margin:var(--gap-md) 0;font-size:.83rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .psf-box strong{color:var(--purple)}
+  .macro-box{background:rgba(76,175,80,.06);border-left:3px solid var(--green);padding:.7rem .9rem;margin:var(--gap-md) 0;font-size:.83rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .macro-box strong{color:var(--green)}
+  .eq-box{background:rgba(171,71,188,.08);border:1px solid rgba(171,71,188,.25);border-left:4px solid var(--purple);border-radius:var(--radius-md);padding:.9rem 1.15rem;margin:var(--gap-md) 0;font-size:.83rem}
+  .eq-box strong{color:var(--purple)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.1rem;margin:var(--gap-md) 0}
+  .scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--gap-md);margin:var(--gap-md) 0}
+  .scenario-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:.9rem}
+  .scenario-card .prob{font-family:'DM Mono',monospace;font-size:1.4rem;font-weight:700;margin-bottom:.2rem}
+  .scenario-card .label{font-size:.83rem;font-weight:600;margin-bottom:.4rem}
+  .scenario-card .desc{font-size:.78rem;color:var(--text-secondary)}
+  .um-grid{display:grid;grid-template-columns:60px 1fr auto;gap:.25rem .6rem;font-size:.83rem;margin:var(--gap-md) 0}
+  .um-label{color:var(--muted);font-weight:600}
+  .um-bar{font-family:'DM Mono',monospace}
+  .layer-divider{font-family:'DM Mono',monospace;font-size:.78rem;color:var(--muted);letter-spacing:.1em;margin:var(--gap-xl) 0 var(--gap-md);text-align:center}
+  .sources{font-size:.76rem;color:var(--muted);margin-top:var(--gap-md)}
+  .sources a{color:var(--accent);text-decoration:none}
+  .sources li{margin-bottom:.25rem}
+  .disclaimer{text-align:center;color:var(--muted);font-size:.68rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+  .pos{color:var(--green)}.neg{color:var(--red)}.neu{color:var(--yellow)}
+  @media(max-width:780px){body{max-width:100%}.topbar,.report-header,.content{padding-left:1rem;padding-right:1rem}.report-header h1{font-size:1.25rem}.scenario-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>STEREO v2.0 + PSF + MACRO &mdash; MACRO&times;POLICY SCP 3</span>
+  <span>2026-03-26</span>
+</div>
+
+<div class="report-header">
+  <h1>DXY는 내리는데 원화는 왜 안 오르나.<br>macro가 못 보는 것을 PSF로 해부한다.</h1>
+  <div class="subtitle">KRW 1,506 | macro 5대 경로 분해 + PSF 3층 교차 + 한국 고유 구조 변수</div>
+  <div class="meta">2026-03-26 | MACRO&times;POLICY | SCP 3 | WATCH | SA-20260326-002<br>
+  Pipeline: Scanner &rarr; rm &rarr; macro &rarr; PSF &rarr; Stereo (PSF+macro 교차 모드)</div>
+</div>
+
+<div class="content">
+
+  <div class="exec-box">
+    <div class="claim">
+      macro DXY(B2)는 99.63으로 약세인데 KRW은 1,506으로 17년 최저다.
+      이 괴리의 70%는 국민연금 해외투자 &mdash; macro의 8축&middot;5경로 어디에도 없는 한국 고유 변수다.
+      전쟁이 끝나도, 레짐이 🟢로 가더라도, 이 구조가 바뀌지 않으면 KRW은 돌아오지 않는다.
+    </div>
+    <div class="verdict">
+      <span class="badge badge-yellow">🔀 전환</span>
+      <span class="badge badge-purple">PSF+macro 교차</span>
+      <span class="badge badge-red">시스템 사각지대</span>
+    </div>
+  </div>
+
+  <div class="layer-divider">━━ L4. macro 5대 경로로 분해 ━━</div>
+
+  <h2>KRW 1,506을 만든 5개 힘</h2>
+
+  <table>
+    <tr><th>경로</th><th>macro 지표</th><th>현재</th><th>KRW 영향</th><th>해소 조건</th></tr>
+    <tr>
+      <td><strong>정상1 (Fed)</strong></td>
+      <td>B1 DFII10</td>
+      <td class="num neg">2.06% ↑</td>
+      <td>한미 금리차 100bp+ 고정 &rarr; KRW ↓</td>
+      <td>B1 &lt; 2.0% + Fed 인하</td>
+    </tr>
+    <tr>
+      <td><strong>교란2 (유가)</strong></td>
+      <td>C7 Brent</td>
+      <td class="num neu">$98 ↓</td>
+      <td>수입비용 &rarr; 경상수지 악화 &rarr; KRW ↓</td>
+      <td>Brent &lt; $80</td>
+    </tr>
+    <tr>
+      <td><strong>구조적 유출 ★★</strong></td>
+      <td><em>macro 범위 밖</em></td>
+      <td class="num neg">NPS $70조/년</td>
+      <td>환율 70% 원인. DXY↓에도 KRW↓ &rarr; ↓↓</td>
+      <td><strong>해소 불가 (구조적)</strong></td>
+    </tr>
+    <tr>
+      <td><strong>교란1 (엔캐리)</strong></td>
+      <td>B3 USD/JPY</td>
+      <td class="num neu">159.49 ⚠</td>
+      <td>160 돌파 시 아시아 통화 동반 변동</td>
+      <td>JPY &lt; 155 안정</td>
+    </tr>
+    <tr>
+      <td><strong>301 잠복</strong></td>
+      <td><em>PSF P2 🟠</em></td>
+      <td class="num">조사 중</td>
+      <td>수출 5섹터 타격 &rarr; 경상수지 이중 악화</td>
+      <td>301 철회 or 면제</td>
+    </tr>
+  </table>
+
+  <div class="macro-box">
+    <strong>macro 진단:</strong> 레짐 🟡 Transition (3/5). 키스톤 Core PCE 2.4% binding. B1(2.06%) 상승이 KRW의 최대 글로벌 제약. 교란2(유가) 약화가 유일한 순풍이나 $98은 여전히 전쟁 전 대비 +49%.
+  </div>
+
+  <div class="alert-box danger">
+    <strong>시스템 사각지대:</strong> macro의 8축&middot;5경로는 글로벌 변수만 추적한다. NPS $70조/년 해외투자는 "한국 고유 구조 변수"로 macro 범위 밖. PSF도 F1(DXY)만 보고 "한국 자본유출 구조"는 안 본다. <strong>DXY↓인데 KRW↓인 이유가 바로 이 사각지대에 있다.</strong>
+  </div>
+
+  <div class="layer-divider">━━ L5. PSF 3층에서 본 KRW ━━</div>
+
+  <h2>판(P) &rarr; KRW</h2>
+  <table>
+    <tr><th>판</th><th>상태</th><th>KRW 영향</th></tr>
+    <tr><td>P1 재정</td><td>🟡 Fed 동결</td><td class="neg">한미 금리차 고정 &rarr; ↓</td></tr>
+    <tr><td>P2 통상</td><td>🟠 301 개시</td><td class="neg">수출 타격 잠복 &rarr; ↓↓</td></tr>
+    <tr><td>P3 지정학</td><td>🟠 외교 시작</td><td class="pos">유가 하방 가능 &rarr; ↑ (조건부)</td></tr>
+    <tr><td>P5 자원</td><td>🟡 Brent $98</td><td class="neg">수입비용 높음 &rarr; ↓</td></tr>
+  </table>
+
+  <h2>구조(S) &rarr; KRW</h2>
+  <table>
+    <tr><th>구조</th><th>값</th><th>KRW 영향</th></tr>
+    <tr><td>S1 실질금리</td><td class="num neg">2.06% ↑</td><td>달러 흡인력 강화 &rarr; ↓ ★ 유일한 핵심</td></tr>
+    <tr><td>S2 HY OAS</td><td class="num">319bp</td><td>시스템 리스크 아님 &rarr; 중립</td></tr>
+    <tr><td>S5 커브</td><td class="num">+0.49%</td><td>정상화 &rarr; 중립</td></tr>
+  </table>
+
+  <h2>흐름(F) &rarr; KRW</h2>
+  <table>
+    <tr><th>흐름</th><th>값</th><th>KRW 영향</th><th>괴리</th></tr>
+    <tr><td>F1 DXY</td><td class="num pos">99.63 ↓약세</td><td>보통이면 KRW ↑...</td><td class="neg">★ 반영 안 됨. NPS가 상쇄.</td></tr>
+    <tr><td>F2 Net Liq</td><td class="num">$5.80T</td><td>중립</td><td>&mdash;</td></tr>
+    <tr><td>F5 VIX</td><td class="num neu">25.33</td><td>경계 &rarr; KRW ↓</td><td>&mdash;</td></tr>
+  </table>
+
+  <div class="psf-box">
+    <strong>PSF 판독:</strong> P층 하방 3 vs 상방 1. S1이 유일한 핵심. F1(DXY↓)이 KRW에 반영 안 되는 것이 이 분석의 핵심 괴리 &mdash; NPS 구조적 유출이 DXY 약세 효과를 완전히 상쇄.
+  </div>
+
+  <h2>Link 상태 &rarr; KRW 전망</h2>
+  <table>
+    <tr><th>Link</th><th>상태</th><th>KRW 영향</th></tr>
+    <tr><td>L3 에너지&rarr;인플레</td><td class="pos">약화 ↓</td><td>유가 하락 &rarr; KRW 순풍 ★</td></tr>
+    <tr><td>L5 지정학&rarr;에너지</td><td class="pos">약화 ↓</td><td>전쟁 완화 &rarr; KRW 순풍</td></tr>
+    <tr><td>L_trade (신규)</td><td class="neg">emerging</td><td>301 관세 &rarr; KRW 역풍 (잠복)</td></tr>
+    <tr><td>L7 만성</td><td class="pos">약화 ↓</td><td>VIX 25↓ 접근 &rarr; 완화 중</td></tr>
+  </table>
+
+  <div class="comment">
+    <strong>종합:</strong> L3+L5 약화가 KRW 반등 조건을 만들어가는 중. 그러나 L_trade(301)가 새 역풍으로 잠복. 그리고 이 모든 Link 위에 "NPS $70조/년"이라는 Link에 안 잡히는 구조적 힘이 있다.
+  </div>
+
+  <div class="layer-divider">━━ L6. 시나리오 분기 ━━</div>
+
+  <div class="scenario-grid">
+    <div class="scenario-card" style="border-top:3px solid var(--green)">
+      <div class="prob pos">35%</div>
+      <div class="label">전쟁 종결</div>
+      <div class="desc">Brent $80 &rarr; 경상수지 회복. L3/L5 비활성. KRW 1,450~1,480. 그러나 NPS 유출 지속 &rarr; <strong>1,400↓는 어려움.</strong> 전쟁 전(1,350) 복귀 불가.</div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--yellow)">
+      <div class="prob neu">40%</div>
+      <div class="label">교착 (RBC base)</div>
+      <div class="desc">Brent $95~110. 301 진행. Fed 동결. KRW 1,490~1,530 slow bleed. 추경+RIA가 속도 늦추나 방향 못 바꿈. <strong>"뉴노멀 1,500."</strong></div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--red)">
+      <div class="prob neg">15%</div>
+      <div class="label">확전 + 301 동시</div>
+      <div class="desc">Brent $130+. 301 확정. 이중 경상수지 충격. KRW 1,550~1,600. L7 발동. <strong>1997 이후 최악.</strong></div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--accent)">
+      <div class="prob" style="color:var(--accent)">??%</div>
+      <div class="label">WGBI 편입 (게임체인저)</div>
+      <div class="desc">$50~80B 유입. NPS 유출 상쇄 가능한 유일한 규모. 6~12개월 호라이즌. <strong>유일한 구조적 해법.</strong></div>
+    </div>
+  </div>
+
+  <div class="layer-divider">━━ 돌발 질문 ━━</div>
+
+  <div class="eq-box">
+    <strong>[반전 렌즈]</strong> DXY↓인데 KRW↓가 틀리려면?<br>
+    NPS 해외투자가 멈추거나, WGBI 편입으로 $50B+ 유입이 와야 함. 현재 두 가지 모두 미발생.
+  </div>
+  <div class="eq-box">
+    <strong>[침묵 렌즈]</strong> macro가 이것을 왜 못 잡는가?<br>
+    macro의 8축은 글로벌 변수(Fed, 유가, DXY). NPS는 "한국 고유 구조 변수"로 범위 밖. PSF도 F1(DXY)만 봄. <strong>시스템 사각지대.</strong>
+  </div>
+  <div class="eq-box">
+    <strong>[규모 렌즈]</strong> NPS $5.8조/월 유출 vs RIA $400M/월 환류 = 0.7%.<br>
+    RIA는 방향 전환 시그널로는 의미. 규모로는 "바닷물에 물 한 컵."
+  </div>
+
+  <div class="layer-divider">━━ L7. 판단 + 불확실성 ━━</div>
+
+  <div class="card">
+    <h3>판단</h3>
+    <p style="font-size:.9rem;font-weight:600;">시그널이다. SCP 3. DXY↓인데 KRW↓ = "글로벌 vs 한국 고유" 분리의 구조적 전환.</p>
+    <p>macro 레짐이 🟢로 가더라도 NPS 구조적 유출이 KRW 반등을 제한한다. KRW의 운명은 macro 레짐보다 "NPS + WGBI"에 달려 있다.</p>
+  </div>
+
+  <h3>불확실성 지도</h3>
+  <div class="um-grid">
+    <span class="um-label">L1</span><span class="um-bar">■■■■■</span><span>높음</span>
+    <span class="um-label">L2</span><span class="um-bar">■■■■■</span><span>높음 &mdash; macro/PSF MCP 교차</span>
+    <span class="um-label">L3</span><span class="um-bar">■■■□□</span><span>중간 &mdash; 정부 의도 불확실</span>
+    <span class="um-label">L4</span><span class="um-bar">■■■■□</span><span>높음 &mdash; 5경로 매핑</span>
+    <span class="um-label">L5</span><span class="um-bar">■■■■■</span><span>높음 &mdash; PSF 3층 MCP</span>
+    <span class="um-label">L6</span><span class="um-bar">■■□□□</span><span>낮음 &mdash; WGBI 시점 불확실</span>
+    <span class="um-label">L7</span><span class="um-bar">■■■□□</span><span>중간</span>
+  </div>
+  <div class="alert-box warn">
+    <strong>약한 고리: L6</strong> &mdash; WGBI 편입 시점과 규모. 구조적 해법의 핵심인데 확실하지 않음.<br>
+    <strong>보강:</strong> FTSE Russell 분기 리뷰(6월/9월) 결과.
+  </div>
+
+  <div class="layer-divider">━━ FB-4 되먹임 ━━</div>
+
+  <div class="comment">
+    <strong>처음:</strong> "원달러 1,500 &mdash; 전쟁 때문에 올랐다."<br><br>
+    <strong>지금:</strong> "1,500의 70%는 NPS 구조적 자본유출. macro의 5대 경로 중 어느 것도 이 구조를 직접 다루지 못한다. DXY↓인데 KRW↓인 이유가 여기에 있다. 유일한 구조적 해법은 WGBI 편입이나 시점 불확실."<br><br>
+    &rarr; <strong>다르게 보인다. ✅</strong>
+  </div>
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li>macro/indicators/latest.json (2026-03-26) &mdash; B1 2.06%, B2 99.63, B3 159.49, B4 $5.80T, C7 $98.13</li>
+    <li>psf-monitor/state.json (2026-03-26) &mdash; P1~P5, S1~S5, F1~F5, Links, Axis</li>
+    <li><a href="https://www.rbccm.com/assets/rbccm/docs/fx/currency-report-card.pdf">RBC Capital Markets &mdash; Currency Report Card (KRW)</a></li>
+    <li><a href="https://en.sedaily.com/news/2026/03/22/korea-launches-return-investment-account-amid-wons-17-year">Seoul Economic Daily &mdash; RIA Account</a></li>
+    <li><a href="https://biz.heraldcorp.com/article/10700431">헤럴드경제 &mdash; 환율안정 3대 극약처방</a></li>
+    <li><a href="https://www.newsis.com/view/NISX20251128_0003421833">뉴시스 &mdash; 국민연금 환율 구원투수</a></li>
+    <li><a href="https://kbthink.com/investment/issues/2026-krw-usd-outlook.html">KB &mdash; 2026 환율 전망</a></li>
+    <li>FRED MCP &mdash; DFII10, DFF, DEXKOUS, T10Y2Y, T5YIE, WALCL, WTREGEN, RRPONTSYD</li>
+    <li>Yahoo MCP &mdash; KRW=X, ^KS11, ^KQ11, DX-Y.NYB, JPY=X, BZ=F, ^VIX, ^MOVE</li>
+  </ul>
+
+</div>
+
+<div class="disclaimer">
+  Stereo Analyzer v2.0 | SA-20260326-002 | PSF+macro 교차 모드 | 2026-03-26<br>
+  Pipeline: Scanner &rarr; rm &rarr; macro &rarr; PSF &rarr; Stereo<br>
+  이 보고서는 입체 분석 결과이며, 투자 판단을 제공하지 않습니다.
+</div>
+
+</body>
+</html>
