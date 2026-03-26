@@ -1,0 +1,100 @@
+{
+  "tc_id": "TC-002",
+  "created": "2026-03-26",
+  "updated": "2026-03-26",
+  "title": "미 관세+EU 규제+중국 물량공세 — 한국 자동차 삼중 포위",
+  "status": "active",
+
+  "issue_summary": "미국 IEEPA 15→25% 관세, EU IAA 역내생산 강제, 중국 BYD 수출 공세가 동시 임계. 한국 자동차 수출모델→현지생산모델 전환 가속. 현대차 이미 대응 중($6.3B 투자+120만대 CAPA).",
+
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-26",
+      "trigger": "매경 칼럼 + issue→reaction→stereo 파이프라인 실행",
+      "note": "SA-20260326-002에서 생성. CUMULATIVE 구조."
+    }
+  ],
+
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "scp": 3,
+    "urgency": "WATCH"
+  },
+
+  "scenarios": {
+    "A": {
+      "label": "관세 25% + EU IAA → 구조 전환 가속",
+      "probability": "45%",
+      "trigger": "IEEPA 25% 공식 시행",
+      "kc": {
+        "watch": "현대차 ₩430K",
+        "alert": "현대차 ₩400K×3d",
+        "hard": "현대차 ₩370K×5d"
+      },
+      "current_status": "미진입 (감시)"
+    },
+    "B": {
+      "label": "관세 협상 타결 (15% 유지)",
+      "probability": "20%",
+      "trigger": "한미 통상 합의 공식 발표",
+      "kc": {
+        "invalidation": "관세 25% 시행시 B 무효"
+      },
+      "current_status": "미발생"
+    },
+    "C": {
+      "label": "삼중 압박 극대화",
+      "probability": "35%",
+      "trigger": "25%관세 + BYD 유럽 분기1위 + 이란전쟁 3개월+",
+      "kc": {
+        "watch": "현대차 ₩420K",
+        "alert": "현대차 ₩380K×3d",
+        "hard": "현대차 ₩350K×5d"
+      },
+      "current_status": "미진입 (감시)"
+    }
+  },
+
+  "tracking_indicators": [
+    {
+      "indicator": "미국 관세율",
+      "current": "15%",
+      "threshold": "25% 시행 확정",
+      "last_check": "2026-03-26",
+      "next_check": "2026-04-02"
+    },
+    {
+      "indicator": "EU IAA 의회 제출",
+      "current": "추진 중",
+      "threshold": "의회 제출 + 최종안 공개",
+      "last_check": "2026-03-26",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "현대차 주가",
+      "current": "₩490,000",
+      "threshold": "₩430K 이탈",
+      "last_check": "2026-03-26",
+      "next_check": "2026-04-02"
+    },
+    {
+      "indicator": "BYD 유럽 월간 판매 순위",
+      "current": "연속 1위",
+      "threshold": "분기 1위 확정",
+      "last_check": "2026-03-26",
+      "next_check": "2026-04-15"
+    },
+    {
+      "indicator": "HMGMA 분기 생산량",
+      "current": "가동 중",
+      "threshold": "Q2 실적 발표",
+      "last_check": "2026-03-26",
+      "next_check": "2026-07-15"
+    }
+  ],
+
+  "analysis_ids": ["SA-20260326-002"],
+  "tags": ["POLICY", "STRUCT", "자동차", "현대차", "기아", "관세", "EU", "IAA", "중국", "BYD", "현지화"]
+}
