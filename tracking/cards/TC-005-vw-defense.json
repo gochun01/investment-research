@@ -1,0 +1,38 @@
+{
+  "id": "TC-005",
+  "type": "stereo",
+  "title": "VW-방산 전환 — 유럽 자동차→방산 80년 역전",
+  "source": "SA-20260326-005",
+  "created": "2026-03-26",
+  "status": "tracking",
+  "phase": 0,
+  "scp": 4,
+
+  "trigger": {
+    "condition": "VW-라파엘 계약 체결 + 셰플러-헬싱 양산 시작",
+    "current": "협상 중. VW '구체적 결정 없음'.",
+    "fired": false
+  },
+  "kc": {
+    "watch": "유럽 방산주 -15%",
+    "alert": "IG Metall 방산 전환 공식 반대",
+    "hard": "독일 정부 방산 예산 삭감",
+    "fired": false
+  },
+  "korea_impact": {
+    "competition": "아이언돔(단거리) vs 천궁-II(중거리). 니치 분할 가능.",
+    "risk": "유럽산 방공 선호 시 K-방산 수입 감소",
+    "opportunity": "다층 방공망 구축 시 양쪽 수혜"
+  },
+
+  "events": [],
+  "rm_watches": [],
+
+  "heartbeat_thresholds": [],
+
+  "check_log": [
+    {"date": "2026-03-26", "observation": "FT 보도. 협상 확인. 노동자 동의 미확인. Phase 0.", "next_check": "2026-04-30"}
+  ],
+
+  "close_condition": "VW-라파엘 계약 확정 OR 협상 결렬 OR 2026년 말 결정 데드라인"
+}

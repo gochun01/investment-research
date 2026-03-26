@@ -1,0 +1,38 @@
+{
+  "id": "TC-004",
+  "type": "stereo",
+  "title": "ISA→ETF 구조 전환 — 807만 명의 행동 변화",
+  "source": "SA-20260326-004",
+  "created": "2026-03-26",
+  "status": "tracking",
+  "phase": 0,
+  "scp": 3,
+
+  "trigger": {
+    "condition": "ISA 80조+ OR 가입자 1,000만 (버팀목 확인) OR 월간 유입 마이너스 × 2개월 (고점 시그널)",
+    "current": "64조. 807만. 1월 +6.4조 역대최대.",
+    "fired": false
+  },
+  "kc": {
+    "watch": "KOSPI -15% from peak",
+    "alert": "KOSPI -20% × 5d",
+    "hard": "KOSPI -30% (807만 트라우마 시나리오)",
+    "fired": false
+  },
+
+  "events": [],
+  "rm_watches": [],
+  "psf_link": null,
+  "macro_ref": null,
+  "extra": {"overseas_etf_share": "53.2%", "overseas_etf_amount": "$7.6B", "krw_impact": "NPS 대비 5~6%. 성장 중."},
+
+  "heartbeat_thresholds": [
+    {"indicator": "KOSPI", "symbol": "^KS11", "watch": 5000, "alert": 4700, "hard": 4200, "direction": "below"}
+  ],
+
+  "check_log": [
+    {"date": "2026-03-26", "observation": "64조. 해외ETF 53.2%. Phase 0 (데이터 추가 필요: 2~3월 유입).", "next_check": "2026-04-15"}
+  ],
+
+  "close_condition": "ISA 100조+ 확인 (구조 확정) OR KOSPI -30% (thesis 무효) OR 1년 무변화 → 아카이브"
+}

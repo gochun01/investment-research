@@ -1,0 +1,88 @@
+{
+  "issue": "US-Iran 15-point 휴전안 + 글로벌 원자재 충격 전환점",
+  "date": "2026-03-26",
+  "fingerprint": {
+    "type": "geopolitical_war_ceasefire_signal",
+    "actor": ["US(Trump)", "Iran", "Pakistan(중재)", "Israel"],
+    "domain": ["에너지", "안보", "무역", "인플레이션"],
+    "timeframe": "D+26 (전쟁 개전 2/28 기준)",
+    "prior_event": "천궁-2 실전입증 (2026-03-24)"
+  },
+  "context": {
+    "summary": "미국이 파키스탄 경유 15-point 휴전안을 이란에 전달. 이란은 '극단적이고 비합리적'이라 거부했으나, 시장은 '협상 의지 시그널' 자체에 반응. Brent $119→$98(-5.9%), S&P +1%, 금 $4,540(+1.7%). 동시에 Strait of Hormuz 교통량 80% 감소 지속, 비료·석유화학·LNG 공급망 충격 심화.",
+    "15_point_plan": {
+      "key_demands": ["이란 핵능력 해체", "핵무기 포기 서약", "호르무즈 해협 개방·자유항행 보장"],
+      "offered_carrots": ["전면 제재 해제", "신규 제재 위협 철회", "민간 원자력 프로그램 미국 지원"],
+      "delivery": "파키스탄 경유, 파키스탄이 중재 호스팅 제안",
+      "iran_response": "극단적이고 비합리적(maximalist, unreasonable). 직접 대화 없다고 주장. 그러나 중재국 경유 메시지 교환 확인."
+    }
+  },
+  "reactions": {
+    "price": {
+      "oil_brent": {"current": 98.12, "peak_war": 119, "pre_war": 66, "change_1d": "-5.9%", "note": "$100 심리선 하회 — 시장은 휴전 가능성 프라이싱"},
+      "oil_wti": {"current": 91.18, "change_1d": "-5%", "note": "WTI는 전쟁 이후 +50%"},
+      "gold": {"current": 4509.80, "change_1d": "+1.7%", "note": "원유 하락에도 금은 상승 — 불확실성 프리미엄 유지"},
+      "sp500": {"current": 6591.90, "change_1d": "+1.07%", "note": "소형주(R2000 +1.46%) > 대형주 — 에너지 비용 완화 기대"},
+      "dxy": {"current": 99.64, "note": "99선 지지, 20일MA와 수렴"},
+      "btc": {"current": 70960, "change_1d": "+0.8%", "note": "지정학 완화 랠리에 동참"},
+      "defense_rtx": {"current": 195.00, "note": "Raytheon(Patriot 제조) — 방산 프리미엄 유지"},
+      "defense_lmt": {"current": 624.20, "note": "Lockheed — 전쟁 지속 가격에 안정"}
+    },
+    "narrative": {
+      "dominant_frame": "휴전 시그널 vs 이란 거부 — 시장 진자(pendulum)",
+      "key_coverage": [
+        {"source": "AP/Al Jazeera", "frame": "이란, 15-point 안 '종이 위에서도 아름답지 않다'고 일축. 그러나 중재 채널은 열려있음"},
+        {"source": "NBC/Euronews", "frame": "주식 랠리·원유 하락. '한 줄 헤드라인이 원유·금리를 크게 움직일 수 있다'(Citi)"},
+        {"source": "Coface(오늘 3/26)", "frame": "원자재 충격 확산 — 석유·가스·비료·석유화학·알루미늄 전방위 타격"},
+        {"source": "MarketPulse", "frame": "8시간 내 wild swing of the pendulum — 충돌 뉴스 반복"},
+        {"source": "247 Wall St", "frame": "BlackRock CEO '$150이면 급격한 침체'. $100 하회가 시장의 green light"},
+        {"source": "BRG/Atlantic Council", "frame": "호르무즈 2차 충격 — LNG→비료→농업→식량 가격 도미노. 러시아·벨라루스가 비료 공백 메울 지정학 리스크"},
+        {"source": "Globe&Mail", "frame": "전쟁 즉시 끝나도 LNG→비료 복구는 수개월. 구조적 공급 부족 이월(carry-forward)"}
+      ]
+    },
+    "expert": {
+      "signum_global": "트럼프가 딜을 원한다는 시그널 자체가 포인트. 내용보다 의지 — 전쟁 전보다 덜 강경한 요구, 더 관대한 당근",
+      "citi": "한 줄 헤드라인에 원유·금리가 급등락. 불확실성 극대화 구간",
+      "ing": "Uncertainty remains high. 지정학 리스크 프리미엄 지속",
+      "blackrock_fink": "$150 지속 시 steep recession. $100 하회는 de-escalation 프라이싱",
+      "rystad_energy": "원자재 전방위 충격이 이전 위기와 다른 점. 석유만이 아니라 LNG·석유화학·비료·알루미늄",
+      "coface": "교착(deadlocked)되면 하류 밸류체인 충격 확대. 아시아 석유화학 가장 취약",
+      "european_business_mag": "글로벌 PMI 실제 하락 확인. 스태그플레이션 동시 현실화"
+    },
+    "policy": {
+      "us": "15-point 휴전안 전달 + 추가 1,000명 병력 배치 — 군사·외교 병행. 트럼프 '이 전쟁은 승리했다'",
+      "iran": "'극단적' 거부 + 쿠웨이트공항·바레인·이스라엘 공격 지속. 그러나 중재 채널 유지",
+      "pakistan": "중재국으로 부상. 파키스탄 경유 메시지 확인. 대면 회담 가능성 타진",
+      "ecb": "금리 2% 유지 중이었으나, 원유 $100+ → 유로존 인플 +0.6~0.7%p 추가. 인하 기대 후퇴",
+      "gulf_states": "쿠웨이트공항 피폭, 사우디 드론 요격, 바레인 공습. 인내심 한계 도달"
+    },
+    "positioning": {
+      "oil_backwardation": "현물 > 선물. 물리적 공급 부족 현실화",
+      "sector_rotation": "에너지(XOM/CVX) 하락, 항공(UAL)·크루즈(CCL) 상승 — 유가 하락 수혜주로 자금 이동",
+      "breadth": "R2000 > S&P > Dow > Nasdaq — 소형주 주도 broad rally = 에너지 비용 완화 기대",
+      "vix": 25.33,
+      "commodity_shock": {
+        "naphtha": "+60%(싱가포르 $1,000/톤)",
+        "ttf_gas": "+85%(유럽 €55/MWh)",
+        "lng_asia": "2배 상승",
+        "urea": "+30~40%",
+        "sulfur": "+25%",
+        "brent_from_start": "+50%"
+      }
+    }
+  },
+  "pattern": {
+    "type": "괴리(divergence)",
+    "description": "시장은 휴전을 프라이싱(Brent<$100, S&P+1%) vs 이란은 거부+공격 지속 vs 물리적 공급망 충격 심화(비료·석유화학 이월). 가격과 현실의 괴리 — 시장 낙관 vs 공급 현실.",
+    "key_tension": "휴전 희망 ↔ 이란 거부 ↔ 공급 구조적 손상. 하나만 틀어져도 급반전.",
+    "historical_parallel": "2025.04 관세 whipsaw (트럼프 관세 발표→철회→재발표 반복). 헤드라인 하나에 시장이 일희일비."
+  },
+  "unresolved": [
+    {"id": "UQ-020", "question": "이란이 counterproposal을 공식 제출하는가? 아니면 거부만으로 끝나는가?", "resolve_by": "2026-03-31", "status": "open"},
+    {"id": "UQ-021", "question": "파키스탄 중재 대면 회담이 성사되는가? (NBC: coming days에 가능)", "resolve_by": "2026-04-02", "status": "open"},
+    {"id": "UQ-022", "question": "호르무즈 해협 교통량 복구 시점 — 현재 80% 감소. 부분 재개 조짐(Kpler: 이란이 일부 선박 통과 허용)?", "resolve_by": "2026-04-07", "status": "open"},
+    {"id": "UQ-023", "question": "Brent $100 하회가 지속되는가, 아니면 이란 재공격에 다시 $110+ 회귀?", "resolve_by": "2026-03-31", "status": "open"},
+    {"id": "UQ-024", "question": "비료 공급 부족의 carry-forward — 전쟁 종결되더라도 LNG→비료 복구에 수개월. 2026 봄 파종 시즌 타격 규모?", "resolve_by": "2026-04-15", "status": "open"},
+    {"id": "UQ-025", "question": "ECB 금리 인하 기대 완전 후퇴하는가? 원유 $100+ 지속 시 유로존 인플 +0.6~0.7%p", "resolve_by": "2026-04-10", "status": "open"}
+  ]
+}

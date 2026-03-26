@@ -1,0 +1,404 @@
+{
+  "issue": "크립토 — 전쟁이 SEC 호재 완전 상쇄",
+  "date": "2026-03-24",
+  "depth": "Standard",
+
+  "fingerprint": {
+    "domain": "산업규제(크립토) + 지정학(중동)",
+    "geography": "글로벌 (미국 SEC + 중동 전쟁 → 글로벌 크립토)",
+    "touched_assets": [
+      "BTC (1차)", "ETH (1차)", "COIN (2차)",
+      "스테이블코인 시총 (2차)", "DeFi TVL (2차)",
+      "금 GC=F (대조)", "유가 CL=F (대조)", "VIX (대조)", "S&P500 (대조)"
+    ],
+    "stakeholders": ["SEC/CFTC", "크립토 거래소", "기관투자자", "리테일", "트럼프 행정부", "이란"],
+    "time_character": "전개"
+  },
+
+  "channels": {
+    "price": [
+      {"asset": "BTC", "type": "1차", "reason": "SEC 16개 분류 필두. 쟁점의 직접 대상"},
+      {"asset": "ETH", "type": "1차", "reason": "SEC 분류 2번째. BTC 대비 베타 비교"},
+      {"asset": "COIN", "type": "2차", "reason": "크립토 인프라주. 규제 수혜/리스크 바로미터"},
+      {"asset": "금 GC=F", "type": "대조", "reason": "안전자산. 전쟁 리스크온/오프 확인"},
+      {"asset": "유가 CL=F", "type": "대조", "reason": "전쟁 직접 프록시. 호르무즈 봉쇄 반영도"},
+      {"asset": "VIX", "type": "대조", "reason": "시장 전체 공포 수준"},
+      {"asset": "S&P500", "type": "대조", "reason": "전통 리스크자산 대비 크립토 상대 성과"}
+    ],
+    "narrative": [
+      {"source": "CoinDesk", "role": "프레임설정", "reason": "크립토 전문 1위. SEC+전쟁 동시 보도"},
+      {"source": "Decrypt", "role": "프레임설정", "reason": "크립토 전문. 전쟁 에스컬레이션 보도"},
+      {"source": "Motley Fool", "role": "깊이분석", "reason": "기관투자자 시각. SEC 개별 코인 분석"},
+      {"source": "247 Wall St", "role": "반대쪽", "reason": "전쟁이 모든 랠리 상쇄 프레임"},
+      {"source": "Bloomberg", "role": "깊이분석", "reason": "매크로 연결 (인플레→금리→크립토)"}
+    ],
+    "expert": [
+      {"name": "Motley Fool 분석팀", "role": "권위", "reason": "SEC 분류 후 개별 코인 투자 논거"},
+      {"name": "247 Wall St 분석팀", "role": "반대입장", "reason": "전쟁 상쇄 프레임 대표"},
+      {"name": "Polymarket 트레이더", "role": "실무자", "reason": "실제 돈을 건 집단 판단 ($37.7M)"},
+      {"name": "Grayscale Research", "role": "권위", "reason": "2026 기관 시대 전망 보고서"}
+    ],
+    "policy": [
+      {"institution": "SEC/CFTC", "role": "1차", "reason": "3/17 공동 해석 — 16개 자산 commodity 분류"},
+      {"institution": "트럼프 행정부", "role": "1차", "reason": "이란 최후통첩→합의 시그널. 크립토 직접 충격"},
+      {"institution": "미 의회 (CLARITY Act)", "role": "2차", "reason": "4월 초 예정. SEC 해석 입법화"}
+    ],
+    "positioning": [
+      {"indicator": "BTC ETF 자금흐름", "reason": "기관 실제 배팅 방향"},
+      {"indicator": "BTC MVRV", "reason": "온체인 밸류에이션 과열/저평가"},
+      {"indicator": "DeFi TVL", "reason": "온체인 자본 이탈/유입"},
+      {"indicator": "스테이블코인 시총", "reason": "대기자금 규모"},
+      {"indicator": "DEX 거래량", "reason": "온체인 실수요 활동"}
+    ]
+  },
+
+  "reactions": {
+    "price": [
+      {
+        "asset": "BTC",
+        "before": "$74,861 (3/16 고점)",
+        "after": "$70,303 (3/24)",
+        "change_pct": -6.1,
+        "speed": "수일",
+        "volume_change": "24h $49.3B — 활발",
+        "source": "CoinGecko + Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "SEC 발표(3/17) $73.9K → $75K 돌파 실패 → 전쟁으로 $67.8K → 합의 시그널로 $70.3K 반등. 7d -5.4%"
+      },
+      {
+        "asset": "ETH",
+        "before": "—",
+        "after": "$2,134",
+        "change_pct": -7.7,
+        "speed": "수일",
+        "volume_change": "24h $27.9B",
+        "source": "CoinGecko",
+        "timestamp": "2026-03-24",
+        "note": "7d -7.7%. BTC보다 낙폭 큼 — 고베타 자산에 리스크오프 집중"
+      },
+      {
+        "asset": "COIN",
+        "before": "$210.23 (3/17)",
+        "after": "$200.62 (3/24)",
+        "change_pct": -4.6,
+        "speed": "수일",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "SEC 발표일 고점 $210 → $193(3/12 저점) → $200 회복. BTC보다 안정"
+      },
+      {
+        "asset": "금 GC=F",
+        "before": "—",
+        "after": "$4,361",
+        "change_pct": 0,
+        "speed": "무반응",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "고점권 유지. 전쟁 안전자산 수요 지속. 크립토와 반대 방향"
+      },
+      {
+        "asset": "유가 CL=F (WTI)",
+        "before": "—",
+        "after": "$91.64",
+        "change_pct": 0,
+        "speed": "—",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 프리미엄 유지. 합의 시그널에도 $90+ 유지 = 시장이 휴전 불신"
+      },
+      {
+        "asset": "VIX",
+        "before": "—",
+        "after": "26.15",
+        "change_pct": 0,
+        "speed": "—",
+        "volume_change": "—",
+        "source": "Yahoo Finance / FRED (3/20: 26.78)",
+        "timestamp": "2026-03-24",
+        "note": "25+ = 공포 상승 영역. 정상(15~20) 대비 높음"
+      },
+      {
+        "asset": "S&P500",
+        "before": "—",
+        "after": "6,581",
+        "change_pct": 0,
+        "speed": "—",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전통 리스크자산도 전쟁 영향 하에 있으나 크립토보다 안정"
+      }
+    ],
+    "narrative": [
+      {
+        "source": "CoinDesk",
+        "role": "프레임설정",
+        "frame": "BTC $75K 돌파 실패 — SEC/CFTC 가이던스에도 불구하고",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.coindesk.com/markets/2026/03/18/bitcoin-s-progress-above-usd75-000-elusive-after-sec-cftc-crypto-guidance",
+        "timestamp": "2026-03-18"
+      },
+      {
+        "source": "Decrypt",
+        "role": "프레임설정",
+        "frame": "이란 전쟁 에스컬레이션으로 시장 폭락. 에너지 인프라 타격",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://decrypt.co/361685/morning-minute-markets-tumble-as-iran-war-escalates",
+        "timestamp": "2026-03-20"
+      },
+      {
+        "source": "Motley Fool",
+        "role": "깊이분석",
+        "frame": "SEC 16개 commodity 분류 — SOL, XRP, LINK 2배 가능",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://www.fool.com/investing/2026/03/23/the-sec-just-classified-16-cryptocurrencies-as-dig/",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "source": "247 Wall St",
+        "role": "반대쪽",
+        "frame": "전쟁이 모든 크립토 랠리를 상쇄한다",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://247wallst.com/investing/2026/03/23/bitcoin-and-xrp-price-why-the-u-s-and-iran-war-keeps-overriding-every-crypto-rally/",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "source": "Bloomberg",
+        "role": "깊이분석",
+        "frame": "BTC $70K 유지, 전쟁이 인플레 우려 자극 → 금리 압력",
+        "tone": "중",
+        "original_analysis": true,
+        "url": "https://www.bloomberg.com/news/articles/2026-03-20/bitcoin-holding-at-70-000-as-iran-war-stokes-inflation-concerns",
+        "timestamp": "2026-03-20"
+      }
+    ],
+    "expert": [
+      {
+        "name": "Motley Fool 분석팀",
+        "role": "권위",
+        "affiliation": "Motley Fool",
+        "qualification": "미국 대표 투자 분석 매체. 기관/리테일 투자자 대상",
+        "statement": "SEC 분류가 기관 진입 문을 열었다. SOL, XRP, LINK가 2배 후보",
+        "direction": "긍",
+        "channel": "기고",
+        "source": "https://www.fool.com/investing/2026/03/23/the-sec-just-classified-16-cryptocurrencies-as-dig/",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "name": "247 Wall St 분석팀",
+        "role": "반대입장",
+        "affiliation": "247 Wall St",
+        "qualification": "미국 금융 분석 매체. 시장 리스크 중심 시각",
+        "statement": "전쟁이 매크로 환경을 완전히 오염. SEC 호재는 전쟁 끝나야 반영 가능",
+        "direction": "부",
+        "channel": "기고",
+        "source": "https://247wallst.com/investing/2026/03/23/bitcoin-and-xrp-price-why-the-u-s-and-iran-war-keeps-overriding-every-crypto-rally/",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "name": "Polymarket 트레이더 집단",
+        "role": "실무자",
+        "affiliation": "Polymarket 예측시장",
+        "qualification": "$37.7M 실제 베팅. 집단 지혜",
+        "statement": "이란 휴전: 3월 내 낮음, 12월까지 71%. 일부 의심 계정 $160K 단기 베팅",
+        "direction": "분열",
+        "channel": "예측시장",
+        "source": "https://polymarket.com/event/us-x-iran-ceasefire-by",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "name": "Grayscale Research",
+        "role": "권위",
+        "affiliation": "Grayscale Investments",
+        "qualification": "세계 최대 크립토 자산운용사 리서치 부문",
+        "statement": "2026 = 기관 시대의 새벽. 규제 명확화가 핵심 촉매",
+        "direction": "긍",
+        "channel": "리서치 보고서",
+        "source": "https://research.grayscale.com/reports/2026-digital-asset-outlook-dawn-of-the-institutional-era",
+        "timestamp": "2026-03"
+      }
+    ],
+    "policy": [
+      {
+        "institution": "SEC/CFTC",
+        "action": "3/17 공동 68페이지 해석: BTC, ETH 등 16개 자산을 digital commodity로 분류. securities 아님",
+        "binding_level": "행정 해석 (법률 아님. CLARITY Act 통과 시 입법화)",
+        "market_implication": "ETF 신규 상품, 거래소 상장, 커스터디 서비스 기반 마련. 수년간 규제 불확실성 해소",
+        "source": "https://www.sec.gov/newsroom/press-releases/2026-30-sec-clarifies-application-federal-securities-laws-crypto-assets",
+        "timestamp": "2026-03-17"
+      },
+      {
+        "institution": "트럼프 행정부",
+        "action": "3/22: 이란에 48시간 최후통첩 → 3/23: Truth Social에 '합의' 시그널",
+        "binding_level": "구두 (SNS 발언)",
+        "market_implication": "48시간 최후통첩에 BTC $69.2K, $383M 청산. 합의 시그널에 +2.1% 반등. 하루 단위 급반전",
+        "source": "https://www.cryptotimes.io/2026/03/23/trumps-script-flip-on-iran-drives-nearly-400m-of-liquidation-in-crypto/",
+        "timestamp": "2026-03-22~23"
+      },
+      {
+        "institution": "미 의회 (CLARITY Act)",
+        "action": "4월 초 입법 예정. SEC 해석을 법률로 영구화",
+        "binding_level": "입법 예정",
+        "market_implication": "통과 시 SEC 해석 영구화 → 기관 완전 진입. 미통과 시 해석만으로 남아 불확실성 잔존",
+        "source": "https://247wallst.com/investing/2026/03/23/bitcoin-and-xrp-price-why-the-u-s-and-iran-war-keeps-overriding-every-crypto-rally/",
+        "timestamp": "2026-04 예정"
+      }
+    ],
+    "positioning": [
+      {
+        "indicator": "BTC ETF 자금흐름",
+        "value": "3/9~17: 7일 연속 유입 $1.47B → 3/18: $129M 유출",
+        "change": "유입→유출 전환 (FOMC+전쟁)",
+        "implication": "전쟁 전 기관 매집 → 전쟁 후 일부 이탈. 전면 이탈은 아님. Q1 총 $18.7B 유입",
+        "source": "https://themarketperiodical.com/2026/03/19/seven-day-inflow-run-ends-as-bitcoin-etfs-post-129m-outflows/",
+        "timestamp": "2026-03-18"
+      },
+      {
+        "indicator": "BTC MVRV",
+        "value": "1.36(3/17) → 1.25(3/22) → 1.30(3/23)",
+        "change": "하락 후 반등. 중립 영역",
+        "implication": "1.3 = 중립. 과열 아님(>3), 저평가도 아님(<1). 극단적 포지셔닝 아님",
+        "source": "CoinMetrics Community API",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "indicator": "DeFi TVL",
+        "value": "$100.2B(3/17 고점) → $92.7B(3/23) → $95.4B(3/24)",
+        "change": "고점 대비 -4.8% 후 부분 복귀",
+        "implication": "전쟁 에스컬레이션에 온체인 자본 유출 후 빠른 복귀. 구조적 이탈 아님",
+        "source": "DeFiLlama",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "스테이블코인 시총",
+        "value": "$315.1B (USDT $184B, USDC $78.7B)",
+        "change": "사상 최고치 부근 유지",
+        "implication": "대기자금 풍부. 전쟁 안정화 시 크립토 재진입 자금 충분",
+        "source": "DeFiLlama",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "DEX 거래량",
+        "value": "24h $9.1B. Uniswap +61%, Orca +142% 전일 대비",
+        "change": "급증",
+        "implication": "변동성에 따른 양방향 거래 활성. 패닉 일방향 아닌 활발한 시장",
+        "source": "DeFiLlama",
+        "timestamp": "2026-03-24"
+      }
+    ]
+  },
+
+  "pattern": {
+    "direction_alignment": "괴리",
+    "direction_detail": {
+      "price": "↓ (SEC 호재에도 고점 대비 -6.1%)",
+      "narrative": "↑↓ (분열: 구조적 호재 vs 전쟁 상쇄)",
+      "expert": "분열 (장기 긍정 vs 단기 부정)",
+      "policy": "이중 (SEC 긍정 + 전쟁 부정 동시)",
+      "positioning": "→ (ETF 일부 유출이나 스테이블코인 $315B 대기. 전면 이탈 아님)"
+    },
+    "direction_rationale": "SEC가 역사적 규제 명확화를 했는데 BTC는 $75K 돌파 실패 후 오히려 하락. 정책 호재 ↑ vs 가격 ↓ 괴리. 전쟁이 호재의 가격 반영을 차단",
+
+    "time_structure": "C (정책주도) — 이중 경로",
+    "time_sequence": [
+      {"order": 1, "layer": "정책-전쟁", "event": "이란 호르무즈 봉쇄 선언", "timestamp": "2026-03-04"},
+      {"order": 2, "layer": "정책-SEC", "event": "SEC/CFTC 16개 commodity 분류 발표", "timestamp": "2026-03-17"},
+      {"order": 3, "layer": "서사", "event": "CoinDesk '$75K 돌파 실패' 보도", "timestamp": "2026-03-18"},
+      {"order": 4, "layer": "포지셔닝", "event": "ETF $129M 유출 (7일 유입 중단)", "timestamp": "2026-03-18"},
+      {"order": 5, "layer": "서사", "event": "Bloomberg '전쟁→인플레→금리' 프레임 확산", "timestamp": "2026-03-20"},
+      {"order": 6, "layer": "정책-전쟁", "event": "트럼프 48시간 최후통첩", "timestamp": "2026-03-22"},
+      {"order": 7, "layer": "가격", "event": "BTC $69.2K, $383M 청산", "timestamp": "2026-03-22"},
+      {"order": 8, "layer": "정책-전쟁", "event": "트럼프 '합의' 시그널", "timestamp": "2026-03-23"},
+      {"order": 9, "layer": "서사", "event": "'전쟁이 SEC 호재 상쇄' 프레임 형성", "timestamp": "2026-03-23"}
+    ],
+    "time_rationale": "SEC 정책(C-1)은 1회성이고, 전쟁 정책(C-2)은 매일 갱신. C-2가 C-1을 시간적으로 압도하여 가격을 지배",
+
+    "proportionality": "과소",
+    "proportionality_rationale": "규제 역사상 최대 명확화에 +1.6% 반응 후 즉시 되돌림. 전쟁이 없었다면 +5~10% 비례반응 예상. 반면 트럼프 SNS 한 건에 $383M 청산 = 전쟁에는 과잉반응",
+
+    "propagation": "C (정책→서사→가격) 이중 경로",
+    "propagation_rationale": "C-1(SEC→매체→+1.6%)과 C-2(트럼프→매체→-3.9%)가 동시 존재. C-2가 지배. C-1은 서사까지는 전파되나 가격까지 도달하지 못함",
+    "next_observation": "전쟁 안정화 시 C-1 경로가 지연 반영으로 한꺼번에 가격에 반영될 가능성. 스테이블코인 $315B 대기자금이 이를 뒷받침"
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-001",
+      "question": "SEC 호재의 지연 반영 크기: 전쟁 안정화 시 한꺼번에 반영되는가, 이미 할인 소멸하는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "이란 휴전 또는 교착 고착 확인 후 BTC $75K 돌파 여부 관찰",
+      "check_channels": {"price": ["BTC"], "narrative": ["CoinDesk", "Bloomberg"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-002",
+      "question": "CLARITY Act 4월 초 통과 여부",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "2026-04-07까지 의회 투표 결과 확인",
+      "check_channels": {"policy": ["미 의회"], "narrative": ["CoinDesk", "Reuters"]},
+      "created": "2026-03-24",
+      "deadline": "2026-04-07",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-003",
+      "question": "ETF 자금 흐름: 전쟁 전 $1.47B 유입 기조 복원 여부",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "3일 연속 순유입 시 복원 판정",
+      "check_channels": {"positioning": ["BTC ETF 자금흐름"]},
+      "created": "2026-03-24",
+      "deadline": "2026-03-28",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-004",
+      "question": "Polymarket 이란 휴전 확률 단기 변화",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "3월 내 휴전 확률 50%+ 시 시장 인식 전환 판정",
+      "check_channels": {"positioning": ["Polymarket"]},
+      "created": "2026-03-24",
+      "deadline": "2026-03-29",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-005",
+      "question": "MVRV 1.3의 지지력: 1.0 아래 시 온체인 저평가 진입",
+      "status": "open",
+      "resolve_type": "threshold",
+      "resolve_condition": "MVRV < 1.0 시 저평가 신호. MVRV > 1.5 시 질문 소멸(회복)",
+      "check_channels": {"positioning": ["BTC MVRV"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "2026-03-24",
+      "last_checked_result": "MVRV 1.30 — 중립 영역. 기준선 미도달",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+  "next_check": "이스라엘 보복 또는 이란 휴전 진전 시 / CLARITY Act 의회 일정 (4월 초) / BTC ETF 주간 흐름 (3/28)"
+}

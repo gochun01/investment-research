@@ -1,0 +1,426 @@
+{
+  "issue": "에틸렌 부족 → 선박 후판·바이오·화장품까지 일파만파 (하류 도미노)",
+  "date": "2026-03-24",
+  "depth": "Standard",
+  "previous_issue": "한국 나프타 원료 수급 문제 → 이란산 원유 수입길 (2026-03-24)",
+
+  "fingerprint": {
+    "domain": "에너지/석유화학 → 하류 산업 도미노 (2차·3차 효과)",
+    "geography": "한국 중심",
+    "touched_assets": [
+      "HD한국조선해양 329180 (1차 — 에틸렌 절단가스 부족)",
+      "한화오션 042660 (1차 — 조선 공정 지연)",
+      "삼성바이오 207940 (1차 — EO 원료 우려)",
+      "LG생건 051900 (1차 — 계면활성제 원료)",
+      "아모레 090430 (1차 — 화장품 원료)",
+      "LG화학 051910 (2차 — 에틸렌 공급자)",
+      "롯데케미칼 011170 (2차 — 에틸렌 공급자)"
+    ],
+    "stakeholders": [
+      "조선사 (HD한국조선, 한화오션, 삼성중공업)",
+      "바이오 기업 (삼성바이오, 셀트리온)",
+      "화장품 기업 (LG생건, 아모레)",
+      "석화 기업 (LG화학, 롯데케미칼, 여천NCC — 공급자)",
+      "한국조선해양플랜트협회",
+      "한국석유화학협회",
+      "산업통상자원부",
+      "중소 플라스틱 가공업체"
+    ],
+    "secondary_stakeholders": [
+      {"from": "조선사 에틸렌 부족", "to": "해운사(선박 인도 지연 → 용선 차질), 해양 방산(군함 건조 지연)"},
+      {"from": "바이오 EO 부족", "to": "제약사(의약품 원료), 병원(의료기기 멸균 EO가스)"},
+      {"from": "화장품 원료 부족", "to": "소비자(가격 인상 전이), 중소 ODM/OEM 업체"},
+      {"from": "ABS/PP/PE 가격 인상", "to": "가전(냉장고·세탁기 외장), 자동차(내장재), 건설(배관)"},
+      {"from": "조선 공정 지연", "to": "조선소 하청업체(인건비 부담), 울산·거제 지역경제"}
+    ],
+    "time_character": "전개 (나프타→에틸렌→하류. 도미노 진행 중)"
+  },
+
+  "channels": {
+    "price": [
+      {"asset": "HD한국조선 329180", "type": "1차", "reason": "에틸렌 절단가스 부족 직접 피해. 조선 대장주"},
+      {"asset": "한화오션 042660", "type": "1차", "reason": "조선 2위. 공정 지연 위험"},
+      {"asset": "삼성바이오 207940", "type": "1차", "reason": "바이오 대장. EO 원료 우려"},
+      {"asset": "LG생건 051900", "type": "1차", "reason": "화장품 대장. 계면활성제 원료 부담"},
+      {"asset": "아모레 090430", "type": "1차", "reason": "화장품 2위. 원가 전이 우려"},
+      {"asset": "LG화학 051910", "type": "2차", "reason": "에틸렌 공급자. 배분 결정권"},
+      {"asset": "롯데케미칼 011170", "type": "2차", "reason": "에틸렌 공급자"}
+    ],
+    "narrative": [
+      {"source": "매경/다음뉴스", "role": "프레임설정", "reason": "원문 기사. '에틸렌 부족→후판→바이오→화장품' 도미노 프레임"},
+      {"source": "뉴시스", "role": "깊이분석", "reason": "'반도체·車·조선 안 쓰는 곳 없다' — 전 산업 영향 프레임"},
+      {"source": "아주경제", "role": "깊이분석", "reason": "조선업 에틸렌 수급 비상 + 산업부 대응 상세"},
+      {"source": "전자신문", "role": "깊이분석", "reason": "산업부-조선·화학 긴급 협의 보도"},
+      {"source": "네이버 프리미엄 이코노미스트", "role": "분석", "reason": "'공급망 위기 초기 단계' 진단. 개미 투자자 행태까지"},
+      {"source": "바이오타임즈", "role": "반대쪽", "reason": "'기술력 갖춘 K-바이오는 견조' — 에틸렌 영향 제한적 프레임"}
+    ],
+    "expert": [
+      {"name": "한국조선해양플랜트협회", "role": "피해자", "reason": "산업부에 에틸렌 공급 지원 공식 요청"},
+      {"name": "한국석유화학협회", "role": "공급자", "reason": "화상 협의 참여. 단기 공급 방안 확정"},
+      {"name": "산업통상자원부", "role": "정책", "reason": "긴급 수급 점검 회의 주재(3/13, 3/15)"},
+      {"name": "조선사 경영진 (HD현대/한화오션)", "role": "피해자", "reason": "전문가 선행 목록. 타겟 검색 대상"},
+      {"name": "삼성바이오/셀트리온", "role": "피해자", "reason": "전문가 선행 목록. EO 원료 당사자"},
+      {"name": "LG생건/아모레", "role": "피해자", "reason": "전문가 선행 목록. 화장품 원료 당사자"},
+      {"name": "증권사 애널리스트", "role": "분석자", "reason": "조선/바이오/화장품 섹터 커버"},
+      {"name": "중소 플라스틱 가공업체", "role": "하류", "reason": "최말단 피해자. ABS/PP/PE 가격 인상"}
+    ],
+    "policy": [
+      {"institution": "산업통상자원부", "role": "1차", "reason": "3/13 긴급 수급 점검, 3/15 화상 협의 주재"},
+      {"institution": "한국석유화학협회-조선해양플랜트협회 합동", "role": "1차", "reason": "단기 에틸렌 공급 방안 확정"}
+    ],
+    "positioning": [
+      {"indicator": "하류 산업주 주가 흐름", "reason": "시장이 도미노를 가격에 반영하는지"},
+      {"indicator": "에틸렌 가격 (52주 최고, +70%)", "reason": "공급 부족 심각도 직접 지표"},
+      {"indicator": "ABS/PP/PE 가격 인상 폭", "reason": "하류 전이 정도"}
+    ],
+    "sns": {
+      "status": "제한적 활성",
+      "reason": "Q1: 조선/바이오 CEO X 발언 미확인. Q2: 쓰레기봉투·화장품 가격은 소비자 관심 가능. Q3: 의원 SNS 가능. → 소비자 반응 프록시만 수집 대상",
+      "collected": false,
+      "note": "소비자 반응(쓰레기봉투 매점매석 등) 프록시 기사는 서울경제 보도에서 확인됨"
+    }
+  },
+
+  "reactions": {
+    "price": [
+      {
+        "asset": "HD한국조선 329180",
+        "before": "603,000원 (2/27)",
+        "after": "516,000원 (3/24)",
+        "change_pct": -14.4,
+        "speed": "수일",
+        "volume_change": "급증",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 발발 511K 급락→604K 회복(3/12)→다시 502K(3/23). 에틸렌 수급 뉴스에 재하락. 조선 수주잔고는 풍부하나 공정 리스크"
+      },
+      {
+        "asset": "한화오션 042660",
+        "before": "141,200원 (2/27)",
+        "after": "122,300원 (3/24)",
+        "change_pct": -13.4,
+        "speed": "수일",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 발발 108,500 급락→136,900 회복(3/13)→118,900(3/23). HD조선과 동조. 마스가 차질 우려"
+      },
+      {
+        "asset": "삼성바이오 207940",
+        "before": "—",
+        "after": "1,547,000원 (3/24)",
+        "change_pct": 0,
+        "speed": "무반응",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "에틸렌/EO 이슈에 무반응. 바이오타임즈 '기술력 갖춘 K-바이오 견조' 프레임과 일치. CDMO 모델이 원료 직접 구매 비중 낮음"
+      },
+      {
+        "asset": "LG생건 051900",
+        "before": "—",
+        "after": "250,000원 (3/24)",
+        "change_pct": 0,
+        "speed": "무반응",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "화장품 원료 이슈에 무반응. 계면활성제 원가 비중이 전체 대비 낮아 주가 영향 제한적"
+      },
+      {
+        "asset": "아모레 090430",
+        "before": "—",
+        "after": "135,700원 (3/24)",
+        "change_pct": 0,
+        "speed": "무반응",
+        "volume_change": "—",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "LG생건과 동일. 무반응. 매경 기사 프레임('화장품까지 일파만파')과 주가 반응 괴리"
+      },
+      {
+        "asset": "LG화학 051910",
+        "before": "290,000원 (3/23)",
+        "after": "314,500원 (3/24)",
+        "change_pct": 8.4,
+        "speed": "당일",
+        "volume_change": "급증",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "에틸렌 공급자. 이란 제재 면제+합의 시그널로 반등. 에틸렌 배분 결정권자로서 하류보다 선행 반응"
+      }
+    ],
+    "narrative": [
+      {
+        "source": "매경/다음뉴스",
+        "role": "프레임설정",
+        "frame": "에틸렌 부족 → 선박 후판 못 자를 판 → 바이오·화장품까지 일파만파. 산업 전반 도미노",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://v.daum.net/v/20260323171511802",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "source": "뉴시스",
+        "role": "깊이분석",
+        "frame": "반도체·車·조선 안 쓰는 곳 없다. 에틸렌 생산 차질에 韓산업계 비상",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.newsis.com/view/NISX20260316_0003550119",
+        "timestamp": "2026-03-16"
+      },
+      {
+        "source": "아주경제",
+        "role": "깊이분석",
+        "frame": "에틸렌 수급 비상. 조선업 이달 넘기면 마스가 차질 불가피",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.ajunews.com/view/20260316153104799",
+        "timestamp": "2026-03-16"
+      },
+      {
+        "source": "전자신문",
+        "role": "깊이분석",
+        "frame": "산업부, 에틸렌 수급 차질 막는다. 조선·화학업계와 긴급 협의",
+        "tone": "중",
+        "original_analysis": true,
+        "url": "https://www.etnews.com/20260318000444",
+        "timestamp": "2026-03-18"
+      },
+      {
+        "source": "네이버 프리미엄 이코노미스트",
+        "role": "분석",
+        "frame": "공급망 셧다운과 1500원 환율. 산업계는 '공급망 위기 초기 단계'로 인식. 개미들은 계속 베팅 중",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://contents.premium.naver.com/economist/academy/contents/260324080746675do",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "source": "바이오타임즈",
+        "role": "반대쪽",
+        "frame": "중동 리스크에 흔들린 증시… 기술력 갖춘 K-바이오는 견조",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://www.biotimes.co.kr/news/articleView.html?idxno=30336",
+        "timestamp": "2026-03"
+      }
+    ],
+    "expert": [
+      {
+        "name": "한국조선해양플랜트협회",
+        "role": "피해자",
+        "affiliation": "업계 단체",
+        "qualification": "조선업 대표 단체. 산업부에 공식 지원 요청",
+        "statement": "선박 건조에 필요한 절단용 에틸렌 물량 확보 시급. 재고 1~2주분. 이달 말 소진 위기",
+        "direction": "부",
+        "channel": "공식 요청",
+        "source": "https://www.ajunews.com/view/20260318080641989",
+        "timestamp": "2026-03-18"
+      },
+      {
+        "name": "한국석유화학협회",
+        "role": "공급자",
+        "affiliation": "업계 단체",
+        "qualification": "석유화학 대표 단체. 3/15 화상 협의 참여",
+        "statement": "단기 에틸렌 공급 방안 확정. 조선업 긴급 물량 배분 합의",
+        "direction": "중",
+        "channel": "업계 협의",
+        "source": "https://www.etnews.com/20260318000444",
+        "timestamp": "2026-03-15"
+      },
+      {
+        "name": "산업통상자원부",
+        "role": "정책",
+        "affiliation": "정부",
+        "qualification": "3/13 긴급 수급 점검, 3/15 화상 협의 주재",
+        "statement": "공급망 차질 없도록 지원. 기업별 단기 필요 물량 파악 후 배분 방안 확정",
+        "direction": "중",
+        "channel": "공식 성명",
+        "source": "https://www.ajunews.com/view/20260318080641989",
+        "timestamp": "2026-03-18"
+      },
+      {
+        "name": "조선사 경영진 (HD한국조선/한화오션)",
+        "role": "피해자",
+        "affiliation": "조선 대기업",
+        "qualification": "선행 목록 타겟",
+        "statement": "침묵 — 개별 조선사의 공식 성명 또는 매체 인용 미발견. 협회를 통한 집단 대응만 확인",
+        "direction": "침묵",
+        "channel": "—",
+        "source": "—",
+        "timestamp": "2026-03-24",
+        "note": "개별 경영진 발언 미발견. 협회가 대리 발언. 조선사의 의도적 침묵(수주잔고 풍부→위기감 과시 불필요?) 또는 수집 한계"
+      },
+      {
+        "name": "삼성바이오/셀트리온",
+        "role": "피해자",
+        "affiliation": "바이오 대기업",
+        "qualification": "선행 목록 타겟. EO 원료 당사자",
+        "statement": "침묵 — EO 수급 관련 공식 발언 미발견. 바이오타임즈는 'K-바이오 견조'로 보도했으나 기업 자체 발언 없음",
+        "direction": "침묵",
+        "channel": "—",
+        "source": "—",
+        "timestamp": "2026-03-24",
+        "note": "CDMO 모델이라 원료 직접 구매 비중 낮을 수 있음. 또는 아직 영향 미도달. 주가 무반응과 일치"
+      },
+      {
+        "name": "LG생건/아모레",
+        "role": "피해자",
+        "affiliation": "화장품 대기업",
+        "qualification": "선행 목록 타겟. 계면활성제 원료 당사자",
+        "statement": "침묵 — 에틸렌/계면활성제 수급 관련 공식 발언 미발견. 매경 기사가 '화장품까지'라고 했으나 기업 자체 확인 없음",
+        "direction": "침묵",
+        "channel": "—",
+        "source": "—",
+        "timestamp": "2026-03-24",
+        "note": "계면활성제 원가 비중이 전체 매출 대비 낮아 주가 영향 제한적. 매경 기사가 과장했을 가능성"
+      }
+    ],
+    "policy": [
+      {
+        "institution": "산업통상자원부",
+        "action": "3/13 긴급 수급 점검 회의. 3/15 한국석유화학협회-조선해양플랜트협회 화상 협의 주재. 단기 에틸렌 공급 방안 확정",
+        "binding_level": "행정 조치",
+        "market_implication": "조선업 단기 공급은 확보. 그러나 나프타 근본 해결 전까지 반복 위기 가능",
+        "source": "https://www.etnews.com/20260318000444",
+        "timestamp": "2026-03-15~18"
+      }
+    ],
+    "positioning": [
+      {
+        "indicator": "조선주 흐름",
+        "value": "HD한국조선 -14.4%, 한화오션 -13.4%",
+        "change": "전쟁 발발 후 급락→회복→재하락. 에틸렌 이슈에 민감 반응",
+        "implication": "시장은 조선업의 에틸렌 리스크를 가격에 반영. 수주잔고 풍부해도 공정 리스크가 할인",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "바이오·화장품주 흐름",
+        "value": "삼성바이오 무반응, LG생건 무반응, 아모레 무반응",
+        "change": "에틸렌 이슈에 무반응",
+        "implication": "★ 시장은 '바이오·화장품까지 일파만파' 매체 프레임을 안 믿는다. 실제 영향 제한적으로 판단",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "에틸렌 가격",
+        "value": "52주 최고. 전주 대비 +70% 급등",
+        "change": "급등",
+        "implication": "공급 부족 심각. 가격 시그널은 위기 확인",
+        "source": "문화일보 / 뉴시스",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "indicator": "ABS/SAN/LDPE/PP 가격",
+        "value": "ABS·SAN +10~40만원/톤, LDPE·PP +20만원/톤",
+        "change": "인상",
+        "implication": "하류 전이 시작. 가전 외장, 자동차 내장, 포장재 비용 상승",
+        "source": "Seoul Economic Daily (EN)",
+        "timestamp": "2026-03"
+      }
+    ]
+  },
+
+  "pattern": {
+    "direction_alignment": "분열",
+    "direction_detail": {
+      "price": "↓↑ (조선 -14% 반응 vs 바이오·화장품 무반응. 에틸렌 공급자 LG화학 +8.4%)",
+      "narrative": "↓ (6개 매체 중 5개 위기 도미노. 1개 '바이오 견조')",
+      "expert": "↓ + 침묵 다수 (협회/산업부는 위기, 개별 기업은 침묵)",
+      "policy": "대응 (산업부 긴급 협의, 단기 공급 확정)",
+      "positioning": "분열 (조선 반응 vs 바이오·화장품 무반응. 에틸렌 +70% 급등)"
+    },
+    "direction_rationale": "서사는 '전 산업 도미노'로 수렴하지만, 가격은 분열. 조선주만 반응하고 바이오·화장품은 무반응. 매체 프레임과 시장 반응의 괴리가 핵심 발견. 시장은 '일파만파'를 선별적으로만 믿는다",
+
+    "time_structure": "D (분석주도) → C (정책 후속)",
+    "time_sequence": [
+      {"order": 1, "layer": "전문가", "event": "여천NCC 불가항력 선언 (에틸렌 공급 중단)", "timestamp": "2026-03-08"},
+      {"order": 2, "layer": "전문가", "event": "한국조선해양플랜트협회 산업부에 에틸렌 지원 요청", "timestamp": "2026-03-13"},
+      {"order": 3, "layer": "정책", "event": "산업부 긴급 수급 점검 + 화상 협의", "timestamp": "2026-03-15"},
+      {"order": 4, "layer": "서사", "event": "뉴시스 '반도체·車·조선 안 쓰는 곳 없다' 보도", "timestamp": "2026-03-16"},
+      {"order": 5, "layer": "서사", "event": "매경 '에틸렌 부족→후판→바이오→화장품 일파만파'", "timestamp": "2026-03-23"},
+      {"order": 6, "layer": "가격", "event": "HD한국조선 502K 저점 (에틸렌+합의 시그널 겹침)", "timestamp": "2026-03-23"},
+      {"order": 7, "layer": "서사", "event": "이코노미스트 '공급망 위기 초기 단계' 진단", "timestamp": "2026-03-24"}
+    ],
+    "time_rationale": "업계(협회)가 먼저 위기 인지 → 정부 후속 대응 → 매체 확산. 가격은 서사보다 늦게 반응하되 조선에만 선별 반응. D(전문가 주도) 경로가 우세하나 C(정책) 후속이 따름",
+
+    "proportionality": "과소",
+    "proportionality_rationale": "에틸렌 +70% 급등 + 조선·자동차·건설·가전 전방위 영향이라는 이벤트 규모 대비, 가격 반응은 조선(-14%)에만 집중. 바이오·화장품·가전은 완전 무반응. 매체가 '일파만파'로 보도하지만 시장은 실제 영향이 조선에 집중된다고 판단. 또는 바이오/화장품은 아직 영향이 도달하지 않았거나 원가 비중이 낮아 무시",
+
+    "propagation": "D (전문가→서사→가격, 선별적)",
+    "propagation_rationale": "협회 요청(3/13) → 산업부 협의(3/15) → 매체 보도(3/16~23) → 가격(조선만 3/23). 전문가가 먼저 위기를 인지하고 매체가 확산했으나 가격은 선별적으로만 반응. 바이오·화장품은 매체 프레임→가격 전파가 끊어짐",
+    "next_observation": "바이오·화장품이 실제 생산 차질 공시를 하는지. 조선 마스가(대형 선박) 납기 지연 공식화 여부. ABS/PP 가격 인상이 소비자 물가로 전이되는 시점"
+  },
+
+  "previous_unresolved_check": {
+    "checked_date": "2026-03-24",
+    "results": [
+      {
+        "id": "나프타 UQ-003", "status": "open → 부분 해소",
+        "update": "하류 산업 도미노가 실제로 시작됨. 조선업 에틸렌 절단가스 부족 확인. 그러나 바이오·화장품은 매체 프레임만 있고 기업 확인 없음(침묵)"
+      }
+    ]
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-010",
+      "question": "바이오·화장품은 실제로 영향을 받는가, 매체 과장인가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "삼성바이오/셀트리온/LG생건/아모레의 EO·계면활성제 수급 관련 공식 발언 또는 공시",
+      "check_channels": {"expert": ["삼성바이오", "LG생건"], "price": ["207940", "051900"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "2026-03-24",
+      "last_checked_result": "4사 모두 침묵. 주가 무반응. 기업 자체 확인 없음",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-011",
+      "question": "조선 마스가(대형 선박) 납기 지연 공식화 여부",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "HD한국조선/한화오션의 납기 지연 또는 패널티 관련 공시",
+      "check_channels": {"narrative": ["아주경제", "뉴스1"], "price": ["329180", "042660"]},
+      "created": "2026-03-24",
+      "deadline": "2026-04-07",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-012",
+      "question": "ABS/PP/PE 가격 인상이 소비자 물가로 전이되는 시점",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "소비자 물가 지수(CPI) 또는 소비재 기업 가격 인상 공시",
+      "check_channels": {"narrative": ["매경", "한경"], "positioning": ["CPI"]},
+      "created": "2026-03-24",
+      "deadline": "2026-04-15",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-013",
+      "question": "산업부 단기 에틸렌 배분이 조선업 공정을 실제로 유지시키는지",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "조선소 에틸렌 재고 현황 + 가동 지속 여부 보도",
+      "check_channels": {"narrative": ["전자신문", "아주경제"], "expert": ["한국조선해양플랜트협회"]},
+      "created": "2026-03-24",
+      "deadline": "2026-03-31",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+  "next_check": "바이오·화장품 기업 공식 발언 / 조선 납기 지연 공시 / ABS 소비자 전이 / 산업부 에틸렌 배분 효과"
+}

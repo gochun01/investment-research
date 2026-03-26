@@ -1,0 +1,497 @@
+{
+  "issue": "미 관세+EU 규제+중국 물량공세 -- 한국車 3면 포위",
+  "date": "2026-03-26",
+  "depth": "Standard",
+  "scanner_origin": {"scan_id": "SCAN-20260326-002", "cluster_id": "CL-20260326-003"},
+  "temporal_tag": "CUMULATIVE",
+  "scanner_prefetch": {
+    "headlines": [
+      {"source": "매경", "title": "美 관세-EU 규제-中 물량공세...벼랑 끝 몰리는 한국車"},
+      {"source": "AutoNews/C&D", "title": "U.S. tariffs have cost automakers at least $35.4 billion since 2025"},
+      {"source": "한경", "title": "현대차그룹, 북미 공장 풀가동...현지 생산 늘려 관세 뚫는다"},
+      {"source": "Daum/다나와", "title": "월 229대밖에 안 팔렸다 현대차 아이오닉6 미국 단종"}
+    ],
+    "price_snapshot": {"현대차": 490000, "기아": 154700, "KOSPI": 2700},
+    "policy_signals": [
+      "IEEPA 관세 대법원 위헌 판결 (2/20). Section 122로 10% 대체. 15% 상향 예고.",
+      "Section 301 16개국 조사 개시. 한국 포함 가능.",
+      "EU IAA 추진: 부품 70% 역내산 요건. 3년 후 핵심부품 50%.",
+      "한미 관세 15% 합의 유지 중. 25% 인상 위협은 입법 지연 압박용."
+    ],
+    "narrative_snippets": [
+      {"source": "매경", "frame": "벼랑 끝 몰리는 한국車"},
+      {"source": "AutoNews", "frame": "China ripping up rulebook - $35B tariff cost"},
+      {"source": "C&D/Facebook", "frame": "Toyota $9.1B, Hyundai-Kia $1B+ tariff bills"}
+    ]
+  },
+
+  "fingerprint": {
+    "domain": "통상정책 + 산업규제 + 글로벌 EV 산업 재편",
+    "geography": "글로벌 3극 (미국-EU-중국) -> 한국 전이",
+    "touched_assets": [
+      "1차: 현대차(005380.KS), 기아(000270.KS), 현대모비스(012330.KS)",
+      "2차: LG에너지(373220.KS), 삼성SDI(006400.KS), 도요타(TM), BYD(BYDDY)",
+      "대조: KRW(KRW=X), KOSPI"
+    ],
+    "stakeholders": [
+      "현대차그룹", "기아", "도요타", "BYD",
+      "USTR", "EU Commission", "한국 산업부", "자동차 부품협력사"
+    ],
+    "secondary_stakeholders": [
+      {"from": "현대차-기아", "to": "울산/화성 공장 노동자, 1-2차 부품 협력사(만도, 현대위아, 세종공업), 미국 딜러망"},
+      {"from": "자동차 부품사", "to": "2-3차 하청 중소기업, 경남 창원 지역경제"},
+      {"from": "EU IAA 규제", "to": "유럽 딜러/수입상, 한국 부품사 유럽 공장(현대모비스 체코)"},
+      {"from": "중국 BYD", "to": "배터리3사(LG에너지-삼성SDI-SK온), 양극재(에코프로, 포스코퓨처M)"},
+      {"from": "미 USTR", "to": "미국 자동차 소비자(가격 인상), UAW(관세 찬성)"}
+    ],
+    "time_character": "CUMULATIVE -- 미 관세(15->25% 누적), EU IAA(단계적), 중국 EV(수년 성장). 단일 충격 아님."
+  },
+
+  "channels": {
+    "price": {
+      "assets": ["005380.KS", "000270.KS", "012330.KS", "373220.KS", "006400.KS", "TM", "BYDDY", "KRW=X"],
+      "reason": "접촉 자산 직접 + 2차(배터리) + 비교(도요타/BYD) + 대조(KRW)"
+    },
+    "narrative": {
+      "channels": ["매경", "한경", "Reuters", "AutoNews", "Electrek", "CNEVPost", "Forbes"],
+      "reason": "한국 매체(국내 영향) + 글로벌(통상/EV) + 업계 전문(자동차)"
+    },
+    "expert": {
+      "pre_selected": [
+        {"name": "현대차 CEO Jose Munoz", "role": "피해자", "status": "발견"},
+        {"name": "이항구 (한국자동차연구원)", "role": "분석자", "status": "발견"},
+        {"name": "Meritz Securities 자동차 애널리스트", "role": "분석자", "status": "발견"},
+        {"name": "Daol Investment & Securities", "role": "분석자", "status": "발견"},
+        {"name": "Goldman Sachs 자동차 애널리스트", "role": "분석자", "status": "발견"},
+        {"name": "Morgan Stanley", "role": "분석자", "status": "발견"},
+        {"name": "Nomura", "role": "분석자", "status": "발견"},
+        {"name": "UAW (Shawn Fain)", "role": "반대입장", "status": "발견"},
+        {"name": "한국자동차산업협회(모빌리티연합회)", "role": "피해자", "status": "발견"},
+        {"name": "김정관 산업부 장관", "role": "정책", "status": "발견"},
+        {"name": "도요타 경영진", "role": "공급자/비교", "status": "발견"},
+        {"name": "VDA (독일자동차산업협회)", "role": "하류", "status": "발견"},
+        {"name": "유럽 딜러 협회 (ACEA)", "role": "하류", "status": "침묵"},
+        {"name": "현대모비스 경영진", "role": "2차영향", "status": "침묵"},
+        {"name": "울산 노동조합", "role": "2차영향", "status": "침묵"}
+      ],
+      "reason": "R-09 전문가 선행 목록. 6가지 유형 모두 점검."
+    },
+    "policy": {
+      "channels": ["USTR/Section 122", "EU Commission/IAA", "한국 산업부", "대법원 IEEPA 위헌", "한미 관세 15% 합의"],
+      "reason": "3면 각각의 정책 출처"
+    },
+    "positioning": {
+      "channels": ["애널리스트 추천 (Yahoo Finance)", "현대차/기아 3개월 주가 추이"],
+      "reason": "CUMULATIVE = 전개형 이상. 애널리스트 컨센서스 + 가격 구조 확인."
+    },
+    "sns": {
+      "status": "부분 활성",
+      "reason": "Q1: 트럼프 관세 발언(Truth Social) 가능 -> 제한적. Q2: 현대차-기아 = 한국 개인투자자 대중주 -> YES. Q3: 트럼프 정책 발언 -> YES. 커뮤니티 프록시 수집."
+    }
+  },
+
+  "reactions": {
+    "price": [
+      {
+        "asset": "현대차 005380.KS",
+        "current": 490000,
+        "3mo_high": 671054,
+        "3mo_low": 284750,
+        "trajectory": "2025-12-22 284,750 -> 2026-02-23 671,054(고점) -> 2026-03-26 490,000(-27% 고점 대비)",
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "2월 말 한미 합의 기대감으로 급등 후 이란 전쟁+관세 재위협으로 하락. 3개월 기준 +72% 상승이나 고점 대비 -27%."
+      },
+      {
+        "asset": "기아 000270.KS",
+        "current": 154700,
+        "3mo_high": 196858,
+        "3mo_low": 114762,
+        "trajectory": "2025-12-22 114,762 -> 2026-02-23 196,858(고점) -> 2026-03-26 154,700(-21% 고점 대비)",
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "현대차와 동조. 관세 부담 더 높음(영업이익 28.3% 감소). 2025년 관세 비용 2.3조원."
+      },
+      {
+        "asset": "현대모비스 012330.KS",
+        "current": 398500,
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "부품 현지화 수혜주이나 EU IAA 70% 역내산 요건은 신규 리스크."
+      },
+      {
+        "asset": "LG에너지솔루션 373220.KS",
+        "current": 384500,
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "EV 캐즘 + 미국 $7,500 세액공제 폐지. 중국 배터리 가격 전쟁 압박."
+      },
+      {
+        "asset": "삼성SDI 006400.KS",
+        "current": 396500,
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "2025년 적자 전환. 영업이익 2조원 감소. EV 캐즘 직격."
+      },
+      {
+        "asset": "도요타 TM",
+        "current": 212.23,
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "관세 비용 세계 최대 $9.1B. 미국 현지 생산 확대(켄터키 $1B 투자) + 하이브리드 전략 강화. 'precision profitability' 전략."
+      },
+      {
+        "asset": "BYD BYDDY",
+        "current": 13.17,
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "유럽 2개월 연속 테슬라 추월. 2월 등록 17,954대(+162% YoY). 브라질/동남아/유럽 동시 확장. 2월 첫 해외>국내 판매."
+      },
+      {
+        "asset": "KRW=X",
+        "current": 1505.28,
+        "source": "[MCP] Yahoo Finance",
+        "timestamp": "2026-03-26",
+        "note": "1,500원대 지속. 이란 전쟁 + 관세 불확실성 + 무역수지 압박. WGBI 편입 기대가 하방 지지."
+      }
+    ],
+
+    "narrative": [
+      {
+        "source": "[prefetch] 매경",
+        "frame": "美 관세-EU 규제-中 물량공세...벼랑 끝 몰리는 한국車. 3면 포위 구도 강조.",
+        "tone": "위기",
+        "direction": "부정"
+      },
+      {
+        "source": "[MCP] Korean Car Blog",
+        "frame": "25% 관세 시 현대차 4조원+, 기아 2.2조원 추가 비용. Meritz: 현대 영업이익 -23%, 기아 -21%. 재고 완충 불가.",
+        "tone": "경고",
+        "direction": "부정"
+      },
+      {
+        "source": "[MCP] Korea Times",
+        "frame": "25% 관세 복원 시 현대+기아 연간 11조원 부담(Daol 추정). 이미 7.2조원 손실 기기록.",
+        "tone": "경고",
+        "direction": "부정"
+      },
+      {
+        "source": "[MCP] AutoNews/C&D",
+        "frame": "글로벌 자동차 관세 $35.4B. 도요타 $9.1B 최대. 현대-기아 $1B+. EV 구조조정 $70B 접근.",
+        "tone": "구조적",
+        "direction": "부정"
+      },
+      {
+        "source": "[MCP] Electrek/CNEVPost",
+        "frame": "BYD 유럽 2개월 연속 테슬라 추월. 등록 +162% YoY. 유럽 시장점유율 1.8%. PHEV로 관세 우회.",
+        "tone": "확장",
+        "direction": "중국 양방향(중국 긍정 = 한국 위협)"
+      },
+      {
+        "source": "[MCP] 자동차산업뉴스(프리미엄)",
+        "frame": "현대차그룹 북미 풀가동 선언. 관세 파고 정면 돌파. 2030 120만대 확대.",
+        "tone": "대응",
+        "direction": "중립~긍정(대응 서사)"
+      },
+      {
+        "source": "[MCP] Reuters (2026-03-26)",
+        "frame": "현대차 주총: 중국 판매 50만대로 2배 이상 확대 목표. 북미 36개 신모델 2030년까지 출시.",
+        "tone": "공격적 확장",
+        "direction": "긍정(대응)"
+      },
+      {
+        "source": "[MCP -- R-03 반대쪽] 머니투데이/조세일보",
+        "frame": "관세 과장론: 현지화 80% 달성 시 수출 20%만 영향. 2026년 영업이익 현대 13.9조, 기아 10.4조 상향. 담세력 견조.",
+        "tone": "낙관",
+        "direction": "긍정(반론)"
+      },
+      {
+        "source": "[MCP] Forbes/Morgan Stanley",
+        "frame": "중국 자동차 수출 급증 -> 유럽 OEM 장기 영업이익 29% 하회 전망.",
+        "tone": "구조적 경고",
+        "direction": "부정(글로벌)"
+      }
+    ],
+
+    "expert": [
+      {
+        "name": "Jose Munoz (현대차 CEO)",
+        "role": "피해자",
+        "statement": "2030년까지 글로벌 연간 생산능력 120만대 확대. 미국-인도-사우디-베트남 신규 거점. 중국 50만대 판매 목표.",
+        "direction": "적극 대응",
+        "channel": "[MCP] Reuters/한경 (2026-03-26 주총)",
+        "note": "위기를 공격적 확장으로 돌파하겠다는 메시지. 구체적 투자 금액($76B HMGMA 등) 제시."
+      },
+      {
+        "name": "이항구 (한국자동차연구원 연구위원)",
+        "role": "분석자",
+        "statement": "이전 관세 시기에는 재고로 충격 흡수 가능했으나, 이번에는 재고 소진 상태. 직접 타격 불가피.",
+        "direction": "부정",
+        "channel": "[MCP] Korean Car Blog (2026-01-27)",
+        "note": "재고 완충 불가라는 구조적 취약점 지적."
+      },
+      {
+        "name": "Meritz Securities",
+        "role": "분석자",
+        "statement": "10%p 관세 인상 시: 현대 3.1조, 기아 2.2조 비용 증가. 영업이익 현대 -23%, 기아 -21%.",
+        "direction": "부정(정량)",
+        "channel": "[MCP] Korean Car Blog (2026-01-27)",
+        "note": "가장 구체적인 정량 추정."
+      },
+      {
+        "name": "Daol Investment & Securities",
+        "role": "분석자",
+        "statement": "25% 관세 복원 시 현대+기아 연간 약 11조원 부담.",
+        "direction": "부정(정량)",
+        "channel": "[MCP] Korea Times (2026-02-06)",
+        "note": "Meritz보다 더 큰 추정. 25% 전제."
+      },
+      {
+        "name": "Goldman Sachs",
+        "role": "분석자",
+        "statement": "25% 관세 기준 현대 월 4,730억, 기아 3,490억 부담. 15%로 인하 시 현대 2,840억, 기아 2,100억.",
+        "direction": "부정 -> 15% 합의 시 완화",
+        "channel": "[MCP] 나무위키/한미정상회담 종합",
+        "note": "15% vs 25% 시나리오 모두 제시. 핵심 변수 = 관세율."
+      },
+      {
+        "name": "Morgan Stanley",
+        "role": "분석자",
+        "statement": "한미 합의로 불확실성 제거. GDP 성장률 1.5->1.6~1.7% 상향. 중국 자동차 수출 급증 -> 유럽 OEM 장기 영업이익 29% 하회.",
+        "direction": "한국 단기 긍정, 글로벌 장기 부정",
+        "channel": "[MCP] 나무위키/Forbes (2026-03)",
+        "note": "한국-글로벌 방향 분리. 한국은 합의 효과, 글로벌은 중국 위협."
+      },
+      {
+        "name": "Nomura",
+        "role": "분석자",
+        "statement": "대미 현금 투자가 단계적 집행 -> 급격한 자금 유출 방지. 외환보유액 감소 리스크 해소.",
+        "direction": "긍정(합의 효과)",
+        "channel": "[MCP] 나무위키 한미정상회담",
+        "note": "환율 안정 측면에서 긍정."
+      },
+      {
+        "name": "UAW (Shawn Fain 의장)",
+        "role": "반대입장 (R-03)",
+        "statement": "관세는 자유무역 재앙의 종식. 수천 개 고임금 일자리 미국 복귀. 관세 지지.",
+        "direction": "관세 찬성(한국車 입장에서 부정)",
+        "channel": "[MCP] UAW.org/CBS Detroit/Fox Business",
+        "note": "R-03 양면 수집. 미국 노동측은 관세 적극 지지. 한국 자동차에 반대 방향."
+      },
+      {
+        "name": "한국자동차모빌리티산업연합회",
+        "role": "피해자",
+        "statement": "대미투자특별법 2월 처리 강력 촉구 성명. 25% 인상 시 경쟁력 하락 우려.",
+        "direction": "부정(위기감)",
+        "channel": "[MCP] GPKorea/Nate (2026-02-09)",
+        "note": "업계 단체로서 정부에 입법 촉구. 직접적 위기감 표현."
+      },
+      {
+        "name": "김정관 (산업부 장관)",
+        "role": "정책",
+        "statement": "대미투자 입법 시 관세 인상 유예. 정책금융 2조원 추가 공급. 관세 소급 적용 추진.",
+        "direction": "대응(완화 방향)",
+        "channel": "[MCP] 서울신문/korea.kr (2026-02-09)",
+        "note": "정부 대응 구체화. 2조 정책금융 + 현대-기아 1조 상생 프로젝트."
+      },
+      {
+        "name": "도요타 경영진",
+        "role": "공급자/비교",
+        "statement": "관세 $9.1B 최대 부담. 'precision profitability' 전략. 미국 현지화 $10B 5개년 투자. 켄터키-인디애나 $1B 추가.",
+        "direction": "부정(부담) + 대응(현지화)",
+        "channel": "[MCP] Carscoops/Barchart/TTNews",
+        "note": "한국車와 같은 현지화 전략. 규모에서 도요타가 앞서나 부담도 최대."
+      },
+      {
+        "name": "VDA (독일자동차산업협회)",
+        "role": "하류",
+        "statement": "IAA는 경쟁력 강화도 과도한 규제 탈피도 아님. 설계 미흡.",
+        "direction": "비판적",
+        "channel": "[MCP] VDA 보도자료 (2026-03-04)",
+        "note": "독일 업계도 IAA에 불만. 한국 부품사에 동조적 환경."
+      },
+      {
+        "name": "ACEA (유럽자동차제조사협회)",
+        "role": "하류",
+        "statement": "침묵 -- IAA에 대한 한국차 수입 관련 공식 입장 미발견.",
+        "direction": "침묵",
+        "channel": "--",
+        "note": "R-04/R-09. 유럽 딜러/수입상의 한국차 관련 반응 미수집. 수집 도구 한계 또는 아직 입법 초기 단계."
+      },
+      {
+        "name": "현대모비스 경영진",
+        "role": "2차영향",
+        "statement": "침묵 -- EU IAA 70% 역내산 관련 공식 성명 미발견.",
+        "direction": "침묵",
+        "channel": "--",
+        "note": "R-04/R-09. 체코 공장 운영 중이나 IAA 대응 발언 미수집. 규제 초기 단계."
+      },
+      {
+        "name": "울산 노동조합",
+        "role": "2차영향",
+        "statement": "침묵 -- 관세 관련 공식 성명 미발견.",
+        "direction": "침묵",
+        "channel": "--",
+        "note": "R-04/R-09. 미국 생산 이관 -> 울산 물량 영향 가능이나 노조 공식 반응 미수집."
+      }
+    ],
+
+    "policy": [
+      {
+        "institution": "미 대법원",
+        "action": "[MCP] IEEPA 관세 위헌 판결 (2026-02-20). 6:3. 대통령의 IEEPA 관세 부과 권한 부정. 2/24 IEEPA 관세 종료.",
+        "source": "Holland & Knight, PIIE, SCOTUSblog",
+        "note": "자동차 25% 관세는 Section 232 기반이라 유지. IEEPA 관세만 무효."
+      },
+      {
+        "institution": "트럼프 행정부",
+        "action": "[MCP] Section 122 (Trade Act 1974)로 10% 임시 수입 부가세 부과 (2/24~). 15% 상향 시사. 150일 한도.",
+        "source": "Morgan Stanley, Yahoo Finance",
+        "note": "IEEPA 대체. Section 122 최대 15%, 150일 한도. 자동차는 별도 Section 232 25% 유지."
+      },
+      {
+        "institution": "한미 관세 합의",
+        "action": "[MCP/prefetch] 2025-11 합의로 한국산 자동차 15% 적용. 전제: 대미투자특별법 입법. 미이행 시 25% 복원 위협.",
+        "source": "korea.kr, 나무위키, Undercurrent News",
+        "note": "현재 15% 유지 중. 25% 위협은 입법 촉구용 압박. 한국 국회에서 $350B 투자 패키지 승인."
+      },
+      {
+        "institution": "EU Commission (IAA)",
+        "action": "[MCP] Industrial Accelerator Act 제안 (2026-03-04). 자동차 부품 70% EU 역내산 요건. 2029년부터 EV 공공조달 적용. 핵심부품 50% 3년 후.",
+        "source": "EUROMETAL, CLEPA, Automotive News, Carbon Brief",
+        "note": "의회+이사회 심의 필요. 입법까지 1-2년. 즉시 영향 없으나 장기 구조 변화."
+      },
+      {
+        "institution": "한국 산업부",
+        "action": "[MCP] 정책금융 2조원 추가 공급. 현대-기아 1조 상생 프로젝트. 대미투자기금법 발의 추진. 자동차 산업 4,645억원 투자.",
+        "source": "서울신문, korea.kr (2026-02)",
+        "note": "정부 대응 구체화. 정책금융 + 입법 이행이 핵심."
+      }
+    ],
+
+    "positioning": [
+      {
+        "indicator": "현대차 애널리스트 추천",
+        "value": "Strong Buy 11, Buy 17, Hold 4, Sell 0 (3월 현재). 3개월 전: Strong Buy 11, Buy 18, Hold 1.",
+        "source": "[MCP] Yahoo Finance Recommendations",
+        "note": "Hold 비중 증가(1->4). 매수 의견 유지이나 신중론 소폭 확대. Sell 0 유지."
+      },
+      {
+        "indicator": "기아 애널리스트 추천",
+        "value": "Strong Buy 11, Buy 20, Hold 0, Sell 0 (3월 현재). 3개월 전: Strong Buy 8, Buy 19, Hold 2.",
+        "source": "[MCP] Yahoo Finance Recommendations",
+        "note": "기아는 오히려 Strong Buy 증가. 전원 매수 의견. 관세 대비 밸류에이션 매력."
+      },
+      {
+        "indicator": "현대차 3개월 주가 구조",
+        "value": "284,750(12/22) -> 671,054(2/23, +136%) -> 490,000(3/26, 고점-27%)",
+        "source": "[MCP] Yahoo Finance Historical",
+        "note": "V자 급등 후 조정 패턴. 2월 한미 합의+NVIDIA 파트너십이 고점. 이후 이란 전쟁+관세 재위협으로 하락."
+      },
+      {
+        "indicator": "기아 3개월 주가 구조",
+        "value": "114,762(12/22) -> 196,858(2/23, +72%) -> 154,700(3/26, 고점-21%)",
+        "source": "[MCP] Yahoo Finance Historical",
+        "note": "현대차와 동조이나 하락폭 더 작음. 밸류에이션 매력이 하방 지지."
+      }
+    ]
+  },
+
+  "pattern": {
+    "lens_1_direction_alignment": {
+      "verdict": "분열",
+      "detail": {
+        "price": "하락 조정 (고점 대비 -21~27%)",
+        "narrative": "위기 서사 우세이나 대응 서사 공존 (벼랑 끝 vs 풀가동 돌파)",
+        "expert": "분열 -- 위기론(이항구, Meritz, Daol) vs 대응론(Munoz, Morgan Stanley) vs 관세찬성(UAW)",
+        "policy": "다방향 -- 미 관세 압박 + EU 신규 규제 + 한국 정부 완화 대응",
+        "positioning": "애널리스트 전원 매수 유지. 가격과 괴리."
+      },
+      "rationale": "5계층 중 가격은 하락, 서사와 전문가는 분열(위기+대응 양면), 정책은 다방향 압박+대응, 포지셔닝은 여전히 매수 -- 방향이 일치하지 않음. 전형적인 '소화 중' 패턴. 게이트 변수(15% 유지 vs 25% 복원, IAA 입법 시점, 중국 EV 유럽 점유율)에 따라 방향 결정."
+    },
+    "lens_2_time_structure": {
+      "verdict": "C 정책주도",
+      "rationale": "3면 모두 정책이 선행(미 관세 -> 서사 -> 가격, EU IAA -> 서사, 중국 정부 지원 -> BYD 확장 -> 서사). 가격은 정책 변화에 후행 반응. 2월 한미 합의 시 급등, 25% 위협 시 급락 = 정책 결정이 가격을 결정."
+    },
+    "lens_3_proportionality": {
+      "verdict": "과소반응",
+      "rationale": "이슈의 구조적 크기(3면 동시 포위, 연간 11조원 부담 가능, 글로벌 EV 산업 재편) 대비 현대차 -27%(고점), 기아 -21%는 제한적. 애널리스트 전원 매수 유지. 시장은 15% 유지를 기본 시나리오로 가격에 반영하고 있으며, 25% 복원 시나리오를 과소 반영. EU IAA와 중국 구조적 위협은 거의 가격에 미반영."
+    },
+    "lens_4_propagation": {
+      "verdict": "C 정책->가격",
+      "rationale": "관세 정책 변화 -> 서사(매체 보도) -> 가격 반응. 역방향(가격->서사) 아님. 정책이 가격 방향을 결정하며, 서사는 정당화 역할. BYD의 유럽 확장은 D(전문가->서사->가격)에 해당하나 아직 한국차 가격에 미전파."
+    },
+    "synthesis": "3면 포위는 구조적이나 시장은 단기적으로 소화 중. 가격과 포지셔닝의 괴리(가격 하락 vs 전원 매수)가 가장 주목할 패턴. 핵심 게이트: (1) 15% vs 25% 관세율 확정, (2) EU IAA 입법 진행 속도, (3) BYD 유럽 점유율 3% 돌파 여부. 세 게이트 중 하나라도 부정 방향이면 수렴(하락)으로 전환 가능."
+  },
+
+  "stereo_recommendation": {
+    "verdict": "권장",
+    "trigger": "CUMULATIVE + 한국 전이 + 과소반응",
+    "reason": "CUMULATIVE 시간 태그 + 한국 직접 접촉 자산 + 과소반응 판정 = Stereo 입체 분석 필요. 3면 포위의 시간축 분해(각 면의 누적 속도 차이) + PSF/macro 교차(KRW 1,505 + 유가 $100+)로 보이지 않는 구조를 확인해야 함.",
+    "mode": "Stereo 시간축 분해 + PSF/macro 교차"
+  },
+
+  "prefetch_audit": {
+    "prefetch_used": true,
+    "batch1_saved": "가격 3회(현대차, 기아, KOSPI prefetch 확인용 재수집), 서사 일부(4건 prefetch 기반)",
+    "batch1_actual_mcp": 13,
+    "batch2_actual_mcp": 13,
+    "batch3_actual_mcp": 5,
+    "total_mcp": 31,
+    "minimum_required": 18,
+    "note": "prefetch로 BATCH 1 서사/정책 기반 확보. BATCH 2(전문가/포지셔닝)는 rm 고유 영역으로 전체 수집. BATCH 3에서 R-03 양면(UAW 관세 찬성, 관세 과장론) + R-04 침묵(ACEA, 현대모비스, 울산 노조) 기록."
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-060",
+      "question": "한미 관세 15% 유지 vs 25% 복원 -- 대미투자특별법 입법 완료 시점?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "한국 국회에서 대미투자특별법 최종 통과 또는 미국의 25% 관세 복원 공식 발표",
+      "check_channels": {"narrative": ["한경", "연합뉴스"], "policy": ["산업부", "USTR"]},
+      "created": "2026-03-26",
+      "deadline": ""
+    },
+    {
+      "id": "UQ-061",
+      "question": "EU IAA 70% 역내산 요건이 한국 부품사에 미치는 실질 영향 -- 체코/슬로바키아 현지 공장으로 충족 가능?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "EU 의회/이사회 IAA 수정안 확정 또는 현대모비스/만도의 유럽 현지화 대응 발표",
+      "check_channels": {"narrative": ["CLEPA", "Automotive News Europe"], "policy": ["EU Parliament"]},
+      "created": "2026-03-26",
+      "deadline": ""
+    },
+    {
+      "id": "UQ-062",
+      "question": "BYD 유럽 점유율 3% 돌파 시점 -- 헝가리 공장 가동(2026H2)으로 EU 관세 우회 + PHEV 확대",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "BYD 유럽 월간 등록 3만대+ 또는 시장점유율 3%+ 달성",
+      "check_channels": {"narrative": ["CNEVPost", "Electrek"], "positioning": ["ACEA 월간 통계"]},
+      "created": "2026-03-26",
+      "deadline": "2026-09-30"
+    },
+    {
+      "id": "UQ-063",
+      "question": "현대차 조지아 HMGMA 연간 50만대 달성 시점 -- 현재 6.5만대(2025). 미국 현지 생산 비중이 관세 방어의 핵심.",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "HMGMA 분기 생산량 발표에서 연환산 30만대+ 확인",
+      "check_channels": {"narrative": ["한경", "Automotive News"], "price": ["005380.KS"]},
+      "created": "2026-03-26",
+      "deadline": "2026-06-30"
+    },
+    {
+      "id": "UQ-064",
+      "question": "Section 122 임시 관세(10%, 150일 한도) 만료 후(7/24) 대체 조치는?",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "Section 122 만료(2026-07-24)까지 후속 관세 조치 발표",
+      "check_channels": {"narrative": ["Reuters trade", "USTR Federal Register"], "policy": ["USTR"]},
+      "created": "2026-03-26",
+      "deadline": "2026-07-24"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+# 주간 매크로 스냅샷 — 2026-03-10
+# 트리거: 이란전 에스컬레이션 + 트럼프 종전 발언 + 양회
+# 교란 경로 2 (유가) 활성화 후 부분 해소
+
+date: "2026-03-10"
+data_as_of: "2026-03-09"      # FRED 기준, 시장 데이터는 3/10 장중 반영
+regime: "EXPANSION"
+regime_change: true            # 2/5 Transition → 4/5 Expansion (B4+B5 전환)
+l7: 0.18
+l8: 0.02
+risk_gate: "GREEN"
+
+# ── Layer A — 근본 ──
+layer_a:
+  A1_core_pce:
+    value: 2.4
+    unit: "% YoY"
+    direction: "down"          # 둔화 추세 유지
+    status: "partial"          # 2.0% 미도달
+    source: "FRED:PCEPILFE"
+    confidence: "green"
+    note: "최신 발표 Dec 2025 기준. 유가 급등 시 상승 압력 잠재"
+  A2_china_credit:
+    value: "easing_accelerating"
+    direction: "up"
+    status: "met"
+    source: "web:PBOC+NPC"
+    confidence: "yellow"
+    note: "양회 AI 올인 선언. 디지털경제 12.5% 목표. 재정 확장 가속"
+
+# ── Layer B — 전달 ──
+layer_b:
+  B1_real_rate:
+    value: 1.80
+    unit: "%"
+    prev: 1.82
+    direction: "flat"
+    risk_asset: false
+    source: "FRED:DFII10 (3/6)"
+    confidence: "green"
+    note: "이란전 안전자산 수요로 하방 압력이나 BEI 상승이 상쇄"
+  B2_dxy:
+    value: 97.5
+    prev: 98.2
+    direction: "down"
+    risk_asset: true
+    source: "web:forex (3/9)"
+    confidence: "yellow"
+    note: "DXY 약세 추세 유지. YoY -8.5%"
+  B3_usdjpy:
+    value: 149.0
+    prev: 150.0
+    direction: "down_mild"
+    risk_asset: true           # 급변 없음 = 안정
+    source: "web:forex (3/9)"
+    confidence: "yellow"
+    note: "BoJ 매파 + Fed 인하 = 점진 엔 강세. 교란 1 비활성"
+  B4_net_liquidity:
+    value: 5.91
+    unit: "T USD"
+    prev: 5.71
+    direction: "up"
+    risk_asset: true           # ← 전환! RRP 완전 소진 효과
+    source: "FRED:WALCL-TGA-RRP (계산)"
+    confidence: "green"
+    note: "WALCL $6.63T - TGA $0.72T - RRP $0.0003T = $5.91T. RRP 소진으로 전환"
+    calculation: "WALCL 6628894M - TGA ~722000M - RRP ~0M = ~5907000M"
+  B5_hy_oas:
+    value: 319
+    unit: "bp"
+    prev: 340
+    direction: "down"
+    risk_asset: true           # 축소 추세
+    source: "FRED:BAMLH0A0HYM2 (3/9)"
+    confidence: "green"
+    note: "3/6 기준 313bp → 3/9 319bp. 이란전 영향 제한적. 기존 대비 축소"
+
+# ── Layer C — 확인 ──
+layer_c:
+  C1_vix:
+    value: 24
+    cross: "B5"
+    match: false
+    source: "web:estimate (3/10)"
+    confidence: "yellow"
+    note: "이란전으로 상승했으나 트럼프 발언 후 하락 중. B5와 불일치(VIX↑ vs HY 안정)"
+  C2_move:
+    value: 110
+    cross: "B5"
+    match: false
+    source: "web:estimate"
+    confidence: "yellow"
+    note: "채권 변동성 상승. 유가 급변+FOMC 대기"
+  C3_t10y2y:
+    value: 0.56
+    unit: "%"
+    cross: "B1"
+    match: true
+    source: "FRED:T10Y2Y (3/9)"
+    confidence: "green"
+    note: "커브 스티프닝 +22bp→+56bp. Fed 인하 사이클 반영"
+  C4_global_m2:
+    value: 4.5
+    unit: "% YoY"
+    cross: "B4"
+    match: true                # ← 전환! B4 상승 전환으로 일치
+    source: "FRED:WM2NS+web"
+    confidence: "yellow"
+    note: "M2↑ + NL↑ = 괴리 해소. RRP 소진이 핵심 동인"
+  C5_ism_pmi:
+    value: 52.6
+    cross: "A1"
+    match: true
+    source: "web"
+    confidence: "yellow"
+    note: "전월 유지. 3월 초 발표 기준"
+  C6_unemployment:
+    value: 4.4
+    unit: "%"
+    cross: "A1"
+    match: true
+    source: "FRED:UNRATE (Feb 2026)"
+    confidence: "green"
+    note: "⚠️ 4.0→4.4% 상승. 키스톤 전환 감시 필요 (5%+ 시 고용 바인딩)"
+  C7_brent:
+    value: 88
+    unit: "USD"
+    cross: "A1"
+    match: false               # ⚠️ 교란 경로 2 활성
+    source: "web:market (3/10)"
+    confidence: "yellow"
+    note: "$72→$106(3/9)→$88(3/10 트럼프). 교란2 활성화 후 부분 해소. 변동폭 극대"
+  C8_bei:
+    value: 2.34
+    unit: "%"
+    cross: "B1"
+    match: true
+    source: "FRED:T10YIE (3/9)"
+    confidence: "green"
+    note: "2.30→2.34%. 유가발 상승. C7→C8 경로 작동 확인"
+  C9_usdcny:
+    value: 6.90
+    cross: "A2"
+    match: true
+    source: "web:exchange-rates (3/3)"
+    confidence: "yellow"
+    note: "위안 강세 추세. 양회 재정 확장 기대 반영"
+  C10_dff:
+    value: 3.64
+    unit: "%"
+    cross: "B1"
+    match: true
+    source: "FRED:DFF (3/9)"
+    confidence: "green"
+    note: "3.50-3.75% 레인지 확인"
+
+# ── Layer D — 배경 ──
+layer_d:
+  D1_sloos: { value: "Moderate", changed: false }
+  D2_reserves:
+    value: 3.02
+    unit: "T USD"
+    changed: true
+    source: "FRED:WRESBAL (3/4)"
+    note: "⚠️ $3.28T→$3.02T. 임계선 $3.0T 접근 중. 유동성 경색 조기 경보"
+  D3_rrp:
+    value: 0.0003
+    unit: "T USD"
+    changed: true
+    source: "FRED:RRPONTSYD (3/9)"
+    note: "$98B→$0.3B. 완전 소진. B4 상승 전환의 핵심 원인"
+  D4_tga:
+    value: 0.722
+    unit: "T USD"
+    changed: false
+    note: "부채한도 이슈 없음. 안정"
+  D5_walcl:
+    value: 6.63
+    unit: "T USD"
+    changed: false
+    source: "FRED:WALCL (3/4)"
+    note: "QT→RMP 전환 초기. 소폭 증가"
+  D6_sofr:
+    value: 3.65
+    unit: "%"
+    changed: true
+    source: "FRED:SOFR (3/9)"
+    note: "4.30%→3.65%. Fed 인하 사이클 반영. L7 SOFR갭 거의 0"
+  D7_deficit_gdp: { value: "6%+", changed: false, note: "구조적. 교란3 잠재" }
+  D8_term_premium: { value: 0.50, unit: "%", changed: false, note: "상승 추세 유지" }
+  D9_cftc_jpy: { value: "short_reducing", changed: false }
+  D10_fedwatch:
+    value: "pause expected (3/17 FOMC)"
+    changed: true
+    note: "다음 FOMC 3/17. 이란전+유가 변동으로 시장 기대 혼란"
+
+# ── 이벤트 서사 ──
+events:
+  - name: "이란전 에스컬레이션 — 하메네이 사망, IRGC 호르무즈 봉쇄 선언"
+    date: "2026-02-28~03-09"
+    path: "oil"
+    impact: "C7 $72→$106(+47%). C8 2.30→2.34%. 교란 경로 2 활성화"
+  - name: "트럼프 종전 발언 — '전쟁 very complete, pretty much'"
+    date: "2026-03-10"
+    path: "oil"
+    impact: "C7 $106→$88(-17%). 교란 경로 2 부분 해소. KOSPI +5.35%"
+  - name: "중국 양회 — AI 올인, GDP 목표 사상 최저 4.5-5%"
+    date: "2026-03-05~"
+    path: "china"
+    impact: "A2 강화. 디지털경제 12.5% 목표. 중국 경로 가속"
+  - name: "미 고용 둔화 — 실업률 4.0→4.4%"
+    date: "2026-03 (Feb data)"
+    path: "fed"
+    impact: "키스톤 전환 감시. 5%+ 시 Core PCE→고용 바인딩 전환"
+
+# ── 경로 상태 ──
+causal_chain:
+  dominant: "fed"
+  disruptions:
+    - "oil_partial"            # 교란2: 활성화 후 부분 해소 (트럼프 발언)
+  conflicts:
+    - "C7 유가 변동 vs B1 실질금리 안정 = 교란2 잔류 불확실성"
+    - "UNRATE 4.4% 상승 vs Core PCE 2.4% 둔화 = Fed 딜레마 초기 신호"
+  keystone: "core_pce"         # 유지, 단 고용 악화 시 전환 감시
+  narrative: "good_is_good"    # 트럼프 발언(긍정 뉴스) → KOSPI 급등 = Good is Good 확인
+
+# ── 전주 대비 변화 요약 ──
+changes_from_prev:
+  upgraded:
+    - "B4 Net Liq: ✗→✓ (RRP 소진으로 $5.71T→$5.91T)"
+    - "B5 HY OAS: △→✓ (340→319bp, 축소 추세)"
+    - "C4 vs B4 불일치: 해소 (양쪽 ↑)"
+  downgraded:
+    - "C6 UNRATE: 4.0→4.4% (키스톤 전환 감시)"
+    - "C7 Brent: $72→$88 (+22%, 교란2 잔류)"
+    - "D2 지급준비금: $3.28T→$3.02T (임계선 접근)"
+  risk_asset_count: "3/5 (B2+B3+B4, 전주 2/5 대비 +1)"
+  regime_direction: "Transition 유지, 팽창기 접근 중이나 교란2 잔류가 제약"

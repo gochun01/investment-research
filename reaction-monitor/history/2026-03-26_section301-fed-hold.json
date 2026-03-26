@@ -1,0 +1,81 @@
+{
+  "issue": "트럼프 Section 301 무역조사 재개 + Fed 금리 장기 동결 시그널",
+  "date": "2026-03-26",
+  "depth": "Standard",
+  "scanner_origin": {"scan_id": "SCAN-20260326-001", "cluster_id": "CL-20260326-002"},
+
+  "fingerprint": {
+    "domain": "통상정책 + 통화정책",
+    "geography": "미국 → 글로벌 (중국·EU·한국·일본·멕시코 등 16개국)",
+    "touched_assets": ["S&P500", "Nasdaq", "DXY", "10Y UST", "2Y UST", "KRW", "반도체", "자동차", "철강"],
+    "stakeholders": ["USTR(Greer)", "Fed(Barr/Powell)", "EU 의회", "중국 상무부", "한국 수출기업"],
+    "secondary_stakeholders": [
+      {"from": "Section 301 관세", "to": "미국 소비자(가격 전가), 미국 수입업체(Costco/FedEx 환급 소송 2,000건+)"},
+      {"from": "Fed 금리 동결", "to": "모기지 차입자, 부동산 시장, 신흥국 자본 유출"},
+      {"from": "한국 Section 301 대상", "to": "반도체(삼성/SK), 자동차(현대), 철강(포스코)"}
+    ],
+    "time_character": "전개+구조적"
+  },
+
+  "reactions": {
+    "price": [
+      {"asset": "S&P500", "value": 6591.90, "change": "+0.54%", "source": "Yahoo", "note": "이란 휴전 기대 주도. 관세/금리 이슈는 이란에 묻힘"},
+      {"asset": "Nasdaq", "value": 21929.83, "change": "+0.77%", "source": "Yahoo", "note": "빅테크(NVDA +2%, TSLA +1.6%) 주도"},
+      {"asset": "Dow", "value": 46429.49, "change": "+0.66%", "source": "Yahoo"},
+      {"asset": "10Y UST", "value": "4.39%", "change": "-4bp", "source": "FRED DGS10", "note": "유가 하락 → 인플레 완화 기대 → 금리 하락"},
+      {"asset": "2Y UST", "value": "3.90%", "source": "FRED DGS2", "note": "Fed 3.5~3.75% 대비 15bp 프리미엄. 인상 베팅 잔존"},
+      {"asset": "10Y-2Y 스프레드", "value": "0.49%", "source": "FRED T10Y2Y", "note": "양(+)으로 정상화. 역전 해소."},
+      {"asset": "DXY", "value": 99.64, "change": "+0.2%", "source": "Yahoo"}
+    ],
+    "narrative": [
+      {"source": "Lexology/Mayer Brown/JDSupra", "frame": "Section 301 = IEEPA 관세의 후속타. 대법원이 IEEPA 무효화 → 4일 뒤 Section 122(150일 한시) → 2주 뒤 Section 301(영구 가능). 관세 story는 끝나지 않았다.", "tone": "경고"},
+      {"source": "Yahoo Finance", "frame": "EU 의회, 미-EU 무역 협정 비준 투표 이번 주. 그러나 새 Section 301이 협정 조건과 충돌할 수 있어 불확실.", "tone": "혼재"},
+      {"source": "ICAS(China-US)", "frame": "중국 상무부 '극단적으로 일방적, 차별적'. 미국은 러시아 원유 130M배럴+이란 원유 140M배럴 제재 일시 해제(유가 대응). Section 301과 에너지 제재 완화가 동시 진행.", "tone": "복합"},
+      {"source": "Bloomberg/Morningstar", "frame": "Barr: 'some time' 동결. 인플레 2%까지 인하 없다. 관세가 물가 압력의 핵심 원인.", "tone": "매파"},
+      {"source": "American Banker", "frame": "Fed Miran(이사)은 반대로 유가 충격을 무시하고 2026년 4회 인하 전망 유지. Powell은 '아무도 모른다'. Fed 내부 분열.", "tone": "분열"},
+      {"source": "InvestingLive", "frame": "시장은 인하→인상 베팅으로 전환 중. 호르무즈+관세 이중 인플레 압력이 게임 체인저.", "tone": "전환"}
+    ],
+    "expert": [
+      {"name": "Fed Gov. Barr", "role": "정책", "statement": "인플레가 목표(2%)를 크게 상회. 관세 효과가 올해 말 완화되길 희망하지만, 확실한 증거 전까지 인하 없다. 유가 상승은 저소득층에 특히 고통.", "direction": "매파"},
+      {"name": "Fed Gov. Miran", "role": "정책/반대", "statement": "유가 충격을 들여다보고(look through) 2026년 4회 인하 전망 유지. 모든 FOMC 회의에서 반대 투표.", "direction": "비둘기"},
+      {"name": "Fed Chair Powell", "role": "정책", "statement": "경제적 영향이 클 수도 작을 수도 있다. 아무도 모른다(nobody knows).", "direction": "중립/불확실"},
+      {"name": "USTR Greer", "role": "정책", "statement": "Section 301 조사로 Section 122 만료(7/24) 전까지 대안 마련. 추가 조사(디지털 서비스세, 제약, 해양 오염) 가능.", "direction": "공격적"},
+      {"name": "Treasury Bessent", "role": "정책", "statement": "5개월 내 관세율이 대법원 판결 전 수준으로 복귀 전망. 이란 원유 140M배럴 제재 해제는 '이란 자체 자원으로 유가 억제'.", "direction": "자신감"},
+      {"name": "중국 상무부", "role": "반대", "statement": "Section 301 조사는 '극단적으로 일방적, 자의적, 차별적'. 대화로 해결 촉구.", "direction": "반발"}
+    ],
+    "policy": [
+      {"institution": "USTR", "action": "3/11 Section 301(구조적 과잉생산) 16개국 조사 개시. 3/12 Section 301(강제노동) 60개국 조사. 의견 마감 4/15, 청문회 4/28.", "binding": "조사 개시 (관세 부과 전 단계)"},
+      {"institution": "Fed", "action": "3.5~3.75% 동결 유지. Barr 'some time' 동결 시사. Miran 4회 인하 반대 의견. 다음 FOMC 5/6~7.", "binding": "현행 유지"},
+      {"institution": "EU 의회", "action": "미-EU 무역 협정 비준 투표 이번 주 (무역위 목요일 → 본회의 3월 말~4월). 새 Section 301이 협정 조건과 충돌 가능성.", "binding": "투표 예정"},
+      {"institution": "미국 법원", "action": "IEEPA 관세 환급 소송 2,000건+. Costco/FedEx 포함. $130B+ 환급 절차 진행 중.", "binding": "사법 절차"}
+    ],
+    "positioning": [
+      {"indicator": "금리 선물", "value": "인하→인상 베팅 전환. 시장이 'higher for longer' 재프라이싱", "source": "InvestingLive"},
+      {"indicator": "Section 122 만료", "value": "7/24. 그 전에 Section 301 결과 나와야 관세 공백 방지", "source": "Lexology"},
+      {"indicator": "Section 301 코멘트 마감", "value": "4/15. 기업 로비 창구 열림", "source": "CBH/JDSupra"},
+      {"indicator": "IEEPA 환급", "value": "$130B+. 2,000+ 기업 소송. 환급 절차 4단계 진행 중", "source": "Yahoo Finance"}
+    ]
+  },
+
+  "pattern": {
+    "direction_alignment": "분열",
+    "direction_detail": {
+      "price": "↑ (이란 휴전 기대 주도. 관세/금리는 가격에 미반영)",
+      "narrative": "↑↓ (관세 경고 vs 협상 기대 vs Fed 내부 분열)",
+      "expert": "↑↓ (Barr 매파 vs Miran 비둘기 vs Powell 불확실)",
+      "policy": "→ (조사 개시 단계. 실제 관세 부과 아직. Fed 동결 유지)",
+      "positioning": "↓ (금리 인하→인상 베팅 전환. higher for longer)"
+    },
+    "direction_rationale": "가격(↑)은 이란 휴전에 반응 중이고 Section 301/Fed는 아직 가격에 반영되지 않았다. 그러나 서사·전문가·포지셔닝은 '관세 재부과 + 금리 장기 동결'이라는 이중 긴축을 경고. 이란이 가격을 지배하는 동안 뒤에서 관세+금리 리스크가 쌓이는 구조.",
+    "time_structure": "C (정책 주도) — USTR 조사 → 코멘트 마감(4/15) → 청문회(4/28) → 관세 결정",
+    "proportionality": "과소 — Section 301이 16개국+60개국을 동시 겨냥하는데 시장 반응이 거의 없음. 이란 전쟁에 완전히 묻힘.",
+    "propagation": "잠재적 — 관세 확정 시 제조원가 → 소비자 가격 → 인플레 → Fed 긴축 강화. 아직 전파 시작 전."
+  },
+
+  "unresolved": [
+    {"id": "UQ-030", "question": "Section 301 조사가 실제 관세로 이어지는 시점? Section 122 만료(7/24) 전에 결과 나오는가?", "status": "open", "resolve_type": "date", "resolve_condition": "USTR의 Section 301 조사 결과 발표 또는 관세 부과 공고", "check_channels": {"narrative": ["USTR", "Reuters trade"], "policy": ["Federal Register"]}, "created": "2026-03-26", "deadline": "2026-07-24"},
+    {"id": "UQ-031", "question": "EU 의회 미-EU 무역 협정 비준 통과하는가? Section 301과 충돌 시 무산?", "status": "open", "resolve_type": "condition", "resolve_condition": "EU 의회 본회의 투표 결과", "check_channels": {"narrative": ["Euronews", "Bloomberg EU"], "policy": ["EU Parliament"]}, "created": "2026-03-26", "deadline": "2026-04-15"},
+    {"id": "UQ-032", "question": "Fed 5/6~7 FOMC에서 방향 전환? Barr 매파 vs Miran 비둘기 — 어느 쪽이 다수?", "status": "open", "resolve_type": "date", "resolve_condition": "5월 FOMC 성명서 + 점도표", "check_channels": {"narrative": ["Bloomberg Fed"], "positioning": ["CME FedWatch"]}, "created": "2026-03-26", "deadline": "2026-05-07"},
+    {"id": "UQ-033", "question": "한국이 Section 301 대상에서 어떤 섹터가 타격받는가? (반도체, 자동차, 철강)", "status": "open", "resolve_type": "data", "resolve_condition": "USTR Federal Register에서 한국 관련 조사 범위 확인", "check_channels": {"narrative": ["한경", "매경"], "policy": ["USTR", "산업부"]}, "created": "2026-03-26", "deadline": "2026-04-15"}
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "issue": "천궁-2 이란 전쟁 두바이에서 실전 입증 — K-방산 초대형 호재",
+  "date": "2026-03-24",
+  "depth": "Standard",
+
+  "fingerprint": {
+    "domain": "방산/국방 + 지정학(중동) + 통상(방산 수출)",
+    "geography": "한국(생산) → UAE 두바이(실전) → 글로벌 방산 시장",
+    "touched_assets": [
+      "한화에어로스페이스 012450 (1차 — 방산 대장)",
+      "LIG넥스원 079550 (1차 — 천궁 개발/생산사)",
+      "한화시스템 (2차 — 천궁 레이더)",
+      "Raytheon RTX (대조 — Patriot 경쟁사)",
+      "미국 방산ETF ITA (대조 — 글로벌 방산)"
+    ],
+    "stakeholders": [
+      "한화에어로스페이스", "LIG넥스원", "한화시스템",
+      "방위사업청(DAPA)", "UAE군", "사우디/이라크/카타르(잠재 구매국)",
+      "Raytheon(Patriot 경쟁)", "국방과학연구소(ADD)"
+    ],
+    "secondary_stakeholders": [
+      {"from": "LIG넥스원 수주 급증", "to": "방산 하청업체(부품 공급망), 대전/경남 지역경제"},
+      {"from": "UAE 추가 도입 요청", "to": "GCC 국가(카타르, 쿠웨이트, 바레인) 도입 검토 가속"},
+      {"from": "Patriot 경쟁력 약화", "to": "미 의회 방산 로비(한국 방산 견제?), 록히드마틴"},
+      {"from": "방산 수출 급증", "to": "한국 경상수지 개선, 원화 강세 요인"}
+    ],
+    "time_character": "충격+구조적"
+  },
+
+  "channels": {
+    "price": [
+      {"asset": "한화에어로 012450", "type": "1차", "reason": "방산 대장주. 천궁 생산 참여"},
+      {"asset": "LIG넥스원 079550", "type": "1차", "reason": "천궁 개발/생산 핵심. 수출 계약 주체"},
+      {"asset": "Raytheon RTX", "type": "대조", "reason": "Patriot 제조사. 천궁과 직접 경쟁"}
+    ],
+    "narrative": [
+      {"source": "머니투데이", "role": "프레임설정", "reason": "이란 미사일 '펑' 두바이 밤하늘 천궁2 — 초기 보도"},
+      {"source": "매거진한경/다음뉴스", "role": "깊이분석", "reason": "'4조원어치 사간 천궁-II, 첫 실전 요격 성공' 상세"},
+      {"source": "Army Recognition / Defense Post", "role": "글로벌", "reason": "First Combat Use 글로벌 방산 전문매체"},
+      {"source": "Eurasian Times", "role": "글로벌", "reason": "'S-400-Inspired 96% Kill Rate' 글로벌 프레임"},
+      {"source": "Breaking Defense", "role": "글로벌", "reason": "이라크 $2.8B 계약 보도. 미국 방산 전문"},
+      {"source": "글로벌이코노믹", "role": "반대쪽", "reason": "'LIG넥스원 78% 폭등 뒤 거품 경고' — 과열 경고"},
+      {"source": "Financial Post", "role": "반대쪽", "reason": "'韓방산주 미국 록히드마틴보다 3배 고평가' — 밸류에이션 경고"}
+    ],
+    "expert": [
+      {"name": "유용원 의원", "role": "정책", "reason": "천궁 실전 입증 최초 공개. 국방위 의원"},
+      {"name": "증권가 애널리스트", "role": "분석자", "reason": "PSR 35배 과열 경고. 밸류에이션 분석"},
+      {"name": "FT (Financial Times)", "role": "분석자", "reason": "'패트리어트 경쟁 제품 한국 부상' 글로벌 평가"},
+      {"name": "Washington Institute", "role": "분석자", "reason": "'한국과 중동 방산 전략적 적합' 싱크탱크"},
+      {"name": "Raytheon/미국 방산", "role": "반대입장", "reason": "전문가 선행 목록. Patriot 경쟁사 반응"},
+      {"name": "UAE 국방부", "role": "피해자", "reason": "전문가 선행 목록. 운용국 공식 확인/추가 요청"}
+    ],
+    "policy": [
+      {"institution": "UAE 군", "role": "1차", "reason": "공식 발표: 186발 중 172발 요격 (92.5%)"},
+      {"institution": "방위사업청(DAPA)", "role": "1차", "reason": "수출 계약 관리. 추가 수출 협상 주체"},
+      {"institution": "사우디/이라크/카타르", "role": "2차", "reason": "사우디 $3.2B, 이라크 $2.8B 기계약. 카타르/쿠웨이트 문의"}
+    ],
+    "positioning": [
+      {"indicator": "한화에어로/LIG넥스원 주가 흐름", "reason": "실전 입증→주가 반영 정도"},
+      {"indicator": "방산 수주잔고 $72B", "reason": "K-방산 파이프라인 규모"},
+      {"indicator": "LIG넥스원 PSR 35배", "reason": "밸류에이션 과열 지표"}
+    ],
+    "sns": {
+      "status": "활성",
+      "reason": "Q1: 군사 전문가/OSINT 계정 X 발언 다수. Q2: 방산주+국뽕 리테일 관심 높음. Q3: 유용원 의원 발언이 정책 채널. → 전면 활성",
+      "collected": true,
+      "note": "유용원 의원이 최초 공개 채널. 군사 OSINT 계정들이 요격 영상/데이터 확산"
+    }
+  },
+
+  "reactions": {
+    "price": [
+      {
+        "asset": "한화에어로 012450",
+        "before": "1,195,000원 (2/27)",
+        "after": "1,335,000원 (3/24)",
+        "change_pct": 11.7,
+        "speed": "즉시",
+        "volume_change": "급증",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 발발(3/3) 1,432K 급등(+20%) → 천궁 입증(3/5) 1,481K 고점 → 이후 하락 조정 1,278K(3/23) → 1,335K. 고점 대비 -10% 조정 중"
+      },
+      {
+        "asset": "LIG넥스원 079550",
+        "before": "509,000원 (2/27)",
+        "after": "641,000원 (3/24)",
+        "change_pct": 25.9,
+        "speed": "즉시",
+        "volume_change": "폭발적",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24",
+        "note": "전쟁 발발 661K → 천궁 입증 후 834K 고점(3/6, +64%). 이후 조정 640K. 고점 대비 -23% 조정. 5거래일 78% 폭등 후 되돌림"
+      }
+    ],
+    "narrative": [
+      {
+        "source": "머니투데이",
+        "role": "프레임설정",
+        "frame": "이란 미사일 한방에 '펑'. 두바이 밤하늘 지키는 천궁-2",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://www.mt.co.kr/world/2026/03/05/2026030514334020878",
+        "timestamp": "2026-03-05"
+      },
+      {
+        "source": "매거진한경",
+        "role": "깊이분석",
+        "frame": "UAE가 4조원어치 사간 천궁-II, 이란 탄도탄 첫 실전 요격 성공. 96% 요격률",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://magazine.hankyung.com/business/article/202603036704b",
+        "timestamp": "2026-03-03"
+      },
+      {
+        "source": "Army Recognition",
+        "role": "글로벌",
+        "frame": "First Combat Use for South Korea's Cheongung II Against Iranian Missile in UAE",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://www.armyrecognition.com/news/army-news/2026/first-combat-use-for-south-koreas-cheongung-ii-air-defense-system-against-iranian-missile-in-uae",
+        "timestamp": "2026-03-03"
+      },
+      {
+        "source": "Eurasian Times",
+        "role": "글로벌",
+        "frame": "S-400-Inspired Korean Air Defense Achieves 96% Kill Rate in UAE Combat Debut",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://www.eurasiantimes.com/iran-war-s-400-inspired-korean-air-defense-system-achieves-96-kill-rate-in-uae-combat-debut/",
+        "timestamp": "2026-03"
+      },
+      {
+        "source": "Breaking Defense",
+        "role": "글로벌",
+        "frame": "Iraq boosts air defenses with $2.8B deal for Korean Cheongung-II",
+        "tone": "긍",
+        "original_analysis": true,
+        "url": "https://breakingdefense.com/2024/09/iraq-boosts-air-defenses-with-reported-2-8b-deal-for-south-korean-cheongung-ii/",
+        "timestamp": "2026-03"
+      },
+      {
+        "source": "글로벌이코노믹",
+        "role": "반대쪽",
+        "frame": "LIG넥스원 78% 폭등 뒤 거품 경고. PSR 35배. 작은 실망에도 급락 가능",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.g-enews.com/article/Global-Biz/2026/03/202603240831475190fbbec65dfb_1",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "source": "Financial Post",
+        "role": "반대쪽",
+        "frame": "韓방산주 미국 록히드마틴보다 3배 고평가. 일제 급락",
+        "tone": "부",
+        "original_analysis": true,
+        "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=231209",
+        "timestamp": "2026-03"
+      }
+    ],
+    "expert": [
+      {
+        "name": "유용원 의원",
+        "role": "정책",
+        "affiliation": "국회 국방위",
+        "qualification": "천궁 실전 입증 최초 공개자. 군사 전문 의원",
+        "statement": "UAE 실전 투입 천궁-II 2개 포대가 60여 발 발사, 96% 요격. 순항미사일은 8발 전량 요격",
+        "direction": "긍",
+        "channel": "SNS + 국회",
+        "source": "https://www.mt.co.kr/world/2026/03/05/2026030514334020878",
+        "timestamp": "2026-03-05"
+      },
+      {
+        "name": "증권가 (글로벌이코노믹 인용)",
+        "role": "반대입장",
+        "affiliation": "증권업계",
+        "qualification": "방산 밸류에이션 분석",
+        "statement": "LIG넥스원 PSR 21.7배→35.3배 수직 상승. 시장이 고성장 기술주로 평가. 작은 실망에도 급락 가능",
+        "direction": "부",
+        "channel": "리포트/매체 인용",
+        "source": "https://www.g-enews.com/article/Global-Biz/2026/03/202603240831475190fbbec65dfb_1",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "name": "FT (Financial Times)",
+        "role": "분석자",
+        "affiliation": "Financial Times",
+        "qualification": "글로벌 경제지. 방산 시장 분석",
+        "statement": "이란 전쟁으로 패트리어트 경쟁 제품을 더 저렴한 값에 제시한 한국 방산 기업 부상. 천궁-2 실전 성공으로 수요 증가 예상",
+        "direction": "긍",
+        "channel": "기사",
+        "source": "MBC 뉴스 재인용",
+        "timestamp": "2026-03"
+      },
+      {
+        "name": "Washington Institute",
+        "role": "분석자",
+        "affiliation": "Washington Institute (미국 싱크탱크)",
+        "qualification": "중동 방산 정책 전문",
+        "statement": "한국과 중동의 방산 현지화 전략이 새로운 전략적 적합성을 보인다",
+        "direction": "긍",
+        "channel": "분석 보고서",
+        "source": "https://www.washingtoninstitute.org/policy-analysis/south-korea-and-middle-easts-defense-localization-drive-new-strategic-fit",
+        "timestamp": "2026-03"
+      },
+      {
+        "name": "Raytheon / 미국 방산 업계",
+        "role": "반대입장",
+        "affiliation": "Raytheon (Patriot 제조사)",
+        "qualification": "전문가 선행 목록. 직접 경쟁사",
+        "statement": "침묵 — Patriot과의 직접 비교에 대한 공식 반응 미발견. 천궁 실전 성공에 대한 코멘트 없음",
+        "direction": "침묵",
+        "channel": "—",
+        "source": "—",
+        "timestamp": "2026-03-24",
+        "note": "경쟁사의 의도적 침묵 가능. 공개 반박은 자사 제품 약점 인정이 되므로 무대응 전략. 그러나 미 의회 로비 채널에서의 움직임은 미확인"
+      },
+      {
+        "name": "UAE 국방부",
+        "role": "피해자",
+        "affiliation": "UAE 군",
+        "qualification": "운용국. 실전 사용자",
+        "statement": "공식 발표: 186발 중 172발 요격 (92.5%). 추가 도입 요청(30발 긴급 수송). 비공식: '한국에 연락이 쏟아졌다'",
+        "direction": "긍",
+        "channel": "공식 성명 + 매체 인용",
+        "source": "https://www.reportera.co.kr/military/cheongung-2-uae-combat-proven-additional-purchase-request/",
+        "timestamp": "2026-03"
+      }
+    ],
+    "policy": [
+      {
+        "institution": "UAE 군",
+        "action": "공식: 186발 중 172발 요격 (92.5%). 추가 요격탄 30발 긴급 수송 요청. 추가 포대 도입 요청",
+        "binding_level": "공식 발표 + 구매 요청",
+        "market_implication": "실전 입증 → 추가 계약 가속. 기존 4조원 + 추가 물량",
+        "source": "https://www.reportera.co.kr/military/cheongung-2-msam2-uae-early-delivery-iran-defense/",
+        "timestamp": "2026-03"
+      },
+      {
+        "institution": "사우디/이라크 (기계약국)",
+        "action": "사우디 $3.2B(10개 포대), 이라크 $2.8B(8개 포대) 기계약 상태. 실전 입증으로 인도 가속 기대",
+        "binding_level": "계약 체결",
+        "market_implication": "LIG넥스원 중동 수주잔고 ~10.2조원. 2028년 수출 비중 52%",
+        "source": "https://www.globaldefensecorp.com/2025/03/03/saudi-arabia-purchased-south-koreas-cheongung-ii-anti-air-missiles-for-3-2-billion/",
+        "timestamp": "2026-03"
+      },
+      {
+        "institution": "카타르/쿠웨이트/바레인 (신규 문의국)",
+        "action": "실전 입증 후 도입 문의 개시. 아직 계약 미체결",
+        "binding_level": "문의/검토",
+        "market_implication": "파이프라인 확대. GCC 전체로 확산 가능성",
+        "source": "https://militarnyi.com/en/news/uae-qatar-and-kuwait-have-requested-taf-industries-interceptor-drones/",
+        "timestamp": "2026-03"
+      }
+    ],
+    "positioning": [
+      {
+        "indicator": "LIG넥스원 주가 궤적",
+        "value": "509K(2/27) → 834K 고점(3/6, +64%) → 641K(3/24, 고점 대비 -23%)",
+        "change": "폭등 후 조정",
+        "implication": "실전 입증은 즉시 반영. 그러나 고점에서 -23% 조정 = 과열 해소 중. '뉴스에 팔기' 패턴",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "한화에어로 주가 궤적",
+        "value": "1,195K(2/27) → 1,488K 고점(3/13, +24%) → 1,335K(3/24, 고점 대비 -10%)",
+        "change": "상승 후 완만 조정",
+        "implication": "LIG넥스원보다 변동 적음. 다각화된 사업(엔진/방산)이 완충. 방산 대장주 프리미엄 유지",
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-24"
+      },
+      {
+        "indicator": "K-방산 수주잔고",
+        "value": "$72B (한화+KAI+LIG+현대로템 합산 사상 최초 돌파)",
+        "change": "역대 최고",
+        "implication": "천궁 실전 입증이 전체 K-방산 파이프라인을 끌어올림. 단일 무기가 아닌 생태계 효과",
+        "source": "Seoul Economic Daily",
+        "timestamp": "2026-03"
+      },
+      {
+        "indicator": "LIG넥스원 PSR",
+        "value": "21.7배(2024) → 35.3배(2026.02)",
+        "change": "수직 상승",
+        "implication": "고성장 기술주 수준. 록히드마틴의 3배. 과열 경고 구간. 실적이 뒷받침 안 되면 급락 위험",
+        "source": "글로벌이코노믹",
+        "timestamp": "2026-03-24"
+      }
+    ]
+  },
+
+  "pattern": {
+    "direction_alignment": "수렴",
+    "direction_detail": {
+      "price": "↑ (LIG +25.9%, 한화에어로 +11.7%. 고점 대비 조정 중이나 전쟁 전 대비 여전히 상승)",
+      "narrative": "↑ (7개 매체 중 5개 긍정/글로벌 주목. 2개 과열 경고)",
+      "expert": "↑ (4명 긍정, 1명 과열 경고, 1명(Raytheon) 침묵)",
+      "policy": "↑ (UAE 추가 요청, 사우디/이라크 기계약, 카타르/쿠웨이트 신규 문의)",
+      "positioning": "↑↓ (주가 폭등→조정 중. 수주잔고 $72B 역대 최고. PSR 35배 과열)"
+    },
+    "direction_rationale": "5개 계층이 호재 방향으로 수렴. 그러나 '수렴 속의 분열'이 존재 — 실전 입증(구조적 호재)과 밸류에이션 과열(단기 리스크)이 공존. 가격은 이미 '뉴스에 팔기' 단계에 진입 (고점 대비 LIG -23%). 서사·정책·전문가는 여전히 호재지만 가격은 이미 조정 중",
+
+    "time_structure": "A (시장주도) — 가격이 서사보다 먼저 반응",
+    "time_sequence": [
+      {"order": 1, "layer": "정책", "event": "이란 UAE 미사일 공격 → 천궁-II 실전 투입", "timestamp": "2026-03-01~03"},
+      {"order": 2, "layer": "가격", "event": "LIG넥스원 +30% 급등 (실전 뉴스 전부터 전쟁 수혜 선반영)", "timestamp": "2026-03-03"},
+      {"order": 3, "layer": "서사", "event": "매거진한경 '4조원어치 사간 천궁-II 첫 요격 성공'", "timestamp": "2026-03-03"},
+      {"order": 4, "layer": "전문가", "event": "유용원 의원 '96% 요격률' 공개", "timestamp": "2026-03-05"},
+      {"order": 5, "layer": "가격", "event": "LIG넥스원 834K 고점 (5거래일 +78%)", "timestamp": "2026-03-06"},
+      {"order": 6, "layer": "서사", "event": "글로벌 방산 매체(Army Recognition, Eurasian Times) 보도 확산", "timestamp": "2026-03-10"},
+      {"order": 7, "layer": "정책", "event": "UAE 추가 요격탄 30발 긴급 수송 요청", "timestamp": "2026-03-중"},
+      {"order": 8, "layer": "가격", "event": "조정 시작. LIG 834K→641K (-23%)", "timestamp": "2026-03-17~24"},
+      {"order": 9, "layer": "서사", "event": "글로벌이코노믹 '거품 경고'. Financial Post '3배 고평가'", "timestamp": "2026-03-24"}
+    ],
+    "time_rationale": "가격이 서사보다 선행. 전쟁 발발(3/3)에 주가가 먼저 급등하고, 실전 입증 상세(3/5 유용원)가 뒤따름. 글로벌 매체 보도(3/10)는 더 늦음. 전형적 A 경로(시장주도). 주목: 가격은 이미 조정 중인데 서사(과열 경고)가 3/24에야 나옴 — 서사가 가격을 후행",
+
+    "proportionality": "비례",
+    "proportionality_rationale": "이벤트 규모: 한국 수출 무기 최초 실전 입증 + 96% 요격률 + 패트리어트 대비 1/3 가격. 이것은 K-방산 역사상 가장 큰 단일 이벤트. LIG +64%(고점), 한화에어로 +24%는 이 규모에 비례. 과잉이 아닌 비례. 다만 현재 조정(-23%)은 단기 과열 해소이지 호재 부정이 아님",
+
+    "propagation": "A (가격→서사→정책, 시장 주도)",
+    "propagation_rationale": "전쟁 발발→주가 즉시 급등(3/3)→실전 상세 보도(3/5)→글로벌 확산(3/10)→정책(UAE 추가 요청). 가격이 모든 것을 선행. 과열 경고 서사(3/24)는 가격 조정(-23%)보다 늦게 나옴",
+    "next_observation": "LIG넥스원 실적 발표(매출 5~6조, 영업이익 5천억)가 PSR 35배를 정당화하는지. 카타르/쿠웨이트 계약 체결 여부. 천궁-III 개발 일정(2034년 배치). Raytheon의 가격 인하 또는 로비 대응"
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-014",
+      "question": "LIG넥스원 2026 실적(매출 5~6조)이 PSR 35배를 정당화하는가?",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "LIG넥스원 분기 실적 발표. 매출 성장률 vs PSR 비교",
+      "check_channels": {"price": ["079550"], "narrative": ["한경", "증권사 리포트"]},
+      "created": "2026-03-24",
+      "deadline": "2026-05-15",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-015",
+      "question": "카타르/쿠웨이트 등 GCC 신규 계약 체결 여부",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "카타르 또는 쿠웨이트의 천궁-II 계약 공시",
+      "check_channels": {"policy": ["DAPA", "LIG넥스원"], "narrative": ["Breaking Defense", "Jane's"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-016",
+      "question": "Raytheon/미국 방산의 대응 — 가격 인하, 로비, 또는 침묵 지속?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "Raytheon의 Patriot 관련 공식 대응 또는 미 의회에서의 한국 방산 관련 논의",
+      "check_channels": {"expert": ["Raytheon"], "narrative": ["Defense News", "Washington Times"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "2026-03-24",
+      "last_checked_result": "침묵 유지. 공식 대응 미발견",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-017",
+      "question": "천궁-III 개발 일정 (2034년 배치)이 앞당겨지는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "ADD 또는 DAPA의 천궁-III 일정 변경 발표",
+      "check_channels": {"policy": ["ADD", "DAPA"], "narrative": ["방산 전문매체"]},
+      "created": "2026-03-24",
+      "deadline": "",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+  "next_check": "LIG넥스원 분기 실적 (5월) / GCC 신규 계약 / Raytheon 대응 / 천궁-III 일정"
+}
