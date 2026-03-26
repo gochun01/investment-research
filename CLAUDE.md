@@ -193,6 +193,40 @@ Review Mode (자기 점검):
 7. 가드레일 자기 수정 금지: GUARDRAILS.md의 Red Zone을 스스로 변경할 수 없다.
 ```
 
+## Trigger-KC 설계 규율 (L7 시나리오 필수)
+
+```
+Stereo L7에서 시나리오를 생성할 때, Trigger-KC 프로토콜을 반드시 따른다.
+참조: ../Trigger-KC/psf_threshold_design_protocol.md
+참조: ../Trigger-KC/psf_trigger_kc_logic_structure.md
+
+━━ 임계값 설계 7항목 체크리스트 ━━
+  ☐ 1. 원천(Source) 명시: 구조적 / 통계적 / 서사적
+  ☐ 2. 3중 밴드: Watch-Alert-Hard
+  ☐ 3. 지속 조건: ×N일 (순간 돌파 ≠ 지속 돌파)
+  ☐ 4. 절대값+상대값 병렬: Hard KC = "A OR B, 먼저 도달"
+  ☐ 5. Trigger-KC 페어링: 페어 없는 KC = 출구 없는 고속도로
+  ☐ 6. KC 작동 시 행동 사전 정의: "그때 가서 판단" 금지
+  ☐ 7. 재조정 주기 명시: 정기(월/분기) + 비정기(판 전환 이벤트)
+
+━━ 임계값 유형 규칙 ━━
+  Trigger = 비율/스프레드 우선 (전이 감지에 최적)
+  KC Watch/Alert = 상대값 우선 (체제 적응 + 조기 경보)
+  KC Hard = 절대값 + 상대값 병렬
+
+━━ 재조정 ━━
+  정기: TC 카드의 next_check에 맞춰 월 1회 임계값 재검토
+  비정기: 판 전환 이벤트(전쟁 개시/종료, Fed pivot, 구조 변화) 시 즉시
+  금지: 손실 중 KC 완화, 노이즈에 과잉 반응, 이벤트 직후 24시간 내 변경
+
+━━ TC 카드 연동 ━━
+  TC 카드의 scenarios 필드에 Trigger-KC를 저장할 때:
+  - 각 KC에 source(원천), recalibration(재조정 주기), action(작동 시 행동) 추가
+  - Watch가 만기 도래하면 daily-tracking-scan이 KC 상태도 함께 체크
+```
+
+---
+
 ## Phase 0 Gate (분석 시작 전 차단문 — 최우선)
 
 ```
