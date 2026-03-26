@@ -1,0 +1,491 @@
+{
+  "vrf_id": "vrf_20260320_100644_500",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🔴",
+      "norm": "🟡",
+      "logic": "🔴",
+      "temporal": "🟢",
+      "incentive": "🟢",
+      "omission": "🔴"
+    },
+    "critical_flags": [
+      "c006: FRED: 기준금리 3.64% 유지(동결). 파월 금리인상은 사실 아님. 매파 발언/점도표를 인상으로 표현.",
+      "c006: lr_news_002: 매파 발언을 금리인상으로 단정. lr_032 부분 적용.",
+      "c006: 제목 금리인상이나 실제 동결. 반대 사실 누락."
+    ],
+    "valid_until": "2026-04-19",
+    "validity_condition": "KC-1(금리 동결) 확인 AND 카타르 불가항력 공식 선언 여부",
+    "claims_count": 7
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260320_100644_500",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-20T10:06:44.494681",
+      "engine_version": "6layer_v2",
+      "document": {
+        "title": "[김대호 박사] 카타르 불가항력·금값 급락·파월 금리인상·마이크론 두 얼굴",
+        "document_type": "news_article",
+        "target_id": "MACRO_GEOPOLITICAL",
+        "sector_id": "뉴스_공통",
+        "author_id": "김대호 박사",
+        "institution_id": "SBS Biz",
+        "source_url": "https://youtu.be/76VrfVf07E8",
+        "date_published": "2026-03-19",
+        "date_accessed": "2026-03-20"
+      },
+      "previous_verification": ""
+    },
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "nr_news_004 위반: 제목 파월 금리인상 vs 실제 금리 동결. 헤드라인-본문 괴리.",
+        "checklist_matched": [
+          "nr_news_003",
+          "nr_news_002"
+        ],
+        "checklist_missed": [
+          "nr_news_004",
+          "nr_news_005"
+        ]
+      },
+      "incentive": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "SBS Biz 정규 프로그램. 특정 이해충돌 미확인."
+      },
+      "omission": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "4개 키워드 병렬 구조. 카타르 부분 충실, 금값/파월/마이크론 맥락 부족. 영상 본문 보완 가능성 있으나 검증 한계.",
+        "checklist_matched": [
+          "om_news_005"
+        ],
+        "checklist_missed": [
+          "om_news_001",
+          "om_news_004"
+        ]
+      }
+    },
+    "claims": [
+      {
+        "claim_id": "c001",
+        "text": "카타르 LNG 수출 용량의 17% 손상",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "제목+본문",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "원문은 에너지 수출 17% 담당 시설 피해. 17% 손상과는 미묘한 차이.",
+            "evidence": [
+              {
+                "source": "Tavily(한겨레)",
+                "tier": 2,
+                "value": "에너지 수출 17% 담당 시설 피해"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "17% 담당 시설 vs 17% 손상은 미묘한 차이."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 0-1일.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c002",
+        "text": "카타르 한국 등 LNG 장기계약 불가항력 선언 가능",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "본문",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "카타르에너지 CEO 알카비 로이터 인터뷰. 한겨레/연합/MBC 교차확인.",
+            "evidence": [
+              {
+                "source": "Tavily(한겨레)",
+                "tier": 2,
+                "value": "최대 5년 불가항력 선언 가능"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "사실 보도. 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 0-1일.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "사실진술에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c003",
+        "text": "라스라판은 세계 최대 LNG 수출 거점",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "본문",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "라스라판 글로벌 LNG 공급 약 20% 담당. 복수 매체 확인.",
+            "evidence": [
+              {
+                "source": "Tavily(한겨레)",
+                "tier": 2,
+                "value": "글로벌 LNG 약 20%"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "사실 보도. 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 0-1일.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "사실진술에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c004",
+        "text": "이란 보복 공격으로 카타르 라스라판 타격",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "본문",
+        "depends_on": [
+          "c001"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "이란 드론 2기 공격. 연합뉴스/한겨레 확인. 트럼프도 관련 발언.",
+            "evidence": [
+              {
+                "source": "Tavily(연합뉴스)",
+                "tier": 1,
+                "value": "이란 보복 공격 확인"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "사실 보도. 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 0-1일.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "사실진술에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c005",
+        "text": "금값 급락",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "제목",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "MCP: 금 $4,890->$4,657 (-4.8% 일간). 고점 $5,294 대비 -12%. 급락 사실.",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "value": "$4,657 (-4.8%)"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "사실 보도. 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 0-1일.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "금값 급락 원인 설명 제목/설명에 부족."
+          }
+        }
+      },
+      {
+        "claim_id": "c006",
+        "text": "파월 금리인상",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "제목",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🔴",
+            "reason": "",
+            "notes": "FRED: 기준금리 3.64% 유지(동결). 파월 금리인상은 사실 아님. 매파 발언/점도표를 인상으로 표현.",
+            "evidence": [
+              {
+                "source": "FRED",
+                "tier": 1,
+                "query": "FEDFUNDS",
+                "value": "3.64% 유지"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🔴",
+            "reason": "",
+            "notes": "lr_news_002: 매파 발언을 금리인상으로 단정. lr_032 부분 적용.",
+            "rules_triggered": [
+              "lr_news_002: editorial_as_fact"
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-1",
+                "premise": "파월이 금리를 인상했다",
+                "current_status": "FRED 3.64% 유지. 사실 아님",
+                "verdict": "🔴"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 0-1일.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🔴",
+            "reason": "",
+            "notes": "제목 금리인상이나 실제 동결. 반대 사실 누락.",
+            "bbj_breaks": [
+              {
+                "perspective": "팩트체커",
+                "break": "FRED 3.64% 유지. 금리인상 아님",
+                "impact": "critical",
+                "mentioned_in_doc": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "claim_id": "c007",
+        "text": "마이크론 두 얼굴 - 실적 호조에도 주가 하락",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "제목",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "MCP: 마이크론 Q2 매출 $13.64B (+56.6%), 주가 $461.73->$444.27 (-3.8%). 두 얼굴 사실.",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "value": "Q2 $13.64B, 주가 -3.8%"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Buy the rumor sell the news 패턴. 두 얼굴 표현 적절.",
+            "kc_extracted": [
+              {
+                "kc_id": "KC-2",
+                "premise": "마이크론 실적 호조 지속",
+                "current_status": "Q2 +56.6% YoY. HBM 2026 전량 사전계약",
+                "verdict": "🟢"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "gap 0-1일.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "주가 하락 구조적 원인(YTD +61% 선반영) 설명 부족."
+          }
+        }
+      }
+    ],
+    "summary": {
+      "layer_verdicts": {
+        "fact": "🔴",
+        "norm": "🟡",
+        "logic": "🔴",
+        "temporal": "🟢",
+        "incentive": "🟢",
+        "omission": "🔴"
+      },
+      "critical_flags": [
+        "c006: FRED: 기준금리 3.64% 유지(동결). 파월 금리인상은 사실 아님. 매파 발언/점도표를 인상으로 표현.",
+        "c006: lr_news_002: 매파 발언을 금리인상으로 단정. lr_032 부분 적용.",
+        "c006: 제목 금리인상이나 실제 동결. 반대 사실 누락."
+      ],
+      "valid_until": "2026-04-19",
+      "validity_condition": "KC-1(금리 동결) 확인 AND 카타르 불가항력 공식 선언 여부",
+      "invalidation_triggers": [
+        {
+          "event": "카타르 불가항력 공식 선언",
+          "expected_date": "2026-03-25",
+          "impact": "c002 확정/철회"
+        },
+        {
+          "event": "호르무즈 해협 봉쇄 여부",
+          "expected_date": "2026-04-01",
+          "impact": "LNG 위기 확대/완화"
+        },
+        {
+          "event": "5월 FOMC",
+          "expected_date": "2026-05-06",
+          "impact": "실제 금리인상 여부. c006 재검증"
+        }
+      ],
+      "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+    }
+  }
+}

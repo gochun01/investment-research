@@ -1,0 +1,222 @@
+{
+  "vrf_id": "vrf_20260320_165427_456",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟡",
+      "logic": "N/A",
+      "temporal": "🟢",
+      "incentive": "🟢",
+      "omission": "🟡"
+    },
+    "critical_flags": [],
+    "valid_until": "2026-04-19",
+    "validity_condition": "Gauntlet TVL stabilization",
+    "claims_count": 3
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260320_165427_456",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-20T16:54:27.451662",
+      "engine_version": "6layer_v2",
+      "document": {
+        "title": "Gauntlet sees $380M exit as OKX campaign ends",
+        "document_type": "crypto_research",
+        "target_id": "GAUNTLET",
+        "sector_id": "크립토",
+        "author_id": "Margaux Nijkerk",
+        "institution_id": "CoinDesk",
+        "source_url": "https://coindesk.com/gauntlet",
+        "date_published": "2026-03-19",
+        "date_accessed": "2026-03-20"
+      },
+      "previous_verification": ""
+    },
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "DeFiLlama source. Token holding undisclosed",
+        "checklist_matched": [
+          "nr_cr_003"
+        ],
+        "checklist_missed": [
+          "nr_cr_002"
+        ]
+      },
+      "incentive": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "CoinDesk independent media"
+      },
+      "omission": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "OKX campaign structural dependency unanalyzed"
+      }
+    },
+    "claims": [
+      {
+        "claim_id": "c001",
+        "text": "TVL dropped 22.84% to $1.325B",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "Lead",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "DeFiLlama ref. Direct MCP cross-check limited",
+            "evidence": [
+              {
+                "source": "DeFiLlama",
+                "tier": 2,
+                "value": "$1.325B"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Same day",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c002",
+        "text": "Erased $380M from peak $1.72B",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "Body",
+        "depends_on": [
+          "c001"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "$1.72B-$1.325B=$0.395B vs article $380M. ~$15M gap"
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Same day",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c003",
+        "text": "USDC vault APY 4.86%",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "Body",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "APY realtime. Point-in-time figure"
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Same day",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      }
+    ],
+    "summary": {
+      "layer_verdicts": {
+        "fact": "🟡",
+        "norm": "🟡",
+        "logic": "N/A",
+        "temporal": "🟢",
+        "incentive": "🟢",
+        "omission": "🟡"
+      },
+      "critical_flags": [],
+      "valid_until": "2026-04-19",
+      "validity_condition": "Gauntlet TVL stabilization",
+      "invalidation_triggers": [
+        {
+          "event": "TVL recovery pattern",
+          "expected_date": "2026-03-29",
+          "impact": "10-day recovery reproduction"
+        }
+      ],
+      "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+    }
+  }
+}

@@ -1,0 +1,671 @@
+{
+  "vrf_id": "vrf_20260320_093206_847",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟡",
+      "logic": "🔴",
+      "temporal": "🟡",
+      "incentive": "🟡",
+      "omission": "🔴"
+    },
+    "critical_flags": [
+      "c007: lr_031 trigger: 설문 선호도(37.4% vs 10.6%)를 \"머니무브 뚜렷\"이라는 실제 자금흐름 주장으로 등치. 기사에 부동산 거래량, 증시 순매수 금액, 예금→주식 이동 데이터가 전무. 인식(perception)을 현실(reality)로 등치하는 논리 비약. lr_032 trigger: 37.4%(과반 미달)를 \"국민이 답했다\"로 프레이밍. 62.6%는 국내 주식 외 선택. lr_news_003 trigger: 리얼미터 1건 설문으로 \"국민\" 일반화.",
+      "c007: om_news_004 누락: 설문 선호와 실제 자금 이동 간 괴리 가능성을 전혀 언급하지 않음. om_news_005 누락: 머니무브 주장에 대한 반론(예: 부동산 거래량 회복, 해외 ETF 자금 유출 등) 부재.",
+      "c010: c007(머니무브) 의존 claim. c007이 🔴이므로 전제 붕괴. lr_031 연쇄 적용: 설문 선호 기반 자금유입 전망은 실증 근거 없음. lr_005 적용: 자금 유입 전망만 제시, 유출 시나리오(미국-이란 전쟁 리스크, 글로벌 위험회피 등) 미제시.",
+      "c010: om_news_002 누락: 37.4%가 국내 주식이라면 나머지 62.6%의 선택지(금·해외주식·부동산·가상자산·기타)의 합산이 더 큼. \"자금 유입\" 전망에서 이 다수의 비주식 선호를 무시. om_news_004: 선호≠행동 괴리 미언급.",
+      "문서/omission: om_news_001 critical 누락: KOSPI 2월 고점 6,244 대비 -7.7% 하락 중이라는 직근 반대 추세 완전 누락. om_news_002 누락: 설문 나머지 응답(62.6%가 비주식) 비중 경시. om_news_004 누락: 설문 선호와 실제 행동 간 괴리 가능성 미언급. BBJ Break 2건 모두 문서 미언급."
+    ],
+    "valid_until": "2026-04-20",
+    "validity_condition": "KC-3(반도체 영업이익 상승) 유지 AND KOSPI 5,500 이상 유지 AND 미국-이란 전쟁 확전 없음",
+    "claims_count": 10
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260320_093206_847",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-20T09:32:06.847714",
+      "engine_version": "6layer_v2",
+      "document": {
+        "title": "국민이 답했다 \"K주식이 가장 유망\"",
+        "document_type": "news_article",
+        "target_id": "KOSPI",
+        "sector_id": "뉴스_공통",
+        "author_id": "매일경제",
+        "institution_id": "매일경제",
+        "source_url": "https://www.mk.co.kr/news/economy/11992815",
+        "date_published": "2026-03-20",
+        "date_accessed": "2026-03-20"
+      },
+      "previous_verification": ""
+    },
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "nr_news_001: 설문 방법론 부분 공개 (1,001명, 리얼미터, 3/19 집계). 표본추출방법·신뢰구간 미명시 → 부분 충족. nr_news_002: 기자 의견(\"머니무브 뚜렷\", \"가능성도 커 보인다\")과 팩트 구분 미흡. nr_news_004: 제목 \"국민이 답했다\"가 37.4%(과반 미달)를 대표성 과장 — 헤드라인-본문 괴리. nr_news_005: 반론/반대 시각 부재.",
+        "checklist_matched": [
+          "nr_news_001",
+          "nr_news_003"
+        ],
+        "checklist_missed": [
+          "nr_news_002",
+          "nr_news_004",
+          "nr_news_005"
+        ]
+      },
+      "incentive": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "매일경제는 창간 60주년 기념 기획 기사. 자사 의뢰 설문(매경→리얼미터)으로 \"K주식 유망\" 결론 도출. 자사 기념일 기획에서 긍정적 결론이 도출된 구조적 이해충돌 가능성. 직접적 금전 이해관계는 미확인이나, 편집 방향 편향 가능성 존재. conflict_found=true, disclosed=false."
+      },
+      "omission": {
+        "verdict": "🔴",
+        "reason": "",
+        "notes": "om_news_001 critical 누락: KOSPI 2월 고점 6,244 대비 -7.7% 하락 중이라는 직근 반대 추세 완전 누락. om_news_002 누락: 설문 나머지 응답(62.6%가 비주식) 비중 경시. om_news_004 누락: 설문 선호와 실제 행동 간 괴리 가능성 미언급. BBJ Break 2건 모두 문서 미언급.",
+        "checklist_matched": [],
+        "checklist_missed": [
+          "om_news_001",
+          "om_news_002",
+          "om_news_004",
+          "om_news_005"
+        ]
+      }
+    },
+    "claims": [
+      {
+        "claim_id": "c001",
+        "text": "응답자 37.4%가 올해 가장 유망한 투자처로 국내 주식을 꼽았다",
+        "claim_type": "수치주장",
+        "evidence_type": "survey",
+        "location": "본문 §1",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "survey 데이터. 리얼미터 조사 1,001명. MCP 교차검증 불가. 조사기관은 중앙선관위 등록 여론조사 기관으로 확인.",
+            "evidence": [
+              {
+                "source": "Tavily",
+                "tier": 3,
+                "query": "리얼미터 매경 조사",
+                "value": "37.4%",
+                "note": "기사 내 자체 인용. 원시 데이터 접근 불가"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 수치 자체에 논리 모순 없음. 합계 확인: 37.4+17.9+10.9+10.6+4.4=81.2%, 나머지 18.8% 기타/무응답으로 합리적."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 집계 3/19, 기사 발행 3/20. gap 1일. 최신.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c002",
+        "text": "안전자산(금·달러)이 17.9%로 뒤를 이었다",
+        "claim_type": "수치주장",
+        "evidence_type": "survey",
+        "location": "본문 §2",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "survey 데이터. 17.9% 안전자산. MCP 교차: 금 $4,652(역대 최고 수준) — 안전자산 선호도 17.9%가 \"낮다\"고 보기 어려운 맥락.",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "query": "GC=F",
+                "value": "$4,652.70"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "수치 자체 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 집계 3/19, 기사 발행 3/20. gap 1일. 최신.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c003",
+        "text": "미국 등 해외 주식은 10.9%, 국내 부동산도 10.6%에 그쳤다",
+        "claim_type": "수치주장",
+        "evidence_type": "survey",
+        "location": "본문 §2",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "survey 데이터. 해외주식 10.9%, 부동산 10.6%. MCP 교차검증 불가."
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "수치 자체 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 집계 3/19, 기사 발행 3/20. gap 1일. 최신.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c004",
+        "text": "가상자산 선호도는 4.4%에 불과했다",
+        "claim_type": "수치주장",
+        "evidence_type": "survey",
+        "location": "본문 §2",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "survey 데이터. 가상자산 4.4%. MCP 교차: BTC $70,056(고점 대비 하락 중) — 낮은 선호도와 맥락 일치.",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "query": "BTC-USD",
+                "value": "$70,056.80"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "수치 자체 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 집계 3/19, 기사 발행 3/20. gap 1일. 최신.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c005",
+        "text": "연말 코스피 7000 돌파 전망 응답자 19.7%",
+        "claim_type": "수치주장",
+        "evidence_type": "survey",
+        "location": "본문 §3",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "survey 데이터. 7000 전망 19.7%. MCP 교차: KOSPI 현재 5,763. 7000 도달에 +21.5% 필요. 2월 고점 6,244 대비 -7.7% 하락 중.",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "query": "^KS11",
+                "value": "5,763.22"
+              },
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "query": "^KS11 Feb peak",
+                "value": "6,244.13"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "수치 자체 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 집계 3/19, 기사 발행 3/20. gap 1일. 최신.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c006",
+        "text": "코스피 6000 이상 전망 36.2%",
+        "claim_type": "수치주장",
+        "evidence_type": "survey",
+        "location": "본문 §3",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "survey 데이터. 6000 이상 전망 36.2%. KOSPI 현재 5,763이므로 +4.1% 필요. 합리적 범위이나 survey 상한.",
+            "evidence": [
+              {
+                "source": "Yahoo Finance",
+                "tier": 2,
+                "query": "^KS11",
+                "value": "5,763.22"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "수치 자체 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 집계 3/19, 기사 발행 3/20. gap 1일. 최신.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c007",
+        "text": "부동산에서 증시로 머니무브가 뚜렷하다",
+        "claim_type": "인과주장",
+        "evidence_type": "opinion",
+        "location": "리드문",
+        "depends_on": [
+          "c001",
+          "c003"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "인과주장에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "인과주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🔴",
+            "reason": "",
+            "notes": "lr_031 trigger: 설문 선호도(37.4% vs 10.6%)를 \"머니무브 뚜렷\"이라는 실제 자금흐름 주장으로 등치. 기사에 부동산 거래량, 증시 순매수 금액, 예금→주식 이동 데이터가 전무. 인식(perception)을 현실(reality)로 등치하는 논리 비약. lr_032 trigger: 37.4%(과반 미달)를 \"국민이 답했다\"로 프레이밍. 62.6%는 국내 주식 외 선택. lr_news_003 trigger: 리얼미터 1건 설문으로 \"국민\" 일반화.",
+            "rules_triggered": [
+              "lr_031: perception_as_reality",
+              "lr_032: minority_framed_as_majority",
+              "lr_news_003: single_source_generalization"
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-1",
+                "premise": "설문 선호 = 실제 자금 이동",
+                "current_status": "실증 데이터 없음. 설문과 행동의 괴리는 행동경제학에서 광범위하게 문서화됨",
+                "verdict": "🔴"
+              },
+              {
+                "kc_id": "KC-2",
+                "premise": "37.4%가 다수 의견",
+                "current_status": "과반 미달(62.6%는 다른 답변). 1위이나 과반이 아님",
+                "verdict": "🔴"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 기반 주장. 시점 정합성 문제 없음.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "인과주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🔴",
+            "reason": "",
+            "notes": "om_news_004 누락: 설문 선호와 실제 자금 이동 간 괴리 가능성을 전혀 언급하지 않음. om_news_005 누락: 머니무브 주장에 대한 반론(예: 부동산 거래량 회복, 해외 ETF 자금 유출 등) 부재.",
+            "bbj_breaks": [
+              {
+                "perspective": "약세론자",
+                "break": "미국-이란 전쟁 장기화 시 외국인 매도세 심화. 원화 약세(1,498원)로 외국인 환차손 확대 → 자금 유출",
+                "impact": "high",
+                "mentioned_in_doc": false
+              },
+              {
+                "perspective": "매크로 역풍",
+                "break": "KOSPI 2월 6,244 → 3월 5,763 (-7.7%) 이미 조정 시작. 고점 대비 하락세가 \"머니무브\"의 반대 시그널",
+                "impact": "high",
+                "mentioned_in_doc": false
+              }
+            ]
+          }
+        }
+      },
+      {
+        "claim_id": "c008",
+        "text": "상법 개정으로 주주 친화적 환경이 조성된 데다 반도체·방산·원전·바이오 영업이익 전망치가 계속 올라가고 있기 때문",
+        "claim_type": "인과주장",
+        "evidence_type": "estimate",
+        "location": "본문 §3",
+        "depends_on": [
+          "c005",
+          "c006"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "인과주장에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "인과주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "lr_033 trigger: 코스피 7000 상승 전망의 근거로 영업이익 상승을 제시하나, 직근 KOSPI 6,244→5,763 하락(-7.7%) 미언급. 반도체 영업이익 급증은 MCP 확인(삼성 Q4 20.07조, SK하이닉스 Q4 19.17조). 그러나 방산·원전·바이오는 구체적 수치 없음 → lr_020 부분 적용. KC-3: 영업이익 상승 → 주가 상승 전환은 보장되지 않음(밸류에이션 확장 필요).",
+            "rules_triggered": [
+              "lr_033: counter_trend_omission",
+              "lr_020: conclusion_narrative_concealment(방산·원전·바이오 부분)"
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-3",
+                "premise": "반도체 영업이익 상승 지속",
+                "current_status": "MCP 확인: 삼성 Q1→Q4 2025 영업이익 6.69→20.07조(3배). 현재 유효",
+                "verdict": "🟢"
+              },
+              {
+                "kc_id": "KC-4",
+                "premise": "방산·원전·바이오 영업이익도 상승",
+                "current_status": "MCP 부재. 기사에 구체적 수치 없음",
+                "verdict": "⚫"
+              },
+              {
+                "kc_id": "KC-5",
+                "premise": "영업이익 상승 → KOSPI 7000 도달",
+                "current_status": "KOSPI 현재 5,763. +21.5% 필요. 직근 하락세",
+                "verdict": "🟡"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "영업이익 데이터: Q4 2025 (2025-12-31). gap 약 80일이나, 분기 실적은 다음 분기 발표까지 최신으로 취급. KOSPI 데이터는 당일 기준.",
+            "data_reference_date": "2025-12-31",
+            "gap_days": 80,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "인과주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "방산·원전·바이오 영업이익 전망 근거 부재. 반도체만 MCP 확인. om_news_001 부분 해당: 직근 하락 추세 미언급."
+          }
+        }
+      },
+      {
+        "claim_id": "c009",
+        "text": "저출생·고령화가 기업활동 최대 위협 35.6%",
+        "claim_type": "수치주장",
+        "evidence_type": "survey",
+        "location": "본문 §4",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "survey 데이터. 저출생·고령화 35.6%. MCP 교차검증 불가."
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "수치 자체 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "설문 집계 3/19, 기사 발행 3/20. gap 1일. 최신.",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c010",
+        "text": "향후 코스피·코스닥에 추가적으로 자금이 유입될 가능성도 커 보인다",
+        "claim_type": "예측",
+        "evidence_type": "opinion",
+        "location": "리드문",
+        "depends_on": [
+          "c001",
+          "c007"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "예측에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "예측에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🔴",
+            "reason": "",
+            "notes": "c007(머니무브) 의존 claim. c007이 🔴이므로 전제 붕괴. lr_031 연쇄 적용: 설문 선호 기반 자금유입 전망은 실증 근거 없음. lr_005 적용: 자금 유입 전망만 제시, 유출 시나리오(미국-이란 전쟁 리스크, 글로벌 위험회피 등) 미제시.",
+            "rules_triggered": [
+              "lr_031: perception_as_reality(연쇄)",
+              "lr_005: optimistic_without_downside"
+            ],
+            "kc_extracted": [
+              {
+                "kc_id": "KC-6",
+                "premise": "국내 주식 선호 → 실제 자금 유입",
+                "current_status": "KC-1과 동일. 선호≠행동. 실증 없음",
+                "verdict": "🔴"
+              }
+            ]
+          },
+          "temporal": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "전망 주장. 시점 자체는 정합. [전제 붕괴 전파] 의존 claim ['c007/logic', 'c007/omission']이 🔴 — 전제가 무너져 🟡로 격상",
+            "data_reference_date": "2026-03-19",
+            "gap_days": 1,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "예측에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "🔴",
+            "reason": "",
+            "notes": "om_news_002 누락: 37.4%가 국내 주식이라면 나머지 62.6%의 선택지(금·해외주식·부동산·가상자산·기타)의 합산이 더 큼. \"자금 유입\" 전망에서 이 다수의 비주식 선호를 무시. om_news_004: 선호≠행동 괴리 미언급."
+          }
+        }
+      }
+    ],
+    "summary": {
+      "layer_verdicts": {
+        "fact": "🟡",
+        "norm": "🟡",
+        "logic": "🔴",
+        "temporal": "🟡",
+        "incentive": "🟡",
+        "omission": "🔴"
+      },
+      "critical_flags": [
+        "c007: lr_031 trigger: 설문 선호도(37.4% vs 10.6%)를 \"머니무브 뚜렷\"이라는 실제 자금흐름 주장으로 등치. 기사에 부동산 거래량, 증시 순매수 금액, 예금→주식 이동 데이터가 전무. 인식(perception)을 현실(reality)로 등치하는 논리 비약. lr_032 trigger: 37.4%(과반 미달)를 \"국민이 답했다\"로 프레이밍. 62.6%는 국내 주식 외 선택. lr_news_003 trigger: 리얼미터 1건 설문으로 \"국민\" 일반화.",
+        "c007: om_news_004 누락: 설문 선호와 실제 자금 이동 간 괴리 가능성을 전혀 언급하지 않음. om_news_005 누락: 머니무브 주장에 대한 반론(예: 부동산 거래량 회복, 해외 ETF 자금 유출 등) 부재.",
+        "c010: c007(머니무브) 의존 claim. c007이 🔴이므로 전제 붕괴. lr_031 연쇄 적용: 설문 선호 기반 자금유입 전망은 실증 근거 없음. lr_005 적용: 자금 유입 전망만 제시, 유출 시나리오(미국-이란 전쟁 리스크, 글로벌 위험회피 등) 미제시.",
+        "c010: om_news_002 누락: 37.4%가 국내 주식이라면 나머지 62.6%의 선택지(금·해외주식·부동산·가상자산·기타)의 합산이 더 큼. \"자금 유입\" 전망에서 이 다수의 비주식 선호를 무시. om_news_004: 선호≠행동 괴리 미언급.",
+        "문서/omission: om_news_001 critical 누락: KOSPI 2월 고점 6,244 대비 -7.7% 하락 중이라는 직근 반대 추세 완전 누락. om_news_002 누락: 설문 나머지 응답(62.6%가 비주식) 비중 경시. om_news_004 누락: 설문 선호와 실제 행동 간 괴리 가능성 미언급. BBJ Break 2건 모두 문서 미언급."
+      ],
+      "valid_until": "2026-04-20",
+      "validity_condition": "KC-3(반도체 영업이익 상승) 유지 AND KOSPI 5,500 이상 유지 AND 미국-이란 전쟁 확전 없음",
+      "invalidation_triggers": [
+        {
+          "event": "2026년 Q1 잠정실적 발표 (삼성전자, SK하이닉스)",
+          "expected_date": "2026-04-08",
+          "impact": "반도체 영업이익 전망 재평가. Q1 역성장 시 c008 전제 붕괴"
+        },
+        {
+          "event": "미국-이란 휴전 협상 결과",
+          "expected_date": "2026-04-15",
+          "impact": "지정학 리스크 해소/악화에 따라 외국인 자금흐름 변동"
+        },
+        {
+          "event": "한국은행 금통위 금리 결정",
+          "expected_date": "2026-04-17",
+          "impact": "금리 변동 시 주식/채권/부동산 선호도 재편"
+        }
+      ],
+      "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+    }
+  }
+}

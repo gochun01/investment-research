@@ -1,0 +1,38 @@
+{
+  "id": "TC-002",
+  "type": "stereo",
+  "title": "KRW 구조적 고환율 — NPS 70% + 3단계 누적",
+  "source": "SA-20260326-002",
+  "created": "2026-03-26",
+  "status": "tracking",
+  "phase": 1,
+  "scp": 3,
+
+  "trigger": {
+    "condition": "KRW 1,550+ × 5d (추가 악화) OR WGBI 편입 결정 (구조적 반전)",
+    "current": "KRW 1,506. WGBI 미결정.",
+    "fired": false
+  },
+  "kc": {
+    "watch": "KRW 1,450 하회 × 3d",
+    "alert": "NPS 해외투자 비율 축소 정책 발표",
+    "hard": "KRW 1,400 하회 × 5d (구조적 판단 무효화)",
+    "fired": false
+  },
+
+  "events": ["EC-005"],
+  "rm_watches": ["W-UQ-040", "W-UQ-041", "W-UQ-042", "W-UQ-043"],
+  "psf_link": "F1 DXY 미반영 괴리",
+  "macro_ref": "B2 DXY trend_note, C7 Brent",
+
+  "heartbeat_thresholds": [
+    {"indicator": "KRW", "symbol": "KRW=X", "watch": 1530, "alert": 1550, "hard": 1600, "direction": "above"},
+    {"indicator": "KRW반등", "symbol": "KRW=X", "watch": 1470, "alert": 1450, "hard": 1400, "direction": "below", "note": "KC방향"}
+  ],
+
+  "check_log": [
+    {"date": "2026-03-26", "observation": "1,506. 25조 추경 당정. RIA $400M. Phase 1 유지.", "next_check": "2026-04-03"}
+  ],
+
+  "close_condition": "WGBI 편입 확정 OR KRW 1,400↓ 복귀 OR 6개월 무변화 → 아카이브"
+}

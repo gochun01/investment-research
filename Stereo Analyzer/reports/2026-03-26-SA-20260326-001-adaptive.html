@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 301 — 관세는 죽지 않았다 | Stereo Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0a1628;--navy-light:#131d33;--surface:#161b22;--surface-alt:#1c2333;
+    --border:#30363d;--text:#e6edf3;--text-secondary:#b0b8c1;--muted:#8b949e;--accent:#58a6ff;
+    --green:#4caf50;--yellow:#ff9800;--red:#f44336;--purple:#ab47bc;
+    --gap-sm:.5rem;--gap-md:1rem;--gap-lg:1.5rem;--gap-xl:2.5rem;
+    --radius-sm:4px;--radius-md:8px;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--navy);color:var(--text);line-height:1.7;max-width:860px;margin:0 auto}
+  .topbar{padding:.5rem 2rem;font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;background:#1565c0;color:#fff}
+  .report-header{padding:2rem 2rem 1.5rem;border-bottom:1px solid var(--border)}
+  .report-header h1{font-family:'Libre Baskerville',serif;font-size:1.6rem;font-weight:700;line-height:1.3;margin-bottom:.4rem}
+  .report-header .subtitle{font-size:.9rem;color:var(--text-secondary);margin-bottom:.75rem}
+  .report-header .meta{font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted)}
+  .content{padding:0 2rem 2rem}
+  h2{font-family:'Libre Baskerville',serif;font-size:1.15rem;font-weight:700;margin:var(--gap-xl) 0 var(--gap-md);padding-bottom:var(--gap-sm);border-bottom:1px solid var(--border)}
+  h3{font-size:.95rem;font-weight:600;margin:var(--gap-lg) 0 var(--gap-sm)}
+  p{font-size:.88rem;margin-bottom:var(--gap-sm)}
+  .num{font-family:'DM Mono',monospace;font-weight:500}
+  .badge{display:inline-block;padding:.25rem .65rem;border-radius:var(--radius-sm);font-family:'DM Mono',monospace;font-size:.75rem;font-weight:600;line-height:1}
+  .badge-green{background:rgba(76,175,80,.15);color:var(--green);border:1px solid rgba(76,175,80,.3)}
+  .badge-yellow{background:rgba(255,152,0,.15);color:var(--yellow);border:1px solid rgba(255,152,0,.3)}
+  .badge-red{background:rgba(244,67,54,.15);color:var(--red);border:1px solid rgba(244,67,54,.3)}
+  .badge-blue{background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.3)}
+  .badge-purple{background:rgba(171,71,188,.15);color:var(--purple);border:1px solid rgba(171,71,188,.3)}
+  table{width:100%;border-collapse:collapse;margin:var(--gap-md) 0;font-size:.82rem}
+  th{background:var(--surface);color:var(--muted);text-align:left;padding:.5rem .6rem;border:1px solid var(--border);font-weight:600}
+  td{padding:.5rem .6rem;border:1px solid var(--border);vertical-align:top}
+  tr:hover td{background:rgba(88,166,255,.04)}
+  .exec-box{background:linear-gradient(135deg,var(--surface),var(--surface-alt));border:1px solid var(--accent);border-left:4px solid var(--accent);border-radius:var(--radius-md);padding:1.25rem 1.5rem;margin:var(--gap-lg) 0}
+  .exec-box .claim{font-family:'Libre Baskerville',serif;font-size:1.05rem;font-weight:700;line-height:1.5;margin-bottom:.5rem}
+  .exec-box .verdict{font-family:'DM Mono',monospace;font-size:.8rem;color:var(--text-secondary)}
+  .alert-box{border-radius:var(--radius-md);padding:1rem 1.25rem;margin:var(--gap-md) 0;font-size:.85rem}
+  .alert-box.warn{background:rgba(255,152,0,.1);border:1px solid rgba(255,152,0,.3);border-left:4px solid var(--yellow)}
+  .alert-box.danger{background:rgba(244,67,54,.1);border:1px solid rgba(244,67,54,.3);border-left:4px solid var(--red)}
+  .alert-box.info{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25);border-left:4px solid var(--accent)}
+  .comment{background:rgba(88,166,255,.06);border-left:3px solid var(--accent);padding:.75rem 1rem;margin:var(--gap-md) 0;font-size:.85rem;border-radius:0 var(--radius-md) var(--radius-md) 0}
+  .comment strong{color:var(--accent)}
+  .layer-divider{font-family:'DM Mono',monospace;font-size:.8rem;color:var(--muted);letter-spacing:.1em;margin:var(--gap-xl) 0 var(--gap-md);text-align:center}
+  .timeline{position:relative;padding-left:2rem;margin:var(--gap-md) 0}
+  .timeline::before{content:'';position:absolute;left:.6rem;top:0;bottom:0;width:2px;background:var(--border)}
+  .timeline-item{position:relative;margin-bottom:.75rem;font-size:.82rem}
+  .timeline-item::before{content:'';position:absolute;left:-1.65rem;top:.45rem;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--navy)}
+  .timeline-item.highlight::before{border-color:var(--red);background:rgba(244,67,54,.2)}
+  .timeline-item.dead::before{border-color:var(--muted);background:var(--muted)}
+  .timeline-date{color:var(--muted);font-size:.75rem;font-family:'DM Mono',monospace}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.25rem;margin:var(--gap-md) 0}
+  .eq-box{background:rgba(171,71,188,.08);border:1px solid rgba(171,71,188,.25);border-left:4px solid var(--purple);border-radius:var(--radius-md);padding:1rem 1.25rem;margin:var(--gap-md) 0;font-size:.85rem}
+  .eq-box strong{color:var(--purple)}
+  .um-grid{display:grid;grid-template-columns:60px 1fr auto;gap:.3rem .75rem;font-size:.85rem;margin:var(--gap-md) 0}
+  .um-label{color:var(--muted);font-weight:600}
+  .um-bar{font-family:'DM Mono',monospace}
+  .sources{font-size:.78rem;color:var(--muted);margin-top:var(--gap-md)}
+  .sources a{color:var(--accent);text-decoration:none}
+  .sources li{margin-bottom:.3rem}
+  .disclaimer{text-align:center;color:var(--muted);font-size:.7rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border)}
+  .pos{color:var(--green)}.neg{color:var(--red)}.neu{color:var(--yellow)}
+  @media(max-width:780px){body{max-width:100%}.topbar,.report-header,.content{padding-left:1rem;padding-right:1rem}.report-header h1{font-size:1.3rem}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>STEREO ANALYZER v2.0 &mdash; POLICY&times;STRUCT SCP 4</span>
+  <span>2026-03-26</span>
+</div>
+
+<div class="report-header">
+  <h1>관세는 죽지 않았다.<br>IEEPA &rarr; 122 &rarr; 301, 3단 진화의 해부.</h1>
+  <div class="subtitle">대법원이 관세를 죽였다고 생각하는 사이, 트럼프는 영구 관세의 법적 경로를 열었다.</div>
+  <div class="meta">2026-03-26 | POLICY&times;STRUCT | SCP 4 | WATCH | Stereo Analyzer SA-20260326-001<br>
+  via Issue Scanner SCAN-20260326-001 CL-002 &rarr; reaction-monitor &rarr; Stereo</div>
+</div>
+
+<div class="content">
+
+  <!-- ══ Exec Box ══ -->
+  <div class="exec-box">
+    <div class="claim">
+      대법원이 IEEPA를 무효화한 지 4일 만에 Section 122(한시), 2주 만에 Section 301(영구 가능)이 등장했다.
+      한국의 전자장비&middot;자동차&middot;철강&middot;기계&middot;선박 5개 섹터가 명시적 대상이다.
+      시장은 이란 전쟁에 가려 아직 반응하지 않았다.
+    </div>
+    <div class="verdict">
+      <span class="badge badge-yellow">🔀 전환</span>
+      <span class="badge badge-red">과소 반응</span>
+      <span class="badge badge-purple">SCP 4</span>
+      <span class="badge badge-blue">미해소 4건</span>
+    </div>
+  </div>
+
+  <!-- ══ SURFACE ══ -->
+  <div class="layer-divider">━━ SURFACE (보이는 것) ━━</div>
+
+  <h2>L1. 헤드라인 디코딩</h2>
+  <p>표면 주장: <em>"USTR, Section 301 무역 조사 개시. 16개국 과잉생산 + 60개국 강제노동."</em></p>
+  <p>프레이밍: <span class="badge badge-yellow">[모호]</span> &mdash; "조사 개시"로 보도. "관세 부과"가 아님. 시장이 "아직 관세 아니잖아"로 무시하게 만드는 프레이밍. 실제로는 IEEPA 무효화 직후 시작된 체계적 대체 경로.</p>
+
+  <h2>L2. 팩트 스켈레톤</h2>
+  <table>
+    <tr><th>#</th><th>팩트</th><th>신뢰도</th><th>출처</th></tr>
+    <tr><td>1</td><td>대법원 6-3 IEEPA 위헌 판결 (2/20)</td><td>🟢</td><td>Supreme Court</td></tr>
+    <tr><td>2</td><td>IEEPA 관세 총 징수 $166B, 5,300만 건</td><td>🟢</td><td>CBP</td></tr>
+    <tr><td>3</td><td>Section 122 전세계 10% (2/24), 7/24 만료</td><td>🟢</td><td>Federal Register</td></tr>
+    <tr><td>4</td><td>Section 301 과잉생산 16개국 조사 (3/11)</td><td>🟢</td><td>USTR-2026-0067</td></tr>
+    <tr><td>5</td><td>Section 301 강제노동 60개국 조사 (3/12)</td><td>🟢</td><td>USTR</td></tr>
+    <tr><td>6</td><td><strong>한국 301 대상: 전자장비, 자동차/부품, 기계, 철강, 선박</strong></td><td>🟢</td><td>Trade Compliance Hub</td></tr>
+    <tr><td>7</td><td>한국 $150B 조선+$200B 산업 투자 약속 (2025.11)</td><td>🟢</td><td>CRS IF10733</td></tr>
+    <tr><td>8</td><td>트럼프 "한국 투자 이행 느리다" 25% 위협 (2026.01)</td><td>🟢</td><td>CRS</td></tr>
+    <tr><td>9</td><td>반도체 글로벌 25% 관세 이미 시행 (232, 2026.01)</td><td>🟢</td><td>CRS</td></tr>
+    <tr><td>10</td><td>철강/알루미늄 50% 관세 유지 (232)</td><td>🟢</td><td>AAEI</td></tr>
+  </table>
+
+  <div class="alert-box info">
+    <strong>기사가 말하지 않은 것:</strong><br>
+    &bull; Section 301 관세는 <strong>시한 없이 영구 적용 가능</strong>하다 (Section 122는 150일 한시)<br>
+    &bull; 한국의 <strong>$350B 투자 이행 속도</strong>와 301 조사가 연동될 수 있다<br>
+    &bull; Bessent "5개월 내 관세율 복귀" = 301 결과가 7/24 전에 나올 것을 전제한 발언<br>
+    &bull; 이란 전쟁 종결 시 <strong>관세가 시장의 다음 dominant narrative</strong>가 된다
+  </div>
+
+  <h2>L3. 이해관계 지도</h2>
+  <table>
+    <tr><th>플레이어</th><th>입장</th><th>동기</th></tr>
+    <tr><td><strong>USTR (Greer)</strong></td><td>공격</td><td>IEEPA 사망 후 관세 권한 복원. 301이 유일한 영구 경로.</td></tr>
+    <tr><td><strong>한국 수출기업</strong></td><td>피해</td><td>5개 핵심 섹터 직접 대상. 대미 수출 60~70% 노출.</td></tr>
+    <tr><td><strong>미국 수입업체 2,000+</strong></td><td>혼재</td><td>IEEPA 환급($166B) 진행 중이나 301 시 새 비용 발생.</td></tr>
+    <tr><td><strong>한국 산업부</strong></td><td class="silent">침묵</td><td>2025.11 합의가 방패라고 안심? 아니면 대응 지연?</td></tr>
+  </table>
+
+  <!-- ══ SUBSURFACE ══ -->
+  <div class="layer-divider">━━ SUBSURFACE (보이지 않는 것) ━━</div>
+
+  <h2>L4. 인과 역추적 &mdash; "왜 지금 301인가"</h2>
+
+  <div class="timeline">
+    <div class="timeline-item dead">
+      <span class="timeline-date">2025.04~2026.02</span>
+      <strong>IEEPA 관세</strong> &mdash; 트럼프의 핵심 무기. 중국 104%, 전세계 수십%. 대통령 단독 발동.
+    </div>
+    <div class="timeline-item highlight">
+      <span class="timeline-date">2026.02.20</span>
+      <strong>대법원 위헌</strong> &mdash; 6-3. "regulate ≠ tax." IEEPA 사망. $166B 환급 명령. ☠
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026.02.24</span>
+      <strong>Section 122 발동</strong> &mdash; 4일 만에. 10% 전세계. 그러나 150일 한시 + 15% 상한. ⏳
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026.02.28</span>
+      <strong>이란 전쟁 시작</strong> &mdash; 모든 미디어/시장 관심이 전쟁으로 이동. 관세 뉴스 매몰.
+    </div>
+    <div class="timeline-item highlight">
+      <span class="timeline-date">2026.03.11</span>
+      <strong>Section 301 발동</strong> &mdash; 16개국 과잉생산. 영구 관세 가능. 한국 5개 섹터 명시. 🔔
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">2026.03.12</span>
+      <strong>Section 301 추가</strong> &mdash; 60개국 강제노동. 한국 포함.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">📌 2026.04.15</span>
+      <strong>코멘트 마감</strong> &mdash; 한국 기업/정부 의견 제출 데드라인.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">📌 2026.04.28</span>
+      <strong>청문회</strong> &mdash; 관세 범위&middot;세율 윤곽 드러남.
+    </div>
+    <div class="timeline-item highlight">
+      <span class="timeline-date">📌 2026.07.24</span>
+      <strong>Section 122 만료</strong> &mdash; 이때까지 301 결과 필요. 관세 공백 or 영구 전환.
+    </div>
+  </div>
+
+  <div class="comment">
+    <strong>L4 판독:</strong> 표면: "과잉생산 조사". 구조: "IEEPA 사망 → 관세 권한 복원 3단 진화." 이것은 무역 정책이 아니라 <strong>법적 프레임워크 자체의 전환</strong>이다. 전쟁과 13일 차이로 시작되어 완전히 묻혔다.
+  </div>
+
+  <h2>L5. 구조 레이어 &mdash; 관세 법적 프레임워크 진화</h2>
+
+  <div class="card">
+    <h3>미국 관세 4경로 비교</h3>
+    <table>
+      <tr><th>경로</th><th>상태</th><th>세율</th><th>기한</th><th>영구성</th></tr>
+      <tr><td><strong>IEEPA</strong></td><td class="neg">☠ 사망</td><td>무제한</td><td>&mdash;</td><td>위헌. 환급 $166B.</td></tr>
+      <tr><td><strong>Section 122</strong></td><td class="neu">⏳ 시행</td><td>10~15%</td><td>7/24</td><td>150일 한시.</td></tr>
+      <tr><td><strong>Section 301</strong></td><td class="neg">🔔 조사</td><td>무제한</td><td>절차 후</td><td><strong>영구 가능.</strong></td></tr>
+      <tr><td><strong>Section 232</strong></td><td class="pos">✅ 시행</td><td>25~50%</td><td>&mdash;</td><td>영구. 섹터 한정.</td></tr>
+    </table>
+  </div>
+
+  <div class="comment">
+    <strong>L5 판독:</strong> 성격 🔀 전환. IEEPA(긴급 단독) &rarr; 301+232(절차적 영구)로 관세 시스템 자체가 재편 중. 세율이 바뀌는 것이 아니라 "관세의 법적 기반"이 바뀌고 있다.<br><br>
+    <strong>역사적 전례:</strong> 트럼프 1기 Section 301 대중국 &mdash; 2018 조사 개시 &rarr; 수개월 내 관세 &rarr; 7년+ 지속. Reagan 301 대일본(1980s) &mdash; 반도체&middot;자동차 영구 관세 &rarr; 일본 제조업 장기 타격.
+  </div>
+
+  <h2>L6. 2차 효과 &mdash; 한국 전이 경로</h2>
+
+  <h3>단기 (4~8주)</h3>
+  <div class="alert-box warn">
+    <strong>4/15 코멘트 마감 = 한국 기업/정부 로비 데드라인.</strong><br>
+    삼성/SK/현대/포스코가 직접 또는 KITA 경유 USTR 의견 제출 필요. 미제출 시 "반론 없음"으로 간주.
+    2025.11 $350B 투자 약속 이행 속도가 301 결과에 영향 &mdash; 트럼프가 1월에 "느리다" 위협.
+  </div>
+
+  <h3>중기 (3~6개월)</h3>
+  <table>
+    <tr><th>섹터</th><th>현행 관세</th><th>301 추가 시</th><th>영향</th></tr>
+    <tr><td><strong>반도체</strong></td><td>232: 25%</td><td>중복 가능</td><td>메모리 마진 압박. 삼성 텍사스 팹이 완충.</td></tr>
+    <tr><td><strong>자동차</strong></td><td>232: 15% (합의)</td><td>추가 가능</td><td>현대/기아 미국 점유율 10%+ 타격. 조지아 공장 완충.</td></tr>
+    <tr><td><strong>철강</strong></td><td>232: 50%</td><td>누적 70%+?</td><td>포스코 미국 시장 사실상 차단 위험.</td></tr>
+    <tr><td><strong>선박</strong></td><td>없음</td><td>신규 부과</td><td>한국 세계 1위. $150B 투자 약속과 직결.</td></tr>
+    <tr><td><strong>기계류</strong></td><td>없음/낮음</td><td>신규 부과</td><td>산업 기계 수출 타격.</td></tr>
+  </table>
+
+  <h3>장기 (6개월+)</h3>
+  <div class="comment">
+    <strong>구조적 전이:</strong> 301이 "새 기본 관세법"으로 자리잡으면 &rarr; WTO 체제 사실상 무력화 &rarr; 한국 수출 의존(GDP 40%+) 구조 전체에 영향. 공급망 미국 현지화 압력 가속 (삼성 텍사스, SK 켄터키, 현대 조지아). 원화 추가 약세 요인 (수출 타격 &rarr; 경상수지 악화 &rarr; KRW &darr;).
+  </div>
+
+  <!-- ══ Emergent Questions ══ -->
+  <h2>돌발 질문</h2>
+
+  <div class="eq-box">
+    <strong>[침묵 렌즈]</strong> 한국 산업부/통상교섭본부는 왜 조용한가?<br>
+    2025.11 합의가 있어서 "우리는 이미 딜이 있다"고 안심하는 것인가? 아니면 301이 사실상 "딜 파기"의 전주곡인데 대응이 늦는 것인가? 4/15까지 코멘트 미제출 시 "묵인"으로 간주될 위험.
+  </div>
+  <div class="eq-box">
+    <strong>[시간 렌즈]</strong> 이란 전쟁이 없었다면 시장 반응이 달랐을까?<br>
+    301 발동(3/11)과 전쟁 시작(2/28)은 13일 차이. 전쟁이 없었으면 301이 front-page. 전쟁 종결 시점 = "301 시장 반영 시점"이 될 가능성.
+  </div>
+  <div class="eq-box">
+    <strong>[규모 렌즈]</strong> 한국 대미 수출 중 301 대상 비율은?<br>
+    전자장비+자동차+기계+철강+선박 = 대미 수출의 60~70% 추정. 사실이면 "301 = 한국 수출 구조 전체에 대한 조사."
+  </div>
+
+  <!-- ══ L7 ══ -->
+  <h2>L7. 판단 프레임</h2>
+
+  <p style="font-size:.95rem;font-weight:600;margin-bottom:.75rem;">
+    시그널이다. SCP 4. 관세 법적 프레임워크 자체가 전환 중이며, 한국 5개 핵심 섹터가 명시적 대상이다.
+  </p>
+
+  <div class="card">
+    <h3>Kill Condition (이 분석이 틀리려면)</h3>
+    <p style="font-size:.85rem;">
+      &bull; Section 301 조사가 중단/철회되는 경우<br>
+      &bull; 한-미 2025.11 합의가 301을 면제하는 조건으로 확인되는 경우<br>
+      &bull; Section 122 만료 후 연장 없이 301도 미부과로 끝나는 경우<br>
+      &bull; 이란 전쟁 장기화로 관세가 영구적으로 묻히는 경우
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>추적 지표</h3>
+    <table>
+      <tr><th>일정</th><th>이벤트</th><th>의미</th></tr>
+      <tr><td class="num">4/15</td><td>코멘트 마감</td><td>한국 제출 여부 = 대응 의지 확인</td></tr>
+      <tr><td class="num">4/28</td><td>청문회</td><td>관세 범위&middot;세율 윤곽</td></tr>
+      <tr><td class="num">5/07</td><td>FOMC</td><td>관세 인플레 반영 여부</td></tr>
+      <tr><td class="num neg">7/24</td><td>Section 122 만료</td><td>관세 공백 or 영구 전환</td></tr>
+    </table>
+  </div>
+
+  <!-- ══ Uncertainty Map ══ -->
+  <h2>불확실성 지도</h2>
+
+  <div class="um-grid">
+    <span class="um-label">L1</span><span class="um-bar">■■■■■</span><span>높음 &mdash; 공식 문서 기반</span>
+    <span class="um-label">L2</span><span class="um-bar">■■■■■</span><span>높음 &mdash; CRS Report, USTR 데이터</span>
+    <span class="um-label">L3</span><span class="um-bar">■■■□□</span><span>중간 &mdash; 한국 산업부 침묵</span>
+    <span class="um-label">L4</span><span class="um-bar">■■■■□</span><span>높음 &mdash; 법적 진화는 기록. 타이밍 의도는 추론</span>
+    <span class="um-label">L5</span><span class="um-bar">■■■■□</span><span>높음 &mdash; 전례(1기 중국) 있음</span>
+    <span class="um-label">L6</span><span class="um-bar">■■□□□</span><span>낮음 &mdash; 중복 관세, 투자 연동은 가설</span>
+    <span class="um-label">L7</span><span class="um-bar">■■■□□</span><span>중간 &mdash; KC 명확, 시점 불확실</span>
+  </div>
+
+  <div class="alert-box danger">
+    <strong>⚠ 약한 고리: L6</strong> &mdash; 232+301 중복 관세 실제 적용 여부. 투자 약속 이행과 301의 연동 구조.<br>
+    <strong>📡 보강:</strong> 4/15 코멘트 마감 후 USTR 조사 범위 확정 문서. 1기 232+301 병행 사례 실효세율 데이터.
+  </div>
+
+  <!-- ══ FB-4 ══ -->
+  <h2>되먹임 (FB-4)</h2>
+  <div class="comment">
+    <strong>처음:</strong> "USTR, Section 301 무역 조사 개시" &mdash; 관료적 뉴스.<br><br>
+    <strong>지금:</strong> "대법원이 관세를 죽였다고 생각하는 사이, 트럼프는 IEEPA&rarr;122&rarr;301의 3단 진화로 영구 관세의 법적 경로를 열었다. 한국 5개 핵심 섹터가 명시적 대상이며, 시장은 이란 전쟁에 가려 아직 반응하지 않았다."<br><br>
+    &rarr; <strong>다르게 보인다. ✅ 분석 성공.</strong>
+  </div>
+
+  <!-- ══ Sources ══ -->
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li><a href="https://www.congress.gov/crs_external_products/IF/PDF/IF10733/IF10733.19.pdf">CRS &mdash; U.S.-South Korea Bilateral Trade Relations (IF10733)</a></li>
+    <li><a href="https://www.tradecomplianceresourcehub.com/2026/03/24/trump-2-0-tariff-tracker/">Trade Compliance Resource Hub &mdash; Trump 2.0 Tariff Tracker</a></li>
+    <li><a href="https://www.mayerbrown.com/en/insights/publications/2026/03/new-section-301-investigations-on-countries-with-manufacturing-overcapacity-and-forced-labor-enforcement">Mayer Brown &mdash; New Section 301 Investigations</a></li>
+    <li><a href="https://www.jdsupra.com/legalnews/new-tariffs-to-replace-ieepa-ustr-5328286/">JDSupra &mdash; New Tariffs to Replace IEEPA</a></li>
+    <li><a href="https://www.lexology.com/library/detail.aspx?g=60330fb9-7d49-4c08-a76d-31e95b8f238c">Lexology &mdash; IEEPA tariffs end, Section 301 follow</a></li>
+    <li><a href="https://uhy-us.com/insights/news/2026/march/section-301-tariff-investigations-target-major-us-trade-partners-threaten-additional-complications">UHY &mdash; Section 301 Target Major Trade Partners</a></li>
+    <li><a href="https://www.afslaw.com/perspectives/customs-import-compliance-blog/the-customs-and-trade-world-turns-march-2026">AFS Law &mdash; Customs and Trade World March 2026</a></li>
+    <li><a href="https://www.jimersonfirm.com/blog/2026/03/supreme-court-strikes-down-ieepa-tariffs-what-florida-importers-and-exporters-need-to-know-now/">Jimerson Firm &mdash; Supreme Court Ends IEEPA</a></li>
+    <li><a href="https://www.millerchevalier.com/publication/supreme-court-finds-ieepa-tariffs-unlawful-what-you-need-know">Miller &amp; Chevalier &mdash; IEEPA Tariffs Unlawful</a></li>
+    <li><a href="https://aaei.org/tariff-actions-timeline-and-customs-service-messages/">AAEI &mdash; Tariff Actions Timeline</a></li>
+    <li>FRED MCP &mdash; DFII10, DFF, BAMLH0A0HYM2, T10Y2Y, T5YIE, DGS10</li>
+    <li>Yahoo Finance MCP &mdash; ^GSPC, DX-Y.NYB, JPY=X, BZ=F</li>
+  </ul>
+
+</div>
+
+<div class="disclaimer">
+  Stereo Analyzer v2.0 | SA-20260326-001 | 2026-03-26<br>
+  Pipeline: Issue Scanner SCAN-001 CL-002 &rarr; reaction-monitor &rarr; Stereo Analyzer<br>
+  이 보고서는 입체 분석 결과이며, 투자 판단을 제공하지 않습니다.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시장 반응 수집 — 한국도 이란산 원유 수입길 열려 — 미 제재 30일 면제 | 2026-03-24</title>
+<style>
+  :root {
+    --price:#42a5f5;--narrative:#ff9800;--expert:#ab47bc;
+    --policy:#ef5350;--positioning:#66bb6a;
+    --converge:#4caf50;--diverge:#ff9800;--decouple:#f44336;--silence:#9e9e9e;
+    --bg:#0d1117;--surface:#161b22;--border:#30363d;
+    --text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:2rem;max-width:1100px;margin:0 auto;}
+  h1{font-size:1.5rem;margin-bottom:.3rem;}
+  h2{font-size:1.2rem;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+  h3{font-size:1rem;margin:1.5rem 0 .5rem;}
+  .meta{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem;}
+  .status-bar{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0 2rem;}
+  .badge{padding:.35rem .75rem;border-radius:6px;font-size:.8rem;font-weight:600;}
+  .b-dec{background:rgba(244,67,54,.15);color:var(--decouple);border:1px solid rgba(244,67,54,.3);}
+  .b-div{background:rgba(255,152,0,.15);color:var(--diverge);border:1px solid rgba(255,152,0,.3);}
+  .b-con{background:rgba(76,175,80,.15);color:var(--converge);border:1px solid rgba(76,175,80,.3);}
+  .b-sil{background:rgba(158,158,158,.15);color:var(--silence);border:1px solid rgba(158,158,158,.3);}
+  .b-pol{background:rgba(239,83,80,.15);color:var(--policy);border:1px solid rgba(239,83,80,.3);}
+  .b-std{background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.3);}
+  .fp{display:grid;grid-template-columns:110px 1fr;gap:.3rem .75rem;background:var(--surface);padding:1rem;border-radius:8px;border:1px solid var(--border);font-size:.85rem;}
+  .fp-l{color:var(--muted);font-weight:600;}
+  table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.82rem;}
+  th{background:var(--surface);color:var(--muted);text-align:left;padding:.5rem .6rem;border:1px solid var(--border);font-weight:600;}
+  td{padding:.5rem .6rem;border:1px solid var(--border);vertical-align:top;}
+  tr:hover td{background:rgba(88,166,255,.04);}
+  .lt{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-weight:700;margin-right:.3rem;}
+  .t-p{background:rgba(66,165,245,.15);color:var(--price);}
+  .t-n{background:rgba(255,152,0,.15);color:var(--narrative);}
+  .t-e{background:rgba(171,71,188,.15);color:var(--expert);}
+  .t-po{background:rgba(239,83,80,.15);color:var(--policy);}
+  .t-ps{background:rgba(102,187,106,.15);color:var(--positioning);}
+  .pos{color:#66bb6a;}.neg{color:#ef5350;}.neu{color:#ff9800;}.spl{color:#ab47bc;}
+  .comment{background:rgba(88,166,255,.06);border-left:3px solid var(--accent);padding:.75rem 1rem;margin:1rem 0;font-size:.85rem;border-radius:0 6px 6px 0;}
+  .comment strong{color:var(--accent);}
+  .pb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+  .pb h3{margin-top:0;color:var(--accent);}
+  .dg{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin:.75rem 0;text-align:center;}
+  .dc{padding:.5rem;border-radius:6px;background:rgba(255,255,255,.03);border:1px solid var(--border);}
+  .dl{font-size:.7rem;color:var(--muted);display:block;}
+  .dv{font-size:1.1rem;font-weight:700;margin-top:.2rem;}
+  .tl{position:relative;padding-left:2rem;margin:1rem 0;}
+  .tl::before{content:'';position:absolute;left:.6rem;top:0;bottom:0;width:2px;background:var(--border);}
+  .ti{position:relative;margin-bottom:.75rem;font-size:.82rem;}
+  .ti::before{content:'';position:absolute;left:-1.65rem;top:.45rem;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);}
+  .ti.war::before{border-color:var(--policy);}
+  .ti.sec::before{border-color:var(--positioning);}
+  .td{color:var(--muted);font-size:.75rem;}
+  .uq{list-style:none;padding:0;}
+  .uq li{padding:.75rem 0;border-bottom:1px solid var(--border);font-size:.85rem;}
+  .uq-open::before{content:'⏳';margin-right:.5rem;}
+  .uq-resolved::before{content:'✅';margin-right:.5rem;}
+  .uq-meta{font-size:.75rem;color:var(--muted);margin-top:.3rem;}
+  .uq-type{display:inline-block;padding:.1rem .4rem;border-radius:3px;font-size:.7rem;font-weight:600;margin-left:.3rem;}
+  .uq-date{background:rgba(66,165,245,.15);color:var(--price);}
+  .uq-condition{background:rgba(255,152,0,.15);color:var(--diverge);}
+  .uq-data{background:rgba(102,187,106,.15);color:var(--positioning);}
+  .uq-threshold{background:rgba(171,71,188,.15);color:var(--expert);}
+  .uq-help{font-size:.78rem;color:var(--accent);font-style:italic;}
+  .src{font-size:.78rem;color:var(--muted);margin-top:1rem;}
+  .src a{color:var(--accent);text-decoration:none;}
+  .src a:hover{text-decoration:underline;}
+  .src li{margin-bottom:.3rem;}
+  @media(max-width:600px){body{padding:1rem;}.dg{grid-template-columns:repeat(3,1fr);}.fp{grid-template-columns:90px 1fr;}}
+</style>
+</head>
+<body>
+
+<h1>시장 반응 수집 — 한국도 이란산 원유 수입길 열려 — 미 제재 30일 면제</h1>
+<div class="meta">2026-03-24 | Standard | Market Reaction Monitor</div>
+
+<div class="status-bar">
+  <span class="badge b-dec">방향: 분열</span>
+  <span class="badge b-div">비례: 과소</span>
+  <span class="badge b-pol">전파: C (정책→서사→가격)</span>
+  <span class="badge b-std">미해소: 4 open / 0 resolved</span>
+</div>
+
+<!-- §1 -->
+<h2>§1 쟁점 지문</h2>
+<div class="fp">
+  <span class="fp-l">영역</span><span>에너지/통상 + 지정학(미-이란) + 제재 정책</span>
+  <span class="fp-l">지리</span><span>글로벌 (미국 제재 해제 → 이란 원유 → 한국/일본/인도 수입)</span>
+  <span class="fp-l">접촉 자산</span><span>WTI/Brent (1차 — 유가 하락 기대), 나프타 가격 (1차 — 원유 공급↑ → 나프타 가격↓ 기대), 석유화학주: LG화학, 롯데케미칼, 한화솔루션 (1차 — 원가 부담 완화), 정유주: SK이노, S-Oil (1차 — 도입 비용 절감), KRW/USD (2차 — 유가 안정 → 경상수지 → 원화)</span>
+  <span class="fp-l">이해관계자</span><span>미 재무부 (제재 면제 주체), 한국 정유사 (SK이노, S-Oil, GS칼텍스 — 이란 원유 구매자), 한국 석유화학 (LG화학, 롯데케미칼 — 나프타 수혜자), 중국 정유사 (이란 원유 90% 독점 구매자 — 경쟁 변화), 이란 (전쟁 자금 전용 비판 대상), 미 의회/FDD (제재 해제 비판자)</span>
+  <span class="fp-l">시간 성격</span><span>충격+전개 (30일 한시 면제. 4/19 이후 재제재 가능)</span>
+</div>
+
+<!-- §2 -->
+<h2>§2 선정 채널</h2>
+<table>
+<tr><th>계층</th><th>채널</th><th>선정 이유</th></tr>
+<tr>
+<td><span class="lt t-p">가격</span></td>
+<td>LG화학 051910, 롯데케미칼 011170, SK이노 096770, S-Oil 010950, WTI/Brent, KRW/USD</td>
+<td>석화 대장주. 나프타 원가 완화 직접 수혜 / 석화 순수 비중 최대. 원가↓ 직격 수혜 / 정유 대장. 이란 원유 도입 비용 절감 / 정유+샤힌. 원유 도입 다변화 / 1.4억 배럴 풀림 → 유가 하락 압력 / 유가 안정 → 경상수지 개선 → 원화 강세 기대</td>
+</tr><tr>
+<td><span class="lt t-n">서사</span></td>
+<td>매일경제, 한국경제, 경향신문, CNBC, 서울경제, withnews</td>
+<td>1면 보도. &#x27;수입길 열려&#x27; 긍정 프레임 / 미 재무부 1.4억 배럴 상세 보도 / &#x27;전쟁 자금 대주나&#x27; 비판 프레임 / 30-day waiver 원문 보도 / 정부 대응 + 나프타 연결 보도 / &#x27;이례적 조치. 이란 코웃음&#x27; 회의론</td>
+</tr><tr>
+<td><span class="lt t-e">전문가</span></td>
+<td>스콧 베선트 미 재무장관, FDD (Foundation for Defense of Democracies), 블랙스톤 컴플라이언스 데이비드 태넌바움, 한국 정유업계 관계자, 시장 전문가 (이란 원유 구조 분석)</td>
+<td>제재 면제 주체. X 발언 / 제재 해제 비판. &#x27;적에게 자금 대주기&#x27; / 이란 전쟁 자금 전용 경고 / 원유 도입 비용 절감 기대 입장 / &#x27;89~91% 중국 흡수&#x27; 실질 공급 의문 제기</td>
+</tr><tr>
+<td><span class="lt t-po">정책</span></td>
+<td>미 재무부, 한국 산업통상자원부, 미 의회 비판론</td>
+<td>30일 제재 면제 일반면허 발급 / 나프타 수급 대응과 연결. 수입선 다변화 / FDD 등 제재 해제 반대 세력</td>
+</tr><tr>
+<td><span class="lt t-ps">포지셔닝</span></td>
+<td>석유화학/정유주 금일 반응, 유가 변동, 이란 원유 구매 움직임</td>
+<td>제재 면제 소식에 시장이 즉시 반응하는지 / 1.4억 배럴 공급 → 가격 하락 여부 / 아시아 정유사 실제 구매 재개 여부</td>
+</tr>
+</table>
+
+<!-- §3 -->
+<h2>§3 수집된 반응</h2>
+
+<h3><span class="lt t-p">가격 반응</span></h3>
+<table>
+<tr><th>자산</th><th>이전</th><th>이후</th><th>변동</th><th>속도</th><th>핵심</th></tr>
+<tr>
+<td><strong>LG화학 051910</strong></td>
+<td>290,000원 (3/23 저점)</td>
+<td>314,500원 (3/24)</td>
+<td class="pos">+8.4%</td>
+<td>당일</td>
+<td>전일 저점 290,000 → 오늘 314,500. 나프타 수급 완화 기대 + 합의 시그널 겹침. 그러나 전쟁 전 417,500 대비 여전히 -24.7%</td>
+</tr><tr>
+<td><strong>롯데케미칼 011170</strong></td>
+<td>81,300원 (3/23)</td>
+<td>80,400원 (3/24)</td>
+<td class="neg">-1.1%</td>
+<td>당일</td>
+<td>소폭 하락. LG화학 대비 반등 약함. 시장이 석화 순수 비중이 큰 롯데케미칼에 회의적</td>
+</tr><tr>
+<td><strong>SK이노 096770</strong></td>
+<td>105,600원 (3/23)</td>
+<td>110,100원 (3/24)</td>
+<td class="pos">+4.3%</td>
+<td>당일</td>
+<td>정유사. 이란 원유 도입 비용 절감 기대로 반등. 30일 한시이므로 지속성 의문</td>
+</tr><tr>
+<td><strong>S-Oil 010950</strong></td>
+<td>106,000원 (3/23)</td>
+<td>108,400원 (3/24)</td>
+<td class="pos">+2.3%</td>
+<td>당일</td>
+<td>정유+샤힌. 반등 폭은 SK이노보다 작음. 이미 나프타 비의존 프리미엄 반영</td>
+</tr><tr>
+<td><strong>WTI</strong></td>
+<td>$93.39 (3/16)</td>
+<td>$91.20 (3/24)</td>
+<td class="neg">-2.3%</td>
+<td>수일</td>
+<td>1.4억 배럴 공급 기대에도 $90+ 유지. 시장이 30일 한시의 한계를 인식</td>
+</tr><tr>
+<td><strong>Brent</strong></td>
+<td>—</td>
+<td>$102.78 (3/24)</td>
+<td class="neu">+0.0%</td>
+<td>—</td>
+<td>아시아 벤치마크 $100+ 유지. 구조적 공급 불안 해소 안 됨</td>
+</tr><tr>
+<td><strong>KRW/USD</strong></td>
+<td>—</td>
+<td>1,495.08</td>
+<td class="neu">+0.0%</td>
+<td>—</td>
+<td>1,500원 근접 유지. 유가 안정 기대가 원화에 아직 미반영</td>
+</tr>
+</table>
+
+<h3><span class="lt t-n">서사 반응</span></h3>
+<table>
+<tr><th>매체</th><th>프레임</th><th>톤</th><th>독자분석</th><th>시점</th></tr>
+<tr>
+<td>매일경제</td>
+<td>한국도 이란산 원유 수입길 열려. 30일 제재 면제로 석화·정유 숨통</td>
+<td class="pos">긍</td>
+<td>O</td>
+<td>2026-03-24</td>
+</tr><tr>
+<td>한국경제</td>
+<td>미 재무부 1.4억 배럴 신속 공급. 한국·일본·인도로 방향 전환. 중국 독점 깨기</td>
+<td class="pos">긍</td>
+<td>O</td>
+<td>2026-03-21</td>
+</tr><tr>
+<td>경향신문</td>
+<td>이란 때려놓고 이란산 원유 제재 완화? &#x27;전쟁 자금 대주나&#x27; 비판</td>
+<td class="neg">부</td>
+<td>O</td>
+<td>2026-03-20</td>
+</tr><tr>
+<td>CNBC</td>
+<td>US allows 30-day sale of Iran oil at sea in bid to tame prices</td>
+<td class="neu">중</td>
+<td>O</td>
+<td>2026-03-20</td>
+</tr><tr>
+<td>withnews</td>
+<td>얼마나 다급했으면 이례적 조치. 이란은 코웃음. 30일 한시의 한계</td>
+<td class="neg">부</td>
+<td>O</td>
+<td>2026-03-22</td>
+</tr><tr>
+<td>서울경제</td>
+<td>미 이란산 원유 제재 30일 면제. 1.4억 배럴 신속 공급. 나프타 수급 완화 기대</td>
+<td class="pos">긍</td>
+<td>O</td>
+<td>2026-03-21</td>
+</tr>
+</table>
+
+<h3><span class="lt t-e">전문가 반응</span></h3>
+<table>
+<tr><th>이름/기관</th><th>핵심 발언</th><th>방향</th></tr>
+<tr>
+<td><strong>스콧 베선트 미 재무장관</strong><br><span style="color:var(--muted);font-size:.75rem;">미 재무부</span></td>
+<td>1.4억 배럴 신속 공급. 이란 배럴을 이란에 대해 사용(Use Iranian barrels against Iran). 중국 대신 한국·일본·인도에 가면 미국에 더 유리</td>
+<td class="pos">긍</td>
+</tr><tr>
+<td><strong>FDD (Foundation for Defense of Democracies)</strong><br><span style="color:var(--muted);font-size:.75rem;">FDD (미국 싱크탱크)</span></td>
+<td>적에게 자금 대주기(Funding the Enemy). 가드레일 없이 제재를 풀었다</td>
+<td class="neg">부</td>
+</tr><tr>
+<td><strong>블랙스톤 컴플라이언스 데이비드 태넌바움</strong><br><span style="color:var(--muted);font-size:.75rem;">Blackstone Compliance Services</span></td>
+<td>이란 정권이 이 자금을 전쟁 자금으로 전용할 가능성이 크다</td>
+<td class="neg">부</td>
+</tr><tr>
+<td><strong>시장 전문가 (이란 원유 구조)</strong><br><span style="color:var(--muted);font-size:.75rem;">—</span></td>
+<td>이란 해상 원유의 89~91%는 이미 중국이 흡수. 실제 한국에 올 수 있는 잔여 물량이 불분명. 제재 해제되면 시장가(할인 없음)로 올라가 가격 메리트 감소</td>
+<td class="neu">중</td>
+</tr><tr>
+<td><strong>한국 정유업계 관계자</strong><br><span style="color:var(--muted);font-size:.75rem;">한국 정유업계</span></td>
+<td>원유 도입 비용 절감 기대. 그러나 30일 한시이므로 구조적 해결 아님. 러시아산 허용도 병행 필요</td>
+<td class="pos">긍</td>
+</tr>
+</table>
+
+<h3><span class="lt t-po">정책 반응</span></h3>
+<table>
+<tr><th>기관</th><th>조치</th><th>구속력</th><th>시장 시사점</th></tr>
+<tr>
+<td>미 재무부</td>
+<td>3/20: 이란산 원유 제재 30일 면제. 일반면허 발급. 3/20 이전 선적분에 한해 4/19까지 판매·하역 허용</td>
+<td>행정명령 (일반면허)</td>
+<td>1.4억 배럴 풀림. 유가 10~14일 억제 효과. 그러나 4/19 이후 재제재 시 원점</td>
+</tr><tr>
+<td>한국 정부</td>
+<td>이란 원유 수입 재개 검토. 기존 나프타 수출 제한 + 비축유 방출 지속. 수입선 다변화 지원</td>
+<td>행정 검토</td>
+<td>이란 원유 확보 시 나프타 생산↑ → 석화 원가↓. 그러나 30일 한시 + 물류 시간 고려 시 실질 효과 제한적</td>
+</tr><tr>
+<td>미 의회 비판론 (FDD 등)</td>
+<td>&#x27;적에게 자금 대주기&#x27; 비판. 가드레일 없는 제재 해제 반대</td>
+<td>정치적 압력</td>
+<td>4/19 이후 재제재 강화 압력. 의회 움직임에 따라 연장 불확실</td>
+</tr>
+</table>
+
+<h3><span class="lt t-ps">포지셔닝 반응</span></h3>
+<table>
+<tr><th>지표</th><th>값</th><th>시사점</th></tr>
+<tr>
+<td>석화주 금일 반응</td>
+<td>LG화학 +8.4%, 롯데케미칼 -1.1%</td>
+<td>시장이 선별적으로 반응. 석화 순수 비중이 큰 롯데케미칼에는 회의적</td>
+</tr><tr>
+<td>정유주 금일 반응</td>
+<td>SK이노 +4.3%, S-Oil +2.3%</td>
+<td>이란 원유 도입 비용 절감 기대. 그러나 30일 한시 반영하여 제한적 반등</td>
+</tr><tr>
+<td>유가 반응</td>
+<td>WTI $91.20, Brent $102.78</td>
+<td>1.4억 배럴 공급에도 유가 $90+ 유지. 시장이 30일 한시의 한계를 인식. 구조적 공급불안 미해소</td>
+</tr>
+</table>
+
+<!-- §4 -->
+<h2>§4 패턴 판독</h2>
+
+<div class="pb">
+<h3>렌즈 1: 방향 일치도 — 분열</h3>
+<div class="dg"><div class="dc"><span class="dl">가격</span><span class="dv" style="color:var(--muted)">↑ (석화/정유 반등. 그러나 롯데케미칼 무반응. 유가 $90+ 유지)</span></div><div class="dc"><span class="dl">서사</span><span class="dv" style="color:var(--muted)">↑↓ (매경·한경·서울경제 긍정 vs 경향·withnews 회의/비판)</span></div><div class="dc"><span class="dl">전문가</span><span class="dv" style="color:var(--muted)">↑↓ (베선트 긍정 vs FDD·태넌바움 &#x27;전쟁자금&#x27;. 실질 공급량 의문)</span></div><div class="dc"><span class="dl">정책</span><span class="dv" style="color:var(--muted)">이중 (미 재무부 면제 ↑ vs 미 의회 비판 ↓. 한국 정부 검토 중)</span></div><div class="dc"><span class="dl">포지셔닝</span><span class="dv" style="color:var(--muted)">↑ 제한적 (석화주 선별 반등. 유가 미하락. 30일 한시 반영)</span></div></div>
+<p style="font-size:.85rem;margin-top:.5rem;">이전 나프타 수급 &#x27;수렴(위기)&#x27;에서 &#x27;분열&#x27;로 전환. 긍정 신호(제재 면제)가 들어왔으나 구조적 한계(30일 한시, 실질 공급량 의문, 전쟁자금 비판)와 충돌. 시장은 선별적으로만 반응(LG화학 O, 롯데케미칼 X, 유가 미하락)</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 2: 시간 구조 — C (정책주도) — 미국 정책이 한국 시장을 움직임</h3>
+<div class="tl"><div class="ti"><span class="td">2026-03-19</span> <strong>정책</strong> — 베선트 재무장관 X에 제재 면제 시사</div><div class="ti"><span class="td">2026-03-20</span> <strong>정책</strong> — 미 재무부 30일 일반면허 공식 발급</div><div class="ti"><span class="td">2026-03-20</span> <strong>서사</strong> — CNBC &#x27;30-day waiver&#x27; 글로벌 보도</div><div class="ti"><span class="td">2026-03-21</span> <strong>전문가</strong> — FDD &#x27;적에게 자금 대주기&#x27; 비판 보고서</div><div class="ti"><span class="td">2026-03-21</span> <strong>서사</strong> — 한경 &#x27;1.4억 배럴 한국행 가능&#x27; 보도</div><div class="ti"><span class="td">2026-03-24</span> <strong>서사</strong> — 매경 1면 &#x27;한국도 이란산 수입길 열려&#x27;</div><div class="ti"><span class="td">2026-03-24</span> <strong>가격</strong> — LG화학 +8.4%, SK이노 +4.3% 반등</div><div class="ti"><span class="td">2026-03-24</span> <strong>가격</strong> — 유가 WTI $91.20 — $90+ 유지(미하락)</div></div>
+<p style="font-size:.85rem;margin-top:.5rem;">미국 정책(3/19~20) → 글로벌 매체(3/20) → 비판 전문가(3/21) → 한국 매체(3/21~24) → 한국 주가 반응(3/24). 정책이 4일 전에 나왔는데 한국 주가는 오늘에야 부분 반응. 한국 시장의 반응 지연(매경 1면 보도일에 맞춰 반응)</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 3: 비례성 — 과소</h3>
+<p style="font-size:.85rem;">1.4억 배럴 제재 면제(역사적 조치) 대비 반응: LG화학 +8.4%이지만 여전히 전쟁 전 대비 -24.7%. 유가 $90+ 유지. 환율 미반응. 시장이 &#x27;30일 한시&#x27;의 한계를 할인하여 부분적으로만 반영</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 4: 전파 경로 — C (정책→서사→가격)</h3>
+<p style="font-size:.85rem;">미 재무부 정책(3/20) → CNBC·한경 보도(3/20~21) → 매경 1면(3/24) → 한국 주가 반응(3/24). 전형적 C 경로. 주목할 점: 정책 발표(3/20)와 한국 주가 반응(3/24) 사이에 4일 시차. 매경 1면 보도가 한국 투자자에게 도달한 시점에 반응</p>
+<p style="font-size:.85rem;color:var(--accent);margin-top:.5rem;"><strong>후속 관찰:</strong> 4/19 제재 면제 만료 시 재제재 여부. 연장 없으면 원점 복귀 + 석화주 재하락. 실제 이란 원유가 한국에 도착하는 물류 시간(2~3주). 중국이 독점 풀고 한국에 물량 넘기는지</p>
+</div>
+
+<!-- §5 -->
+<h2>§5 미해소 질문</h2>
+<ul class="uq"><li class="uq-open">
+<strong>UQ-006</strong> 4/19 제재 면제 만료 후 재제재 vs 연장 여부
+<span class="uq-type uq-date">date</span>
+<div class="uq-meta">해소 조건: 2026-04-19까지 미 재무부 연장 발표 여부 확인<br>기한: 2026-04-19<br><span class="uq-help">→ 2026-04-19 이후 WebSearch로 확인</span></div>
+</li><li class="uq-open">
+<strong>UQ-007</strong> 실제 이란 원유가 한국에 도착하는 시점과 물량
+<span class="uq-type uq-data">data</span>
+<div class="uq-meta">해소 조건: 한국 정유사 이란 원유 구매/도착 보도 확인. 물류 시간 2~3주<br>기한: 2026-04-10<br><span class="uq-help">→ MCP 도구로 즉시 체크 가능</span></div>
+</li><li class="uq-open">
+<strong>UQ-008</strong> 중국 독점 구조(89~91%) 해체 여부 — 한국에 실제로 물량이 오는지
+<span class="uq-type uq-condition">condition</span>
+<div class="uq-meta">해소 조건: 중국 정유사의 이란 원유 포기/한국 전환 보도<br><span class="uq-help">→ 이벤트 대기. 후속 수집 시 자동 체크</span></div>
+</li><li class="uq-open">
+<strong>UQ-009</strong> 제재 면제가 나프타 가격에 실제 영향을 주는지 (현재 톤당 $1,141)
+<span class="uq-type uq-threshold">threshold</span>
+<div class="uq-meta">해소 조건: 나프타 가격 $900 이하 시 완화 판정. $1,000+ 유지 시 미효과<br>기한: 2026-04-05<br><span class="uq-help">→ MCP 도구로 즉시 조회 가능</span></div>
+</li></ul>
+<p style="font-size:.82rem;color:var(--muted);margin-top:.75rem;"><strong>다음 확인:</strong> 4/19 제재 면제 만료 / 이란 원유 한국 도착 (4월 초) / 나프타 가격 변동 / 중국 독점 해체 여부</p>
+
+<!-- Sources -->
+<h2>Sources</h2>
+<ul class="src"><li>CNBC</li><li><a href="https://www.cnbc.com/2026/03/20/us-issues-30-day-sanctions-waiver-for-sale-of-iranian-oil-at-sea.html">CNBC</a></li><li>CNBC / 경향신문</li><li>Yahoo Finance</li><li>Yahoo Finance / FRED</li><li><a href="https://news.meaww.com/scott-bessent-pushes-iran-oil-sanctions-pause-to-ease-prices-use-iranian-barrels-against-iran">https://news.meaww.com/scott-bessent-pushes-iran-oil-sanctions-pause-to-ease-prices-use-iranian-barrels-against-iran</a></li><li><a href="https://www.cnbc.com/2026/03/20/us-issues-30-day-sanctions-waiver-for-sale-of-iranian-oil-at-sea.html">https://www.cnbc.com/2026/03/20/us-issues-30-day-sanctions-waiver-for-sale-of-iranian-oil-at-sea.html</a></li><li><a href="https://www.fdd.org/analysis/2026/03/21/funding-the-enemy-trump-rolls-back-sanctions-on-iran-without-any-guardrails/">https://www.fdd.org/analysis/2026/03/21/funding-the-enemy-trump-rolls-back-sanctions-on-iran-without-any-guardrails/</a></li><li>withnews</li><li><a href="https://car.withnews.kr/economy/us-treasury-iran-oil-sanction-waiver-30-days">withnews</a></li><li>경향신문</li><li><a href="https://www.khan.co.kr/article/202603201244001">경향신문</a></li><li>매일경제</li><li>매일경제 1면</li><li>머니투데이 / 헤럴드경제</li><li>서울경제</li><li><a href="https://www.sedaily.com/article/20022246">서울경제</a></li><li>한국경제</li><li><a href="https://www.hankyung.com/article/2026032165827">한국경제</a></li></ul>
+
+<p style="text-align:center;color:var(--muted);font-size:.7rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);">
+  Market Reaction Monitor | reaction-monitor | 2026-03-24 | Phase 0 미해소 자동 체크 활성
+</p>
+</body>
+</html>

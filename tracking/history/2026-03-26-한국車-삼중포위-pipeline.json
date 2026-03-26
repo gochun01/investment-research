@@ -1,0 +1,67 @@
+{
+  "id": "SA-20260326-007",
+  "date": "2026-03-26",
+  "title": "한국車 3면 포위 — 파이프라인 풀 실행 (델타)",
+  "pipeline": "scanner(9MCP) + macro(39MCP) → rm(31MCP) + core(12MCP) + PSF(20MCP) → Stereo",
+  "total_mcp": 111,
+  "total_agents": 5,
+
+  "prior_context": {
+    "has_prior": true,
+    "linked": ["SA-20260326-002", "TC-002", "SA-20260326-001", "SA-20260326-005"],
+    "mode": "delta"
+  },
+
+  "pre_read": {
+    "type": "POLICY",
+    "type_secondary": "STRUCT",
+    "scp": 4,
+    "scp_basis": "SCP 3→4 상향. core-extractor 느린 변화: 미국향 수출 -29.4%, 하이브리드 +85.5%. 구조 재편이 초기 신호가 아니라 진행 중.",
+    "urgency": "WATCH",
+    "mode": "delta"
+  },
+
+  "core_finding": "벼랑 끝이 아니라 산업 구조의 강제 전환 중반전. 수출 모델은 이미 죽었고, 문제는 현대 현지화 속도가 중국 침투 속도를 따라잡는가. 4번째 축(SDV)이 대기. 매크로(PCE 3.05%→Fed 인상)가 양면의 칼.",
+
+  "delta_from_previous": {
+    "scp_change": "3→4",
+    "new_findings": [
+      "rm: 과소반응 패턴. 애널리스트 전원 매수 vs 가격 -27%",
+      "rm: UAW 관세 지지 = 한국차 반대 세력",
+      "rm: ACEA·모비스·울산노조 3자 침묵",
+      "core: 미국향 수출 -29.4% (2026.02 YoY)",
+      "core: 하이브리드 +85.5% vs EV -8.2% — 구조 전환 확인",
+      "core: BYD 멕시코 닛산·벤츠 공장 인수 입찰",
+      "core BURIED: 모비스 벤츠 섀시 2차 수주, 현대-NVIDIA SDV, 수소 $6.3B",
+      "core: MT-07(공급망 재편) × MT-06(미중 디커플링) 축 교차 활성",
+      "PSF: Core PCE 3.05% 키스톤 REVERSE. Fed 인상 영역",
+      "PSF: S1 실질금리 2.06% → 균열 2.5%까지 2주",
+      "PSF: L5 지정학→에너지 Link 활성"
+    ],
+    "scenario_change": "A 45→40%, B 20→15%, C 35→30%, D(SDV) 신규 15%"
+  },
+
+  "scenarios": [
+    {"label": "A", "description": "관세 25% + EU IAA → 구조 전환 가속", "probability": "40%"},
+    {"label": "B", "description": "관세 협상 타결", "probability": "15%"},
+    {"label": "C", "description": "삼중 압박 극대화", "probability": "30%"},
+    {"label": "D", "description": "SDV 경쟁 부상 — 관세 뒤의 기술 전쟁", "probability": "15%"}
+  ],
+
+  "uncertainty": {
+    "weakest_layer": "L6",
+    "weakest_reason": "SDV 경쟁 시간축 + 울산 노조 반응 미확인",
+    "average_confidence": 4.1
+  },
+
+  "feedback": {
+    "executed": ["FB-1", "FB-2", "FB-4", "FB-5"],
+    "fb4_changed": true,
+    "fb4_delta": "이전: 강제 이주. 지금: 강제 이주+속도 경쟁(현대 vs 중국)+부품사 독자 경로+SDV 4번째 전장+매크로 양면의 칼"
+  },
+
+  "self_check": {"passed": 8, "total": 8},
+
+  "tags": ["POLICY", "STRUCT", "자동차", "현대차", "기아", "관세", "EU", "IAA", "중국", "BYD", "현지화", "SDV", "MT-07", "MT-06", "pipeline-full"],
+  "related_ids": ["SA-20260326-002", "SA-20260326-001", "SA-20260326-005", "SA-20260326-003"]
+}

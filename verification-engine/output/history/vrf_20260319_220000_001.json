@@ -1,0 +1,409 @@
+{
+  "meta": {
+    "id": "vrf_20260319_220000_001",
+    "schema_version": "v2.0",
+    "created_at": "2026-03-19T22:00:00.001000",
+    "engine_version": "6layer_v2_manual",
+    "document": {
+      "title": "한국은 창업도 단기실적 집착… 인재도 아이디어도 떠났다",
+      "document_type": "news_article",
+      "target_id": "",
+      "sector_id": "스타트업_생태계",
+      "author_id": "원호섭 특파원",
+      "institution_id": "매일경제",
+      "source_url": "https://www.mk.co.kr/news/it/11991814",
+      "date_published": "2026-03-18",
+      "date_accessed": "2026-03-19"
+    },
+    "previous_verification": ""
+  },
+
+  "document_level_verdicts": {
+    "norm": {
+      "verdict": "🟢",
+      "reason": "",
+      "notes": "매경 실리콘밸리 특파원 현지 인터뷰 기반. 인터뷰이 실명·소속 명시. 언론 보도 기본 요건 충족.",
+      "checklist_matched": ["출처 명시", "인터뷰이 실명", "소속 확인"],
+      "checklist_missed": [],
+      "disclosure_in_document": true
+    },
+    "incentive": {
+      "verdict": "🟡",
+      "reason": "",
+      "notes": "인터뷰이 5인 전원이 미국행 창업자. 한국 떠난 선택을 정당화할 인센티브 내재. 한국 잔류 성공 사례, 한국 VC 측 반론 완전 부재. 생존자 편향 + 자기선택 정당화 편향.",
+      "relationships_checked": ["인터뷰이-미국창업(자기정당화)", "매경-실리콘밸리 특파원(현지 접근성 편향)"],
+      "disclosure_in_document": false
+    },
+    "omission": {
+      "verdict": "🔴",
+      "reason": "",
+      "notes": "기사에서 4가지 중요 반증이 누락됨. 한국 생태계의 회복 신호와 구조적 개선이 전혀 언급되지 않아 편향된 서사 형성.",
+      "bbj_breaks": [
+        {
+          "break_text": "유학생 기준 2021년 이후 한국 순유입 전환 (2023: 유입 12.9만 vs 유출 9.7만). 고급 기술인력 유출과 전체 인재 흐름은 별개 현상.",
+          "in_document": false,
+          "verdict": "🔴"
+        },
+        {
+          "break_text": "창업자 낙관도 42.5%로 2022년 이후 최고치. 생태계 참여자 자체는 회복을 감지 중.",
+          "in_document": false,
+          "verdict": "🟡"
+        },
+        {
+          "break_text": "한국 M&A 시장 연 637건/52.4조원 존재. 2025년 벤처조합 지분매각 요건 완화 + 민관 M&A 플랫폼 가동. IPO가 '유일한' 엑시트라는 주장은 사실 오류.",
+          "in_document": false,
+          "verdict": "🔴"
+        },
+        {
+          "break_text": "정부 목표: AI 스타트업 1만개, 유니콘 50개, 연간 벤처투자 40조원. 모태펀드 초기 출자 2배 확대. 정부 정책이 구조적 변화를 추진 중.",
+          "in_document": false,
+          "verdict": "🟡"
+        }
+      ]
+    }
+  },
+
+  "claims": [
+    {
+      "claim_id": "c001",
+      "text": "한국 VC 투자는 RCPS(상환전환우선주) 중심 구조가 많다. 사실상 대출과 비슷한 성격.",
+      "claim_type": "사실진술",
+      "evidence_type": "data",
+      "location": "본문 중반",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "자본시장연구원 보고서 확인: 우선주(RCPS 포함) 비중 2015년 67.5% → 2020년 78.5%로 지속 증가. 유니콘 11개사 중 대다수가 RCPS/CPS로 투자 유치 (쿠팡, 야놀자, 무신사, 토스 등).",
+          "evidence": [
+            {
+              "source": "Tavily→자본시장연구원",
+              "query": "RCPS 상환전환우선주 비중 VC 투자 통계",
+              "value": "우선주 비중 78.5% (2020), 67.5% (2015)",
+              "retrieved_at": "2026-03-19T22:00:00"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "'사실상 대출'이라는 표현은 과장. RCPS는 전환권+상환권 결합 하이브리드 구조. 상환은 자동 발동이 아닌 투자자 청구 필요. '하방 보호가 강한 투자 구조'가 정확한 표현.",
+          "checklist_matched": [],
+          "checklist_missed": []
+        },
+        "logic": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "RCPS 비중 78.5% → 투자자 하방 리스크 축소 → 단기 회수 지향 강화. 인과 성립.",
+          "rules_triggered": [],
+          "kc_extracted": []
+        },
+        "temporal": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "RCPS 비중 데이터가 2020년 기준. 2024-2025년 최신 비중은 미확인. 추세가 유지되고 있을 가능성 높으나 정확한 최신 수치 부재.",
+          "data_reference_date": "2020-12-31",
+          "gap_days": 1905,
+          "material_change": false,
+          "valid_until": "2026-06-19"
+        },
+        "incentive": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "인터뷰이(장준영, 유클론)가 미국에서 창업한 당사자. 한국 투자 구조의 단점을 부각할 인센티브 존재.",
+          "relationships_checked": ["인터뷰이-미국창업(자기정당화)"]
+        },
+        "omission": {
+          "verdict": "N/A",
+          "reason": "사실진술 유형에 대해 omission 별도 적용 불필요"
+        }
+      }
+    },
+    {
+      "claim_id": "c002",
+      "text": "2025년 한국 초기(Seed~Series A) 투자 건수 40.4% 감소, 투자 금액 29.2% 감소.",
+      "claim_type": "사실진술",
+      "evidence_type": "data",
+      "location": "분석 보고서 (기사 외부 데이터)",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "THE VC 2025 통계 + 플래텀 보도 교차확인. 두 독립 소스에서 동일 수치 일치.",
+          "evidence": [
+            {
+              "source": "Tavily→THE VC",
+              "query": "2025 한국 스타트업 투자 통계",
+              "value": "초기(Seed~A) 건수 847건 YoY -40.4%, 금액 1.92조원 YoY -29.2%",
+              "retrieved_at": "2026-03-19T22:00:00"
+            },
+            {
+              "source": "Tavily→플래텀",
+              "query": "2025 스타트업 빈익빈 부익부",
+              "value": "전체 1,155건 -33.2%, 초기 라운드 건수 -40.4%, 금액 -29.2% 확인",
+              "retrieved_at": "2026-03-19T22:00:00"
+            }
+          ]
+        },
+        "temporal": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "2024년에도 초기 투자 이미 30% 감소 추세 → 2025년은 누적 효과. 시계열 일관성 확인.",
+          "data_reference_date": "2025-12-31",
+          "gap_days": 78,
+          "material_change": false,
+          "valid_until": "2026-06-30"
+        }
+      }
+    },
+    {
+      "claim_id": "c003",
+      "text": "미국 H-1B 한국인 발급 5,800명(2024), 7년 최대. 인구당 고급인력 유출 한국 11.3명 vs 일본 0.66명.",
+      "claim_type": "사실진술",
+      "evidence_type": "data",
+      "location": "분석 보고서 (매경 별도 기사 인용)",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "매경 기사(2024년 보도)에서 인용. 원출처는 미 국무부 비자 통계로 추정되나 MCP로 원데이터 직접 확인 불가. 대한상의 SGI 브리프에서 '이공계 10년간 34만명 유출'은 별도 확인.",
+          "evidence": [
+            {
+              "source": "Tavily→매경",
+              "query": "한국 인재 유출 미국행 H-1B",
+              "value": "5,800명(2024), 7년 최대",
+              "retrieved_at": "2026-03-19T22:00:00"
+            },
+            {
+              "source": "Tavily→대한상의 SGI",
+              "query": "한국 고급인력 해외유출 brain drain",
+              "value": "이공계 2013-2022 34만명 유출, 석박사 9.6만명",
+              "retrieved_at": "2026-03-19T22:00:00"
+            }
+          ]
+        },
+        "norm": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "'인구당 유출 11.3명 vs 일본 0.66명'의 산출 기준(분모가 총인구? 고급인력?)이 미명시. 비교 기준 불분명으로 수치 신뢰도 제한.",
+          "checklist_matched": [],
+          "checklist_missed": ["산출기준 명시"]
+        },
+        "omission": {
+          "verdict": "🔴",
+          "reason": "",
+          "notes": "SGI 보고서는 외국인 유학생 유입이 2021년 이후 유출을 초과(2023: 유입 12.9만 vs 유출 9.7만)한다고 기술. 유학생 기준 순유입 전환 사실이 누락되어 일방적 유출 서사 형성.",
+          "bbj_breaks": [
+            {
+              "break_text": "유학생 기준 2021년 이후 한국 순유입 전환. 인재 흐름은 유출만이 아닌 복합적 현상.",
+              "in_document": false,
+              "verdict": "🔴"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": "c004",
+      "text": "대기업의 M&A가 활발하지 않아 코스닥 상장을 유일한 출구로 보는 경향이 강하다.",
+      "claim_type": "의견진술",
+      "evidence_type": "claim",
+      "location": "본문 중반 (장준영 인터뷰)",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🔴",
+          "reason": "",
+          "notes": "'유일한' 엑시트라는 주장은 사실과 불일치. 한국 M&A 시장은 2025년 637건/52.4조원 규모로 존재. 벤처투자조합 지분매각 요건 완화(2025), 민관협력 M&A 플랫폼 가동 등 정책적 확대도 진행 중.",
+          "evidence": [
+            {
+              "source": "Tavily→m2news",
+              "query": "한국 대기업 스타트업 M&A 인수합병 건수 2025",
+              "value": "2025년 주요기업 M&A 637건, 52.4조원 (건수 YoY -17.5%, 금액 -8.4%)",
+              "retrieved_at": "2026-03-19T22:00:00"
+            },
+            {
+              "source": "Tavily→김앤장",
+              "query": "VC 최근 동향 M&A 활성화",
+              "value": "벤처투자조합 지분매각 요건 완화 시행, 민관 M&A 플랫폼 본격 가동",
+              "retrieved_at": "2026-03-19T22:00:00"
+            }
+          ]
+        },
+        "logic": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "'대기업 M&A가 활발하지 않다'는 상대적 비교(미국 대비)로는 맞을 수 있으나, '유일한 출구'는 논리적 비약. 세컨더리, 구주매각, 전략적 M&A도 존재. '상대적으로 IPO 편중된 엑시트 구조'가 정확.",
+          "rules_triggered": [],
+          "kc_extracted": []
+        },
+        "incentive": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "인터뷰이(장준영)가 한국에서 창업 후 미국으로 이전한 당사자. 한국 엑시트 구조의 제한을 강조함으로써 자신의 미국행 선택을 정당화하는 인센티브.",
+          "relationships_checked": ["인터뷰이-미국전환(자기정당화)"]
+        }
+      }
+    },
+    {
+      "claim_id": "c005",
+      "text": "글로벌 AI 트레이너의 58.2%가 미국 기반. $1억+ 투자 스타트업의 55%가 미국 본사.",
+      "claim_type": "사실진술",
+      "evidence_type": "data",
+      "location": "본문 후반",
+      "depends_on": [],
+      "layers": {
+        "fact": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "기사 내 딜(Deel) '글로벌 채용 현황 보고서 2025' 인용. 매경 원문에서 확인. GSER 2025에서도 실리콘밸리 부동의 1위 확인.",
+          "evidence": [
+            {
+              "source": "Firecrawl→매경 원문",
+              "query": "AI 트레이너 미국 비중",
+              "value": "AI 트레이너 58.2% 미국, $1억+ 스타트업 55% 미국 본사",
+              "retrieved_at": "2026-03-19T22:00:00"
+            },
+            {
+              "source": "Tavily→Startup Genome",
+              "query": "GSER 2025 global startup ecosystem ranking",
+              "value": "Silicon Valley #1, Top 40 ranking",
+              "retrieved_at": "2026-03-19T22:00:00"
+            }
+          ]
+        },
+        "temporal": {
+          "verdict": "🟢",
+          "reason": "",
+          "notes": "2023~2025 AI 붐과 일치하는 시계열. 구조적 추세.",
+          "data_reference_date": "2025-12-31",
+          "gap_days": 78,
+          "material_change": false,
+          "valid_until": "2026-06-30"
+        },
+        "omission": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "서울 스타트업 생태계도 GSER 글로벌 랭킹 유지 중. 한국 GEM 기업가정신 지수 세계 8위(2026.2). '떠난다'만 강조하고 한국 생태계의 개선 신호(창업자 낙관도 42.5%, 2022년 이후 최고) 미언급.",
+          "bbj_breaks": [
+            {
+              "break_text": "한국 GEM 기업가정신 지수 세계 8위, 창업자 낙관도 42.5%로 2022년 이후 최고. 생태계 자체가 '열등'이라는 진단과 괴리.",
+              "in_document": false,
+              "verdict": "🟡"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": "c006",
+      "text": "[분석 추론] 초기 투자 위축 → 한국 내 AI 스타트업 생태계 공동화 → 대기업 오픈이노베이션 약화.",
+      "claim_type": "추론",
+      "evidence_type": "inference",
+      "location": "분석 보고서 인과 체인 2차",
+      "depends_on": ["c002"],
+      "layers": {
+        "fact": {
+          "verdict": "⚫",
+          "reason": "대기업 CVC 투자 건수에 대한 MCP 데이터 없음. 검증 불가.",
+          "notes": "초기 투자 40% 감소는 c002에서 확인. 오픈이노베이션 약화는 데이터 미확인 상태의 추론."
+        },
+        "logic": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "논리적으로 개연성 있으나, 대기업 CVC 실적 없이 추론만으로 연결. 네이버·카카오·삼성 CVC 투자 건수 확인 필요.",
+          "rules_triggered": [],
+          "kc_extracted": [
+            {
+              "kc_id": "kc_001",
+              "premise": "초기 투자 위축이 대기업 CVC 딜플로우 감소로 전이",
+              "current_status": "데이터 미확인",
+              "verdict": "⚫"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "claim_id": "c007",
+      "text": "[분석 추론] 핵심 인재·IP의 미국 이전 고착화 → 한국 AI 산업이 하드웨어(반도체) 공급자 역할에 고착 위험.",
+      "claim_type": "추론",
+      "evidence_type": "inference",
+      "location": "분석 보고서 인과 체인 3차",
+      "depends_on": ["c002", "c003", "c005"],
+      "layers": {
+        "fact": {
+          "verdict": "⚫",
+          "reason": "장기 구조적 가설. 현 시점 검증 불가.",
+          "notes": "AI 투자 23.6% 중 리벨리온·퓨리오사AI 등 반도체 비중이 높으나, 바이오AI·엔터프라이즈AI 등 소프트웨어 투자도 동시 확대 중."
+        },
+        "logic": {
+          "verdict": "🟡",
+          "reason": "",
+          "notes": "가능한 시나리오이나 반증도 상당. AI 투자 다양화(바이오AI, 엔터프라이즈AI)가 진행 중이어서 HW 고착은 확정적 판단 불가.",
+          "rules_triggered": [],
+          "kc_extracted": [
+            {
+              "kc_id": "kc_002",
+              "premise": "한국 AI 산업이 반도체 공급 중심에 머물 것",
+              "current_status": "AI SW 투자도 확대 중 — 반증 존재",
+              "verdict": "🟡"
+            }
+          ]
+        },
+        "omission": {
+          "verdict": "🔴",
+          "reason": "",
+          "notes": "정부가 'AI·딥테크 스타트업 1만개, 유니콘·데카콘 50개, 연간 벤처투자 40조원' 목표를 제시. 이는 하드웨어 고착이 아닌 소프트웨어 확장을 지향. 이 정책 방향이 분석에서 누락.",
+          "bbj_breaks": [
+            {
+              "break_text": "정부 AI 스타트업 1만개 목표 + R&D 신규 예산 50% 이상 AI·전략기술에 투입. HW 고착 시나리오의 반증.",
+              "in_document": false,
+              "verdict": "🟡"
+            }
+          ]
+        }
+      }
+    }
+  ],
+
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟡",
+      "logic": "🟡",
+      "temporal": "🟢",
+      "incentive": "🟡",
+      "omission": "🔴"
+    },
+    "critical_flags": [
+      "c004: 'IPO가 유일한 엑시트' 주장은 사실 오류 (Fact RED). 한국 M&A 637건/52.4조 존재.",
+      "c003: H-1B 유출 강조하면서 유학생 기준 순유입 전환(2021~) 누락 (Omission RED).",
+      "document: 인터뷰이 5인 전원 미국행 창업자 — 생존자 편향 + 자기정당화 인센티브 (Incentive YELLOW).",
+      "document: 창업자 낙관도 42.5%(최고치), GEM 8위, M&A 플랫폼 가동 등 회복 신호 전혀 미언급 (Omission RED)."
+    ],
+    "valid_until": "2026-06-30",
+    "validity_condition": "2026 상반기 초기 투자 통계 발표 전까지 유효",
+    "invalidation_triggers": [
+      {
+        "event": "2026년 상반기 한국 초기 투자 통계 발표",
+        "expected_date": "2026-08-15",
+        "impact": "초기 투자 반등 추세 확인 시 분석 전제 재평가 필요"
+      },
+      {
+        "event": "트럼프 행정부 H-1B/창업비자 정책 변경",
+        "expected_date": "2026-06-30",
+        "impact": "미국행 인재 역류 가능 → 인재 유출 분석 무효화"
+      },
+      {
+        "event": "한국 대기업 대규모 스타트업 M&A 발생",
+        "expected_date": "미정",
+        "impact": "엑시트 구조 문제 해소 신호 → 핵심 전제 재평가"
+      }
+    ],
+    "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용. 6-Layer 프레임워크 수동 적용."
+  }
+}

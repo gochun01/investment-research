@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stereo Analysis — 매경 창간 60주년 국민보고대회에서 '3+1 액션플랜' 제시. AI 네이티브 국가 도약 제</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>:root {
+  --navy:#0d1117;--dark:#161b22;--border:#30363d;
+  --text:#c9d1d9;--text-bright:#f0f6fc;--text-dim:#8b949e;
+  --blue:#58a6ff;--green:#4caf50;--yellow:#ffd600;
+  --red:#ff5252;--purple:#d2a8ff;--cyan:#80deea;--gold:#ffab00;
+  --surface-blue:#1a3a5c;--surface-text:#7ec8e3;
+  --subsurface-purple:#2a1a4a;--subsurface-text:#ce93d8;
+  --l7-gold-bg:#3a2800;--l7-gold-text:#ffd600;
+  --scp-high-bg:#3d0000;--scp-high-text:#ff5252;
+  --scp-mid-bg:#0a2540;--scp-mid-text:#58a6ff;
+  --scp-low-bg:#1c2028;--scp-low-text:#8b949e;
+  --framing-bg:#2a1a3e;--framing-text:#ce93d8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--navy);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.7}
+.container{max-width:780px;margin:0 auto;padding:16px}
+.topbar{padding:6px 16px;font-size:.7em;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-align:center}
+.topbar.red{background:#5c0000;color:#ff5252}
+.topbar.blue{background:#0a2540;color:#58a6ff}
+.topbar.navy{background:#0d1117;color:#8b949e;border-bottom:1px solid var(--border)}
+.report-header{padding:20px 16px 12px}
+.report-header h1{color:var(--text-bright);font-size:1.3em;margin-bottom:6px}
+.report-header .meta{color:var(--text-dim);font-size:.8em}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.badge{padding:4px 12px;border-radius:4px;font-size:.75em;font-weight:600;white-space:nowrap}
+.badge.scp-high{background:var(--scp-high-bg);color:var(--scp-high-text)}
+.badge.scp-mid{background:var(--scp-mid-bg);color:var(--scp-mid-text)}
+.badge.scp-low{background:var(--scp-low-bg);color:var(--scp-low-text)}
+.badge.type-badge{background:#1a2733;color:var(--cyan)}
+.badge.urgency-badge{background:#2a1a00;color:var(--gold)}
+.badge.framing{background:var(--framing-bg);color:var(--framing-text)}
+.exec-box{background:var(--dark);border-left:4px solid var(--gold);padding:16px 20px;margin:16px 0;border-radius:0 8px 8px 0}
+.exec-box .claim{color:var(--text-bright);font-size:1.05em;font-weight:500}
+.exec-box .sub{color:var(--text-dim);font-size:.82em;margin-top:6px}
+.section{margin:12px 0}.section-large{margin:16px 0}.section-small{margin:8px 0}
+.section-title{color:var(--blue);font-size:.9em;font-weight:700;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+.section-title.surface{color:var(--surface-text)}.section-title.subsurface{color:var(--subsurface-text)}.section-title.l7{color:var(--l7-gold-text)}
+.card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.card.surface{border-left:3px solid var(--surface-text)}
+.card.subsurface{border-left:3px solid var(--subsurface-text)}
+.card.l7{border-left:3px solid var(--l7-gold-text)}
+.card .layer-label{font-size:.75em;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.card .layer-label.surface-label{color:var(--surface-text)}
+.card .layer-label.subsurface-label{color:var(--subsurface-text)}
+.card .layer-label.l7-label{color:var(--l7-gold-text)}
+.card .content{color:var(--text);font-size:.85em}
+.card .detail{color:var(--text-dim);font-size:.82em;margin-top:4px}
+.card .fb-tag{background:#1a2733;color:var(--cyan);padding:2px 6px;border-radius:3px;font-size:.7em;margin-left:4px}
+table{width:100%;border-collapse:collapse;font-size:.82em}
+th{background:var(--dark);color:var(--text-dim);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:8px 12px;border-bottom:1px solid #1c2028}
+.num{font-family:'DM Mono',monospace;color:var(--text-bright)}
+.emotion-box{background:#1a1a2e;border:1px solid #2a2a4e;border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.emotion-box .emotion-label{color:var(--purple);font-size:.75em;font-weight:600}
+.emotion-box .emotion-content{font-size:.85em;margin-top:4px}
+.uncertainty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px}
+.uncertainty-cell{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center;font-size:.78em}
+.uncertainty-cell .layer-name{color:var(--text-bright);font-weight:600}
+.uncertainty-cell .bar{font-family:'DM Mono',monospace;color:var(--yellow);font-size:.85em;margin-top:2px}
+.uncertainty-cell.weakest{border-color:var(--red);background:#1a0000}
+.noise-card{background:#1c2028;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.noise-card .verdict{color:var(--text-dim);font-size:1em;font-weight:600}
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scenario-card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px}
+.scenario-card .condition{color:var(--text-bright);font-weight:500;font-size:.85em}
+.scenario-card .result{color:var(--text-dim);font-size:.8em;margin-top:4px}
+.question-card{background:var(--dark);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:8px;padding:10px 14px;margin-bottom:6px}
+.question-card .lens{color:var(--purple);font-size:.7em;font-weight:600;text-transform:uppercase}
+.question-card .q-text{color:var(--text-bright);font-size:.85em;margin-top:2px}
+.question-card .q-answer{color:var(--text-dim);font-size:.8em;margin-top:4px}
+.tracking-list{list-style:none}
+.tracking-list li{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-bottom:6px;font-size:.82em}
+.tracking-list .indicator{color:var(--text-bright);font-weight:500}
+.tracking-list .check-date{color:var(--gold);font-family:'DM Mono',monospace;font-size:.8em}
+.signal-noise-box{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-top:8px}
+.signal-noise-box .signal{color:var(--green);font-size:.85em}
+.signal-noise-box .noise{color:var(--text-dim);font-size:.85em;margin-top:4px}
+.footer{margin:24px 0;padding-top:12px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.72em;text-align:center}
+.disclaimer{color:#484f58;font-size:.68em;margin-top:8px;font-style:italic}
+@media(max-width:600px){.scenario-grid{grid-template-columns:1fr}.uncertainty-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:480px){.container{padding:8px}.report-header h1{font-size:1.1em}.exec-box{padding:12px 14px}.section,.section-large,.section-small{margin:8px 0}}</style>
+</head>
+<body>
+<div class="topbar blue">DEEP ANALYSIS</div>
+<div class="container">
+<div class="report-header">
+  <h1>🔬 입체 분석 │ 매경 창간 60주년 국민보고대회에서 '3+1 액션플랜' 제시. AI 네이티브 국가 도약 제안.</h1>
+  <div class="meta">SA-20260325-001 · 2026-03-25 · 복합 분석 (POLICY×NARR) · 9개 섹션</div>
+</div>
+<div class="section"><div class="section-title">Pre-Read</div><div class="badges"><span class="badge type-badge">POLICY×NARR</span><span class="badge scp-mid">SCP 2</span><span class="badge urgency-badge">WATCH</span><span class="badge" style="background:var(--dark);color:var(--text-dim);border:1px solid var(--border)">full</span></div><div style="color:var(--text-dim);font-size:.78em;margin-top:6px">SCP: AI 강국 담론의 한국판 반복. 새로운 구조적 팩트(법·예산·기술) 없음. 언론사 제안.</div></div>
+<div class="section-large"><div class="exec-box"><div class="claim">[POLICY×NARR SCP2] 매경 창간 60주년 국민보고대회에서 '3+1 액션플랜' 제시. AI 네이티브 국가 도약 제안. → AI 테마 단기 자극 가능. 구조적 투자 근거 없음. ①AI 축 자체 건재하나 이 기사는 축 강화 팩트 아님.</div></div></div>
+<div class="section-large"><div class="section-title surface">━━ SURFACE (보이는 것) ━━</div><div class="card surface"><div class="layer-label surface-label">L1 헤드라인 디코딩</div><div class="content">매경 창간 60주년 국민보고대회에서 '3+1 액션플랜' 제시. AI 네이티브 국가 도약 제안.</div><div style="margin-top:6px"><span class="badge framing">[권위호소]</span> <span class="badge framing">[숫자마법]</span> <span class="badge framing">[낙관]</span> <span class="badge framing">[긴급]</span> </div></div><div class="card surface"><div class="layer-label surface-label">L2 팩트 스켈레톤</div><table><thead><tr><th>#</th><th>팩트</th><th>신뢰도</th><th>출처</th></tr></thead><tbody><tr><td class="num"></td><td>매경 창간 60주년 + 제36차 국민보고대회 (3/24, 신라호텔)</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>3+1 액션플랜: 확산(D)+특례(E)+기반(F)+국가운영(N)</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>AI 네이티브 카드, 인공지능사 제도, 규제 프리존 제안</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>이재명 대통령 + 정재계 400명 참석</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr></tbody></table><div style="margin-top:8px;color:var(--text-dim);font-size:.82em">📦 기사가 말하지 않은 것:</div><div style="font-size:.82em;padding-left:12px">├── 재원 규모·조달 방법 일체 없음 (5000만명 × 연24~36만원 = 12~18조원)</div><div style="font-size:.82em;padding-left:12px">├── 입법 경로 없음 — 언론사 제안인지 정부 정책인지 모호</div><div style="font-size:.82em;padding-left:12px">├── 기존 AI 기본계획(2024)·디지털 뉴딜(2020)과의 관계 미언급</div><div style="font-size:.82em;padding-left:12px">├── 글로벌 AI 역량 비교(논문·투자·인프라) 미제시</div></div><div class="card surface"><div class="layer-label surface-label">L3 이해관계 지도</div><table><thead><tr><th>플레이어</th><th>입장</th><th>이익</th><th>숨은 동기</th></tr></thead><tbody><tr><td style="color:var(--text-bright)">매일경제</td><td>주최·제안</td><td>국가 아젠다 세터 지위</td><td style="color:var(--text-dim)">AI 시대 미디어 생존 전략</td></tr><tr><td style="color:var(--text-bright)">이재명 대통령</td><td>참석·축사</td><td>AI 비전 → 지지율</td><td style="color:var(--text-dim)">전쟁 국면에서 미래 비전으로 관심 전환</td></tr><tr><td style="color:var(--text-bright)">재계(최태원·신동빈)</td><td>호응</td><td>규제 완화 기대</td><td style="color:var(--text-dim)">자사 AI 사업 확장 명분</td></tr><tr><td style="color:var(--text-bright)">글로벌 AI 기업</td><td>미언급</td><td>한국 보조금 → 자사 구독 수요</td><td style="color:var(--text-dim)">침묵 플레이어</td></tr></tbody></table></div></div>
+<div class="section-large"><div class="section-title subsurface">━━ SUBSURFACE (보이지 않는 것) ━━</div><div class="card subsurface"><div class="layer-label subsurface-label">L4 인과 역추적</div><div class="content" style="color:var(--text-bright)">왜 지금: 매경 창간 60주년 행사 + 전쟁 국면에서 미래 비전 필요</div><div class="detail">├── 직접 트리거: 매경 창간 60주년 기념 국민보고대회</div><div class="detail">├── 구조적 원인: AI 글로벌 경쟁 가속 + 한국 AI 역량 위기론 + 정치적 필요</div><div class="detail">└── 타이밍: </div><div style="margin-top:8px;font-size:.8em;color:var(--text-dim);white-space:pre-wrap;font-family:DM Mono,monospace">직접 트리거(매경60주년) → 구조적(AI경쟁+위기론+정치) → 타이밍(전쟁불안+AI주급등)</div></div><div class="card subsurface"><div class="layer-label subsurface-label">L5 구조 레이어</div><div class="content">소속 시스템: 한국 산업정책 아젠다 세팅 사이클</div><div class="content">판정: ❓ — 2019 AI국가전략 → 2020 디지털뉴딜 → 2024 AI기본계획 → 2026 AI네이티브. 프레이밍만 변주.</div><div class="detail">전례: 일본 Society 5.0 (2016) — 큰 비전, 실행 부진. UAE AI장관(2017) — 비전+집행 → 성과.</div></div><div class="card subsurface"><div class="layer-label subsurface-label">L6 2차 효과 체인</div><div class="detail">├── [단기] AI 관련주 테마 단기 자극. 국회 논의 가능성 낮음(전쟁 이슈에 묻힘).</div><div class="detail">├── [중기] if 예산 편성 → AI 서비스 기업 수혜. if 구호 반복 → 피로감.</div><div class="detail">└── [장기] AI 카드 실현 시 → 해외 AI 서비스 보조금화 vs 국내 생태계 성장 분기.</div><div style="margin-top:8px"><div class="scenario-grid"><div class="scenario-card"><div class="condition">2027 예산 AI카드 반영</div><div class="result">실질 확산</div></div><div class="scenario-card"><div class="condition">구호만 반복, 예산 미편성</div><div class="result">소멸</div></div><div class="scenario-card"><div class="condition">규제 프리존만 부분 실현</div><div class="result">제한적 효과</div></div></div></div></div></div>
+<div class="section"><div class="section-title" style="color:var(--purple)">🔍 돌발 질문 (Emergent Questions)</div><div class="question-card"><div class="lens">[규모]</div><div class="q-text">AI 네이티브 카드 5000만명 × 연24~36만원 = 12~18조원. 현실성?</div><div class="q-answer">→ 2026 예산 700조의 1.7~2.6%. 현실성 매우 낮음.</div></div><div class="question-card"><div class="lens">[침묵]</div><div class="q-text">보조금이 글로벌 AI 플랫폼 구독으로 흘러가면?</div><div class="q-answer">→ 아무도 말 안 함. 국내 생태계 vs 해외 종속 분기점.</div></div><div class="question-card"><div class="lens">[역사]</div><div class="q-text">과거 '세계 최초/N대 강국' 선언 후 실제 달성률은?</div><div class="q-answer">→ 반도체·배터리 성공. 디지털뉴딜 부분. 성공 조건: 집행력(예산+법+인재). 이번엔 셋 다 없음.</div></div></div>
+<div class="section-large"><div class="section-title l7">L7 판단 프레임</div><div class="card l7"><div class="layer-label l7-label">L7 JUDGMENT FRAME</div><div class="content" style="color:var(--text-bright)">📍 투자 함의: AI 테마 단기 자극 가능. 구조적 투자 근거 없음. ①AI 축 자체 건재하나 이 기사는 축 강화 팩트 아님.</div><div class="content" style="color:var(--red);margin-top:6px">🚨 Kill Condition: 2027 예산에 AI카드 항목 반영 → 정책 격상. 미반영 → 소멸.</div><div style="margin-top:8px"><div style="color:var(--text-dim);font-size:.82em;margin-bottom:4px">📡 추적 지표:</div><ul class="tracking-list"><li><span class="indicator">국회 AI 법안 발의 건수</span> <span class="check-date">[2026-04 정기국회]</span></li><li><span class="indicator">2027 예산안 AI 항목</span> <span class="check-date">[2026-09]</span></li></ul></div><div class="signal-noise-box"><div class="signal">현재 노이즈에 가까움. 후속 입법/예산 없이 유사 행사 반복 시 노이즈 확정.</div></div></div></div>
+<div class="section"><div class="section-title">📊 불확실성 지도</div><div class="uncertainty-grid"><div class="uncertainty-cell"><div class="layer-name">L1</div><div class="bar">■■■■■</div></div><div class="uncertainty-cell"><div class="layer-name">L2</div><div class="bar">■■■■□</div></div><div class="uncertainty-cell"><div class="layer-name">L3</div><div class="bar">■■■□□</div></div><div class="uncertainty-cell"><div class="layer-name">L4</div><div class="bar">■■■□□</div></div><div class="uncertainty-cell"><div class="layer-name">L5</div><div class="bar">■■■■□</div></div><div class="uncertainty-cell weakest"><div class="layer-name">L6</div><div class="bar">■■□□□</div></div><div class="uncertainty-cell"><div class="layer-name">L7</div><div class="bar">■■■□□</div></div></div><div style="margin-top:8px;font-size:.82em;color:var(--red)">⚠️ 약한 고리: L6 — </div><div style="font-size:.82em;color:var(--text-dim)">📡 보강: 4월 국회 법안 발의 + 9월 예산안 확인</div></div>
+<div class="section-small"><div class="section-title">🔄 되먹임 기록</div><div class="card"><div class="content">실행된 FB: FB-1, FB-4</div><div class="detail">FB-1 (L4→L2): L4→L2: 재원 미제시, 입법 경로 부재 추가</div><div class="detail" style="color:var(--text-bright);margin-top:6px">FB-4 최종 대조: 처음 '대담한 국가 전략' → 분석 후 '언론사 아젠다 세팅 행사'. 프레이밍의 힘 확인.</div></div></div>
+<div class="section-small"><div class="section-title">✅ 자기 점검</div><div class="card"><div class="content" style="color:var(--red)">8/12 통과</div></div></div>
+
+<div class="footer">
+  Stereo Analyzer v2.0 · SA-20260325-001
+  <div class="disclaimer">이 보고서는 분석 결과입니다. 투자 판단이나 행동 권고가 아닙니다.</div>
+</div>
+</div></body></html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>천궁-2 이란 전쟁 두바이에서 실전 입증 — K-방산 초대형 호재 | 2026-03-24</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════
+     Design System — Reaction Monitor
+     CSS 변수 기반. 컴포넌트가 이 변수를 참조.
+     ═══════════════════════════════════════ */
+
+  :root {
+    /* 브랜드 */
+    --navy: #0a1628;
+    --navy-light: #131d33;
+    --surface: #161b22;
+    --surface-alt: #1c2333;
+    --border: #30363d;
+    --border-light: #3d444d;
+
+    /* 텍스트 */
+    --text: #e6edf3;
+    --text-secondary: #b0b8c1;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+
+    /* 반응 계층 */
+    --price: #42a5f5;
+    --narrative: #ff9800;
+    --expert: #ab47bc;
+    --policy: #ef5350;
+    --positioning: #66bb6a;
+
+    /* 판정 */
+    --green: #4caf50;
+    --yellow: #ff9800;
+    --red: #f44336;
+    --converge: #4caf50;
+    --diverge: #ff9800;
+    --decouple: #f44336;
+    --silence: #9e9e9e;
+
+    /* report-class 색상 */
+    --crisis: #f44336;
+    --special: #1565c0;
+    --research: #0a1628;
+    --strategy: #f9a825;
+
+    /* 간격 */
+    --gap-xs: .25rem;
+    --gap-sm: .5rem;
+    --gap-md: 1rem;
+    --gap-lg: 1.5rem;
+    --gap-xl: 2.5rem;
+
+    /* 라운딩 */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+  }
+
+  /* ── Reset ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, 'Segoe UI', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ── Topbar ── */
+  .topbar {
+    padding: .5rem 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar.crisis   { background: var(--crisis); color: #fff; }
+  .topbar.special   { background: var(--special); color: #fff; }
+  .topbar.research  { background: var(--navy-light); color: var(--muted); border-bottom: 1px solid var(--border); }
+  .topbar.strategy  { background: var(--strategy); color: var(--navy); }
+
+  /* ── Report Header ── */
+  .report-header {
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .report-header h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: .4rem;
+  }
+  .report-header .subtitle {
+    font-size: .9rem;
+    color: var(--text-secondary);
+    margin-bottom: .75rem;
+  }
+  .report-header .meta {
+    font-family: 'DM Mono', monospace;
+    font-size: .75rem;
+    color: var(--muted);
+  }
+
+  /* ── Content Container ── */
+  .content { padding: 0 2rem 2rem; }
+
+  /* ── Typography ── */
+  h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: var(--gap-xl) 0 var(--gap-md);
+    padding-bottom: var(--gap-sm);
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .95rem;
+    font-weight: 600;
+    margin: var(--gap-lg) 0 var(--gap-sm);
+  }
+  p { font-size: .88rem; margin-bottom: var(--gap-sm); }
+
+  /* 수치 강조 */
+  .num {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* ── 판정 배지 ── */
+  .badge {
+    display: inline-block;
+    padding: .25rem .65rem;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Mono', monospace;
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .badge-green  { background: rgba(76,175,80,.15); color: var(--green); border: 1px solid rgba(76,175,80,.3); }
+  .badge-yellow { background: rgba(255,152,0,.15); color: var(--yellow); border: 1px solid rgba(255,152,0,.3); }
+  .badge-red    { background: rgba(244,67,54,.15); color: var(--red); border: 1px solid rgba(244,67,54,.3); }
+  .badge-blue   { background: rgba(88,166,255,.15); color: var(--accent); border: 1px solid rgba(88,166,255,.3); }
+  .badge-muted  { background: rgba(158,158,158,.15); color: var(--silence); border: 1px solid rgba(158,158,158,.3); }
+
+  /* 계층 태그 */
+  .layer-tag {
+    display: inline-block;
+    padding: .15rem .5rem;
+    border-radius: var(--radius-sm);
+    font-size: .7rem;
+    font-weight: 700;
+    margin-right: .3rem;
+  }
+  .lt-price      { background: rgba(66,165,245,.15); color: var(--price); }
+  .lt-narrative   { background: rgba(255,152,0,.15); color: var(--narrative); }
+  .lt-expert      { background: rgba(171,71,188,.15); color: var(--expert); }
+  .lt-policy      { background: rgba(239,83,80,.15); color: var(--policy); }
+  .lt-positioning { background: rgba(102,187,106,.15); color: var(--positioning); }
+
+  /* 톤 */
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .neu { color: var(--yellow); }
+  .spl { color: var(--expert); }
+  .silent { color: var(--silence); }
+
+  /* ── 테이블 ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--gap-md) 0;
+    font-size: .82rem;
+  }
+  th {
+    background: var(--surface);
+    color: var(--muted);
+    text-align: left;
+    padding: .5rem .6rem;
+    border: 1px solid var(--border);
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+  }
+  td {
+    padding: .5rem .6rem;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:hover td { background: rgba(88,166,255,.04); }
+
+  /* ── 카드 (범용) ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin: var(--gap-md) 0;
+  }
+  .card h3 { margin-top: 0; }
+
+  /* ── Exec Box (Core Claim) ── */
+  .exec-box {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-alt) 100%);
+    border: 1px solid var(--accent);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    margin: var(--gap-lg) 0;
+  }
+  .exec-box .claim {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: .5rem;
+  }
+  .exec-box .verdict {
+    font-family: 'DM Mono', monospace;
+    font-size: .8rem;
+    color: var(--text-secondary);
+  }
+
+  /* ── Alert Box ── */
+  .alert-box {
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin: var(--gap-md) 0;
+    font-size: .85rem;
+  }
+  .alert-box.warn  { background: rgba(255,152,0,.1); border: 1px solid rgba(255,152,0,.3); border-left: 4px solid var(--yellow); }
+  .alert-box.danger { background: rgba(244,67,54,.1); border: 1px solid rgba(244,67,54,.3); border-left: 4px solid var(--red); }
+  .alert-box.info  { background: rgba(88,166,255,.08); border: 1px solid rgba(88,166,255,.25); border-left: 4px solid var(--accent); }
+
+  /* ── 코멘트 (해석) ── */
+  .comment {
+    background: rgba(88,166,255,.06);
+    border-left: 3px solid var(--accent);
+    padding: .75rem 1rem;
+    margin: var(--gap-md) 0;
+    font-size: .85rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .comment strong { color: var(--accent); }
+
+  /* ── 방향 그리드 ── */
+  .direction-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--gap-sm);
+    margin: .75rem 0;
+    text-align: center;
+  }
+  .direction-cell {
+    padding: .5rem;
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--border);
+  }
+  .direction-label { font-size: .7rem; color: var(--muted); display: block; }
+  .direction-value { font-size: 1.1rem; font-weight: 700; margin-top: .2rem; }
+
+  /* ── 타임라인 ── */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: var(--gap-md) 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: .6rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: .75rem;
+    font-size: .82rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.65rem;
+    top: .45rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: var(--navy);
+  }
+  .timeline-item.highlight::before { border-color: var(--red); background: rgba(244,67,54,.2); }
+  .timeline-date { color: var(--muted); font-size: .75rem; font-family: 'DM Mono', monospace; }
+
+  /* ── 시나리오 그리드 ── */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--gap-md);
+    margin: var(--gap-md) 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .scenario-card .prob {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: .3rem;
+  }
+  .scenario-card .label {
+    font-size: .85rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  .scenario-card .desc { font-size: .8rem; color: var(--text-secondary); }
+
+  /* ── 2컬럼 대비 ── */
+  .clash-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-md);
+    margin: var(--gap-md) 0;
+  }
+  .clash-side {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+  }
+  .clash-side.bull { border-top: 3px solid var(--green); }
+  .clash-side.bear { border-top: 3px solid var(--red); }
+  .clash-side h4 { font-size: .9rem; margin-bottom: .5rem; }
+
+  /* ── 지문 그리드 ── */
+  .fingerprint-grid {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: .3rem .75rem;
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    font-size: .85rem;
+  }
+  .fp-label { color: var(--muted); font-weight: 600; }
+
+  /* ── 미해소 질문 ── */
+  .uq-list { list-style: none; padding: 0; }
+  .uq-list li { padding: .75rem 0; border-bottom: 1px solid var(--border); font-size: .85rem; }
+  .uq-open::before { content: '\23F3'; margin-right: .5rem; }
+  .uq-resolved::before { content: '\2705'; margin-right: .5rem; }
+  .uq-type {
+    display: inline-block;
+    padding: .1rem .4rem;
+    border-radius: 3px;
+    font-size: .7rem;
+    font-weight: 600;
+    margin-left: .3rem;
+  }
+  .uq-date      { background: rgba(66,165,245,.15); color: var(--price); }
+  .uq-condition  { background: rgba(255,152,0,.15); color: var(--diverge); }
+  .uq-data       { background: rgba(102,187,106,.15); color: var(--positioning); }
+  .uq-threshold  { background: rgba(171,71,188,.15); color: var(--expert); }
+  .uq-meta { font-size: .75rem; color: var(--muted); margin-top: .3rem; }
+  .uq-help { font-size: .78rem; color: var(--accent); font-style: italic; }
+
+  /* ── 소스 ── */
+  .sources { font-size: .78rem; color: var(--muted); margin-top: var(--gap-md); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .sources li { margin-bottom: .3rem; }
+
+  /* ── 상태 바 (배지 행) ── */
+  .status-bar {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    margin: var(--gap-md) 0;
+  }
+
+  /* ── 면책 ── */
+  .disclaimer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .7rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── 반응형 ── */
+  @media (max-width: 780px) {
+    body { max-width: 100%; }
+    .topbar, .report-header, .content { padding-left: 1rem; padding-right: 1rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .direction-grid { grid-template-columns: repeat(3, 1fr); }
+    .clash-grid { grid-template-columns: 1fr; }
+    .scenario-grid { grid-template-columns: 1fr; }
+    .fingerprint-grid { grid-template-columns: 90px 1fr; }
+  }
+</style>
+</head>
+<body>
+<!--
+  이 파일은 CSS + 폰트 기반만 포함.
+  render_adaptive.py 또는 LLM이 이 안에 컴포넌트를 조합하여 보고서를 생성한다.
+
+  사용 순서:
+  1. 이 파일을 읽어 CSS 변수와 클래스명을 파악
+  2. component-catalog.md를 읽어 사용 가능한 컴포넌트 확인
+  3. Phase 1~4에 따라 구조를 설계하고 HTML을 생성
+-->
+
+<!-- topbar: crisis | special | research | strategy -->
+<div class="topbar special">
+  <span>SPECIAL REPORT</span>
+  <span>2026-03-24</span>
+</div>
+
+<!-- report-header -->
+<div class="report-header">
+  <h1>천궁-2 이란 전쟁 두바이에서 실전 입증 — K-방산 초대형 호재</h1>
+  <div class="subtitle">5개 계층이 호재 방향으로 수렴</div>
+  <div class="meta">2026-03-24 | Standard | Market Reaction Monitor</div>
+</div>
+
+<div class="content">
+  <!-- 여기부터 Phase 2에서 설계한 섹션들이 들어간다 -->
+  <div class="exec-box">
+  <div class="claim">5개 계층이 호재 방향으로 수렴</div>
+  <div class="verdict">
+    <span class="badge badge-green">방향: 수렴</span>
+    <span class="badge badge-green">비례: 비례</span>
+    <span class="badge badge-blue">미해소 4건</span>
+  </div>
+</div>
+
+<h2>The Clash</h2>
+<div class="clash-grid">
+  <div class="clash-side bull">
+    <h4 class="pos">호재 신호</h4>
+    <ul style="font-size:.82rem;list-style:disc;padding-left:1.2rem;">
+      <li>머니투데이: 이란 미사일 한방에 &#x27;펑&#x27;. 두바이 밤하늘 지키는 천궁-2</li>
+<li>매거진한경: UAE가 4조원어치 사간 천궁-II, 이란 탄도탄 첫 실전 요격 성공. 96% 요격률</li>
+<li>Army Recognition: First Combat Use for South Korea&#x27;s Cheongung II Against Iran</li>
+<li>Eurasian Times: S-400-Inspired Korean Air Defense Achieves 96% Kill Rate in </li>
+<li>Breaking Defense: Iraq boosts air defenses with $2.8B deal for Korean Cheongun</li>
+    </ul>
+  </div>
+  <div class="clash-side bear">
+    <h4 class="neg">리스크 신호</h4>
+    <ul style="font-size:.82rem;list-style:disc;padding-left:1.2rem;">
+      <li>글로벌이코노믹: LIG넥스원 78% 폭등 뒤 거품 경고. PSR 35배. 작은 실망에도 급락 가능</li>
+<li>Financial Post: 韓방산주 미국 록히드마틴보다 3배 고평가. 일제 급락</li>
+<li>증권가 (글로벌이코노믹 인용): LIG넥스원 PSR 21.7배→35.3배 수직 상승. 시장이 고성장 기술주로 평가. 작은 실망에도 급락 가능</li>
+<li>Raytheon / 미국 방산 업계: 침묵 (경쟁사의 의도적 침묵 가능. 공개 반박은 자사 제품 약점 인정이 되므로 )</li>
+    </ul>
+  </div>
+</div>
+<div class="comment"><strong>판독:</strong> 5개 계층이 호재 방향으로 수렴. 그러나 &#x27;수렴 속의 분열&#x27;이 존재 — 실전 입증(구조적 호재)과 밸류에이션 과열(단기 리스크)이 공존. 가격은 이미 &#x27;뉴스에 팔기&#x27; 단계에 진입 (고점 대비 LIG -23%). 서사·정책·전문가는 여전히 호재지만 가격은 이미 조정 중</div>
+
+<h2>서사 반응</h2>
+<table>
+<tr><th>매체</th><th>프레임</th><th>톤</th><th>역할</th><th>시점</th></tr>
+<tr>
+<td>머니투데이</td>
+<td>이란 미사일 한방에 &#x27;펑&#x27;. 두바이 밤하늘 지키는 천궁-2</td>
+<td class="pos">긍</td>
+<td>프레임설정</td>
+<td style="font-size:.75rem;">2026-03-05</td>
+</tr><tr>
+<td>매거진한경</td>
+<td>UAE가 4조원어치 사간 천궁-II, 이란 탄도탄 첫 실전 요격 성공. 96% 요격률</td>
+<td class="pos">긍</td>
+<td>깊이분석</td>
+<td style="font-size:.75rem;">2026-03-03</td>
+</tr><tr>
+<td>Army Recognition</td>
+<td>First Combat Use for South Korea&#x27;s Cheongung II Against Iranian Missile in UAE</td>
+<td class="pos">긍</td>
+<td>글로벌</td>
+<td style="font-size:.75rem;">2026-03-03</td>
+</tr><tr>
+<td>Eurasian Times</td>
+<td>S-400-Inspired Korean Air Defense Achieves 96% Kill Rate in UAE Combat Debut</td>
+<td class="pos">긍</td>
+<td>글로벌</td>
+<td style="font-size:.75rem;">2026-03</td>
+</tr><tr>
+<td>Breaking Defense</td>
+<td>Iraq boosts air defenses with $2.8B deal for Korean Cheongung-II</td>
+<td class="pos">긍</td>
+<td>글로벌</td>
+<td style="font-size:.75rem;">2026-03</td>
+</tr><tr>
+<td>글로벌이코노믹</td>
+<td>LIG넥스원 78% 폭등 뒤 거품 경고. PSR 35배. 작은 실망에도 급락 가능</td>
+<td class="neg">부</td>
+<td>반대쪽</td>
+<td style="font-size:.75rem;">2026-03-24</td>
+</tr><tr>
+<td>Financial Post</td>
+<td>韓방산주 미국 록히드마틴보다 3배 고평가. 일제 급락</td>
+<td class="neg">부</td>
+<td>반대쪽</td>
+<td style="font-size:.75rem;">2026-03</td>
+</tr>
+</table>
+
+<h2>전문가 반응</h2>
+<table>
+<tr><th>이름/기관</th><th>핵심 발언</th><th>방향</th></tr>
+<tr>
+<td><strong>유용원 의원</strong><br>
+<span style="color:var(--muted);font-size:.75rem;">국회 국방위 · 정책</span></td>
+<td>UAE 실전 투입 천궁-II 2개 포대가 60여 발 발사, 96% 요격. 순항미사일은 8발 전량 요격</td>
+<td class="pos">긍</td>
+</tr><tr>
+<td><strong>증권가 (글로벌이코노믹 인용)</strong><br>
+<span style="color:var(--muted);font-size:.75rem;">증권업계 · 반대입장</span></td>
+<td>LIG넥스원 PSR 21.7배→35.3배 수직 상승. 시장이 고성장 기술주로 평가. 작은 실망에도 급락 가능</td>
+<td class="neg">부</td>
+</tr><tr>
+<td><strong>FT (Financial Times)</strong><br>
+<span style="color:var(--muted);font-size:.75rem;">Financial Times · 분석자</span></td>
+<td>이란 전쟁으로 패트리어트 경쟁 제품을 더 저렴한 값에 제시한 한국 방산 기업 부상. 천궁-2 실전 성공으로 수요 증가 예상</td>
+<td class="pos">긍</td>
+</tr><tr>
+<td><strong>Washington Institute</strong><br>
+<span style="color:var(--muted);font-size:.75rem;">Washington Institute (미국 싱크탱크) · 분석자</span></td>
+<td>한국과 중동의 방산 현지화 전략이 새로운 전략적 적합성을 보인다</td>
+<td class="pos">긍</td>
+</tr><tr>
+<td><strong>Raytheon / 미국 방산 업계</strong><br>
+<span style="color:var(--muted);font-size:.75rem;">Raytheon (Patriot 제조사) · 반대입장</span></td>
+<td>침묵 — Patriot과의 직접 비교에 대한 공식 반응 미발견. 천궁 실전 성공에 대한 코멘트 없음<br><span style="font-size:.72rem;color:var(--muted);">경쟁사의 의도적 침묵 가능. 공개 반박은 자사 제품 약점 인정이 되므로 무대응 전략. 그러나 미 의회 로비 </span></td>
+<td class="silent">침묵</td>
+</tr><tr>
+<td><strong>UAE 국방부</strong><br>
+<span style="color:var(--muted);font-size:.75rem;">UAE 군 · 피해자</span></td>
+<td>공식 발표: 186발 중 172발 요격 (92.5%). 추가 도입 요청(30발 긴급 수송). 비공식: &#x27;한국에 연락이 쏟아졌다&#x27;</td>
+<td class="pos">긍</td>
+</tr>
+</table>
+
+<h2>포지셔닝</h2>
+<table>
+<tr><th>지표</th><th>값</th><th>시사점</th></tr>
+<tr>
+<td><strong>LIG넥스원 주가 궤적</strong></td>
+<td class="num">509K(2/27) → 834K 고점(3/6, +64%) → 641K(3/24, 고점 대비 -23%)</td>
+<td>실전 입증은 즉시 반영. 그러나 고점에서 -23% 조정 = 과열 해소 중. &#x27;뉴스에 팔기&#x27; 패턴</td>
+</tr><tr>
+<td><strong>한화에어로 주가 궤적</strong></td>
+<td class="num">1,195K(2/27) → 1,488K 고점(3/13, +24%) → 1,335K(3/24, 고점 대비 -10%)</td>
+<td>LIG넥스원보다 변동 적음. 다각화된 사업(엔진/방산)이 완충. 방산 대장주 프리미엄 유지</td>
+</tr><tr>
+<td><strong>K-방산 수주잔고</strong></td>
+<td class="num">$72B (한화+KAI+LIG+현대로템 합산 사상 최초 돌파)</td>
+<td>천궁 실전 입증이 전체 K-방산 파이프라인을 끌어올림. 단일 무기가 아닌 생태계 효과</td>
+</tr><tr>
+<td><strong>LIG넥스원 PSR</strong></td>
+<td class="num">21.7배(2024) → 35.3배(2026.02)</td>
+<td>고성장 기술주 수준. 록히드마틴의 3배. 과열 경고 구간. 실적이 뒷받침 안 되면 급락 위험</td>
+</tr>
+</table>
+
+<h2>정책 반응</h2>
+<table>
+<tr><th>기관</th><th>조치</th><th>구속력</th><th>시장 시사점</th></tr>
+<tr>
+<td><strong>UAE 군</strong></td>
+<td>공식: 186발 중 172발 요격 (92.5%). 추가 요격탄 30발 긴급 수송 요청. 추가 포대 도입 요청</td>
+<td>공식 발표 + 구매 요청</td>
+<td>실전 입증 → 추가 계약 가속. 기존 4조원 + 추가 물량</td>
+</tr><tr>
+<td><strong>사우디/이라크 (기계약국)</strong></td>
+<td>사우디 $3.2B(10개 포대), 이라크 $2.8B(8개 포대) 기계약 상태. 실전 입증으로 인도 가속 기대</td>
+<td>계약 체결</td>
+<td>LIG넥스원 중동 수주잔고 ~10.2조원. 2028년 수출 비중 52%</td>
+</tr><tr>
+<td><strong>카타르/쿠웨이트/바레인 (신규 문의국)</strong></td>
+<td>실전 입증 후 도입 문의 개시. 아직 계약 미체결</td>
+<td>문의/검토</td>
+<td>파이프라인 확대. GCC 전체로 확산 가능성</td>
+</tr>
+</table>
+
+<h2>가격 반응</h2>
+<table>
+<tr><th>자산</th><th>이전</th><th>이후</th><th>변동</th><th>속도</th><th>핵심</th></tr>
+<tr>
+<td><strong>한화에어로 012450</strong></td>
+<td class="num">1,195,000원 (2/27)</td>
+<td class="num">1,335,000원 (3/24)</td>
+<td class="pos num">+11.7%</td>
+<td>즉시</td>
+<td style="font-size:.78rem;">전쟁 발발(3/3) 1,432K 급등(+20%) → 천궁 입증(3/5) 1,481K 고점 → 이후 하락 조정 1,278K(3/23) → 1,33</td>
+</tr><tr>
+<td><strong>LIG넥스원 079550</strong></td>
+<td class="num">509,000원 (2/27)</td>
+<td class="num">641,000원 (3/24)</td>
+<td class="pos num">+25.9%</td>
+<td>즉시</td>
+<td style="font-size:.78rem;">전쟁 발발 661K → 천궁 입증 후 834K 고점(3/6, +64%). 이후 조정 640K. 고점 대비 -23% 조정. 5거래일 78% 폭등 </td>
+</tr>
+</table>
+
+<h2>패턴 판독</h2>
+<h3>방향 일치도 — 수렴</h3>
+<div class="direction-grid"><div class="direction-cell"><span class="direction-label">가격</span><span class="direction-value" style="color:var(--converge)">↑</span></div><div class="direction-cell"><span class="direction-label">서사</span><span class="direction-value" style="color:var(--converge)">↑</span></div><div class="direction-cell"><span class="direction-label">전문가</span><span class="direction-value" style="color:var(--converge)">↑</span></div><div class="direction-cell"><span class="direction-label">정책</span><span class="direction-value" style="color:var(--converge)">↑</span></div><div class="direction-cell"><span class="direction-label">포지셔닝</span><span class="direction-value" style="color:var(--diverge)">↑↓</span></div></div>
+<div class="comment"><strong>판독:</strong> 5개 계층이 호재 방향으로 수렴. 그러나 &#x27;수렴 속의 분열&#x27;이 존재 — 실전 입증(구조적 호재)과 밸류에이션 과열(단기 리스크)이 공존. 가격은 이미 &#x27;뉴스에 팔기&#x27; 단계에 진입 (고점 대비 LIG -23%). 서사·정책·전문가는 여전히 호재지만 가격은 이미 조정 중</div>
+<h3>시간 구조 — A (시장주도) — 가격이 서사보다 먼저 반응</h3>
+<div class="timeline"><div class="timeline-item highlight"><span class="timeline-date">2026-03-01~03</span> <strong>정책</strong> — 이란 UAE 미사일 공격 → 천궁-II 실전 투입</div><div class="timeline-item"><span class="timeline-date">2026-03-03</span> <strong>가격</strong> — LIG넥스원 +30% 급등 (실전 뉴스 전부터 전쟁 수혜 선반영)</div><div class="timeline-item"><span class="timeline-date">2026-03-03</span> <strong>서사</strong> — 매거진한경 &#x27;4조원어치 사간 천궁-II 첫 요격 성공&#x27;</div><div class="timeline-item"><span class="timeline-date">2026-03-05</span> <strong>전문가</strong> — 유용원 의원 &#x27;96% 요격률&#x27; 공개</div><div class="timeline-item"><span class="timeline-date">2026-03-06</span> <strong>가격</strong> — LIG넥스원 834K 고점 (5거래일 +78%)</div><div class="timeline-item"><span class="timeline-date">2026-03-10</span> <strong>서사</strong> — 글로벌 방산 매체(Army Recognition, Eurasian Times) 보도 확산</div><div class="timeline-item highlight"><span class="timeline-date">2026-03-중</span> <strong>정책</strong> — UAE 추가 요격탄 30발 긴급 수송 요청</div><div class="timeline-item"><span class="timeline-date">2026-03-17~24</span> <strong>가격</strong> — 조정 시작. LIG 834K→641K (-23%)</div><div class="timeline-item"><span class="timeline-date">2026-03-24</span> <strong>서사</strong> — 글로벌이코노믹 &#x27;거품 경고&#x27;. Financial Post &#x27;3배 고평가&#x27;</div></div>
+<div class="comment"><strong>판독:</strong> 가격이 서사보다 선행. 전쟁 발발(3/3)에 주가가 먼저 급등하고, 실전 입증 상세(3/5 유용원)가 뒤따름. 글로벌 매체 보도(3/10)는 더 늦음. 전형적 A 경로(시장주도). 주목: 가격은 이미 조정 중인데 서사(과열 경고)가 3/24에야 나옴 — 서사가 가격을 후행</div>
+<h3>비례성 — 비례</h3>
+<p style="font-size:.85rem;">이벤트 규모: 한국 수출 무기 최초 실전 입증 + 96% 요격률 + 패트리어트 대비 1/3 가격. 이것은 K-방산 역사상 가장 큰 단일 이벤트. LIG +64%(고점), 한화에어로 +24%는 이 규모에 비례. 과잉이 아닌 비례. 다만 현재 조정(-23%)은 단기 과열 해소이지 호재 부정이 아님</p>
+<h3>전파 경로 — A (가격→서사→정책, 시장 주도)</h3>
+<p style="font-size:.85rem;">전쟁 발발→주가 즉시 급등(3/3)→실전 상세 보도(3/5)→글로벌 확산(3/10)→정책(UAE 추가 요청). 가격이 모든 것을 선행. 과열 경고 서사(3/24)는 가격 조정(-23%)보다 늦게 나옴</p>
+<div class="alert-box info">
+<strong>후속 관찰:</strong> LIG넥스원 실적 발표(매출 5~6조, 영업이익 5천억)가 PSR 35배를 정당화하는지. 카타르/쿠웨이트 계약 체결 여부. 천궁-III 개발 일정(2034년 배치). Raytheon의 가격 인하 또는 로비 대응
+</div>
+
+<h2>시나리오 분기</h2>
+<div class="scenario-grid"><div class="scenario-card" style="border-top:3px solid var(--green)">
+  <div class="label">LIG넥스원 2026 실적(매출 5~6조)이 PSR 35배를 정당화하는가?</div>
+  <div class="desc" style="margin-top:.3rem;">
+    <span class="uq-type uq-data">data</span>
+    LIG넥스원 분기 실적 발표. 매출 성장률 vs PSR 비교
+  </div>
+</div><div class="scenario-card" style="border-top:3px solid var(--yellow)">
+  <div class="label">카타르/쿠웨이트 등 GCC 신규 계약 체결 여부</div>
+  <div class="desc" style="margin-top:.3rem;">
+    <span class="uq-type uq-condition">condition</span>
+    카타르 또는 쿠웨이트의 천궁-II 계약 공시
+  </div>
+</div><div class="scenario-card" style="border-top:3px solid var(--red)">
+  <div class="label">Raytheon/미국 방산의 대응 — 가격 인하, 로비, 또는 침묵 지속?</div>
+  <div class="desc" style="margin-top:.3rem;">
+    <span class="uq-type uq-condition">condition</span>
+    Raytheon의 Patriot 관련 공식 대응 또는 미 의회에서의 한국 방산 관련 논의
+  </div>
+</div><div class="scenario-card" style="border-top:3px solid var(--accent)">
+  <div class="label">천궁-III 개발 일정 (2034년 배치)이 앞당겨지는가?</div>
+  <div class="desc" style="margin-top:.3rem;">
+    <span class="uq-type uq-condition">condition</span>
+    ADD 또는 DAPA의 천궁-III 일정 변경 발표
+  </div>
+</div></div>
+
+<h2>미해소 질문</h2>
+<ul class="uq-list"><li class="uq-open">
+<strong>UQ-014</strong> LIG넥스원 2026 실적(매출 5~6조)이 PSR 35배를 정당화하는가?
+<span class="uq-type uq-data">data</span>
+<div class="uq-meta">해소 조건: LIG넥스원 분기 실적 발표. 매출 성장률 vs PSR 비교<br>기한: 2026-05-15</div>
+</li><li class="uq-open">
+<strong>UQ-015</strong> 카타르/쿠웨이트 등 GCC 신규 계약 체결 여부
+<span class="uq-type uq-condition">condition</span>
+<div class="uq-meta">해소 조건: 카타르 또는 쿠웨이트의 천궁-II 계약 공시</div>
+</li><li class="uq-open">
+<strong>UQ-016</strong> Raytheon/미국 방산의 대응 — 가격 인하, 로비, 또는 침묵 지속?
+<span class="uq-type uq-condition">condition</span>
+<div class="uq-meta">해소 조건: Raytheon의 Patriot 관련 공식 대응 또는 미 의회에서의 한국 방산 관련 논의<br>마지막 체크: 2026-03-24 — 침묵 유지. 공식 대응 미발견</div>
+</li><li class="uq-open">
+<strong>UQ-017</strong> 천궁-III 개발 일정 (2034년 배치)이 앞당겨지는가?
+<span class="uq-type uq-condition">condition</span>
+<div class="uq-meta">해소 조건: ADD 또는 DAPA의 천궁-III 일정 변경 발표</div>
+</li></ul><p style="font-size:.82rem;color:var(--muted);margin-top:.75rem;"><strong>다음 확인:</strong> LIG넥스원 분기 실적 (5월) / GCC 신규 계약 / Raytheon 대응 / 천궁-III 일정</p>
+
+<h2>Sources</h2>
+<ul class="sources"><li>Army Recognition</li><li><a href="https://www.armyrecognition.com/news/army-news/2026/first-combat-use-for-south-koreas-cheongung-ii-air-defense-system-against-iranian-missile-in-uae">Army Recognition</a></li><li>Breaking Defense</li><li><a href="https://breakingdefense.com/2024/09/iraq-boosts-air-defenses-with-reported-2-8b-deal-for-south-korean-cheongung-ii/">Breaking Defense</a></li><li>Eurasian Times</li><li><a href="https://www.eurasiantimes.com/iran-war-s-400-inspired-korean-air-defense-system-achieves-96-kill-rate-in-uae-combat-debut/">Eurasian Times</a></li><li>Financial Post</li><li><a href="https://www.financialpost.co.kr/news/articleView.html?idxno=231209">Financial Post</a></li><li>MBC 뉴스 재인용</li><li>Seoul Economic Daily</li><li>Yahoo Finance</li><li><a href="https://militarnyi.com/en/news/uae-qatar-and-kuwait-have-requested-taf-industries-interceptor-drones/">https://militarnyi.com/en/news/uae-qatar-and-kuwait-have-requested-taf-industries-interceptor-drones/</a></li><li><a href="https://www.g-enews.com/article/Global-Biz/2026/03/202603240831475190fbbec65dfb_1">https://www.g-enews.com/article/Global-Biz/2026/03/202603240831475190fbbec65dfb_1</a></li><li><a href="https://www.globaldefensecorp.com/2025/03/03/saudi-arabia-purchased-south-koreas-cheongung-ii-anti-air-missiles-for-3-2-billion/">https://www.globaldefensecorp.com/2025/03/03/saudi-arabia-purchased-south-koreas-cheongung-ii-anti-air-missiles-for-3-2-billion/</a></li><li><a href="https://www.mt.co.kr/world/2026/03/05/2026030514334020878">https://www.mt.co.kr/world/2026/03/05/2026030514334020878</a></li><li><a href="https://www.reportera.co.kr/military/cheongung-2-msam2-uae-early-delivery-iran-defense/">https://www.reportera.co.kr/military/cheongung-2-msam2-uae-early-delivery-iran-defense/</a></li><li><a href="https://www.reportera.co.kr/military/cheongung-2-uae-combat-proven-additional-purchase-request/">https://www.reportera.co.kr/military/cheongung-2-uae-combat-proven-additional-purchase-request/</a></li><li><a href="https://www.washingtoninstitute.org/policy-analysis/south-korea-and-middle-easts-defense-localization-drive-new-strategic-fit">https://www.washingtoninstitute.org/policy-analysis/south-korea-and-middle-easts-defense-localization-drive-new-strategic-fit</a></li><li>글로벌이코노믹</li><li><a href="https://www.g-enews.com/article/Global-Biz/2026/03/202603240831475190fbbec65dfb_1">글로벌이코노믹</a></li><li>매거진한경</li><li><a href="https://magazine.hankyung.com/business/article/202603036704b">매거진한경</a></li><li>머니투데이</li><li><a href="https://www.mt.co.kr/world/2026/03/05/2026030514334020878">머니투데이</a></li></ul>
+</div>
+
+<div class="disclaimer">
+  Market Reaction Monitor | reaction-monitor | 2026-03-24<br>
+  이 보고서는 시장 반응 수집 결과이며, 투자 판단을 제공하지 않습니다.
+</div>
+
+</body>
+</html>

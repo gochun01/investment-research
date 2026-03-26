@@ -1,0 +1,101 @@
+{
+  "_comment": "A-1 보완: claim 유형별 적용 층 매트릭스. true=적용, false=N/A",
+  "수치주장":   {"fact": true,  "norm": false, "logic": true,  "temporal": true,  "incentive": false, "omission": false},
+  "인과주장":   {"fact": false, "norm": false, "logic": true,  "temporal": true,  "incentive": false, "omission": true},
+  "예측":       {"fact": false, "norm": false, "logic": true,  "temporal": true,  "incentive": false, "omission": true},
+  "사실진술":   {"fact": true,  "norm": false, "logic": false, "temporal": true,  "incentive": false, "omission": false},
+  "의견":       {"fact": false, "norm": false, "logic": false, "temporal": false, "incentive": true,  "omission": false},
+  "조항":       {"fact": false, "norm": true,  "logic": true,  "temporal": false, "incentive": true,  "omission": true},
+  "_document_level": {
+    "_comment": "문서 전체 레벨에서 적용되는 층. claim과 독립",
+    "norm": true,
+    "incentive": true,
+    "omission": true
+  },
+  "_aggregation_rules": {
+    "_comment": "A-2 보완: claim별 판정 → 전체 판정 집계 규칙",
+    "priority": ["🔴", "⚫", "🟡", "🟢", "N/A"],
+    "rules": [
+      "🔴가 1개라도 → 전체 🔴",
+      "⚫가 있고 🔴 없으면 → 전체 ⚫",
+      "🟡가 있고 🔴⚫ 없으면 → 전체 🟡",
+      "전부 🟢 → 전체 🟢",
+      "전부 N/A → 전체 N/A"
+    ]
+  },
+  "_verification_depth": {
+    "_comment": "doc_type별 검증 강도 프리셋. standard=6층 전체, light=핵심만, heavy=정밀",
+    "news_article": {
+      "depth": "light",
+      "focus_layers": ["fact", "logic", "omission"],
+      "kc_depth": 1,
+      "ach_required": false,
+      "bbj_max": 1,
+      "claims_target": "3~7개",
+      "note": "뉴스 기사는 Fact+Logic+Omission 중심. KC 1단, ACH 생략, BBJ 1개"
+    },
+    "equity_research": {
+      "depth": "standard",
+      "focus_layers": ["fact", "logic", "temporal", "omission"],
+      "kc_depth": 3,
+      "ach_required": true,
+      "bbj_max": 2,
+      "claims_target": "10~20개",
+      "note": "종목 리서치는 6층 전체. KC 3단 역추적, ACH 필수, BBJ 2개"
+    },
+    "crypto_research": {
+      "depth": "standard",
+      "focus_layers": ["fact", "logic", "temporal", "omission"],
+      "kc_depth": 3,
+      "ach_required": true,
+      "bbj_max": 2,
+      "claims_target": "10~20개",
+      "note": "크립토 리서치도 6층 전체. 온체인 지표 Tier 2 단독 🟢 허용"
+    },
+    "legal_contract": {
+      "depth": "heavy",
+      "focus_layers": ["norm", "logic", "incentive"],
+      "kc_depth": 1,
+      "ach_required": false,
+      "bbj_max": 0,
+      "claims_target": "10~30개",
+      "note": "계약서는 Norm+Logic 정밀. Fact/Temporal 경량. BBJ 불필요"
+    },
+    "macro_report": {
+      "depth": "standard",
+      "focus_layers": ["fact", "logic", "temporal", "omission"],
+      "kc_depth": 3,
+      "ach_required": true,
+      "bbj_max": 2,
+      "claims_target": "10~20개",
+      "note": "매크로 보고서는 6층 전체. 금리/GDP 등 FRED 교차검증 필수"
+    },
+    "geopolitical": {
+      "depth": "standard",
+      "focus_layers": ["fact", "logic", "temporal", "omission"],
+      "kc_depth": 2,
+      "ach_required": true,
+      "bbj_max": 2,
+      "claims_target": "7~15개",
+      "note": "지정학은 시나리오 분석 중심. 불확실성 높아 KC 2단까지"
+    },
+    "regulatory_filing": {
+      "depth": "heavy",
+      "focus_layers": ["norm", "logic", "omission"],
+      "kc_depth": 1,
+      "ach_required": false,
+      "bbj_max": 1,
+      "claims_target": "10~20개",
+      "note": "규정 문서는 Norm+Omission 강화. 법규 준수 체크리스트 정밀"
+    },
+    "fund_factsheet": {
+      "depth": "light",
+      "focus_layers": ["fact", "norm"],
+      "kc_depth": 1,
+      "ach_required": false,
+      "bbj_max": 0,
+      "claims_target": "5~10개",
+      "note": "펀드 설명서는 Fact+Norm 중심. 수익률/보수 정확성 검증"
+    }
+  }
+}

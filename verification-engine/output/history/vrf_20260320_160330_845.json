@@ -1,0 +1,335 @@
+{
+  "vrf_id": "vrf_20260320_160330_845",
+  "status": "finalized",
+  "summary": {
+    "layer_verdicts": {
+      "fact": "🟡",
+      "norm": "🟢",
+      "logic": "🟢",
+      "temporal": "🟢",
+      "incentive": "🟢",
+      "omission": "🟡"
+    },
+    "critical_flags": [],
+    "valid_until": "2026-05-06",
+    "validity_condition": "FOMC 금리 3.50-3.75% 유지 AND 이란 전쟁 확전 없음",
+    "claims_count": 5
+  },
+  "result_json": {
+    "meta": {
+      "id": "vrf_20260320_160330_845",
+      "schema_version": "v2.0",
+      "created_at": "2026-03-20T16:03:30.740013",
+      "engine_version": "6layer_v2",
+      "document": {
+        "title": "FOMC Holds Rates, Maintains Mildly Restrictive Stance",
+        "document_type": "macro_report",
+        "target_id": "FEDFUNDS",
+        "sector_id": "매크로",
+        "author_id": "Chatham Financial",
+        "institution_id": "",
+        "source_url": "https://www.chathamfinancial.com/insights/fomc-recap-march-2026",
+        "date_published": "2026-03-18",
+        "date_accessed": "2026-03-20"
+      },
+      "previous_verification": ""
+    },
+    "document_level_verdicts": {
+      "norm": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "데이터 출처 명시(FOMC, SEP). 기준 시점 명시(3/18). 분석 근거 투명.",
+        "checklist_matched": [
+          "nr_macro_001",
+          "nr_macro_002"
+        ],
+        "checklist_missed": []
+      },
+      "incentive": {
+        "verdict": "🟢",
+        "reason": "",
+        "notes": "Chatham Financial — 금리 헤지 자문사. 중립적 분석 기조. 특정 방향 이해충돌 미확인."
+      },
+      "omission": {
+        "verdict": "🟡",
+        "reason": "",
+        "notes": "이란 전쟁의 유가 영향 → 인플레이션 경로에 대한 심화 분석 부족. 호르무즈 해협 리스크 간략 언급만."
+      }
+    },
+    "claims": [
+      {
+        "claim_id": "c001",
+        "text": "Federal funds rate unchanged at 3.50%-3.75%",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "Summary",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "FRED FEDFUNDS 3.64% (실효금리). 목표범위 3.50-3.75% 확인. CNBC/Barrons 교차확인.",
+            "evidence": [
+              {
+                "source": "FRED",
+                "tier": 1,
+                "value": "3.64%"
+              },
+              {
+                "source": "CNBC",
+                "tier": 2,
+                "value": "3.50-3.75%"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "FOMC 당일(3/18) 발행. 최신.",
+            "data_reference_date": "2026-03-18",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c002",
+        "text": "Governor Miran dissented in favor of 25bp cut",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "Summary",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "CNBC: 11-1 투표. Barrons 교차확인. Miran dissent 확인.",
+            "evidence": [
+              {
+                "source": "CNBC",
+                "tier": 2,
+                "value": "11-1 vote, Miran dissent"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "N/A",
+            "reason": "사실진술에 logic 미적용",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "FOMC 당일(3/18) 발행. 최신.",
+            "data_reference_date": "2026-03-18",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "사실진술에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c003",
+        "text": "SEP showed upward revisions to both real GDP and PCE inflation",
+        "claim_type": "사실진술",
+        "evidence_type": "fact",
+        "location": "Summary",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "SEP 상향 수정은 보도로 확인. 구체적 수치(GDP 몇%, PCE 몇%)는 기사에 미제시.",
+            "evidence": [
+              {
+                "source": "CNBC",
+                "tier": 2,
+                "value": "SEP upward revision confirmed"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "사실진술에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "N/A",
+            "reason": "사실진술에 logic 미적용",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "FOMC 당일(3/18) 발행. 최신.",
+            "data_reference_date": "2026-03-18",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "사실진술에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "사실진술에 omission 미적용",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c004",
+        "text": "One cut projected in 2026 and another thereafter",
+        "claim_type": "예측",
+        "evidence_type": "estimate",
+        "location": "Summary",
+        "depends_on": [],
+        "layers": {
+          "fact": {
+            "verdict": "N/A",
+            "reason": "예측에 fact 미적용",
+            "notes": ""
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "예측에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "Dot plot one cut in 2026 — CNBC/Barrons 교차확인. 논리 문제 없음."
+          },
+          "temporal": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "예측에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          }
+        }
+      },
+      {
+        "claim_id": "c005",
+        "text": "Treasury yields 6bps increase across curve after Powell speech",
+        "claim_type": "수치주장",
+        "evidence_type": "fact",
+        "location": "Impact",
+        "depends_on": [
+          "c001"
+        ],
+        "layers": {
+          "fact": {
+            "verdict": "🟡",
+            "reason": "",
+            "notes": "6bps 수치는 Chatham 자체 분석. 외부 교차검증 제한적. 방향성(yields up)은 WSJ 확인.",
+            "evidence": [
+              {
+                "source": "Chatham Financial",
+                "tier": 3,
+                "value": "6bps"
+              },
+              {
+                "source": "WSJ",
+                "tier": 2,
+                "value": "yields moved higher"
+              }
+            ]
+          },
+          "norm": {
+            "verdict": "N/A",
+            "reason": "수치주장에 norm 미적용",
+            "notes": ""
+          },
+          "logic": {
+            "verdict": "",
+            "reason": "",
+            "notes": ""
+          },
+          "temporal": {
+            "verdict": "🟢",
+            "reason": "",
+            "notes": "FOMC 당일(3/18) 발행. 최신.",
+            "data_reference_date": "2026-03-18",
+            "gap_days": 0,
+            "material_change": false
+          },
+          "incentive": {
+            "verdict": "N/A",
+            "reason": "수치주장에 incentive 미적용",
+            "notes": ""
+          },
+          "omission": {
+            "verdict": "N/A",
+            "reason": "수치주장에 omission 미적용",
+            "notes": ""
+          }
+        }
+      }
+    ],
+    "summary": {
+      "layer_verdicts": {
+        "fact": "🟡",
+        "norm": "🟢",
+        "logic": "🟢",
+        "temporal": "🟢",
+        "incentive": "🟢",
+        "omission": "🟡"
+      },
+      "critical_flags": [],
+      "valid_until": "2026-05-06",
+      "validity_condition": "FOMC 금리 3.50-3.75% 유지 AND 이란 전쟁 확전 없음",
+      "invalidation_triggers": [
+        {
+          "event": "5월 FOMC (5/5-6)",
+          "expected_date": "2026-05-06",
+          "impact": "금리 변경 여부"
+        }
+      ],
+      "disclaimer": "본 결과는 법률/투자 자문이 아님. 검토 보조용"
+    }
+  }
+}

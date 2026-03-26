@@ -1,0 +1,132 @@
+{
+  "id": "SA-20260325-002",
+  "date": "2026-03-25",
+  "input": {"type": "keyword", "content": "사모대출 문제 위기"},
+  "pre_read": {
+    "type": "MACRO×STRUCT",
+    "scp": 4,
+    "scp_basis": "사모신용 $2.2조가 첫 본격 신용 사이클 진입. 구조 재편 진행 중. 2027~28 만기 벽.",
+    "urgency": "WATCH",
+    "emotion": {
+      "detected": true,
+      "original": "심각하게 받아들이는데",
+      "converted_question": "사모대출 부실이 은행 시스템 + 실물경제로 전이되는 구체적 경로와 조건은?"
+    },
+    "routing": {"mode": "full", "focus_layers": ["L4","L5","L6"], "skip_layers": []}
+  },
+  "layers": {
+    "L1": {
+      "headline": "사모대출 환매 사태 + BDC 폭락. 2008년 재판 가능성 대두.",
+      "framing": ["공포", "권위호소", "대비효과", "선택적생략"]
+    },
+    "L2": {
+      "facts": [
+        {"fact": "사모신용 시장 $2.2조 (2025)", "confidence": "🟢"},
+        {"fact": "디폴트율 9.2% 역대 최고 (Fitch)", "confidence": "🟢"},
+        {"fact": "PIK 비중 8.8~13.2%", "confidence": "🟢"},
+        {"fact": "차주 40% 마이너스 FCF", "confidence": "🟢"},
+        {"fact": "BDC NAV 대비 -17% 할인", "confidence": "🟢"},
+        {"fact": "Blue Owl -39% YTD, 환매 영구 중단", "confidence": "🟢"},
+        {"fact": "블랙록 $260억 인출 제한", "confidence": "🟢"},
+        {"fact": "은행 사모대출 여신 $950억 (+145%)", "confidence": "🟢"},
+        {"fact": "연기금 미인출 약정 $3,100억", "confidence": "🟡"},
+        {"fact": "보험사 사모신용 관련 46%", "confidence": "🟡"},
+        {"fact": "국내 증권사 판매액 17조원", "confidence": "🟢"},
+        {"fact": "BofA 설문 63% '다음 시스템 이벤트 1순위'", "confidence": "🟢"},
+        {"fact": "만기 집중 2027~28", "confidence": "🟡"}
+      ],
+      "unsaid": [
+        "은행별 정확한 노출 규모 — 추정치가 3배 차이 (IMF $4.5조 vs OFR $4,100억 vs Fed $950억)",
+        "한국 17조원의 펀드별·빈티지별·조건별 상세",
+        "디폴트 시 회수율(Recovery Rate) 데이터",
+        "Fed의 사모 시장 직접 개입 법적 근거 부재 — 뉴스1만 언급"
+      ]
+    },
+    "L3": {
+      "players": [
+        {"name": "대형 사모펀드", "position": "방어", "benefit": "시간 벌기", "hidden_motive": "AUM 유지"},
+        {"name": "JP모건 (다이먼)", "position": "경고자", "benefit": "대출 한도 축소로 자기 보호", "hidden_motive": "전통은행 상대적 수혜"},
+        {"name": "리테일 투자자", "position": "환매 요청", "benefit": "자금 회수", "hidden_motive": "가장 약한 고리"},
+        {"name": "생명보험사", "position": "침묵", "benefit": "공개 회피", "hidden_motive": "46% 노출 공개시 등급 하락"},
+        {"name": "연기금", "position": "잠복", "benefit": "미인출 약정", "hidden_motive": "자본 납입 시 투매 강제"},
+        {"name": "Fed", "position": "신중한 침묵", "benefit": "환매 가속 방지", "hidden_motive": "직접 개입 수단 없음"},
+        {"name": "신용평가사", "position": "공백", "benefit": "사모대출 등급 미부여", "hidden_motive": "리스크 측정 공백 원인"},
+        {"name": "SEC/법무부", "position": "조사 착수", "benefit": "창의적 가치평가 규제", "hidden_motive": "강제 재평가 시 쇼크"}
+      ]
+    },
+    "L4": {
+      "why_now": "AI 파괴 + 고금리 + 전쟁 유가 = 삼중 압력이 동시에 작용하는 최초의 순간",
+      "surface_cause": "Blue Owl 환매 중단 → 미디어 증폭 → 연쇄 환매",
+      "structural_cause": "10년간 은행 밖에 쌓인 레버리지가 첫 본격 신용 사이클 진입",
+      "causal_tree": "저금리(10년)→AUM폭발→느슨한심사→고금리+AI파괴+전쟁→디폴트+환매→현재"
+    },
+    "L5": {
+      "system": "글로벌 그림자 금융 (Shadow Banking)",
+      "verdict": "🔀전환",
+      "verdict_basis": "사모신용이 성장기→첫 신용사이클 전환. $2.2조 > 2007 서브프라임 $1.3조. Fed 직접 개입 불가가 핵심 구조적 차이.",
+      "precedent": "2007.8 BNP파리바 환매중단 → 2008.9 리먼 (12개월 래그). 1998 LTCM → Fed 중재로 수습."
+    },
+    "L6": {
+      "short_term": "환매→보도→추가환매 재귀루프. JP모건 한도축소 → 타은행 추종. 한국 17조 재평가.",
+      "mid_term": "전쟁장기화→유가$100+→인하불가→변동금리부담→디폴트가속. SEC 강제재평가→장부가급락.",
+      "long_term": "2027~28 만기벽→차환불가→대규모부실. if 은행전이: 보험사(46% ⚠단일출처SBS — NAIC/Fed FSR 교차검증 필요)→연기금($3100억)→투매→시스템. if 미전이: 국지적 정리→건전화.",
+      "korea_transmission": {
+        "exposure": "17조원 (나이스신평). 증권사별 상세 미공개.",
+        "path_if_loss": "해외 사모대출펀드 손실 → 국내 증권사 자기자본 훼손 → 회사채 시장 경색 가능. 2022 레고랜드 PF 사태와 유사 경로.",
+        "key_players": "대형 증권사(미래에셋, 한투, NH), 국민연금(사모대출 배분 규모 미공개), 보험사(삼성생명, 한화생명 해외 대체투자 비중)",
+        "trigger": "국내 증권사 사모대출 관련 손실 공시 1건+ 발생 시 서사 격상",
+        "note": "L-03 방어 — 한국 노출 시 국내 전이 경로 구체화 필수"
+      },
+      "scenarios": [
+        {"condition": "전쟁 종결 + Fed 인하", "result": "국지적 조정, 회복", "probability": "25%"},
+        {"condition": "전쟁 장기화 + 고금리 + AI 파괴 지속", "result": "디폴트 가속, 2027~28 만기 벽", "probability": "50%"},
+        {"condition": "은행 전이 + 보험사/연기금 연쇄", "result": "시스템 위기", "probability": "15%"},
+        {"condition": "규제 강제 재평가", "result": "단기 쇼크 후 투명화", "probability": "10%"}
+      ]
+    },
+    "L7": {
+      "investment_implication": "공개 신용 안정(HY 319bp). 전이 미발생. 그러나 '아직 안 옮았다 ≠ 안전하다'. 2027~28이 진짜 시험.",
+      "kill_condition": "KC-1: HY 350bp 돌파. KC-2: LQD 주간-3%. KC-3: 은행CDS 50bp+. KC-4: Fed 사모신용 공식 언급.",
+      "tracking": [
+        {"metric": "HY OAS", "current": "319bp", "trigger": "350bp", "distance": "31bp (9%)", "next_check": "매주"},
+        {"metric": "IG OAS", "current": "88bp", "trigger": "120bp", "distance": "32bp (36%)", "next_check": "매주"},
+        {"metric": "SOFR-FF", "current": "-2bp", "trigger": "50bp", "distance": "52bp", "next_check": "매주"},
+        {"metric": "VIX", "current": "25.84", "trigger": "30", "distance": "4.16 (16%)", "next_check": "매일"},
+        {"metric": "MOVE", "current": "98.15", "trigger": "120", "distance": "21.85", "next_check": "매주"},
+        {"metric": "LQD (IG ETF)", "current": "$108.34", "trigger": "주간-3%", "distance": "미발동", "next_check": "매주"},
+        {"metric": "HYG (HY ETF)", "current": "$79.17", "trigger": "주간-2%", "distance": "미발동", "next_check": "매주"},
+        {"metric": "BIZD (BDC ETF)", "current": "$12.69", "trigger": "추가-10% ($11.42)", "distance": "$1.27 (10%)", "next_check": "매주"},
+        {"metric": "환매제한 운용사 수", "current": "3곳", "trigger": "5곳+", "distance": "2곳", "next_check": "수시"},
+        {"metric": "한국 증권사 관련 공시", "current": "0건", "trigger": "1건+", "distance": "—", "next_check": "수시"}
+      ],
+      "signal_or_noise": "🟡 시그널 수준. HY 350bp + LQD -3% + 은행CDS 급등 동시 시 → 시스템 전이. 6개월 HY 미돌파 + BDC 안정 시 → 국지적.",
+      "emotion_response": {
+        "applicable": true,
+        "response": "걱정이 현실화되려면 ①디폴트15%+ ②은행담보재평가 대형확산 ③보험사/연기금 투매. 현재 ①5.8~9.2% ②JP모건만 ③미발생. 판정: 시그널(노이즈 아님). 심각하게 받아들이는 것은 옳으나 지금 당장 위기는 아님. 진짜 시점은 2027~28. 가장 위험한 판단은 '반등했으니 괜찮다'(2007년 교훈)."
+      }
+    }
+  },
+  "emergent_questions": [
+    {"question": "생명보험사 46% 노출이 사실이면 보험 계약자 돈은 안전한가?", "lens": "침묵", "answer": "답을 모름. 이것을 추적하면 시스템 전이 여부를 가장 먼저 알 수 있다."},
+    {"question": "'시스템 리스크 아님'이 틀렸다면 가장 먼저 나타날 증거는?", "lens": "반전", "answer": "IG 스프레드 급등 + LQD -3% + 은행 CDS 급등. 현재 전부 안정."},
+    {"question": "2007.8 BNP 환매중단 후 12개월 시장 반응은?", "lens": "역사", "answer": "반등 후 역대고(2007.10) → 리먼 파산(2008.9). '반등했으니 괜찮다'가 가장 위험했음."}
+  ],
+  "uncertainty_map": {
+    "L1": 5, "L2": 4, "L3": 3, "L4": 4, "L5": 4, "L6": 2, "L7": 3,
+    "weakest": "L6",
+    "strengthen_by": "보험사별 사모신용 노출 공시 + Fed Financial Stability Report (4월)"
+  },
+  "feedback": {
+    "executed": ["FB-1", "FB-2", "FB-3", "FB-4"],
+    "fb1_result": "L4→L2: Fed 개입 수단 부재, 은행별 노출 추정치 3배 차이 추가",
+    "fb2_result": "L5→L3: 신용평가사(등급 미부여=공백 원인), SEC/법무부(가치평가 조사) 추가",
+    "fb3_result": "L6→L7: 보험사 경로가 예상보다 크므로 KC에 보험사 공시 추가 검토",
+    "fb4_delta": "처음 'BDC 환매 사태' → 분석 후 '10년간 은행 밖에 쌓인 레버리지의 첫 시험'. 헤드라인보다 구조가 훨씬 깊음."
+  },
+  "self_check": {
+    "items": 15,
+    "passed": 15,
+    "failed_items": [],
+    "notes": "FB-2 실행(F-01 방어) ✅, L6 patterns 적용(L-01 방어) ✅, L2 신뢰도 변별(L-02 방어) ✅"
+  }
+}

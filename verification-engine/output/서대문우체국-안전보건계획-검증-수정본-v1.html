@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6-Layer Verification — 2026년도 서대문우체국 산업안전보건 기본계획</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root,[data-theme="light"]{--bg:#fafaf8;--surface:#fff;--card:#f5f5f2;--navy:#1B2A4A;--darkBlue:#2C5697;--blue:#4472C4;--lightBlue:#D6E4F0;--paleBlue:#EDF2F9;--text:#1a1a1a;--sub:#4a4a4a;--dim:#8a8a8a;--border:#d8d8d4;--red:#c0392b;--green:#1a7a4c;--gold:#b8860b;--line:#e2e2de;--topbar-bg:#1B2A4A;--topbar-text:#fff;--topbar-dim:#8ea8cc;--exec-bg:#EDF2F9;--key-bg:#fdf6ec;--key-text:#5a4a20;--alert-bg:#fef2f2;--alert-text:#6b2020;--tag-bull-bg:#e8f5e9;--tag-bear-bg:#fef2f2;--tag-caution-bg:#fff8e1;--nav-bg:rgba(255,255,255,.92);--shadow:rgba(27,42,74,.06)}
+[data-theme="dark"]{--bg:#0d1117;--surface:#161b22;--card:#1c2128;--navy:#c9d1d9;--darkBlue:#58a6ff;--blue:#79c0ff;--lightBlue:#1f3a5f;--paleBlue:#131d2b;--text:#e6edf3;--sub:#b1bac4;--dim:#6e7681;--border:#30363d;--red:#f85149;--green:#3fb950;--gold:#d29922;--line:#21262d;--topbar-bg:#010409;--topbar-text:#e6edf3;--topbar-dim:#6e7681;--exec-bg:#131d2b;--key-bg:#1c1a10;--key-text:#d29922;--alert-bg:#1a0e0e;--alert-text:#f85149;--tag-bull-bg:#0d2818;--tag-bear-bg:#1a0e0e;--tag-caution-bg:#1c1a10;--nav-bg:rgba(13,17,23,.95);--shadow:rgba(0,0,0,.3)}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:'DM Sans',-apple-system,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}::selection{background:var(--lightBlue)}.page{max-width:780px;margin:0 auto;padding:0 32px}
+.topbar{background:var(--topbar-bg);padding:14px 0;position:sticky;top:0;z-index:100}.topbar-inner{max-width:780px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}.topbar-brand{font-family:'Libre Baskerville',serif;font-size:15px;font-weight:700;color:var(--topbar-text)}.topbar-right{display:flex;align-items:center;gap:10px}.topbar-division{font-size:12px;color:var(--topbar-dim)}.ctrl-btn{background:none;border:1px solid rgba(255,255,255,.2);color:var(--topbar-text);font-size:11px;font-weight:600;padding:4px 11px;border-radius:3px;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}.ctrl-btn:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.08)}.ctrl-btn.active{background:rgba(255,255,255,.15)}
+.float-nav{position:fixed;right:16px;top:70px;width:172px;background:var(--nav-bg);border:1px solid var(--border);border-radius:6px;padding:14px 16px;z-index:90;box-shadow:0 2px 12px var(--shadow);max-height:calc(100vh - 100px);overflow-y:auto}.float-nav-title{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:2px;margin-bottom:10px}.float-nav .nav-item{display:block;font-size:11.5px;color:var(--dim);cursor:pointer;padding:4px 0 4px 10px;border-left:2px solid transparent;transition:all .2s;line-height:1.4}.float-nav .nav-item:hover{color:var(--darkBlue)}.float-nav .nav-item.active{color:var(--darkBlue);border-left-color:var(--darkBlue);font-weight:600}
+.report-header{padding:48px 0 32px;border-bottom:3px solid var(--navy)}.report-class{display:inline-block;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:2px;margin-bottom:16px}.report-title{font-family:'Libre Baskerville',serif;font-size:28px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:10px}.report-subtitle{font-size:16px;color:var(--darkBlue);font-weight:500;margin-bottom:16px}.report-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--dim)}.meta-label{font-weight:600;color:var(--sub)}
+.section{padding:36px 0;border-bottom:1px solid var(--line)}.section:last-of-type{border-bottom:none}.section-num{font-family:'DM Mono',monospace;font-size:12px;color:var(--darkBlue);letter-spacing:2px;margin-bottom:6px}.section-title{font-family:'Libre Baskerville',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:18px;line-height:1.4}.section p{font-size:14.5px;color:var(--sub);margin-bottom:14px;max-width:680px}.section p strong{color:var(--text);font-weight:600}.subsection{margin-top:24px}.subsection-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.exec-box{background:var(--exec-bg);border-left:4px solid var(--darkBlue);padding:24px 28px;margin:20px 0;border-radius:0 6px 6px 0}.exec-box p{font-size:14.5px;color:var(--navy);margin-bottom:10px}.exec-box p:last-child{margin-bottom:0}.exec-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--darkBlue);margin-bottom:8px}
+.key-finding{background:var(--key-bg);border-left:4px solid var(--gold);padding:24px 28px;margin:20px 0;border-radius:0 6px 6px 0}.key-finding p{color:var(--key-text)}
+.alert-box{background:var(--alert-bg);border-left:4px solid var(--red);padding:24px 28px;margin:20px 0;border-radius:0 6px 6px 0}.alert-box p{color:var(--alert-text)}
+.v{display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:3px;vertical-align:middle}.v.g{background:var(--tag-bull-bg);color:var(--green)}.v.y{background:var(--tag-caution-bg);color:var(--gold)}.v.r{background:var(--tag-bear-bg);color:var(--red)}.v.k{background:var(--card);color:var(--dim)}
+.finding-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px 24px;margin:14px 0;position:relative}.finding-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:6px 0 0 6px}.finding-card.f-red::before{background:var(--red)}.finding-card.f-gold::before{background:var(--gold)}.finding-card.f-blue::before{background:var(--darkBlue)}.finding-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}.finding-id{font-family:'DM Mono',monospace;font-size:12px;font-weight:700;color:var(--navy)}.finding-row{display:flex;gap:8px;margin-bottom:6px;font-size:13px;color:var(--sub);line-height:1.6}.finding-label{font-size:11px;min-width:20px;flex-shrink:0}.finding-fix{background:var(--card);border-radius:4px;padding:12px 16px;margin-top:10px;font-size:13px;color:var(--sub);line-height:1.7}.finding-fix-header{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:6px}.finding-fix-header.definitive{color:var(--green)}.finding-fix-header.recommended{color:var(--gold)}.finding-fix-header.advisory{color:var(--red)}.finding-impact{font-family:'DM Mono',monospace;font-size:12px;margin-top:8px;padding:6px 12px;background:var(--paleBlue);border-radius:3px;color:var(--darkBlue);display:inline-block}
+.channel-grid{display:grid;gap:14px;margin:20px 0}.channel-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px 24px;cursor:pointer;transition:all .2s;position:relative}.channel-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:6px 0 0 6px}.channel-card.ch-green::before{background:var(--green)}.channel-card.ch-gold::before{background:var(--gold)}.channel-card.ch-red::before{background:var(--red)}.channel-card.ch-blue::before{background:var(--darkBlue)}.channel-card:hover{border-color:var(--darkBlue);box-shadow:0 2px 8px var(--shadow)}.ch-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px}.ch-name{font-size:15px;font-weight:700;color:var(--navy)}.ch-tags{display:flex;gap:6px}.ch-tag{font-size:10px;font-weight:600;padding:3px 10px;border-radius:3px}.ch-tag.verified{background:var(--tag-bull-bg);color:var(--green)}.ch-tag.med{background:var(--tag-caution-bg);color:var(--gold)}.ch-tag.high{background:var(--tag-bear-bg);color:var(--red)}.ch-chain{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--sub);background:var(--card);padding:12px 16px;border-radius:4px;margin:10px 0;line-height:1.7}.ch-chain .ar{color:var(--darkBlue);font-weight:600}.ch-chain .neg{color:var(--red);font-weight:600}.ch-chain .pos{color:var(--green);font-weight:600}.ch-detail{max-height:0;overflow:hidden;transition:max-height .5s ease;font-size:13.5px;color:var(--sub);line-height:1.8}.channel-card.open .ch-detail{max-height:1200px;padding-top:12px}.ch-precedent{background:var(--card);border-left:2px solid var(--gold);padding:10px 14px;margin:10px 0;font-size:12.5px;border-radius:0 4px 4px 0}.ch-precedent strong{color:var(--gold)}.ch-expand{font-size:11px;color:var(--dim);margin-top:6px}.channel-card.open .ch-expand{display:none}
+.table-wrap{overflow-x:auto;margin:16px 0}.monitor-table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}.monitor-table th{background:var(--topbar-bg);color:var(--topbar-text);padding:8px 14px;text-align:left;font-weight:600;font-size:11px;letter-spacing:1px}.monitor-table td{padding:8px 14px;border-bottom:1px solid var(--line);font-family:'DM Mono',monospace;font-size:12.5px;color:var(--sub)}.monitor-table tr:nth-child(even) td{background:var(--card)}.val-current{font-weight:700;color:var(--navy)}.val-warn{color:var(--gold)}.val-alert{color:var(--red);font-weight:600}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.scenario-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:18px 14px;text-align:center}.scenario-name{font-size:13px;font-weight:700;margin-bottom:10px}.scenario-krw{font-family:'DM Mono',monospace;font-size:20px;font-weight:700;margin-bottom:4px}.scenario-desc{font-size:11.5px;color:var(--sub);margin-bottom:10px;line-height:1.5}
+.footer{padding:32px 0;border-top:3px solid var(--navy);margin-top:40px}.footer-disclaimer{font-size:11.5px;color:var(--dim);line-height:1.7;margin-bottom:16px}.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--dim);flex-wrap:wrap;gap:8px}.footer-brand{font-family:'Libre Baskerville',serif;font-weight:700;color:var(--navy)}
+.section.full-only{display:block}body.short-mode .section.full-only{display:none}
+.short-notice{display:none;background:var(--paleBlue);border:1px dashed var(--darkBlue);border-radius:6px;padding:14px 20px;margin:16px 0;font-size:13px;color:var(--darkBlue);text-align:center}body.short-mode .short-notice{display:block}
+@media(max-width:700px){.page{padding:0 16px}.report-title{font-size:22px}.topbar-division{display:none}.scenario-grid{grid-template-columns:1fr}.float-nav{right:8px;width:140px;padding:10px 12px}.float-nav .nav-item{font-size:10.5px}}
+.tip{position:relative;border-bottom:1.5px dotted var(--darkBlue);cursor:help;font-weight:600}.tip::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--topbar-bg);color:var(--topbar-text);font-size:12px;font-weight:400;line-height:1.5;padding:8px 14px;border-radius:5px;white-space:normal;width:max-content;max-width:280px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:200;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,.15)}.tip::before{content:'';position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--topbar-bg);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:201;pointer-events:none}.tip:hover::after,.tip:hover::before{opacity:1;visibility:visible}
+@media print{.topbar,.float-nav,.ctrl-btn,.short-notice{display:none!important}.channel-card .ch-detail{max-height:none!important;padding-top:12px!important}.ch-expand{display:none!important}body{font-size:12px}.section.full-only{display:block!important}.tip{border-bottom:none!important}.tip::after,.tip::before{display:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner"><div class="topbar-brand">6-Layer Verification Engine</div><div class="topbar-right"><div class="topbar-division">Document Verification · v1.2</div><button class="ctrl-btn" id="viewToggle">SHORT</button><button class="ctrl-btn" id="themeToggle">◐ DARK</button><button class="ctrl-btn" id="printBtn">⎙ PRINT</button></div></div></header>
+
+<nav class="float-nav"><div class="float-nav-title">CONTENTS</div>
+<div class="nav-item" data-target="s1">I. Summary</div>
+<div class="nav-item" data-target="s2">II. 6-Layer 판정</div>
+<div class="nav-item" data-target="s3">III. Findings</div>
+<div class="nav-item" data-target="s4">IV. Fact Check</div>
+<div class="nav-item" data-target="s5">V. Logic &amp; KC</div>
+<div class="nav-item" data-target="s6">VI. Omission</div>
+<div class="nav-item" data-target="s7">VII. 수정 대시보드</div>
+</nav>
+
+<main class="page">
+
+<div class="report-header">
+  <div class="report-class" style="background:var(--gold)">VERIFICATION REPORT</div>
+  <div class="report-title">2026년도 서대문우체국 산업안전보건 기본계획<br>6-Layer Verification Report</div>
+  <div class="report-subtitle">Document Type: regulatory_filing</div>
+  <div class="report-meta">
+    <span><span class="meta-label">검증일:</span> 2026-03</span>
+    <span><span class="meta-label">대상:</span> 2026년도 서대문우체국 산업안전보건 기본계획</span>
+    <span><span class="meta-label">유형:</span> regulatory_filing</span>
+    <span><span class="meta-label">유효기간:</span> 2026-12-31</span>
+  </div>
+</div>
+<div class="short-notice">📋 요약 모드 — I · III · VII만 표시. <strong>FULL</strong>로 전체 보기</div>
+
+<!-- SECTION I: Executive Summary (항상 표시) -->
+<article class="section" id="s1">
+  <div class="section-num">SECTION I</div>
+  <div class="section-title">Executive Summary</div>
+  <div class="exec-box"><div class="exec-label">VERIFICATION VERDICT</div>
+    <p><span class="v r">🔴 FLAGGED</span> <strong>주의 필요 — 사실 오류 또는 중대 누락 발견</strong></p><p style="margin-top:10px;font-size:13px;"><span class="v y">🟡 PLAUSIBLE</span> L1 <span class="v y">🟡 PLAUSIBLE</span> L2 <span class="v r">🔴 FLAGGED</span> L3 <span class="v y">🟡 PLAUSIBLE</span> L4 <span class="v g">🟢 VERIFIED</span> L5 <span class="v r">🔴 FLAGGED</span> L6 </p>
+  </div>
+  <!-- alert-box: CRITICAL FINDING 있을 때만 -->
+  <div class="key-finding"><div class="exec-label">수정 대시보드</div>
+    <div class="alert-box"><div class="exec-label">CRITICAL FLAGS</div><p>c008: 안전예산 부족을 문제점으로 인정하면서 2026년 계획에 예산 확보 방안 없음. 문제 인식→해결 부재는 계획의 논리적 결함.</p><p>문서/omission: 핵심 생략 다수 발견.</p></div><p><strong>총 Finding 11건</strong> — 🔴 2건 · 🟡 9건</p>
+  </div>
+</article>
+
+<!-- SECTION II: 6-Layer 판정 (full-only) -->
+<article class="section full-only" id="s2">
+  <div class="section-num">SECTION II</div>
+  <div class="section-title">6-Layer 독립 판정</div>
+  <div class="table-wrap"><table class="monitor-table">
+<thead><tr><th>LAYER</th><th>NAME</th><th>VERDICT</th><th>KEY NOTES</th></tr></thead>
+<tbody><tr><td>L1</td><td>Fact Ground</td><td><span class="v y">🟡 PLAUSIBLE</span></td><td>문서 내 조직현황표에 명시. 산안법 시행령상 300인 미만 사업장 기준 충족. | 문서 내 재해발생 현황표 확인: 2023년 8건(4.2%), 2024년 6건(3.2%), 2025년 8건(4.3%).</td></tr><tr><td>L2</td><td>Norm Ground</td><td><span class="v y">🟡 PLAUSIBLE</span></td><td>[수정됨] [필수 추가] Ⅰ. 추진개요에 &quot;예산 현황&quot; 섹션 추가: 전년도 안전보건 예산 집행 실적 + 금년도 편성 현황. 산안법 제14조③ 법정 기재사항. | 안전관리자 배치 기준 충족. 보건관리자 위탁은 적법(300인 미만). 다만 안전팀장이 보건업무 겸직 중이라 </td></tr><tr><td>L3</td><td>Logic Ground</td><td><span class="v r">🔴 FLAGGED</span></td><td>[보완됨] 10% 감축(8→7건)은 1건 감소. 2024년 6건→2025년 8건으로 오히려 증가. 구체적 감축 수단별 기여도 불명. | [보완  | [보완됨] 안전예산 부족을 문제점으로 인정하면서 2026년 계획에 예산 확보 방안 없음. 문제 인식→해결 부재는 계획의 </td></tr><tr><td>L4</td><td>Temporal Ground</td><td><span class="v y">🟡 PLAUSIBLE</span></td><td>3년 시계열 데이터 제시. 일관성 확인. | 위험성평가 실시규정(2021.03.03)이 5년간 미개정. 중처법 시행(2022.1) 이후 변경 반영 여부 불명. [수정: [수정 필요] 위험성</td></tr><tr><td>L5</td><td>Incentive Ground</td><td><span class="v g">🟢 VERIFIED</span></td><td>기관 내부 계획으로 외부 이해관계 충돌 없음. 문제점(예산부족)을 자체 인정한 점은 긍정적.</td></tr><tr><td>L6</td><td>Omission Ground</td><td><span class="v r">🔴 FLAGGED</span></td><td>[수정됨] [추가 검토] 전략1에 &quot;수급인(위탁업체) 안전보건 관리&quot; 항목 추가: ① 우체국물류지원단·구내식당 직원 안전교육 현황, ② 위탁업체 재해발생 시 대응 절차, ③ 도급계</td></tr></tbody></table></div>
+</article>
+
+<!-- SECTION III: Actionable Findings (항상 표시) -->
+<article class="section" id="s3">
+  <div class="section-num">SECTION III</div>
+  <div class="section-title">Actionable Findings</div>
+  <div class="finding-card f-red">
+<div class="finding-header">
+<div class="finding-id">F-005 · c008</div>
+<span class="v r">🔴 FLAGGED</span> <span class="v k">L3</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 문제점</div>
+<div class="finding-row"><span class="finding-label">📝</span> 안전예산 부족으로 급박한 위험요인 개선 시 즉각적 조치 어려움</div>
+<div class="finding-row"><span class="finding-label">🔍</span> [보완됨] 안전예산 부족을 문제점으로 인정하면서 2026년 계획에 예산 확보 방안 없음. 문제 인식→해결 부재는 계획의 논리적 결함. | [추가 필요] Ⅳ장에 &quot;안전보건 예산 확보 계획&quot; 섹션 신설. 내용: ① 2026년 안전보건 예산 총액 및 항목별 배분, ② 긴급 위험요인 대응을 위한 예비비 편성, ③ 본부 추가 예산 요청 계획. 산안법 제14조③ &quot;예</div>
+<div class="finding-impact">logic_gap</div>
+<div class="finding-fix">
+<div class="finding-fix-header definitive">DEFINITIVE FIX</div>
+[추가 필요] Ⅳ장에 &quot;안전보건 예산 확보 계획&quot; 섹션 신설. 내용: ① 2026년 안전보건 예산 총액 및 항목별 배분, ② 긴급 위험요인 대응을 위한 예비비 편성, ③ 본부 추가 예산 요청 계획. 산안법 제14조③ &quot;예산 현황&quot; 기재 의무 충족 필요.</div>
+</div><div class="finding-card f-red">
+<div class="finding-header">
+<div class="finding-id">F-011 · </div>
+<span class="v r">🔴 FLAGGED</span> <span class="v k">L6</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> document</div>
+<div class="finding-row"><span class="finding-label">📝</span> [수정됨] [추가 검토] 전략1에 &quot;수급인(위탁업체) 안전보건 관리&quot; 항목 추가: ① 우체국물류지원단·구내식당 직원 안전교육 현황, ② 위탁업체 재해발생 시 대응 절차, ③ 도급계약 시 안전보건 비용 별도 계상 여부.</div>
+<div class="finding-row"><span class="finding-label">🔍</span> [수정됨] [추가 검토] 전략1에 &quot;수급인(위탁업체) 안전보건 관리&quot; 항목 추가: ① 우체국물류지원단·구내식당 직원 안전교육 현황, ② 위탁업체 재해발생 시 대응 절차, ③ 도급계약 시 안전보건 비용 별도 계상 여부.</div>
+<div class="finding-impact">omission_gap</div>
+<div class="finding-fix">
+<div class="finding-fix-header definitive">DEFINITIVE FIX</div>
+[추가 필요] 추진개요 또는 별도 섹션에 2026년 안전보건 예산 현황 기재: ① 전년도 집행액, ② 금년도 편성액, ③ 항목별 내역(교육·장비·시설·위탁 등). 법정 의무사항임.</div>
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-001 · c001</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L2</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 조직현황</div>
+<div class="finding-row"><span class="finding-label">📝</span> 상시근로자 184명, 안전관리자 1명(자체선임), 보건관리자 1명(위탁), 산업보건의 1명(위탁)</div>
+<div class="finding-row"><span class="finding-label">🔍</span> 안전관리자 배치 기준 충족. 보건관리자 위탁은 적법(300인 미만). 다만 안전팀장이 보건업무 겸직 중이라 실효성 우려. [수정: [검토 권고] 보건업무 겸직의 한계를 명시하고, 중장기적으로 보건관리자 자체선임 또는 위탁 범위 확대(현재 월 1회 → 격주) 검토 계획 기재.]</div>
+<div class="finding-impact">disclosure_missing</div>
+<div class="finding-fix">
+<div class="finding-fix-header advisory">ADVISORY FIX</div>
+[검토 권고] 보건업무 겸직의 한계를 명시하고, 중장기적으로 보건관리자 자체선임 또는 위탁 범위 확대(현재 월 1회 → 격주) 검토 계획 기재.</div>
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-002 · c003</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L3</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 안전보건 목표</div>
+<div class="finding-row"><span class="finding-label">📝</span> 2026년 목표: 중대재해 Zero, 안전사고 10% 감축 (8건→7건)</div>
+<div class="finding-row"><span class="finding-label">🔍</span> [보완됨] 10% 감축(8→7건)은 1건 감소. 2024년 6건→2025년 8건으로 오히려 증가. 구체적 감축 수단별 기여도 불명. | [보완 권고] 목표에 달성 경로 추가: &quot;10대 과제별 예상 감축 기여도&quot; 또는 &quot;집배직 사고 3건→2건(이륜차 안전교육 강화), 기타 5건→5건(현상유지)&quot; 등 세분화된 목표 로드맵 제시.</div>
+<div class="finding-impact">logic_gap</div>
+<div class="finding-fix">
+<div class="finding-fix-header recommended">RECOMMENDED FIX</div>
+[보완 권고] 목표에 달성 경로 추가: &quot;10대 과제별 예상 감축 기여도&quot; 또는 &quot;집배직 사고 3건→2건(이륜차 안전교육 강화), 기타 5건→5건(현상유지)&quot; 등 세분화된 목표 로드맵 제시.</div>
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-003 · c007</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L1</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 위험성평가</div>
+<div class="finding-row"><span class="finding-label">📝</span> 위험성평가 12건 중 11건 조치완료, 미조치 1건은 26년 대수선 예정</div>
+<div class="finding-row"><span class="finding-label">🔍</span> [소스 보완] [보완 검토] 미조치 1건(충정로 발코니출입문)의 ① 위험성 점수, ② 이월 사유(예산 부족?), ③ 26년 대수선 확정 일정, ④ 이월 기간 중 임시 안전조치 여부를 명시.</div>
+<div class="finding-impact">missing_source</div>
+<div class="finding-fix">
+<div class="finding-fix-header advisory">ADVISORY FIX</div>
+[보완 검토] 미조치 1건(충정로 발코니출입문)의 ① 위험성 점수, ② 이월 사유(예산 부족?), ③ 26년 대수선 확정 일정, ④ 이월 기간 중 임시 안전조치 여부를 명시.</div>
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-004 · c008</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L1</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 문제점</div>
+<div class="finding-row"><span class="finding-label">📝</span> 안전예산 부족으로 급박한 위험요인 개선 시 즉각적 조치 어려움</div>
+<div class="finding-row"><span class="finding-label">🔍</span> 문서 자체적으로 인정. 정량 데이터(예산 규모, 부족액) 미제시.</div>
+<div class="finding-impact">missing_source</div>
+
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-006 · c010</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L1</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 신규 추진사항</div>
+<div class="finding-row"><span class="finding-label">📝</span> AI 기반 챗봇시스템 도입으로 현장 대응시간 20분→10초 단축 기대</div>
+<div class="finding-row"><span class="finding-label">🔍</span> [소스 보완] [보완 권고] &quot;20분→10초&quot; 수치에 산출 근거 추가: ① 측정 방법(어떤 업무의 평균 소요시간?), ② 파일럿 테스트 결과 또는 유사 사례 참조. 미검증 수치는 &quot;기대효과(검증 전)&quot;로 표기.</div>
+<div class="finding-impact">missing_source</div>
+<div class="finding-fix">
+<div class="finding-fix-header recommended">RECOMMENDED FIX</div>
+[보완 권고] &quot;20분→10초&quot; 수치에 산출 근거 추가: ① 측정 방법(어떤 업무의 평균 소요시간?), ② 파일럿 테스트 결과 또는 유사 사례 참조. 미검증 수치는 &quot;기대효과(검증 전)&quot;로 표기.</div>
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-007 · c010</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L3</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 신규 추진사항</div>
+<div class="finding-row"><span class="finding-label">📝</span> AI 기반 챗봇시스템 도입으로 현장 대응시간 20분→10초 단축 기대</div>
+<div class="finding-row"><span class="finding-label">🔍</span> 20분→10초는 극단적 효과 추정. 구현 여부·정확도·한계 미언급.</div>
+<div class="finding-impact">logic_gap</div>
+
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-008 · c011</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L4</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 규정현황</div>
+<div class="finding-row"><span class="finding-label">📝</span> 안전보건관리규정 최초작성 2014.09.24, 최근 개정 2024.05.29, 상반기 내 개정 예정</div>
+<div class="finding-row"><span class="finding-label">🔍</span> 위험성평가 실시규정(2021.03.03)이 5년간 미개정. 중처법 시행(2022.1) 이후 변경 반영 여부 불명. [수정: [수정 필요] 위험성평가 실시규정 개정 일정을 2026년 계획에 포함. 중처법 시행(2022.1) 이후 변경사항 반영 여부 점검 후 상반기 내 개정.]</div>
+<div class="finding-impact">temporal_outdated</div>
+<div class="finding-fix">
+<div class="finding-fix-header recommended">RECOMMENDED FIX</div>
+[수정 필요] 위험성평가 실시규정 개정 일정을 2026년 계획에 포함. 중처법 시행(2022.1) 이후 변경사항 반영 여부 점검 후 상반기 내 개정.</div>
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-009 · c012</div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L3</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> 재해 세부내역</div>
+<div class="finding-row"><span class="finding-label">📝</span> 집배업무 과정에서 다수 안전사고 발생 — 8건 중 5건이 집배직</div>
+<div class="finding-row"><span class="finding-label">🔍</span> [보완됨] 집배직 사고 62.5%이나 10대 과제에 이륜차 전용 대책(전기이륜차 전환 등) 미포함. 최다 유형(도보 넘어짐 3건) 구체 대책 부족. | [추가 권고] 10대 과제에 &quot;⑪ 집배원 이동 안전 강화&quot; 신설: ① 이륜차 안전장비(ABS, 미끄럼방지 타이어) 교체 계획, ② 배달경로 위험지점(계단·경사로) DB 구축, ③ 우천·동절기 도보 배달 시 </div>
+<div class="finding-impact">omission_gap</div>
+<div class="finding-fix">
+<div class="finding-fix-header recommended">RECOMMENDED FIX</div>
+[추가 권고] 10대 과제에 &quot;⑪ 집배원 이동 안전 강화&quot; 신설: ① 이륜차 안전장비(ABS, 미끄럼방지 타이어) 교체 계획, ② 배달경로 위험지점(계단·경사로) DB 구축, ③ 우천·동절기 도보 배달 시 미끄럼방지 안전화 지급.</div>
+</div><div class="finding-card f-gold">
+<div class="finding-header">
+<div class="finding-id">F-010 · </div>
+<span class="v y">🟡 PLAUSIBLE</span> <span class="v k">L2</span>
+</div>
+<div class="finding-row"><span class="finding-label">📍</span> document</div>
+<div class="finding-row"><span class="finding-label">📝</span> [수정됨] [필수 추가] Ⅰ. 추진개요에 &quot;예산 현황&quot; 섹션 추가: 전년도 안전보건 예산 집행 실적 + 금년도 편성 현황. 산안법 제14조③ 법정 기재사항.</div>
+<div class="finding-row"><span class="finding-label">🔍</span> [수정됨] [필수 추가] Ⅰ. 추진개요에 &quot;예산 현황&quot; 섹션 추가: 전년도 안전보건 예산 집행 실적 + 금년도 편성 현황. 산안법 제14조③ 법정 기재사항.</div>
+<div class="finding-impact">omission_gap</div>
+<div class="finding-fix">
+<div class="finding-fix-header definitive">DEFINITIVE FIX</div>
+[필수 추가] Ⅰ. 추진개요에 &quot;예산 현황&quot; 섹션 추가: 전년도 안전보건 예산 집행 실적 + 금년도 편성 현황. 산안법 제14조③ 법정 기재사항.</div>
+</div>
+</article>
+
+<!-- SECTION IV: Fact Check (full-only) -->
+<article class="section full-only" id="s4">
+  <div class="section-num">SECTION IV</div>
+  <div class="section-title">Fact Ground: 주요 주장 대조</div>
+  <div class="channel-grid"><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c001: 상시근로자 184명, 안전관리자 1명(자체선임), 보건관리자 1명(위탁), 산업보건의 1명(위탁)</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>문서 내 조직현황표에 명시. 산안법 시행령상 300인 미만 사업장 기준 충족.</p>
+<div style="font-size:12px;margin:4px 0;"><strong>문서 내 표</strong>: 184명</div>
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c002: 2025년 재해율 4.3% (8건 발생). 2023년 4.2%, 2024년 3.2%로 증감 반복</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>문서 내 재해발생 현황표 확인: 2023년 8건(4.2%), 2024년 6건(3.2%), 2025년 8건(4.3%).</p>
+<div style="font-size:12px;margin:4px 0;"><strong>문서 내 표</strong>: 2025: 8건/184명=4.3%</div>
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c003: 2026년 목표: 중대재해 Zero, 안전사고 10% 감축 (8건→7건)</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>문서 명시: 중대재해 Zero, 안전사고 10% 감축(8건→7건).</p>
+<div style="font-size:12px;margin:4px 0;"><strong>문서</strong>: 8건→7건</div>
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c004: 일반건강검진·특수건강검진 수검률 100% 달성 (2025년)</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>문서 내 표: 일반검진 184명 100%, 특수검진 2명 100%.</p>
+
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c005: 관리감독자 및 담당자 안전보건교육 이수율 100% (2025년)</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>문서 내 표: 총괄책임자 1명, 관리감독자 10명, 담당자 173명 전원 이수.</p>
+
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c006: 산업안전보건위원회 분기별 1회 운영, 2025년 4회 개최</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>2025년 4회(분기별) 개최 일시·안건 상세 기재.</p>
+
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-gold">
+<div class="ch-header"><div class="ch-name">c007: 위험성평가 12건 중 11건 조치완료, 미조치 1건은 26년 대수선 예정</div>
+<div class="ch-tags"><span class="v y">🟡 PLAUSIBLE</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>[소스 보완] [보완 검토] 미조치 1건(충정로 발코니출입문)의 ① 위험성 점수, ② 이월 사유(예산 부족?), ③ 26년 대수선 확정 일정, ④ 이월 기간 중 임시 안전조치 여부를 명시.</p>
+<div style="font-size:12px;margin:4px 0;"><strong>문서</strong>: 11/12건 완료</div>
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-gold">
+<div class="ch-header"><div class="ch-name">c008: 안전예산 부족으로 급박한 위험요인 개선 시 즉각적 조치 어려움</div>
+<div class="ch-tags"><span class="v y">🟡 PLAUSIBLE</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>문서 자체적으로 인정. 정량 데이터(예산 규모, 부족액) 미제시.</p>
+
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c009: 뇌심혈관 정밀검진 지원 기준 완화: 1개 이상 검진 시 24만원 한도 실비 지원</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>패키지1 10만원, 패키지2 24만원 한도 상세 기재.</p>
+
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-gold">
+<div class="ch-header"><div class="ch-name">c010: AI 기반 챗봇시스템 도입으로 현장 대응시간 20분→10초 단축 기대</div>
+<div class="ch-tags"><span class="v y">🟡 PLAUSIBLE</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>[소스 보완] [보완 권고] &quot;20분→10초&quot; 수치에 산출 근거 추가: ① 측정 방법(어떤 업무의 평균 소요시간?), ② 파일럿 테스트 결과 또는 유사 사례 참조. 미검증 수치는 &quot;기대효과(검증 전)&quot;로 표기.</p>
+<div style="font-size:12px;margin:4px 0;"><strong>문서(본부 연계)</strong>: 20분→10초</div>
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c011: 안전보건관리규정 최초작성 2014.09.24, 최근 개정 2024.05.29, 상반기 내 개정 예정</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>규정 3건의 최초작성일·개정일 명시.</p>
+
+</div><div class="ch-expand">▼ 상세 보기</div></div><div class="channel-card ch-green">
+<div class="ch-header"><div class="ch-name">c012: 집배업무 과정에서 다수 안전사고 발생 — 8건 중 5건이 집배직</div>
+<div class="ch-tags"><span class="v g">🟢 VERIFIED</span></div></div>
+<div class="ch-detail" style="max-height:none;padding-top:8px;">
+<p>2025년 세부내역표: 집배 5건, 계리 2건, 행정 1건. 집배직 62.5%.</p>
+<div style="font-size:12px;margin:4px 0;"><strong>문서 내 표</strong>: 집배 5/8=62.5%</div>
+</div><div class="ch-expand">▼ 상세 보기</div></div></div>
+</article>
+
+<!-- SECTION V: Logic & KC (full-only) -->
+<article class="section full-only" id="s5">
+  <div class="section-num">SECTION V</div>
+  <div class="section-title">Logic Ground: 인과 체인 &amp; KC</div>
+  <div class="subsection"><div class="subsection-title">Kill Conditions (KC)</div>
+<div class="table-wrap"><table class="monitor-table">
+<thead><tr><th>KC ID</th><th>PREMISE</th><th>STATUS</th><th>VERDICT</th></tr></thead>
+<tbody><tr><td>kc_001</td><td>예방 활동 강화로 1건 이상 감축</td><td>2024→2025 오히려 2건 증가. 기존 예방체계 실효성 미입증</td><td><span class="v y">🟡 PLAUSIBLE</span></td></tr><tr><td>kc_002</td><td>예산 부족이 위험요인 즉각 조치 방해</td><td>2026년 계획에 예산 확보 구체안 없음</td><td><span class="v r">🔴 FLAGGED</span></td></tr></tbody></table></div></div><div class="subsection"><div class="subsection-title">Logic Chain Notes</div><div class="ch-chain"><strong>c003</strong>: [보완됨] 10% 감축(8→7건)은 1건 감소. 2024년 6건→2025년 8건으로 오히려 증가. 구체적 감축 수단별 기여도 불명. | [보완 권고] 목표에 달성 경로 추가: &quot;10대 과제별 예상 감축 기여도&quot; 또는 &quot;집배직 사고 3건→2건(이륜차 안전교육 강화), 기타 5건→5건(현상유지)&quot; 등 세분화된 목표 로드맵 제시.</div><div class="ch-chain"><strong>c008</strong>: [보완됨] 안전예산 부족을 문제점으로 인정하면서 2026년 계획에 예산 확보 방안 없음. 문제 인식→해결 부재는 계획의 논리적 결함. | [추가 필요] Ⅳ장에 &quot;안전보건 예산 확보 계획&quot; 섹션 신설. 내용: ① 2026년 안전보건 예산 총액 및 항목별 배분, ② 긴급 위험요인 대응을 위한 예비비 편성, ③ 본부 추가 예산 요청 계획. 산안법 제14조③ &quot;예</div><div class="ch-chain"><strong>c010</strong>: 20분→10초는 극단적 효과 추정. 구현 여부·정확도·한계 미언급.</div><div class="ch-chain"><strong>c012</strong>: [보완됨] 집배직 사고 62.5%이나 10대 과제에 이륜차 전용 대책(전기이륜차 전환 등) 미포함. 최다 유형(도보 넘어짐 3건) 구체 대책 부족. | [추가 권고] 10대 과제에 &quot;⑪ 집배원 이동 안전 강화&quot; 신설: ① 이륜차 안전장비(ABS, 미끄럼방지 타이어) 교체 계획, ② 배달경로 위험지점(계단·경사로) DB 구축, ③ 우천·동절기 도보 배달 시 </div></div>
+</article>
+
+<!-- SECTION VI: Omission (full-only) -->
+<article class="section full-only" id="s6">
+  <div class="section-num">SECTION VI</div>
+  <div class="section-title">Omission Ground: 생략 분석</div>
+  <div class="channel-grid"><div class="channel-card ch-red">
+<div class="ch-header"><div class="ch-name">BBJ Break</div>
+<div class="ch-tags"><span class="v r">🔴 FLAGGED</span> <span class="ch-tag med">문서 내 미언급</span></div></div>
+<p style="font-size:13.5px;color:var(--sub);margin-top:8px;">안전보건 예산 규모가 문서 전체에서 미언급. 산안법 제14조는 &quot;예산 현황&quot; 포함을 명시. 예산 없는 계획은 실행력 담보 불가.</p>
+</div><div class="channel-card ch-gold">
+<div class="ch-header"><div class="ch-name">BBJ Break</div>
+<div class="ch-tags"><span class="v y">🟡 PLAUSIBLE</span> <span class="ch-tag med">문서 내 미언급</span></div></div>
+<p style="font-size:13.5px;color:var(--sub);margin-top:8px;">이륜차·도보 넘어짐이 최다 재해유형이나 이륜차 대체수단(전기이륜차 등) 검토, 배달경로 안전도 평가 부재.</p>
+</div><div class="channel-card ch-gold">
+<div class="ch-header"><div class="ch-name">BBJ Break</div>
+<div class="ch-tags"><span class="v y">🟡 PLAUSIBLE</span> <span class="ch-tag med">문서 내 미언급</span></div></div>
+<p style="font-size:13.5px;color:var(--sub);margin-top:8px;">비정규직·위탁직원(물류지원단, 구내식당 등) 안전보건 관리체계가 협의체 이외에 구체 기술 없음.</p>
+</div><div class="channel-card ch-red">
+<div class="ch-header"><div class="ch-name">BBJ Break</div>
+<div class="ch-tags"><span class="v r">🔴 FLAGGED</span> <span class="ch-tag med">문서 내 미언급</span></div></div>
+<p style="font-size:13.5px;color:var(--sub);margin-top:8px;">2025년 재해율 상승(3.2%→4.3%) 원인분석이 &quot;관심·안전수칙 의식 강화 필요&quot;로만 기술. 구조적 원인(인력, 물량, 노후장비) 분석 부재.</p>
+</div></div>
+</article>
+
+<!-- SECTION VII: 수정 대시보드 (항상 표시) -->
+<article class="section" id="s7">
+  <div class="section-num">SECTION VII</div>
+  <div class="section-title">수정 대시보드 &amp; 최종 판정</div>
+  <div class="table-wrap"><table class="monitor-table">
+<thead><tr><th>ERROR TYPE</th><th>TOTAL</th><th>🔴 RED</th><th>🟡 YELLOW</th></tr></thead>
+<tbody><tr><td>logic_gap</td><td class="val-current">3</td><td class="val-alert">1</td><td class="val-warn">2</td></tr><tr><td>omission_gap</td><td class="val-current">3</td><td class="val-alert">1</td><td class="val-warn">2</td></tr><tr><td>disclosure_missing</td><td class="val-current">1</td><td class="val-alert">0</td><td class="val-warn">1</td></tr><tr><td>missing_source</td><td class="val-current">3</td><td class="val-alert">0</td><td class="val-warn">3</td></tr><tr><td>temporal_outdated</td><td class="val-current">1</td><td class="val-alert">0</td><td class="val-warn">1</td></tr></tbody></table></div><div class="exec-box" style="margin-top:20px;">
+<div class="exec-label">VALIDITY</div>
+<p><strong>유효기간:</strong> 2026-12-31</p>
+<p><strong>조건:</strong> 2026년 산업안전보건 기본계획 유효기간</p><p style="margin-top:8px;"><strong>무효화 트리거:</strong></p><p style="font-size:12.5px;">• 중대재해 발생 (수시) → 계획 전면 재검토 필요</p><p style="font-size:12.5px;">• 산안법/중처법 개정 (2026 하반기) → 규정 적합성 재평가</p></div><div class="key-finding" style="margin-top:16px;">
+<p><strong>Disclaimer:</strong> 본 결과는 법률/투자 자문이 아님. 검토 보조용</p></div>
+</article>
+
+<footer class="footer">
+  <div class="footer-disclaimer">본 검증 보고서는 정보 제공 목적으로 작성되었으며, 법률·투자 자문이 아닙니다. 모든 판정은 1차 소스 기준 데이터에 기반하며, LLM은 비교자 역할만 수행합니다.</div>
+  <div class="footer-bottom">
+    <div class="footer-brand">6-Layer Verification Engine v1.2</div>
+    <div>Actionable Finding │ 2026-03 │ Valid until: 2026-12-31</div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+document.getElementById('themeToggle').addEventListener('click',function(){var h=document.documentElement,d=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',d?'light':'dark');this.textContent=d?'◐ DARK':'◑ LIGHT'});
+if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark');document.getElementById('themeToggle').textContent='◑ LIGHT'}
+document.getElementById('viewToggle').addEventListener('click',function(){document.body.classList.toggle('short-mode');var s=document.body.classList.contains('short-mode');this.textContent=s?'FULL':'SHORT';this.classList.toggle('active',s)});
+document.getElementById('printBtn').addEventListener('click',function(){window.print()});
+document.querySelectorAll('.nav-item').forEach(function(d){d.addEventListener('click',function(){var el=document.getElementById(this.getAttribute('data-target'));if(el)el.scrollIntoView({behavior:'smooth',block:'start'})})});
+document.querySelectorAll('.channel-card').forEach(function(c){c.addEventListener('click',function(){this.classList.toggle('open')})});
+var secs=document.querySelectorAll('.section[id]'),navs=document.querySelectorAll('.nav-item');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navs.forEach(function(l){l.classList.remove('active')});var t=e.target.id;navs.forEach(function(n){if(n.getAttribute('data-target')===t)n.classList.add('active')})}})},{rootMargin:'-20% 0px -70% 0px'});secs.forEach(function(s){io.observe(s)})}
+</script>
+</body>
+</html>

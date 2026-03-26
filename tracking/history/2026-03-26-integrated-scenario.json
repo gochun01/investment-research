@@ -1,0 +1,29 @@
+{
+  "id": "SA-20260326-003",
+  "date": "2026-03-26",
+  "type": "integrated",
+  "title": "교란이 빠지고 있다. 그러나 다음 역풍이 기다린다.",
+  "pipeline": "scanner(9) → rm(3, 정성) + macro(46) → PSF(3층, 정량) → Stereo 통합",
+  "pre_read": {"type": "MACRO×POLICY", "scp": 4, "urgency": "WATCH"},
+  "convergence": {
+    "total": "5/5 수렴",
+    "items": [
+      {"signal": "교란 약화", "quant": "L3/L5↓, C7<$100", "qual": "rm#1 휴전 기대", "converge": true},
+      {"signal": "실질금리 제약", "quant": "B1 2.06%, 12M+56bp", "qual": "rm#2 Barr some time", "converge": true},
+      {"signal": "관세 미반영", "quant": "P2🟠, L_trade emerging", "qual": "rm#2 과소 반응", "converge": true, "strongest": true},
+      {"signal": "KRW 구조", "quant": "F1 DXY↓ 미반영", "qual": "rm#3 NPS 70%", "converge": true},
+      {"signal": "시스템 안정", "quant": "S2 319bp, L8 inactive", "qual": "rm#1 HY 개선", "converge": true}
+    ]
+  },
+  "scenarios": {
+    "A": {"label": "교란 해소+역풍 지연", "prob": "25%", "trigger": "이란 휴전+Brent$80+301 지연", "result": "🟢 전환, S&P 6800+, KRW 1450"},
+    "B": {"label": "교착+역풍 가시화", "prob": "35%", "trigger": "이란 교착+301 청문회+Fed 동결", "result": "🟡 유지, whipsaw, KRW 1490~1530", "base_case": true},
+    "C": {"label": "이중 충격", "prob": "15%", "trigger": "걸프 확대+301 확정+Fed 인상", "result": "🔴 전환, S&P 5800↓, 스태그"},
+    "D": {"label": "교란 해소+역풍 동시", "prob": "25%", "trigger": "이란 휴전+301 확정+Fed 동결", "result": "🟡(성격전환), 관세가 다음 dominant", "most_important": true}
+  },
+  "key_insight": "시나리오 D가 가장 중요. 전쟁이 끝나면 '모든 것 해결'이 아니라 '교란 뒤에 숨은 역풍이 드러나는 순간'이다.",
+  "feedback": {
+    "FB4": "처음: 전쟁 혼란 → 지금: 교란 약화+역풍 3개 대기. 시나리오 D가 핵심. ✅ 다르게 보인다.",
+    "FB5": "B1 trend 12M, 301 14개월, KRW 14개월 — 모두 3M+ 근거. ✅ 스냅샷 점프 아님."
+  }
+}

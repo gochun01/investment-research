@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시장 반응 수집 — 한국 나프타 원료 수급 문제 | 2026-03-24</title>
+<style>
+  :root {
+    --price:#42a5f5;--narrative:#ff9800;--expert:#ab47bc;
+    --policy:#ef5350;--positioning:#66bb6a;
+    --converge:#4caf50;--diverge:#ff9800;--decouple:#f44336;--silence:#9e9e9e;
+    --bg:#0d1117;--surface:#161b22;--border:#30363d;
+    --text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding:2rem;max-width:1100px;margin:0 auto;}
+  h1{font-size:1.5rem;margin-bottom:.3rem;}
+  h2{font-size:1.2rem;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+  h3{font-size:1rem;margin:1.5rem 0 .5rem;}
+  .meta{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem;}
+  .status-bar{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0 2rem;}
+  .badge{padding:.35rem .75rem;border-radius:6px;font-size:.8rem;font-weight:600;}
+  .b-dec{background:rgba(244,67,54,.15);color:var(--decouple);border:1px solid rgba(244,67,54,.3);}
+  .b-div{background:rgba(255,152,0,.15);color:var(--diverge);border:1px solid rgba(255,152,0,.3);}
+  .b-con{background:rgba(76,175,80,.15);color:var(--converge);border:1px solid rgba(76,175,80,.3);}
+  .b-sil{background:rgba(158,158,158,.15);color:var(--silence);border:1px solid rgba(158,158,158,.3);}
+  .b-pol{background:rgba(239,83,80,.15);color:var(--policy);border:1px solid rgba(239,83,80,.3);}
+  .b-std{background:rgba(88,166,255,.15);color:var(--accent);border:1px solid rgba(88,166,255,.3);}
+  .fp{display:grid;grid-template-columns:110px 1fr;gap:.3rem .75rem;background:var(--surface);padding:1rem;border-radius:8px;border:1px solid var(--border);font-size:.85rem;}
+  .fp-l{color:var(--muted);font-weight:600;}
+  table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.82rem;}
+  th{background:var(--surface);color:var(--muted);text-align:left;padding:.5rem .6rem;border:1px solid var(--border);font-weight:600;}
+  td{padding:.5rem .6rem;border:1px solid var(--border);vertical-align:top;}
+  tr:hover td{background:rgba(88,166,255,.04);}
+  .lt{display:inline-block;padding:.15rem .5rem;border-radius:4px;font-size:.7rem;font-weight:700;margin-right:.3rem;}
+  .t-p{background:rgba(66,165,245,.15);color:var(--price);}
+  .t-n{background:rgba(255,152,0,.15);color:var(--narrative);}
+  .t-e{background:rgba(171,71,188,.15);color:var(--expert);}
+  .t-po{background:rgba(239,83,80,.15);color:var(--policy);}
+  .t-ps{background:rgba(102,187,106,.15);color:var(--positioning);}
+  .pos{color:#66bb6a;}.neg{color:#ef5350;}.neu{color:#ff9800;}.spl{color:#ab47bc;}
+  .comment{background:rgba(88,166,255,.06);border-left:3px solid var(--accent);padding:.75rem 1rem;margin:1rem 0;font-size:.85rem;border-radius:0 6px 6px 0;}
+  .comment strong{color:var(--accent);}
+  .pb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+  .pb h3{margin-top:0;color:var(--accent);}
+  .dg{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin:.75rem 0;text-align:center;}
+  .dc{padding:.5rem;border-radius:6px;background:rgba(255,255,255,.03);border:1px solid var(--border);}
+  .dl{font-size:.7rem;color:var(--muted);display:block;}
+  .dv{font-size:1.1rem;font-weight:700;margin-top:.2rem;}
+  .tl{position:relative;padding-left:2rem;margin:1rem 0;}
+  .tl::before{content:'';position:absolute;left:.6rem;top:0;bottom:0;width:2px;background:var(--border);}
+  .ti{position:relative;margin-bottom:.75rem;font-size:.82rem;}
+  .ti::before{content:'';position:absolute;left:-1.65rem;top:.45rem;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);}
+  .ti.war::before{border-color:var(--policy);}
+  .ti.sec::before{border-color:var(--positioning);}
+  .td{color:var(--muted);font-size:.75rem;}
+  .uq{list-style:none;padding:0;}
+  .uq li{padding:.75rem 0;border-bottom:1px solid var(--border);font-size:.85rem;}
+  .uq-open::before{content:'⏳';margin-right:.5rem;}
+  .uq-resolved::before{content:'✅';margin-right:.5rem;}
+  .uq-meta{font-size:.75rem;color:var(--muted);margin-top:.3rem;}
+  .uq-type{display:inline-block;padding:.1rem .4rem;border-radius:3px;font-size:.7rem;font-weight:600;margin-left:.3rem;}
+  .uq-date{background:rgba(66,165,245,.15);color:var(--price);}
+  .uq-condition{background:rgba(255,152,0,.15);color:var(--diverge);}
+  .uq-data{background:rgba(102,187,106,.15);color:var(--positioning);}
+  .uq-threshold{background:rgba(171,71,188,.15);color:var(--expert);}
+  .uq-help{font-size:.78rem;color:var(--accent);font-style:italic;}
+  .src{font-size:.78rem;color:var(--muted);margin-top:1rem;}
+  .src a{color:var(--accent);text-decoration:none;}
+  .src a:hover{text-decoration:underline;}
+  .src li{margin-bottom:.3rem;}
+  @media(max-width:600px){body{padding:1rem;}.dg{grid-template-columns:repeat(3,1fr);}.fp{grid-template-columns:90px 1fr;}}
+</style>
+</head>
+<body>
+
+<h1>시장 반응 수집 — 한국 나프타 원료 수급 문제</h1>
+<div class="meta">2026-03-24 | Standard | Market Reaction Monitor</div>
+
+<div class="status-bar">
+  <span class="badge b-dec">방향: 수렴</span>
+  <span class="badge b-div">비례: 비례</span>
+  <span class="badge b-pol">전파: C (정책→서사→가격) + A (가격이 서사보다 선행)</span>
+  <span class="badge b-std">미해소: 5 open / 0 resolved</span>
+</div>
+
+<!-- §1 -->
+<h2>§1 쟁점 지문</h2>
+<div class="fp">
+  <span class="fp-l">영역</span><span>에너지/석유화학 + 통상 + 지정학(중동 의존)</span>
+  <span class="fp-l">지리</span><span>한국 중심 (중동 원유 60% 의존 → 호르무즈 봉쇄 직격)</span>
+  <span class="fp-l">접촉 자산</span><span>나프타 가격 (1차), LG화학 051910 (1차), 롯데케미칼 011170 (1차), 한화솔루션 009830 (1차), SK이노 096770 (2차), S-Oil 010950 (2차), WTI/Brent (2차), KRW/USD (2차), 미국 에틸렌/에탄 크래커 (대조 — 나프타 비의존)</span>
+  <span class="fp-l">이해관계자</span><span>석유화학 기업 (LG화학, 롯데케미칼, 한화솔루션, 여천NCC), 정유사 (SK이노, S-Oil, GS칼텍스), 산업통상자원부, 한국석유공사, 하류 산업 (자동차, 건설, 가전, 플라스틱 가공), 중동 원유 수출국</span>
+  <span class="fp-l">시간 성격</span><span>구조적</span>
+</div>
+
+<!-- §2 -->
+<h2>§2 선정 채널</h2>
+<table>
+<tr><th>계층</th><th>채널</th><th>선정 이유</th></tr>
+<tr>
+<td><span class="lt t-p">가격</span></td>
+<td>나프타 (톤당 USD), LG화학 051910, 롯데케미칼 011170, 한화솔루션 009830, SK이노 096770, S-Oil 010950, WTI/Brent, KRW/USD</td>
+<td>쟁점의 직접 대상. 633→1,141달러 급등 / 석유화학 대장주. 여수 NCC 가동 중단 / 석유화학 순수 비중 최대. 원가 직격 / 석유화학+태양광. 나프타 원가 영향 / 정유→나프타 생산자. 수출 vs 내수 전환 압력 / 정유+샤힌 프로젝트. 대체 원료 전환 수혜 가능 / 나프타 원가의 상위 지표 / 달러 결제 원료. 환율 악화 시 이중 부담</td>
+</tr><tr>
+<td><span class="lt t-n">서사</span></td>
+<td>아시아투데이, 파이낸셜뉴스, 서울경제, FT/Asia Business Daily, Korea Herald, 머니투데이</td>
+<td>호르무즈 사태→나프타 조달선 다변화 프레임 / LG화학 임원 인터뷰. 정부 비축 체계 요구 / 정유사 가동률 하향+석화 2개월치 재고 분석 / FT 보도 — 한국+일본 위기 글로벌 시각 / 정부 나프타 수출 제한 검토 영문 보도 / 위기가 기회? 석화 제품 가격 반등→수익성 회복론</td>
+</tr><tr>
+<td><span class="lt t-e">전문가</span></td>
+<td>LG화학 경영진, 여천NCC, NH투자증권 최영광, 신영증권 신홍주, ChemAnalyst</td>
+<td>여수 2공장 가동 중단 당사자. 비축 체계 요구 / 국내 최대 에틸렌 생산. 불가항력 선언 4일 만에 / LG화학 목표주가 하향 (52만→41만) / 롯데케미칼 흑자전환 전망. 상승사이클 도래론 / 글로벌 석유화학 전문 분석 — 불가항력 분석</td>
+</tr><tr>
+<td><span class="lt t-po">정책</span></td>
+<td>산업통상자원부, 당정 협의, 석유화학 업계</td>
+<td>나프타 수출 제한, 비축유 방출, 특별산업위기지역 지정 / 여야 합동 대책 — 수출물량 내수 전환, 추경 반영 / 러시아산 원유 수입 허용 요구. 비축 체계 제도화 요구</td>
+</tr><tr>
+<td><span class="lt t-ps">포지셔닝</span></td>
+<td>석유화학주 주가 흐름, 나프타 재고 (2주~1개월), NCC 가동률 (65~70%), 대체 원료 전환 (LPG/에탄)</td>
+<td>시장이 위기/기회 중 어디에 베팅하는지 / 실제 수급 바로미터 / 생산 차질 정도 직접 지표 / 구조적 대응 속도</td>
+</tr>
+</table>
+
+<!-- §3 -->
+<h2>§3 수집된 반응</h2>
+
+<h3><span class="lt t-p">가격 반응</span></h3>
+<table>
+<tr><th>자산</th><th>이전</th><th>이후</th><th>변동</th><th>속도</th><th>핵심</th></tr>
+<tr>
+<td><strong>나프타 (톤당)</strong></td>
+<td>$633 (2월 27일)</td>
+<td>$1,141 (3월 20일)</td>
+<td class="pos">+80.3%</td>
+<td>수일</td>
+<td>전쟁 발발 후 +60~93% 급등. 아시아 인도분 기준. 호르무즈 봉쇄가 직접 원인</td>
+</tr><tr>
+<td><strong>LG화학 051910</strong></td>
+<td>417,500원 (2/27)</td>
+<td>314,500원 (3/24)</td>
+<td class="neg">-24.7%</td>
+<td>수일</td>
+<td>전쟁 발발(3/4) 307,000원 급락. 여수 2공장 가동 중단. 저점 290,000(3/23)</td>
+</tr><tr>
+<td><strong>롯데케미칼 011170</strong></td>
+<td>95,900원 (2/27)</td>
+<td>80,000원 (3/24)</td>
+<td class="neg">-16.6%</td>
+<td>수일</td>
+<td>전쟁 발발 71,800원 급락 → 82,000원 반등(제품가 반등) → 80,000원. 원가↑+제품가↑ 혼재</td>
+</tr><tr>
+<td><strong>한화솔루션 009830</strong></td>
+<td>53,000원 (2/27)</td>
+<td>45,200원 (3/24)</td>
+<td class="neg">-14.7%</td>
+<td>수일</td>
+<td>전쟁 발발 39,950원 급락 → 51,800원 반등 → 다시 하락. 석유화학 비중에 따라 변동</td>
+</tr><tr>
+<td><strong>SK이노 096770</strong></td>
+<td>127,700원 (2/27)</td>
+<td>110,000원 (3/24)</td>
+<td class="neg">-13.9%</td>
+<td>수일</td>
+<td>정유사. 나프타 수출→내수 전환 압력. 수출 제한 시 마진 하락</td>
+</tr><tr>
+<td><strong>S-Oil 010950</strong></td>
+<td>110,000원 (2/27)</td>
+<td>108,000원 (3/24)</td>
+<td class="neg">-1.8%</td>
+<td>수일</td>
+<td>샤힌 프로젝트(COTC) 수혜 기대. 나프타 비의존 에탄 크래커. 상대적 선방</td>
+</tr><tr>
+<td><strong>WTI</strong></td>
+<td>$93.39 (3/16 FRED)</td>
+<td>$91.20 (3/24)</td>
+<td class="neg">-2.3%</td>
+<td>당일</td>
+<td>합의 시그널에 소폭 하락. 그러나 $90+ 유지 = 전쟁 프리미엄 잔존</td>
+</tr><tr>
+<td><strong>Brent</strong></td>
+<td>—</td>
+<td>$102.78 (3/24)</td>
+<td class="neu">+0.0%</td>
+<td>—</td>
+<td>아시아 벤치마크. $100+ 유지</td>
+</tr><tr>
+<td><strong>KRW/USD</strong></td>
+<td>—</td>
+<td>1,495.08 (3/24)</td>
+<td class="neu">+0.0%</td>
+<td>—</td>
+<td>1,500원 근접. 달러 결제 나프타 수입 비용 추가 부담. 이중 악재</td>
+</tr>
+</table>
+
+<h3><span class="lt t-n">서사 반응</span></h3>
+<table>
+<tr><th>매체</th><th>프레임</th><th>톤</th><th>독자분석</th><th>시점</th></tr>
+<tr>
+<td>아시아투데이</td>
+<td>호르무즈 사태에 석화업계 비상. 나프타 조달선 다변화 시급</td>
+<td class="neg">부</td>
+<td>O</td>
+<td>2026-03-20</td>
+</tr><tr>
+<td>파이낸셜뉴스</td>
+<td>나프타 공급 막히고 가격 급등. 정부 차원 비축 체계 필요 — LG화학 임원</td>
+<td class="neg">부</td>
+<td>O</td>
+<td>2026-03-19</td>
+</tr><tr>
+<td>서울경제</td>
+<td>정유사 가동률 하향 검토. 석화업계 나프타 2개월치. 연쇄 불가항력 위기</td>
+<td class="neg">부</td>
+<td>O</td>
+<td>2026-03-20</td>
+</tr><tr>
+<td>FT / Asia Business Daily</td>
+<td>Hormuz Closure Triggers Naphtha Shortage — Crisis for Korean and Japanese Petrochemical</td>
+<td class="neg">부</td>
+<td>O</td>
+<td>2026-03-15</td>
+</tr><tr>
+<td>Korea Herald</td>
+<td>Seoul reviews naphtha export restrictions amid Mideast supply disruptions</td>
+<td class="neu">중</td>
+<td>O</td>
+<td>2026-03-19</td>
+</tr><tr>
+<td>머니투데이/더퍼블릭</td>
+<td>위기가 기회? 석화 제품 가격 반등으로 수익성 회복 신호 본격 반영</td>
+<td class="pos">긍</td>
+<td>O</td>
+<td>2026-03-22</td>
+</tr>
+</table>
+
+<h3><span class="lt t-e">전문가 반응</span></h3>
+<table>
+<tr><th>이름/기관</th><th>핵심 발언</th><th>방향</th></tr>
+<tr>
+<td><strong>LG화학 경영진</strong><br><span style="color:var(--muted);font-size:.75rem;">LG화학</span></td>
+<td>원유·LNG처럼 나프타도 정부 차원 비축 체계 필요. 러시아산 수입 허용도 검토해야</td>
+<td class="neg">부</td>
+</tr><tr>
+<td><strong>여천NCC</strong><br><span style="color:var(--muted);font-size:.75rem;">여천NCC (국내 최대 에틸렌)</span></td>
+<td>나프타 공급 불가항력(Force Majeure) 선언. 에틸렌 가동률 65%로 하향</td>
+<td class="neg">부</td>
+</tr><tr>
+<td><strong>NH투자증권 최영광</strong><br><span style="color:var(--muted);font-size:.75rem;">NH투자증권</span></td>
+<td>LG화학 목표주가 52만→41만 하향. 양극재 신규 고객 확대는 긍정적이나 석화 리스크 반영</td>
+<td class="neg">부</td>
+</tr><tr>
+<td><strong>신영증권 신홍주</strong><br><span style="color:var(--muted);font-size:.75rem;">신영증권</span></td>
+<td>롯데케미칼 흑자전환 전망. 2026년부터 2015~2018년 유사 상승사이클 도래. 목표 105,000원</td>
+<td class="pos">긍</td>
+</tr><tr>
+<td><strong>ChemAnalyst</strong><br><span style="color:var(--muted);font-size:.75rem;">ChemAnalyst (글로벌 석화 분석)</span></td>
+<td>동북아 에틸렌 가동률 3월 70% 예상 (2월 80%). 한국 NCC는 65%까지 하락 가능</td>
+<td class="neg">부</td>
+</tr>
+</table>
+
+<h3><span class="lt t-po">정책 반응</span></h3>
+<table>
+<tr><th>기관</th><th>조치</th><th>구속력</th><th>시장 시사점</th></tr>
+<tr>
+<td>산업통상자원부</td>
+<td>나프타 수출 제한 검토 → 시행. 정유사 수출물량 내수 전환. 비축유 방출 시 나프타 배분. 나프타 생산·수입 의무보고제 도입</td>
+<td>행정명령</td>
+<td>공급 안정화 시도. 그러나 근본적 해결(호르무즈 정상화) 전까지는 미봉책</td>
+</tr><tr>
+<td>당정 협의 (여야)</td>
+<td>여수·서산 특별산업위기지역 지정 검토. 추경 반영 추진. 금융·세제·고용 지원 확대. 울산 포함</td>
+<td>입법 검토</td>
+<td>석화 기업 직접 지원. 고용 유지 + 재정 지원. 추경 통과 여부가 핵심</td>
+</tr><tr>
+<td>석유화학 업계 (요구)</td>
+<td>러시아산 원유 수입 허용 요구. 나프타 국가 비축 체계 제도화 요구</td>
+<td>요구 (미반영)</td>
+<td>러시아산 허용 시 공급 다변화 가능. 그러나 대러 제재 문제로 정부 결정 지연</td>
+</tr>
+</table>
+
+<h3><span class="lt t-ps">포지셔닝 반응</span></h3>
+<table>
+<tr><th>지표</th><th>값</th><th>시사점</th></tr>
+<tr>
+<td>석유화학주 흐름</td>
+<td>LG화학 -24.7%, 롯데케미칼 -16.6%, 한화솔루션 -14.7%</td>
+<td>시장은 &#x27;위기&#x27;에 무게. &#x27;기회(제품가 반등)&#x27; 쪽은 소수</td>
+</tr><tr>
+<td>S-Oil 상대 성과</td>
+<td>-1.8% (vs 석화 -15~25%)</td>
+<td>샤힌 프로젝트(에탄 크래커) = 나프타 비의존 전환 수혜. 시장이 대체 원료 전환을 가치 부여</td>
+</tr><tr>
+<td>나프타 재고</td>
+<td>약 2주~1개월분 (3/12 기준)</td>
+<td>4월 초 셧다운 공포. 재고 소진 시 강제 가동 중단</td>
+</tr><tr>
+<td>NCC 가동률</td>
+<td>한국 65%, 동북아 70% (3월 예상, 2월 80%)</td>
+<td>에틸렌 생산량 감소 → 하류 산업 연쇄 차질</td>
+</tr>
+</table>
+
+<!-- §4 -->
+<h2>§4 패턴 판독</h2>
+
+<div class="pb">
+<h3>렌즈 1: 방향 일치도 — 수렴</h3>
+<div class="dg"><div class="dc"><span class="dl">가격</span><span class="dv" style="color:var(--muted)">↓ (석화주 -15~25%, 나프타 +80%)</span></div><div class="dc"><span class="dl">서사</span><span class="dv" style="color:var(--muted)">↓ (6개 매체 중 5개 위기 프레임. 1개만 기회론)</span></div><div class="dc"><span class="dl">전문가</span><span class="dv" style="color:var(--muted)">↓ (4/5 부정. 1명 반등론)</span></div><div class="dc"><span class="dl">정책</span><span class="dv" style="color:var(--muted)">대응 (수출 제한, 비축유 방출, 특별위기지역 검토)</span></div><div class="dc"><span class="dl">포지셔닝</span><span class="dv" style="color:var(--muted)">↓ (석화주 급락, 재고 2주, 가동률 65%)</span></div></div>
+<p style="font-size:.85rem;margin-top:.5rem;">5개 계층 모두 위기 방향으로 수렴. 유일한 반대 신호는 &#x27;제품가 반등→수익성 회복&#x27; 소수론. 시장·매체·전문가·정부 모두 위기 인식 공유</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 2: 시간 구조 — C (정책주도) — 외부 충격→정부 대응 순서</h3>
+<div class="tl"><div class="ti war"><span class="td">2026-03-04</span> <strong>정책-전쟁</strong> — 이란 호르무즈 봉쇄 선언</div><div class="ti"><span class="td">2026-03-04</span> <strong>가격</strong> — 석화주 급락 (LG화학 417K→307K)</div><div class="ti"><span class="td">2026-03-08</span> <strong>전문가</strong> — 여천NCC 불가항력 선언 (4일 만에)</div><div class="ti"><span class="td">2026-03-15</span> <strong>서사</strong> — FT &#x27;Hormuz→나프타 위기&#x27; 글로벌 보도</div><div class="ti"><span class="td">2026-03-17</span> <strong>전문가</strong> — LG화학 여수 2공장 가동 중단</div><div class="ti"><span class="td">2026-03-19</span> <strong>정책-국내</strong> — 산업부 나프타 수출 제한 시행</div><div class="ti"><span class="td">2026-03-23</span> <strong>서사</strong> — &#x27;나프타 쇼크&#x27; 하류 산업 도미노 프레임 확산</div><div class="ti"><span class="td">2026-03-23</span> <strong>정책-국내</strong> — 당정 특별위기지역 지정 + 추경 검토</div></div>
+<p style="font-size:.85rem;margin-top:.5rem;">외부 충격(호르무즈 봉쇄)이 먼저 → 가격 즉시 반응 → 기업 불가항력 선언 → 정부 후속 대응. 정부 대응이 충격 발생 후 2주 뒤에나 나옴. 시장이 정부보다 빠르게 반응</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 3: 비례성 — 비례</h3>
+<p style="font-size:.85rem;">나프타 +80% 급등 + 호르무즈 봉쇄(전 세계 석유 20% 통과)라는 이벤트 규모 대비 석화주 -15~25% 하락은 비례적. NCC 가동률 65%까지 하락은 실물 생산 차질이 실제로 발생한 것. 가격 반응이 과잉이 아니라 실체가 있는 위기</p>
+</div>
+
+<div class="pb">
+<h3>렌즈 4: 전파 경로 — C (정책→서사→가격) + A (가격이 서사보다 선행)</h3>
+<p style="font-size:.85rem;">호르무즈 봉쇄(정책) → 나프타 가격 급등(가격) → 매체 보도(서사) → 정부 대응(정책). 가격이 서사보다 먼저 반응(A 요소). 그러나 근본 원인이 정책(전쟁)이므로 C 경로가 지배적</p>
+<p style="font-size:.85rem;color:var(--accent);margin-top:.5rem;"><strong>후속 관찰:</strong> 4월 초 나프타 재고 소진 여부. 셧다운 실제 발생 시 하류 산업 도미노 확인. CLARITY가 아닌 호르무즈 정상화가 유일한 해소 조건</p>
+</div>
+
+<!-- §5 -->
+<h2>§5 미해소 질문</h2>
+<ul class="uq"><li class="uq-open">
+<strong>UQ-001</strong> 4월 초 나프타 재고 소진 및 NCC 셧다운 실제 발생 여부
+<span class="uq-type uq-date">date</span>
+<div class="uq-meta">해소 조건: 2026-04-07까지 주요 NCC 셧다운 공시 여부 확인<br>기한: 2026-04-07<br><span class="uq-help">→ 2026-04-07 이후 WebSearch로 확인</span></div>
+</li><li class="uq-open">
+<strong>UQ-002</strong> 러시아산 원유 수입 허용 결정 여부
+<span class="uq-type uq-condition">condition</span>
+<div class="uq-meta">해소 조건: 산업부 또는 외교부의 러시아산 원유 수입 관련 공식 입장 발표<br><span class="uq-help">→ 이벤트 대기. 후속 수집 시 자동 체크</span></div>
+</li><li class="uq-open">
+<strong>UQ-003</strong> 하류 산업(자동차, 건설, 가전) 실제 생산 차질 발생 여부
+<span class="uq-type uq-data">data</span>
+<div class="uq-meta">해소 조건: 현대차/기아 생산 계획 조정 공시, 또는 플라스틱 가공업체 가동률 데이터<br>기한: 2026-04-01<br><span class="uq-help">→ MCP 도구로 즉시 체크 가능</span></div>
+</li><li class="uq-open">
+<strong>UQ-004</strong> 석화 제품가 반등이 원가 상승을 상쇄하는지 (위기인가 기회인가)
+<span class="uq-type uq-data">data</span>
+<div class="uq-meta">해소 조건: 에틸렌-나프타 스프레드(마진) 데이터. 스프레드 확대 시 기회, 축소 시 위기<br>기한: 2026-03-31<br><span class="uq-help">→ MCP 도구로 즉시 체크 가능</span></div>
+</li><li class="uq-open">
+<strong>UQ-005</strong> 대체 원료(LPG, 에탄) 전환 실효성 — 단기 vs 장기
+<span class="uq-type uq-condition">condition</span>
+<div class="uq-meta">해소 조건: S-Oil 샤힌 프로젝트 가동 시점 확인 + LPG 크래커 전환 실적 데이터<br><span class="uq-help">→ 이벤트 대기. 후속 수집 시 자동 체크</span></div>
+</li></ul>
+<p style="font-size:.82rem;color:var(--muted);margin-top:.75rem;"><strong>다음 확인:</strong> 4월 초 NCC 셧다운 여부 / 러시아산 수입 결정 / 하류 산업 생산 차질 공시 / 에틸렌-나프타 스프레드</p>
+
+<!-- Sources -->
+<h2>Sources</h2>
+<ul class="src"><li>ChemAnalyst</li><li>FT / Asia Business Daily</li><li><a href="https://www.asiae.co.kr/en/article/2026031514562766480">FT / Asia Business Daily</a></li><li>Korea Herald</li><li><a href="https://www.koreaherald.com/article/10701493">Korea Herald</a></li><li>Yahoo Finance</li><li>Yahoo Finance / FRED</li><li><a href="https://biz.heraldcorp.com/article/10698107">https://biz.heraldcorp.com/article/10698107</a></li><li><a href="https://www.biztribune.co.kr/news/articleView.html?idxno=339958">https://www.biztribune.co.kr/news/articleView.html?idxno=339958</a></li><li><a href="https://www.businesspost.co.kr/BP?command=article_view&amp;num=426593">https://www.businesspost.co.kr/BP?command=article_view&amp;num=426593</a></li><li><a href="https://www.chemanalyst.com/NewsAndDeals/NewsDetails/are-feedstock-shortages-and-war-risks-pushing-petrochemical-41387">https://www.chemanalyst.com/NewsAndDeals/NewsDetails/are-feedstock-shortages-and-war-risks-pushing-petrochemical-41387</a></li><li><a href="https://www.chemanalyst.com/NewsAndDeals/NewsDetails/petrochemical-producers-struggle-with-supply-force-majeure-41352">https://www.chemanalyst.com/NewsAndDeals/NewsDetails/petrochemical-producers-struggle-with-supply-force-majeure-41352</a></li><li><a href="https://www.ebn.co.kr/news/articleView.html?idxno=1703148">https://www.ebn.co.kr/news/articleView.html?idxno=1703148</a></li><li><a href="https://www.fnnews.com/news/202603191836509210">https://www.fnnews.com/news/202603191836509210</a></li><li><a href="https://www.sedaily.com/article/20016577">https://www.sedaily.com/article/20016577</a></li><li><a href="https://www.youthdaily.co.kr/news/article.html?no=216066">https://www.youthdaily.co.kr/news/article.html?no=216066</a></li><li>tradingeconomics.com / 글로벌이코노믹</li><li>머니투데이/더퍼블릭</li><li><a href="https://www.thepublic.kr/news/articleView.html?idxno=298384">머니투데이/더퍼블릭</a></li><li>서울경제</li><li><a href="https://www.sedaily.com/article/20016577">서울경제</a></li><li>아시아투데이</li><li><a href="https://www.asiatoday.co.kr/kn/view.php?key=20260320010006219">아시아투데이</a></li><li>파이낸셜뉴스</li><li><a href="https://www.fnnews.com/news/202603191836509210">파이낸셜뉴스</a></li></ul>
+
+<p style="text-align:center;color:var(--muted);font-size:.7rem;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);">
+  Market Reaction Monitor | reaction-monitor | 2026-03-24 | Phase 0 미해소 자동 체크 활성
+</p>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stereo Analysis — 사모대출 환매 사태 + BDC 폭락. 2008년 재판 가능성 대두.</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>:root {
+  --navy:#0d1117;--dark:#161b22;--border:#30363d;
+  --text:#c9d1d9;--text-bright:#f0f6fc;--text-dim:#8b949e;
+  --blue:#58a6ff;--green:#4caf50;--yellow:#ffd600;
+  --red:#ff5252;--purple:#d2a8ff;--cyan:#80deea;--gold:#ffab00;
+  --surface-blue:#1a3a5c;--surface-text:#7ec8e3;
+  --subsurface-purple:#2a1a4a;--subsurface-text:#ce93d8;
+  --l7-gold-bg:#3a2800;--l7-gold-text:#ffd600;
+  --scp-high-bg:#3d0000;--scp-high-text:#ff5252;
+  --scp-mid-bg:#0a2540;--scp-mid-text:#58a6ff;
+  --scp-low-bg:#1c2028;--scp-low-text:#8b949e;
+  --framing-bg:#2a1a3e;--framing-text:#ce93d8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--navy);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.7}
+.container{max-width:780px;margin:0 auto;padding:16px}
+.topbar{padding:6px 16px;font-size:.7em;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-align:center}
+.topbar.red{background:#5c0000;color:#ff5252}
+.topbar.blue{background:#0a2540;color:#58a6ff}
+.topbar.navy{background:#0d1117;color:#8b949e;border-bottom:1px solid var(--border)}
+.report-header{padding:20px 16px 12px}
+.report-header h1{color:var(--text-bright);font-size:1.3em;margin-bottom:6px}
+.report-header .meta{color:var(--text-dim);font-size:.8em}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.badge{padding:4px 12px;border-radius:4px;font-size:.75em;font-weight:600;white-space:nowrap}
+.badge.scp-high{background:var(--scp-high-bg);color:var(--scp-high-text)}
+.badge.scp-mid{background:var(--scp-mid-bg);color:var(--scp-mid-text)}
+.badge.scp-low{background:var(--scp-low-bg);color:var(--scp-low-text)}
+.badge.type-badge{background:#1a2733;color:var(--cyan)}
+.badge.urgency-badge{background:#2a1a00;color:var(--gold)}
+.badge.framing{background:var(--framing-bg);color:var(--framing-text)}
+.exec-box{background:var(--dark);border-left:4px solid var(--gold);padding:16px 20px;margin:16px 0;border-radius:0 8px 8px 0}
+.exec-box .claim{color:var(--text-bright);font-size:1.05em;font-weight:500}
+.exec-box .sub{color:var(--text-dim);font-size:.82em;margin-top:6px}
+.section{margin:12px 0}.section-large{margin:16px 0}.section-small{margin:8px 0}
+.section-title{color:var(--blue);font-size:.9em;font-weight:700;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--border)}
+.section-title.surface{color:var(--surface-text)}.section-title.subsurface{color:var(--subsurface-text)}.section-title.l7{color:var(--l7-gold-text)}
+.card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.card.surface{border-left:3px solid var(--surface-text)}
+.card.subsurface{border-left:3px solid var(--subsurface-text)}
+.card.l7{border-left:3px solid var(--l7-gold-text)}
+.card .layer-label{font-size:.75em;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.card .layer-label.surface-label{color:var(--surface-text)}
+.card .layer-label.subsurface-label{color:var(--subsurface-text)}
+.card .layer-label.l7-label{color:var(--l7-gold-text)}
+.card .content{color:var(--text);font-size:.85em}
+.card .detail{color:var(--text-dim);font-size:.82em;margin-top:4px}
+.card .fb-tag{background:#1a2733;color:var(--cyan);padding:2px 6px;border-radius:3px;font-size:.7em;margin-left:4px}
+table{width:100%;border-collapse:collapse;font-size:.82em}
+th{background:var(--dark);color:var(--text-dim);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:8px 12px;border-bottom:1px solid #1c2028}
+.num{font-family:'DM Mono',monospace;color:var(--text-bright)}
+.emotion-box{background:#1a1a2e;border:1px solid #2a2a4e;border-radius:8px;padding:12px 16px;margin-bottom:8px}
+.emotion-box .emotion-label{color:var(--purple);font-size:.75em;font-weight:600}
+.emotion-box .emotion-content{font-size:.85em;margin-top:4px}
+.uncertainty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px}
+.uncertainty-cell{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center;font-size:.78em}
+.uncertainty-cell .layer-name{color:var(--text-bright);font-weight:600}
+.uncertainty-cell .bar{font-family:'DM Mono',monospace;color:var(--yellow);font-size:.85em;margin-top:2px}
+.uncertainty-cell.weakest{border-color:var(--red);background:#1a0000}
+.noise-card{background:#1c2028;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.noise-card .verdict{color:var(--text-dim);font-size:1em;font-weight:600}
+.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scenario-card{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px}
+.scenario-card .condition{color:var(--text-bright);font-weight:500;font-size:.85em}
+.scenario-card .result{color:var(--text-dim);font-size:.8em;margin-top:4px}
+.question-card{background:var(--dark);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:8px;padding:10px 14px;margin-bottom:6px}
+.question-card .lens{color:var(--purple);font-size:.7em;font-weight:600;text-transform:uppercase}
+.question-card .q-text{color:var(--text-bright);font-size:.85em;margin-top:2px}
+.question-card .q-answer{color:var(--text-dim);font-size:.8em;margin-top:4px}
+.tracking-list{list-style:none}
+.tracking-list li{background:var(--dark);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-bottom:6px;font-size:.82em}
+.tracking-list .indicator{color:var(--text-bright);font-weight:500}
+.tracking-list .check-date{color:var(--gold);font-family:'DM Mono',monospace;font-size:.8em}
+.signal-noise-box{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-top:8px}
+.signal-noise-box .signal{color:var(--green);font-size:.85em}
+.signal-noise-box .noise{color:var(--text-dim);font-size:.85em;margin-top:4px}
+.footer{margin:24px 0;padding-top:12px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.72em;text-align:center}
+.disclaimer{color:#484f58;font-size:.68em;margin-top:8px;font-style:italic}
+@media(max-width:600px){.scenario-grid{grid-template-columns:1fr}.uncertainty-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:480px){.container{padding:8px}.report-header h1{font-size:1.1em}.exec-box{padding:12px 14px}.section,.section-large,.section-small{margin:8px 0}}</style>
+</head>
+<body>
+<div class="topbar red">STRUCTURAL SHIFT</div>
+<div class="container">
+<div class="report-header">
+  <h1>🔬 입체 분석 │ 사모대출 환매 사태 + BDC 폭락. 2008년 재판 가능성 대두.</h1>
+  <div class="meta">SA-20260325-002 · 2026-03-25 · 복합 분석 (MACRO×STRUCT) · 10개 섹션</div>
+</div>
+<div class="section"><div class="section-title">Pre-Read</div><div class="badges"><span class="badge type-badge">MACRO×STRUCT</span><span class="badge scp-high">SCP 4</span><span class="badge urgency-badge">WATCH</span><span class="badge" style="background:var(--dark);color:var(--text-dim);border:1px solid var(--border)">full</span></div><div style="color:var(--text-dim);font-size:.78em;margin-top:6px">SCP: 사모신용 $2.2조가 첫 본격 신용 사이클 진입. 구조 재편 진행 중. 2027~28 만기 벽.</div></div>
+<div class="section"><div class="emotion-box"><div class="emotion-label">💭 감정 분리</div><div class="emotion-content">걱정 원문: "심각하게 받아들이는데"</div><div class="emotion-content" style="color:var(--text-dim)">핵심 불확실성: </div><div class="emotion-content" style="color:var(--text-bright)">검증 질문: "사모대출 부실이 은행 시스템 + 실물경제로 전이되는 구체적 경로와 조건은?"</div></div></div>
+<div class="section-large"><div class="exec-box"><div class="claim">[MACRO×STRUCT SCP4] 사모대출 환매 사태 + BDC 폭락. 2008년 재판 가능성 대두. → 공개 신용 안정(HY 319bp). 전이 미발생. 그러나 '아직 안 옮았다 ≠ 안전하다'. 2027~28이 진짜 시험.</div></div></div>
+<div class="section-large"><div class="section-title surface">━━ SURFACE (보이는 것) ━━</div><div class="card surface"><div class="layer-label surface-label">L1 헤드라인 디코딩</div><div class="content">사모대출 환매 사태 + BDC 폭락. 2008년 재판 가능성 대두.</div><div style="margin-top:6px"><span class="badge framing">[공포]</span> <span class="badge framing">[권위호소]</span> <span class="badge framing">[대비효과]</span> <span class="badge framing">[선택적생략]</span> </div></div><div class="card surface"><div class="layer-label surface-label">L2 팩트 스켈레톤</div><table><thead><tr><th>#</th><th>팩트</th><th>신뢰도</th><th>출처</th></tr></thead><tbody><tr><td class="num"></td><td>사모신용 시장 $2.2조 (2025)</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>디폴트율 9.2% 역대 최고 (Fitch)</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>PIK 비중 8.8~13.2%</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>차주 40% 마이너스 FCF</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>BDC NAV 대비 -17% 할인</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>Blue Owl -39% YTD, 환매 영구 중단</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>블랙록 $260억 인출 제한</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>은행 사모대출 여신 $950억 (+145%)</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>연기금 미인출 약정 $3,100억</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>보험사 사모신용 관련 46%</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>국내 증권사 판매액 17조원</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>BofA 설문 63% '다음 시스템 이벤트 1순위'</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr><tr><td class="num"></td><td>만기 집중 2027~28</td><td>⚪</td><td style="color:var(--text-dim)"></td></tr></tbody></table><div style="margin-top:8px;color:var(--text-dim);font-size:.82em">📦 기사가 말하지 않은 것:</div><div style="font-size:.82em;padding-left:12px">├── 은행별 정확한 노출 규모 — 추정치가 3배 차이 (IMF $4.5조 vs OFR $4,100억 vs Fed $950억)</div><div style="font-size:.82em;padding-left:12px">├── 한국 17조원의 펀드별·빈티지별·조건별 상세</div><div style="font-size:.82em;padding-left:12px">├── 디폴트 시 회수율(Recovery Rate) 데이터</div><div style="font-size:.82em;padding-left:12px">├── Fed의 사모 시장 직접 개입 법적 근거 부재 — 뉴스1만 언급</div></div><div class="card surface"><div class="layer-label surface-label">L3 이해관계 지도</div><table><thead><tr><th>플레이어</th><th>입장</th><th>이익</th><th>숨은 동기</th></tr></thead><tbody><tr><td style="color:var(--text-bright)">대형 사모펀드</td><td>방어</td><td>시간 벌기</td><td style="color:var(--text-dim)">AUM 유지</td></tr><tr><td style="color:var(--text-bright)">JP모건 (다이먼)</td><td>경고자</td><td>대출 한도 축소로 자기 보호</td><td style="color:var(--text-dim)">전통은행 상대적 수혜</td></tr><tr><td style="color:var(--text-bright)">리테일 투자자</td><td>환매 요청</td><td>자금 회수</td><td style="color:var(--text-dim)">가장 약한 고리</td></tr><tr><td style="color:var(--text-bright)">생명보험사</td><td>침묵</td><td>공개 회피</td><td style="color:var(--text-dim)">46% 노출 공개시 등급 하락</td></tr><tr><td style="color:var(--text-bright)">연기금</td><td>잠복</td><td>미인출 약정</td><td style="color:var(--text-dim)">자본 납입 시 투매 강제</td></tr><tr><td style="color:var(--text-bright)">Fed</td><td>신중한 침묵</td><td>환매 가속 방지</td><td style="color:var(--text-dim)">직접 개입 수단 없음</td></tr><tr><td style="color:var(--text-bright)">신용평가사</td><td>공백</td><td>사모대출 등급 미부여</td><td style="color:var(--text-dim)">리스크 측정 공백 원인</td></tr><tr><td style="color:var(--text-bright)">SEC/법무부</td><td>조사 착수</td><td>창의적 가치평가 규제</td><td style="color:var(--text-dim)">강제 재평가 시 쇼크</td></tr></tbody></table></div></div>
+<div class="section-large"><div class="section-title subsurface">━━ SUBSURFACE (보이지 않는 것) ━━</div><div class="card subsurface"><div class="layer-label subsurface-label">L4 인과 역추적</div><div class="content" style="color:var(--text-bright)">왜 지금: AI 파괴 + 고금리 + 전쟁 유가 = 삼중 압력이 동시에 작용하는 최초의 순간</div><div class="detail">├── 직접 트리거: Blue Owl 환매 중단 → 미디어 증폭 → 연쇄 환매</div><div class="detail">├── 구조적 원인: 10년간 은행 밖에 쌓인 레버리지가 첫 본격 신용 사이클 진입</div><div class="detail">└── 타이밍: </div><div style="margin-top:8px;font-size:.8em;color:var(--text-dim);white-space:pre-wrap;font-family:DM Mono,monospace">저금리(10년)→AUM폭발→느슨한심사→고금리+AI파괴+전쟁→디폴트+환매→현재</div></div><div class="card subsurface"><div class="layer-label subsurface-label">L5 구조 레이어</div><div class="content">소속 시스템: 글로벌 그림자 금융 (Shadow Banking)</div><div class="content">판정: ❓ — 사모신용이 성장기→첫 신용사이클 전환. $2.2조 &gt; 2007 서브프라임 $1.3조. Fed 직접 개입 불가가 핵심 구조적 차이.</div><div class="detail">전례: 2007.8 BNP파리바 환매중단 → 2008.9 리먼 (12개월 래그). 1998 LTCM → Fed 중재로 수습.</div></div><div class="card subsurface"><div class="layer-label subsurface-label">L6 2차 효과 체인</div><div class="detail">├── [단기] 환매→보도→추가환매 재귀루프. JP모건 한도축소 → 타은행 추종. 한국 17조 재평가.</div><div class="detail">├── [중기] 전쟁장기화→유가$100+→인하불가→변동금리부담→디폴트가속. SEC 강제재평가→장부가급락.</div><div class="detail">└── [장기] 2027~28 만기벽→차환불가→대규모부실. if 은행전이: 보험사(46% ⚠단일출처SBS — NAIC/Fed FSR 교차검증 필요)→연기금($3100억)→투매→시스템. if 미전이: 국지적 정리→건전화.</div><div style="margin-top:8px"><div class="scenario-grid"><div class="scenario-card"><div class="condition">전쟁 종결 + Fed 인하</div><div class="result">국지적 조정, 회복</div></div><div class="scenario-card"><div class="condition">전쟁 장기화 + 고금리 + AI 파괴 지속</div><div class="result">디폴트 가속, 2027~28 만기 벽</div></div><div class="scenario-card"><div class="condition">은행 전이 + 보험사/연기금 연쇄</div><div class="result">시스템 위기</div></div><div class="scenario-card"><div class="condition">규제 강제 재평가</div><div class="result">단기 쇼크 후 투명화</div></div></div></div></div></div>
+<div class="section"><div class="section-title" style="color:var(--purple)">🔍 돌발 질문 (Emergent Questions)</div><div class="question-card"><div class="lens">[침묵]</div><div class="q-text">생명보험사 46% 노출이 사실이면 보험 계약자 돈은 안전한가?</div><div class="q-answer">→ 답을 모름. 이것을 추적하면 시스템 전이 여부를 가장 먼저 알 수 있다.</div></div><div class="question-card"><div class="lens">[반전]</div><div class="q-text">'시스템 리스크 아님'이 틀렸다면 가장 먼저 나타날 증거는?</div><div class="q-answer">→ IG 스프레드 급등 + LQD -3% + 은행 CDS 급등. 현재 전부 안정.</div></div><div class="question-card"><div class="lens">[역사]</div><div class="q-text">2007.8 BNP 환매중단 후 12개월 시장 반응은?</div><div class="q-answer">→ 반등 후 역대고(2007.10) → 리먼 파산(2008.9). '반등했으니 괜찮다'가 가장 위험했음.</div></div></div>
+<div class="section-large"><div class="section-title l7">L7 판단 프레임</div><div class="card l7"><div class="layer-label l7-label">L7 JUDGMENT FRAME</div><div class="content" style="color:var(--text-bright)">📍 투자 함의: 공개 신용 안정(HY 319bp). 전이 미발생. 그러나 '아직 안 옮았다 ≠ 안전하다'. 2027~28이 진짜 시험.</div><div class="content" style="color:var(--red);margin-top:6px">🚨 Kill Condition: KC-1: HY 350bp 돌파. KC-2: LQD 주간-3%. KC-3: 은행CDS 50bp+. KC-4: Fed 사모신용 공식 언급.</div><div style="margin-top:8px"><div style="color:var(--text-dim);font-size:.82em;margin-bottom:4px">📡 추적 지표:</div><ul class="tracking-list"><li><span class="indicator">HY OAS</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">319bp</span> <span style="color:var(--text-dim)">→ 트리거: 350bp</span> <span style="color:var(--gold)">(31bp (9%))</span> <span class="check-date">[매주]</span></li><li><span class="indicator">IG OAS</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">88bp</span> <span style="color:var(--text-dim)">→ 트리거: 120bp</span> <span style="color:var(--gold)">(32bp (36%))</span> <span class="check-date">[매주]</span></li><li><span class="indicator">SOFR-FF</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">-2bp</span> <span style="color:var(--text-dim)">→ 트리거: 50bp</span> <span style="color:var(--gold)">(52bp)</span> <span class="check-date">[매주]</span></li><li><span class="indicator">VIX</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">25.84</span> <span style="color:var(--text-dim)">→ 트리거: 30</span> <span style="color:var(--gold)">(4.16 (16%))</span> <span class="check-date">[매일]</span></li><li><span class="indicator">MOVE</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">98.15</span> <span style="color:var(--text-dim)">→ 트리거: 120</span> <span style="color:var(--gold)">(21.85)</span> <span class="check-date">[매주]</span></li><li><span class="indicator">LQD (IG ETF)</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">$108.34</span> <span style="color:var(--text-dim)">→ 트리거: 주간-3%</span> <span style="color:var(--gold)">(미발동)</span> <span class="check-date">[매주]</span></li><li><span class="indicator">HYG (HY ETF)</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">$79.17</span> <span style="color:var(--text-dim)">→ 트리거: 주간-2%</span> <span style="color:var(--gold)">(미발동)</span> <span class="check-date">[매주]</span></li><li><span class="indicator">BIZD (BDC ETF)</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">$12.69</span> <span style="color:var(--text-dim)">→ 트리거: 추가-10% ($11.42)</span> <span style="color:var(--gold)">($1.27 (10%))</span> <span class="check-date">[매주]</span></li><li><span class="indicator">환매제한 운용사 수</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">3곳</span> <span style="color:var(--text-dim)">→ 트리거: 5곳+</span> <span style="color:var(--gold)">(2곳)</span> <span class="check-date">[수시]</span></li><li><span class="indicator">한국 증권사 관련 공시</span> <span style="font-family:DM Mono,monospace;color:var(--text-bright)">0건</span> <span style="color:var(--text-dim)">→ 트리거: 1건+</span> <span style="color:var(--gold)">(—)</span> <span class="check-date">[수시]</span></li></ul></div><div class="signal-noise-box"><div class="signal">🟡 시그널 수준. HY 350bp + LQD -3% + 은행CDS 급등 동시 시 → 시스템 전이. 6개월 HY 미돌파 + BDC 안정 시 → 국지적.</div></div><div class="emotion-box" style="margin-top:8px"><div class="emotion-label">💬 걱정에 대한 회답</div><div class="emotion-content">걱정이 현실화되려면 ①디폴트15%+ ②은행담보재평가 대형확산 ③보험사/연기금 투매. 현재 ①5.8~9.2% ②JP모건만 ③미발생. 판정: 시그널(노이즈 아님). 심각하게 받아들이는 것은 옳으나 지금 당장 위기는 아님. 진짜 시점은 2027~28. 가장 위험한 판단은 '반등했으니 괜찮다'(2007년 교훈).</div></div></div></div>
+<div class="section"><div class="section-title">📊 불확실성 지도</div><div class="uncertainty-grid"><div class="uncertainty-cell"><div class="layer-name">L1</div><div class="bar">■■■■■</div></div><div class="uncertainty-cell"><div class="layer-name">L2</div><div class="bar">■■■■□</div></div><div class="uncertainty-cell"><div class="layer-name">L3</div><div class="bar">■■■□□</div></div><div class="uncertainty-cell"><div class="layer-name">L4</div><div class="bar">■■■■□</div></div><div class="uncertainty-cell"><div class="layer-name">L5</div><div class="bar">■■■■□</div></div><div class="uncertainty-cell weakest"><div class="layer-name">L6</div><div class="bar">■■□□□</div></div><div class="uncertainty-cell"><div class="layer-name">L7</div><div class="bar">■■■□□</div></div></div><div style="margin-top:8px;font-size:.82em;color:var(--red)">⚠️ 약한 고리: L6 — </div><div style="font-size:.82em;color:var(--text-dim)">📡 보강: 보험사별 사모신용 노출 공시 + Fed Financial Stability Report (4월)</div></div>
+<div class="section-small"><div class="section-title">🔄 되먹임 기록</div><div class="card"><div class="content">실행된 FB: FB-1, FB-2, FB-3, FB-4</div><div class="detail">FB-1 (L4→L2): L4→L2: Fed 개입 수단 부재, 은행별 노출 추정치 3배 차이 추가</div><div class="detail">FB-2 (L5→L3): L5→L3: 신용평가사(등급 미부여=공백 원인), SEC/법무부(가치평가 조사) 추가</div><div class="detail">FB-3 (L6→L7): L6→L7: 보험사 경로가 예상보다 크므로 KC에 보험사 공시 추가 검토</div><div class="detail" style="color:var(--text-bright);margin-top:6px">FB-4 최종 대조: 처음 'BDC 환매 사태' → 분석 후 '10년간 은행 밖에 쌓인 레버리지의 첫 시험'. 헤드라인보다 구조가 훨씬 깊음.</div></div></div>
+<div class="section-small"><div class="section-title">✅ 자기 점검</div><div class="card"><div class="content" style="color:var(--yellow)">15/12 통과</div></div></div>
+
+<div class="footer">
+  Stereo Analyzer v2.0 · SA-20260325-002
+  <div class="disclaimer">이 보고서는 분석 결과입니다. 투자 판단이나 행동 권고가 아닙니다.</div>
+</div>
+</div></body></html>

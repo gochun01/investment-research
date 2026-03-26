@@ -1,0 +1,38 @@
+{
+  "id": "TC-003",
+  "type": "stereo",
+  "title": "이란 전쟁 교란 — 약화 구간에서 역풍 부상",
+  "source": "SA-20260326-003 (통합)",
+  "created": "2026-03-26",
+  "status": "tracking",
+  "phase": 1,
+  "scp": 4,
+
+  "trigger": {
+    "condition": "이란 휴전 공식 합의 OR Brent <$80 × 5d (교란 해소)",
+    "current": "15-point 안 거부. Brent $99. 비적성 선박 통행 허용.",
+    "fired": false
+  },
+  "kc": {
+    "watch": "Brent $120 도달",
+    "alert": "Brent $135 × 3d",
+    "hard": "Brent $150 × 3d OR 호르무즈 완전 재봉쇄",
+    "fired": false
+  },
+
+  "events": ["EC-001", "EC-002"],
+  "rm_watches": ["W-UQ-020", "W-UQ-021", "W-UQ-022", "W-UQ-023"],
+  "psf_link": "L3 약화↓, L5 약화↓, P3 🟠",
+  "macro_ref": "C7 Brent, C8 BEI",
+
+  "heartbeat_thresholds": [
+    {"indicator": "Brent", "symbol": "BZ=F", "watch": 110, "alert": 120, "hard": 150, "direction": "above"},
+    {"indicator": "VIX", "symbol": "^VIX", "watch": 30, "alert": 35, "hard": 45, "direction": "above"}
+  ],
+
+  "check_log": [
+    {"date": "2026-03-26", "observation": "Brent $99(<$100). L3/L5 약화. 비적성 통행. Phase 1 유지.", "next_check": "2026-03-28"}
+  ],
+
+  "close_condition": "이란 휴전 확정 → 교란 해소 → 카드 종료 OR Brent $150 → 확전 시나리오 → 새 카드"
+}

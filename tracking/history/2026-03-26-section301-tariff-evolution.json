@@ -1,0 +1,36 @@
+{
+  "id": "SA-20260326-001",
+  "date": "2026-03-26",
+  "title": "Section 301 — 관세는 죽지 않았다. IEEPA→122→301 3단 진화.",
+  "pipeline": "issue-scanner SCAN-001 CL-002 → reaction-monitor → Stereo Analyzer",
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "scp": 4,
+    "scp_basis": "관세 법적 프레임워크 자체가 전환 중. IEEPA→301 = 시스템 재편.",
+    "urgency": "WATCH",
+    "emotion": null
+  },
+  "one_line": "대법원이 관세를 죽였다고 생각하는 사이, 트럼프는 영구 관세의 법적 경로를 열었다.",
+  "character": "🔀 전환",
+  "signal_or_noise": "시그널",
+  "kill_conditions": [
+    "301 조사 중단/철회",
+    "한-미 2025.11 합의가 301 면제 조건",
+    "122 만료 후 301도 미부과",
+    "이란 전쟁 장기화로 영구 매몰"
+  ],
+  "korea_exposure": {
+    "sectors": ["전자장비(반도체)", "자동차/부품", "기계류", "철강", "선박"],
+    "estimated_export_share": "60~70%",
+    "existing_tariffs": {"semiconductor": "232: 25%", "auto": "232: 15%", "steel": "232: 50%"},
+    "investment_commitment": "$150B 조선 + $200B 산업 (2025.11 합의)"
+  },
+  "uncertainty_map": {
+    "L1": 5, "L2": 5, "L3": 3, "L4": 4, "L5": 4, "L6": 2, "L7": 3,
+    "weakest": "L6 — 중복 관세(232+301) 실적용 여부"
+  },
+  "feedback": {
+    "FB4": "처음: 관료적 뉴스 → 지금: 관세 법적 프레임워크 3단 진화. 다르게 보인다. ✅"
+  },
+  "tracking": ["4/15 코멘트 마감", "4/28 청문회", "5/07 FOMC", "7/24 Section 122 만료"]
+}

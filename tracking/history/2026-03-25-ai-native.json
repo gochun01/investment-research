@@ -1,0 +1,95 @@
+{
+  "id": "SA-20260325-001",
+  "date": "2026-03-25",
+  "input": {
+    "type": "keyword",
+    "content": "대한민국을 세계최초 'AI 네이티브' 국가로"
+  },
+  "pre_read": {
+    "type": "POLICY×NARR",
+    "scp": 2,
+    "scp_basis": "AI 강국 담론의 한국판 반복. 새로운 구조적 팩트(법·예산·기술) 없음. 언론사 제안.",
+    "urgency": "WATCH",
+    "emotion": {"detected": false},
+    "routing": {"mode": "full", "focus_layers": ["L1","L4","L5"], "skip_layers": []}
+  },
+  "layers": {
+    "L1": {
+      "headline": "매경 창간 60주년 국민보고대회에서 '3+1 액션플랜' 제시. AI 네이티브 국가 도약 제안.",
+      "framing": ["권위호소", "숫자마법", "낙관", "긴급"]
+    },
+    "L2": {
+      "facts": [
+        {"fact": "매경 창간 60주년 + 제36차 국민보고대회 (3/24, 신라호텔)", "confidence": "🟢"},
+        {"fact": "3+1 액션플랜: 확산(D)+특례(E)+기반(F)+국가운영(N)", "confidence": "🟢"},
+        {"fact": "AI 네이티브 카드, 인공지능사 제도, 규제 프리존 제안", "confidence": "🟢"},
+        {"fact": "이재명 대통령 + 정재계 400명 참석", "confidence": "🟢"}
+      ],
+      "unsaid": [
+        "재원 규모·조달 방법 일체 없음 (5000만명 × 연24~36만원 = 12~18조원)",
+        "입법 경로 없음 — 언론사 제안인지 정부 정책인지 모호",
+        "기존 AI 기본계획(2024)·디지털 뉴딜(2020)과의 관계 미언급",
+        "글로벌 AI 역량 비교(논문·투자·인프라) 미제시"
+      ]
+    },
+    "L3": {
+      "players": [
+        {"name": "매일경제", "position": "주최·제안", "benefit": "국가 아젠다 세터 지위", "hidden_motive": "AI 시대 미디어 생존 전략"},
+        {"name": "이재명 대통령", "position": "참석·축사", "benefit": "AI 비전 → 지지율", "hidden_motive": "전쟁 국면에서 미래 비전으로 관심 전환"},
+        {"name": "재계(최태원·신동빈)", "position": "호응", "benefit": "규제 완화 기대", "hidden_motive": "자사 AI 사업 확장 명분"},
+        {"name": "글로벌 AI 기업", "position": "미언급", "benefit": "한국 보조금 → 자사 구독 수요", "hidden_motive": "침묵 플레이어"}
+      ]
+    },
+    "L4": {
+      "why_now": "매경 창간 60주년 행사 + 전쟁 국면에서 미래 비전 필요",
+      "surface_cause": "매경 창간 60주년 기념 국민보고대회",
+      "structural_cause": "AI 글로벌 경쟁 가속 + 한국 AI 역량 위기론 + 정치적 필요",
+      "causal_tree": "직접 트리거(매경60주년) → 구조적(AI경쟁+위기론+정치) → 타이밍(전쟁불안+AI주급등)"
+    },
+    "L5": {
+      "system": "한국 산업정책 아젠다 세팅 사이클",
+      "verdict": "🔄반복",
+      "verdict_basis": "2019 AI국가전략 → 2020 디지털뉴딜 → 2024 AI기본계획 → 2026 AI네이티브. 프레이밍만 변주.",
+      "precedent": "일본 Society 5.0 (2016) — 큰 비전, 실행 부진. UAE AI장관(2017) — 비전+집행 → 성과."
+    },
+    "L6": {
+      "short_term": "AI 관련주 테마 단기 자극. 국회 논의 가능성 낮음(전쟁 이슈에 묻힘).",
+      "mid_term": "if 예산 편성 → AI 서비스 기업 수혜. if 구호 반복 → 피로감.",
+      "long_term": "AI 카드 실현 시 → 해외 AI 서비스 보조금화 vs 국내 생태계 성장 분기.",
+      "scenarios": [
+        {"condition": "2027 예산 AI카드 반영", "result": "실질 확산", "probability": "20%"},
+        {"condition": "구호만 반복, 예산 미편성", "result": "소멸", "probability": "60%"},
+        {"condition": "규제 프리존만 부분 실현", "result": "제한적 효과", "probability": "20%"}
+      ]
+    },
+    "L7": {
+      "investment_implication": "AI 테마 단기 자극 가능. 구조적 투자 근거 없음. ①AI 축 자체 건재하나 이 기사는 축 강화 팩트 아님.",
+      "kill_condition": "2027 예산에 AI카드 항목 반영 → 정책 격상. 미반영 → 소멸.",
+      "tracking": [
+        {"metric": "국회 AI 법안 발의 건수", "next_check": "2026-04 정기국회"},
+        {"metric": "2027 예산안 AI 항목", "next_check": "2026-09"}
+      ],
+      "signal_or_noise": "현재 노이즈에 가까움. 후속 입법/예산 없이 유사 행사 반복 시 노이즈 확정."
+    }
+  },
+  "emergent_questions": [
+    {"question": "AI 네이티브 카드 5000만명 × 연24~36만원 = 12~18조원. 현실성?", "lens": "규모", "answer": "2026 예산 700조의 1.7~2.6%. 현실성 매우 낮음."},
+    {"question": "보조금이 글로벌 AI 플랫폼 구독으로 흘러가면?", "lens": "침묵", "answer": "아무도 말 안 함. 국내 생태계 vs 해외 종속 분기점."},
+    {"question": "과거 '세계 최초/N대 강국' 선언 후 실제 달성률은?", "lens": "역사", "answer": "반도체·배터리 성공. 디지털뉴딜 부분. 성공 조건: 집행력(예산+법+인재). 이번엔 셋 다 없음."}
+  ],
+  "uncertainty_map": {
+    "L1": 5, "L2": 4, "L3": 3, "L4": 3, "L5": 4, "L6": 2, "L7": 3,
+    "weakest": "L6",
+    "strengthen_by": "4월 국회 법안 발의 + 9월 예산안 확인"
+  },
+  "feedback": {
+    "executed": ["FB-1", "FB-4"],
+    "fb1_result": "L4→L2: 재원 미제시, 입법 경로 부재 추가",
+    "fb4_delta": "처음 '대담한 국가 전략' → 분석 후 '언론사 아젠다 세팅 행사'. 프레이밍의 힘 확인."
+  },
+  "self_check": {
+    "items": 8,
+    "passed": 8,
+    "failed_items": []
+  }
+}

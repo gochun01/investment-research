@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US-Iran 휴전안 + 원자재 충격 전환점 | 2026-03-26</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628; --navy-light: #131d33;
+    --surface: #161b22; --surface-alt: #1c2333;
+    --border: #30363d; --border-light: #3d444d;
+    --text: #e6edf3; --text-secondary: #b0b8c1; --muted: #8b949e; --accent: #58a6ff;
+    --price: #42a5f5; --narrative: #ff9800; --expert: #ab47bc; --policy: #ef5350; --positioning: #66bb6a;
+    --green: #4caf50; --yellow: #ff9800; --red: #f44336;
+    --converge: #4caf50; --diverge: #ff9800; --decouple: #f44336; --silence: #9e9e9e;
+    --crisis: #f44336; --special: #1565c0;
+    --gap-xs: .25rem; --gap-sm: .5rem; --gap-md: 1rem; --gap-lg: 1.5rem; --gap-xl: 2.5rem;
+    --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--navy); color: var(--text); line-height: 1.7; max-width: 860px; margin: 0 auto; }
+  .topbar { padding: .5rem 2rem; font-family: 'DM Mono', monospace; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+  .topbar.crisis { background: var(--crisis); color: #fff; }
+  .report-header { padding: 2rem 2rem 1.5rem; border-bottom: 1px solid var(--border); }
+  .report-header h1 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 1.6rem; font-weight: 700; line-height: 1.3; margin-bottom: .4rem; }
+  .report-header .subtitle { font-size: .9rem; color: var(--text-secondary); margin-bottom: .75rem; }
+  .report-header .meta { font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--muted); }
+  .content { padding: 0 2rem 2rem; }
+  h2 { font-family: 'Libre Baskerville', serif; font-size: 1.15rem; font-weight: 700; margin: var(--gap-xl) 0 var(--gap-md); padding-bottom: var(--gap-sm); border-bottom: 1px solid var(--border); }
+  h3 { font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 600; margin: var(--gap-lg) 0 var(--gap-sm); }
+  p { font-size: .88rem; margin-bottom: var(--gap-sm); }
+  .num { font-family: 'DM Mono', monospace; font-weight: 500; }
+  .badge { display: inline-block; padding: .25rem .65rem; border-radius: var(--radius-sm); font-family: 'DM Mono', monospace; font-size: .75rem; font-weight: 600; line-height: 1; }
+  .badge-green { background: rgba(76,175,80,.15); color: var(--green); border: 1px solid rgba(76,175,80,.3); }
+  .badge-yellow { background: rgba(255,152,0,.15); color: var(--yellow); border: 1px solid rgba(255,152,0,.3); }
+  .badge-red { background: rgba(244,67,54,.15); color: var(--red); border: 1px solid rgba(244,67,54,.3); }
+  .badge-blue { background: rgba(88,166,255,.15); color: var(--accent); border: 1px solid rgba(88,166,255,.3); }
+  .badge-muted { background: rgba(158,158,158,.15); color: var(--silence); border: 1px solid rgba(158,158,158,.3); }
+  .layer-tag { display: inline-block; padding: .15rem .5rem; border-radius: var(--radius-sm); font-size: .7rem; font-weight: 700; margin-right: .3rem; }
+  .lt-price { background: rgba(66,165,245,.15); color: var(--price); }
+  .lt-narrative { background: rgba(255,152,0,.15); color: var(--narrative); }
+  .lt-expert { background: rgba(171,71,188,.15); color: var(--expert); }
+  .lt-policy { background: rgba(239,83,80,.15); color: var(--policy); }
+  .lt-positioning { background: rgba(102,187,106,.15); color: var(--positioning); }
+  .pos { color: var(--green); } .neg { color: var(--red); } .neu { color: var(--yellow); } .silent { color: var(--silence); }
+  table { width: 100%; border-collapse: collapse; margin: var(--gap-md) 0; font-size: .82rem; }
+  th { background: var(--surface); color: var(--muted); text-align: left; padding: .5rem .6rem; border: 1px solid var(--border); font-weight: 600; }
+  td { padding: .5rem .6rem; border: 1px solid var(--border); vertical-align: top; }
+  tr:hover td { background: rgba(88,166,255,.04); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem; margin: var(--gap-md) 0; }
+  .card h3 { margin-top: 0; }
+  .exec-box { background: linear-gradient(135deg, var(--surface) 0%, var(--surface-alt) 100%); border: 1px solid var(--accent); border-left: 4px solid var(--accent); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin: var(--gap-lg) 0; }
+  .exec-box .claim { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.5; margin-bottom: .5rem; }
+  .exec-box .verdict { font-family: 'DM Mono', monospace; font-size: .8rem; color: var(--text-secondary); }
+  .alert-box { border-radius: var(--radius-md); padding: 1rem 1.25rem; margin: var(--gap-md) 0; font-size: .85rem; }
+  .alert-box.warn { background: rgba(255,152,0,.1); border: 1px solid rgba(255,152,0,.3); border-left: 4px solid var(--yellow); }
+  .alert-box.danger { background: rgba(244,67,54,.1); border: 1px solid rgba(244,67,54,.3); border-left: 4px solid var(--red); }
+  .alert-box.info { background: rgba(88,166,255,.08); border: 1px solid rgba(88,166,255,.25); border-left: 4px solid var(--accent); }
+  .comment { background: rgba(88,166,255,.06); border-left: 3px solid var(--accent); padding: .75rem 1rem; margin: var(--gap-md) 0; font-size: .85rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+  .comment strong { color: var(--accent); }
+  .direction-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap-sm); margin: .75rem 0; text-align: center; }
+  .direction-cell { padding: .5rem; border-radius: var(--radius-md); background: rgba(255,255,255,.03); border: 1px solid var(--border); }
+  .direction-label { font-size: .7rem; color: var(--muted); display: block; }
+  .direction-value { font-size: 1.1rem; font-weight: 700; margin-top: .2rem; }
+  .timeline { position: relative; padding-left: 2rem; margin: var(--gap-md) 0; }
+  .timeline::before { content: ''; position: absolute; left: .6rem; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: .75rem; font-size: .82rem; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.65rem; top: .45rem; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--accent); background: var(--navy); }
+  .timeline-item.highlight::before { border-color: var(--red); background: rgba(244,67,54,.2); }
+  .timeline-date { color: var(--muted); font-size: .75rem; font-family: 'DM Mono', monospace; }
+  .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--gap-md); margin: var(--gap-md) 0; }
+  .scenario-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; }
+  .scenario-card .prob { font-family: 'DM Mono', monospace; font-size: 1.5rem; font-weight: 700; margin-bottom: .3rem; }
+  .scenario-card .label { font-size: .85rem; font-weight: 600; margin-bottom: .5rem; }
+  .scenario-card .desc { font-size: .8rem; color: var(--text-secondary); }
+  .clash-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-md); margin: var(--gap-md) 0; }
+  .clash-side { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; }
+  .clash-side.bull { border-top: 3px solid var(--green); }
+  .clash-side.bear { border-top: 3px solid var(--red); }
+  .clash-side h4 { font-size: .9rem; margin-bottom: .5rem; }
+  .fingerprint-grid { display: grid; grid-template-columns: 110px 1fr; gap: .3rem .75rem; background: var(--surface); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); font-size: .85rem; }
+  .fp-label { color: var(--muted); font-weight: 600; }
+  .uq-list { list-style: none; padding: 0; }
+  .uq-list li { padding: .75rem 0; border-bottom: 1px solid var(--border); font-size: .85rem; }
+  .uq-open::before { content: '\23F3'; margin-right: .5rem; }
+  .uq-type { display: inline-block; padding: .1rem .4rem; border-radius: 3px; font-size: .7rem; font-weight: 600; margin-left: .3rem; }
+  .uq-condition { background: rgba(255,152,0,.15); color: var(--diverge); }
+  .uq-threshold { background: rgba(171,71,188,.15); color: var(--expert); }
+  .uq-data { background: rgba(102,187,106,.15); color: var(--positioning); }
+  .uq-meta { font-size: .75rem; color: var(--muted); margin-top: .3rem; }
+  .sources { font-size: .78rem; color: var(--muted); margin-top: var(--gap-md); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources li { margin-bottom: .3rem; }
+  .status-bar { display: flex; gap: .75rem; flex-wrap: wrap; margin: var(--gap-md) 0; }
+  .disclaimer { text-align: center; color: var(--muted); font-size: .7rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .commodity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--gap-sm); margin: var(--gap-md) 0; }
+  .commodity-cell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: .75rem; text-align: center; }
+  .commodity-cell .c-name { font-size: .75rem; color: var(--muted); }
+  .commodity-cell .c-val { font-family: 'DM Mono', monospace; font-size: 1.1rem; font-weight: 700; color: var(--red); margin: .2rem 0; }
+  .commodity-cell .c-note { font-size: .7rem; color: var(--text-secondary); }
+  @media (max-width: 780px) {
+    body { max-width: 100%; }
+    .topbar, .report-header, .content { padding-left: 1rem; padding-right: 1rem; }
+    .report-header h1 { font-size: 1.3rem; }
+    .direction-grid { grid-template-columns: repeat(3, 1fr); }
+    .clash-grid { grid-template-columns: 1fr; }
+    .scenario-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar crisis">
+  <span>CRISIS REPORT &mdash; D+26 Iran War</span>
+  <span>2026-03-26</span>
+</div>
+
+<div class="report-header">
+  <h1>시장은 휴전을 프라이싱하고 있다.<br>그러나 공급망은 아직 전쟁 중이다.</h1>
+  <div class="subtitle">US-Iran 15-point 휴전안 + 호르무즈 원자재 충격 &mdash; 가격과 현실의 괴리</div>
+  <div class="meta">2026-03-26 | Standard | Market Reaction Monitor | 5-Layer &times; 15+ Sources</div>
+</div>
+
+<div class="content">
+
+  <!-- ══ Executive Verdict ══ -->
+  <div class="exec-box">
+    <div class="claim">
+      트럼프의 15-point 휴전안에 시장은 Brent &lt;$100, S&amp;P +1%로 반응했다.
+      그러나 이란은 "극단적이고 비합리적"이라 거부했고, 호르무즈 교통량은 80% 감소 상태다.
+      시장 가격과 물리적 공급 현실 사이의 괴리가 이 보고서의 핵심 긴장이다.
+    </div>
+    <div class="verdict">
+      <span class="badge badge-yellow">괴리 Divergence</span>
+      <span class="badge badge-red">이란 거부</span>
+      <span class="badge badge-blue">미해소 6건</span>
+    </div>
+  </div>
+
+  <!-- ══ Direction Grid ══ -->
+  <h2>5-Layer 방향 일치도</h2>
+  <div class="direction-grid">
+    <div class="direction-cell">
+      <span class="direction-label">가격</span>
+      <span class="direction-value" style="color:var(--converge)">↑</span>
+    </div>
+    <div class="direction-cell">
+      <span class="direction-label">서사</span>
+      <span class="direction-value" style="color:var(--diverge)">↑↓</span>
+    </div>
+    <div class="direction-cell">
+      <span class="direction-label">전문가</span>
+      <span class="direction-value" style="color:var(--diverge)">↑↓</span>
+    </div>
+    <div class="direction-cell">
+      <span class="direction-label">정책</span>
+      <span class="direction-value" style="color:var(--decouple)">↔</span>
+    </div>
+    <div class="direction-cell">
+      <span class="direction-label">포지셔닝</span>
+      <span class="direction-value" style="color:var(--converge)">↑</span>
+    </div>
+  </div>
+
+  <div class="comment">
+    <strong>판독:</strong> 가격(↑)과 포지셔닝(↑)은 휴전 기대를 반영. 그러나 서사(↑↓)는 낙관과 공급 경고가 공존.
+    전문가(↑↓)는 de-escalation 시그널 vs 스태그플레이션 현실. 정책(↔)은 미국의 협상 의지와 이란의 거부가 충돌.
+    <strong>5계층 수렴이 아닌 "가격 선행 — 현실 후행" 구조.</strong>
+  </div>
+
+  <!-- ══ Core Tension: Clash Grid ══ -->
+  <h2>핵심 긴장: 시장 vs 현실</h2>
+
+  <div class="clash-grid">
+    <div class="clash-side bull">
+      <h4>시장이 보는 것 (Price &lt; $100)</h4>
+      <ul style="font-size:.82rem;">
+        <li>트럼프가 딜을 원한다는 <strong>의지 시그널</strong></li>
+        <li>15-point 안이 전쟁 전보다 덜 강경 + 더 관대한 당근</li>
+        <li>파키스탄 중재 채널 열림 &mdash; 대면 회담 수일 내 가능</li>
+        <li>Kpler: 이란이 일부 선박 통과 허용 조짐</li>
+        <li>S&amp;P +1%, 소형주(R2000 +1.46%) 주도 broad rally</li>
+      </ul>
+    </div>
+    <div class="clash-side bear">
+      <h4>현실이 보여주는 것 (Supply Shock)</h4>
+      <ul style="font-size:.82rem;">
+        <li>이란: "극단적, 비합리적. 종이 위에서도 아름답지 않다"</li>
+        <li>쿠웨이트공항 드론 피폭 + 바레인·이스라엘 공격 지속</li>
+        <li>호르무즈 교통량 <strong>80% 감소</strong> (16M bbl/d 중단)</li>
+        <li>카타르 Ras Laffan LNG 시설 타격 &mdash; 수출 17% 상실</li>
+        <li>전쟁 즉시 끝나도 LNG&rarr;비료 복구에 <strong>수개월</strong> 소요</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ Price Table ══ -->
+  <h2>가격 반응</h2>
+
+  <p style="font-size:.95rem;font-weight:600;margin-bottom:.75rem;">
+    원유 -5~6% 급락, 주식 +1% 랠리, 금 +1.7% &mdash; 시장은 "한 줄 헤드라인"에 반응했다.
+  </p>
+
+  <table>
+    <tr>
+      <th>자산</th><th>현재</th><th>전쟁 전</th><th>전쟁 고점</th><th>오늘 변동</th><th>핵심</th>
+    </tr>
+    <tr>
+      <td><strong>Brent 원유</strong></td>
+      <td class="num">$98.12</td><td class="num">$66</td><td class="num">$119</td>
+      <td class="pos num">-5.9%</td>
+      <td>$100 심리선 하회. 시장은 휴전 프라이싱</td>
+    </tr>
+    <tr>
+      <td><strong>WTI 원유</strong></td>
+      <td class="num">$91.18</td><td class="num">$60</td><td class="num">$110+</td>
+      <td class="pos num">-5.0%</td>
+      <td>전쟁 후 +50%. 여전히 높은 수준</td>
+    </tr>
+    <tr>
+      <td><strong>S&amp;P 500</strong></td>
+      <td class="num">6,591.90</td><td class="num">6,880</td><td class="num">&mdash;</td>
+      <td class="pos num">+1.07%</td>
+      <td>R2000 +1.46% &gt; Nasdaq &gt; Dow. 소형주 주도</td>
+    </tr>
+    <tr>
+      <td><strong>Gold (XAU)</strong></td>
+      <td class="num">$4,509.80</td><td class="num">$3,800</td><td class="num">$4,540+</td>
+      <td class="pos num">+1.7%</td>
+      <td>원유 하락에도 상승. 불확실성 프리미엄 유지</td>
+    </tr>
+    <tr>
+      <td><strong>BTC</strong></td>
+      <td class="num">$70,960</td><td class="num">&mdash;</td><td class="num">&mdash;</td>
+      <td class="pos num">+0.8%</td>
+      <td>지정학 완화 랠리에 동참. ATH $126K 대비 -44%</td>
+    </tr>
+    <tr>
+      <td><strong>DXY</strong></td>
+      <td class="num">99.64</td><td class="num">95.55</td><td class="num">100.54</td>
+      <td class="num">&mdash;</td>
+      <td>99선 지지. 20일MA 수렴</td>
+    </tr>
+    <tr>
+      <td><strong>USD/KRW</strong></td>
+      <td class="num neg">1,501.99</td><td class="num">&mdash;</td><td class="num">&mdash;</td>
+      <td class="num">&mdash;</td>
+      <td>1,450 위험선 초과. 환율 스트레스 지속</td>
+    </tr>
+    <tr>
+      <td><strong>VIX</strong></td>
+      <td class="num neu">25.33</td><td class="num">&mdash;</td><td class="num">&mdash;</td>
+      <td class="num">&mdash;</td>
+      <td>25선 경계. "헤드라인 한 줄에 급변" 구간</td>
+    </tr>
+  </table>
+
+  <div class="comment">
+    <strong>판독:</strong> 에너지(XOM/CVX) 하락 vs 항공(UAL)/크루즈(CCL) 상승 &mdash;
+    유가 하락 수혜주로 섹터 로테이션. 원유 backwardation(현물&gt;선물) 유지 = 물리적 공급 부족 현실은 바뀌지 않았다.
+    BlackRock Fink: "$150 지속 시 steep recession." $100 하회가 시장의 green light.
+  </div>
+
+  <!-- ══ Commodity Shock ══ -->
+  <h2>원자재 충격 &mdash; 호르무즈 80% 감소의 도미노</h2>
+
+  <div class="alert-box danger">
+    <strong>Coface (3/26 오늘):</strong> "25일째 호르무즈 원자재 차단 지속.
+    석유&middot;가스&middot;비료&middot;석유화학&middot;알루미늄 전방위 타격.
+    교착 시 하류 밸류체인 충격 확대."
+  </div>
+
+  <div class="commodity-grid">
+    <div class="commodity-cell">
+      <div class="c-name">나프타 (싱가포르)</div>
+      <div class="c-val">+60%</div>
+      <div class="c-note">$1,000/톤. 아시아 석화 취약</div>
+    </div>
+    <div class="commodity-cell">
+      <div class="c-name">유럽 가스 TTF</div>
+      <div class="c-val">+85%</div>
+      <div class="c-note">&euro;55/MWh. 1개월</div>
+    </div>
+    <div class="commodity-cell">
+      <div class="c-name">아시아 LNG (JKM)</div>
+      <div class="c-val">2x</div>
+      <div class="c-note">카타르 Ras Laffan 타격</div>
+    </div>
+    <div class="commodity-cell">
+      <div class="c-name">비료 (요소)</div>
+      <div class="c-val">+30~40%</div>
+      <div class="c-note">봄 파종 시즌 직격</div>
+    </div>
+    <div class="commodity-cell">
+      <div class="c-name">황 (Sulfur)</div>
+      <div class="c-val">+25%</div>
+      <div class="c-note">칠레/콩고 광업 타격</div>
+    </div>
+    <div class="commodity-cell">
+      <div class="c-name">Brent 원유 (전쟁 후)</div>
+      <div class="c-val">+50%</div>
+      <div class="c-note">$66 &rarr; $119 peak</div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <strong>판독:</strong> 원유만의 위기가 아니다.
+    LNG&rarr;비료&rarr;농업&rarr;식량 가격 도미노가 핵심 2차 충격.
+    호르무즈는 글로벌 비료 교역의 30%를 담당하며, 전쟁이 내일 끝나도 LNG 복구에 수개월.
+    러시아/벨라루스가 비료 공백을 메울 가능성 &mdash; 지정학적 역설.
+  </div>
+
+  <!-- ══ Timeline ══ -->
+  <h2>시간 순서 &mdash; D+26의 전환점</h2>
+
+  <div class="timeline">
+    <div class="timeline-item highlight">
+      <span class="timeline-date">02/28</span>
+      <strong style="color:var(--policy)">정책</strong> &mdash; US-Israel, 이란 공습 개시. 전쟁 시작.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">03/03~05</span>
+      <strong style="color:var(--price)">가격</strong> &mdash; Brent $80&rarr;$100+. 방산주 급등. 천궁-II 실전 입증.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">03/16</span>
+      <strong style="color:var(--policy)">정책</strong> &mdash; 이란 호르무즈 "완전 통제". 교통량 80% 감소.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">03/19</span>
+      <strong style="color:var(--price)">가격</strong> &mdash; Brent $119 고점. 나프타/LNG/비료 동반 폭등.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">03/23</span>
+      <strong style="color:var(--narrative)">서사</strong> &mdash; 트럼프 "호르무즈 곧 열릴 것." 글로벌 PMI 악화 확인.
+    </div>
+    <div class="timeline-item highlight">
+      <span class="timeline-date">03/25</span>
+      <strong style="color:var(--policy)">정책</strong> &mdash; 15-point 휴전안 파키스탄 경유 이란 전달. 이란 거부.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">03/25</span>
+      <strong style="color:var(--price)">가격</strong> &mdash; Brent -5.9% &lt;$100. S&amp;P +1%. Gold $4,540.
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-date">03/25</span>
+      <strong style="color:var(--policy)">정책</strong> &mdash; 이란, 쿠웨이트공항 드론 피폭 + 바레인/이스라엘 공격 지속.
+    </div>
+  </div>
+
+  <div class="comment">
+    <strong>판독 (시간 구조):</strong> 정책주도(C) &mdash; 트럼프의 휴전 시그널이 가격을 움직이고 서사가 뒤따름.
+    그러나 이란의 거부+공격이 같은 날 나와 시장은 "진자(pendulum)" 상태.
+    2025.04 관세 whipsaw와 유사 &mdash; 한 줄에 일희일비.
+  </div>
+
+  <!-- ══ Scenario Grid ══ -->
+  <h2>시나리오 분기</h2>
+
+  <div class="scenario-grid">
+    <div class="scenario-card" style="border-top:3px solid var(--green)">
+      <div class="prob pos">35%</div>
+      <div class="label">파키스탄 중재 성사 &rarr; 부분 휴전</div>
+      <div class="desc">
+        호르무즈 부분 재개방. Brent $80~90. 비료 가격 안정화 시작.
+        S&amp;P 6,800+. 그러나 핵 합의 미진 = 구조적 리스크 잔존.
+      </div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--yellow)">
+      <div class="prob neu">40%</div>
+      <div class="label">교착 &mdash; 헤드라인 whipsaw 지속</div>
+      <div class="desc">
+        이란 거부하나 채널 유지. Brent $95~110 변동.
+        VIX 25~35 구간. 원자재 충격 하류로 확산.
+        "한 줄에 급변" 상태 수주 지속.
+      </div>
+    </div>
+    <div class="scenario-card" style="border-top:3px solid var(--red)">
+      <div class="prob neg">25%</div>
+      <div class="label">전면 확전 &mdash; 호르무즈 완전 봉쇄</div>
+      <div class="desc">
+        이란 Gulf 공격 에스컬레이션. Brent $130~150.
+        BlackRock 경고 현실화 = "steep recession."
+        비료 위기 &rarr; 글로벌 식량 위기 전이.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ Expert Voices ══ -->
+  <h2>전문가 반응</h2>
+
+  <table>
+    <tr><th>전문가</th><th>핵심 발언</th><th>방향</th></tr>
+    <tr>
+      <td><strong>Signum Global Advisors</strong></td>
+      <td>"내용보다 트럼프가 딜을 원한다는 시그널 자체가 포인트. 전쟁 전보다 덜 강경."</td>
+      <td class="pos">낙관</td>
+    </tr>
+    <tr>
+      <td><strong>Citi</strong></td>
+      <td>"한 줄 헤드라인이 원유&middot;금리를 급등락시킬 수 있다."</td>
+      <td class="neu">경고</td>
+    </tr>
+    <tr>
+      <td><strong>BlackRock (Larry Fink)</strong></td>
+      <td>"$150 지속 시 steep recession. $100 하회가 de-escalation 프라이싱."</td>
+      <td class="neu">기준선</td>
+    </tr>
+    <tr>
+      <td><strong>ING</strong></td>
+      <td>"Uncertainty remains high. 지정학 리스크 프리미엄 지속."</td>
+      <td class="neu">중립</td>
+    </tr>
+    <tr>
+      <td><strong>Coface (3/26)</strong></td>
+      <td>"석유&middot;가스&middot;비료&middot;석유화학&middot;알루미늄 전방위 타격. 교착 시 하류 확대."</td>
+      <td class="neg">경고</td>
+    </tr>
+    <tr>
+      <td><strong>Rystad Energy</strong></td>
+      <td>"원자재 전방위 충격이 이전 위기와 다른 점. 석유만이 아님."</td>
+      <td class="neg">구조적</td>
+    </tr>
+    <tr>
+      <td><strong>European Business Magazine</strong></td>
+      <td>"글로벌 PMI 하락 확인. 스태그플레이션 동시 현실화."</td>
+      <td class="neg">확인</td>
+    </tr>
+    <tr>
+      <td><strong>Globe &amp; Mail</strong></td>
+      <td>"전쟁 즉시 끝나도 비료 복구 수개월. 공급 부족 carry-forward."</td>
+      <td class="neg">구조적</td>
+    </tr>
+  </table>
+
+  <!-- ══ Policy ══ -->
+  <h2>정책 반응</h2>
+
+  <table>
+    <tr><th>주체</th><th>행동</th><th>구속력</th></tr>
+    <tr>
+      <td><strong>미국 (Trump)</strong></td>
+      <td>15-point 휴전안 전달 + 추가 1,000명 배치. "이 전쟁은 승리했다." 군사&middot;외교 병행.</td>
+      <td>공식 제안</td>
+    </tr>
+    <tr>
+      <td><strong>이란</strong></td>
+      <td>"극단적이고 비합리적." 쿠웨이트공항 피폭, 바레인/이스라엘 공격 지속. 그러나 중재 채널 유지.</td>
+      <td>공식 거부 (채널 유지)</td>
+    </tr>
+    <tr>
+      <td><strong>파키스탄</strong></td>
+      <td>중재국으로 부상. 15-point 안 전달 확인. 대면 회담 호스팅 제안.</td>
+      <td>중재 제안</td>
+    </tr>
+    <tr>
+      <td><strong>ECB</strong></td>
+      <td>금리 2% 유지. 원유 $100+ &rarr; 유로존 인플 +0.6~0.7%p. 인하 기대 후퇴 중.</td>
+      <td>정책 딜레마</td>
+    </tr>
+    <tr>
+      <td><strong>Gulf States</strong></td>
+      <td>쿠웨이트공항 피폭, 사우디 드론 요격, 바레인 공습. 인내심 한계 시그널.</td>
+      <td>피해 확대 중</td>
+    </tr>
+  </table>
+
+  <!-- ══ Unresolved ══ -->
+  <h2>미해소 질문 &mdash; 6건</h2>
+
+  <ul class="uq-list">
+    <li class="uq-open">
+      <strong>UQ-020</strong> 이란이 counterproposal을 공식 제출하는가? 거부만으로 끝나는가?
+      <span class="uq-type uq-condition">condition</span>
+      <div class="uq-meta">기한: 2026-03-31 | Watch 등록: W-UQ-020</div>
+    </li>
+    <li class="uq-open">
+      <strong>UQ-021</strong> 파키스탄 중재 대면 회담이 성사되는가?
+      <span class="uq-type uq-condition">condition</span>
+      <div class="uq-meta">기한: 2026-04-02 | Watch 등록: W-UQ-021 | NBC: "coming days"에 가능</div>
+    </li>
+    <li class="uq-open">
+      <strong>UQ-022</strong> 호르무즈 해협 교통량 복구 시점 &mdash; 현재 80% 감소. 부분 재개 조짐?
+      <span class="uq-type uq-condition">condition</span>
+      <div class="uq-meta">기한: 2026-04-07 | Watch 등록: W-UQ-022 | Kpler 선박 추적 모니터링</div>
+    </li>
+    <li class="uq-open">
+      <strong>UQ-023</strong> Brent $100 하회 지속 vs $110+ 회귀?
+      <span class="uq-type uq-threshold">threshold</span>
+      <div class="uq-meta">기한: 2026-03-31 | Watch 등록: W-UQ-023 | 기준: 5영업일 연속 &lt;$100</div>
+    </li>
+    <li class="uq-open">
+      <strong>UQ-024</strong> 비료 carry-forward &rarr; 봄 파종 타격 규모?
+      <span class="uq-type uq-data">data</span>
+      <div class="uq-meta">기한: 2026-04-15 | Watch 등록: W-UQ-024 | USDA/FAO 발표 대기</div>
+    </li>
+    <li class="uq-open">
+      <strong>UQ-025</strong> ECB 금리 인하 기대 완전 후퇴하는가?
+      <span class="uq-type uq-condition">condition</span>
+      <div class="uq-meta">기한: 2026-04-10 | Watch 등록: W-UQ-025 | Euribor 선물 + ECB 위원 발언</div>
+    </li>
+  </ul>
+
+  <!-- ══ Sources ══ -->
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li><a href="https://apnews.com/live/iran-war-israel-trump-03-25-2026">AP &mdash; Live: Iran rejects US ceasefire proposal</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/3/25/iran-calls-us-proposal-to-end-war-maximalist-unreasonable">Al Jazeera &mdash; Iran calls US proposal 'maximalist, unreasonable'</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/3/25/us-talking-to-itself-says-iran-as-trump-claims-wheels-of-diplomacy-turning">Al Jazeera &mdash; 'US talking to itself' says Iran</a></li>
+    <li><a href="https://www.dw.com/en/us-sends-15point-ceasefire-proposal-to-iran-via-pakistan/video-76531043">DW &mdash; US sends 15-point ceasefire via Pakistan</a></li>
+    <li><a href="https://www.morningstar.com/news/marketwatch/2026032528/oil-prices-fall-on-reports-of-a-us-ceasefire-proposal-with-iran">MarketWatch/Morningstar &mdash; Oil prices fall on ceasefire reports</a></li>
+    <li><a href="https://www.nbcnews.com/business/markets/stocks-oil-prices-us-iran-war-rcna265064">NBC &mdash; Stocks rally, oil prices fall</a></li>
+    <li><a href="https://www.euronews.com/business/2026/03/25/markets-rally-oil-prices-fall-as-trump-signals-iran-talks">Euronews &mdash; Markets rally on Trump signals</a></li>
+    <li><a href="https://247wallst.com/investing/2026/03/25/the-sp-500-rips-1-higher-on-hope-for-iran-peace-negotiations-and-oil-falls-below-critical-100-barrel-line/">247 Wall St &mdash; S&amp;P 500 rips 1% higher</a></li>
+    <li><a href="https://www.coface.com/news-economy-and-insights/the-conflict-in-the-middle-east-is-causing-commodity-prices-to-soar">Coface (3/26) &mdash; Middle East Conflict Triggers Global Commodity Shock</a></li>
+    <li><a href="https://europeanbusinessmagazine.com/business/the-oil-shock-is-no-longer-theoretical-its-hitting-the-global-economy/">European Business Magazine &mdash; Global PMI: Oil shock hitting the economy</a></li>
+    <li><a href="https://www.thinkbrg.com/insights/publications/dire-straits-the-hidden-supply-chains-of-the-strait-of-hormuz/">BRG &mdash; Hidden Supply Chains of Hormuz</a></li>
+    <li><a href="https://www.atlanticcouncil.org/blogs/energysource/the-strait-of-hormuz-crisis-will-ripple-across-plastics-and-food-supply-chains-helping-beijing-and-moscow-hurting-americans/">Atlantic Council &mdash; Hormuz crisis ripples across plastics and food</a></li>
+    <li><a href="https://www.reuters.com/business/energy/iran-wars-energy-impact-forces-world-pay-up-cut-consumption-2026-03-21/">Reuters &mdash; Iran war's energy impact forces world to pay up</a></li>
+    <li><a href="https://www.theglobeandmail.com/business/article-iran-war-long-term-shortages-price-shocks-global-energy-fertilizer/">Globe &amp; Mail &mdash; Long-term shortages, price shocks</a></li>
+    <li><a href="https://www.fpri.org/article/2026/03/experts-react-effects-of-the-iran-war-on-energy-markets/">FPRI &mdash; Experts React: Effects on Energy Markets</a></li>
+    <li><a href="https://gulfif.org/hormuz-disruptions-and-asias-energy-resilience/">Gulf International Forum &mdash; Hormuz and Asia's Energy Resilience</a></li>
+    <li>FRED MCP &mdash; DGS10, DFF, VIXCLS, BAMLH0A0HYM2, SOFR, WM2NS, WALCL, RRPONTSYD, CPIAUCSL</li>
+    <li>CoinGecko MCP &mdash; BTC, ETH market data</li>
+    <li>Yahoo Finance MCP &mdash; BZ=F, CL=F, GC=F, ^GSPC, ^VIX, DX-Y.NYB, KRW=X, RTX, LMT</li>
+    <li>DeFiLlama MCP &mdash; Stablecoins</li>
+    <li>Blockchain.com MCP &mdash; BTC network snapshot</li>
+  </ul>
+
+</div>
+
+<div class="disclaimer">
+  Market Reaction Monitor | reaction-monitor | 2026-03-26<br>
+  이 보고서는 시장 반응 수집 결과이며, 투자 판단을 제공하지 않습니다.
+</div>
+
+</body>
+</html>

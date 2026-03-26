@@ -1,0 +1,35 @@
+{
+  "id": "SA-20260326-004",
+  "date": "2026-03-26",
+  "title": "만능통장 ISA에서도 대세는 ETF — 807만 명의 구조 전환",
+  "source": "매일경제 단독 (2026-03-25)",
+  "pre_read": {"type": "STRUCT", "scp": 3, "urgency": "SLOW"},
+  "one_line": "807만 명의 장기 투자자가 예금에서 ETF로 갈아탔다. 한국 자본시장 구조 전환 신호.",
+  "key_facts": {
+    "isa_total": "64.2조 (1년 전 36.3조, +77%)",
+    "etf_share": "35.1% (1년 전 23.2%)",
+    "deposit_share": "29.9% (1년 전 44.5%)",
+    "crossover": "2026.01 — ETF > 예금 사상 최초",
+    "subscribers": "807만 (1년 전 597만, +35.1%)",
+    "domestic_equity": "41.6조 (전체의 64.8%)"
+  },
+  "structural_causes": ["금리 하락→예금 매력 감소", "2026 세제 혜택 강화", "ETF 상품 다양화", "KOSPI +37% 성공 체험", "3년 의무 보유=장기 자금"],
+  "second_order": {
+    "positive": ["증시 구조적 수급 기반", "ETF 산업 자기강화 루프"],
+    "negative": ["807만 고점 물림 리스크 (401k 패턴)", "해외 ETF→KRW 약세 추가 요인?", "RIA와 정책 모순"]
+  },
+  "emergent_questions": [
+    "ISA 64조 중 해외 ETF 비중?",
+    "2~3월 전쟁 중 유입 지속?",
+    "ISA 쏠림 = 역사적 고점 시그널?"
+  ],
+  "scenarios": {
+    "A": {"label": "증시 버팀목", "prob": "60%", "trigger": "80조+/1000만 가입", "kc": "KOSPI -20%×5d"},
+    "B": {"label": "마지막 매수자", "prob": "25%", "trigger": "월간 유입 마이너스 2개월", "kc": "KOSPI 신고가"},
+    "C": {"label": "KRW 약세 추가 요인", "prob": "15%", "trigger": "해외ETF 40%+", "kc": "RIA 전환 가속"}
+  },
+  "feedback": {
+    "FB4": "처음: ISA에서 ETF 인기 → 지금: 구조 전환이나 401k 고점 패턴. 해외 ETF가 KRW 약세 요인. ✅",
+    "FB5": "10년 추이 기반. ✅ 스냅샷 아님."
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "projection_date": "2026-03-23",
+  "projection_horizon": "2026-Q2 ~ 2027-Q1 (12개월)",
+  "next_full_review": "2026-Q2 (2026-07)",
+  "next_probability_adjust": "2026-04 (월간)",
+
+  "current_position": {
+    "macro": "🟡 Transition (2.5/5). 교란1(엔캐리)+교란2(유가)+스태그 3중 압력.",
+    "psf": "🟡 경계. P→S1 전파 도달. S2 부동. RRP 고갈.",
+    "axis": "4축 건재. ⑨가속. ④비가역. 사우디-이란 재편.",
+    "alignment": "macro 🟡 + PSF 🟡 = 이행. 축+PSF = 감시."
+  },
+
+  "scenarios": {
+    "base": {
+      "name": "교착→점진 이완",
+      "probability": 0.40,
+      "probability_basis": "전쟁 장기화 교착이 가장 높은 확률. 양측 모두 완전 승리 불가. 외교 채널은 파괴됐으나 경제적 피로가 협상을 강제.",
+      "trigger": "호르무즈 부분 개방 유지 + 전쟁 3~6개월 내 휴전 협상 시작",
+      "path": {
+        "Q2_2026": {
+          "regime": "🟡 유지",
+          "conditions": "Brent $90~110. 전쟁 교착. Fed 동결 지속. Core PCE 2.8~3.2%.",
+          "psf": "🟡 경계 유지. S2 소폭 확대(350~380bp). L7 만성 간헐 활성.",
+          "axis": "4축 건재. ⑨가속 지속. ④Clarity Act 통과 여부가 분기점."
+        },
+        "Q3_2026": {
+          "regime": "🟡→🟢 전환 시작",
+          "conditions": "휴전 협상 시작. Brent $80~95. BEI 하락 시작. Fed 인하 1회(9월).",
+          "psf": "🟡→🟢. S2 안정. L3 비활성화.",
+          "axis": "①AI ROI 판정(Q3). ②에너지 전환 가속(위기 후 반등 패턴)."
+        },
+        "Q4_2026": {
+          "regime": "🟢 팽창 복귀",
+          "conditions": "Brent $75~85. Fed 인하 2회 누적. 실업률 4.5% 안정.",
+          "psf": "🟢 정상. 유동성 회복.",
+          "axis": "④블록체인 S커브 3→4 진입(if Clarity Act). ⑨감속."
+        },
+        "Q1_2027": {
+          "regime": "🟢 팽창",
+          "conditions": "GDP 2%+. Core PCE 2.5% 접근. 정상 경로 복원.",
+          "psf": "🟢 정상.",
+          "axis": "①AI S커브 4 안착. 전체 축 가속 구간."
+        }
+      },
+      "asset_implications": {
+        "equities": "+10~15% (12개월). 하반기 가속.",
+        "gold": "+0~5%. 전쟁 프리미엄 해소로 횡보.",
+        "btc": "+25~40%. SEC 제도화 + Fed 인하 + ⑨달러 약세 수혜.",
+        "bonds": "10Y 금리 3.8~4.0%. 커브 정상화.",
+        "cash": "기회비용 증가. 하반기 위험자산 전환."
+      }
+    },
+
+    "bull": {
+      "name": "조기 종결 + 정책 피벗",
+      "probability": 0.15,
+      "probability_basis": "트럼프 최후통첩이 실제 외교 돌파구로 이어질 낮은 확률. 이란 정권 내부 균열 또는 중국 중재 재시도.",
+      "trigger": "전쟁 2개월 내 휴전 + 호르무즈 완전 개방 + Fed 인하 신호",
+      "path": {
+        "Q2_2026": {
+          "regime": "🟡→🟢 급전환",
+          "conditions": "Brent $70~80 급락. VIX 15. Fed 6월 인하 시작.",
+          "psf": "🟢 정상. 전 Link 비활성.",
+          "axis": "전 축 가속. 에너지 전환 폭발(위기 후 가속 패턴)."
+        },
+        "Q3_2026": { "regime": "🟢 팽창" },
+        "Q4_2026": { "regime": "🟢 강세" },
+        "Q1_2027": { "regime": "🟢 강세. 과열 감시 시작." }
+      },
+      "asset_implications": {
+        "equities": "+20~30%.",
+        "gold": "-5~10%. 안전자산 수요 급감.",
+        "btc": "+50~80%. 유동성+제도화+레짐 3중 수혜.",
+        "bonds": "10Y 3.5%. 금리 급락.",
+        "cash": "최악의 자산. 즉시 위험자산 전환."
+      }
+    },
+
+    "bear": {
+      "name": "스태그플레이션 확정",
+      "probability": 0.35,
+      "probability_basis": "GDP 0.7% + Core PCE 3.1% 조합이 이미 출현. 전쟁 6개월+ 장기화 시 에너지 비용이 실물에 본격 전이. Allianz 'stagflation light' 전망과 일치. 71% 펀드매니저가 스태그 예상(BofA 서베이).",
+      "trigger": "전쟁 6개월+ 지속 + Core PCE 3.5%+ + 실업률 5%+",
+      "path": {
+        "Q2_2026": {
+          "regime": "🟡 악화",
+          "conditions": "Brent $100~130 지속. Core PCE 3.0~3.5%. GDP 0~1%. HY 확대 시작(400bp+).",
+          "psf": "🟡→🔴 접근. S2 반응 시작. L7 만성 활성.",
+          "axis": "②에너지 판 역풍 심화. ⑨레짐 가속. ①AI capex 감속 우려."
+        },
+        "Q3_2026": {
+          "regime": "🔴 수축",
+          "conditions": "실업률 5%+. PMI 45 이하. HY 500bp+. Fed 딜레마(인플레+경기침체).",
+          "psf": "🔴 위기. L7 활성. L8 접근.",
+          "axis": "①AI KC-01 판정(ROI 실패 시 capex 감속). ③고령화 재정 루프 가속."
+        },
+        "Q4_2026": {
+          "regime": "🔴→🟡",
+          "conditions": "Fed 긴급 인하(인플레 무시). 수요 파괴로 유가 하락 시작.",
+          "psf": "🔴→🟡 회복 시작.",
+          "axis": "②에너지 전환 가속(위기 후 반등). ④블록체인 저점 축적."
+        },
+        "Q1_2027": {
+          "regime": "🟡 회복",
+          "conditions": "유가 $80. Core PCE 하락 시작. 경기 바닥 확인.",
+          "axis": "전 축 회복. 위기 동안 비가역성은 유지됨."
+        }
+      },
+      "asset_implications": {
+        "equities": "-15~25% (H1). 연말 회복 시작.",
+        "gold": "+15~25%. 스태그 최대 수혜.",
+        "btc": "-30~40% (H1) → 연말 회복. MVRV 1.0 접근 시 역사적 매수 구간.",
+        "bonds": "단기 안전자산. 장기채는 인플레로 약세.",
+        "cash": "H1 최선. H2 위험자산 전환 시작."
+      }
+    },
+
+    "crisis": {
+      "name": "호르무즈 완전 폐쇄 + 엔캐리 청산 동시",
+      "probability": 0.10,
+      "probability_basis": "48시간 최후통첩이 실제 공격으로 → 이란 완전 폐쇄 → Brent $150+ → 엔캐리 청산 → 글로벌 유동성 위기. 2022+2024 동시 발생 시나리오.",
+      "trigger": "미국 이란 발전소 공격 + 호르무즈 완전 폐쇄 + USD/JPY 급반전(엔 강세) + VIX 45+",
+      "path": {
+        "Q2_2026": {
+          "regime": "🔴 위기",
+          "conditions": "Brent $130~180. VIX 40+. HY 700bp+. 글로벌 동반 매도.",
+          "psf": "🔴 위기. L8 활성. 전층 전파.",
+          "axis": "전 축 판 역풍 극대화. 그러나 축 자체는 훼손 아님(3대 조건 유지)."
+        },
+        "Q3_2026": {
+          "regime": "🔴 위기 지속 → 정책 개입",
+          "conditions": "Fed 긴급 QE. G7 공조. IEA 비축유 전량 방출."
+        },
+        "Q4_2026": {
+          "regime": "🔴→🟡",
+          "conditions": "정책 개입 효과. 유가 하락 시작. 시장 바닥 형성."
+        },
+        "Q1_2027": {
+          "regime": "🟡 회복",
+          "conditions": "V자 반등. 위기 중 축적한 포지션이 수익화."
+        }
+      },
+      "asset_implications": {
+        "equities": "-30~50% (Q2). 연말 V자 +20%.",
+        "gold": "+30~50%. 유일한 안전자산.",
+        "btc": "-50~60% → V자. MVRV <1.0 = 역사적 바닥. 12개월 후 +100% 가능.",
+        "bonds": "단기 국채만 안전. 장기채 불확실(인플레 vs 안전자산).",
+        "cash": "Q2 최선. Q3 이후 위험자산 전환이 12개월 수익의 핵심."
+      }
+    }
+  },
+
+  "cycle_position": {
+    "business": {
+      "current": "후기 확장 → 둔화 진입",
+      "basis": "GDP Q4 0.7%(급감속). PMI 52.4(확장이나 하락). 실업률 4.4%(상승 추세).",
+      "12m_projection": "Base: 둔화→회복. Bear: 둔화→수축→회복 초기. Crisis: 수축→바닥→반등.",
+      "historical_analog": "2022 H2 (에너지 충격 + 긴축 동시). 12개월 후 회복 시작."
+    },
+    "credit": {
+      "current": "중립 (HY 327bp 안정, 그러나 긴축 지연)",
+      "basis": "HY 350bp 미만. SLOOS 보통. 지급준비금 $3.02T(임계 접근).",
+      "12m_projection": "Base: 중립 유지. Bear: 긴축(HY 500bp+). Crisis: 경색(HY 700bp+)→완화.",
+      "warning": "지급준비금 $3.0T 하회 시 신용 경색 선행 신호."
+    },
+    "liquidity": {
+      "current": "전환점 (RRP 고갈, TGA 주도)",
+      "basis": "Net Liq $5.80T. RRP $0.8B(바닥). TGA $853B(높음). WALCL $6.66T(QT 지속).",
+      "12m_projection": "QT 종료 시점이 핵심. Base: Q3 QT 종료→유동성 반등. Bear: QT 지속→유동성 수축.",
+      "key_variable": "Fed QT 종료 시점. 지급준비금 $3.0T 하회 시 강제 종료 가능."
+    }
+  },
+
+  "axis_velocity": {
+    "①AI": {
+      "current_scurve": "3~4 (급성장→주류 진입)",
+      "12m_projection": "4 안착 (if ROI 실증, Q3) / 3 정체 (if ROI 실패)",
+      "catalysts": [
+        {"event": "엔터프라이즈 AI ROI 실증 (MSFT/GOOGL 실적)", "timing": "Q2~Q3", "probability": 0.65},
+        {"event": "Sovereign AI $50B+ 도달", "timing": "Q3~Q4", "probability": 0.70},
+        {"event": "에너지 병목 심화로 capex 감속", "timing": "Q2", "probability": 0.25}
+      ]
+    },
+    "②에너지": {
+      "current_scurve": "3~4 (기술별 상이)",
+      "12m_projection": "4 가속 (위기 후 반등 역사 패턴) / 3 정체 (전쟁 2년+ 장기화 시)",
+      "catalysts": [
+        {"event": "호르무즈 위기 종결 → 전환 투자 폭증", "timing": "Q3~Q4", "probability": 0.45},
+        {"event": "IMEC(인도-중동-유럽 회랑) 구체화", "timing": "Q4~Q1 2027", "probability": 0.35},
+        {"event": "전쟁 장기화로 전환 투자 위축", "timing": "Q2~Q3", "probability": 0.30}
+      ]
+    },
+    "④블록체인": {
+      "current_scurve": "3 (초기 주류 진입)",
+      "12m_projection": "3→4 (if Clarity Act + ETF 확대) / 3 유지 (if 입법 실패)",
+      "catalysts": [
+        {"event": "Clarity Act 상원 통과", "timing": "Q2 (4월 데드라인)", "probability": 0.55},
+        {"event": "RWA 토큰화 $100B 돌파", "timing": "Q3~Q4", "probability": 0.50},
+        {"event": "AI × 크립토 수렴 (에이전틱 온체인 결제 실증)", "timing": "Q4", "probability": 0.30}
+      ]
+    },
+    "⑨재정지배": {
+      "current": "가속 중",
+      "12m_projection": "가속 지속 (구조적). 전쟁이 끝나도 부채 경로는 되돌아가지 않음.",
+      "key_variable": "Fed 의장 교체 (Kevin Warsh 인준 시). 금융 억압 강도 결정."
+    }
+  },
+
+  "feedback_loops": {
+    "disruption2_oil": {
+      "current": "활성. Brent $107 → BEI +29bp → PCE 3.1% → Fed 동결.",
+      "if_3months": "Brent $100 유지 → Core PCE 3.5% → Fed 인상 논의 시작.",
+      "if_6months": "Brent $100 유지 → GDP -0.5% → 실업률 5%+ → 키스톤 전환(고용 바인딩).",
+      "self_reinforcing_or_exhausting": "자기소멸적. 유가 지속 → 수요 파괴 → 유가 하락. 시차 6~9개월."
+    },
+    "disruption1_yen": {
+      "current": "경계. USD/JPY 159 (+6.9%).",
+      "if_160_break": "BOJ 개입 또는 캐리 청산 트리거. 2024.08 재현 가능.",
+      "if_reversal": "글로벌 동반 매도 2~4주. 그 후 V자 반등 (2024 패턴).",
+      "self_reinforcing_or_exhausting": "자기소멸적. 엔약세→캐리 축적→청산→엔 급강세→리셋. 시차 1~3개월."
+    },
+    "stagflation_loop": {
+      "current": "입구. GDP 0.7% + PCE 3.1%.",
+      "if_confirmed": "Fed 양쪽 못 움직임. 6~12개월 교착 후 성장 우선(인하) 선택 가능.",
+      "historical": "1970s 스태그: 2~3년 지속. 현재는 'stagflation light' (Allianz) — 6~12개월 예상.",
+      "exit": "수요 파괴로 인플레 자연 하락 → Fed 인하 가능 → 회복 시작."
+    }
+  },
+
+  "historical_analogs": [
+    {
+      "period": "2022 H1~H2 (러시아-우크라이나 에너지 충격)",
+      "similarity": "유가 급등 + 인플레 + Fed 긴축 + 지정학",
+      "12m_outcome": "S&P -19%(H1) → +16%(H2). 유가 $120→$75. Fed 피벗 기대로 반등.",
+      "difference": "2022는 Fed가 적극 인상. 현재는 Fed가 동결(움직일 수 없음). 더 복잡.",
+      "lesson": "에너지 충격 후 12개월: 위험자산 V자 패턴. 그러나 타이밍이 핵심."
+    },
+    {
+      "period": "2024.08 (엔캐리 청산)",
+      "similarity": "USD/JPY 급변 + 글로벌 동반 매도 + VIX 급등",
+      "12m_outcome": "Nikkei -12%(3일) → 3개월 내 완전 회복. S&P 2주 내 회복. BTC -20% → 3개월 +50%.",
+      "difference": "2024는 단독 이벤트. 현재는 전쟁+유가+스태그와 겹침. 회복 더 느릴 수 있음.",
+      "lesson": "캐리 청산은 강렬하지만 짧다(2~4주). 패닉 매도 시 매수 기회."
+    },
+    {
+      "period": "2025 Q1 (GDP 수축 + 관세 충격)",
+      "similarity": "GDP -0.2%(Q1 2025) + 관세 + 스태그 우려",
+      "12m_outcome": "Q2 2025 반등(+3.9%). 관세 흡수. 시장 12개월 후 사상 최고치.",
+      "difference": "2025는 관세만. 현재는 전쟁+유가+엔캐리 복합. 복합 충격은 회복 더 느림.",
+      "lesson": "스태그 우려 후 12개월: 시장은 보통 회복. 그러나 실제 스태그 확정 시 경로 다름."
+    }
+  ],
+
+  "asset_implications_weighted": {
+    "method": "시나리오 확률 × 자산 수익률 기대값",
+    "equities": {
+      "base_40": "+10~15%",
+      "bull_15": "+20~30%",
+      "bear_35": "-15~25%",
+      "crisis_10": "-30~50% → V자",
+      "weighted_12m": "-2% ~ +5% (불확실성 높음. 하반기 방향 결정)",
+      "note": "Bear+Crisis 확률 합 45%가 핵심 리스크. H1 방어적, H2 공격적이 확률 가중 최적."
+    },
+    "gold": {
+      "weighted_12m": "+8~15%",
+      "note": "전 시나리오에서 양수 또는 횡보. 스태그+지정학 헤지. 가장 안정적 기대값."
+    },
+    "btc": {
+      "weighted_12m": "+5~25%",
+      "note": "분산 극대. Bull에서 +80%, Crisis에서 -60%. 중앙값보다 분포가 중요. MVRV 1.0 접근 시 구조적 매수 구간.",
+      "structural": "④블록체인 S커브 3→4 전환 + ⑨달러 대안 수요 = 12개월 구조적 순풍."
+    },
+    "bonds": {
+      "weighted_12m": "단기채 +2~4%. 장기채 불확실.",
+      "note": "스태그 시 장기채는 인플레 위험. 단기채/TIPS가 안전."
+    },
+    "cash": {
+      "weighted_12m": "FFR 3.5~3.75% 수익. 그러나 H2 기회비용 증가.",
+      "note": "H1 방어 수단. H2 위험자산 전환 준비."
+    }
+  },
+
+  "structural_opportunities": {
+    "note": "시나리오와 무관하게 축이 밀어주는 구조적 기회. 타이밍만 시나리오에 의존.",
+    "opportunities": [
+      {
+        "theme": "④블록체인 제도화",
+        "basis": "SEC 가이던스 비가역 + Clarity Act + 스테이블 $315B + 기관 발행(BUIDL, USD1)",
+        "timing": "Bear/Crisis 시 12개월 내 저점 매수 기회. Base/Bull 시 즉시."
+      },
+      {
+        "theme": "⑨재정 지배 → 실물자산 + 대안 통화",
+        "basis": "부채 자기증식 구조적. 금융 억압 불가피. 실질금리 음수 전환 가능.",
+        "assets": "금, BTC, 인프라, 가격 결정력 기업"
+      },
+      {
+        "theme": "②에너지 전환 위기 후 가속",
+        "basis": "2022 유럽 가스위기 → 재생에너지 폭증 선례. 호르무즈 위기가 전환 동기 강화.",
+        "timing": "전쟁 종결 후 6~12개월 가속 구간."
+      },
+      {
+        "theme": "①AI 인프라 확장",
+        "basis": "NVIDIA $1T 인프라 전망. Sovereign AI $30B. 에너지 병목만 해소되면 가속.",
+        "risk": "에너지 병목 + capex 과열 = 단기 조정 가능. 구조적 방향은 유지."
+      }
+    ]
+  },
+
+  "pm_predictions_12m": [
+    {"prediction": "2026-09까지 macro 레짐 🟢 복귀 (Base 시나리오)", "verify_date": "2026-09-30", "current_probability": 0.40},
+    {"prediction": "2026-12까지 Core PCE 2.5% 이하 도달", "verify_date": "2026-12-31", "current_probability": 0.35},
+    {"prediction": "2026-12까지 ④블록체인 S커브 4단계 진입", "verify_date": "2026-12-31", "current_probability": 0.50},
+    {"prediction": "2027-03까지 BTC ATH($126K) 재돌파", "verify_date": "2027-03-23", "current_probability": 0.30},
+    {"prediction": "2026-12까지 미국 실업률 5% 미돌파", "verify_date": "2026-12-31", "current_probability": 0.55}
+  ]
+}

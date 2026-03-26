@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>psf-monitor 아키텍처 계층 구조 및 연결 지도</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #c9d1d9; font-family: 'Pretendard', -apple-system, 'Segoe UI', sans-serif; line-height: 1.6; padding: 20px; }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  h1 { color: #f0f6fc; font-size: 1.4em; margin-bottom: 4px; }
+  .subtitle { color: #8b949e; font-size: 0.85em; margin-bottom: 24px; }
+  h2 { color: #58a6ff; font-size: 1.1em; margin: 32px 0 12px 0; padding-bottom: 6px; border-bottom: 1px solid #21262d; }
+  h3 { color: #d2a8ff; font-size: 0.95em; margin: 20px 0 8px 0; }
+
+  .layer-stack { display: flex; flex-direction: column; gap: 2px; margin: 16px 0; }
+  .layer {
+    border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px;
+    position: relative; transition: all 0.2s;
+  }
+  .layer:hover { border-color: #58a6ff; }
+  .layer-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .layer-num { background: #21262d; color: #8b949e; font-size: 0.75em; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .layer-name { color: #f0f6fc; font-weight: 600; font-size: 0.95em; }
+  .layer-desc { color: #8b949e; font-size: 0.82em; }
+  .layer-files { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .file-tag { font-size: 0.72em; padding: 3px 8px; border-radius: 4px; font-family: 'Consolas', monospace; }
+
+  .l5 { border-color: #f85149; background: rgba(248,81,73,0.05); }
+  .l5 .layer-num { background: #3d0000; color: #ff5252; }
+  .l4 { border-color: #d29922; background: rgba(210,153,34,0.05); }
+  .l4 .layer-num { background: #4a3800; color: #ffd600; }
+  .l3 { border-color: #58a6ff; background: rgba(88,166,255,0.05); }
+  .l3 .layer-num { background: #0d2137; color: #58a6ff; }
+  .l2 { border-color: #3fb950; background: rgba(63,185,80,0.05); }
+  .l2 .layer-num { background: #003d00; color: #4caf50; }
+  .l1 { border-color: #8b949e; background: rgba(139,148,158,0.05); }
+  .l1 .layer-num { background: #161b22; color: #8b949e; }
+
+  .ft-md { background: #1a1a2e; color: #bb86fc; border: 1px solid #333; }
+  .ft-json { background: #1a2e1a; color: #4caf50; border: 1px solid #333; }
+  .ft-py { background: #2e2a1a; color: #ffd600; border: 1px solid #333; }
+  .ft-html { background: #2e1a1a; color: #ff8a80; border: 1px solid #333; }
+  .ft-ext { background: #1a2e2e; color: #80deea; border: 1px solid #333; }
+
+  .arrow-block { text-align: center; padding: 4px 0; color: #484f58; font-size: 0.8em; }
+  .arrow-block .arrow { color: #58a6ff; }
+
+  .connection-map { margin: 16px 0; }
+  .conn-row { display: flex; align-items: stretch; gap: 8px; margin-bottom: 8px; }
+  .conn-box {
+    flex: 1; border: 1px solid #30363d; border-radius: 8px; padding: 12px;
+    font-size: 0.82em; min-width: 0;
+  }
+  .conn-box-title { color: #f0f6fc; font-weight: 600; font-size: 0.9em; margin-bottom: 6px; }
+  .conn-arrow { display: flex; align-items: center; justify-content: center; color: #58a6ff; font-size: 1.2em; min-width: 30px; }
+
+  .five-elem { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  .elem-card { border: 1px solid #30363d; border-radius: 8px; padding: 12px; }
+  .elem-card.brain { grid-column: 1 / -1; border-color: #d2a8ff; background: rgba(210,168,255,0.05); }
+  .elem-icon { font-size: 1.2em; margin-right: 6px; }
+  .elem-name { color: #f0f6fc; font-weight: 600; }
+  .elem-role { color: #8b949e; font-size: 0.8em; margin-top: 4px; }
+  .elem-files { color: #58a6ff; font-size: 0.78em; margin-top: 6px; font-family: monospace; }
+
+  .loading-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.82em; }
+  .loading-table th { background: #161b22; color: #8b949e; padding: 8px; text-align: left; border-bottom: 1px solid #30363d; }
+  .loading-table td { padding: 8px; border-bottom: 1px solid #21262d; }
+  .loading-table .size { color: #ffd600; font-family: monospace; }
+
+  .zone { display: flex; gap: 8px; margin: 12px 0; }
+  .zone-card { flex: 1; border-radius: 8px; padding: 12px; font-size: 0.78em; }
+  .zone-green { background: #003d00; border: 1px solid #4caf50; }
+  .zone-green .zone-title { color: #4caf50; }
+  .zone-yellow { background: #4a3800; border: 1px solid #ffd600; }
+  .zone-yellow .zone-title { color: #ffd600; }
+  .zone-red { background: #3d0000; border: 1px solid #ff5252; }
+  .zone-red .zone-title { color: #ff5252; }
+  .zone-title { font-weight: 600; margin-bottom: 6px; }
+
+  .ext-map { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+  .ext-card { border: 1px solid #30363d; border-radius: 8px; padding: 10px; font-size: 0.8em; }
+  .ext-required { border-color: #f85149; }
+  .ext-optional { border-color: #484f58; }
+  .ext-label { font-size: 0.7em; padding: 2px 6px; border-radius: 3px; margin-left: 6px; }
+  .ext-req-label { background: #3d0000; color: #ff5252; }
+  .ext-opt-label { background: #21262d; color: #8b949e; }
+
+  .footer { margin-top: 32px; padding-top: 12px; border-top: 1px solid #21262d; color: #484f58; font-size: 0.75em; text-align: center; }
+
+  .formula-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin: 16px 0; font-family: monospace; font-size: 0.85em; color: #f0f6fc; }
+  .formula-box .highlight { color: #ffd600; }
+  .formula-box .dim { color: #484f58; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>psf-monitor 아키텍처 계층 구조 및 연결 지도</h1>
+<div class="subtitle">2026-03-25 | LLM 기반 시스템 표준 아키텍처 적용</div>
+
+<!-- ===== 핵심 공식 ===== -->
+<div class="formula-box">
+  <span class="highlight">LLM 역량</span> = 기본 지능 × <span class="highlight">맥락 품질</span> × <span class="highlight">지침 정밀도</span> × <span class="highlight">도구 접근성</span> × <span class="highlight">컨텍스트 관리</span> × <span class="highlight">피드백 루프</span><br>
+  <span class="dim">── 곱셈 구조. 하나가 0이면 전체가 0. ──</span>
+</div>
+
+<!-- ===== 5요소 ===== -->
+<h2>시스템 5요소 (Five Elements)</h2>
+
+<div class="five-elem">
+  <div class="elem-card brain">
+    <span class="elem-icon">🧠</span><span class="elem-name">두뇌 (LLM) — Claude</span>
+    <div class="elem-role">지침을 읽고, 관측하고, 판단하고, 기록한다. 매 세션 백지. 기억(JSON)으로 연속성 보완. 코드 부재로 뼈대 역할까지 겸함.</div>
+  </div>
+  <div class="elem-card" style="border-color: #bb86fc;">
+    <span class="elem-icon">📋</span><span class="elem-name">지침 (MD)</span>
+    <div class="elem-role">규칙, 판단 기준, 출력 형식. 진화의 100%가 여기서 발생.</div>
+    <div class="elem-files">SKILL-core 9KB · SKILL-autonomy 3KB · SKILL-fail-evolve 13KB · ontology 10KB · axis 27KB · axis-summary 2KB · axis-map 12KB · monitoring 8KB · collection 12KB · errors 11KB · GUARDRAILS 8KB · SCHEMAS 11KB · 원본 23KB = <b>149KB</b></div>
+  </div>
+  <div class="elem-card" style="border-color: #4caf50;">
+    <span class="elem-icon">💾</span><span class="elem-name">기억 (JSON)</span>
+    <div class="elem-role">세션 간 브릿지. 어제의 관측을 기억.</div>
+    <div class="elem-files">state.json 11KB · projection.json 16KB · history/*.json · reports/*.html</div>
+  </div>
+  <div class="elem-card" style="border-color: #80deea;">
+    <span class="elem-icon">🔧</span><span class="elem-name">손발 (MCP)</span>
+    <div class="elem-role">외부 데이터 수집. macro 경유 + 직접 MCP.</div>
+    <div class="elem-files">FRED · Yahoo · CoinGecko · DeFiLlama · CoinMetrics · Tavily · Dune · Etherscan</div>
+  </div>
+  <div class="elem-card" style="border-color: #ffd600;">
+    <span class="elem-icon">🦴</span><span class="elem-name">뼈대 (Code)</span>
+    <div class="elem-role">검증 + 스냅샷 + 이상 감지. 코드 최소.</div>
+    <div class="elem-files">validate.py 8KB · snapshot.py 9KB · autonomy.py 10KB = <b>27KB</b></div>
+  </div>
+</div>
+
+<!-- ===== 5계층 스택 ===== -->
+<h2>계층 구조 (5-Layer Stack)</h2>
+
+<div class="layer-stack">
+  <div class="layer l5">
+    <div class="layer-header">
+      <span class="layer-num">L5</span>
+      <span class="layer-name">자율 계층 (Autonomy)</span>
+    </div>
+    <div class="layer-desc">감지 → 판단 → 실행 → 검증 → 기억갱신 루프. 울타리 내 무승인 실행. Level 3.</div>
+    <div class="layer-files">
+      <span class="file-tag ft-md">SKILL-autonomy.md</span>
+      <span class="file-tag ft-md">GUARDRAILS.md</span>
+      <span class="file-tag ft-md">monitoring.md</span>
+      <span class="file-tag ft-py">autonomy.py</span>
+    </div>
+  </div>
+
+  <div class="arrow-block"><span class="arrow">↕</span> 자율 루프가 진화를 트리거</div>
+
+  <div class="layer l4">
+    <div class="layer-header">
+      <span class="layer-num">L4</span>
+      <span class="layer-name">진화 계층 (Evolution)</span>
+    </div>
+    <div class="layer-desc">Self-Audit Q1~Q5 → 오류 적재 → F-테이블 누적 → W/Q Loop 리뷰 → 지침 수정. 시간이 지날수록 개선.</div>
+    <div class="layer-files">
+      <span class="file-tag ft-md">SKILL-fail-evolve.md</span>
+      <span class="file-tag ft-md">errors.md</span>
+      <span class="file-tag ft-html">audits/*.md</span>
+    </div>
+  </div>
+
+  <div class="arrow-block"><span class="arrow">↕</span> 진화가 실행 품질을 높임</div>
+
+  <div class="layer l3">
+    <div class="layer-header">
+      <span class="layer-num">L3</span>
+      <span class="layer-name">실행 계층 (Execution)</span>
+    </div>
+    <div class="layer-desc">Phase 0 → 데이터 수집 → axis-map 6단계 → PSF 판정 → 출력. D/W/M/Q 4중 루프.</div>
+    <div class="layer-files">
+      <span class="file-tag ft-md">SKILL-core.md</span>
+      <span class="file-tag ft-md">CLAUDE.md</span>
+      <span class="file-tag ft-md">ontology.md</span>
+      <span class="file-tag ft-md">axis-summary.md</span>
+      <span class="file-tag ft-md">axis-map.md</span>
+      <span class="file-tag ft-md">collection.md</span>
+      <span class="file-tag ft-md">projection-engine.md</span>
+      <span class="file-tag ft-md">SCHEMAS.md</span>
+      <span class="file-tag ft-py">validate.py</span>
+      <span class="file-tag ft-py">snapshot.py</span>
+    </div>
+  </div>
+
+  <div class="arrow-block"><span class="arrow">↕</span> 실행이 기억을 갱신</div>
+
+  <div class="layer l2">
+    <div class="layer-header">
+      <span class="layer-num">L2</span>
+      <span class="layer-name">기억 계층 (Memory)</span>
+    </div>
+    <div class="layer-desc">단기(state/projection) + 중기(history/reports) + 장기(미구현). 세션 간 브릿지.</div>
+    <div class="layer-files">
+      <span class="file-tag ft-json">state.json</span>
+      <span class="file-tag ft-json">projection.json</span>
+      <span class="file-tag ft-json">history/*.json</span>
+      <span class="file-tag ft-html">reports/*.html</span>
+    </div>
+  </div>
+
+  <div class="arrow-block"><span class="arrow">↕</span> 기억이 인프라 위에 존재</div>
+
+  <div class="layer l1">
+    <div class="layer-header">
+      <span class="layer-num">L1</span>
+      <span class="layer-name">인프라 계층 (Infrastructure)</span>
+    </div>
+    <div class="layer-desc">Python 3개 + MCP 연결 + 파일시스템. 코드 최소. 스케줄러 없음.</div>
+    <div class="layer-files">
+      <span class="file-tag ft-py">core/validate.py</span>
+      <span class="file-tag ft-py">core/snapshot.py</span>
+      <span class="file-tag ft-py">core/autonomy.py</span>
+      <span class="file-tag ft-ext">MCP 8개+ 서버</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 컨텍스트 로딩 전략 ===== -->
+<h2>컨텍스트 로딩 전략</h2>
+
+<table class="loading-table">
+  <thead>
+    <tr><th>루프</th><th>로딩 파일</th><th>합계</th><th>용도</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>D Loop</b> (일일)</td>
+      <td>CLAUDE.md + SKILL-core.md + axis-summary.md + state.json</td>
+      <td class="size">29KB</td>
+      <td>일일 관측 + 브리핑</td>
+    </tr>
+    <tr>
+      <td><b>W Loop</b> (주간)</td>
+      <td>+ SKILL-autonomy.md + monitoring.md + axis-map.md</td>
+      <td class="size">52KB</td>
+      <td>+ 정합 매트릭스 + 오류 리뷰</td>
+    </tr>
+    <tr>
+      <td><b>M Loop</b> (월간)</td>
+      <td>+ projection-engine.md + projection.json</td>
+      <td class="size">74KB</td>
+      <td>+ 투영 확률 재조정</td>
+    </tr>
+    <tr>
+      <td><b>Q Loop</b> (분기)</td>
+      <td>+ axis.md + ontology.md + 원본 + SKILL-fail-evolve.md</td>
+      <td class="size">147KB</td>
+      <td>+ 축 진단 + 구조 개정</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== 울타리 ===== -->
+<h2>안전 울타리 (Guardrail Zones)</h2>
+
+<div class="zone">
+  <div class="zone-card zone-green">
+    <div class="zone-title">🟢 Green (무승인)</div>
+    state.json 갱신<br>
+    MCP 데이터 수집<br>
+    PSF 국면 판정<br>
+    스냅샷/보고서 저장<br>
+    macro 자동 대행<br>
+    errors.md 기록
+  </div>
+  <div class="zone-card zone-yellow">
+    <div class="zone-title">🟡 Yellow (승인 필요)</div>
+    ontology/axis 개정<br>
+    투영 전면 재구성<br>
+    축 승격/강등<br>
+    새 Link 추가<br>
+    인터페이스 변경<br>
+    GUARDRAILS 수정
+  </div>
+  <div class="zone-card zone-red">
+    <div class="zone-title">🔴 Red (절대 금지)</div>
+    인과 해석 (CE/TE 일)<br>
+    예측 (CE/TE 일)<br>
+    투자 판단/추천<br>
+    파일 영구 삭제<br>
+    울타리 자체 수정
+  </div>
+</div>
+
+<!-- ===== 데이터 흐름 ===== -->
+<h2>데이터 흐름 (세션 생명주기)</h2>
+
+<div class="connection-map">
+  <div class="conn-row">
+    <div class="conn-box" style="border-color: #8b949e;">
+      <div class="conn-box-title">Phase A: 맥락 복원</div>
+      state.json → LLM 로딩<br>
+      CLAUDE.md → LLM 로딩<br>
+      errors.md → 체크리스트 확인<br>
+      <span style="color:#8b949e">"어제의 나를 복원"</span>
+    </div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-box" style="border-color: #58a6ff;">
+      <div class="conn-box-title">Phase B: 상황 스캔</div>
+      macro 신선도 확인<br>
+      stale → 자동 대행<br>
+      next_questions 기한 확인<br>
+      <span style="color:#8b949e">"오늘 할 일 결정"</span>
+    </div>
+  </div>
+  <div class="conn-row">
+    <div class="conn-box" style="border-color: #3fb950;">
+      <div class="conn-box-title">Phase C: 실행</div>
+      데이터 수집 (macro + MCP)<br>
+      axis-map 6단계<br>
+      PSF 국면 판정<br>
+      <span style="color:#8b949e">"관측하고 판정"</span>
+    </div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-box" style="border-color: #d29922;">
+      <div class="conn-box-title">Phase D: 후처리</div>
+      validate.py → 스키마 검증<br>
+      snapshot.py → 스냅샷 저장<br>
+      autonomy.py → 이상 감지<br>
+      <span style="color:#8b949e">"기록하고 검증"</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 외부 연결 ===== -->
+<h2>외부 연결 지도</h2>
+
+<div class="ext-map">
+  <div class="ext-card ext-required">
+    <div class="conn-box-title">macro <span class="ext-label ext-req-label">필수</span></div>
+    indicators/latest.json → 46개 정량 지표<br>
+    <span style="color:#8b949e">stale 시 PSF가 수집 대행</span>
+  </div>
+  <div class="ext-card ext-optional">
+    <div class="conn-box-title">CE (귀) <span class="ext-label ext-opt-label">선택</span></div>
+    state.json 읽기<br>
+    <span style="color:#8b949e">인과 분석. 없어도 작동.</span>
+  </div>
+  <div class="ext-card ext-optional">
+    <div class="conn-box-title">TE (뇌) <span class="ext-label ext-opt-label">선택</span></div>
+    state.json 읽기<br>
+    <span style="color:#8b949e">깊은 사고. 없어도 작동.</span>
+  </div>
+  <div class="ext-card ext-optional">
+    <div class="conn-box-title">media-monitor <span class="ext-label ext-opt-label">선택</span></div>
+    센티먼트 공유<br>
+    <span style="color:#8b949e">국면 전환 시 트리거</span>
+  </div>
+  <div class="ext-card ext-optional">
+    <div class="conn-box-title">question-forge <span class="ext-label ext-opt-label">선택</span></div>
+    W Loop 8대 질문 생성<br>
+    <span style="color:#8b949e">주간 연동</span>
+  </div>
+  <div class="ext-card ext-optional">
+    <div class="conn-box-title">psf/ (원본) <span class="ext-label ext-opt-label">공유</span></div>
+    원본 온톨로지 참조<br>
+    <span style="color:#8b949e">psf-monitor가 운용 인스턴스</span>
+  </div>
+</div>
+
+<!-- ===== MCP 도구 분류 ===== -->
+<h2>도구 분류 (MCP/API)</h2>
+
+<div class="ext-map">
+  <div class="ext-card" style="border-color: #80deea;">
+    <div class="conn-box-title">👁 눈 (감각)</div>
+    Tavily search/research<br>
+    WebSearch
+  </div>
+  <div class="ext-card" style="border-color: #80deea;">
+    <div class="conn-box-title">✋ 손 (조작)</div>
+    FRED · CoinGecko<br>
+    DeFiLlama · CoinMetrics<br>
+    Dune · Etherscan · Yahoo
+  </div>
+  <div class="ext-card" style="border-color: #80deea;">
+    <div class="conn-box-title">🦶 발 (이동)</div>
+    macro/latest.json 읽기<br>
+    Firecrawl crawl
+  </div>
+  <div class="ext-card" style="border-color: #80deea;">
+    <div class="conn-box-title">👄 입 (전달) + 🎒 주머니 (저장)</div>
+    대화창 텍스트 · HTML 보고서<br>
+    state.json · history/ · projection.json
+  </div>
+</div>
+
+<!-- ===== 진화 루프 ===== -->
+<h2>진화 루프</h2>
+
+<div class="connection-map">
+  <div class="conn-row">
+    <div class="conn-box" style="border-color: #58a6ff; flex: 2;">
+      <div class="conn-box-title">D Loop (매일)</div>
+      Self-Audit Q1~Q5 → 오류 감지
+    </div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-box" style="border-color: #d29922; flex: 2;">
+      <div class="conn-box-title">W Loop (매주)</div>
+      errors.md 리뷰 → F-테이블 패턴 확인
+    </div>
+    <div class="conn-arrow">→</div>
+    <div class="conn-box" style="border-color: #f85149; flex: 2;">
+      <div class="conn-box-title">Q Loop (분기)</div>
+      ontology/axis 개정 → audits/ 저장
+    </div>
+  </div>
+</div>
+
+<div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px; margin: 16px 0; font-size: 0.82em;">
+  <b style="color: #ffd600;">7단계 프로토콜 채점: 7/7</b><br>
+  <span style="color: #4caf50;">✅</span> WHY · <span style="color: #4caf50;">✅</span> WHAT · <span style="color: #4caf50;">✅</span> WHEN · <span style="color: #4caf50;">✅</span> HOW · <span style="color: #4caf50;">✅</span> FORMAT · <span style="color: #4caf50;">✅</span> FAIL (F-01~F-12) · <span style="color: #4caf50;">✅</span> EVOLVE (Q1~Q5 + 불변 8개)<br>
+  <span style="color: #8b949e;">자율 수준: Level 3 (자율 실행) | 전 조건 🟢</span>
+</div>
+
+<div class="footer">
+  psf-monitor 아키텍처 지도 · LLM 기반 시스템 표준 아키텍처 적용 · 2026-03-25
+</div>
+
+</div>
+</body>
+</html>

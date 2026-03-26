@@ -1,0 +1,13 @@
+{
+  "issues": [],
+  "weekly_review": {
+    "last_review": null,
+    "next_review": "2026-03-31",
+    "review_day": "monday"
+  },
+  "summary": {
+    "total_open": 0,
+    "by_severity": {},
+    "by_category": {}
+  }
+}

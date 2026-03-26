@@ -1,0 +1,47 @@
+{
+  "date": "2026-03-25",
+  "source": "psf D Loop",
+  "regime": "🟡 경계 (다소 완화)",
+  "macro_regime": "🟡 Transition (3.5/5)",
+  "alignment": "이행+이행 = 양쪽 불확실",
+  "observations_top3": [
+    {
+      "rank": 1,
+      "signal": "미국 5일 군사행동 정지 → Brent $106→$103(-$4), BEI 2.63→2.53%(-10bp)",
+      "severity": "high"
+    },
+    {
+      "rank": 2,
+      "signal": "DFII10 1.88→2.01%(+13bp), 2% 돌파",
+      "severity": "high"
+    },
+    {
+      "rank": 3,
+      "signal": "MOVE 108.84→98.15(-10.69), 100 하회",
+      "severity": "medium"
+    }
+  ],
+  "links_active": [
+    "L5_geopolitics_energy"
+  ],
+  "divergences_count": 2,
+  "unclassified_count": 2,
+  "questions_open": 4,
+  "axis_snapshot": {
+    "1_ai": "건재",
+    "2_energy": "건재 (판 차단)",
+    "3_aging": "건재",
+    "4_blockchain": "건재",
+    "9_fiscal": "가속",
+    "8_uscn": "격화"
+  },
+  "delta_vs_prev": {
+    "prev_date": "2026-03-23",
+    "regime_changed": true,
+    "new_links": [
+      "L5_geopolitics_energy"
+    ],
+    "closed_links": [],
+    "notable_changes": []
+  }
+}
