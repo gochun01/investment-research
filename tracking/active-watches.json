@@ -603,15 +603,82 @@
       "original_context": {"issue": "Section 122 150일 한도", "resolve_condition": "Section 122 만료 또는 후속 관세 조치 발표"},
       "check_template": {"questions": ["Section 122 연장/대체?"], "data_sources": ["policy: USTR Federal Register", "narrative: Reuters trade"]},
       "status": "active", "completed_checks": [], "close_condition": "Section 122 만료 또는 후속 관세 조치 발표", "closed_at": null, "close_reason": null
+    },
+    {
+      "id": "W-2026-03-27-UQ-070",
+      "created": "2026-03-27",
+      "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
+      "subject": "Section 301 한국 관세율 확정",
+      "type": "policy_watch",
+      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-03", "2026-04-10", "2026-04-17", "2026-04-24", "2026-05-01", "2026-05-15", "2026-06-01", "2026-07-01", "2026-07-24"], "next_check": "2026-04-03"},
+      "original_context": {"issue": "Section 301 16국 과잉생산 조사 — 한국 명시 포함", "resolve_condition": "301 관세율 공고 또는 한국 면제 확인"},
+      "check_template": {"questions": ["301 한국 관세율 확정?", "한국 품목 범위?"], "data_sources": ["policy: USTR Federal Register", "narrative: White & Case trade alerts"]},
+      "status": "active", "completed_checks": [], "close_condition": "301 관세율 공고 또는 한국 면제 확인", "closed_at": null, "close_reason": null
+    },
+    {
+      "id": "W-2026-03-27-UQ-071",
+      "created": "2026-03-27",
+      "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
+      "subject": "CBP CAPE 포털 런칭 ($166B 환급)",
+      "type": "event_tracking",
+      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-01", "2026-04-06", "2026-04-10"], "next_check": "2026-04-01"},
+      "original_context": {"issue": "IEEPA 위헌 → $166-175B 관세 환급 행정혼란", "resolve_condition": "CBP CAPE 포털 가동 또는 환급 절차 안내 공식 발표"},
+      "check_template": {"questions": ["CAPE 포털 런칭?", "환급 진행 상황?"], "data_sources": ["policy: CBP.gov", "narrative: InternationalTradeToday"]},
+      "status": "active", "completed_checks": [], "close_condition": "CAPE 포털 가동 또는 환급 절차 공식화", "closed_at": null, "close_reason": null
+    },
+    {
+      "id": "W-2026-03-27-UQ-072",
+      "created": "2026-03-27",
+      "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
+      "subject": "EU 이사회 최종 승인",
+      "type": "event_tracking",
+      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-10", "2026-04-17", "2026-04-24"], "next_check": "2026-04-10"},
+      "original_context": {"issue": "EU 의회 관세 딜 조건부 승인 (417:154:71)", "resolve_condition": "EU 이사회 최종 승인 또는 수정안 발표"},
+      "check_template": {"questions": ["이사회 승인?", "ACI 발동 검토?"], "data_sources": ["policy: EU Council", "narrative: Euronews/Politico EU"]},
+      "status": "active", "completed_checks": [], "close_condition": "EU 이사회 최종 승인 또는 ACI 발동", "closed_at": null, "close_reason": null
+    },
+    {
+      "id": "W-2026-03-27-UQ-073",
+      "created": "2026-03-27",
+      "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
+      "subject": "미중 정상회담 합의 범위",
+      "type": "policy_watch",
+      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-17", "2026-05-01", "2026-05-08", "2026-05-15"], "next_check": "2026-04-17"},
+      "original_context": {"issue": "트럼프-시진핑 정상회담 5/14-15", "resolve_condition": "회담 합의문 또는 관세 관련 구체 조건 발표"},
+      "check_template": {"questions": ["회담 의제 확정?", "관세 합의 범위?"], "data_sources": ["narrative: AP/Reuters/SCMP", "policy: White House"]},
+      "status": "active", "completed_checks": [], "close_condition": "회담 합의문 발표", "closed_at": null, "close_reason": null
+    },
+    {
+      "id": "W-2026-03-27-UQ-074",
+      "created": "2026-03-27",
+      "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
+      "subject": "Section 122 만료 후 공백 여부",
+      "type": "policy_watch",
+      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-06-15", "2026-07-01", "2026-07-15", "2026-07-24"], "next_check": "2026-06-15"},
+      "original_context": {"issue": "Section 122 150일 한도 만료 7/24", "resolve_condition": "Section 122 연장 또는 301 부과 확정 또는 법적 공백 확인"},
+      "check_template": {"questions": ["122 연장/대체?", "301 준비 상황?"], "data_sources": ["policy: USTR/AAF", "narrative: Tax Policy Center"]},
+      "status": "active", "completed_checks": [], "close_condition": "122 만료 또는 301 부과 확정", "closed_at": null, "close_reason": null
+    },
+    {
+      "id": "W-2026-03-27-UQ-075",
+      "created": "2026-03-27",
+      "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
+      "subject": "한국 반도체 관세 vs 비관세 장벽 형태",
+      "type": "event_tracking",
+      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-10", "2026-04-17"], "next_check": "2026-04-10"},
+      "original_context": {"issue": "Section 301 16국 과잉생산 — 한국 반도체 직격 가능", "resolve_condition": "301 공청회(4/28)에서 반도체 관세 형태 명시"},
+      "check_template": {"questions": ["반도체 관세 형태?", "비관세 장벽(수출 통제 등)?"], "data_sources": ["narrative: Seoul Economic Daily/한경", "policy: USTR"]},
+      "status": "active", "completed_checks": [], "close_condition": "301 공청회에서 형태 명시", "closed_at": null, "close_reason": null
     }
   ],
   "summary": {
-    "total_active": 27,
+    "total_active": 33,
     "next_due": "2026-03-29",
     "types": {
-      "event_tracking": 17,
+      "event_tracking": 20,
       "data_check": 9,
-      "threshold_watch": 1
+      "threshold_watch": 1,
+      "policy_watch": 3
     }
   }
 }
