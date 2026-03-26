@@ -206,8 +206,9 @@ Gate를 통과하지 않으면 Phase 1(수집) 진입을 금지한다.
   결과: 매칭 있으면 해당 JSON의 one_line, scenarios, feedback 로딩
         매칭 없으면 "첫 분석" 확인
 
-━━ Gate 2: tracking/cards/ 스캔 ━━
-  Glob: tracking/cards/*.json 전체 파일명 + title 필드 검색
+━━ Gate 2: 공용 tracking/cards/ 스캔 ━━
+  경로: C:\Users\이미영\Downloads\에이전트\01-New project\tracking\cards\
+  Glob: *.json 전체 파일명 + title 필드 검색
   키워드: 동일
   결과: 매칭 있으면 TC 카드의 phase, 시나리오 상태, 마지막 check_log 로딩
         매칭 없으면 "신규 TC" 예정
@@ -239,12 +240,14 @@ Gate를 통과하지 않으면 Phase 1(수집) 진입을 금지한다.
    스키마: SCHEMAS.md의 "이력 스냅샷 스키마" 준수
    분석이 끝나면 즉시 저장. 출력 텍스트와 파일 저장을 한 턴에 수행.
 
-2. tracking/cards/ TC 카드 생성 또는 갱신
-   신규 이슈 → tracking/cards/TC-NNN-키워드.json 생성
-     TC 번호는 기존 카드 중 최대 번호 + 1
+2. 공용 tracking/cards/ TC 카드 생성 또는 갱신
+   경로: C:\Users\이미영\Downloads\에이전트\01-New project\tracking\cards\
+   ★ Stereo Analyzer 내부에 tracking/cards/를 만들지 않는다. 공용 1곳만.
+   신규 이슈 → TC-NNN-키워드.json 생성 (기존 최대 번호 + 1)
      Phase 1로 시작. 시나리오별 Trigger/KC, 추적 지표 포함.
    기존 이슈 재분석 → 해당 TC 카드의 Phase/시나리오/지표 갱신
      phase_log에 변경 이력 추가. analysis_ids에 새 SA-ID 추가.
+   dashboard.json도 함께 갱신.
    TC 카드 필드: tc_id, created, updated, title, status, issue_summary,
      phase, phase_log, pre_read, scenarios, tracking_indicators,
      analysis_ids, tags
