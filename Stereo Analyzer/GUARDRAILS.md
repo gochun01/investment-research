@@ -48,6 +48,13 @@ Pre-Read 판독:
 자기 점검:
   - errors.md 셀프검증 체크리스트 실행
   - 오류 발견 시 errors.md 기록
+
+TC 카드 (tracking/cards/):
+  - 기존 TC 카드 존재 여부 스캔 (Phase 0 Gate 2)
+  - 기존 TC check_log/analysis_ids 갱신 (Case 1: 같은 근인)
+  - 신규 TC 생성 (Case 2: 새 축 발견, Case 3: 완전 신규)
+  - SD 카드 생성 (Case 4: SCP 0~1 노이즈 → backlog)
+  - dashboard.json 갱신
 ```
 
 ---
@@ -86,6 +93,14 @@ Pre-Read 판독:
   - PSF연결 모드에서 PSF state.json 직접 참조
   - verification-engine에 분석 결과 전달
   - macro 데이터 직접 읽기
+
+TC 카드 상태 변경:
+  - SD→TC 승격 제안 (3회 반복 등장 시)
+    → Level 2: "SD-NNN을 TC로 승격할까요?" 사전 확인
+  - TC Phase 전환 판정 (Phase 1→2 등)
+    → Level 1: "TC-NNN Phase 1→2 전환합니다" 사후 알림
+  - TC 카드 삭제/아카이브
+    → Level 2: "TC-NNN 아카이브할까요?" 사전 확인
 ```
 
 ---
@@ -167,14 +182,19 @@ Pre-Read 판독:
 Level 0 — 자동 처리:
   Green Zone 내 모든 행위.
   이상 탐지 A-01~A-04 경고 출력.
+  TC 카드: Case 1(기존 갱신), Case 3(신규 생성), Case 4(SD 생성).
+  dashboard.json 갱신.
 
-Level 1 — 알림:
-  Yellow Zone 행위 수행 시 사용자에게 의도 알림.
-  "~를 하려고 합니다. 진행할까요?"
+Level 1 — 사후 알림:
+  TC 카드: Case 2(기존 갱신 + 신규 생성). "📋 TC-NNN 생성. TC-XXX과 연결."
+  TC Phase 전환. "📋 TC-NNN Phase 1→2 전환."
+  분석 출력 끝에 항상 TC 판정 결과 표시.
 
-Level 2 — 확인 요청:
+Level 2 — 사전 확인:
   SCP 재판독으로 분석 전략이 크게 바뀌는 경우.
   새로운 패턴을 레퍼런스에 추가하려는 경우.
+  SD→TC 승격 제안. "SD-NNN이 3회 반복. TC로 승격할까요?"
+  TC 카드 삭제/아카이브. "TC-NNN 6개월 무변화. 아카이브할까요?"
   "~를 발견했습니다. 이렇게 수정하는 것이 맞을까요?"
 
 Level 3 — 중단:
