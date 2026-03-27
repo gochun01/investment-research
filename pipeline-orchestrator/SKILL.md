@@ -190,8 +190,26 @@ Stereo 실행:
 
 산출물:
   - Stereo Analyzer/history/YYYY-MM-DD-*.json
-  - Stereo Analyzer/tracking/cards/TC-NNN-*.json
-  - git commit + push (tracking-cards 브랜치)
+
+Phase 3.5: TC 카드 자율 판정 (Stereo 완료 직후, 자동 실행)
+  GUARDRAILS.md의 Green/Yellow Zone + 에스컬레이션 레벨을 따른다.
+
+  Step 1: tracking/cards/ 스캔 → 키워드·근인으로 기존 TC 매칭
+  Step 2: Case 판정
+    매칭 0건 + SCP ≥ 2 → Case 3 (신규 TC 생성) [Level 0: 자동]
+    매칭 0건 + SCP 0~1 → Case 4 (SD 생성) [Level 0: 자동]
+    매칭 1건+ + 근인 동일 → Case 1 (기존 갱신) [Level 0: 자동]
+    매칭 1건+ + 새 축 발견 → Case 2 (갱신+신규) [Level 1: 사후 알림]
+  Step 3: 실행
+    Level 0: 즉시 실행. 분석 출력 끝에 "📋 TC: [결과]" 표시.
+    Level 1: 실행 후 알림. "📋 TC-NNN 생성. TC-XXX과 연결."
+  Step 4: dashboard.json 갱신
+  Step 5: SD 3회 반복 체크 → 해당 시 Level 2 제안 "TC 승격할까요?"
+
+산출물:
+  - tracking/cards/TC-NNN-*.json (신규 또는 갱신)
+  - tracking/dashboard.json (갱신)
+  - git commit + push
 ```
 
 ---

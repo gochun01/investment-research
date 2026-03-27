@@ -278,28 +278,37 @@ Gate를 통과하지 않으면 Phase 1(수집) 진입을 금지한다.
    경로: C:\Users\이미영\Downloads\에이전트\01-New project\tracking\cards\
    ★ Stereo Analyzer 내부에 tracking/cards/를 만들지 않는다. 공용 1곳만.
 
-   ━━ TC 카드 판정 규칙 (자동 실행. 사용자 확인 불필요.) ━━
+   ━━ TC 카드 판정 — GUARDRAILS.md 자율 메커니즘 적용 ━━
 
-   분석 완료 후, L7 시나리오를 기준으로 아래 판정을 실행한다:
+   분석 완료 후, L7 시나리오를 기준으로 TC 판정을 실행한다.
+   판정은 GUARDRAILS.md의 Green/Yellow Zone + 에스컬레이션 레벨을 따른다.
 
-   Case 1: 기존 TC에 완전히 포함되는 이슈 (같은 근인)
-     → 기존 TC 카드의 check_log + phase_log + analysis_ids 갱신
-     → 새 TC 생성 안 함
+   [1계층: 구조화된 자율성]
+     TC 카드 생성/갱신 = "내용" (틀 변경 아님) → Green 가능
+     TC Phase 전환/승격 = "상태 변경" → Yellow
 
-   Case 2: 기존 TC와 관련 있으나 새로운 축/근인이 발견됨
-     → 기존 TC check_log 갱신 + 새 TC 생성
-     → cross_card_links로 연결
-     → 사용자에게 "TC-NNN 신규 생성: [제목]. 기존 TC-XXX과 연결." 알림
+   [2계층: Zone 분류]
+     Green: TC 존재 스캔, 기존 갱신, 신규 생성, SD 생성, dashboard 갱신
+     Yellow: SD→TC 승격, Phase 전환, 삭제/아카이브
 
-   Case 3: 완전히 새로운 이슈 (기존 TC 없음)
-     → 새 TC 생성. Phase 1.
+   [3계층: 에스컬레이션]
+     Level 0 (자동): Case 1(기존 갱신) + Case 3(신규) + Case 4(SD)
+     Level 1 (사후 알림): Case 2(기존+신규) → "📋 TC-NNN 생성. TC-XXX 연결."
+                          Phase 전환 → "📋 TC-NNN Phase N→N+1."
+     Level 2 (사전 확인): SD→TC 승격 → "SD-NNN 3회 반복. TC 승격할까요?"
+                          TC 아카이브 → "TC-NNN 6개월 무변화. 아카이브?"
 
-   Case 4: SCP 0~1 (노이즈)
-     → TC 생성 안 함. SD(시드) 카드로 backlog에 기록.
-     → SD가 3회 반복 등장 시 TC 승격 제안.
+   [판정 알고리즘]
+     Step 1: tracking/cards/ 스캔 → 키워드·근인 매칭
+     Step 2: 매칭 결과로 Case 판정
+       매칭 0건 + SCP ≥ 2 → Case 3 (신규 TC)
+       매칭 0건 + SCP 0~1 → Case 4 (SD)
+       매칭 1건+ + 근인 동일 → Case 1 (갱신)
+       매칭 1건+ + 새 축 발견 → Case 2 (갱신 + 신규)
+     Step 3: Zone에 따라 실행 + 에스컬레이션 레벨에 따라 알림
 
-   판정 결과를 분석 출력 끝에 명시:
-     📋 TC: [기존 TC-NNN 갱신 / 신규 TC-NNN 생성 / 생성 안 함(노이즈)]
+   분석 출력 끝에 항상 표시:
+     📋 TC: [Case N] [TC-NNN 갱신/생성/SD-NNN 생성]
 
    ━━ 끝 ━━
 
