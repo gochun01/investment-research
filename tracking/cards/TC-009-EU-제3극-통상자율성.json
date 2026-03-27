@@ -1,0 +1,87 @@
+{
+  "tc_id": "TC-009",
+  "created": "2026-03-27",
+  "updated": "2026-03-27",
+  "title": "EU 제3극 통상 자율성 — 조건부 수용 + ACI 보복권한",
+  "status": "active",
+  "source": "SA-20260327-001",
+
+  "issue_summary": "EU 의회가 트럼프 관세 딜(15%)을 조건부 승인(417:154:71). sunset 18개월 + ACI 보복권한 확보. EU가 미국 일방주의에 대한 제도적 대응 프레임을 구축하기 시작. 한-EU FTA 재협상 압력 가능.",
+
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-27",
+      "trigger": "EU 의회 투표 417:154:71. 파이프라인 풀 실행 SA-20260327-001.",
+      "note": "core-extractor D-3 PASS. MT-07 공급망 재편의 새 축."
+    }
+  ],
+
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "scp": 4,
+    "urgency": "WATCH"
+  },
+
+  "scenarios": {
+    "A": {
+      "label": "EU 이사회 승인 → ACI 미발동 → 현상유지",
+      "probability": "40%",
+      "trigger": "EU 이사회 최종 승인 (sunset 18개월 시작)",
+      "kc": {
+        "watch": "EU 이사회 심의 개시",
+        "alert": "ACI 발동 검토 공식화",
+        "hard": "ACI 발동 확정"
+      },
+      "source": "구조적 (EU 의회 투표) + 서사적 (sunset 프레임)",
+      "action_on_kc": "한-EU 통상 전략 재검토. EU 역내산 비율 확인.",
+      "recalibration": "EU 이사회 결과 후",
+      "current_status": "미진입"
+    },
+    "B": {
+      "label": "ACI 발동 → 미-EU 무역 긴장 → 한국 선택 강요",
+      "probability": "25%",
+      "trigger": "EU ACI 공식 발동 (비율: EU 보복관세율/미국 관세율)",
+      "kc": {"hard": "미-EU 무역 협상 타결 → ACI 철회"},
+      "source": "구조적 (ACI 법적 근거 확보) + 서사적 (의회 보복 권한 부여)",
+      "current_status": "미발생"
+    },
+    "C": {
+      "label": "IAA 발효 → 한국 부품사 역내산 비율 부족 → 시장 접근 제한",
+      "probability": "25%",
+      "trigger": "IAA 발효 + 70% 역내산 요건 시행 (비율: 한국 현지화율/EU 요건)",
+      "kc": {"hard": "IAA 완화 또는 한국 부품사 역내산 70% 달성"},
+      "source": "구조적 (EU 산업정책)",
+      "recalibration": "IAA 의회 심의 진행에 따라",
+      "current_status": "미발생"
+    },
+    "D": {
+      "label": "sunset 만료(2028/3) → EU 보복관세 시행",
+      "probability": "10%",
+      "trigger": "sunset 만료 + 미국 관세 유지 + EU 보복 발동",
+      "kc": {"hard": "미-EU 관세 협상 타결"},
+      "source": "서사적 (18개월 시한)",
+      "current_status": "미발생"
+    }
+  },
+
+  "tracking_indicators": [
+    {"indicator": "EU 이사회 최종 승인", "current": "의회 통과, 이사회 대기", "threshold": "이사회 승인", "last_check": "2026-03-27", "next_check": "2026-04-10"},
+    {"indicator": "ACI 발동 검토 여부", "current": "미검토", "threshold": "공식 검토 개시", "last_check": "2026-03-27", "next_check": "2026-04-24"},
+    {"indicator": "IAA 의회 심의", "current": "추진 중", "threshold": "의회 제출 + 최종안 공개", "last_check": "2026-03-27", "next_check": "2026-06-30"}
+  ],
+
+  "analysis_ids": ["SA-20260327-001"],
+
+  "rm_watches": [
+    {"watch_id": "W-2026-03-27-UQ-072", "subject": "EU 이사회 최종 승인", "next_check": "2026-04-10"}
+  ],
+
+  "cross_card_links": [
+    {"to": "TC-001", "link": "Section 301과 EU 딜이 동시 진행. 미국-EU 합의가 한국에 간접 영향."},
+    {"to": "TC-008", "link": "한국車 EU 시장. IAA 발효 시 현대·기아 유럽 현지화 압박 가중."}
+  ],
+
+  "tags": ["POLICY", "STRUCT", "EU", "ACI", "IAA", "sunset", "제3극", "MT-07", "pipeline-full"]
+}

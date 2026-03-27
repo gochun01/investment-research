@@ -277,9 +277,35 @@ Gate를 통과하지 않으면 Phase 1(수집) 진입을 금지한다.
 2. 공용 tracking/cards/ TC 카드 생성 또는 갱신
    경로: C:\Users\이미영\Downloads\에이전트\01-New project\tracking\cards\
    ★ Stereo Analyzer 내부에 tracking/cards/를 만들지 않는다. 공용 1곳만.
-   신규 이슈 → TC-NNN-키워드.json 생성 (기존 최대 번호 + 1)
-     Phase 1로 시작. 시나리오별 Trigger/KC, 추적 지표 포함.
-   기존 이슈 재분석 → 해당 TC 카드의 Phase/시나리오/지표 갱신
+
+   ━━ TC 카드 판정 규칙 (자동 실행. 사용자 확인 불필요.) ━━
+
+   분석 완료 후, L7 시나리오를 기준으로 아래 판정을 실행한다:
+
+   Case 1: 기존 TC에 완전히 포함되는 이슈 (같은 근인)
+     → 기존 TC 카드의 check_log + phase_log + analysis_ids 갱신
+     → 새 TC 생성 안 함
+
+   Case 2: 기존 TC와 관련 있으나 새로운 축/근인이 발견됨
+     → 기존 TC check_log 갱신 + 새 TC 생성
+     → cross_card_links로 연결
+     → 사용자에게 "TC-NNN 신규 생성: [제목]. 기존 TC-XXX과 연결." 알림
+
+   Case 3: 완전히 새로운 이슈 (기존 TC 없음)
+     → 새 TC 생성. Phase 1.
+
+   Case 4: SCP 0~1 (노이즈)
+     → TC 생성 안 함. SD(시드) 카드로 backlog에 기록.
+     → SD가 3회 반복 등장 시 TC 승격 제안.
+
+   판정 결과를 분석 출력 끝에 명시:
+     📋 TC: [기존 TC-NNN 갱신 / 신규 TC-NNN 생성 / 생성 안 함(노이즈)]
+
+   ━━ 끝 ━━
+
+   신규 TC: TC-NNN-키워드.json (기존 최대 번호 + 1)
+     Phase 1로 시작. 시나리오별 Trigger/KC(7항목), 추적 지표 포함.
+   기존 TC 갱신:
      phase_log에 변경 이력 추가. analysis_ids에 새 SA-ID 추가.
    dashboard.json도 함께 갱신.
    TC 카드 필드: tc_id, created, updated, title, status, issue_summary,
