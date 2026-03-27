@@ -70,21 +70,55 @@ MCP:    ~3-8
 용도:   일별/주별. Watch의 질문에 답하고 completed_checks에 기록.
 조건:   분석 없음. 데이터만 수집하고 상태만 갱신.
         KC 상태 변화 있으면 사용자에게 알림.
+
+예측 대조 (Watch 체크와 동시 실행):
+  tracking/prediction-ledger.json에서 관련 예측 확인.
+  시나리오 Trigger 충족? KC 작동?
+    YES → outcome 기록 ("hit"/"miss"/"partial") + lesson 1문장
+    NO  → status "open" 유지
+  deadline 경과 + 미충족 → "expired" + lesson
+  evolution.json의 prediction_stats 갱신.
 ```
 
-## Mode E: 임계값 재보정 (Recalibration)
+## Mode E: 임계값 재보정 + 학습 루프 (Recalibration + Learning)
 
 ```
 트리거: 월 1회 정기 또는 판 전환 이벤트
-구조:   macro 수집 → PSF 매핑 → TC 카드별 Trigger-KC 재검토
-Agent:  1개 (B: macro) + 메인(PSF + KC 검토)
+구조:   macro 수집 → PSF 매핑 → TC Trigger-KC 재검토 → 예측 적중률 → 학습
+Agent:  1개 (B: macro) + 메인(PSF + KC 검토 + 학습)
 MCP:    ~30-40 (macro 27 + PSF 3-5 + 검증 MCP)
-용도:   월 1회. 임계값 설계 7항목 체크리스트로 전체 TC 재검토.
+
+━━ 기존: 임계값 재보정 ━━
 점검:   ① 변동성 체제 변했는가 (VIX 밴드)
         ② 가격 수준 구조적 이동했는가 (새 균형가)
         ③ 인과 체인 작동 중인가 (전이 비율)
         ④ 경보 피로 발생했는가 (Watch/Alert 상시 점등)
 산출:   TC 카드의 scenarios.kc 업데이트 + 변경 전/후 기록
+
+━━ 신규: 학습 피드백 루프 ━━
+Step 1: prediction-ledger.json에서 resolved 예측 집계
+  적중률 = hit / (hit + miss + partial)
+  유형별 분류: POLICY / STRUCT / MACRO / EVENT / NARR
+
+Step 2: 오판 패턴 식별 (최소 예측 10건 이상 축적 후)
+  "어떤 유형에서, 어떤 방향으로, 얼마나 틀리는가"
+  예: POLICY 유형에서 최악 시나리오 확률을 평균 15%p 과대 추정
+
+Step 3: 보정 규칙 생성
+  errors.md 인지 오류 카탈로그에 데이터 기반 규칙 추가.
+  형식: "R-NN: [유형]에서 [방향] 편향. 적중률 [N]%. [보정 방법]."
+  근거: prediction-ledger의 hit/miss 데이터.
+
+Step 4: evolution.json 갱신
+  quality_trend 추이 업데이트
+  prediction_stats 적중률 업데이트
+  learning_log에 이번 달 학습 결과 기록
+
+산출:
+  TC 카드 scenarios.kc 업데이트
+  errors.md 보정 규칙 추가 (해당 시)
+  evolution.json 갱신
+  tracking/prediction-ledger.json summary 갱신
 ```
 
 ---

@@ -1,0 +1,37 @@
+{
+  "created": "2026-03-27",
+  "last_updated": "2026-03-27",
+  "description": "시스템 진화 대시보드. 품질 추이 + 예측 적중률 + 학습 기록.",
+
+  "quality_trend": [
+    {
+      "date": "2026-03-27",
+      "analysis_id": "SA-20260327-001",
+      "title": "글로벌 통상 재편",
+      "mode": "A",
+      "scores": {
+        "coverage": 1.0,
+        "cross_verification": 0.8,
+        "discovery_rate": 0.7,
+        "freshness": 1.0
+      },
+      "quality_score": 0.875,
+      "note": "첫 측정. 풀 파이프라인. rm 25회+core 20회+PSF 25회."
+    }
+  ],
+
+  "prediction_stats": {
+    "total_predictions": 0,
+    "outcomes": {"hit": 0, "miss": 0, "partial": 0, "expired": 0, "open": 0},
+    "hit_rate_by_type": {},
+    "last_calculated": "2026-03-27",
+    "note": "예측 장부 초기화. 기존 시나리오 소급 등록 후 집계 시작."
+  },
+
+  "learning_log": [],
+
+  "milestones": [
+    {"date": "2026-03-26", "event": "파이프라인 시스템 구축. Phase 0 Gate, 풀 실행, 공용 tracking."},
+    {"date": "2026-03-27", "event": "진화 대시보드 + 예측 장부 + 학습 루프 설계."}
+  ]
+}
