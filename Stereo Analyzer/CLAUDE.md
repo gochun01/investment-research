@@ -321,7 +321,30 @@ Gate를 통과하지 않으면 Phase 1(수집) 진입을 금지한다.
      phase, phase_log, pre_read, scenarios, tracking_indicators,
      analysis_ids, tags
 
-3. git commit + push (git 연결 시)
+3. 품질 스코어링 (quality_score)
+   매 분석 완료 후 아래 공식으로 품질 점수를 산출하여 history JSON에 포함.
+
+   coverage       = 활성 반응 계층 수 / 5
+   cross_verify   = MCP 2개+ 확인 핵심 수치 / 전체 핵심 수치
+   discovery_rate = min((L2 미언급 + core BURIED) / 10, 1.0)
+   freshness      = 당일 데이터 시스템 수 / 전체 (macro, PSF, scanner)
+
+   quality_score = (coverage + cross_verify + discovery_rate + freshness) / 4
+
+   history JSON에 "quality_score" 필드로 저장.
+   tracking/evolution.json의 quality_trend 배열에 추가.
+
+4. 예측 장부 등록 (prediction-ledger)
+   L7 시나리오(SCP ≥ 2)마다 tracking/prediction-ledger.json에 예측 등록.
+
+   각 예측 레코드:
+     id, source(SA-ID), date, tc(TC-ID), type, claim, scenario,
+     probability, trigger, deadline, status(open),
+     outcome(null), outcome_date(null), lesson(null)
+
+   summary 갱신 (total, open, resolved, earliest_deadline).
+
+5. git commit + push (git 연결 시)
    위 1~3 저장 후 자동으로:
      git add history/ tracking/ reports/
      git commit -m "SA-YYYYMMDD-NNN: 이슈 제목"
