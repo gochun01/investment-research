@@ -6,7 +6,7 @@
     "active_seeds": 2,
     "total_active": 18,
     "next_check": "2026-03-31 (이란 데드라인 → TC-003, 분기말 D2 유동성 → TC-007)",
-    "l7_integration": "SA-20260328-L7: TC-003/007/010 교차 통합 완료. SA-20260328-003: TC-016 VIX 30 돌파 Stereo. 공포-신용 디커플링 발견."
+    "l7_integration": "SA-20260328-L7: TC-003/007/010 교차 통합 완료. SA-20260328-003: TC-016 VIX 30 돌파 Stereo. SA-20260328-TQ: TurboQuant L1~L6 풀 해부. BURIED-1(Groq3LPX) 발견 = inference 아키텍처 분리 구조 확인. SKH 이중 포지션. TSMC CoWoS-R 숨은 수혜."
   },
   "cards": {
     "TC-001": {"title": "Section 301 관세", "phase": 1, "status": "tracking", "next": "4/15"},
@@ -18,7 +18,7 @@
     "TC-007": {"title": "미장기채 스태그+GLD역방향", "phase": 1, "status": "tracking", "next": "3/31", "scenarios": "A50% B10% C25% D15%"},
     "TC-008": {"title": "한국車 삼중포위", "phase": 2, "status": "tracking", "next": "3/31"},
     "TC-009": {"title": "EU 제3극 통상자율성", "phase": 1, "status": "tracking", "next": "4/10"},
-    "TC-010": {"title": "AI capex 양극화+헬륨병목", "phase": 1, "status": "tracking", "next": "4/04", "scenarios": "A25% B35% C25% D15%"},
+    "TC-010": {"title": "AI capex 양극화+Groq3LPX inference분리+헬륨병목", "phase": 1, "status": "tracking", "next": "4/04", "scenarios": "A25% B35% C25% D15%", "note": "TurboQuant 독립 Stereo 완료(SA-20260328-TQ). BURIED-1=Groq3LPX SRAM inference. LP40 SKH DRAM. LPU Gen2 삼성SF4X."},
     "TC-012": {"title": "K-방산 Indra €45.5억 K9 공급망내재화2단계", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A50% B20% C15% D15%"},
     "TC-013": {"title": "BRICS금 6000톤 탈달러 옵션확보", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A35% B25% C28% D12%"},
     "TC-014": {"title": "AI전력 양방향리스크(부족+역류)+SMR", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A30% B35% C22% D13%"},

@@ -1,0 +1,100 @@
+{
+  "tc_id": "TC-010",
+  "prev_id": "SD-002 → TC 승격 (3회 출현)",
+  "created": "2026-03-28",
+  "updated": "2026-03-28",
+  "title": "AI $700B capex 양극화 — manufacturer vs monetizer 분열 + 헬륨 물리적 병목",
+  "status": "active",
+
+  "issue_summary": "Big Tech $700B capex vs AI 서비스 매출 $25B = ROI 4%. NVDA -12% YTD. AI factory = training(Vera Rubin/HBM) + inference(Groq 3 LPX/SRAM) 이중 구조 공식화. TurboQuant는 서사 과잉반응 — KV캐시만, HBM 훈련/웨이트 무관. BURIED-1: NVDA-Groq $20B = SRAM inference 아키텍처 선언. LP40에서 SKH DRAM 공급자. LPU Gen2 삼성 SF4X. HBM 2026 수요 70~77% vs 공급 15~20% = 부족 지속. Airgas 헬륨 50% 삭감 팹 60~90일 재고. 헬륨 병목 물리적 차질 D시나리오 상향.",
+
+  "phase": 1,
+  "phase_log": [
+    {"phase": 0, "date": "2026-03-26", "trigger": "SD-002 생성 (2회 출현)", "note": "scanner backlog BL-002, SK하이닉스 ADR(SA-006)에서 재등장"},
+    {"phase": 1, "date": "2026-03-28", "trigger": "SD-002→TC-010 승격 (3회째). rm 독립 수집 + core-extractor D-1/D-2 통과.", "note": "SA-20260328-001에서 생성."},
+    {"phase": 1, "date": "2026-03-28", "trigger": "L7 통합 갱신. Airgas 50% 삭감 공식화. 이자$27.7B≈AI매출$25B 발견. A 25%(-5), D 15%(+5).", "note": "SA-20260328-L7. 3TC 교차 분석 기반."},
+    {"phase": 1, "date": "2026-03-28-TQ", "trigger": "SA-20260328-TQ: TurboQuant 독립 Stereo 완료. BURIED-1(Groq 3 LPX) 발견 = TurboQuant보다 구조적으로 더 중요. NVDA-Groq $20B = SRAM inference 아키텍처 공식화. LP40 SKH DRAM 공급자 지정. LPU Gen2 삼성 SF4X. AI factory = training(HBM)+inference(SRAM) 이중 구조. 시나리오 확률 갱신.", "note": "SA-20260328-TQ. TurboQuant 독립 분석."}
+  ],
+
+  "pre_read": {
+    "type": "STRUCT×NARR",
+    "scp": 3,
+    "urgency": "WATCH"
+  },
+
+  "scenarios": {
+    "A": {
+      "label": "capex 지속 + monetizer 주도",
+      "probability": "25%",
+      "trigger": {"condition": "Q1 실적에서 AI 서비스 매출 YoY +50% + MSFT/GOOGL 신고가", "source": "통계적", "recalibration": "Q1 실적(4월말)"},
+      "kc": {
+        "watch": "AI 서비스 매출 성장 둔화(<30% YoY)",
+        "alert": "capex 가이던스 하향",
+        "hard": "Big Tech capex 전년 대비 감소",
+        "action": "TC-010 Phase 4. capex 지속 thesis 재검토."
+      },
+      "current_status": "Phase 0. Q1 실적 대기."
+    },
+    "B": {
+      "label": "capex 감속 + 구조 조정",
+      "probability": "35%",
+      "trigger": {"condition": "Q1 실적에서 capex 가이던스 하향 OR 헬륨 병목 팹 셧다운", "source": "구조적"},
+      "kc": {
+        "watch": "BofA 매수 유지",
+        "alert": "JPM revenue gap 축소($400B↓)",
+        "hard": "NVDA 신고가",
+        "action": "TC-010 Phase 4. 감속 thesis 재검토."
+      },
+      "current_status": "Phase 1. NVDA -10% YTD. ROI Fatigue 서사 확산 중."
+    },
+    "C": {
+      "label": "양극화 심화 (현 상태 지속)",
+      "probability": "25%",
+      "trigger": {"condition": "NVDA -15%+ YTD + MSFT/GOOGL flat/상승 + 3개월 지속", "source": "통계적"},
+      "kc": {
+        "watch": "NVDA 반등 +10% 또는 MSFT/GOOGL 동반 하락",
+        "alert": "NVDA 신고가 접근 OR Big Tech capex 일제 감속",
+        "hard": "NVDA 매출 확인+반등(→A) OR monetizer 동반 하락(→B)",
+        "action": "TC-010 C(양극화) 종료. A(매출 확인) 또는 B(감속) 방향 확정."
+      },
+      "current_status": "진입 중. NVDA -10%, MSFT/GOOGL 견조."
+    },
+    "D": {
+      "label": "헬륨 위기 → AI 인프라 물리적 차질",
+      "probability": "15%",
+      "trigger": {"condition": "반도체 팹 가동률 공식 감소 + GPU 공급 차질 보고", "source": "구조적"},
+      "kc": {
+        "watch": "헬륨 대체조달 확인",
+        "alert": "카타르 부분 재가동",
+        "hard": "팹 정상 가동 복귀",
+        "action": "TC-010 Phase 4. 헬륨 thesis 재검토."
+      },
+      "current_status": "Phase 0. 팹 측 침묵."
+    }
+  },
+
+  "tracking_indicators": [
+    {"indicator": "NVDA", "symbol": "NVDA", "current": "$167.52", "threshold": "$150 (YTD -20%)", "last_check": "2026-03-28", "next_check": "2026-04-04"},
+    {"indicator": "MSFT", "symbol": "MSFT", "current": "$360.60", "threshold": "Q1 실적 Copilot 매출", "last_check": "2026-03-28", "next_check": "2026-04-25"},
+    {"indicator": "SOX 반도체지수", "current": "3/26 -2.9%", "threshold": "연속 하락 5d+", "last_check": "2026-03-28", "next_check": "2026-04-04"},
+    {"indicator": "헬륨 팹 가동률", "current": "미공개(침묵)", "threshold": "팹 가동률 감소 공식 보고", "last_check": "2026-03-28", "next_check": "2026-04-15"},
+    {"indicator": "TurboQuant 채택", "current": "Google 발표(3/25)", "threshold": "타사 채택 또는 HBM 수요 전망 하향", "last_check": "2026-03-28", "next_check": "2026-04-30"}
+  ],
+
+  "heartbeat_thresholds": [
+    {"indicator": "NVDA", "symbol": "NVDA", "watch": 155, "alert": 140, "hard": 120, "direction": "below"},
+    {"indicator": "SOX", "symbol": "^SOX", "watch": 4500, "alert": 4200, "hard": 3800, "direction": "below"}
+  ],
+
+  "cross_card_links": [
+    {"to": "TC-003", "link": "이란→카타르헬륨→팹→GPU물리적병목"},
+    {"to": "TC-007", "link": "금리상승→성장주할인+capex자금조달비용"},
+    {"to": "TC-006", "link": "SK하이닉스 ADR + HBM 수요 전망 + LP40 DRAM 공급자 이중 포지션"},
+    {"to": "TC-016", "link": "AI capex 불확실성 → 실질금리 2.08% 환경 성장주 할인율 상승 → 크레딧 역류 방향 일치"}
+  ],
+
+  "analysis_ids": ["SA-20260328-001", "SA-20260328-L7", "SA-20260328-TQ"],
+  "psf_link": "P3 🔴(격화+이란) + P5 🔴(Brent $112) + F5 🔴(VIX 31) + S1 🔴(실질금리 2.08%) — 수축 레짐 AI 기술 충격 과잉반응 환경. S1 실질금리 상승으로 efficiency 혁신이 생존 조건화.",
+  "macro_ref": "B1 실질금리 2.08%(+28bp 4wk), B5 HY OAS 321bp, F5 VIX 31.05, P3 이란 전쟁(Brent $112.57), 레짐 🔴 Contraction",
+  "tags": ["STRUCT", "NARR", "EVENT", "AI", "capex", "NVDA", "Groq", "LPU", "SRAM", "HBM", "헬륨", "반도체", "TurboQuant", "inference", "양극화", "MT-01", "MT-06"]
+}

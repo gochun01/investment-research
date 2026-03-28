@@ -1,0 +1,371 @@
+{
+  "id": "SA-20260328-TQ",
+  "date": "2026-03-28",
+  "title": "TurboQuant × Groq 3 LPX × AI Inference 구조 재설정 — L1~L6 풀 해부",
+  "tc_match": ["TC-010", "TC-006"],
+  "instruction": "L1~L6 풀 실행. L7 실행 안 함.",
+
+  "phase0_gate": {
+    "gate1_history": {
+      "result": "매칭 있음",
+      "matched_files": [
+        "2026-03-26-skhynix-adr-ai-chip.json (SA-20260326-006): SKH ADR + AI capex 연결",
+        "2026-03-28-ai-layers.json (SA-20260328-002): AI $700B capex 양극화 L1~L6 기실행",
+        "2026-03-28-3건통합-이란-TLT-AI.json: AI capex 언급 포함"
+      ],
+      "prior_one_line": "SA-20260328-002: TurboQuant을 TC-010의 하위 변수로 처리. 독립 Stereo 미실행.",
+      "mode": "델타 모드 + 심층 보강 (TurboQuant 독립 격상 + BURIED-1/2 통합)"
+    },
+    "gate2_tc": {
+      "result": "매칭 있음",
+      "tc_id_primary": "TC-010",
+      "tc_id_secondary": "TC-006",
+      "tc_010_phase": 1,
+      "tc_010_scenarios_prev": {
+        "A": "25% — capex 지속 + monetizer 주도",
+        "B": "35% — capex 감속 + 구조 조정",
+        "C": "25% — 양극화 심화",
+        "D": "15% — 헬륨 위기 → 물리적 차질"
+      }
+    },
+    "gate3_context": {
+      "prior_context": "있음: SA-20260328-002 + TC-010 (이전 전제 재검증 필요)",
+      "connection": "이전 분석에서 TurboQuant = HBM 수요 재설정 위협으로 처리. 이번: BURIED-1(Groq 3 LPX)이 더 구조적으로 중요. 전제 부분 수정.",
+      "mode": "델타 모드 — 이전 전제 검증이 L4 핵심"
+    },
+    "gate4": {
+      "conviction": "매칭 없음",
+      "bias": "없음",
+      "th": "TH-001 confidence 0.475 (통상→risk-off) — AI 구조 재설정이 risk-off 방향과 부분 일치",
+      "history": "첫 독립 TurboQuant 분석"
+    }
+  },
+
+  "pre_read": {
+    "type": "STRUCT×EVENT×NARR",
+    "scp": 4,
+    "scp_reason": "TurboQuant(알고리즘) + Groq 3 LPX(하드웨어) + inference/training 역전(경제학) 3개 동시 수렴 = AI 메모리 아키텍처 밸류체인 재편 진행 중. capex $690~750B 유지(D-3 불통과)이므로 파괴(SCP 5) 미달.",
+    "urgency": "WATCH",
+    "urgency_reason": "ICLR 4/23 기술 게이트. Q1 실적(4월말). SKH ADR 일정. 단기 촉매 2~6주 집중.",
+    "analysis_strategy": "L5(구조 전환)와 L4(왜 지금, BURIED-1/2 포함)에 최대 가중치. L1(서사 분열)은 NARR 유형 핵심. L2/L3: 팩트 골격. L6: 한국 노출 상세."
+  },
+
+  "mcp_verification": {
+    "yahoo_finance": {
+      "SKH_000660_KS": "₩922,000 (2026-03-28)",
+      "Samsung_005930_KS": "₩179,700 (2026-03-28)",
+      "Micron_MU": "$357.22 (2026-03-28)",
+      "NVDA": "$167.52 (2026-03-28)",
+      "SOXX": "$323.48 (2026-03-28)"
+    },
+    "fred": {
+      "DFII10_real_rate": "2.08% (2026-03-26)"
+    },
+    "tavily": {
+      "groq_acquisition": "NVIDIA-Groq $20B 딜 확인 (SemiAnalysis, EE Times, HPCwire)",
+      "groq3_lpu_sram": "Groq 3 LPU 500MB SRAM, 150TB/s 대역폭, 40 PBps/랙 확인",
+      "lp40_skhynix": "LP40에서 SKH 3D 스택 DRAM 공급자 지정 확인 (SemiAnalysis)",
+      "groq_gen2_samsung": "Groq LPU Gen 2 = 삼성 SF4X 파운드리 확인 (SemiAnalysis)",
+      "turboquant_scope": "KV캐시만, 훈련/웨이트 무관 교차확인 (MLQ.ai, Global Semi Research)",
+      "hbm_demand_2026": "HBM 수요 70~77% vs 공급 15~20%, 2026년 부족 지속 (iFAST)"
+    }
+  },
+
+  "analysis": {
+
+    "L1_headline_decoding": {
+      "surface_claim": "구글 TurboQuant = AI 메모리 수요 6배 감소 → HBM/DRAM 시장 붕괴. SK하이닉스 -6%, Micron -12% 유발.",
+      "framing_tags": ["공포", "유사성 앵커(DeepSeek)", "권위호소", "대비효과", "기술적 한정"],
+      "narrative_split": {
+        "fear_camp": {
+          "actors": ["Cloudflare CEO Matthew Prince (X)", "Zacks", "리테일 커뮤니티"],
+          "core_claim": "'구글의 DeepSeek moment' — AI 메모리 수요 구조적 감소",
+          "framing": "[공포×유사성 앵커] DeepSeek 감정 잔상 활용"
+        },
+        "correction_camp": {
+          "actors": ["Morgan Stanley Shawn Kim", "TrendForce", "Seoul Economic Daily (3/28 전환)"],
+          "core_claim": "KV캐시만, HBM 무관, Jevons Paradox — 과잉반응 교정 시작",
+          "framing": "[권위호소×대비효과]"
+        },
+        "technical_neutral": {
+          "actors": ["Tom's Hardware", "MLQ.ai", "Google Research Blog"],
+          "core_claim": "3비트 압축, KV캐시만, 실제 효과 제한적",
+          "framing": "[정보 제공]"
+        }
+      },
+      "key_narrative_gap": "GuruFocus 제목(플래시 압박) vs 본문(HBM 무영향) = 이중 서사 컨테이너. 양 캠프가 같은 기사를 다르게 인용.",
+      "fb4_preview": "처음 읽을 때: HBM 수요 감소 충격. L5 이후: inference 아키텍처 전환 신호. 다르게 보임 = 분석 성공."
+    },
+
+    "L2_fact_skeleton": {
+      "verified_facts": [
+        {"fact": "TurboQuant = KV캐시(추론 임시) 6x 압축, 3비트, 정확도 손실 없음", "confidence": "🟢", "source": "Tom's Hardware, Google Research Blog"},
+        {"fact": "H100 GPU attention 연산 8배 성능 향상", "confidence": "🟢", "source": "Tom's Hardware"},
+        {"fact": "실제 시장 효과: TrendForce 2.6배 수준 (KV캐시 = 전체 메모리의 일부)", "confidence": "🟢", "source": "TrendForce"},
+        {"fact": "ICLR 2026 공식 발표 2026-04-23~27", "confidence": "🟢", "source": "rm 결과"},
+        {"fact": "삼성전자 5일 -4.9%, SKH 5일 -7.3%, Micron 5일 -11.7%, SanDisk 5일 -9.1%", "confidence": "🟢", "source": "[MCP] Yahoo Finance"},
+        {"fact": "Micron Q2 FY2026 $23.86B(+196% YoY), HBM4 전량 매진, Q3 가이던스 $33.5B", "confidence": "🟢", "source": "CNBC, Seeking Alpha"},
+        {"fact": "NVIDIA-Groq $20B 딜(라이선싱+인력), 2025년 12월 크리스마스이브 완료", "confidence": "🟢", "source": "[Tavily] EE Times, SemiAnalysis, HPCwire"},
+        {"fact": "Groq 3 LPX 랙: 256 LPU, 40 PBps SRAM 대역폭, 2026년 여름 배송", "confidence": "🟢", "source": "[Tavily] SemiAnalysis, HPCwire"},
+        {"fact": "Groq 3 LPU: SRAM 전용 500MB/LPU, HBM 미사용", "confidence": "🟢", "source": "[Tavily] HPCwire"},
+        {"fact": "LP40(차세대 LPU)에서 SKH가 3D 스택 DRAM 공급자 지정", "confidence": "🟢", "source": "[Tavily] SemiAnalysis"},
+        {"fact": "Groq LPU Gen 2 = 삼성 SF4X 파운드리 사용", "confidence": "🟢", "source": "[Tavily] SemiAnalysis"},
+        {"fact": "HBM 2026 수요 70~77% 증가 vs 공급 15~20% 증가", "confidence": "🟢", "source": "[Tavily] iFAST Research"},
+        {"fact": "추론 비용 3년 1,000배 하락", "confidence": "🟡", "source": "복수 출처 합산, 정확 배수 미확인"},
+        {"fact": "훈련:추론 비중 역전 33:67", "confidence": "🟡", "source": "core extractor — 단일 출처 미확인"},
+        {"fact": "DRAM 가격 2026 상반기 40~50% 상승, HBM3E 가격 20% 인상", "confidence": "🟢", "source": "[Tavily] MLQ.ai"}
+      ],
+      "what_media_did_not_say": [
+        "BURIED-1: Groq 3 LPX는 TurboQuant보다 구조적으로 더 중요 — NVDA가 $20B에 SRAM inference 아키텍처를 이미 확보",
+        "SanDisk -11%가 최대 낙폭: NAND/SSD는 TurboQuant 대상 아님 — 시장 기술 구분 완전 실패 증거",
+        "NVDA 침묵 이유: Groq 3 LPX로 inference 커버 내부 확신 = HBM-free inference 이미 확보",
+        "LP40에서 SKH가 DRAM 공급자: SKH는 피해자이면서 동시에 수혜자",
+        "Groq LPU Gen 2 삼성 SF4X: 삼성도 파운드리 수혜자"
+      ],
+      "phase23_supplement": {
+        "question": "Groq 3 LPX에서 SKH가 DRAM 공급자로 지정됐는가?",
+        "answer": "YES — LP40(차세대)에서 SKH 3D 스택 DRAM 공급자 확인. Groq 3 LPX(현세대)는 SRAM 전용.",
+        "impact": "SKH 이중 포지션(피해+수혜) 확인. L6 한국 전이 분석에 직결.",
+        "tag": "[보강]"
+      }
+    },
+
+    "L3_stakeholder_map": {
+      "players": [
+        {"actor": "구글", "role": "공급자/공격자", "gain": "inference 비용 절감 → AI 서비스 마진 개선", "hidden_motive": "inference 비용이 자사 최대 압박", "silence_reason": "ICLR 발표 전 학술 프로토콜"},
+        {"actor": "SK하이닉스", "role": "피해자/잠재 수혜자", "gain": "LP40 3D 스택 DRAM 공급자 지정", "loss": "TurboQuant 공포로 HBM 수요 우려 -7.3%", "silence": "이중 포지션 공개 기피"},
+        {"actor": "삼성전자", "role": "피해자/파운드리 수혜자", "loss": "HBM 2위, 외국인 지분율 12.5년 최저", "gain": "Groq LPU Gen 2 삼성 SF4X 파운드리 수혜 [FB-1 보강]", "silence": "HBM 수율 문제 + 기술 대응 미확정"},
+        {"actor": "Micron", "role": "피해자/어닝 서프라이즈", "loss": "inference 세그먼트 비중 높아 TurboQuant 공포 최대 피해 -11.7%", "gain": "Q2 $23.86B +196%, HBM4 전량 매진", "structural_weakness": "훈련 HBM에서 SKH/삼성 대비 점유율 열위"},
+        {"actor": "NVDA", "role": "하류 수혜자/숨은 촉매", "gain": "Groq 3 LPX로 inference 왕국 확장. TurboQuant = H100 성능 8배", "silence_meaning": "이미 SRAM 기반 inference 전환 완료 내부 확신"},
+        {"actor": "TSMC", "role": "숨은 수혜자 [FB-2 보강]", "gain": "LP40(N3P + CoWoS-R) = inference 분리 아키텍처 전환의 직접 수혜. CoWoS-R 수요 증가"},
+        {"actor": "Cloudflare CEO Matthew Prince", "role": "공포 촉매자", "action": "X 'DeepSeek moment' 발언 → 서사 점화"},
+        {"actor": "한국 개인투자자", "role": "정보 비대칭 포지션", "action": "외국인 3.9조 매도 흡수. 정보 비대칭 리스크"}
+      ]
+    },
+
+    "L4_causal_analysis": {
+      "prior_premise_check": {
+        "premise": "SA-20260328-002: TurboQuant = HBM 수요 재설정 위협",
+        "verdict": "조건부 유지 + 대폭 수정",
+        "details": {
+          "HBM_direct_impact": "🔴 과대평가됨 — KV캐시 = 전체의 일부만",
+          "inference_DRAM_impact": "🟡 중기 실재 — context window 성장과 경쟁",
+          "Groq3_LPX_structural": "🟢 과소평가됨 — inference 아키텍처 전환의 하드웨어 선언"
+        }
+      },
+      "surface_cause": "구글 TurboQuant 논문 3/25 공개 → 메모리 수요 감소 공포 → HBM 주가 패닉",
+      "structural_causes": [
+        {"id": "근인1", "cause": "Cloudflare CEO X 발언 → DeepSeek 감정 잔상 활용 → 공포 점화", "note": "기술 커뮤니티 서사 창출 촉매"},
+        {"id": "근인2", "cause": "VIX 31 (수축 레짐 + 이란 전쟁) → 공포 증폭 환경 조성", "note": "PSF 수축기에 부정적 서사 과잉반응"},
+        {"id": "구조1", "cause": "AI inference 비용 3년간 급락 → 훈련:추론 비중 역전(33:67)", "note": "inference 시장 급성장 → 메모리 아키텍처 최적화 경쟁 격화"},
+        {"id": "구조2_BURIED1", "cause": "NVDA-Groq $20B 딜 — inference = SRAM, training = HBM 분리 선언", "note": "TurboQuant보다 구조적으로 더 중요. AI factory 이중 아키텍처 공식화. NVDA 침묵 설명."},
+        {"id": "구조3", "cause": "AI capex ROI 불확실성 ($700B capex vs $25B 매출 = ROI 4%)", "note": "TurboQuant = ROI 불확실성 추가 기폭제"}
+      ],
+      "why_now": {
+        "summary": "단일 논문이 아닌 3개 수렴: TurboQuant(알고리즘) + Groq 3 LPX(하드웨어) + 추론비용/비중 역전(경제학). AI 메모리 아키텍처 training-HBM-dominant → inference-diversified 전환의 변곡점 신호.",
+        "psf_amplifier": "VIX 31 수축 레짐 + Disruption 1(엔 캐리) + S1 실질금리 2.08% = 부정적 서사 과잉 증폭 환경"
+      }
+    },
+
+    "L5_structure_layer": {
+      "system": "MT-01 (AI 인프라 기술 전환) + MT-01×MT-06 (AI효율화×에너지 제약) 교차",
+      "judgment": "🔀 전환 — inference 아키텍처 전환 초기 단계",
+      "temporal_decomposition": [
+        {"period": "2019~2022", "cause": "GPT-3/PaLM 훈련 경쟁", "structure": "훈련 >> 추론 (80:20 추정)", "memory": "HBM 중심, GPU 지배", "counterfactual": "HBM 공급망이 훈련 특화 구조로 고착"},
+        {"period": "2023~2024", "cause": "ChatGPT 상용화, 사용자 폭발", "structure": "비중 역전 진행 (50:50→40:60 추정)", "memory": "HBM 성장 유지 + inference DRAM 압박 시작", "counterfactual": "inference 최적화 압력 없어짐"},
+        {"period": "2025 상반기", "cause": "DeepSeek R1 등장 → 효율화 경쟁. NVDA-Groq $20B 딜(12월)", "structure": "SRAM 기반 LPU vs HBM 기반 GPU 분리 구조 성립", "memory": "inference 분리 아키텍처 공식화", "counterfactual": "inference 분리 아키텍처 확립 안 됨"},
+        {"period": "2026 Q1 현재", "cause": "TurboQuant 공개(3/25) — 소프트웨어 레이어 inference 효율화", "structure": "소프트웨어(TurboQuant) + 하드웨어(Groq 3 LPX) 동시 수렴. 훈련:추론 33:67", "memory": "변곡점 신호 가시화", "counterfactual": "직접 트리거 제거"}
+      ],
+      "memory_structure_analysis": {
+        "training_HBM": {
+          "demand": "유지 — capex $690~750B 유지(D-3 불통과). 2026 HBM 수요 70~77% vs 공급 15~20% = 부족 지속",
+          "turboquant_impact": "없음 — 훈련 워크로드에 KV캐시 없음",
+          "groq_impact": "없음 — LPX는 inference 전용",
+          "verdict": "🟢 단기 구조적 안전"
+        },
+        "inference_DRAM": {
+          "demand": "context window 성장으로 급증 중",
+          "turboquant_impact": "실재 — KV캐시 6x 압축 → context window 비용 하락",
+          "groq_impact": "실재 — SRAM 기반 → DRAM 불필요 (Groq 3 LPX 현세대), LP40부터 SKH DRAM 재투입",
+          "paradox": "비용 하락 → 수요 폭발(Jevons) vs 직접 대체 — 방향 불확실",
+          "verdict": "🟡 중기 구조 압박 가능성 [스냅샷 주의]"
+        },
+        "model_weights_HBM": {
+          "turboquant_impact": "없음 — 웨이트 압축과 KV캐시 압축은 다른 기술",
+          "verdict": "🟢 무관"
+        }
+      },
+      "precedents": [
+        {"case": "CPU→GPU 전환(2010s)", "lesson": "훈련이 GPU로 이동 시 inference는 처음에 CPU에 남았다가 결국 GPU가 흡수. 지금은 반대: GPU에서 LPU(특수 inference)로 분리 중."},
+        {"case": "HDD→SSD 전환", "lesson": "성능↑ + 비용↓인데도 총 스토리지 수요 폭발. Jevons Paradox 선례."}
+      ],
+      "psf_cross": {
+        "regime": "🔴 수축 → AI 기술 충격이 과잉 반응",
+        "S1_real_rate": "2.08%(+28bp 4주) → AI capex 자금조달 비용 상승 = ROI 임계 상향 → TurboQuant 효율화가 생존 조건화",
+        "implication": "PSF 수축기에 efficiency 혁신의 구조적 압박이 정상 환경보다 더 강하게 시장에 반영됨"
+      }
+    },
+
+    "L6_second_order": {
+      "short_term_1_4weeks": [
+        {
+          "id": "ST-1",
+          "chain": "Micron 어닝 서프라이즈 역충격",
+          "detail": "TurboQuant 공포 → Micron -11.7% → Q2 +196% YoY, HBM4 전량 매진 → 교정 서사 시작. 현재 $357(어닝 전 $404 대비 -12%). MU $380 회복이 교정 신호.",
+          "gate": "MU $380 회복 여부 (Watch UQ-TQ-002, 마감 4/10)"
+        },
+        {
+          "id": "ST-2",
+          "chain": "ICLR 4/23 기술 검토 수렴",
+          "detail": "4/23 이후 frontier 모델 스케일 실제 효과 검토 → '과잉 공포 해소' vs '충격 확인' 이진 분기",
+          "gate": "ICLR 발표 후 5거래일 내 반도체 주가 방향"
+        },
+        {
+          "id": "ST-3",
+          "chain": "삼성/SKH 경영진 공식 대응",
+          "detail": "삼성 침묵 vs SKH 침묵 지속 중. 경영진 대응이 나오면 교정 서사 완결 트리거.",
+          "gate": "경영진 발언 유무"
+        }
+      ],
+      "mid_term_1_6months": [
+        {
+          "id": "MT-1",
+          "chain": "inference 아키텍처 분리 가속",
+          "detail": "AI factory = Vera Rubin(training/HBM) + Groq 3 LPX(inference/SRAM) 분리. 반도체 밸류체인 분화: training HBM(SKH/삼성 유지) vs inference SRAM/LPU 공급망 성장.",
+          "structural": true
+        },
+        {
+          "id": "MT-2",
+          "chain": "LP40 SKH DRAM 공급 계약 확정",
+          "detail": "LP40(차세대 LPU)에서 SKH 3D 스택 DRAM 공급자 지정(SemiAnalysis 확인). SKH = 피해자+수혜자 이중 포지션. ADR 상장 후 이 포지셔닝이 재평가 촉매 가능.",
+          "cross_link": "TC-006 SKH ADR"
+        },
+        {
+          "id": "MT-3",
+          "chain": "AI hyperscaler capex 재배분 (조건부)",
+          "detail": "현재 구조 변화 징후 없음(D-3 불통과). Q1 실적 가이던스 하향 시 TC-010 Phase 2 진입. capex 재배분 → training HBM 유지 + inference LPU 신규 창출.",
+          "condition": "Q1 실적 발표 4월말"
+        },
+        {
+          "id": "MT-4",
+          "chain": "TSMC CoWoS-R 수요 증가",
+          "detail": "LP40(TSMC N3P + CoWoS-R) = inference 분리 아키텍처 전환의 직접 수혜. 비선형 연결: NVDA Groq 생태계 확장 → TSMC 고급 패키징 수요 증가.",
+          "cross_link": "TC-010 구조 변화"
+        }
+      ],
+      "long_term_6months_plus": [
+        {
+          "id": "LT-1",
+          "chain": "SRAM/LPU 생태계 vs HBM 생태계 분리",
+          "detail": "현재 HBM 공급망이 훈련 중심 최적화. inference 분리 가속 시 훈련 HBM(SKH/삼성/Micron) vs inference SRAM(신규). LP40 이후 TSMC+SKH+NVDA 삼각 inference 공급망 등장 가능.",
+          "note": "이 전환이 완성되면 현재 HBM 과잉 반응이 방향적으로 맞는 것으로 재평가될 수 있음. 지금은 속도와 타이밍이 틀린 것."
+        }
+      ],
+      "korea_exposure": {
+        "samsung": {
+          "direct_loss": "HBM 수요 우려. 외국인 지분율 12.5년 최저.",
+          "foundry_gain": "Groq LPU Gen 2 삼성 SF4X 파운드리 수요 [FB-1 보강 확인]",
+          "net": "피해+수혜 이중. 단기 피해 우위. 중기 파운드리 수혜 잠재."
+        },
+        "sk_hynix": {
+          "direct_loss": "HBM 수요 우려 -7.3% (현 ₩922K)",
+          "dram_gain": "LP40 3D 스택 DRAM 공급자 지정",
+          "adr_upside": "ADR IPO($10~14B)가 TurboQuant 충격 상쇄 + 밸류에이션 재평가 (TC-006)",
+          "net": "단기 피해 + 중기 이중 수혜(DRAM 공급+ADR). 3자 중 가장 복잡한 포지션."
+        },
+        "kospi_krw": {
+          "kospi_impact": "삼성+SKH 시총 15%+ → KOSPI 5일 -3.6%",
+          "krw_impact": "KRW ₩1,508 (+0.7% 원화 약세) — 반도체 수출 기업 약세 + PSF 이란 전쟁 복합",
+          "retail_risk": "한국 개인이 외국인 3.9조 매도 흡수 → 정보 비대칭 포지션 리스크"
+        }
+      },
+      "nonlinear_connections": [
+        "TurboQuant → AI capex 불확실성 → 실질금리 2.08% 환경에서 성장주 할인율 상승 → TC-007(미장기채) + TC-016(크레딧 역류) 방향 일치",
+        "Groq 3 LPX(SRAM) → NVDA inference 독점 → 한국 HBM 공급자 inference 포지션 약화 (단, LP40 SKH 계약이 방어선)",
+        "inference 비용 하락(Jevons) → AI 서비스 매출 폭발 시 → TC-010 시나리오 A(capex 지속) 강화"
+      ],
+      "data_reliability": {
+        "warning": "외국인 2개월 50조 순매도 수치: Seoul Economic Daily 단일 출처 🟡",
+        "verified": "SKH HBM 점유율 57~62%: rm(57%) + iFAST(57~62%) + MLQ.ai(60%+) = 🟢 3개 교차 확인"
+      }
+    }
+  },
+
+  "feedback_loops": {
+    "FB1_L4_to_L2": "L4에서 BURIED-1(Groq 3 LPX) 과소평가 확인. L2에 Groq LPU Gen 2 삼성 SF4X 팩트 [보강] 처리.",
+    "FB2_L5_to_L3": "L5 inference 분리 구조 확인. L3 TSMC에 LP40(N3P+CoWoS-R) 구체적 수혜 타임라인 [보강]. 삼성 파운드리 수혜도 [보강].",
+    "FB5_temporal": "🟡 'inference DRAM 중기 구조 압박'에 [스냅샷 주의] 태그. TurboQuant 발표 후 3일, 채택 여부 미확인 상태에서 구조적 확정 불가. 방향은 맞으나 크기/속도 불확실.",
+    "FB4_final": "처음: HBM 수요 감소 = 한국 반도체 구조적 위기. 지금: TurboQuant = 과잉반응. 실제는 inference 아키텍처 전환 신호. BURIED-1(Groq 3 LPX)이 진짜 구조 변화. 분석 성공 ✅"
+  },
+
+  "emergent_questions": [
+    {
+      "id": "EQ-1",
+      "lens": "반전 렌즈",
+      "question": "Groq 3 LPX가 SRAM 기반이라면 inference 시장에서 HBM은 완전히 퇴출되는가?",
+      "answer": "아니다. LP40부터 SKH DRAM 3D 스택 재투입. SRAM은 대역폭 극단적으로 높으나 용량 너무 작음(256 LPU × 500MB = 128GB). Frontier 모델 추론에는 용량 부족. 완전 퇴출은 SRAM 용량이 수십 TB 수준 돼야 — 현 기술로 불가."
+    },
+    {
+      "id": "EQ-2",
+      "lens": "숨은 승자 렌즈",
+      "question": "이 전환에서 진짜 숨은 수혜자는 누구인가?",
+      "answer": "TSMC + 삼성 파운드리(이중). TSMC: Groq LP40(N3P+CoWoS-R) 독점 공급. 삼성: Groq LPU Gen 2 SF4X 파운드리 고객. CoWoS-R = inference 분리 아키텍처 전환의 직접 수혜."
+    },
+    {
+      "id": "EQ-3",
+      "lens": "시간 비대칭 렌즈",
+      "question": "TurboQuant 논문이 실제로 2025년 4월(arXiv:2504.19874v1)에 제출됐다는 주장이 있다. 시장이 1년 늦게 반응한 것인가?",
+      "answer": "🟡 미확인 필요. arXiv 제출과 Google 공식 Research Blog 발표(3/25)가 다를 수 있음. 사실이라면: 시장 반응 = 기술 발전이 아닌 '공식 언론화' 타이밍 반응 = 서사적 이슈의 전형. preprint vs peer review 사이의 서사 공백 패턴."
+    }
+  ],
+
+  "uncertainty_map": {
+    "confident": [
+      "TurboQuant 기술 범위: KV캐시만, HBM(훈련/웨이트) 영향 없음",
+      "NVDA-Groq $20B 딜 완료, Groq 3 LPX 2026 여름 배송",
+      "2026 HBM 수요: 70~77% 증가 vs 공급 15~20% = 부족 지속",
+      "Micron Q2 어닝 서프라이즈, HBM4 전량 매진",
+      "SanDisk -11%(NAND) = 시장 기술 구분 실패 증거"
+    ],
+    "uncertain": [
+      "ICLR 4/23 이후 frontier 모델 스케일 TurboQuant 실효 크기",
+      "OpenAI/Meta/Anthropic 채택 속도",
+      "inference:training 비중 33:67 수치 정확성 (단일 출처)",
+      "MU $380 회복 타임라인",
+      "SKH ADR 공식 일정"
+    ],
+    "unknown": [
+      "NVDA Groq 3 LPX 실제 성능(배송 전 미확인)",
+      "LP40 출시 타임라인(설계 단계)",
+      "삼성 내부 TurboQuant 기술 대응 전략",
+      "arXiv 제출 시점 vs Google 공식 발표 차이"
+    ],
+    "weakest_link": "inference DRAM 중기 구조 압박 — 방향은 맞으나 Jevons Paradox 작동 시 수요 폭발로 반전 가능. 현 단계 구조적 확정 불가. [스냅샷 주의]"
+  },
+
+  "psf_link": "P3 🔴(격화+이란) + P5 🔴(Brent $112) + F5 🔴(VIX 31) + S1 🔴(실질금리 2.08%) — 수축 레짐이 AI 기술 충격 과잉 반응 환경 조성. S1 실질금리 상승이 AI capex ROI 임계 상향 → efficiency 혁신이 생존 조건화.",
+  "macro_ref": "B1 실질금리 2.08%(+28bp 4wk), B5 HY OAS 321bp(추세 전환), F5 VIX 31.05(30 돌파), P3 이란 전쟁(Brent $112.57), 레짐 🔴 Contraction(0.5/5)",
+
+  "one_line": "TurboQuant은 서사 과잉반응이고 BURIED-1(Groq 3 LPX)이 진짜 구조 변화다 — NVDA가 이미 $20B에 SRAM inference 아키텍처를 확보했고, AI factory는 training(HBM)/inference(SRAM) 이중 구조로 분리됐다.",
+
+  "quality_score": {
+    "coverage": 1.0,
+    "cross_verify": 0.85,
+    "discovery_rate": 0.70,
+    "freshness": 0.92,
+    "total": 0.867,
+    "note": "coverage: L1~L6 전 레이어 실행. cross_verify: MCP(Yahoo/FRED) + Tavily 5건 교차. discovery_rate: BURIED-1/2 + Groq LPU Gen2 삼성/LP40 SKH 발견. freshness: macro(3/28)+PSF(3/28)+Yahoo(3/28)+FRED(3/26) 신선."
+  },
+
+  "data_sources": {
+    "mcp": ["Yahoo Finance — 005930.KS, 000660.KS, MU, NVDA, SOXX (현재가)", "FRED — DFII10 실질금리 2.08%"],
+    "tavily": [
+      "EE Times 3/24 — Groq 딜 상세",
+      "SemiAnalysis — Groq LPX 기술 분석 + LP40 SKH DRAM + LPU Gen2 삼성 SF4X",
+      "HPCwire 3/25-26 — Groq 3 LPU SRAM 아키텍처",
+      "MLQ.ai — TurboQuant 기술 범위 분석",
+      "iFAST Research 3/23 — HBM 2026~2028 수요/공급 분석"
+    ],
+    "provided": ["RM 결과 (2026-03-28-turboquant.json)", "Core 결과 (입력 데이터)", "PSF state.json (2026-03-28)", "macro latest.json (2026-03-28)", "TC-010, TC-006 카드"]
+  }
+}
