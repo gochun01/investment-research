@@ -1,0 +1,105 @@
+{
+  "id": "SA-20260328-005",
+  "date": "2026-03-28",
+  "version": "2.0",
+  "title": "AI 전력 위기 — 그리드 역류 신규 리스크 + Linglong One 세계 최초 SMR",
+  "tc_id": "TC-014",
+  "phase0_gate": {
+    "gate1_history": {"matched": ["SA-20260328-002"], "prior_one_line": "AI $700B capex 양극화 + 헬륨 물리적 병목. TC-010 전담."},
+    "gate2_tc": {"matched": "TC-014", "tc_phase": 1},
+    "gate3_context": {"mode": "델타 모드", "delta_focus": "그리드 역류 신규 리스크 + 중국 SMR 상용화"},
+    "gate4_loop": {"conviction": "매칭 없음", "bias": "없음", "th_status": "TH-001 간접 관련", "prediction_history": "TC-014 첫 Stereo"}
+  },
+  "pre_read": {
+    "type": "STRUCT×MACRO", "scp": 3,
+    "scp_basis": "그리드 역류 신규 리스크 유형 + Linglong One SMR 실증 + PJM 5~10년 대기",
+    "urgency": "WATCH",
+    "emotion": {"detected": false},
+    "routing": {"mode": "delta", "focus_layers": ["L4", "L5"], "reduced_layers": ["L3", "L6", "L7"], "standard_layers": ["L1", "L2"]}
+  },
+  "one_line": "AI 전력 위기는 '부족'에서 '역류'로 새 차원 추가. 데이터센터 일제 차단 시 그리드 불안정 + 중국 Linglong One SMR 2026 H1 상용화로 미국과 4년+ 기술 격차 가시화.",
+  "layers": {
+    "L1": {
+      "headline": "버지니아 40개+ 데이터센터 전력 20%+. 일제 차단 시 그리드 역류. PJM 접속 대기 5~10년. 중국 Linglong One 125MW SMR 2026 H1 상용 운전.",
+      "framing": ["공포", "대비효과"],
+      "framing_detail": "AI 전력=nightmare 프레이밍 + 중국 앞서감 vs 미국 지연"
+    },
+    "L2": {
+      "facts": [
+        {"id": 1, "fact": "버지니아 데이터센터 전력 20%+", "confidence": "yellow", "source": "PJMedia meta (페이월)"},
+        {"id": 2, "fact": "PJM 접속 대기 5~10년", "confidence": "yellow", "source": "브리핑 데이터"},
+        {"id": 3, "fact": "데이터센터 일제 차단 그리드 역류 리스크", "confidence": "yellow", "source": "PJMedia title+description"},
+        {"id": 4, "fact": "Linglong One 125MW H1 2026 상용 운전", "confidence": "green", "source": "NucNet + OilPrice 이중확인"},
+        {"id": 5, "fact": "PJM 6GW 부족", "confidence": "green", "source": "TC-014 기존 교차확인"},
+        {"id": 6, "fact": "VST $155.48", "confidence": "green", "source": "Yahoo Finance"},
+        {"id": 7, "fact": "URA $46.63", "confidence": "green", "source": "Yahoo Finance"},
+        {"id": 8, "fact": "NuScale(SMR) $10.30", "confidence": "green", "source": "Yahoo Finance"},
+        {"id": 9, "fact": "CEG $301.49", "confidence": "green", "source": "Yahoo Finance"}
+      ],
+      "unsaid": [
+        {"item": "역류 리스크는 재생에너지에서 기존 이슈. 데이터센터가 새 카테고리 추가", "significance": "부하 변동성이 문제"},
+        {"item": "중국 vs 미국 SMR 시간차 4년+", "significance": "NuScale 2030+ vs Linglong 2026"},
+        {"item": "Behind-the-meter 전력이 PJM 접속 우회 경로", "significance": "utility death spiral 소규모 버전"},
+        {"item": "이란전쟁 Brent $105→전력 비용 전이", "significance": "TC-003→TC-014 교차 경로"}
+      ]
+    },
+    "L4": {
+      "why_now": "버지니아 2025.2 거의 재난 + 밀도 집중 40개+ + PJM 5~10년 대기. Linglong One 실증 임박.",
+      "prior_premise_valid": true,
+      "structural_causes": ["그리드 설계 범위 밖 부하 변동", "PJM 접속 구조적 병목", "SMR 실증→규제 완화 압력"]
+    },
+    "L5": {
+      "verdict": "확장(⬆)",
+      "verdict_basis": "전력 문제가 부족→양방향 리스크로 차원 확장. SMR 해결책 단계 진입(중국 기준).",
+      "key_discovery": "AI 전력 문제의 프레이밍: 부족(supply gap) + 역류(demand shock) = 전력 시스템 재설계 필요. 단순 발전 확장 불충분."
+    },
+    "L6": {
+      "second_order": [
+        {"effect": "유틸리티 데이터센터 리스크 재분류→요금 할증/접속 조건 강화", "probability": "30%"},
+        {"effect": "Behind-the-meter 가속→유틸리티 수요 유실", "probability": "25%"},
+        {"effect": "중국 SMR 수출→글로벌 SMR 시장 경쟁", "probability": "35%"}
+      ]
+    },
+    "L7": {
+      "scenarios": {
+        "A": {"label": "전력 확장 성공", "probability": "30%", "prev_probability": "35%", "delta_reason": "역류 리스크=단순 확장 불충분. 그리드 재설계 필요."},
+        "B": {"label": "전력 부족→건설 지연", "probability": "35%", "prev_probability": "30%", "delta_reason": "PJM 5~10년 + 역류 리스크. 건설 지연 가능성 상승."},
+        "C": {"label": "원자력 르네상스(SMR)", "probability": "22%", "prev_probability": "20%", "delta_reason": "Linglong One H1 2026. SMR 실증 임박."},
+        "D": {"label": "전력비용→capex ROI 악화", "probability": "13%", "prev_probability": "15%", "delta_reason": "Big Tech PPA 헤지 중. 직접 영향 제한."}
+      },
+      "next_gates": [
+        {"gate": "Linglong One 상용 운전 발표", "deadline": "2026 H1", "action": "C 25%+"},
+        {"gate": "PJM 2026 수급 보고서", "deadline": "2026 Q2", "action": "부족 8GW+ 시 B 확정"},
+        {"gate": "Big Tech Q1 capex 가이던스", "deadline": "2026-04 말", "action": "전력 비용 언급 증가 시 D 상승"}
+      ],
+      "psf_cross": {"summary": "S1 실질금리(인프라 비용) + TC-003(에너지 가격)→TC-014 교차. TC-010→TC-014: capex 감속 시 전력 수요 둔화."}
+    }
+  },
+  "uncertainty_map": {
+    "high_confidence": ["Linglong One H1 2026 (이중 확인)", "PJM 6GW 부족 (기존 확인)"],
+    "medium_confidence": ["그리드 역류 리스크 (기사 페이월, meta만 확인)", "PJM 5~10년 대기 (원출처 미확인)"],
+    "low_confidence": ["역류→유틸리티 재평가 (추론)", "behind-the-meter 가속 속도"],
+    "weakest_link": "그리드 역류의 실제 규모/빈도 데이터. 버지니아 2025.2 상세 미확인."
+  },
+  "feedback": {
+    "executed": true,
+    "fb1_result": "behind-the-meter 전력의 규제 장벽 미분석.",
+    "fb2_result": "유틸리티가 데이터센터를 리스크로 재분류하지 않을 수 있음. 수익이 리스크보다 클 경우.",
+    "fb3_result": "AI 전력 위기 과장 편향 주의. 버지니아는 극단적 집중 지역. 다른 지역은 다를 수 있음.",
+    "fb4_result": "처음 'AI 전력 부족' → 해부 후 '양방향 리스크(부족+역류)' + 'Linglong One이 SMR 벤치마크'. ✅ 다르게 보임."
+  },
+  "self_check": {
+    "pre_read_before_L1": true, "selective_depth": true, "surface_subsurface_separated": true,
+    "uncertainty_map_present": true, "feedback_loop_executed": true, "fb4_delta_found": true,
+    "no_investment_advice": true, "no_certainty_language": true
+  },
+  "quality_score": {
+    "coverage": 0.6, "cross_verify": 0.7, "discovery_rate": 0.4, "freshness": 0.8, "total": 0.625,
+    "note": "9개 팩트 중 3개 yellow(페이월). Linglong One green. 발견 4건."
+  },
+  "metadata": {
+    "mcp_sources": ["Yahoo Finance (4)", "Firecrawl (2: PJMedia+Indra)", "Firecrawl Search (2: SMR)"],
+    "total_mcp_calls": 8, "all_green": false, "yellow_count": 3,
+    "prior_analyses": ["SA-20260328-002"]
+  }
+}

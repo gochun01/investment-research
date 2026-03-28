@@ -20,6 +20,8 @@
     "TC-009": {"title": "EU 제3극 통상자율성", "phase": 1, "status": "tracking", "next": "4/10"},
     "TC-010": {"title": "AI capex 양극화+헬륨병목", "phase": 1, "status": "tracking", "next": "4/04", "scenarios": "A25% B35% C25% D15%"},
     "TC-012": {"title": "K-방산 Indra €45.5억 K9 공급망내재화2단계", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A50% B20% C15% D15%"},
+    "TC-013": {"title": "BRICS금 6000톤 탈달러 옵션확보", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A35% B25% C28% D12%"},
+    "TC-014": {"title": "AI전력 양방향리스크(부족+역류)+SMR", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A30% B35% C22% D13%"},
     "TC-016": {"title": "신용역류 VIX30돌파 공포-신용디커플링", "phase": 1, "status": "active", "next": "3/31", "scenarios": "A25% B45% C18% D12%"},
     "SD-001": {"title": "GENIUS Act", "status": "watching", "count": 1},
     "SD-003": {"title": "자동차→방산", "status": "watching", "count": 1}
