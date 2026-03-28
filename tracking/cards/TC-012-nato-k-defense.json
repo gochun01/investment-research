@@ -1,0 +1,173 @@
+{
+  "tc_id": "TC-012",
+  "created": "2026-03-28",
+  "updated": "2026-03-28",
+  "title": "NATO 5% + K-방산 유럽 — Indra-한화 €45.5억 K9 계약, 공급망 내재화 2단계",
+  "status": "active",
+  "issue_summary": "NATO GDP 5% 합의(2035). EU €860B 방산계획. K-방산 유럽 점유율 8.6%. Indra-한화 €45.5억 binding agreement — K9 기반 280대(128포병+120탄약+11C2+21회수). Indra hull design authority 보유=수출→합작 2단계 진입 확정. 스페인 차륜형 €29억 별도 예산(K9 Firepower 경쟁). 총 잠재 €74.5억. 미국 공급 공백(이란전쟁)이 K-방산 가속 촉매.",
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "NATO 5% 합의 + EU €860B 방산계획 + K-방산 유럽 점유율 8.6% + 한화 루마니아 착공.",
+      "note": "신규 생성."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "MCP 수집. 한화에어로 ₩1,335,000. 초기 데이터.",
+      "note": "pipeline-gap-fill"
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "SA-20260328-004 Stereo 해부. Indra-한화 €45.5억 K9 계약 해부.",
+      "note": "Design authority 이전=공급망 내재화 2단계. 차륜형 €29억 후속 가능. A 50%→확정 경로. EU 자급 우회 구조 발견."
+    }
+  ],
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "scp": 4,
+    "urgency": "WATCH"
+  },
+  "scenarios": {
+    "A": {
+      "label": "K-방산 유럽 파트너 정착",
+      "probability": "50%",
+      "trigger": {
+        "condition": "K-방산 유럽 수주 $20B+ 확정 + 한화 루마니아 팹 정상 가동",
+        "source": "구조적",
+        "recalibration": "반기별 수주 공시"
+      },
+      "kc": {
+        "watch": "K-방산 유럽 수주 증가율 둔화(<10% YoY)",
+        "alert": "EU 보호주의 조항 K-방산 명시적 제한",
+        "hard": "K-방산 유럽 점유율 5% 이하 하락",
+        "action": "TC-012 Phase 4. K-방산 유럽 정착 thesis 재검토."
+      },
+      "current_status": "Phase 1. Indra €45.5억 계약 체결. Design authority 이전 확정. 점유율 8.6%+."
+    },
+    "B": {
+      "label": "EU 보호주의로 K-방산 제한",
+      "probability": "20%",
+      "trigger": {
+        "condition": "EU 방산 자급률 목표 70%+ 상향 OR 비유럽 방산 수입 쿼터 도입",
+        "source": "정책적",
+        "recalibration": "EU 방산 정책 발표 시"
+      },
+      "kc": {
+        "watch": "EU 자급률 목표 55% 유지",
+        "alert": "K-방산 유럽 합작 법인 설립 확대",
+        "hard": "EU 보호주의 조항 철회 또는 완화",
+        "action": "TC-012 Phase 4. EU 보호주의 thesis 재검토."
+      },
+      "current_status": "Phase 0. EU 자급 55% 목표 발표."
+    },
+    "C": {
+      "label": "NATO 약화 → 방산 축소",
+      "probability": "15%",
+      "trigger": {
+        "condition": "NATO 5% 목표 철회 OR 주요국 방산비 감축 발표",
+        "source": "지정학적",
+        "recalibration": "NATO 정상회의(연례)"
+      },
+      "kc": {
+        "watch": "NATO 회원국 방산비 증가 트렌드 유지",
+        "alert": "NATO 5% 목표 재확인",
+        "hard": "우크라이나 종전 + NATO 방산비 3%로 하향",
+        "action": "TC-012 Phase 4. NATO 약화 thesis 재검토."
+      },
+      "current_status": "Phase 0. NATO 5% 합의 유지 중."
+    },
+    "D": {
+      "label": "K-방산 + 유럽 합작 본격화 (한화/라파엘/Rheinmetall)",
+      "probability": "15%",
+      "trigger": {
+        "condition": "한화-Rheinmetall 합작법인 설립 OR K-방산 유럽 현지 생산 3개국+",
+        "source": "구조적",
+        "recalibration": "합작 계약 공시 시"
+      },
+      "kc": {
+        "watch": "합작 논의 중단",
+        "alert": "한화 독자 진출 전략 선회",
+        "hard": "유럽 파트너 전면 거부",
+        "action": "TC-012 Phase 4. 합작 thesis 재검토."
+      },
+      "current_status": "Phase 0. 한화 루마니아 단독 착공. 합작 미확인."
+    }
+  },
+  "tracking_indicators": [
+    {
+      "indicator": "K-방산 유럽 수주액",
+      "current": "$56.2B 목표",
+      "threshold": "$20B+ 확정 여부",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "NATO 방산비 GDP%",
+      "current": "5% 합의(2035)",
+      "threshold": "목표 하향 또는 철회",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "EU 방산 자급률",
+      "current": "55% 목표",
+      "threshold": "70%+ 상향 시 K-방산 제한 리스크",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "한화 루마니아 팹 진행",
+      "current": "착공",
+      "threshold": "일정 지연 또는 정상 가동",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    }
+  ],
+  "heartbeat_thresholds": [
+    {
+      "indicator": "한화에어로",
+      "symbol": "012450.KS",
+      "watch": 350000,
+      "alert": 320000,
+      "hard": 280000,
+      "direction": "below"
+    },
+    {
+      "indicator": "Rheinmetall",
+      "symbol": "RHM.DE",
+      "watch": 900,
+      "alert": 800,
+      "hard": 700,
+      "direction": "below"
+    }
+  ],
+  "cross_card_links": [
+    {
+      "to": "TC-005",
+      "link": "VW 방산 전환 — 유럽 방산 산업 재편"
+    },
+    {
+      "to": "TC-003",
+      "link": "이란 → 중동 긴장 → 방산 수요 증가"
+    }
+  ],
+  "tags": [
+    "POLICY",
+    "STRUCT",
+    "방산",
+    "NATO",
+    "K-방산",
+    "한화",
+    "EU",
+    "루마니아",
+    "MT-06"
+  ],
+  "psf_link": "P3 지정학(NATO 확장), P4 규제(EU 방산 자급)",
+  "macro_ref": "",
+  "analysis_ids": ["SA-20260328-004"],
+  "close_condition": "K-방산 유럽 수주 $20B+ 확정 OR EU 방산 보호주의로 K-방산 배제 OR NATO 5% 목표 철회"
+}

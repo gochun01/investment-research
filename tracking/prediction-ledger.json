@@ -514,11 +514,27 @@
       "outcome": null,
       "outcome_date": null,
       "lesson": null
+    },
+    {
+      "id": "PRED-20260328-025",
+      "source": "SA-20260328-004",
+      "date": "2026-03-28",
+      "tc": "TC-012",
+      "type": "structural_thesis",
+      "claim": "스페인 차륜형 SPA €29억 K9 Firepower 수주 — 궤도형 계약 신뢰 기반으로 후속 수주",
+      "scenario": "A",
+      "probability": "35%",
+      "trigger": "스페인 차륜형 SPA 수주자 결정",
+      "deadline": "2026-12-31",
+      "status": "open",
+      "outcome": null,
+      "outcome_date": null,
+      "lesson": null
     }
   ],
   "summary": {
-    "total": 32,
-    "open": 32,
+    "total": 33,
+    "open": 33,
     "resolved": 0,
     "earliest_deadline": "2026-07-24"
   }
