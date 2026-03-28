@@ -1,0 +1,235 @@
+{
+  "id": "SA-20260328-SKH-ADR",
+  "date": "2026-03-28",
+  "title": "SK하이닉스 ADR — 코리아 디스카운트 구조 해체 시도 vs 매크로 역풍 + TurboQuant 교란",
+  "source": "Phase 2 산출물 통합 (RM + Core + PSF + Macro)",
+
+  "pre_read": {
+    "type": "STRUCT×EVENT×NARR",
+    "scp": 4,
+    "scp_note": "SCP 3→4 상향. TurboQuant 충격 + RM 복합 괴리 확인으로 구조 재편 진행 중 판정.",
+    "urgency": "WATCH",
+    "mode": "델타 모드 (SA-20260326-006 + TC-006 위에서)"
+  },
+
+  "prior_context": {
+    "has_prior": true,
+    "sa_id": "SA-20260326-006",
+    "tc_id": "TC-006",
+    "tc_phase": 1,
+    "prior_one_line": "ADR은 자금 조달이 아니라 밸류에이션 기준점 자체를 바꾸겠다는 선언. 301과 동시 진행이 핵심 긴장.",
+    "prior_scenarios": {"A": "50%", "B": "30%", "C": "20%"},
+    "delta_focus": "TurboQuant 충격 추가, 매크로 🟡→🔴 다운그레이드, ADR 구조(신주 vs 자사주) 불확정 부각"
+  },
+
+  "one_line": "ADR thesis(PER 재평가+SOX 편입)는 구조적으로 유효하나 TSMC 선례상 프리미엄 형성 7~10년 소요 — TurboQuant는 KV Cache 한정 노이즈이며, 진짜 리스크는 신주/자사주 구조 불확정 + 매크로 🔴 수축기 타이밍.",
+
+  "key_findings": {
+    "L1_framing": "찬ADR(대비효과+낙관) vs 반ADR(모순/반전) vs TurboQuant(공포) 3방향 프레이밍 충돌. 시장은 TurboQuant 공포에 더 크게 반응.",
+    "L2_facts": {
+      "confirmed": [
+        "F-1 비공개 제출(3/24) 확인",
+        "SKH PER 5.7~5.9x vs MU 7.8~12.1x vs TSM 32.x (MCP Yahoo Finance 교차)",
+        "SKH 3/24 ₩986K → 3/27 ₩933K (-5.4% net 확인)",
+        "TurboQuant = KV Cache 전용. 모델 가중치·HBM 수요 전체와 무관 (Korea Herald + GlobalSemiResearch 교차)",
+        "TSMC ADR 상장(2013) 후 프리미엄 30% 형성은 AI 랠리(2020~) 이후. 즉 7~10년 소요 (Taipei Times 교차)"
+      ],
+      "gaps": [
+        "ADR 구조(신주 vs 자사주 2.4%) — F-1 비공개라 실제 구조 미확인. 두 보도 충돌",
+        "TSMC ADR 상장 직후 PER 변화 시간축 — 단기 즉각 재평가 아님 (선례 확인)",
+        "SOX 편입 타임라인 및 패시브 자금 규모 미보도",
+        "국민연금 ADR 공식 찬반 미확인"
+      ]
+    },
+    "L3_players": {
+      "key_silence": ["국민연금(신주 반대 가능성 높음)", "삼성전자 IR(전략적 침묵)", "JPMorgan Korea"],
+      "hidden_player": "BOJ/엔 캐리 언와인드 — EWY/KOSPI 전반 매도 압력. ADR 발표와 무관한 거시 교란.",
+      "key_tension": "국민연금 의결권 행사 방향이 신주 구조 유지/변경의 핵심 결정자"
+    },
+    "L4_causation": {
+      "delta_vs_prior": "전제 1,2 유지. 매크로 다운그레이드(🟡→🔴)가 ADR 성공 확률에 할인 요인 추가됨.",
+      "three_layers": {
+        "adr_structure": "상법 개정(자사주 소각 의무) + AI capex 100조 목표 → 신주 발행 불가피 구조",
+        "turboquant": "KV Cache 한정 기술 → 시장이 HBM 전체 붕괴로 오해. 4/23 ICLR에서 범위 명확화 예정",
+        "macro_headwind": "VIX 31 + Brent $112 + 실질금리 2.08% + 엔 캐리 완전 활성 = 최악의 상장 타이밍"
+      }
+    },
+    "L5_structure": {
+      "verdict": "🔀 전환 — 비가역(F-1 제출) + 다중관통(코리아 디스카운트+상법+AI+미국 자본) + 자기강화(SKH→삼성→KOSPI 루프)",
+      "tsmc_precedent": "ADR 상장 자체가 PER을 즉시 올리지 않음. TSMC 선례: 7~10년 + AI 사이클 필요.",
+      "structural_diff": "SKH vs TSMC: 신주 희석 리스크 + 코리아 디스카운트 깊이 + 메모리 경쟁 구조 차이",
+      "time_decomp": "2000년대 코리아 디스카운트 고착 → 2020-24 AI 수요 폭발 → 2025 상법 개정 → 2026-03 F-1 제출 → H2 상장"
+    },
+    "L6_second_order": {
+      "short_term": "ICLR(4/23) TurboQuant 기술 범위 확인 → HBM 무관 시 SKH 반등. 분기말 EM 매도 압력 단기 지속.",
+      "mid_term": "SEC 심사 30~60일 → 구조 공시 → 국민연금 의결권. 301 청문회(4/28) 반도체 포함 여부.",
+      "long_term": "SOX 편입 → 패시브 수십억 달러. 삼성 ADR 도미노 → KOSPI 코리아 디스카운트 구조 해체. KRW 강세 전환(H2 조달 시점).",
+      "psf_cross": "현재 🔴 수축기. H2 상장 시점 VIX 25↓ + Brent $90↓ + 실질금리 1.5%↓ 조건 충족 여부가 밸류에이션 할인 해소의 매크로 조건"
+    }
+  },
+
+  "emergent_questions": [
+    {
+      "lens": "반전 렌즈",
+      "question": "TurboQuant가 HBM 수요를 진짜 줄인다면 SKH ADR은 오히려 더 필요한가?",
+      "answer": "자금 조달 목적은 강화. 밸류에이션 재평가 목적은 약화. 두 목적 구분이 TurboQuant 리스크 재해석의 키. 곽노정 CEO '순현금 100조' 발언이 자금 조달이 주된 목적임을 시사."
+    },
+    {
+      "lens": "침묵 렌즈",
+      "question": "국민연금+삼성 IR이 동시에 침묵하는 이유는?",
+      "answer": "국민연금: 의결권 행사 전 전략적 침묵. 자사주 처분 반대 선례상 신주 반대 가능성 높음. 삼성: Artisan 압력 굴복 인상 회피 + 내부 결정 전 공식화 부담. 삼성 침묵이 길어질수록 ADR 도미노 서사 약화."
+    },
+    {
+      "lens": "역사 렌즈",
+      "question": "TSMC ADR은 언제 PER 프리미엄을 형성했는가?",
+      "answer": "2013년 상장 후 2019년까지 프리미엄 미미(PER 14~18x). 2020년 AI 랠리 이후 PER 19~31x. 프리미엄 형성에 7~10년 + AI 사이클 필요. SKH 단기 즉각 재평가 기대는 선례 대비 과도."
+    }
+  ],
+
+  "l7_judgment": {
+    "investment_implication": "구조적으로는 유효한 전환 thesis. 단 ①신주/자사주 구조 확정 ②TurboQuant ICLR 확인 ③매크로 정상화(VIX 25↓) 세 조건이 동시 충족될 때 시그널 강화. 현재는 WATCH 구간.",
+    "scenarios": {
+      "A": {
+        "label": "ADR 성공 + 밸류에이션 재평가 (장기)",
+        "probability": "45%",
+        "probability_delta": "50%→45% (매크로 🔴 할인 -5%p)",
+        "delta_reason": "매크로 레짐 다운그레이드(🟡→🔴). VIX 31+, Brent $112 = 상장 타이밍 악화. ADR 구조 불확정 리스크 추가.",
+        "trigger": {
+          "condition": "ADR 상장 완료 + 자사주 구조 확정 + SOX 편입 심사 진입",
+          "source": "구조적+서사적",
+          "distance": "H2 상장 목표. SEC 심사 진행 중.",
+          "phase": "Phase 1 — Trigger 감시 중"
+        },
+        "kc": {
+          "watch": "SEC 심사 기간 초과(>90일) 또는 추가 자료 요청",
+          "alert": "ADR 규모 공식 발표 $70억 이하",
+          "hard": "ADR 철회 공시 OR 국민연금 신주 공식 반대 + 구조 변경 불가 확인",
+          "action": "TC-006 A thesis 폐기. C(지연/규모 부족)로 전환. SKH 주가 ₩850K 이탈 여부 확인."
+        }
+      },
+      "B": {
+        "label": "ADR 성공 + 301 관세 동시",
+        "probability": "30%",
+        "probability_delta": "30%→30% (변화 없음. 301 청문회 4/28 대기)",
+        "delta_reason": "변화 없음. 301 조사 진행 중. 청문회(4/28)까지 타임라인 불명확.",
+        "trigger": {
+          "condition": "ADR 상장 + 301 반도체 관세 확정 동시",
+          "source": "구조적",
+          "distance": "301 청문회 4/28. 이후 시행 타임라인 불명확.",
+          "phase": "Phase 0~1"
+        },
+        "kc": {
+          "watch": "301 반도체 제외 공식 보도",
+          "alert": "301 관세율 확정 + 반도체 면제 확인",
+          "hard": "301 반도체 완전 면제 공식 발표",
+          "action": "TC-006 B 해소. A(순수 재평가)로 전환."
+        }
+      },
+      "C": {
+        "label": "ADR 지연 / 구조 갈등",
+        "probability": "25%",
+        "probability_delta": "20%→25% (신주/자사주 구조 불확정 + 국민연금 침묵 리스크 +5%p)",
+        "delta_reason": "신주 vs 자사주 두 보도 충돌 확인. 국민연금 의결권 방향 미확인. 매크로 역풍으로 상장 조건 악화.",
+        "trigger": {
+          "condition": "국민연금 신주 공식 반대 OR ADR 규모 공식 발표 $50억 이하 OR 상장 연기 공시",
+          "source": "서사적+구조적",
+          "distance": "미진입. 국민연금 발언 없음 = 잠재 리스크.",
+          "phase": "Phase 0"
+        },
+        "kc": {
+          "watch": "구조 자사주 전환 공시 OR 규모 상향 보도",
+          "alert": "국민연금 찬성 공식 발언",
+          "hard": "ADR 규모 $100억+ + 자사주 구조 확정",
+          "action": "TC-006 C 해소. A로 전환."
+        }
+      }
+    },
+    "kill_condition": "ADR 철회 공시 OR SKH ₩850K×3일 이탈(기대 꺾임 확인) OR TurboQuant ICLR에서 HBM 수요 직접 영향 확인",
+    "tracking_indicators": [
+      {"indicator": "ICLR 2026 TurboQuant 전체 발표", "deadline": "2026-04-23", "significance": "HBM 면책 확인 시 SKH 반등 트리거"},
+      {"indicator": "301 청문회 + 반도체 포함 여부", "deadline": "2026-04-28", "significance": "B 시나리오 확정 여부"},
+      {"indicator": "SKH 주가 ₩850K 지지선", "deadline": "상시", "significance": "ADR 기대 붕괴 신호"},
+      {"indicator": "국민연금 ADR 공식 입장", "deadline": "2026-05-31", "significance": "신주 구조 유지/변경 결정자"},
+      {"indicator": "삼성전자 ADR 검토 공식 언급", "deadline": "2026-06-30", "significance": "ADR 도미노 서사 실현 여부"},
+      {"indicator": "VIX 25↓ + Brent $90↓ + 실질금리 1.5%↓", "deadline": "H2", "significance": "ADR 밸류에이션 할인 해소 매크로 조건"},
+      {"indicator": "SEC F-1 공개 전환 (S-1)", "deadline": "2026-06~07", "significance": "ADR 구조·규모 공식 확정"}
+    ],
+    "noise_vs_signal": {
+      "signal": "만약 삼성전자가 3개월 내 ADR 검토 공식 언급 → 코리아 디스카운트 구조 해체 도미노 시작. WATCH→SIGNAL",
+      "noise": "만약 TurboQuant 관련 메모리 주가 추가 하락 단독 → 기술 오해 기반 노이즈. 무시.",
+      "signal2": "만약 SEC가 90일 내 F-1 공개 전환 + 자사주 구조 확정 → ADR 성공 경로 명확화. KC 재조정.",
+      "noise2": "만약 ADR 발표 후 단기 주가 변동 → TurboQuant/매크로 교란 포함. 구조 판단과 분리."
+    }
+  },
+
+  "uncertainty_map": {
+    "L1": "확신 [■■■■■] — 프레이밍 3방향 명확히 확인",
+    "L2": "확신 [■■■■□] — 핵심 팩트 MCP 교차 확인. ADR 구조(신주/자사주) 충돌은 잔여 불확실",
+    "L3": "확신 [■■■□□] — 플레이어 지도 양호. 국민연금/삼성 IR 침묵 의도 미확인",
+    "L4": "확신 [■■■■□] — 3층 인과 구조 명확. TurboQuant 범위 ICLR 전까지 불확정",
+    "L5": "확신 [■■■□□] — TSMC 선례 데이터 확인. 코리아 디스카운트 심도 측정 어려움",
+    "L6": "확신 [■■□□□] — 2차 효과 경로 논리적이나 SOX 편입 타임라인 미측정",
+    "weak_link": "L6 — SOX 편입 조건·타임라인 미확인. 국민연금 의결권 방향 미확인.",
+    "strengthen": "SKH ADR S-1 공개 + SEC 승인 후 구조 확정. ICLR 2026(4/23) TurboQuant 기술 범위 확인."
+  },
+
+  "feedback_loop": {
+    "FB1_executed": "L4→L2 재점검. '왜 지금' 파악 후 ADR 구조 모순(신주/자사주 충돌) 추가 발견.",
+    "FB2_executed": "L5→L3 재점검. 구조 파악 후 BOJ/엔 캐리를 숨은 플레이어로 추가. 국민연금 의결권 중요성 상향.",
+    "FB3_executed": "L6→L7. 단기 TurboQuant 노이즈 vs 중기 구조 thesis 분리. KC 조정(ICLR 4/23을 KC Watch로 추가).",
+    "FB4_executed": "처음 읽었을 때 vs 지금 — 달라진 점: '자금 조달+TurboQuant 노이즈'로 읽었다가 → '코리아 디스카운트 구조 해체 시도. TSMC 선례상 7~10년 경로. TurboQuant는 KV Cache 한정 오해. 진짜 리스크는 신주/자사주 불확정 + 매크로 타이밍'으로 전환. 분석 성공.",
+    "FB5_executed": "L5 시간축 분해 실행(SCP 4). 2000년대~2026년 5단계 분해. '구조적'이라는 표현에 TSMC 7~10년 근거 부착. 스냅샷 점프 방어."
+  },
+
+  "self_check": {
+    "1_preread": "PASS — STRUCT×EVENT×NARR, SCP 4, WATCH 판독. 분석 깊이 L5+L6 집중 일치.",
+    "2_l2_gaps": "PASS — 4개 갭 명시: ADR 구조 충돌, TSMC 선례 시간축, SOX 타임라인, 국민연금 침묵.",
+    "3_l4_separation": "PASS — 표면(TurboQuant 충격)과 구조(코리아 디스카운트 + 상법 + AI capex) 분리됨.",
+    "4_l5_judgment": "PASS — 🔀 전환. 비가역+다중관통+자기강화 3조건 + TSMC 선례 근거 부착.",
+    "5_l6_new": "PASS — KRW 강세 전환 경로, SOX 패시브 유입, 국민연금 의결권 결정자 = 기사 외 연결.",
+    "6_l7_verifiable": "PASS — 시그널: 삼성 ADR 공식 언급 3개월 내. 노이즈: TurboQuant 단독 하락. 검증 가능.",
+    "7_emergent": "PASS — 3개 돌발 질문. 반전/침묵/역사 렌즈 모두 답까지 제시.",
+    "8_FB4": "PASS — '자금 조달 노이즈' → '구조 해체 시도 + 7~10년 경로'로 변환 기록."
+  },
+
+  "mcp_data_collected": {
+    "yahoo_finance": ["000660.KS ₩922K", "MU $357.22", "TSM $326.74", "000660.KS 1mo historical"],
+    "tavily": ["SKH ADR SEC F-1 교차확인", "TurboQuant HBM 기술 범위", "코리아 디스카운트 ADR", "TSMC ADR PER 선례"],
+    "cross_verified": ["SKH PER vs MU/TSM (2개 MCP 교차)", "TurboQuant KV Cache 한정 (2개 출처 교차)", "TSMC ADR 프리미엄 30% (Taipei Times + FullRatio 교차)"],
+    "mcp_count": 4,
+    "confidence": "green — MCP 2개+ 교차확인 완료"
+  },
+
+  "psf_cross": {
+    "regime": "🔴 수축기 — ADR 상장 타이밍 최악. 매크로 할인 적용.",
+    "s_layer": "S1 실질금리 2.08%(긴장). S2 HY OAS 321bp(추세 전환). ADR 밸류에이션 할인 압력.",
+    "f_layer": "F1 DXY↑+Gold↑ 비정상. F3 EM 이탈. F5 VIX 31+ 경계.",
+    "psf_link": "P3 🔴(격화), P5 🔴(Brent $112), F5 활성★, S1 긴장★, Disruption 1 완전 활성",
+    "h2_condition": "H2 상장 시점 VIX 25↓ + Brent $90↓ + 실질금리 1.5%↓ 세 조건 충족 여부가 ADR 밸류에이션 할인 해소 매크로 기준"
+  },
+
+  "macro_ref": "B1 실질금리 2.08% ✗, B2 DXY 100.19 ✗, B3 JPY 160.29 ✗, B5 HY OAS 321bp ✗. 레짐 🔴. Disruption 1 완전 활성. Brent $112.",
+
+  "quality_score": {
+    "coverage": 1.0,
+    "cross_verify": 0.85,
+    "discovery_rate": 0.7,
+    "freshness": 1.0,
+    "total": 0.89,
+    "note": "MCP 4개 교차. 5반응 계층 전체(RM). TSMC 선례 수치 확인. 구조 불확정(신주/자사주) 잔여."
+  },
+
+  "tc_update": {
+    "action": "TC-006 갱신",
+    "phase": 1,
+    "scp_update": "SCP 3→4",
+    "scenario_updates": {
+      "A": {"from": "50%", "to": "45%", "reason": "매크로 🟡→🔴 다운그레이드 -5%p"},
+      "B": {"from": "30%", "to": "30%", "reason": "301 청문회 대기. 변화 없음."},
+      "C": {"from": "20%", "to": "25%", "reason": "신주/자사주 구조 불확정 + 국민연금 침묵 리스크 +5%p"}
+    },
+    "new_tracking_added": ["ICLR 2026(4/23)", "국민연금 ADR 공식 입장", "삼성전자 ADR 공식 언급", "SEC F-1 공개 전환"],
+    "psf_link_added": "P3 🔴(격화), P5 🔴(Brent $112), S1 긴장★, Disruption 1 완전 활성",
+    "macro_ref_added": "B1 2.08% ✗, B2 100.19 ✗, B5 321bp ✗. 🔴 Contraction."
+  }
+}
