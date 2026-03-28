@@ -1,36 +1,91 @@
 {
-  "id": "TC-006",
-  "type": "stereo",
-  "title": "SK하이닉스 ADR — 밸류에이션 체계 전환 + 301 교차",
-  "source": "SA-20260326-006",
+  "tc_id": "TC-006",
   "created": "2026-03-26",
-  "status": "tracking",
-  "phase": 1,
-  "scp": 3,
+  "updated": "2026-03-28",
+  "title": "SK하이닉스 ADR — 코리아 디스카운트 구조 해체 시도 vs 매크로 역풍",
+  "status": "active",
 
-  "trigger": {
-    "condition": "ADR 상장 완료 + PER 20x+ 달성 (밸류에이션 재평가 확인)",
-    "current": "SEC F-1 제출(3/24). 연내 상장 목표. 규모 미확정.",
-    "fired": false
+  "issue_summary": "SEC F-1 비공개 제출(3/24). H2 상장 목표. SCP 3→4 상향(구조 재편 진행 중). TurboQuant = KV Cache 한정 노이즈 확인. 진짜 리스크: ADR 구조(신주/자사주) 불확정 + 매크로 🔴 수축기 타이밍. TSMC 선례: 프리미엄 형성 7~10년 소요.",
+
+  "phase": 1,
+  "phase_log": [
+    {"phase": 1, "date": "2026-03-26", "trigger": "SEC F-1 제출. 주가 100만 회복.", "note": "SA-20260326-006"},
+    {"phase": 1, "date": "2026-03-28", "trigger": "TurboQuant 충격 후 RM+Stereo 풀 분석. SCP 상향. 매크로 레짐 🔴 다운그레이드. 시나리오 확률 갱신.", "note": "SA-20260328-SKH-ADR"}
+  ],
+
+  "pre_read": {
+    "type": "STRUCT×EVENT×NARR",
+    "scp": 4,
+    "urgency": "WATCH"
   },
-  "kc": {
-    "watch": "ADR 규모 $100억 미만 공시 (ETF 편입 불가)",
-    "alert": "301 반도체 관세 확정 + ADR 면제 불포함",
-    "hard": "HBM 점유율 50%↓ (마이크론/삼성 추격) OR ADR 철회",
-    "fired": false
-  },
+
   "scenarios": {
-    "A": {"label": "ADR 성공 + 밸류에이션 재평가", "prob": "50%"},
-    "B": {"label": "ADR 성공 + 301 관세 동시", "prob": "30%"},
-    "C": {"label": "ADR 규모 부족", "prob": "20%"}
+    "A": {
+      "label": "ADR 성공 + 밸류에이션 재평가 (장기)",
+      "probability": "45%",
+      "probability_prev": "50%",
+      "delta_reason": "매크로 🟡→🔴 다운그레이드 -5%p. ADR 구조(신주/자사주) 불확정 리스크 추가.",
+      "trigger": {"condition": "ADR 상장 완료 + 자사주 구조 확정 + SOX 편입 심사 진입", "source": "구조적+서사적", "distance": "SEC 심사 진행 중. H2 목표.", "recalibration": "정기 4/28(301청문회) + 비정기(SEC 승인/ICLR)"},
+      "kc": {
+        "watch": "SEC 심사 기간 초과(>90일) 또는 추가 자료 요청",
+        "alert": "ADR 규모 공식 발표 $70억 이하",
+        "hard": "ADR 철회 공시 OR 국민연금 신주 공식 반대+구조 변경 불가",
+        "action": "TC-006 A thesis 폐기. C(지연/규모 부족)로 전환. SKH ₩850K 이탈 확인."
+      },
+      "current_status": "Phase 1 — Trigger 감시 중. F-1 제출 완료."
+    },
+    "B": {
+      "label": "ADR 성공 + 301 관세 동시",
+      "probability": "30%",
+      "probability_prev": "30%",
+      "delta_reason": "변화 없음. 301 청문회 4/28 대기.",
+      "trigger": {"condition": "ADR 상장 + 301 반도체 관세 확정 동시", "source": "구조적", "distance": "301 청문회 4/28 예정."},
+      "kc": {
+        "watch": "301 반도체 제외 공식 보도",
+        "alert": "301 관세율 확정 + 반도체 면제 확인",
+        "hard": "301 반도체 완전 면제 공식 발표",
+        "action": "TC-006 B 해소. A(순수 재평가)로 전환."
+      },
+      "current_status": "미확정. 301 조사 진행 중."
+    },
+    "C": {
+      "label": "ADR 지연 / 구조 갈등",
+      "probability": "25%",
+      "probability_prev": "20%",
+      "delta_reason": "신주/자사주 구조 충돌 확인 + 국민연금 침묵(의결권 방향 미확인) +5%p.",
+      "trigger": {"condition": "국민연금 신주 공식 반대 OR ADR 규모 $50억 이하 OR 상장 연기 공시", "source": "서사적+구조적", "distance": "미진입. 국민연금 발언 없음 = 잠재 리스크."},
+      "kc": {
+        "watch": "자사주 전환 구조 공시 OR 규모 상향 보도",
+        "alert": "국민연금 찬성 공식 발언",
+        "hard": "ADR 규모 $100억+ + 자사주 구조 확정",
+        "action": "TC-006 C 해소. A로 전환."
+      },
+      "current_status": "미진입 — 잠재 리스크 구간."
+    }
   },
-  "cross_refs": ["TC-001 (Section 301 — 전자장비=반도체)", "TC-002 (KRW — ADR 달러 유입 역방향)"],
+
+  "tracking_indicators": [
+    {"indicator": "SK하이닉스", "symbol": "000660.KS", "current": "₩922,000", "threshold": "₩850K 이탈 (기대 꺾임)", "last_check": "2026-03-28", "next_check": "2026-04-15"},
+    {"indicator": "ADR 진행 상황", "current": "F-1 비공개 제출", "threshold": "SEC 승인 / S-1 공개 전환 / 상장일 확정", "last_check": "2026-03-28", "next_check": "2026-04-28"},
+    {"indicator": "301 반도체 관세", "current": "조사 중", "threshold": "청문회 4/28 + 반도체 포함 여부", "last_check": "2026-03-28", "next_check": "2026-04-28"},
+    {"indicator": "ICLR 2026 TurboQuant 전체 발표", "current": "4/23 발표 예정", "threshold": "HBM 수요 직접 영향 확인 여부", "last_check": "2026-03-28", "next_check": "2026-04-23"},
+    {"indicator": "국민연금 ADR 의결권 방향", "current": "침묵", "threshold": "공식 찬반 발언", "last_check": "2026-03-28", "next_check": "2026-05-31"},
+    {"indicator": "삼성전자 ADR 공식 언급", "current": "침묵", "threshold": "공식 검토 발표 vs 거부 발표", "last_check": "2026-03-28", "next_check": "2026-06-30"},
+    {"indicator": "매크로 조건 (ADR 할인 해소)", "current": "VIX 31/Brent $112/실질금리 2.08%", "threshold": "VIX 25↓ + Brent $90↓ + 실질금리 1.5%↓", "last_check": "2026-03-28", "next_check": "2026-06-30"},
+    {"indicator": "HBM 점유율", "current": "57%+", "threshold": "50%↓ (마이크론/삼성 추격)", "last_check": "2026-03-28", "next_check": "2026-06-30"}
+  ],
+
+  "heartbeat_thresholds": [
+    {"indicator": "SK하이닉스", "symbol": "000660.KS", "watch": 850000, "alert": 800000, "hard": 700000, "direction": "below"}
+  ],
 
   "events": ["EC-003", "EC-004"],
   "rm_watches": [],
 
-  "heartbeat_thresholds": [
-    {"indicator": "SK하이닉스", "symbol": "000660.KS", "watch": 850000, "alert": 800000, "hard": 700000, "direction": "below", "note": "ADR 기대 반영 하한"}
+  "cross_card_links": [
+    {"to": "TC-001", "link": "Section 301 — 반도체 관세가 ADR 밸류에이션 직격"},
+    {"to": "TC-002", "link": "ADR 달러 유입 → KRW 반등 잠재력 (역방향)"},
+    {"to": "TC-010", "link": "AI capex + HBM 수요 → SK하이닉스 실적 직결"}
   ],
 
   "open_questions": [
@@ -39,8 +94,18 @@
     "ADR 달러 유입 경로: 한국 환류 vs 미국 내 재투자"
   ],
 
-  "check_log": [
-    {"date": "2026-03-26", "observation": "SEC F-1 제출. 주총 100조 선언. 주가 100만 회복. Phase 1.", "next_check": "2026-04-15"}
+  "analysis_ids": ["SA-20260326-006", "SA-20260328-SKH-ADR"],
+  "tags": ["STRUCT", "EVENT", "NARR", "SK하이닉스", "ADR", "HBM", "반도체", "301", "밸류에이션", "코리아디스카운트", "TurboQuant", "SOX편입"],
+
+  "psf_link": "P3 🔴(격화), P5 🔴(Brent $112), S1 긴장★(실질금리 2.08%), Disruption 1 완전 활성, F5 VIX 31+",
+  "macro_ref": "B1 2.08% ✗, B2 DXY 100.19 ✗, B3 JPY 160.29 ✗, B5 HY OAS 321bp ✗. 🔴 Contraction. Brent $112.57.",
+
+  "open_questions": [
+    "TSMC ADR: 상장 후 PER 변화 시간축 확인 (7~10년 소요 확인됨 — 단기 즉각 재평가 기대 과도)",
+    "ADR 구조: 신주 발행 vs 자사주 2.4% — 두 보도 충돌. F-1 공개 전환 후 확인 필요",
+    "국민연금 의결권 행사 방향: 신주 반대 가능성. 공식 발언 없음 = 구조 변경 잠재 리스크",
+    "SOX 편입 조건·타임라인 및 패시브 자금 규모",
+    "232(25%) + 301 이중 관세 시 하이닉스 실효세율"
   ],
 
   "close_condition": "ADR 상장 완료 → 시나리오 확정 OR ADR 철회 → KC 발동 OR 6개월 무변화 → 아카이브"
