@@ -1,0 +1,173 @@
+{
+  "tc_id": "TC-013",
+  "created": "2026-03-28",
+  "updated": "2026-03-28",
+  "title": "BRICS Unit 금본위 출범 + 달러 비중 58.5% — 5,000톤 금 준비금 $4T",
+  "status": "active",
+  "issue_summary": "BRICS Unit(40% 금+60% BRICS통화) 2025.10 파일럿 출범. 러·인·중 무역 90% 비달러. 중앙은행 금 준비금 $4T>미국채 보유(역전). 달러 글로벌 외환보유 비중 71%→58.5%. BRICS Pay 블록 내 달러 사용 2/3 감소.",
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "BRICS Unit 파일럿 출범 + 달러 비중 58.5% + 중앙은행 금 준비금 $4T > 미국채 보유 역전.",
+      "note": "신규 생성."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "MCP 수집. Gold $4,524(초기 설정 $2,800 대비 62% 상회). DXY 100.19. 임계값 전면 재설정.",
+      "note": "pipeline-gap-fill. Gold 임계값 $2,800→$4,800 재조정."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "SA-20260328-006 Stereo 해부. BRICS 금 50% 통제 + WGC 73% 설문.",
+      "note": "대체 아닌 옵션 확보. 금 구조적 바닥 $3,500~4,000 + 순환적 프리미엄. A 35%로 상향."
+    }
+  ],
+  "pre_read": {
+    "type": "MACRO×STRUCT",
+    "scp": 3,
+    "urgency": "SLOW"
+  },
+  "scenarios": {
+    "A": {
+      "label": "점진적 탈달러 지속 (달러 55%까지)",
+      "probability": "35%",
+      "trigger": {
+        "condition": "달러 외환보유 비중 56% 이하 확인 + BRICS Pay 참여국 15개국+",
+        "source": "구조적",
+        "recalibration": "IMF COFER 분기 보고"
+      },
+      "kc": {
+        "watch": "달러 비중 60%+ 반등",
+        "alert": "BRICS Unit 참여국 이탈 (인도 등)",
+        "hard": "달러 비중 62%+ 회복 + BRICS Unit 거래량 급감",
+        "action": "TC-013 Phase 4. 탈달러 thesis 재검토."
+      },
+      "current_status": "Phase 1. 달러 58.5%, 하락 추세 지속."
+    },
+    "B": {
+      "label": "BRICS 내부 분열 → 탈달러 정체",
+      "probability": "25%",
+      "trigger": {
+        "condition": "인도-중국 통화 주도권 갈등 표면화 OR BRICS Unit 파일럿 중단",
+        "source": "지정학적",
+        "recalibration": "BRICS 정상회의(연례)"
+      },
+      "kc": {
+        "watch": "BRICS 공동성명 탈달러 재확인",
+        "alert": "BRICS Unit 참여국 확대",
+        "hard": "BRICS Unit 정식 출범 + 20개국 참여",
+        "action": "TC-013 Phase 4. 내부 분열 thesis 재검토."
+      },
+      "current_status": "Phase 0. 인도-중국 갈등 수면 아래."
+    },
+    "C": {
+      "label": "금 가격 급등 → 통화 질서 가속",
+      "probability": "28%",
+      "trigger": {
+        "condition": "금 $3,500+ 돌파 + 중앙은행 금 매입 연 1,200톤+",
+        "source": "통계적",
+        "recalibration": "WGC 분기 보고"
+      },
+      "kc": {
+        "watch": "금 가격 $2,500 이하 하락",
+        "alert": "중앙은행 금 매도 전환",
+        "hard": "금 $2,000 이하 + 달러 강세 DXY 105+",
+        "action": "TC-013 Phase 4. 금 가속 thesis 재검토."
+      },
+      "current_status": "Gold $4,524. 이미 $4,500+. 금 본위 가속 시나리오 확률 상향."
+    },
+    "D": {
+      "label": "달러 반등 (미국 성장 우위 지속)",
+      "probability": "12%",
+      "trigger": {
+        "condition": "DXY 100+ 회복 + 미국 GDP 성장 G7 최상위 + 달러 비중 반등",
+        "source": "매크로",
+        "recalibration": "분기별 GDP + DXY 추적"
+      },
+      "kc": {
+        "watch": "DXY 95 이하 지속",
+        "alert": "미국 GDP 성장 둔화 (<1.5%)",
+        "hard": "미국 경기 침체 공식 선언",
+        "action": "TC-013 Phase 4. 달러 반등 thesis 재검토."
+      },
+      "current_status": "Phase 0. DXY 약세 추세."
+    }
+  },
+  "tracking_indicators": [
+    {
+      "indicator": "달러 외환보유 비중",
+      "current": "58.5%",
+      "threshold": "55% 이하 또는 62%+ 반등",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "BRICS Pay 거래량",
+      "current": "블록 내 달러 2/3 감소",
+      "threshold": "거래량 급감 또는 참여국 이탈",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "중앙은행 금 매입량",
+      "current": "$4T 준비금",
+      "threshold": "연 1,200톤+ 매입 또는 매도 전환",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "BRICS Unit 참여국 수",
+      "current": "파일럿 진행 중",
+      "threshold": "15개국+ 확대 또는 중단",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    }
+  ],
+  "heartbeat_thresholds": [
+    {
+      "indicator": "Gold",
+      "symbol": "GC=F",
+      "watch": 4800,
+      "alert": 5000,
+      "hard": 5500,
+      "direction": "above"
+    },
+    {
+      "indicator": "DXY",
+      "symbol": "DX-Y.NYB",
+      "watch": 97,
+      "alert": 95,
+      "hard": 92,
+      "direction": "below"
+    }
+  ],
+  "cross_card_links": [
+    {
+      "to": "TC-002",
+      "link": "KRW 구조적 변동 → 달러 약세 영향"
+    },
+    {
+      "to": "TC-003",
+      "link": "이란 → SWIFT 제재 → 비달러 결제 가속"
+    }
+  ],
+  "tags": [
+    "MACRO",
+    "STRUCT",
+    "BRICS",
+    "금",
+    "달러",
+    "탈달러",
+    "CIPS",
+    "위안",
+    "MT-03"
+  ],
+  "psf_link": "F1 DXY(달러 약세), F3 DM-EM(신흥국 재편)",
+  "macro_ref": "B2 DXY 99.90",
+  "analysis_ids": ["SA-20260328-006"],
+  "close_condition": "달러 비중 55% 이하 확인 OR BRICS Unit 좌초 OR 달러 비중 62%+ 반등"
+}

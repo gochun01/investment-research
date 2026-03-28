@@ -1,0 +1,93 @@
+{
+  "id": "SA-20260328-006",
+  "date": "2026-03-28",
+  "version": "2.0",
+  "title": "BRICS 금 6,000톤 — 달러 체제의 물리적 대안이 조립되고 있다",
+  "tc_id": "TC-013",
+  "phase0_gate": {
+    "gate1_history": {"matched": [], "prior_one_line": "첫 Stereo 해부"},
+    "gate2_tc": {"matched": "TC-013", "tc_phase": 1},
+    "gate3_context": {"mode": "델타 모드", "delta_focus": "6000톤 구체 수치 + 50% 생산통제 + WGC 73% 설문 + 금 $4,524 구조/순환 분해"},
+    "gate4_loop": {"conviction": "매칭 없음", "bias": "없음", "th_status": "TH-001 간접(risk-off→금 수혜)", "prediction_history": "TC-013 첫 Stereo"}
+  },
+  "pre_read": {
+    "type": "MACRO×STRUCT", "scp": 3,
+    "scp_basis": "BRICS 금 50% 통제 + 3년 연속 1000톤+ = 트렌드→구조 전환",
+    "urgency": "SLOW",
+    "emotion": {"detected": false},
+    "routing": {"mode": "delta", "focus_layers": ["L4", "L5"], "reduced_layers": ["L3", "L6", "L7"], "standard_layers": ["L1", "L2"]}
+  },
+  "one_line": "BRICS 6,000톤(글로벌 50%) + 중앙은행 3년 연속 1,000톤+ + BRICS Unit 파일럿 = 달러 체제의 물리적 대안 조립 단계. 대체가 아니라 의존하지 않아도 되는 옵션 확보가 핵심.",
+  "layers": {
+    "L1": {
+      "headline": "BRICS 금 6,000톤+, 글로벌 50% 생산 통제, Unit 파일럿(100 Unit=100g), 러중 비달러 결제 90%+.",
+      "framing": ["탈달러 대서사시", "대비효과"],
+      "framing_detail": "기사: BRICS vs 달러 구도. 실제: 대체가 아니라 옵션 확보. Unit 100 Unit=상징적."
+    },
+    "L2": {
+      "facts": [
+        {"id": 1, "fact": "BRICS 금 준비금 6,000톤+ (러2,336+중2,298+인880+브145)", "confidence": "yellow", "source": "IDNFinancials (watcher.guru 2차)", "fb_enhanced": false},
+        {"id": 2, "fact": "BRICS 글로벌 금 생산 ~50% (중 380t+러 340t+파트너)", "confidence": "yellow", "source": "IDNFinancials", "fb_enhanced": false},
+        {"id": 3, "fact": "BRICS Unit 파일럿 2025.10.31, 100 Unit, 1 Unit=1g 금", "confidence": "yellow", "source": "IDNFinancials", "fb_enhanced": false},
+        {"id": 4, "fact": "중앙은행 금 매입 1,000톤+/년 x 3년 (2022~2024)", "confidence": "green", "source": "WGC via IDNFinancials", "fb_enhanced": false},
+        {"id": 5, "fact": "73% 중앙은행 향후 5년 달러 비중 감소 전망", "confidence": "yellow", "source": "WGC 설문 (브리핑 데이터)", "fb_enhanced": false},
+        {"id": 6, "fact": "금 $4,524", "confidence": "green", "source": "Yahoo Finance GC=F", "fb_enhanced": false},
+        {"id": 7, "fact": "GLD $414.70", "confidence": "green", "source": "Yahoo Finance", "fb_enhanced": false},
+        {"id": 8, "fact": "DXY 100.19", "confidence": "green", "source": "Yahoo Finance", "fb_enhanced": false},
+        {"id": 9, "fact": "달러 외환보유 비중 58.5%", "confidence": "green", "source": "IMF COFER (TC-013 기존 확인)", "fb_enhanced": false}
+      ],
+      "unsaid": [
+        {"item": "BRICS Unit 100 Unit=100g=$450 — 상징적 파일럿", "significance": "기사가 과대해석"},
+        {"item": "50% 생산통제 ≠ 시장통제. OPEC식 카르텔 불가", "significance": "금 시장 구조 이해 필요"},
+        {"item": "금 $4,524 = 구조적 바닥($3,500~4,000) + 순환적 프리미엄($500~1,000)", "significance": "위기 해소 시 프리미엄 소멸 가능"},
+        {"item": "DXY 100.19 달러 강세와 탈달러 공존 역설", "significance": "순환적 안전자산 vs 구조적 탈달러"}
+      ]
+    },
+    "L4": {
+      "why_now": "직접 원인 없음(기사 2025.12). TC-013 배경 보강. 구조적: 금 $4,524(+80% 2년), 3년 연속 1,000톤+, WGC 73%.",
+      "prior_premise_valid": true,
+      "structural_causes": ["중앙은행 매입 구조화 (의도→행동 전환)", "BRICS 인프라 구축 (CIPS/Pay/Unit)", "제재 리스크 헤지 수요 (이란전쟁 학습효과)"]
+    },
+    "L5": {
+      "verdict": "지속(→)",
+      "verdict_basis": "탈달러 3단계 중 2단계(인프라) 진행 중. 새 데이터가 기존 방향을 확인하지만 가속/전환은 아님.",
+      "key_discovery": "금 $4,524 = 구조적 바닥 + 순환적 프리미엄. BRICS의 실제 전략은 달러 파괴가 아니라 달러 의존도 감소(보험)."
+    },
+    "L7": {
+      "scenarios": {
+        "A": {"label": "점진적 탈달러", "probability": "35%", "prev_probability": "30%", "delta_reason": "6,000톤+50%생산+WGC 73%=방향 확인. 점진적이 가장 현실적."},
+        "B": {"label": "BRICS 내부 분열", "probability": "25%", "prev_probability": "30%", "delta_reason": "인도-중국 갈등 수면 아래. Unit 중단 뉴스 없음."},
+        "C": {"label": "금 가격 급등 가속", "probability": "28%", "prev_probability": "25%", "delta_reason": "금 $4,524. TC Trigger($3,500+) 크게 초과. 중앙은행 매입 1,100톤/년."},
+        "D": {"label": "달러 반등", "probability": "12%", "prev_probability": "15%", "delta_reason": "DXY 100.19 순환적 강세(이란 안전자산). 구조적 달러 강세 아님."}
+      },
+      "psf_cross": {"summary": "F1 DXY(순환적 강세 100.19). 장기: 달러 58.5% 하락 추세 지속. 금은 risk-off+구조적 탈달러 이중 수혜."}
+    }
+  },
+  "uncertainty_map": {
+    "high_confidence": ["금 $4,524 (MCP)", "달러 58.5% (IMF COFER)", "중앙은행 3년 1,000톤+ (WGC)"],
+    "medium_confidence": ["BRICS 6,000톤 구체 분해 (2차 출처)", "WGC 73% 설문 (원출처 미직접 확인)"],
+    "low_confidence": ["BRICS Unit 확장 전망", "50% 생산통제의 시장 영향력"],
+    "weakest_link": "BRICS Unit 파일럿 후 3개월. 확장/중단 정보 부재."
+  },
+  "feedback": {
+    "executed": true,
+    "fb1_result": "인도의 독자 금 전략(중국과 다른 동기) 미분석.",
+    "fb2_result": "BRICS 내부 갈등이 Unit 확장을 지연시킬 수 있음. 합의 기반 구조의 한계.",
+    "fb3_result": "탈달러 낙관 편향 주의. 달러는 250년 역사. BRICS Unit은 3개월 파일럿.",
+    "fb4_result": "처음 'BRICS 탈달러' → 해부 후 '대체 아닌 옵션 확보' + '금 구조적 바닥 vs 순환적 프리미엄 분해'. ✅ 다르게 보임."
+  },
+  "self_check": {
+    "pre_read_before_L1": true, "selective_depth": true, "surface_subsurface_separated": true,
+    "uncertainty_map_present": true, "feedback_loop_executed": true, "fb4_delta_found": true,
+    "no_investment_advice": true, "no_certainty_language": true
+  },
+  "quality_score": {
+    "coverage": 0.6, "cross_verify": 0.67, "discovery_rate": 0.4, "freshness": 0.8, "total": 0.617,
+    "note": "9개 팩트 중 4개 yellow. 발견 4건(Unit 상징성, 생산≠시장통제, 구조/순환 분해, DXY 역설)."
+  },
+  "metadata": {
+    "mcp_sources": ["Yahoo Finance (3: GC=F, GLD, DXY)", "Firecrawl (1: IDNFinancials)", "FRED (1: 실패)"],
+    "total_mcp_calls": 5, "all_green": false, "yellow_count": 4,
+    "prior_analyses": []
+  }
+}
