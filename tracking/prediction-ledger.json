@@ -531,10 +531,42 @@
       "outcome_date": null,
       "lesson": null
     }
+    ,{
+      "id": "PRED-20260328-026",
+      "source": "SA-20260328-005",
+      "date": "2026-03-28",
+      "tc": "TC-014",
+      "type": "structural_thesis",
+      "claim": "중국 Linglong One SMR 2026 H1 상용 운전 성공 시 미국 NRC SMR 규제 완화 압력 증가",
+      "scenario": "C",
+      "probability": "22%",
+      "trigger": "Linglong One 상용 운전 공식 발표",
+      "deadline": "2026-09-30",
+      "status": "open",
+      "outcome": null,
+      "outcome_date": null,
+      "lesson": null
+    },
+    {
+      "id": "PRED-20260328-027",
+      "source": "SA-20260328-006",
+      "date": "2026-03-28",
+      "tc": "TC-013",
+      "type": "structural_thesis",
+      "claim": "금 구조적 바닥 $3,500~4,000 유지. 순환적 프리미엄 해소 시에도 $3,500 이하 하락하지 않음.",
+      "scenario": "A",
+      "probability": "35%",
+      "trigger": "이란전쟁 종료 또는 인플레 완화 후 금 가격 안정 수준 확인",
+      "deadline": "2026-12-31",
+      "status": "open",
+      "outcome": null,
+      "outcome_date": null,
+      "lesson": null
+    }
   ],
   "summary": {
-    "total": 33,
-    "open": 33,
+    "total": 35,
+    "open": 35,
     "resolved": 0,
     "earliest_deadline": "2026-07-24"
   }

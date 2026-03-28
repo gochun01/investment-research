@@ -1,0 +1,173 @@
+{
+  "tc_id": "TC-014",
+  "created": "2026-03-28",
+  "updated": "2026-03-28",
+  "title": "AI 전력 위기 — 데이터센터 1,000TWh + PJM 6GW 부족 + SMR 원자력",
+  "status": "active",
+  "issue_summary": "데이터센터 글로벌 전력 2%→4%. 미국 41GW. PJM 6GW 부족, 접속 대기 5~10년. 신규 리스크: 데이터센터 일제 차단 시 그리드 역류(reverse power flow) — 부족+역류 양방향 리스크. 중국 Linglong One 125MW SMR 2026 H1 상용 운전 예정(세계 최초 상업 육상 SMR). 미국 NuScale 2030+로 4년+ 격차. MS/Google/Amazon 원자력 PPA.",
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "TC-014 신규 생성. AI 전력 위기 구조적 추적 개시.",
+      "note": "PJM 6GW 부족, 원자력 PPA, SMR 전망 기반."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "MCP 수집. URA $46.63, VST $155.48. 초기 데이터.",
+      "note": "pipeline-gap-fill"
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "SA-20260328-005 Stereo 해부. 그리드 역류 리스크 + Linglong One SMR.",
+      "note": "전력 문제 '부족→양방향 리스크' 프레이밍 전환. SMR 실증 단계(중국). B 35%로 상향."
+    }
+  ],
+  "pre_read": {
+    "type": "STRUCT×MACRO",
+    "scp": 3,
+    "urgency": "WATCH"
+  },
+  "scenarios": {
+    "A": {
+      "label": "전력 인프라 확장 성공 + AI 성장 지속",
+      "probability": "30%",
+      "trigger": {
+        "condition": "PJM 신규 발전 용량 6GW+ 확보 + 데이터센터 착공 가속",
+        "source": "구조적",
+        "recalibration": "분기별 PJM 수급 보고서"
+      },
+      "kc": {
+        "watch": "PJM 수급 전망 적자 확대(8GW+)",
+        "alert": "데이터센터 착공 모라토리엄 보도",
+        "hard": "주요 유틸리티 전력 배급 제한 발표",
+        "action": "TC-014 A thesis 재검토. B 또는 C로 전환 판단."
+      },
+      "current_status": "Phase 0. PJM 수급 전망 모니터링 중."
+    },
+    "B": {
+      "label": "전력 부족 → 데이터센터 건설 지연",
+      "probability": "35%",
+      "trigger": {
+        "condition": "데이터센터 신규 착공 YoY 감소 + 전력 대기열 2년+ 보고",
+        "source": "구조적",
+        "recalibration": "월별 착공 데이터"
+      },
+      "kc": {
+        "watch": "전력 대기열 단축(1년 이하) 보고",
+        "alert": "PJM 긴급 발전 용량 확보 발표",
+        "hard": "데이터센터 착공 재가속 확인",
+        "action": "TC-014 B thesis 재검토. A로 전환 판단."
+      },
+      "current_status": "Phase 0. 전력 대기열 모니터링 중."
+    },
+    "C": {
+      "label": "원자력 르네상스 가속 (SMR 앞당겨짐)",
+      "probability": "22%",
+      "trigger": {
+        "condition": "SMR NRC 허가 2028 이전 확정 OR Big Tech 원자력 PPA 추가 체결 3건+",
+        "source": "구조적+정책",
+        "recalibration": "NRC 허가 일정 + PPA 뉴스"
+      },
+      "kc": {
+        "watch": "SMR NRC 심사 지연 보도",
+        "alert": "SMR 프로젝트 취소 1건+",
+        "hard": "원자력 PPA 해지 OR NRC 규제 강화",
+        "action": "TC-014 C thesis 재검토. A 또는 B로 전환."
+      },
+      "current_status": "Phase 0. NuScale/Kairos 진행 상황 추적 중."
+    },
+    "D": {
+      "label": "전력 비용 폭등 → AI capex ROI 악화",
+      "probability": "13%",
+      "trigger": {
+        "condition": "전력 가격 YoY +30% + Big Tech capex 가이던스 하향 동시 발생",
+        "source": "구조적+통계적",
+        "recalibration": "분기 실적 시즌"
+      },
+      "kc": {
+        "watch": "전력 가격 안정(YoY <10%)",
+        "alert": "Big Tech capex 유지 OR 상향",
+        "hard": "전력 가격 하락 + capex 확대",
+        "action": "TC-014 D thesis 재검토. A로 전환."
+      },
+      "current_status": "Phase 0. 전력 가격 + capex 가이던스 대기."
+    }
+  },
+  "tracking_indicators": [
+    {
+      "indicator": "PJM 전력 수급 전망",
+      "current": "6GW 부족",
+      "threshold": "적자 확대 8GW+ 또는 해소 3GW 이하",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-15"
+    },
+    {
+      "indicator": "데이터센터 신규 착공 GW",
+      "current": "41GW(미국)",
+      "threshold": "YoY 감소 전환",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-30"
+    },
+    {
+      "indicator": "원자력 PPA 계약 수",
+      "current": "MS/Google/Amazon 체결",
+      "threshold": "추가 3건+ 또는 해지 1건+",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-30"
+    },
+    {
+      "indicator": "전력 가격 YoY",
+      "current": "모니터링 중",
+      "threshold": "YoY +30%",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-15"
+    }
+  ],
+  "heartbeat_thresholds": [
+    {
+      "indicator": "Uranium ETF",
+      "symbol": "URA",
+      "watch": 30,
+      "alert": 35,
+      "hard": 45,
+      "direction": "above"
+    },
+    {
+      "indicator": "Vistra",
+      "symbol": "VST",
+      "watch": 120,
+      "alert": 100,
+      "hard": 80,
+      "direction": "below"
+    }
+  ],
+  "cross_card_links": [
+    {
+      "to": "TC-010",
+      "link": "AI capex→전력 수요. capex 감속 시 전력 수요 둔화"
+    },
+    {
+      "to": "TC-003",
+      "link": "이란→에너지 가격→전력 비용 상승 경로"
+    }
+  ],
+  "tags": [
+    "STRUCT",
+    "MACRO",
+    "AI",
+    "전력",
+    "데이터센터",
+    "원자력",
+    "SMR",
+    "PJM",
+    "MT-01"
+  ],
+  "psf_link": "S1 실질금리(인프라 투자 비용), F5 VIX(AI 불확실성)",
+  "macro_ref": "",
+  "analysis_ids": ["SA-20260328-005"],
+  "close_condition": "PJM 수급 균형 회복 OR 데이터센터 건설 동결 OR SMR 상용화 확정"
+}
