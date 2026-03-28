@@ -1,0 +1,229 @@
+{
+  "id": "SA-20260328-003",
+  "date": "2026-03-28",
+  "version": "2.0",
+  "title": "VIX 30 돌파 — 공포는 도착했지만 신용 역류는 아직 대기실",
+  "tc_id": "TC-016",
+
+  "phase0_gate": {
+    "gate1_history": {
+      "matched": ["SA-20260328-001", "SA-20260328-L7", "SA-20260328-TLT"],
+      "prior_one_line": "SA-20260328-L7: 3TC 모두 VIX 30 돌파를 급성 시나리오 전환점으로 참조. MOVE 115 채권 유동성 악화 확인.",
+      "prior_scenarios": {"A": "35%", "B": "35%", "C": "15%", "D": "15%"}
+    },
+    "gate2_tc": {
+      "matched": "TC-016",
+      "tc_phase": 1,
+      "last_trigger": "2026-03-28 VIX 31.05 — 30 임계 돌파. 시나리오 B 진입 반영.",
+      "scenario_status": {
+        "A": "VIX 30 돌파로 A(20~30 밴드) 이탈",
+        "B": "진입 확인. VIX 31.05. 5일 지속 Trigger 미충족(1/5)",
+        "C": "사전 감시. RRP 제로가 비선형 도약 조건",
+        "D": "VIX 30+ 상태에서 risk-on 복귀 거리 멀어짐"
+      }
+    },
+    "gate3_context": {
+      "mode": "델타 모드",
+      "prior_connection": "SA-20260328-L7에서 3TC VIX 30 전환점 판정. TC-016 시나리오 B 35% 진입 반영 완료.",
+      "delta_focus": "① VIX 30 돌파가 L7 활성화 조건 충족하는가. ② HY/MOVE/SOFR 동반 여부. ③ RRP 제로의 구조적 의미."
+    },
+    "gate4_loop": {
+      "conviction": "매칭 없음",
+      "bias": "적용 없음",
+      "th_status": "TH-001 confidence 0.475. 통상→risk-off. 이 분석의 방향과 일치.",
+      "prediction_history": "TC-016 첫 Stereo 해부"
+    }
+  },
+
+  "pre_read": {
+    "type": "MACRO",
+    "scp": 3,
+    "scp_basis": "VIX 27.44→31.05 (+13.2%), 4TC 공통 임계 돌파. L7 활성화 판정 필요. 구조적 전환 지점.",
+    "urgency": "URGENT",
+    "urgency_basis": "30 돌파 당일. 5일 지속 카운트다운 시작. 이란 보복 데드라인 3/31 (48시간).",
+    "emotion": {"detected": false},
+    "routing": {
+      "mode": "delta",
+      "focus_layers": ["L4", "L5", "L7"],
+      "reduced_layers": ["L3", "L6"],
+      "standard_layers": ["L1", "L2"],
+      "strategy_summary": "VIX 30이 유지되는 조건 해부. HY·MOVE·SOFR 동반 여부가 핵심. L7 활성화 판정 집중."
+    }
+  },
+
+  "one_line": "VIX 31.05는 공포 임계를 넘었으나, HY OAS 321bp·MOVE 112·SOFR-FF 1bp는 아직 신용 시장에 전이되지 않았다 — 공포는 도착했지만 신용 역류는 아직 대기실.",
+
+  "layers": {
+    "L1": {
+      "headline": "VIX 30 돌파. 4TC(이란+관세+인플레+AI capex) 동시 스트레스의 합산 결과. 전통적 안전자산 도피가 아닌 파편화 — 금만 오르고 TLT도 하락.",
+      "framing": ["공포", "대비효과", "권위호소"],
+      "framing_detail": "VIX 30 숫자 강조 + 2024년 8월 비교 + Fed 스트레스 VIX 72 언급. 실제 원인(4TC 합산+RRP 소진)을 가림."
+    },
+    "L2": {
+      "facts": [
+        {"id": 1, "fact": "VIX 31.05", "confidence": "green", "source": "Yahoo Finance ^VIX (실시간)", "fb_enhanced": false},
+        {"id": 2, "fact": "HY OAS 321bp (3/26)", "confidence": "green", "source": "FRED BAMLH0A0HYM2", "fb_enhanced": false},
+        {"id": 3, "fact": "MOVE 111.95", "confidence": "green", "source": "Yahoo Finance ^MOVE", "fb_enhanced": false},
+        {"id": 4, "fact": "SOFR 3.65%, EFFR 3.64%, 갭 1bp", "confidence": "green", "source": "FRED SOFR + EFFR", "fb_enhanced": false},
+        {"id": 5, "fact": "10Y 4.44%, BEI 2.31%", "confidence": "green", "source": "Yahoo ^TNX + FRED T10YIE", "fb_enhanced": false},
+        {"id": 6, "fact": "Brent $105.32", "confidence": "green", "source": "Yahoo BZ=F", "fb_enhanced": false},
+        {"id": 7, "fact": "Gold $4,524", "confidence": "green", "source": "Yahoo GC=F", "fb_enhanced": false},
+        {"id": 8, "fact": "S&P 500 6,368.85, NASDAQ 20,948", "confidence": "green", "source": "Yahoo ^GSPC/^IXIC", "fb_enhanced": false},
+        {"id": 9, "fact": "DXY 100.19", "confidence": "green", "source": "Yahoo DX-Y.NYB", "fb_enhanced": false},
+        {"id": 10, "fact": "RRP $0.99B (사실상 제로)", "confidence": "green", "source": "FRED RRPONTSYD", "fb_enhanced": false},
+        {"id": 11, "fact": "BTC $66,331 (-3.4% 24h, -6.1% 7d)", "confidence": "green", "source": "CoinGecko", "fb_enhanced": false},
+        {"id": 12, "fact": "TLT $85.64, LQD $107.62, HYG $78.72", "confidence": "green", "source": "Yahoo Finance", "fb_enhanced": false},
+        {"id": 13, "fact": "10Y-2Y +0.56% (정상화)", "confidence": "green", "source": "FRED T10Y2Y", "fb_enhanced": false}
+      ],
+      "unsaid": [
+        {"item": "RRP 사실상 제로 — 2019 repo 위기 직전과 유사한 유동성 구조", "significance": "VIX 30이 유동성 버퍼 없이 왔다는 점이 핵심", "fb_enhanced": false},
+        {"item": "LQD vs HYG 가격 괴리 확대 — IG/HY 신용 차별화 시작", "significance": "신용 등급별 분기 시작 신호", "fb_enhanced": false},
+        {"item": "BTC -6.1% 주간 — 유동성 민감 자산 선행 하락", "significance": "위험자산 전반 디레버리징 시작 신호", "fb_enhanced": false},
+        {"item": "10Y-2Y +0.56% bear steepening", "significance": "앞단이 아니라 뒷단(텀프리미엄)이 문제", "fb_enhanced": false}
+      ]
+    },
+    "L3": {
+      "players": [
+        {"name": "옵션 딜러", "position": "감마 숏 → 헤지 매도 → VIX 자기강화", "stake": "VIX 30 위에서 변동성 증폭"},
+        {"name": "Fed", "position": "인하 유지 공식 vs 시장 인상 52%", "stake": "5/7 FOMC까지 45일. 묵인 vs 구두개입"},
+        {"name": "HY 발행사", "position": "321bp에서 발행 윈도우 열림", "stake": "400bp 넘으면 발행 동결"},
+        {"name": "TMF/TLT 레버리지", "position": "TLT $85.64", "stake": "추가 하락 시 마진콜 → 신용 전이 경로"}
+      ]
+    },
+    "L4": {
+      "why_now": "4TC 동시 스트레스 합산 + RRP 제로 상태에서 충격 흡수 불가 + 이란 IRGC 사살 후 보복 데드라인 48시간 + 옵션 만기 주간 감마 스퀴즈",
+      "prior_premise_valid": true,
+      "prior_premise_detail": "SA-20260328-L7의 '3TC VIX 30 전환점' 전제 유효. VIX 31.05로 실제 돌파 확인.",
+      "structural_causes": [
+        "4판(P1~P4) 동시 기울어진 PSF 상태에서 외생 충격 증폭",
+        "안전자산 파편화: 금만 오르고 TLT도 하락 = 전통적 비행 미작동 레짐",
+        "RRP $0.99B = 유동성 쿠션 소진"
+      ]
+    },
+    "L5": {
+      "verdict": "전환 초기(🔀)",
+      "verdict_basis": "공포-신용 디커플링 상태. VIX만 넘었고 HY/MOVE/SOFR 미동. VIX→HY 지연 전이가 정상 패턴(1~2주). 구조 전환의 1단계.",
+      "key_discovery": "진짜 분기점은 VIX 30이 아니라 HY가 따라오는 순간. 공포 도착 ≠ 신용 역류.",
+      "delta_from_prior": "VIX 28.88→31.05 (+2.17pt, 30 돌파). HY 321→321 (무변동). MOVE 115→112 (소폭 개선). RRP 제로 신규 확인."
+    },
+    "L6": {
+      "second_order": [
+        {"effect": "VIX 30 지속 → 딜러 감마 헤지 자기강화 → S&P 추가 하락 → 401k 매도 → VIX 추가. 임계: 35에서 비선형.", "probability": "조건부 40% (5일 지속 시)"},
+        {"effect": "VIX 30 + RRP 제로 → 유동성 충격 증폭. 2019 repo 구조와 유사하나 Fed SRF 사전 준비됨.", "probability": "조건부 20% (Fed 무대응 시)"},
+        {"effect": "VIX 30 + Brent 105+ + 10Y 4.44% 교차 스트레스 → HY 321→400 이동이 주→일 단위로 단축 가능", "probability": "조건부 25% (3개 동시 지속 시)"}
+      ]
+    },
+    "L7": {
+      "scenarios": {
+        "A": {
+          "label": "현 상태 복귀 (VIX 27~28 후퇴)",
+          "probability": "25%",
+          "prev_probability": "35%",
+          "delta_reason": "VIX 30 돌파로 A(20~30 밴드) 이탈 확정. 빠른 복귀 가능성만 반영.",
+          "trigger": {"condition": "VIX 27 이하 x 3일 + 이란 긴장 완화", "source": "통계적"},
+          "kc": {"watch": "VIX 29 재돌파", "alert": "HY OAS 340bp+", "hard": "VIX 30+ 재진입", "action": "A thesis 재검토. B 재진입."},
+          "kill_condition": "VIX 3/31까지 27 이하 미복귀"
+        },
+        "B": {
+          "label": "점진적 스트레스 지속 (VIX 30~35, HY 접근)",
+          "probability": "45%",
+          "prev_probability": "35%",
+          "delta_reason": "VIX 31.05로 B 진입 확인. 단, HY 321/MOVE 112/SOFR 1bp = 신용 전이 미발생. '공포만 도착한' B 초기.",
+          "trigger": {"condition": "VIX 30+ x 5일 (4/2까지) + HY OAS 350bp 접근", "source": "통계적+구조적"},
+          "kc": {"watch": "VIX 30 이하 3일 복귀", "alert": "HY 300bp 이하 안정", "hard": "VIX 25 이하 + HY 300bp 이하", "action": "B 해소 판단. A 복귀."},
+          "kill_condition": "HY OAS 4주 내 350bp 미도달"
+        },
+        "C": {
+          "label": "급성 위기 도약 (VIX 35+ → 40, HY 400+)",
+          "probability": "18%",
+          "prev_probability": "15%",
+          "delta_reason": "RRP 제로 + 이란 보복 데드라인 3/31 + 4TC 동시 스트레스. 비선형 도약 가능성 소폭 상향.",
+          "trigger": {"condition": "VIX 40+ x 3일 + HY 500bp+ + SOFR-FF 50bp+", "source": "구조적"},
+          "kc": {"watch": "Fed 긴급 유동성 발표", "alert": "VIX 50 이하 + Fed repo 안정", "hard": "VIX 30 이하 + HY 400bp 이하", "action": "C 종료. 별도 위기 TC 또는 A 복귀."},
+          "kill_condition": "이란 합의 + Fed SRF 확대 동시"
+        },
+        "D": {
+          "label": "risk-on 복귀",
+          "probability": "12%",
+          "prev_probability": "15%",
+          "delta_reason": "VIX 30+ 상태에서 risk-on 복귀 조건(VIX<20 + HY<300 + 신고가) 거리 멀어짐.",
+          "trigger": {"condition": "VIX <20 x 2주 + HY <300 + S&P 신고가", "source": "통계적"},
+          "kc": {"watch": "VIX 22+ 재상승", "alert": "HY 320bp+", "hard": "VIX 25+ + HY 350bp+", "action": "D thesis 재검토. A 전환."},
+          "kill_condition": "VIX 25+ 지속 1개월"
+        }
+      },
+      "l7_activation": {
+        "status": "부분 활성화",
+        "conditions_met": "1/4 (VIX 30+ 단일)",
+        "conditions_remaining": "HY OAS 400bp+, MOVE 120+, 5일 지속",
+        "full_activation_estimate": "HY 350bp 접근 시 부분→준활성화. HY 400bp + MOVE 120 시 완전 활성화."
+      },
+      "next_gates": [
+        {"gate": "VIX 30+ 5일 지속", "deadline": "2026-04-02", "action": "B Trigger 발동. Phase 1→2 전환 판단."},
+        {"gate": "HY OAS 350bp 접근", "deadline": "관찰 중", "action": "공포→신용 전이 시작. B 심화 확정."},
+        {"gate": "이란 보복 3/31", "deadline": "2026-03-31", "action": "실행 시 Brent $110+ → VIX 35 접근 → C 급등."},
+        {"gate": "Fed SRF/구두개입", "deadline": "관찰 중", "action": "유동성 안전판 제공 → VIX 하락 촉매."}
+      ],
+      "th_cross": {
+        "th_id": "TH-001",
+        "confidence": 0.475,
+        "direction": "통상→risk-off",
+        "alignment": "일치. VIX 30 돌파는 TH-001 방향과 정합.",
+        "join_condition": "B 시나리오 5일 지속 Trigger 발동 시 TC-016 합류 → confidence 0.475→0.50 상향 조건."
+      },
+      "psf_cross": {
+        "summary": "판(4/4 기울어짐) + 흐름(F5 공포 적화 31.05) — 구조(S2 HY 321bp green) = 선점의 창 마지막 구간. S2가 따라오면 창 닫힘.",
+        "psf_link": "F5 VIX 31.05(⬇적화), S2 HY OAS 321bp(green), S3 SOFR 1bp(green), P1~P4 기울어짐"
+      }
+    }
+  },
+
+  "emergent_questions": [
+    "VIX 30+ 상태에서 HY OAS 동반까지의 역사적 평균 지연 기간은? (2018: 2주, 2020: 5일, 2022 UK: 3일)",
+    "RRP $0.99B 상태에서 VIX 스파이크 전례는? 2019 repo는 VIX 낮은 상태에서 자금 먼저 — 이번은 순서가 반대.",
+    "옵션 딜러 감마 분포 6,300~6,400 집중 여부? 비선형 VIX 35 도달 가속 가능성."
+  ],
+
+  "uncertainty_map": {
+    "high_confidence": ["VIX 30 돌파 구조적 (4TC 교차 확인)", "신용 전이 미발생 (HY/MOVE/SOFR 3개 교차 확인)"],
+    "medium_confidence": ["VIX→HY 지연 전이 예상 (역사 패턴, 이번 구조 동일성 불확실)"],
+    "low_confidence": ["RRP 제로의 증폭 효과 (이론적, 데이터 부족)", "이란 보복의 VIX 효과 (48시간 불확실성)"],
+    "weakest_link": "RRP 제로 상태에서 VIX-HY 전이 속도 추정. 사례 데이터 부족."
+  },
+
+  "feedback": {
+    "executed": true,
+    "fb1_result": "일본 캐리 트레이드 청산 경로 미검토. USDJPY 모니터링 추가 필요.",
+    "fb2_result": "Fed SRF 사전 준비가 RRP 제로 위기론의 가장 강한 반대 논거.",
+    "fb3_result": "VIX 30 경보 편향 주의. 30은 심리적 숫자, 28과 31의 체제 차이가 실제로 크지 않을 수 있음.",
+    "fb4_result": "처음 VIX 30=L7 활성화 검증 의도 → 해부 후 핵심 발견은 '공포-신용 디커플링'. 진짜 분기점은 VIX가 아니라 HY가 따라오는 순간."
+  },
+
+  "self_check": {
+    "pre_read_before_L1": true,
+    "selective_depth": true,
+    "surface_subsurface_separated": true,
+    "uncertainty_map_present": true,
+    "feedback_loop_executed": true,
+    "fb4_delta_found": true,
+    "no_investment_advice": true,
+    "no_certainty_language": true
+  },
+
+  "quality_score": {
+    "coverage": 0.8,
+    "cross_verify": 1.0,
+    "discovery_rate": 0.4,
+    "freshness": 1.0,
+    "total": 0.8,
+    "note": "13개 팩트 전부 MCP green. 발견 4건(RRP, IG/HY 괴리, BTC 선행, bear steepening)."
+  },
+
+  "metadata": {
+    "mcp_sources": ["Yahoo Finance (8)", "FRED (6)", "CoinGecko (1)"],
+    "total_mcp_calls": 15,
+    "all_green": true,
+    "analysis_duration": "single session",
+    "prior_analyses": ["SA-20260328-001", "SA-20260328-L7", "SA-20260328-TLT"]
+  }
+}
