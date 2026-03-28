@@ -1,0 +1,165 @@
+{
+  "id": "SA-20260328-004",
+  "date": "2026-03-28",
+  "version": "2.0",
+  "title": "Indra-한화 €45.5억 K9 계약 — K-방산 유럽 공급망 안착 2단계 진입",
+  "tc_id": "TC-012",
+
+  "phase0_gate": {
+    "gate1_history": {
+      "matched": ["SA-20260326-005"],
+      "prior_one_line": "VW-라파엘 아이언돔은 유럽 자동차→방산 전환 시작. K-방산은 니치 분할 가능.",
+      "prior_scenarios": {"A": "40%", "B": "25%", "C": "20%", "D": "15%"}
+    },
+    "gate2_tc": {
+      "matched": "TC-012",
+      "tc_phase": 1,
+      "last_trigger": "NATO 5% + EU €860B + K-방산 점유율 8.6%.",
+      "scenario_status": {"A": "40%", "B": "25%", "C": "20%", "D": "15%"}
+    },
+    "gate3_context": {
+      "mode": "델타 모드",
+      "prior_connection": "SA-20260326-005 위에서 스페인 Indra 계약의 구조적 의미 해부",
+      "delta_focus": "design authority 이전 의미, 차륜형 후속 가능성, EU 자급 우회 구조"
+    },
+    "gate4_loop": {
+      "conviction": "매칭 없음",
+      "bias": "적용 없음",
+      "th_status": "TH-001 (risk-off)과 역방향. 방산은 risk-off 헤지.",
+      "prediction_history": "TC-012 첫 Stereo"
+    }
+  },
+
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "scp": 4,
+    "scp_basis": "€45.5억 계약 + design authority 이전 = K-방산 유럽 공급망 내재화 구조적 전환",
+    "urgency": "WATCH",
+    "urgency_basis": "계약 체결 완료(3/24). 이행은 다년. 전략적 해부 대상.",
+    "emotion": {"detected": false},
+    "routing": {
+      "mode": "delta",
+      "focus_layers": ["L4", "L5"],
+      "reduced_layers": ["L3", "L6", "L7"],
+      "standard_layers": ["L1", "L2"],
+      "strategy_summary": "계약 팩트보다 '설계권한 이전'의 구조적 의미와 K-방산 유럽 침투 단계 판정에 집중"
+    }
+  },
+
+  "one_line": "Indra-한화 €45.5억 계약은 'K9 수출'이 아니라 'K-방산의 유럽 공급망 내재화' — Indra가 hull design authority를 가져가는 구조는 수출→합작→현지공급망의 2단계(합작) 진입 확정.",
+
+  "layers": {
+    "L1": {
+      "headline": "Indra-한화 binding agreement. €45.5억. K9 기반 280대. Indra hull design authority. K-방산 수출 아닌 합작 구조.",
+      "framing": ["자주국방(스페인측)", "수출 대박(한국측)", "대비효과"],
+      "framing_detail": "스페인: 기술주권 강조. 한국: 수주 규모 강조. 실제: 설계권한 이전이 핵심."
+    },
+    "L2": {
+      "facts": [
+        {"id": 1, "fact": "€45.5억($53억) binding agreement", "confidence": "green", "source": "DefenseNews + Indra PR 이중 확인", "fb_enhanced": false},
+        {"id": 2, "fact": "280대: 128 포병 + 120 탄약 + 11 C2 + 21 회수", "confidence": "green", "source": "Indra PR 공식", "fb_enhanced": false},
+        {"id": 3, "fact": "Indra hull design authority 보유", "confidence": "green", "source": "DefenseNews + Indra PR", "fb_enhanced": false},
+        {"id": 4, "fact": "€130M Gijón 공장 투자, 500직접+1000간접 고용", "confidence": "green", "source": "Indra PR", "fb_enhanced": false},
+        {"id": 5, "fact": "스페인 차륜형 SPA €29억 별도 예산", "confidence": "green", "source": "DefenseNews 인용 (스페인 국방부)", "fb_enhanced": false},
+        {"id": 6, "fact": "한화에어로 ₩1,335,000", "confidence": "green", "source": "Yahoo Finance 012450.KS", "fb_enhanced": false},
+        {"id": 7, "fact": "Rheinmetall €1,379.50", "confidence": "green", "source": "Yahoo Finance RHM.DE", "fb_enhanced": false},
+        {"id": 8, "fact": "K9 NATO 유럽 6개국 채택 (노르웨이/폴란드/핀란드/루마니아/에스토니아/호주)", "confidence": "green", "source": "DefenseNews + Indra PR", "fb_enhanced": false},
+        {"id": 9, "fact": "유럽 포병 지출 $150억+ (2022.5~2024.7)", "confidence": "green", "source": "IISS Military Balance via DefenseNews", "fb_enhanced": false},
+        {"id": 10, "fact": "Pentagon 우크라 무기 중동 전용 검토 중", "confidence": "green", "source": "Washington Post via DefenseNews", "fb_enhanced": false}
+      ],
+      "unsaid": [
+        {"item": "궤도형(€45.5억)+차륜형(€29억)=€74.5억 — 분리 보도로 전체 규모 미가시화", "significance": "스페인이 K-방산 최대 단일 고객 가능성", "fb_enhanced": false},
+        {"item": "Design authority = 라이선스 이상, 독자 파생형 개발 가능", "significance": "K9 플랫폼 '한국 무기→유럽-한국 공동 플랫폼' 전환 시작", "fb_enhanced": false},
+        {"item": "폴란드(한화 직영) vs 스페인(Indra 주도) 모델 차이", "significance": "현지 파트너 주도권 증가 트렌드 확인", "fb_enhanced": false},
+        {"item": "이란전쟁→미국 무기 유럽 공급 차질이 K-방산 가속 배경", "significance": "구조적 촉매, 일시적이 아닌 지속적 공백", "fb_enhanced": false}
+      ]
+    },
+    "L4": {
+      "why_now": "NATO 5% + EU €860B + 이란전쟁 미국 공급 공백 + 스페인 포병 부재(M109 퇴역) + 한화 유연한 기술이전 전략",
+      "prior_premise_valid": "부분 유효. SA-20260326-005의 '니치 분할'은 방공에 해당. 포병에서는 K-방산이 원천 기술 제공자로 공급망 통합 진행.",
+      "structural_causes": [
+        "미국 공급 공백(이란전쟁) → 유럽 대안 수요",
+        "K9 6개국 채택 → 사실상 표준화 경로",
+        "한화의 점진적 권한 이전: 직영→합작→현지주도"
+      ]
+    },
+    "L5": {
+      "verdict": "가속(⬆)",
+      "verdict_basis": "수출→합작→공급망 내재화 3단계 중 2단계 진입 확정. Design authority 이전 = 3단계 초기 조건도 충족.",
+      "key_discovery": "K-방산 유럽 모델이 'F-35 지상 버전'으로 수렴: 미국(→한국) 원천기술 + 현지 생산·개조·유지보수. K9이 NATO 포병 사실상 표준화 경로.",
+      "delta_from_prior": "TC-012 생성 시 '수출+합작' → 현재 '합작+설계권한이전'. 한 단계 깊어짐."
+    },
+    "L6": {
+      "second_order": [
+        {"effect": "차륜형 €29억 후속 수주 가능성. K9 Firepower 3/27 공개.", "probability": "35%"},
+        {"effect": "Rheinmetall RCH155 대응 가속 → 유럽 포병 K9 vs RCH155 양강 구도", "probability": "50%"},
+        {"effect": "한국 방산주 re-rating: '수출업체'→'유럽 공급망 참여자'", "probability": "40%"}
+      ]
+    },
+    "L7": {
+      "scenarios": {
+        "A": {"label": "K-방산 유럽 파트너 정착", "probability": "50%", "prev_probability": "40%", "delta_reason": "Indra design authority 계약으로 합작 구조 확정. 미국 공급 공백 촉매."},
+        "B": {"label": "EU 보호주의 제한", "probability": "20%", "prev_probability": "25%", "delta_reason": "Indra 주도 = EU 자급 55% 충족. 보호주의 리스크 감소."},
+        "C": {"label": "NATO 약화 방산 축소", "probability": "15%", "prev_probability": "20%", "delta_reason": "이란전쟁으로 방산비 증가 압력 지속."},
+        "D": {"label": "합작 본격화", "probability": "15%", "prev_probability": "15%", "delta_reason": "Indra-한화가 D 초기. Rheinmetall 합작은 미확인."}
+      },
+      "next_gates": [
+        {"gate": "스페인 차륜형 SPA 수주자 결정", "deadline": "2026 하반기", "action": "한화 수주 시 A→60%+"},
+        {"gate": "EU 방산 자급률 55%→70% 상향 여부", "deadline": "2026 하반기", "action": "상향 시 B 리스크 재부상"},
+        {"gate": "폴란드 K2 2차 배치 이행", "deadline": "2026~", "action": "K2+K9 동시 안착 확인 시 A 확정"}
+      ],
+      "psf_cross": {
+        "summary": "P3 지정학(NATO+이란) ⬆ + P4 규제(EU 자급 Indra 충족) 🟢. 방산은 risk-off 수혜 섹터. PSF 기울어짐이 심할수록 방산 수요 증가.",
+        "psf_link": "P3 지정학(NATO 확장 ⬆), P4 규제(EU 자급 55% Indra 충족)"
+      }
+    }
+  },
+
+  "emergent_questions": [
+    "Indra가 hull design authority로 독자 파생형을 만들 경우, 한화의 IP 보호 범위는? (계약 비공개 영역)",
+    "차륜형(K9 Firepower) vs Rheinmetall RCH155의 유럽 경쟁 구도는? 독일/프랑스가 RCH155를 선택하면 K9은 남유럽+동유럽 니치?",
+    "K-방산의 유럽 '사실상 표준' 달성 임계 = 몇 개국? 현재 6개국. 10개국 넘으면 되돌리기 불가?"
+  ],
+
+  "uncertainty_map": {
+    "high_confidence": ["계약 규모/구조 (이중 출처)", "K-방산 2단계 진입 (design authority 확인)"],
+    "medium_confidence": ["EU 자급 우회 가능성 (Indra 주도=유럽산 해석, 규정 세부 미확인)"],
+    "low_confidence": ["차륜형 후속 수주 (RCH155 경쟁 미분석)", "장기 IP 분쟁 리스크 (추론)"],
+    "weakest_link": "EU '유럽산' 분류 기준의 세부 규정. design authority만으로 충분한지 검증 필요."
+  },
+
+  "feedback": {
+    "executed": true,
+    "fb1_result": "일본/인도 방산 유럽 진출 시도 미검토. K-방산과의 경쟁 구도 추가 분석 필요.",
+    "fb2_result": "EU가 '원천 기술 유럽 필수' 규정 도입 시 K9 기반 계약 전체 위험. 가장 강한 반대 논거.",
+    "fb3_result": "K-방산 낙관 편향 주의. €45.5억은 계약이지 납품이 아님. 이행 리스크 존재.",
+    "fb4_result": "처음 'K9 수출 뉴스' → 해부 후 'design authority 이전=공급망 내재화 2단계 + 차륜형 €29억 후속=€74.5억 전체 규모'. ✅ 다르게 보임."
+  },
+
+  "self_check": {
+    "pre_read_before_L1": true,
+    "selective_depth": true,
+    "surface_subsurface_separated": true,
+    "uncertainty_map_present": true,
+    "feedback_loop_executed": true,
+    "fb4_delta_found": true,
+    "no_investment_advice": true,
+    "no_certainty_language": true
+  },
+
+  "quality_score": {
+    "coverage": 0.6,
+    "cross_verify": 1.0,
+    "discovery_rate": 0.4,
+    "freshness": 0.8,
+    "total": 0.7,
+    "note": "10개 팩트 전부 green. 발견 4건(€74.5억 합산, design authority 의미, 폴란드 vs 스페인 모델 차이, 미국 공급 공백)."
+  },
+
+  "metadata": {
+    "mcp_sources": ["Yahoo Finance (3)", "Firecrawl (3: DefenseNews+Indra PR+NATO Pravda)"],
+    "total_mcp_calls": 6,
+    "all_green": true,
+    "prior_analyses": ["SA-20260326-005"]
+  }
+}
