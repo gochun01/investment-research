@@ -1,0 +1,481 @@
+{
+  "meta": {
+    "id": "RM-2026-04-01-CL001",
+    "date": "2026-04-01",
+    "cluster": "Iran war → Hormuz → real economy transmission",
+    "issues": ["A: 한국 석유화학 셧다운 (나프타 재고 2주)", "B: 헬륨 팹 재고 고갈 D-3 (4/04 예상)"],
+    "depth": "5-layer dual-issue"
+  },
+
+  "issue_A": {
+    "title": "한국 석유화학 셧다운 (나프타 재고 2주)",
+    "fingerprint": {
+      "domain": "산업/에너지",
+      "geo_scope": "국내 (여수·울산 산단) + 글로벌 나프타 시장",
+      "contact_assets": {
+        "primary": ["011170.KS 롯데케미칼", "051910.KS LG화학"],
+        "secondary": ["나프타 현물 (C&F Japan)", "에틸렌 스프레드", "합성수지·ABS 가공업체"],
+        "control": ["정유사 (SK이노베이션, GS칼텍스)"]
+      },
+      "stakeholders": ["석유화학사 (롯데케미칼, LG화학)", "산업통상자원부", "여수산단 노동자", "하류 가공업체"],
+      "secondary_stakeholders": [
+        {"from": "석유화학사", "to": "플라스틱 가공업체, 자동차 부품사, 포장재 업체"},
+        {"from": "여수산단 노동자", "to": "고용노동부, 여수 지역경제"},
+        {"from": "산업부", "to": "관세청 (수출금지 집행), 기재부 (전시추경)"}
+      ],
+      "time_character": "충격 → 전개 (셧다운 3/23 시작, 5/29 재개 예정)"
+    },
+
+    "channels": {
+      "price": ["011170.KS", "051910.KS", "나프타 C&F Japan"],
+      "narrative": ["서울경제", "헤럴드경제", "파이낸셜뉴스", "ICIS", "S&P Global"],
+      "expert": ["BNK투자증권", "KDI", "한국기업평가", "한국석유화학협회"],
+      "policy": ["산업통상자원부", "관세청", "정책브리핑"],
+      "positioning": ["KRX 외국인/기관 수급"],
+      "sns": "비활성 — 산업재 B2B 성격, SNS 반응 미미"
+    },
+
+    "reactions": {
+      "price": [
+        {
+          "asset": "롯데케미칼 011170.KS",
+          "before": "83,790원 (3/03)",
+          "after": "80,600원 (3/31)",
+          "change_pct": -3.8,
+          "low": "68,682원 (3/16)",
+          "speed": "3월 초 전쟁 직격 -15.5% 급락 후 3/18 반등 → 3/31 재하락",
+          "source": "Yahoo Finance",
+          "timestamp": "2026-03-31",
+          "note": "3/16 저점 68,682 → 3/20 고점 83,690 반등(+21.8%) → 다시 80,600. 여수 셧다운 공시(3/27)에도 주가 하방 제한적. 이미 악재 선반영 가능성."
+        },
+        {
+          "asset": "LG화학 051910.KS",
+          "before": "358,693원 (3/03)",
+          "after": "299,000원 (3/31)",
+          "change_pct": -16.6,
+          "low": "288,147원 (3/23)",
+          "speed": "3월 전체 하락 추세. 3/23 NCC 2공장 가동중단 발표일 최저점.",
+          "source": "Yahoo Finance",
+          "timestamp": "2026-03-31",
+          "note": "3/23 저점 288K → 3/30 322K 반등 → 3/31 299K 재급락(-7.1%). 3월 말 재하락은 셧다운 장기화 우려 반영."
+        },
+        {
+          "asset": "나프타 C&F Japan",
+          "before": "$622.58/mt (3월 초)",
+          "after": "$1,010~1,050/mt (3/25)",
+          "change_pct": "+62~69%",
+          "speed": "3주",
+          "source": "S&P Global, FinancialContent",
+          "timestamp": "2026-03-30",
+          "note": "싱가포르 현물 3/25 $1,000 돌파. 4자릿수 진입은 2022년 이후 처음."
+        }
+      ],
+      "narrative": [
+        {
+          "source": "서울경제",
+          "headline": "LG화학 이어 롯데케미칼도 여수공장 가동 중단…'나프타 쇼크' 확산",
+          "framing": "위기 확산형 — '쇼크', '대란', '연쇄 셧다운'",
+          "direction": "negative",
+          "timestamp": "2026-03-27"
+        },
+        {
+          "source": "ICIS",
+          "headline": "S Korea petrochemical industry enters conservation mode amid naphtha shortage",
+          "framing": "보존 모드 진입 — 구조적 위기 프레이밍",
+          "direction": "negative",
+          "timestamp": "2026-03-24"
+        },
+        {
+          "source": "헤럴드경제",
+          "headline": "'나프타 쇼크' 석유화학 4월 셧다운 공포…'러 원유 허용해야'",
+          "framing": "러시아 원유 수입 재개 필요성 제기 — 정책 전환 촉구",
+          "direction": "negative + 정책대안 제시",
+          "timestamp": "2026-03-23"
+        },
+        {
+          "source": "Korea Herald (반대측)",
+          "headline": "Seoul unveils naphtha export controls, urea hoarding ban",
+          "framing": "정부 대응 중심 — 위기관리 프레이밍",
+          "direction": "neutral-to-positive",
+          "timestamp": "2026-03-27"
+        }
+      ],
+      "expert": [
+        {
+          "name": "BNK투자증권",
+          "role": "증권사 리서치",
+          "statement": "롯데케미칼 목표가 60,000원. 에틸렌 스프레드 재하락 반영.",
+          "direction": "negative",
+          "channel": "리서치 리포트",
+          "timestamp": "2026-01-09"
+        },
+        {
+          "name": "한국기업평가",
+          "role": "신용평가사",
+          "statement": "2026년 석유화학업종 신용등급 전망 '부정적'.",
+          "direction": "negative",
+          "channel": "신용등급 보고서",
+          "timestamp": "2026-03"
+        },
+        {
+          "name": "KDI",
+          "role": "국책 연구기관",
+          "statement": "석유화학산업 3대 리스크 점검 발표.",
+          "direction": "cautious",
+          "channel": "정책연구",
+          "timestamp": "2026-03"
+        },
+        {
+          "name": "한국석유화학협회",
+          "role": "업계 대표단체",
+          "statement": "침묵 — 공식 성명 또는 매체 인용 미발견",
+          "direction": "침묵",
+          "channel": "—",
+          "note": "업계 이해관계자이나 공식 입장 부재. 정부 대응에 무임승차 가능성."
+        }
+      ],
+      "policy": [
+        {
+          "actor": "산업통상자원부",
+          "action": "나프타 수출 전면 제한 고시 (3/27 자정 즉시 시행, 5개월간)",
+          "detail": "모든 나프타 수출 원칙 제한. 정유사·석화사 일일 재고보고 의무화.",
+          "source": "정책브리핑",
+          "timestamp": "2026-03-27"
+        },
+        {
+          "actor": "정부 (비상경제본부)",
+          "action": "40개 핵심품목 공급망지원센터 본격 가동",
+          "detail": "나프타 '경제안보품목' 지정. 중동 피해기업 1.5조원 금융지원. 전시추경 25조원(4월 편성 예정).",
+          "source": "헤럴드경제, 정책브리핑",
+          "timestamp": "2026-03-24~27"
+        },
+        {
+          "actor": "관세청",
+          "action": "수출통제 물량 국내 석화업계 우선 배정",
+          "source": "ZDNet Korea",
+          "timestamp": "2026-03-27"
+        }
+      ],
+      "positioning": [
+        {
+          "actor": "외국인",
+          "direction": "순매도",
+          "detail": "석유화학 섹터 전반 순매도 추세. 구체적 종목별 3월 수급 데이터는 KRX에서 직접 확인 필요.",
+          "source": "WebSearch (KRX 직접 데이터 미확보)",
+          "confidence": "yellow",
+          "timestamp": "2026-03-31"
+        }
+      ]
+    },
+
+    "pattern": {
+      "direction": "가격·서사·전문가·정책 모두 동일 방향(negative). 정책만 대응(counter) 방향.",
+      "time": "가격 선행(3/03~16 급락) → 서사 추격(3/23~27 '쇼크' 프레이밍) → 정책 후행(3/27 수출금지). 전형적 위기 시퀀스.",
+      "proportion": "나프타 현물 +62~69% vs 롯데케미칼 -3.8%. 원자재 충격 대비 주가 반응 과소. 이미 업황 부진 선반영 때문. LG화학은 -16.6%로 상대적 과대.",
+      "propagation": "호르무즈 봉쇄 → 나프타 현물 급등 → NCC 셧다운 → 에틸렌·프로필렌 공급 차질 → 하류(포장재·자동차부품) 아직 미반영."
+    }
+  },
+
+  "issue_B": {
+    "title": "헬륨 팹 재고 고갈 D-3 (4/04 예상)",
+    "fingerprint": {
+      "domain": "반도체/소재",
+      "geo_scope": "글로벌 (카타르 → 한국·대만 팹)",
+      "contact_assets": {
+        "primary": ["000660.KS SK하이닉스", "005930.KS 삼성전자"],
+        "secondary": ["헬륨 현물가", "HBM/DRAM 가격", "티이엠씨 (네온가스 공급)"],
+        "control": ["TSMC (대만 팹, 비교 대상)", "Air Liquide (대체 공급)"]
+      },
+      "stakeholders": ["SK하이닉스", "삼성전자 반도체", "카타르 LNG 사업자", "산업부"],
+      "secondary_stakeholders": [
+        {"from": "SK하이닉스·삼성전자", "to": "AI 하이퍼스케일러 (NVIDIA, 구글 — HBM 납품처)"},
+        {"from": "헬륨 공급업체", "to": "의료용 MRI 업체 (헬륨 수요 경쟁)"},
+        {"from": "산업부", "to": "외교부 (카타르 직접 협상), 과기부 (대체기술 R&D)"}
+      ],
+      "time_character": "전개 (30% 차단 → 재고 소진 카운트다운, 6월까지 버퍼 vs 4월 초 공포)"
+    },
+
+    "channels": {
+      "price": ["000660.KS", "005930.KS", "헬륨 현물가"],
+      "narrative": ["Reuters", "Tom's Hardware", "TrendForce", "Fortune", "글로벌이코노믹", "서울경제"],
+      "expert": ["TrendForce", "Valuates", "Fitch", "상명대 이종환 교수", "Bank of America"],
+      "policy": ["산업부 장관", "정부 관계자 (Reuters 인용)"],
+      "positioning": ["KRX 외국인/기관 수급"],
+      "sns": "비활성 — B2B 소재 이슈. X/트위터에서 'helium shortage' 해시태그 일부 존재하나 시장 반응 판단에 기여하지 않음."
+    },
+
+    "reactions": {
+      "price": [
+        {
+          "asset": "SK하이닉스 000660.KS",
+          "before": "939,000원 (3/03)",
+          "after": "807,000원 (3/31)",
+          "change_pct": -14.1,
+          "high": "1,056,000원 (3/18)",
+          "speed": "3/18 고점 → 3/31 저점. 2주간 -23.6%. 3/30~31 이틀 연속 급락(-7.5%, -8.2%).",
+          "source": "Yahoo Finance",
+          "timestamp": "2026-03-31",
+          "note": "3/18 이후 하락세 가속. 터보퀀트(구글 메모리 절감 기술) + 헬륨 불안 + 외국인 매도 삼중 악재. 3/31 807K는 3월 최저."
+        },
+        {
+          "asset": "삼성전자 005930.KS",
+          "before": "195,100원 (3/03)",
+          "after": "167,200원 (3/31)",
+          "change_pct": -14.3,
+          "high": "208,500원 (3/18)",
+          "speed": "3/18 → 3/31 2주간 -19.8%. 연속 하락세.",
+          "source": "Yahoo Finance",
+          "timestamp": "2026-03-31",
+          "note": "외국인 지분율 48.62%까지 하락 — 2013년 10월 이후 최저. 50% 이탈에서 49% 이하까지 1개월 미만."
+        },
+        {
+          "asset": "헬륨 현물가",
+          "before": "~$500/1,000 cubic ft (전쟁 전)",
+          "after": "+40~50% 급등 (3월 말 기준)",
+          "change_pct": "+40~50%",
+          "source": "Bank of America, 글로벌이코노믹",
+          "timestamp": "2026-03-29",
+          "note": "Fitch 경고: 공급 부족 심화 시 최대 200%까지 폭등 가능. 현재 $700~750 추정."
+        }
+      ],
+      "narrative": [
+        {
+          "source": "Reuters",
+          "headline": "Helium stocks of South Korea's chipmakers to last until June, sources say",
+          "framing": "진화형 — 정부 관계자·소스 인용, 6월까지 충분하다는 프레이밍",
+          "direction": "positive (counter-narrative)",
+          "timestamp": "2026-03-31"
+        },
+        {
+          "source": "Tom's Hardware",
+          "headline": "Qatar helium shutdown puts chip supply chain on a two-week clock",
+          "framing": "카운트다운형 — '2주 시계' 위기 프레이밍",
+          "direction": "negative",
+          "timestamp": "2026-03"
+        },
+        {
+          "source": "Fortune",
+          "headline": "Iran war cuts off helium from Qatar, and shortages will start to bite in a few weeks",
+          "framing": "AI 공급망 위협 프레이밍",
+          "direction": "negative",
+          "timestamp": "2026-03-21"
+        },
+        {
+          "source": "글로벌이코노믹",
+          "headline": "삼성·SK하이닉스 비상… 헬륨 가격 200% 폭등 현실화되나",
+          "framing": "극단 시나리오 제시 — 200% 폭등 가능성",
+          "direction": "negative",
+          "timestamp": "2026-03-29"
+        },
+        {
+          "source": "GuruFocus/Yahoo (반대측)",
+          "headline": "Chip Stocks Jump as Trump Signals End to Iran War Within Weeks",
+          "framing": "종전 기대감 — 반도체 반등 프레이밍",
+          "direction": "positive",
+          "timestamp": "2026-03-31"
+        }
+      ],
+      "expert": [
+        {
+          "name": "TrendForce",
+          "role": "반도체 시장조사",
+          "statement": "카타르 헬륨 차질이 삼성·SK하이닉스·TSMC에 집중 타격. 한국 노출도가 가장 높다.",
+          "direction": "negative",
+          "channel": "리서치 노트",
+          "timestamp": "2026-03-23"
+        },
+        {
+          "name": "Valuates Reports",
+          "role": "산업 분석",
+          "statement": "삼성 버퍼 6~12주, SK하이닉스 8~16주. SK하이닉스가 근기 대비 우위.",
+          "direction": "mixed (삼성 부정, SK 중립)",
+          "channel": "분석 리포트",
+          "timestamp": "2026-03"
+        },
+        {
+          "name": "Bank of America",
+          "role": "IB",
+          "statement": "헬륨 현물가 40% 급등. 60~90일 스퀴즈 시 납품가 25~50% 상승 전망.",
+          "direction": "negative",
+          "channel": "리서치",
+          "timestamp": "2026-03"
+        },
+        {
+          "name": "Fitch Ratings",
+          "role": "신용평가사",
+          "statement": "공급 부족 심화 시 헬륨 현물가 최대 200% 폭등 가능 경고.",
+          "direction": "negative",
+          "channel": "신용 보고서",
+          "timestamp": "2026-03-29"
+        },
+        {
+          "name": "이종환 교수 (상명대 반도체 소자)",
+          "role": "학계",
+          "statement": "웨이퍼 냉각에서 헬륨 대체재 현재 없다. 열전도율+화학 비활성+원자 크기 조합이 유일.",
+          "direction": "negative (대체 불가 확인)",
+          "channel": "매체 인용",
+          "timestamp": "2026-03"
+        }
+      ],
+      "policy": [
+        {
+          "actor": "산업부 장관",
+          "action": "상반기 내 헬륨 공급 차질 없다고 발언. 6월까지 재고 충분.",
+          "detail": "Reuters 인용. 정부 관계자도 '4~6개월 재고' 확인.",
+          "source": "Reuters",
+          "timestamp": "2026-03-31"
+        },
+        {
+          "actor": "삼성전자 (자체 대응)",
+          "action": "HeRS(Helium Reuse System) 전 라인 확대 적용 중.",
+          "detail": "배출 헬륨 회수·정제·재투입. 일부 라인 작년 4월부터 적용.",
+          "source": "글로벌이코노믹, Reuters",
+          "timestamp": "2026-03"
+        },
+        {
+          "actor": "SK하이닉스 (자체 대응)",
+          "action": "미국 등 대체 공급처 확보 + 헬륨 재활용 기술 도입 검토.",
+          "source": "파이낸셜뉴스",
+          "timestamp": "2026-03-16"
+        }
+      ],
+      "positioning": [
+        {
+          "actor": "외국인",
+          "direction": "대규모 순매도",
+          "detail": "3월 삼성전자 16.26조원, SK하이닉스 7.24조원 순매도. 삼성전자 외국인 지분율 48.62%(2013.10 이후 최저). SK하이닉스 52.88%(3/03 53.87% → 1%p 하락).",
+          "source": "서울경제",
+          "confidence": "green",
+          "timestamp": "2026-03-31"
+        },
+        {
+          "actor": "개인(개미)",
+          "direction": "순매수 (역방향)",
+          "detail": "'주가 폭락인데 실적 전망은 상향' 역설로 개인 매수세 유입.",
+          "source": "Econmingle",
+          "timestamp": "2026-03"
+        }
+      ]
+    },
+
+    "pattern": {
+      "direction": "서사 분열: 해외 매체(Tom's Hardware, Fortune)는 '위기', 정부·Reuters는 '6월까지 충분'. 가격은 하락 지속. 서사와 정책이 반대 방향.",
+      "time": "가격 선행(3/18부터 지속 하락) → 위기 서사(3/21~29) → 정부 진화(3/31). 정부 진화가 가격에 아직 반영되지 않음.",
+      "proportion": "헬륨 현물 +40~50% vs SK하이닉스 -14.1%, 삼성전자 -14.3%. 원소재 충격과 주가 하락이 비례적. 다만 터보퀀트·외국인 매도 등 복합 악재 혼재.",
+      "propagation": "카타르 LNG 차질 → 헬륨 30% 차단 → 팹 수율 악화 우려 → AI HBM 납품 차질 가능성. 아직 실제 수율 데이터 미확인."
+    }
+  },
+
+  "cross_issue_pattern": {
+    "common_root": "호르무즈 해협 봉쇄 → 카타르 LNG/헬륨 + 중동 나프타 동시 차단. 하나의 지정학 이벤트가 석유화학(실물경제)과 반도체(첨단산업)를 동시에 타격.",
+    "divergence": "석유화학은 이미 셧다운 현실화(3/23~27). 반도체는 아직 '우려' 단계(재고 4~6개월). 속도 차이가 크다.",
+    "policy_gap": "석유화학: 정부 개입 강도 높음(수출금지, 추경). 반도체: 정부 대응 약함('충분하다' 언어적 진화만). 실제 헬륨 확보 조치 미확인.",
+    "narrative_contrast": "석유화학은 매체 일치(모두 위기). 반도체는 매체 분열(해외=위기, 정부=안심). 분열이 있는 곳에 미해소 질문이 있다."
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-001",
+      "question": "정부의 '6월까지 헬륨 재고 충분' 발언과 해외 매체의 '4월 초 소진' 전망 중 실제 팹 재고 수준은?",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "4월 4~7일경 삼성·SK하이닉스 팹 가동률 변화 확인",
+      "check_channels": ["WebSearch: 삼성 SK하이닉스 팹 가동률 4월", "Yahoo Finance: 000660.KS 005930.KS 주가 급변"],
+      "created": "2026-04-01",
+      "deadline": "2026-04-07",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-002",
+      "question": "나프타 수출금지(3/27) 이후 실제 NCC 재가동 시점이 롯데케미칼 예정(5/29)보다 앞당겨지는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "롯데케미칼 또는 LG화학의 재가동 공시 발생",
+      "check_channels": ["WebSearch: 롯데케미칼 재가동 여수", "DART: 011170 공시"],
+      "created": "2026-04-01",
+      "deadline": "2026-05-01",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-003",
+      "question": "에틸렌·프로필렌 하류 산업(포장재, 자동차 부품)의 가격 전이가 4월 중 발생하는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "하류 제품 가격 인상 보도 또는 공급 차질 보도 발생",
+      "check_channels": ["WebSearch: 에틸렌 하류 가격 인상 2026 4월", "WebSearch: ABS 가격 한국"],
+      "created": "2026-04-01",
+      "deadline": "2026-04-15",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-004",
+      "question": "Trump '수주 내 이란 전쟁 종결' 시그널(3/31)이 호르무즈 해협 재개통으로 이어지는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "호르무즈 해협 통행 재개 또는 휴전 합의 보도",
+      "check_channels": ["WebSearch: Hormuz strait reopening", "WebSearch: Iran ceasefire 2026 April"],
+      "created": "2026-04-01",
+      "deadline": "2026-04-30",
+      "last_checked": "",
+      "last_checked_result": "",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+
+  "stereo_recommendation": {
+    "trigger": "서사 분열(issue B) + 한국 실물경제 전이(issue A) + CUMULATIVE(동일 클러스터 다중 이슈)",
+    "recommendation": "Stereo Analyzer + PSF/macro 교차 권장",
+    "reason": "정부 진화 vs 해외 위기 서사 괴리(issue B), 나프타→에틸렌→하류 전파 미확인(issue A). 두 이슈의 공통 근원(호르무즈)에서 PSF 구조 매핑이 필요."
+  },
+
+  "watch_proposals": [
+    {
+      "id": "W-PENDING-001",
+      "title": "헬륨 팹 재고 D-Day 확인 (4/04~07)",
+      "linked_unresolved": "UQ-001",
+      "check_template": {
+        "frequency": "daily",
+        "data_sources": ["WebSearch", "Yahoo Finance 000660.KS 005930.KS"],
+        "trigger": "팹 가동률 하락 보도 또는 주가 -5% 이상 급락"
+      },
+      "status": "pending_approval"
+    },
+    {
+      "id": "W-PENDING-002",
+      "title": "에틸렌 하류 가격 전이 추적 (4월)",
+      "linked_unresolved": "UQ-003",
+      "check_template": {
+        "frequency": "weekly",
+        "data_sources": ["WebSearch"],
+        "trigger": "포장재·ABS 가격 인상 보도"
+      },
+      "status": "pending_approval"
+    }
+  ],
+
+  "sources": [
+    "Yahoo Finance (011170.KS, 051910.KS, 000660.KS, 005930.KS — 실시간 가격 + 1개월 히스토리)",
+    "Reuters: Helium stocks of South Korea's chipmakers to last until June (2026-03-31)",
+    "서울경제: LG화학 이어 롯데케미칼도 여수공장 가동 중단 (2026-03-27)",
+    "ICIS: S Korea petrochemical industry enters conservation mode (2026-03-24)",
+    "헤럴드경제: 40개 산업 핵심품목 공급망지원센터 본격 가동 (2026-03-24)",
+    "Tom's Hardware: Qatar helium shutdown puts chip supply chain on a two-week clock (2026-03)",
+    "Fortune: Iran war cuts off helium from Qatar (2026-03-21)",
+    "TrendForce: Helium Crunch Hits South Korea Harder (2026-03-23)",
+    "Bank of America: 헬륨 현물가 40% 급등 추정 (2026-03)",
+    "Fitch Ratings: 헬륨 200% 폭등 가능 경고 (2026-03-29)",
+    "S&P Global: 나프타 C&F Japan $1,010~1,050/mt (2026-03-25)",
+    "정책브리핑: 나프타 경제안보품목 지정, 1.5조 금융지원 (2026-03-27)",
+    "서울경제: 외국인 삼성전자 16.26조, SK하이닉스 7.24조 순매도 (2026-03)"
+  ]
+}

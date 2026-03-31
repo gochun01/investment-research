@@ -1,0 +1,433 @@
+{
+  "meta": {
+    "report_id": "RM-2026-03-28-TURBOQUANT",
+    "date": "2026-03-28",
+    "issue": "AI 메모리 효율화 충격 클러스터 — Google TurboQuant KV캐시 6배 압축 + 반도체 주가 분열 + Micron 어닝 서프라이즈",
+    "slug": "turboquant",
+    "depth": "Standard",
+    "scp_estimate": 4,
+    "scanner_origin": {
+      "cluster": "클러스터 1: AI 메모리 효율화 충격",
+      "prefetch_used": true
+    }
+  },
+
+  "phase0_check": {
+    "state_json_unresolved": "이전 state.json은 이란/TLT/AI capex 이슈 관련 — 신규 이슈와 별개. Phase 0 체크 완료.",
+    "watches_due_today": "없음 (2026-03-28 기준 기한 도래 Watch 0건)",
+    "watches_due_tomorrow": [
+      "W-2026-03-24-UQ-015 (카타르/쿠웨이트 GCC 계약, next_check 3/29)",
+      "W-2026-03-24-UQ-016 (Raytheon 대응, next_check 3/29)",
+      "W-2026-03-24-UQ-017 (천궁-III 일정, next_check 3/29)",
+      "W-2026-03-26-UQ-020 (이란 counterproposal, next_check 3/29)",
+      "W-2026-03-26-UQ-021 (파키스탄 중재, next_check 3/29)"
+    ]
+  },
+
+  "fingerprint": {
+    "domain": "기술(AI 효율화 알고리즘) + 산업(메모리 반도체 수급) + 기업(구글 vs HBM 공급자)",
+    "geography": "글로벌 — 미국(구글/Micron) → 한국(삼성/SKH) → 전 AI 인프라 생태계",
+    "touched_assets": {
+      "primary": ["005930.KS", "000660.KS", "MU", "SNDK", "NVDA", "SOXX", "SMH"],
+      "secondary": ["AMAT", "LRCX", "TSM", "^KS11", "KRW=X"],
+      "contrast": ["SPY", "QQQ", "비메모리 반도체"]
+    },
+    "stakeholders": [
+      "구글(공급자측/가해자)", "SK하이닉스(피해자)", "삼성전자(피해자)", "Micron(피해자)",
+      "SanDisk(피해자)", "Cloudflare CEO(촉매자)", "Morgan Stanley Shawn Kim(분석자 강세)",
+      "Wells Fargo Andrew Rocha(분석자 약세)", "한국 개인투자자(포지셔닝)", "AI hyperscaler(2차 수혜)"
+    ],
+    "secondary_stakeholders": [
+      {"from": "삼성/SKH HBM 하락", "to": "TSMC HBM 패키징 수주 → 대만 경제"},
+      {"from": "Micron capex $20B", "to": "AMAT/LRCX 반도체 장비 수주"},
+      {"from": "AI hyperscaler capex 재평가", "to": "Vertiv/Eaton 전력 인프라"},
+      {"from": "SanDisk NAND", "to": "Western Digital 전략 연계"},
+      {"from": "SKH US ADR IPO 가능성", "to": "한국 외국인 자금 흐름 재편"}
+    ],
+    "time_character": "충격(3/26 가격 급락) → 전개(ICLR 4/23 발표 + 상용화 일정) → 구조적(HBM 수요 전망 재설정 여부)"
+  },
+
+  "channels": {
+    "price": {
+      "assets": ["005930.KS", "000660.KS", "MU", "SNDK", "NVDA", "SOXX", "SMH", "^KS11", "KRW=X", "AMAT", "LRCX", "TSM"],
+      "reason": "직접 접촉 자산 전수 + 2차 이해관계자(반도체 장비) 확인"
+    },
+    "narrative": {
+      "channels": ["Reuters/CNBC(주류)", "Seoul Economic Daily(한국)", "Tom's Hardware(기술)", "TechCrunch(기술)", "Zacks/Motley Fool(리테일 금융)", "TrendForce(산업 리서치)"],
+      "reason": "주류+한국+기술+리테일 4방향 양면 수집"
+    },
+    "expert": {
+      "pre_selected": [
+        {"name": "Matthew Prince (Cloudflare CEO)", "role": "촉매자/SNS", "status": "발견 — X에서 'Google's DeepSeek moment' 발언"},
+        {"name": "Morgan Stanley Shawn Kim", "role": "분석자(강세)", "status": "발견 — Jevons Paradox, HBM 무영향 주장"},
+        {"name": "Wells Fargo Andrew Rocha", "role": "분석자(약세/반대입장)", "status": "발견 — TurboQuant 메모리 비용 하락 압박 주장"},
+        {"name": "Ross Gerber (Gerber Kawasaki CEO)", "role": "분석자(강세)", "status": "발견 — X에서 'MU 4 forward PE, insane growth ahead' 발언 3/25"},
+        {"name": "Micron CEO Sanjay Mehrotra", "role": "피해자", "status": "발견 — Q2 어닝콜에서 HBM4 전량 매진, Q3 가이던스 $33.5B 제시"},
+        {"name": "SK그룹 최태원 회장", "role": "반대입장", "status": "발견 — GTC에서 '2030년까지 메모리 부족 지속, 웨이퍼 공급 20% 부족' 선제 발언"},
+        {"name": "Samsung Electronics 경영진", "role": "피해자", "status": "침묵 — TurboQuant 관련 공식 발언 미발견. 내부 기술 검토 중 또는 의도적 침묵 가능"},
+        {"name": "Google Amir Zandieh / Vahab Mirrokni", "role": "공급자(논문 저자)", "status": "침묵(공개 포럼) — ICLR 4/23 발표 전 자제 가능"},
+        {"name": "Nvidia 공식 대변인", "role": "하류/2차", "status": "침묵 — GTC Vera Rubin 발표만 있고 TurboQuant 직접 언급 미발견"},
+        {"name": "한국 MSIT(과기부)", "role": "정책", "status": "침묵 — 공식 정책 대응 미발견"}
+      ]
+    },
+    "policy": {
+      "active": true,
+      "channels": ["미국 CHIPS Act(반도체 지원 계속)", "한국 정부 반도체 지원(2026 예산 집행 중)", "미국 삼성/SKH 중국 칩 장비 연간 라이선스(2026 승인됨)"],
+      "reason": "한국 정부 정책 대응 여부 확인 필요"
+    },
+    "positioning": {
+      "active": true,
+      "channels": ["SOXX 5일 순유출 -38.3M", "SMH 3개월 순유입 +흐름 유지", "외국인 한국 2개월간 50조원 순매도(삼성+SKH 72%)"],
+      "reason": "전개형 이상 — ETF 흐름과 외국인 포지션 이동이 핵심"
+    },
+    "sns": {
+      "status": "활성",
+      "reason": "Q1=YES(Matthew Prince X 발언, Ross Gerber X 발언), Q2=YES(리테일 반도체 투자자), Q3=조건부",
+      "collected": ["Matthew Prince X: 'Google의 DeepSeek moment'", "Ross Gerber X: 'MU 4 forward PE, insane growth ahead'", "리테일 커뮤니티: DeepSeek 패닉 재현 우려"]
+    }
+  },
+
+  "reactions": {
+    "price": [
+      {
+        "asset": "삼성전자 (005930.KS)", "current": "₩179,700", "5d_open": "₩189,000(3/25)", "5d_change": "-4.9%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "3/26 TurboQuant 충격 반영. 외국인 2개월간 삼성 지분 12.5년 최저"
+      },
+      {
+        "asset": "SK하이닉스 (000660.KS)", "current": "₩922,000", "5d_open": "₩995,000(3/25)", "5d_change": "-7.3%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "3/26 -6.23% 급락. HBM 시장 점유율 57%로 최대 피해자 포지션 → 역설적으로 HBM은 TurboQuant 영향 없음"
+      },
+      {
+        "asset": "Micron (MU)", "current": "$357.22", "5d_open": "$404.35(3/23)", "5d_change": "-11.7%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "3/26 -7% 이상 급락 후 3/27 어닝 서프라이즈에도 $357 유지. 3/27 장후 Q2 $23.86B(+196% YoY), HBM4 전량 매진, Q3 가이던스 $33.5B"
+      },
+      {
+        "asset": "SanDisk (SNDK)", "current": "$615.83", "5d_open": "$677.86(3/25)", "5d_change": "-9.1%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "3/26 -11% 섹터 최대 낙폭. NAND/SSD는 TurboQuant 직접 타겟 아님에도 최대 하락 — 시장 기술 구분 실패 신호"
+      },
+      {
+        "asset": "Nvidia (NVDA)", "current": "$167.52", "5d_open": "$178.68(3/25)", "5d_change": "-6.2%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "TurboQuant는 H100 GPU에서 8배 성능 향상 → 이론상 NVDA 긍정인데 하락. AI capex 전반 불확실성으로 재편"
+      },
+      {
+        "asset": "SOXX", "current": "$323.48", "5d_open": "$345.25(3/25)", "5d_change": "-6.3%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "5일 순유출 -38.3M. 섹터 ETF 전반 하락"
+      },
+      {
+        "asset": "SMH", "current": "$374.25", "5d_open": "$399.02(3/25)", "5d_change": "-6.2%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "3개월 순유입 유지 vs 단기 유출 혼재"
+      },
+      {
+        "asset": "KOSPI (^KS11)", "current": "5,438.87", "5d_open": "5,642.21(3/25)", "5d_change": "-3.6%",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "삼성+SKH가 시총 비중 대형. 외국인 3.9조원 순매도 개인이 흡수"
+      },
+      {
+        "asset": "KRW/USD", "current": "₩1,508", "5d_open": "₩1,497(3/23)", "5d_change": "+0.7% (원화 약세)",
+        "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "반도체 수출 기업 약세 → 원화 약세 압력. 이란 전쟁발 달러 강세와 복합 작용"
+      },
+      {
+        "asset": "VIX", "current": "27.44", "date": "2026-03-26",
+        "source": "[MCP] FRED", "timestamp": "2026-03-27",
+        "note": "VIX 27대 — 단순 조정 아닌 실질 불안 구간. 이란 전쟁+TurboQuant 복합 압박"
+      },
+      {
+        "asset": "US 10Y Treasury", "current": "4.42%", "date": "2026-03-26",
+        "source": "[MCP] FRED", "timestamp": "2026-03-27",
+        "note": "금리 고수준 유지 — AI capex 재평가에 추가 압박"
+      },
+      {
+        "asset": "AMAT", "current": "$337.17", "source": "[MCP] Yahoo Finance", "timestamp": "2026-03-28",
+        "note": "2차 이해관계자 — 반도체 장비. TurboQuant 충격 간접 전파"
+      }
+    ],
+
+    "narrative": [
+      {
+        "channel": "Zacks (TheStreet via Yahoo Finance)", "direction": "약세",
+        "statement": "'Did Alphabet Just End the AI Memory Boom?' — Memory stocks hammered following TurboQuant. Is this memory's DeepSeek moment?",
+        "source": "[MCP] Yahoo Finance News (000660.KS)", "timestamp": "2026-03-27T16:40:00Z"
+      },
+      {
+        "channel": "GuruFocus", "direction": "약세",
+        "statement": "'Google Unveils AI Breakthrough Cutting Memory Use by 6x, Pressuring Flash Stocks. TurboQuant may reduce storage demand while leaving HBM and DRAM largely unaffected, driving divergence across memory-chip stocks.'",
+        "source": "[MCP] Yahoo Finance News", "timestamp": "2026-03-27T16:12:31Z",
+        "note": "제목(플래시 압박)과 본문(HBM 무영향)이 상충하는 이중 서사"
+      },
+      {
+        "channel": "Simply Wall St / SK하이닉스 관련", "direction": "약세+복합",
+        "statement": "'Micron Reassesses AI Memory Outlook As TurboQuant And SK Hynix Reshape Sector'",
+        "source": "[MCP] Yahoo Finance News", "timestamp": "2026-03-27T13:05:15Z"
+      },
+      {
+        "channel": "TechCrunch", "direction": "중립+강세",
+        "statement": "'Memory chip giant SK hynix could help end RAMmageddon with blockbuster US IPO' — $10~14B 조달 → 캐파 확대 → 공급 안정화. TurboQuant 충격과 반대 방향 서사를 동시 발행",
+        "source": "[MCP] Yahoo Finance News (000660.KS)", "timestamp": "2026-03-27T19:11:28Z"
+      },
+      {
+        "channel": "Motley Fool", "direction": "강세",
+        "statement": "'Micron Just Started Mass-Producing HBM4 for Nvidia's Vera Rubin. Here's Why This Stock Could Soar in 2026.'",
+        "source": "[MCP] Yahoo Finance News", "timestamp": "2026-03-27T18:25:00Z"
+      },
+      {
+        "channel": "Tom's Hardware (1차 기술 소스)", "direction": "중립",
+        "statement": "Google TurboQuant reduces AI LLM cache memory by at least 6x, up to 8x performance boost on Nvidia H100 GPUs. No accuracy loss.",
+        "source": "[WebSearch] tomshardware.com", "timestamp": "2026-03-25 추정",
+        "note": "1차 기술 출처. 헤드라인은 '6배 압축'이지만 본문은 KV cache(추론 임시 메모리)에 국한됨을 명시"
+      },
+      {
+        "channel": "Seoul Economic Daily", "direction": "재해석/교정",
+        "statement": "'Semiconductor Stocks Plunge on Google TurboQuant — Actual Effect Limited to 2.6x' + 'Tokens, KV Cache, TurboQuant: Decoding AI Jargon'",
+        "source": "[WebSearch] en.sedaily.com", "timestamp": "2026-03-27~28",
+        "note": "한국 매체가 3/28부터 '실제 효과 제한' 재해석 서사로 전환 시작"
+      },
+      {
+        "channel": "TrendForce", "direction": "반대입장(기술 분석)",
+        "statement": "'TurboQuant does not affect model weights (HBM) or training workloads. HBM is virtually immune. Actual effect limited to inference KV cache.'",
+        "source": "[WebSearch] trendforce.com", "timestamp": "2026-03-26",
+        "note": "R-03 반대입장 — 기술 리서치 기관의 충격 제한론"
+      },
+      {
+        "channel": "Futunn News (글로벌 리테일 향)", "direction": "복합",
+        "statement": "'TurboQuant: 기술 커뮤니티는 구글의 DeepSeek이라 칭하지만 월가 애널리스트는 메모리 주식을 할인 매수하라 권고'",
+        "source": "[WebSearch] news.futunn.com", "timestamp": "2026-03-27",
+        "note": "리테일-기관 서사 분열을 동시에 포착한 자료"
+      }
+    ],
+
+    "expert": [
+      {
+        "name": "Matthew Prince", "role": "촉매자(SNS/X)",
+        "statement": "X: 'This is Google's DeepSeek moment. So much more room to optimize AI inference for speed, memory usage, power consumption, and multi-tenant utilization.'",
+        "direction": "약세(공포 촉매)", "source": "[WebSearch] CNBC/TechCrunch 보도 확인", "timestamp": "2026-03-25~26"
+      },
+      {
+        "name": "Morgan Stanley Shawn Kim (분석자)", "role": "분석자(강세)",
+        "statement": "'TurboQuant leads to more intense computing rather than dimming demand. Jevons Paradox — AI 채택 비용 하락 → 총 수요 폭발. HBM 무영향.'",
+        "direction": "강세", "source": "[WebSearch] Seeking Alpha via Morgan Stanley", "timestamp": "2026-03-27",
+        "note": "Wall Street 강세 대표 의견"
+      },
+      {
+        "name": "Wells Fargo Andrew Rocha", "role": "반대입장(분석자 약세)",
+        "statement": "'TurboQuant directly attacks the cost curve for memory in AI systems and raises the question of how much memory capacity the industry actually needs.'",
+        "direction": "약세", "source": "[WebSearch] VentureBeat/Tom's Hardware", "timestamp": "2026-03-26~27",
+        "note": "R-03 반대입장 충족. 비용 하락 압박 경고"
+      },
+      {
+        "name": "Ross Gerber (Gerber Kawasaki CEO)", "role": "분석자(강세/SNS)",
+        "statement": "X: 'I love that there is a very good chip company with insane growth ahead, trading at a 4 forward PE. thank you. $MU'",
+        "direction": "강세", "source": "[MCP] Yahoo Finance News (MU)", "timestamp": "2026-03-25"
+      },
+      {
+        "name": "Micron CEO Sanjay Mehrotra", "role": "피해자",
+        "statement": "Q2 FY2026 어닝콜: '2026 HBM 전량 매진. HBM4 생산 개시. Q3 가이던스 $33.5B ±$750M, EPS $19.15. Capex $20B.'",
+        "direction": "강세(펀더멘털)", "source": "[WebSearch] CNBC/Seeking Alpha", "timestamp": "2026-03-27 장후"
+      },
+      {
+        "name": "최태원 SK그룹 회장", "role": "반대입장(공급자)",
+        "statement": "GTC San Jose: '글로벌 메모리 부족 2030년까지 지속. 웨이퍼 공급 수요 대비 20%+ 부족. HBM 집중이 일반 DRAM 부족 유발.'",
+        "direction": "강세(공급 부족론)", "source": "[WebSearch] Tom's Hardware/TechRadar", "timestamp": "2026-03 GTC"
+      },
+      {
+        "name": "Samsung Electronics 경영진", "role": "피해자",
+        "statement": "침묵 — TurboQuant 관련 공식 발언 미발견",
+        "direction": "침묵", "source": "선행 목록 미발견", "timestamp": "2026-03-28",
+        "note": "삼성 IR/경영진 발언 부재. 이란 사태 때 여수 공장 즉각 발표와 대조적으로 기술 충격에는 침묵"
+      },
+      {
+        "name": "Google 논문 저자 (Amir Zandieh / Vahab Mirrokni)", "role": "공급자",
+        "statement": "침묵(공개 포럼) — ICLR 4/23 발표 전 추가 코멘트 미발견",
+        "direction": "침묵", "source": "선행 목록 미발견", "timestamp": "2026-03-28"
+      },
+      {
+        "name": "Nvidia 공식", "role": "하류/2차",
+        "statement": "침묵(TurboQuant 직접 언급 없음) — GTC에서 Vera Rubin + HBM4 발표만. TurboQuant 호환성 또는 영향에 대한 공식 입장 없음",
+        "direction": "침묵", "source": "선행 목록 미발견", "timestamp": "2026-03-28",
+        "note": "TurboQuant가 H100에서 8배 성능 향상 → Nvidia에게 긍정적임에도 침묵"
+      },
+      {
+        "name": "한국 MSIT(과기부)", "role": "정책",
+        "statement": "침묵 — TurboQuant 관련 공식 정책 대응 미발견",
+        "direction": "침묵", "source": "선행 목록 미발견", "timestamp": "2026-03-28",
+        "note": "이란 사태 나프타 수출금지는 48시간 내 발동했으나 기술 충격에는 즉각 정책 반응 없음"
+      }
+    ],
+
+    "policy": [
+      {
+        "channel": "미국 CHIPS Act", "direction": "중립",
+        "statement": "기존 삼성/SKH 중국 칩 장비 연간 라이선스(2026년) 승인 유지. TurboQuant 관련 추가 정책 미발견.",
+        "source": "[WebSearch] Tom's Hardware/CNBC", "timestamp": "2025-12~2026-01"
+      },
+      {
+        "channel": "한국 정부", "direction": "침묵",
+        "statement": "TurboQuant 관련 한국 정부 공식 대응 미발견. 이란 사태 나프타 통제와 달리 기술 충격에 즉각 정책 개입 없음.",
+        "source": "[WebSearch] Seoul Economic Daily 미확인", "timestamp": "2026-03-28"
+      }
+    ],
+
+    "positioning": [
+      {
+        "channel": "SOXX ETF 흐름", "direction": "약세",
+        "statement": "5일 순유출 -38.3M. 3개월 순유입 +1.89B 누적은 유지.",
+        "source": "[WebSearch] IndexBox / ETFdb", "timestamp": "2026-03-27"
+      },
+      {
+        "channel": "외국인 한국 매도", "direction": "약세",
+        "statement": "2개월간 외국인 50조원 순매도. 삼성전자+SK하이닉스 72% 차지. 삼성 외국인 지분율 12.5년 최저.",
+        "source": "[WebSearch] Seoul Economic Daily", "timestamp": "2026-03-27"
+      },
+      {
+        "channel": "MU 애널리스트 컨센서스", "direction": "강세",
+        "statement": "현재: StrongBuy 9 / Buy 28 / Hold 6 / Sell 0. 전월 대비 Sell 2→0으로 감소.",
+        "source": "[MCP] Yahoo Finance Recommendations", "timestamp": "2026-03-28"
+      },
+      {
+        "channel": "Micron 목표주가", "direction": "강세",
+        "statement": "어닝 서프라이즈 후 일부 애널리스트 목표주가 $480→$934 상향.",
+        "source": "[WebSearch] AlphaSpread/BeatingTheTide", "timestamp": "2026-03-27"
+      },
+      {
+        "channel": "한국 개인투자자", "direction": "반대매매(강세)",
+        "statement": "외국인 3.9조원 순매도를 개인이 흡수. KOSPI 5,400선 방어.",
+        "source": "[WebSearch] Seoul Economic Daily", "timestamp": "2026-03-27"
+      }
+    ]
+  },
+
+  "pattern_reading": {
+    "lens1_direction": {
+      "result": "분열(DIVERGENT) — HBM vs NAND/FLASH 기술적 구분 실패형 패닉 + 가격-펀더멘털 괴리",
+      "comment": "가격 전 계층 하락이지만 서사는 정반대로 분열. 가장 중요한 불일치: Micron 주가 -11.7% 동시에 어닝 +196% YoY, HBM4 전량 매진. 시장이 미래 수요 구조 재설정 가능성을 현재 펀더멘털보다 우선시하는 '공포 할인' 구조."
+    },
+    "lens2_time": {
+      "result": "D형 시작(논문→기술 커뮤니티) → B형 증폭(SNS→미디어→가격) → D형 교정(애널리스트) 복합 사이클",
+      "comment": "Cloudflare CEO X 발언이 D→B 전환 촉매. DeepSeek 감정적 잔상이 공포 전파 경로로 작동. 3/28 교정 서사 시작 중이나 아직 미완결."
+    },
+    "lens3_proportion": {
+      "result": "과잉반응(OVER-REACTION) — TurboQuant 기술 범위와 시장 반응 간 불비례",
+      "comment": "기술적 사실: KV 캐시(추론 중 임시 메모리) 압축, 실제 효과 2.6배 수준(TrendForce), HBM 무영향(Morgan Stanley/TrendForce). 시장 반응: HBM 지배적 SKH -6%, HBM4 매진 Micron -12%, NAND 무관 SanDisk -12%. HBM ≠ NAND ≠ KV cache 기술 구분이 시장에서 실패. VIX 27대가 과잉 환경 조성."
+    },
+    "lens4_propagation": {
+      "result": "기술 논문→SNS 촉매(Cloudflare CEO)→공포 전파→가격 과잉→애널리스트 교정 투입→펀더멘털 역충격(Micron 어닝)→서사 재조정 중",
+      "comment": "전파가 기술적 사실보다 감정적 유사성(DeepSeek 비유)을 경로로 삼음. Nvidia 침묵이 공포 장기화에 기여 가능. 서사 재조정은 시작됐으나 ICLR 4/23 발표까지 불확실성 지속."
+    },
+    "overall": "패닉형 과잉 반응. 서사 분열 + HBM/NAND 기술 구분 실패 + Micron 어닝 반충격이 교정 압력으로 작동 중. 교정 완결의 게이트 변수: ① ICLR 4/23 기술 발표 ② 주요 AI 회사 채택 여부 ③ 삼성/SKH 경영진 공식 대응"
+  },
+
+  "stereo_recommendation": {
+    "result": "권장",
+    "reason": "방향 분열(DIVERGENT) + 비례성 과잉(OVER-REACTION) + 한국 전이 경로 식별 — 3개 조건 동시 충족",
+    "mode": "PSF+macro 교차 (한국 반도체 전이 + AI capex 재설정 여부)",
+    "trigger": "사용자 승인 후 실행"
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-TQ-001",
+      "question": "TurboQuant가 실제 상용화(주요 모델 적용)되어 HBM 수요 하향 조정이 발생하는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "OpenAI/Meta/Anthropic의 TurboQuant 또는 유사 KV cache 압축 도입 공식 발표",
+      "check_channels": {"price": ["MU", "000660.KS"], "narrative": ["OpenAI blog", "Meta AI blog"], "positioning": ["SOXX ETF 흐름"]},
+      "created": "2026-03-28", "deadline": "2026-04-23",
+      "last_checked": "2026-03-28", "last_checked_result": "미해소 — ICLR 전까지 업계 채택 불명확",
+      "resolved_date": "", "resolution": ""
+    },
+    {
+      "id": "UQ-TQ-002",
+      "question": "Micron Q2 어닝 서프라이즈가 TurboQuant 충격을 흡수하고 MU $380+ 회복시키는가?",
+      "status": "open",
+      "resolve_type": "threshold",
+      "resolve_condition": "MU $380 이상 복귀 또는 2026-04-10 기준 확인",
+      "check_channels": {"price": ["MU 일간 종가"], "narrative": ["Seeking Alpha"], "positioning": ["MU 옵션 스큐"]},
+      "created": "2026-03-28", "deadline": "2026-04-10",
+      "last_checked": "2026-03-28", "last_checked_result": "현재 $357 — 어닝 발표 후에도 고점 대비 -11.7%",
+      "resolved_date": "", "resolution": ""
+    },
+    {
+      "id": "UQ-TQ-003",
+      "question": "SK하이닉스 미국 ADR 상장($10~14B) 발표가 TurboQuant 충격을 상쇄하는 새 서사를 형성하는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SK하이닉스 미국 ADR IPO 공식 일정 발표",
+      "check_channels": {"price": ["000660.KS"], "narrative": ["Reuters", "한국경제"], "positioning": ["외국인 순매수 전환 여부"]},
+      "created": "2026-03-28", "deadline": "2026-06-30",
+      "last_checked": "2026-03-28", "last_checked_result": "TechCrunch 3/27 잠재적 상장 언급, 공식 일정 미발표",
+      "resolved_date": "", "resolution": ""
+    },
+    {
+      "id": "UQ-TQ-004",
+      "question": "ICLR 2026(4/23~27) 발표 후 기술 검토가 '실제 효과 제한' 방향으로 수렴하여 반도체 주가 반등을 이끄는가?",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "ICLR 발표(4/23) 이후 5거래일 내 주요 반도체 주가 방향 확인",
+      "check_channels": {"price": ["005930.KS", "000660.KS", "MU", "SOXX"], "narrative": ["Tom's Hardware", "애널리스트 보고서"], "positioning": ["SOXX ETF 순유입/유출"]},
+      "created": "2026-03-28", "deadline": "2026-04-30",
+      "last_checked": "2026-03-28", "last_checked_result": "미해소 — ICLR 발표 전",
+      "resolved_date": "", "resolution": ""
+    }
+  ],
+
+  "watch_proposals": [
+    {
+      "id": "W-2026-03-28-UQ-TQ-001", "subject": "TurboQuant 업계 채택 동향 (OpenAI/Meta/Anthropic)",
+      "type": "event_tracking", "schedule": {"next_check": "2026-04-02", "check_dates": ["2026-04-02", "2026-04-07", "2026-04-14"]},
+      "close_condition": "주요 AI 회사 공식 채택 발표 또는 ICLR 후 미채택 확인", "status": "proposed"
+    },
+    {
+      "id": "W-2026-03-28-UQ-TQ-002", "subject": "MU $380 회복 여부",
+      "type": "threshold_watch", "schedule": {"next_check": "2026-04-01", "check_dates": ["격일", "마감 2026-04-10"]},
+      "close_condition": "MU $380 돌파 또는 4/10 기준 확인", "status": "proposed"
+    },
+    {
+      "id": "W-2026-03-28-UQ-TQ-003", "subject": "SK하이닉스 미국 ADR IPO 공식 일정",
+      "type": "event_tracking", "schedule": {"next_check": "2026-04-06", "check_dates": ["매주 월요일"]},
+      "close_condition": "SKH 공식 IPO 일정 발표", "status": "proposed"
+    },
+    {
+      "id": "W-2026-03-28-UQ-TQ-004", "subject": "ICLR 4/23 발표 후 기술 검토 수렴 + 가격 반응",
+      "type": "data_check", "schedule": {"next_check": "2026-04-28", "check_dates": ["2026-04-28"]},
+      "close_condition": "ICLR 발표 후 가격 방향 확인", "status": "proposed"
+    }
+  ],
+
+  "self_audit": {
+    "Q1_channel_reasons": true,
+    "Q2_both_sides": true,
+    "Q3_price_narrative_gap_noted": true,
+    "Q4_silence_recorded": true,
+    "Q5_primary_source_mcp": true,
+    "result": "5/5 ✅ — 완료"
+  },
+
+  "sources_mcp": [
+    "Yahoo Finance MCP — 005930.KS, 000660.KS, MU, SNDK, NVDA, SOXX, SMH, ^KS11, KRW=X, AMAT, LRCX, TSM (현재가 + 5일/1개월 히스토리)",
+    "Yahoo Finance MCP — MU, 000660.KS, NVDA 뉴스",
+    "Yahoo Finance MCP — MU 애널리스트 컨센서스 (StrongBuy 9, Buy 28, Hold 6, Sell 0)",
+    "Yahoo Finance MCP — MU 손익계산서 (FY2022~FY2025)",
+    "FRED MCP — VIX 27.44 (2026-03-26), US 10Y 4.42% (2026-03-26)"
+  ],
+  "sources_web": [
+    "Tom's Hardware — TurboQuant 기술 원문",
+    "Google Research Blog — TurboQuant 공식 발표",
+    "CNBC — Memory stocks fall after Google TurboQuant",
+    "MarkTechPost — TurboQuant 기술 분석",
+    "TrendForce — Decoding TurboQuant: 6x KV Cache Cut",
+    "TechCrunch — SK hynix US IPO + TurboQuant",
+    "Morgan Stanley via Seeking Alpha — TurboQuant Jevons Paradox",
+    "Seoul Economic Daily — 삼성/SKH 반응 다수",
+    "Korea Times — TurboQuant HBM 수요 제한적",
+    "TipRanks — MU/SNDK TurboQuant",
+    "Seeking Alpha — SanDisk 업그레이드",
+    "CNBC — Micron Q2 FY2026 earnings"
+  ]
+}

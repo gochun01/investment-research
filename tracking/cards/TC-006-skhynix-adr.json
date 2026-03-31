@@ -85,16 +85,17 @@
   "cross_card_links": [
     {"to": "TC-001", "link": "Section 301 — 반도체 관세가 ADR 밸류에이션 직격"},
     {"to": "TC-002", "link": "ADR 달러 유입 → KRW 반등 잠재력 (역방향)"},
-    {"to": "TC-010", "link": "AI capex + HBM 수요 → SK하이닉스 실적 직결"}
+    {"to": "TC-010", "link": "AI capex + HBM 수요 + LP40 DRAM 공급자(SKH) = inference 아키텍처 전환에서 이중 포지션. ADR thesis의 3번째 다리(잠재)."}
   ],
 
   "open_questions": [
     "TSMC ADR: 상장 후 PER 변화 추이 + 본토 괴리율 수치",
     "232(25%) + 301 이중 관세 시 하이닉스 실효세율",
-    "ADR 달러 유입 경로: 한국 환류 vs 미국 내 재투자"
+    "ADR 달러 유입 경로: 한국 환류 vs 미국 내 재투자",
+    "LP40 SKH DRAM 공급자 지정 교차확인 — 현재 SemiAnalysis 단일소스. 2번째 독립 출처 필요."
   ],
 
-  "analysis_ids": ["SA-20260326-006", "SA-20260328-SKH-ADR"],
+  "analysis_ids": ["SA-20260326-006", "SA-20260328-SKH-ADR", "SA-20260328-L7-TQ-SKH"],
   "tags": ["STRUCT", "EVENT", "NARR", "SK하이닉스", "ADR", "HBM", "반도체", "301", "밸류에이션", "코리아디스카운트", "TurboQuant", "SOX편입"],
 
   "psf_link": "P3 🔴(격화), P5 🔴(Brent $112), S1 긴장★(실질금리 2.08%), Disruption 1 완전 활성, F5 VIX 31+",

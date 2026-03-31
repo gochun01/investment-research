@@ -1,0 +1,173 @@
+{
+  "tc_id": "TC-015",
+  "created": "2026-03-28",
+  "updated": "2026-03-28",
+  "title": "일본 인구 절벽 — 생산인구 -16% + 이민 120만 프로그램 + 연금 65세",
+  "status": "active",
+  "issue_summary": "일본 생산인구 87.3M→73.7M(-16%). 고령부양비 21%→49%. 트럭기사 50만 부족. 2040년까지 670~1100만 추가 노동력 필요. 이민 120만 프로그램(기능실습+특정기능). 연금 65세 완성(2025 남/2030 여). 한국·유럽이 5~10년 후 따라갈 경로.",
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "TC-015 신규 생성. 일본 인구 절벽 구조적 추적 개시.",
+      "note": "생산인구 -16%, 이민 120만, 연금 65세 기반."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "MCP 수집. Nikkei 53,373, USD/JPY 160.29. 초기 데이터.",
+      "note": "pipeline-gap-fill"
+    }
+  ],
+  "pre_read": {
+    "type": "STRUCT",
+    "scp": 3,
+    "urgency": "SLOW"
+  },
+  "scenarios": {
+    "A": {
+      "label": "일본형 장기 저성장 고착 (한국 선행 지표)",
+      "probability": "40%",
+      "trigger": {
+        "condition": "일본 GDP 성장률 0~1% 고착 + 출생률 반등 없음(1.2 이하 유지) x 2년",
+        "source": "구조적",
+        "recalibration": "연간 인구통계 발표(10월)"
+      },
+      "kc": {
+        "watch": "출생률 반등(1.3+) 또는 GDP 2%+ 성장",
+        "alert": "이민 유입 목표 초과 달성",
+        "hard": "AI/로봇 생산성 지표 급등(제조업 생산성 YoY +10%)",
+        "action": "TC-015 A thesis 재검토. B 또는 C로 전환 판단."
+      },
+      "current_status": "Nikkei 53,373. USD/JPY 160.29. 엔화 약세 지속 = 일본 수출 호조이나 수입물가 부담."
+    },
+    "B": {
+      "label": "AI/로봇 생산성 혁명으로 인구 효과 상쇄",
+      "probability": "25%",
+      "trigger": {
+        "condition": "제조업 로봇 밀도 +50% + 물류 자동화 트럭 상용화 + GDP 성장 가속",
+        "source": "구조적+기술",
+        "recalibration": "IFR 로봇 밀도 연간 보고서"
+      },
+      "kc": {
+        "watch": "로봇 도입 둔화 보도",
+        "alert": "자동화 규제 강화(노조 반발)",
+        "hard": "로봇/AI 투자 감소 + 생산성 정체 확인",
+        "action": "TC-015 B thesis 재검토. A로 전환."
+      },
+      "current_status": "Phase 0. 일본 로봇 도입률 추적 중."
+    },
+    "C": {
+      "label": "이민 확대 성공 → 노동 수급 안정",
+      "probability": "20%",
+      "trigger": {
+        "condition": "이민 유입 연 30만+ 달성 + 특정기능 비자 확대 법안 통과",
+        "source": "정책",
+        "recalibration": "반기별 이민 통계"
+      },
+      "kc": {
+        "watch": "이민 유입 감소 또는 사회 갈등 보도",
+        "alert": "이민 정책 후퇴 법안 발의",
+        "hard": "이민 프로그램 축소 공식 발표",
+        "action": "TC-015 C thesis 재검토. A로 전환."
+      },
+      "current_status": "Phase 0. 이민 정책 동향 추적 중."
+    },
+    "D": {
+      "label": "연금 위기 → 재정 충격",
+      "probability": "15%",
+      "trigger": {
+        "condition": "GPIF 수익률 마이너스 전환 + 연금 지급 삭감 논의 공식화",
+        "source": "구조적+재정",
+        "recalibration": "GPIF 분기 보고서"
+      },
+      "kc": {
+        "watch": "GPIF 수익률 안정(+3% 이상)",
+        "alert": "연금 재정 검증 결과 양호",
+        "hard": "연금 지급 인상 OR 기금 흑자 전환",
+        "action": "TC-015 D thesis 재검토. A로 전환."
+      },
+      "current_status": "Phase 0. GPIF 수익률 + 연금 재정 모니터링 중."
+    }
+  },
+  "tracking_indicators": [
+    {
+      "indicator": "일본 출생률",
+      "current": "약 1.2",
+      "threshold": "1.3 이상 반등 또는 1.0 이하 추락",
+      "last_check": "2026-03-28",
+      "next_check": "2026-10-01"
+    },
+    {
+      "indicator": "이민 유입 수",
+      "current": "120만 프로그램 진행 중",
+      "threshold": "연 30만+ 달성 여부",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "고령부양비",
+      "current": "약 49%",
+      "threshold": "50% 돌파",
+      "last_check": "2026-03-28",
+      "next_check": "2026-10-01"
+    },
+    {
+      "indicator": "연금 기금 수익률(GPIF)",
+      "current": "모니터링 중",
+      "threshold": "마이너스 전환",
+      "last_check": "2026-03-28",
+      "next_check": "2026-05-15"
+    },
+    {
+      "indicator": "로봇 도입률",
+      "current": "모니터링 중",
+      "threshold": "IFR 로봇 밀도 YoY +20%",
+      "last_check": "2026-03-28",
+      "next_check": "2026-09-01"
+    }
+  ],
+  "heartbeat_thresholds": [
+    {
+      "indicator": "Nikkei",
+      "symbol": "^N225",
+      "watch": 38000,
+      "alert": 36000,
+      "hard": 33000,
+      "direction": "below"
+    },
+    {
+      "indicator": "USD/JPY",
+      "symbol": "JPY=X",
+      "watch": 162,
+      "alert": 165,
+      "hard": 170,
+      "direction": "above"
+    }
+  ],
+  "cross_card_links": [
+    {
+      "to": "TC-004",
+      "link": "ISA→고령화 대비 자산 축적. 일본 선행 사례"
+    },
+    {
+      "to": "TC-002",
+      "link": "KRW→엔화 약세 동조. 인구 구조 유사 경로"
+    }
+  ],
+  "tags": [
+    "STRUCT",
+    "인구",
+    "고령화",
+    "일본",
+    "이민",
+    "연금",
+    "로봇",
+    "MT-04"
+  ],
+  "psf_link": "P1 중앙은행(BOJ 정책 제약), S4 실물(노동시장 구조)",
+  "macro_ref": "B3 USD/JPY 159.67, C6 실업률",
+  "analysis_ids": [],
+  "close_condition": "일본 출생률 반등 OR AI 생산성 혁명 확인 OR 연금 기금 적자 공식화"
+}

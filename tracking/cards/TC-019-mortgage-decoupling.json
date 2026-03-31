@@ -1,0 +1,109 @@
+{
+  "tc_id": "TC-019",
+  "created": "2026-03-30",
+  "updated": "2026-03-30",
+  "title": "주담대 7% 돌파 — 기준금리↔대출금리 디커플링 구조화",
+  "status": "active",
+
+  "issue_summary": "한은 기준금리 2.50%(100bp 인하 후)에도 주담대 고정 7.01%(+78bp 상승). 스프레드 451bp(정상 150~200bp의 2.5배). 중동은 방아쇠, 총량제+DSR+기간프리미엄이 구조적 원인. 통화정책 가계 전달 경로 차단. TC-007(인플레공포)의 가계 착지 버전, TC-016(신용역류)의 한국판 트리거 가능성.",
+
+  "phase": 1,
+  "phase_log": [
+    {
+      "date": "2026-03-30",
+      "from": null,
+      "to": 1,
+      "reason": "SA-20260330-001 + Deep Approach. 주담대 7% 돌파. 디커플링 구조 확인.",
+      "sa_id": "SA-20260330-001"
+    }
+  ],
+
+  "pre_read": {
+    "type": "MACRO×POLICY",
+    "scp": 3,
+    "urgency": "WATCH",
+    "scp_basis": "기준금리-대출금리 디커플링 = 통화정책 전달경로 구조 변화. 3년 5개월 만에 7% 재진입."
+  },
+
+  "scenarios": {
+    "A": {
+      "label": "중동 안정 → 디커플링 축소",
+      "probability": "20~25%",
+      "trigger": {
+        "condition": "호르무즈 해소 + Brent $85↓ + KRW 1,450↓ + 한은 인하 재개",
+        "source": "복합"
+      },
+      "kc": {
+        "watch": "Brent $85↓ 2주 지속 + 원화 1,450↓",
+        "alert": "한은 인하 발표",
+        "hard": "주담대 고정 상단 6.0% 이하 복귀",
+        "action": "스프레드 250bp 이하 복귀 = 전달경로 정상화. 분석 종결."
+      }
+    },
+    "B": {
+      "label": "현상 유지 — 7%대 고착",
+      "probability": "50~55%",
+      "trigger": {
+        "condition": "중동 교착 + 한은 동결 + 총량제 유지 → 6개월+",
+        "source": "정책"
+      },
+      "kc": {
+        "watch": "주담대 고정 6.8~7.2% 범위 3개월 유지",
+        "alert": "부동산 거래량 전년 대비 -30%+",
+        "hard": "미분양 10만호 돌파 (PF 재점화 신호)",
+        "action": "거래량 급감 → 가격 조정 -3~5% → 건설사 스트레스"
+      }
+    },
+    "C": {
+      "label": "중동 확전 → 8% 접근 + 신용 전이",
+      "probability": "20~25%",
+      "trigger": {
+        "condition": "이란 직접충돌 + Brent $130+ + KRW 1,600+ + 한은 인상 불가피",
+        "source": "지정학"
+      },
+      "kc": {
+        "watch": "Brent $120+ 1주 + 주담대 7.5%+",
+        "alert": "저축은행/증권사 PF 부실 보도 3건+",
+        "hard": "한은 긴급 금통위 소집 OR 금융당국 유동성 공급 발표",
+        "action": "TC-016 한국판 신용 전이 현실화. 가격 -7~10%."
+      }
+    }
+  },
+
+  "tracking_indicators": [
+    { "name": "주담대 고정 상단", "current": "7.01%", "threshold": "7.5% (경고) / 8.0% (위험)" },
+    { "name": "한은 기준금리", "current": "2.50%", "threshold": "인하 시 시나리오A, 인상 시 시나리오C" },
+    { "name": "스프레드(기준-주담대)", "current": "451bp", "threshold": "300bp↓ (정상화) / 500bp+ (악화)" },
+    { "name": "Brent 유가", "current": "$108.70", "threshold": "$85↓ (A) / $130+ (C)" },
+    { "name": "원/달러", "current": "1,518원", "threshold": "1,450↓ (A) / 1,600+ (C)" },
+    { "name": "부동산 거래량", "current": "모니터링", "threshold": "전년 대비 -30% (B 확정)" },
+    { "name": "미분양", "current": "모니터링", "threshold": "10만호 (PF 재점화)" }
+  ],
+
+  "heartbeat_thresholds": [
+    { "indicator": "Brent", "yahoo_symbol": "BZ=F", "red_above": 130, "green_below": 85 },
+    { "indicator": "KRW", "yahoo_symbol": "KRW=X", "red_above": 1600, "green_below": 1450 }
+  ],
+
+  "analysis_ids": ["SA-20260330-001"],
+
+  "cross_card_links": ["TC-007", "TC-016"],
+
+  "close_condition": "스프레드 250bp 이하 복귀 (전달경로 정상화) OR 총량제 폐지 공식 발표 OR 시나리오C 현실화 후 정리",
+
+  "psf_link": {
+    "P1": "한은 통화정책 전달 경로 차단",
+    "P2": "원화 약세 → 수입물가 → 인플레 → 금리 경직"
+  },
+
+  "macro_ref": {
+    "DGS10": 4.42,
+    "T10YIE": 2.31,
+    "MORTGAGE30US": 6.38,
+    "Brent": 108.70,
+    "KRW": 1518.31,
+    "VIXCLS": 27.44
+  },
+
+  "tags": ["주담대", "금리", "디커플링", "통화정책", "가계부채", "DSR", "총량제", "중동", "PF"]
+}

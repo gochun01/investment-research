@@ -1,0 +1,199 @@
+{
+  "date": "2026-04-01",
+  "scan_id": "SCAN-20260401-001",
+  "gap_days": 1,
+  "sources_used": [
+    {"axis": "A", "tool": "WebSearch", "query": "Reuters Bloomberg CNBC market stocks oil gold April 1 2026", "result_count": 10},
+    {"axis": "A", "tool": "WebSearch", "query": "증시 급등 급락 유가 환율 금 오늘 2026년 4월", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "central bank regulation sanctions tariff policy April 2026", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "금리 결정 규제 관세 제재 정부 발표 2026년 4월", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "supply chain shortage disruption force majeure infrastructure April 2026", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "공급 차질 물량 부족 가동 중단 수급 불안 2026년 4월", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "Apollo private credit redemption gate panic March 2026", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "Trump Section 122 tariff 150 day expiration July 2026", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "helium shortage semiconductor fab April 2026", "result_count": 10},
+    {"axis": "A", "tool": "WebSearch", "query": "Iran war ceasefire energy infrastructure attack April 2026", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "AI capex spending slowdown data center 2026", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "롯데케미칼 여수 나프타 공급 가동중단 석유화학 4월 2026", "result_count": 10}
+  ],
+  "seeds": {
+    "heartbeat": [],
+    "macro": "Q4→Q3 전이 구간. 한은 2.50% 동결. 연준 3.50~3.75% 동결.",
+    "ghs": []
+  },
+  "raw_headlines_count": 28,
+
+  "issues": [
+    {
+      "id": "IS-20260401-001",
+      "title": "이란 에너지 인프라 공격 데드라인 4/06 — 휴전 협상 교착",
+      "summary": "트럼프가 4/6까지 이란 에너지 인프라(발전소·유정·하르그섬·담수시설) 공격 유예. 이란은 15-point 안 거부, 5-point 역제안. 협상 교착 상태.",
+      "root_cause": "미-이란 전쟁 D+32",
+      "scan_axis": "A",
+      "sources": ["Al Jazeera", "CBS News", "PBS News", "CNBC"],
+      "market_contact": ["Brent", "S&P500", "금", "방산", "KRW", "호르무즈 통항"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["Brent", "S&P500", "금", "방산", "KRW"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "4/6 데드라인은 새 임계점. 공격 실행 시 이란 전력망 80% 파괴 + 하르그섬(이란 원유 수출 90%) 타격. 전쟁의 질적 전환점."},
+        "G3": {"score": 2, "type": "free", "chain": "에너지 인프라 공격 → 이란 보복 확대 → 호르무즈 완전 봉쇄 → 글로벌 원유 20% 차단 → 브렌트 $150+ → 스태그플레이션 가속 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2/28 전쟁 개시 이후 D+32 누적"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-003 이란 전쟁의 결정적 새 전개"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260401-001"
+    },
+    {
+      "id": "IS-20260401-002",
+      "title": "한국 석유화학 셧다운 현실화 — 롯데케미칼·LG화학 가동 중단",
+      "summary": "나프타 재고 2주분. 롯데케미칼 여수공장 가동 중단(5/29 재가동 예정). LG화학 NCC 2공장 중단. 정부 비상경제본부 가동, 40개 핵심품목 공급망지원센터 설치.",
+      "root_cause": "호르무즈 봉쇄 → 나프타 수급 붕괴",
+      "scan_axis": "C",
+      "sources": ["헤럴드경제", "중앙이코노미뉴스", "굿모닝경제", "정책브리핑"],
+      "market_contact": ["석유화학", "에틸렌", "KRW", "KOSPI", "비료", "플라스틱"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["석유화학", "에틸렌", "KOSPI", "비료"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "롯데·LG 동시 가동 중단은 최초. 비상경제본부 가동은 정부가 위기를 공식 인정한 것. 나프타 재고 2주는 임계점 돌파."},
+        "G3": {"score": 2, "type": "free", "chain": "나프타 부족 → 석유화학 셧다운 → 에틸렌·프로필렌 공급 중단 → 플라스틱·비료·의약품 원료 차단 → 전방 산업(자동차·건설·농업·바이오) 연쇄 타격 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "3/4 호르무즈 봉쇄 이후 누적. 실물 셧다운 단계 진입"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "이란 전쟁 기존 추적의 실물경제 전파 단계"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260401-001"
+    },
+    {
+      "id": "IS-20260401-003",
+      "title": "헬륨 공급 위기 — 반도체 팹 4/04 첫 재고 고갈 예상",
+      "summary": "카타르 헬륨 30% 공급 중단 후 아시아 팹 재고 소진 임박(4월 초). 한국 헬륨 65% 카타르 의존. 스팟 헬륨가 40% 급등. Air Liquide 대만 공장 긴급 가동.",
+      "root_cause": "호르무즈 봉쇄 → 카타르 헬륨 차단",
+      "scan_axis": "C",
+      "sources": ["Tom's Hardware", "Digitimes", "J2 Sourcing", "Valuates Reports"],
+      "market_contact": ["반도체", "DRAM", "HBM", "SK하이닉스", "삼성전자", "TSMC"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["반도체", "DRAM", "HBM", "SK하이닉스", "삼성전자"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "4/04 첫 재고 고갈 시점이 D-3. 헬륨 대체재 없음. 팹 defect rate 상승 → 수율 악화 → 생산량 감소 불가피. 임계점 직전."},
+        "G3": {"score": 2, "type": "free", "chain": "헬륨 고갈 → 반도체 수율 악화 → DRAM/HBM 공급 감소 → AI 서버 납기 지연 → hyperscaler capex 집행 차질 → AI 산업 전체 둔화 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2/28 카타르 피격 이후 재고 소진 진행 중"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-003 이란 전쟁의 반도체 경로 새 전개"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260401-001"
+    },
+    {
+      "id": "IS-20260401-004",
+      "title": "Apollo 사모신용 게이트 — $1.7T 사모신용 시장 구조적 유동성 위기",
+      "summary": "Apollo $25B ADS 펀드가 환매 45%만 지급(11.2% 환매 요청 중 5%만 허용). 사모신용 부도율 5.8%(Fitch). SaaS 대출 20-30% 비중이 AI disruption으로 부실화. 전염 확산 중.",
+      "root_cause": "사모신용 유동성 구조 결함 + 부도율 상승",
+      "scan_axis": "D",
+      "sources": ["Bloomberg", "CNBC", "Financial Content", "Silicon Canals"],
+      "market_contact": ["사모신용", "HY 스프레드", "Apollo", "Blackstone", "BDC", "레버리지론"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["사모신용", "HY 스프레드", "Apollo", "BDC"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "Apollo 게이트는 $1.7T 사모신용 시장의 구조적 유동성 환상 최초 노출. semi-liquid 상품의 설계 결함이 실제 스트레스에서 현실화."},
+        "G3": {"score": 2, "type": "free", "chain": "Apollo 게이트 → 다른 BDC 환매 요청 급증 → 사모신용 자산 투매 → HY 스프레드 확대 → 기업 차환 비용 급등 → 중소기업 부도 연쇄 (5단계)"},
+        "G3.5": {"tag": "SNAPSHOT", "note": "3/23 최초 발생. 전염 진행 중"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "TC-016 신용역류와 직접 연결"}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260401-002"
+    },
+    {
+      "id": "IS-20260401-005",
+      "title": "Section 122 관세 150일 시한 — 7/24 만료 카운트다운",
+      "summary": "SCOTUS IEEPA 관세 위헌 판결(2/20) 후 트럼프가 Section 122로 글로벌 10% 관세 대체. 150일 시한 7/24 만료. 하원 219-211 관세 반대 결의. 의회 연장 불확실.",
+      "root_cause": "미국 무역정책 법적 기반 붕괴",
+      "scan_axis": "B",
+      "sources": ["SCOTUSblog", "White & Case", "CFR", "Axios"],
+      "market_contact": ["관세", "수입물가", "달러", "무역수지", "제조업"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["관세", "수입물가", "달러", "무역수지"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "SCOTUS 6-3 위헌 판결은 대통령 관세 권한의 근본적 전환. Section 122는 150일 임시. 법적 기반 자체가 바뀌는 구조적 변화."},
+        "G3": {"score": 2, "type": "free", "chain": "Section 122 만료 → 관세 전면 철폐 or 의회 교착 → 무역정책 공백 → 수입업자 불확실성 → 재고 전략 혼란 → 물가·공급망 재편 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2/20 SCOTUS 판결 이후 진행 중. 150일 카운트다운 D-114"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-001 관세의 법적 구조 전환"}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260401-006",
+      "title": "스태그플레이션 신호 강화 — 주식·채권·금 동반 하락 + 유가 55% 급등",
+      "summary": "브렌트 월간 55% 급등. 주식·채권·금 동반 하락(트리플 셀). KRW 1520 돌파. Core PCE 4/11 발표 대기. 연준 금리 인하 기대 후퇴.",
+      "root_cause": "전쟁발 공급 충격 + 긴축 지속",
+      "scan_axis": "A",
+      "sources": ["BetaNews", "EBC Financial", "르몽드", "TradingKey"],
+      "market_contact": ["S&P500", "KOSPI", "Brent", "금", "채권", "KRW"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["S&P500", "KOSPI", "Brent", "금", "채권", "KRW"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "트리플 셀은 스태그플레이션 초기 신호의 가속. 기존 추세 강화. 새 벡터가 아닌 기존 방향의 격화."},
+        "G3": {"score": 2, "type": "free", "chain": "유가 급등 → 인플레 재가속 → 연준 인하 불가 → 고금리 장기화 → 기업 이익 압축 + 소비 위축 → 경기침체 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "3월 전체 누적"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "TC-007 스태그플레이션과 직접 연결"}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260401-007",
+      "title": "한은 금통위 4/10 — 환율 1520 vs 경기 침체 딜레마",
+      "summary": "한은 4/10 금통위. 기준금리 2.50% 동결 중. KRW 1520(금융위기 이후 최고). 수도권 집값·가계부채 vs 경기 부양 딜레마 심화.",
+      "root_cause": "한국 통화정책 딜레마",
+      "scan_axis": "B",
+      "sources": ["한국은행", "KB의 생각", "Investing.com"],
+      "market_contact": ["KRW", "KOSPI", "국고채", "주담대", "부동산"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["KRW", "KOSPI", "국고채", "주담대"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "환율 1520은 새 수준이나, 한은 딜레마 자체는 기존 추세 강화. 결정 방향이 변화 벡터."},
+        "G3": {"score": 1, "type": "free", "chain": "한은 인하 → KRW 추가 약세 → 수입물가 상승 → 인플레 가속 (3단계) / 동결 → 내수 위축 심화 (2단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "누적 딜레마. 4/10 결정이 임계점"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "TC-002 KRW, TC-019 주담대와 연결"}
+      },
+      "total_score": 4,
+      "status": "약함",
+      "cluster_id": null
+    }
+  ],
+
+  "clusters": [
+    {
+      "id": "CL-20260401-001",
+      "root_label": "이란 전쟁 → 호르무즈 봉쇄 → 실물경제 전파",
+      "issues": ["IS-20260401-001", "IS-20260401-002", "IS-20260401-003"],
+      "priority_score": 12,
+      "market_contact_combined": ["Brent", "S&P500", "금", "방산", "KRW", "석유화학", "에틸렌", "반도체", "DRAM", "HBM", "비료"],
+      "rm_input_title": "이란 전쟁 D+32: 4/6 에너지 공격 데드라인 + 나프타 셧다운 + 헬륨 팹 고갈 임박"
+    },
+    {
+      "id": "CL-20260401-002",
+      "root_label": "사모신용 유동성 위기",
+      "issues": ["IS-20260401-004"],
+      "priority_score": 10,
+      "market_contact_combined": ["사모신용", "HY 스프레드", "Apollo", "BDC", "레버리지론"],
+      "rm_input_title": "Apollo 사모신용 게이트: $1.7T 시장 유동성 환상 붕괴"
+    }
+  ],
+
+  "independent": ["IS-20260401-005", "IS-20260401-006", "IS-20260401-007"],
+
+  "blind_spot_checks": {
+    "Q1_missing_asset": "BTC/크립토 — 직접 시그널 없음. 이란 전쟁+스태그 환경에서 리스크오프 하락 추세 지속. 별도 이슈 없음.",
+    "Q2_geo_balance": "글로벌 4건 / 한국 3건(석유화학 셧다운, 환율, 한은). 균형 양호.",
+    "Q3_backlog_promotion": "BL-001 GENIUS Act — 6회째 등장이나 Gate 3점 유지. 승격 불가. BL-006 대만 ART — 미등장.",
+    "Q4_diversity": "비전쟁 이슈 2건 확보 (Apollo 사모신용, Section 122 관세). 다양성 충족."
+  },
+
+  "user_selection": [],
+  "handoff": null
+}

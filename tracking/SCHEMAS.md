@@ -32,6 +32,8 @@
 | `phase_log` | array | [{phase, date, trigger, note}] |
 | `rm_watches` | array | [{watch_id, subject, next_check}] |
 | `cross_card_links` | array | [{to, link}] |
+| `psf_link` | string | **PSF 속성/링크 참조.** 온톨로지 브릿지의 원천. 비어있으면 키워드 추론 사용. |
+| `macro_ref` | string | macro 지표 참조 (예: `C7 Brent $112.57`) |
 | `source` | string | 최초 SA-ID |
 | `close_condition` | string | 종료 조건 |
 
@@ -41,29 +43,80 @@
 ### pre_read.urgency enum
 `URGENT` `WATCH` `SLOW`
 
-### scenarios.*.kc 객체 (Trigger-KC 7항목)
+### scenarios.*.trigger 객체 (필수)
+
+trigger는 반드시 **dict** 형식. 문자열 금지.
+
 | 필드 | 필수 | 설명 |
 |------|------|------|
-| `watch` | ✓ | 내곽 밴드 |
+| `condition` | ✓ | 충족 조건 (정량+정성 혼합 가능) |
+| `source` | | 원천: `구조적` / `통계적` / `서사적` 또는 복합 |
+| `distance` | | 현재값과 임계값의 거리 |
+| `recalibration` | | 재조정 주기: `정기 M/DD + 비정기(이벤트)` |
+
+```json
+"trigger": {
+  "condition": "Brent>$115 × 3d + 호르무즈 봉쇄",
+  "source": "구조적+통계적",
+  "distance": "Brent $2.43 남음",
+  "recalibration": "정기 4/15 + 비정기(정전/봉쇄)"
+}
+```
+
+### scenarios.*.kc 객체 (Trigger-KC 7항목)
+
+3-band + action 필수. action이 없는 KC = 출구 없는 고속도로.
+
+| 필드 | 필수 | 설명 |
+|------|------|------|
+| `watch` | ✓ | 내곽 밴드 (조기 경보) |
 | `alert` | ✓ | 중간 밴드 (×Nd 지속조건) |
 | `hard` | ✓ | 외곽 밴드 (×Nd 지속조건) |
+| `action` | ✓ | **KC 발동 시 행동** — Phase 전환, 시나리오 전환, 카드 종료 등 |
 | `source` | | 원천: 구조적/통계적/서사적 |
-| `action_on_kc` | | KC 작동 시 행동 |
-| `recalibration` | | 재조정 주기 |
 
-### 레거시(v1) → v2 마이그레이션
+```json
+"kc": {
+  "watch": "정전 합의 보도",
+  "alert": "Brent<$100 × 3d",
+  "hard": "이란 항복 OR Brent<$85 × 5d",
+  "action": "TC-003 Phase 4. 확전 thesis 폐기. B로 전환."
+}
+```
 
-| 레거시 | 대체 | 방법 |
-|--------|------|------|
-| `id` | `tc_id` | 복사 |
-| `type` | 삭제 | |
-| `scp` (최상위) | `pre_read.scp` | 이동 |
-| `trigger` (최상위) | `scenarios.*.trigger` | 시나리오 내부로 |
-| `kc` (최상위) | `scenarios.*.kc` | 시나리오 내부로 |
-| `heartbeat_thresholds` | `tracking_indicators` | 구조 변환 |
-| `cross_refs` | `cross_card_links` | string→{to, link} |
-| `events` | 삭제 | rm events/ 대체 |
-| `open_questions` | 삭제 | Watch 대체 |
+### heartbeat_thresholds (정량 자동 체크용)
+
+cycle1_daily.py가 자동 체크하는 정량 임계값. tracking_indicators와 별도로 유지.
+
+| 필드 | 필수 | 설명 |
+|------|------|------|
+| `indicator` | ✓ | 지표명 |
+| `symbol` | ✓ | Yahoo Finance 티커 |
+| `watch` | ✓ | 내곽 수치 |
+| `alert` | ✓ | 중간 수치 |
+| `hard` | ✓ | 외곽 수치 |
+| `direction` | ✓ | `above` (상향 돌파) / `below` (하향 돌파) |
+
+정량 지표가 없는 TC(POLICY 순수형 등)는 빈 배열 `[]`.
+
+### scenarios 확률 합계
+
+모든 시나리오의 probability 합계는 반드시 **100%**.
+db_sync.py가 자동 검증. 100%가 아니면 경고.
+
+### v1 레거시 — 마이그레이션 완료
+
+2026-03-28 전체 TC(001~010) v2 마이그레이션 완료.
+v1 형식(top-level trigger/kc, `id`, `status=tracking`)은 더 이상 생성하지 않는다.
+
+| 레거시(금지) | v2(필수) |
+|-------------|---------|
+| `id` | `tc_id` |
+| `status: "tracking"` | `status: "active"` |
+| `trigger` (최상위 1개) | `scenarios.*.trigger` (시나리오별 dict) |
+| `kc` (최상위 1개) | `scenarios.*.kc` (시나리오별 3-band + action) |
+| `scp` (최상위) | `pre_read.scp` |
+| `heartbeat_thresholds`만 | `heartbeat_thresholds` + `tracking_indicators` 양쪽 |
 
 ---
 

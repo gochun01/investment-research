@@ -1,7 +1,7 @@
 {
   "tc_id": "TC-016",
   "created": "2026-03-28",
-  "updated": "2026-03-28",
+  "updated": "2026-04-01",
   "title": "신용 역류 시나리오 — VIX 30 돌파, 공포-신용 디커플링 감시",
   "status": "active",
   "issue_summary": "VIX 31.05로 30 임계 돌파 확정. 그러나 HY OAS 321bp, MOVE 112, SOFR-FF 1bp = 신용 전이 미발생. '공포-신용 디커플링' 상태. 핵심 분기점은 HY가 따라오는 순간. RRP $0.99B(사실상 제로)가 숨겨진 취약점. L7 부분 활성화(1/4 조건).",
@@ -24,6 +24,12 @@
       "date": "2026-03-28",
       "trigger": "SA-20260328-003 Stereo 해부. 공포-신용 디커플링 발견.",
       "note": "VIX 31.05 돌파했으나 HY 321/MOVE 112/SOFR 1bp 미동. L7 부분 활성화(1/4). RRP $0.99B 제로 확인 — 숨겨진 취약점. 시나리오 B 45%로 상향."
+    },
+    {
+      "phase": 1,
+      "date": "2026-04-01",
+      "trigger": "풀 파이프라인 갱신. HY OAS 321→346bp(+25bp 급등, 350bp 균열 4bp). 디커플링 해소 중(지연 전이). Apollo 45% 환매 제한 + Q1 0B+ 환매. Blue Owl -39% YTD. ARCC 배당컷 우려. 3단계 전이(보험→연금) 접근. Powell \"시스템 리스크 아님\" 선언. 401(k) 사모 편입 추진(양면).",
+      "note": "SA-20260401-002 + RM-apollo + core. Apollo 게이트 통합. B시나리오 45→55% 상향."
     }
   ],
   "pre_read": {
@@ -50,7 +56,7 @@
     },
     "B": {
       "label": "점진적 스트레스 (VIX 30~35, 공포-신용 디커플링)",
-      "probability": "45%",
+      "probability": "55%",
       "trigger": {
         "condition": "VIX 30+ x 5일 (4/2까지) + HY OAS 350bp 접근",
         "source": "통계적+구조적",
@@ -62,7 +68,7 @@
         "hard": "VIX 25 이하 + HY 300bp 이하",
         "action": "B 해소 판단. A 복귀."
       },
-      "current_status": "진입 확정. VIX 31.05. HY 321bp 미동. 5일 지속 Trigger 1/5일차."
+      "current_status": "HY OAS 346bp(350 균열 4bp). Apollo 45% 게이트. Blue Owl -39%. 디커플링→지연전이 진행."
     },
     "C": {
       "label": "급성 위기 (VIX 35+ → 40, HY 400+, SOFR 스파이크)",
@@ -98,29 +104,128 @@
     }
   },
   "tracking_indicators": [
-    {"indicator": "VIX", "symbol": "^VIX", "current": "31.05", "threshold": "30 / 35 / 40", "last_check": "2026-03-28", "next_check": "2026-03-31"},
-    {"indicator": "HY OAS", "current": "321bp", "threshold": "350 / 400 / 500bp", "last_check": "2026-03-28", "next_check": "2026-03-31"},
-    {"indicator": "MOVE", "symbol": "^MOVE", "current": "111.95", "threshold": "120 / 135 / 150", "last_check": "2026-03-28", "next_check": "2026-03-31"},
-    {"indicator": "SOFR-FF 갭", "current": "1bp", "threshold": "20bp / 35bp / 50bp", "last_check": "2026-03-28", "next_check": "2026-03-31"},
-    {"indicator": "RRP", "current": "$0.99B (제로)", "threshold": "$10B / $5B / $1B", "last_check": "2026-03-28", "next_check": "2026-03-31"},
-    {"indicator": "LQD/HYG 비율", "current": "LQD $107.62 / HYG $78.72", "threshold": "IG-HY 괴리 확대 추세", "last_check": "2026-03-28", "next_check": "2026-04-04"},
-    {"indicator": "BTC", "symbol": "BTC", "current": "$66,331 (-6.1% 7d)", "threshold": "$60K 이탈 (유동성 프록시)", "last_check": "2026-03-28", "next_check": "2026-03-31"}
+    {
+      "indicator": "VIX",
+      "symbol": "^VIX",
+      "current": "31.05",
+      "threshold": "30 / 35 / 40",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    },
+    {
+      "indicator": "HY OAS",
+      "current": "321bp",
+      "threshold": "350 / 400 / 500bp",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    },
+    {
+      "indicator": "MOVE",
+      "symbol": "^MOVE",
+      "current": "111.95",
+      "threshold": "120 / 135 / 150",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    },
+    {
+      "indicator": "SOFR-FF 갭",
+      "current": "1bp",
+      "threshold": "20bp / 35bp / 50bp",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    },
+    {
+      "indicator": "RRP",
+      "current": "$0.99B (제로)",
+      "threshold": "$10B / $5B / $1B",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    },
+    {
+      "indicator": "LQD/HYG 비율",
+      "current": "LQD $107.62 / HYG $78.72",
+      "threshold": "IG-HY 괴리 확대 추세",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-04"
+    },
+    {
+      "indicator": "BTC",
+      "symbol": "BTC",
+      "current": "$66,331 (-6.1% 7d)",
+      "threshold": "$60K 이탈 (유동성 프록시)",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    }
   ],
   "heartbeat_thresholds": [
-    {"indicator": "VIX", "symbol": "^VIX", "watch": 30, "alert": 35, "hard": 40, "direction": "above"},
-    {"indicator": "HY OAS", "note": "FRED BAMLH0A0HYM2", "watch": 350, "alert": 400, "hard": 500, "direction": "above"},
-    {"indicator": "MOVE", "symbol": "^MOVE", "watch": 120, "alert": 135, "hard": 150, "direction": "above"},
-    {"indicator": "RRP", "note": "FRED RRPONTSYD", "watch": 5, "alert": 2, "hard": 1, "direction": "below"}
+    {
+      "indicator": "VIX",
+      "symbol": "^VIX",
+      "watch": 30,
+      "alert": 35,
+      "hard": 40,
+      "direction": "above"
+    },
+    {
+      "indicator": "HY OAS",
+      "note": "FRED BAMLH0A0HYM2",
+      "watch": 350,
+      "alert": 400,
+      "hard": 500,
+      "direction": "above"
+    },
+    {
+      "indicator": "MOVE",
+      "symbol": "^MOVE",
+      "watch": 120,
+      "alert": 135,
+      "hard": 150,
+      "direction": "above"
+    },
+    {
+      "indicator": "RRP",
+      "note": "FRED RRPONTSYD",
+      "watch": 5,
+      "alert": 2,
+      "hard": 1,
+      "direction": "below"
+    }
   ],
   "cross_card_links": [
-    {"to": "TC-003", "link": "이란→VIX 상승 경로. 지정학 충격→신용 스트레스 전이"},
-    {"to": "TC-007", "link": "금리→신용. 장기채 금리 상승→스프레드 확대 경로"},
-    {"to": "TC-010", "link": "AI capex→성장주 청산. 기술주 밸류에이션 조정→신용 이벤트"},
-    {"to": "TC-001", "link": "관세 불확실성→VIX 배경 스트레스"}
+    {
+      "to": "TC-003",
+      "link": "이란→VIX 상승 경로. 지정학 충격→신용 스트레스 전이"
+    },
+    {
+      "to": "TC-007",
+      "link": "금리→신용. 장기채 금리 상승→스프레드 확대 경로"
+    },
+    {
+      "to": "TC-010",
+      "link": "AI capex→성장주 청산. 기술주 밸류에이션 조정→신용 이벤트"
+    },
+    {
+      "to": "TC-001",
+      "link": "관세 불확실성→VIX 배경 스트레스"
+    }
   ],
-  "tags": ["MACRO", "신용", "VIX", "HY", "SOFR", "역류", "L7", "RRP", "디커플링", "스트레스테스트"],
+  "tags": [
+    "MACRO",
+    "신용",
+    "VIX",
+    "HY",
+    "SOFR",
+    "역류",
+    "L7",
+    "RRP",
+    "디커플링",
+    "스트레스테스트"
+  ],
   "psf_link": "F5 VIX 31.05(⬇적화), S2 HY OAS 321bp(green), S3 SOFR 1bp(green), P1~P4 기울어짐",
   "macro_ref": "C1 VIX 31.05, B5 HY 321bp, C2 MOVE 112, D6 SOFR 3.65, RRP $0.99B",
-  "analysis_ids": ["SA-20260328-003"],
+  "analysis_ids": [
+    "SA-20260328-003",
+    "SA-20260401-002"
+  ],
   "close_condition": "VIX<20 × 1개월 (위기 해소) OR VIX>40 (위기 확정→별도 대응 TC) OR HY 500bp 돌파"
 }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Transition Path — 2026-03-27</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f0f23; color: #e0e0e0; padding: 40px; }
+  h1 { color: #58a6ff; margin-bottom: 8px; font-size: 24px; }
+  h2 { color: #79c0ff; margin: 32px 0 16px; font-size: 18px; }
+  h3 { color: #8b949e; margin: 20px 0 8px; font-size: 14px; }
+  .subtitle { color: #8b949e; font-size: 13px; margin-bottom: 24px; }
+
+  .stats { display: flex; gap: 16px; margin: 20px 0; flex-wrap: wrap; }
+  .stat { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 14px 20px; text-align: center; min-width: 120px; }
+  .stat .num { font-size: 24px; font-weight: 700; color: #58a6ff; }
+  .stat .label { font-size: 11px; color: #8b949e; margin-top: 2px; }
+
+  .path-card {
+    background: #161b22; border: 1px solid #21262d; border-radius: 12px;
+    padding: 24px; margin: 16px 0;
+  }
+  .path-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .path-title { font-size: 16px; font-weight: 600; color: #e6edf3; }
+  .confidence-badge {
+    font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 16px;
+  }
+  .conf-high { background: #1a4731; color: #56d364; }
+  .conf-mid { background: #3d2e00; color: #e3b341; }
+  .conf-low { background: #3d1e20; color: #f85149; }
+
+  .regime-flow {
+    display: flex; align-items: center; gap: 12px; margin: 12px 0;
+    font-size: 14px;
+  }
+  .regime { padding: 4px 12px; border-radius: 6px; font-weight: 600; }
+  .regime-from { background: #21262d; color: #8b949e; }
+  .regime-to { background: #1f3a5f; color: #58a6ff; }
+  .arrow { color: #484f58; font-size: 20px; }
+
+  .timeline {
+    position: relative; margin: 20px 0 20px 20px;
+    border-left: 2px solid #30363d; padding-left: 24px;
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 20px;
+  }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -31px; top: 4px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid #58a6ff; background: #0f0f23;
+  }
+  .timeline-item.branch::before { background: #e3b341; border-color: #e3b341; }
+  .timeline-item.evidence::before { background: #56d364; border-color: #56d364; width: 8px; height: 8px; left: -29px; top: 6px; }
+  .timeline-date { font-size: 11px; color: #6e7681; }
+  .timeline-event { font-size: 13px; color: #c9d1d9; margin-top: 2px; }
+  .timeline-detail { font-size: 12px; color: #8b949e; margin-top: 2px; }
+
+  .chain {
+    display: flex; gap: 8px; align-items: center; margin: 16px 0; flex-wrap: wrap;
+  }
+  .chain-step {
+    padding: 6px 12px; border-radius: 6px; font-size: 12px;
+    border: 1px solid #30363d; color: #8b949e;
+  }
+  .chain-step.active { background: #1a4731; color: #56d364; border-color: #56d364; }
+  .chain-arrow { color: #484f58; }
+
+  .kc-zone {
+    background: #3d1e20; border: 1px solid #f8514933;
+    border-radius: 6px; padding: 8px 12px; margin: 4px 0;
+    font-size: 12px; color: #f85149;
+  }
+
+  .members { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+  .member-tag {
+    font-size: 11px; padding: 2px 8px; border-radius: 10px;
+    background: #1f3a5f; color: #58a6ff;
+  }
+  .member-tag.cascade { background: #3d2e00; color: #e3b341; }
+
+  .section { margin: 24px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 8px 0; }
+  th { text-align: left; padding: 8px; background: #161b22; color: #79c0ff; border-bottom: 1px solid #30363d; }
+  td { padding: 8px; border-bottom: 1px solid #21262d; color: #c9d1d9; }
+</style>
+</head>
+<body>
+
+<h1>Transition Path Visualization</h1>
+<div class="subtitle">Generated 2026-03-27 | Horizon: 2026-03 ~ 2027-03</div>
+
+<div class="stats">
+  <div class="stat"><div class="num">1</div><div class="label">Active TH</div></div>
+  <div class="stat"><div class="num">8</div><div class="label">Predictions</div></div>
+  <div class="stat"><div class="num">0</div><div class="label">Resolved</div></div>
+  <div class="stat"><div class="num">N/A</div><div class="label">Hit Rate</div></div>
+  <div class="stat"><div class="num">33</div><div class="label">Active Watches</div></div>
+  <div class="stat"><div class="num">0</div><div class="label">Convictions</div></div>
+</div>
+
+<div class="path-card">
+  <div class="path-header">
+    <div class="path-title">TH-001: 글로벌 통상 재편(301+EU제3극+이란)이 복합 작용하여 risk-off 국면으로 전이</div>
+    <div class="confidence-badge conf-mid">40.0% &#x25B2;</div>
+  </div>
+
+  <div class="regime-flow">
+    <span class="regime regime-from">neutral</span>
+    <span class="arrow">&#x2192;</span>
+    <span class="regime regime-to">risk-off</span>
+    <span style="color:#6e7681; font-size:12px;">(mid, target: 2026-09-27)</span>
+  </div>
+
+  <div class="members">
+    <span class="member-tag cascade">TC-002</span>
+    <span class="member-tag ">TC-001</span>
+    <span class="member-tag ">TC-003</span>
+    <span class="member-tag ">TC-005</span>
+    <span class="member-tag ">TC-008</span>
+    <span class="member-tag ">TC-009</span>
+  </div>
+  <h3>Causal Chain</h3>
+  <div class="chain">
+    <span class="chain-step ">P2(관세) 변경 → 룰 충격</span>
+    <span class="chain-arrow">&#x2192;</span>
+    <span class="chain-step ">룰 충격 → 신용 스프레드 확대</span>
+    <span class="chain-arrow">&#x2192;</span>
+    <span class="chain-step ">금리 상승 → 유동성 축소</span>
+    <span class="chain-arrow">&#x2192;</span>
+    <span class="chain-step ">유동성 축소 → 포지션 청산 → risk-off</span>
+  </div>
+  <h3>Timeline</h3>
+  <div class="timeline">
+    <div class="timeline-item evidence">
+      <div class="timeline-date">2026-03-27</div>
+      <div class="timeline-event">TC-001,003,008,009 4개 TC 수렴 그룹 형성. SA-20260327-001 풀 파이프라인에서</div>
+      <div class="timeline-detail">[tc_join] delta=+0.050</div>
+    </div>
+    <div class="timeline-item evidence">
+      <div class="timeline-date">2026-03-27</div>
+      <div class="timeline-event">TC-005 수렴 합류</div>
+      <div class="timeline-detail">[tc_join] delta=+0.050</div>
+    </div>
+    <div class="timeline-item branch">
+      <div class="timeline-date">2026-07-24</div>
+      <div class="timeline-event">301 관세율 공고</div>
+      <div class="timeline-detail">6 predictions at this point</div>
+    </div>
+    <div class="timeline-item branch">
+      <div class="timeline-date">2027-06-30</div>
+      <div class="timeline-event">BYD L4 자율주행 + 현대 NVIDIA 성과 지연</div>
+      <div class="timeline-detail">1 predictions at this point</div>
+    </div>
+    <div class="timeline-item branch">
+      <div class="timeline-date">2028-03-31</div>
+      <div class="timeline-event">EU ACI 발동 또는 IAA 발효</div>
+      <div class="timeline-detail">1 predictions at this point</div>
+    </div>
+  </div>
+  <h3>Kill Conditions</h3>
+  <div class="kc-zone">&#x26A0; VIX 15 이하 10일 지속 (weight: -0.2)</div>
+  <div class="kc-zone">&#x26A0; 301 철회 + 이란 휴전 동시 (weight: -0.5)</div>
+  <div class="kc-zone">&#x26A0; Fed 긴급 완화 (50bp+ 인하) (weight: -0.3)</div>
+  <h3>Linked Predictions</h3>
+  <table>
+    <tr><th>ID</th><th>TC</th><th>Scenario</th><th>Claim</th><th>Prob</th><th>Deadline</th><th>Status</th></tr>
+    <tr><td>001</td><td>TC-001</td><td>A</td><td>Section 301 한국 관세 부과 (7/24)</td><td>45%</td><td>2026-07-24</td><td style="color:#8b949e">open</td></tr>
+    <tr><td>001</td><td>TC-008</td><td>A</td><td>한국車 관세 25% + EU IAA → 구조 전환 가속</td><td>40%</td><td>2026-07-24</td><td style="color:#8b949e">open</td></tr>
+    <tr><td>002</td><td>TC-008</td><td>B</td><td>한국車 관세 협상 타결 (15% 유지)</td><td>15%</td><td>2026-07-24</td><td style="color:#8b949e">open</td></tr>
+    <tr><td>002</td><td>TC-001</td><td>B</td><td>Section 301 한국 면제/경감</td><td>20%</td><td>2026-07-24</td><td style="color:#8b949e">open</td></tr>
+    <tr><td>003</td><td>TC-008</td><td>C</td><td>한국車 삼중 압박 극대화</td><td>30%</td><td>2026-07-24</td><td style="color:#8b949e">open</td></tr>
+    <tr><td>004</td><td>TC-001</td><td>D</td><td>법적 공백 → 관세 급락</td><td>10%</td><td>2026-07-24</td><td style="color:#8b949e">open</td></tr>
+    <tr><td>004</td><td>TC-008</td><td>D</td><td>SDV 경쟁 부상 — 관세 뒤의 기술 전쟁</td><td>15%</td><td>2027-06-30</td><td style="color:#8b949e">open</td></tr>
+    <tr><td>003</td><td>TC-009</td><td>C</td><td>EU 제3극화 가속 → 한-EU 통상 재편</td><td>25%</td><td>2028-03-31</td><td style="color:#8b949e">open</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Self-Reinforcement Status</h2>
+  <table>
+    <tr><th>Type</th><th>Pattern</th><th>Boost</th><th>Hit Rate</th></tr>
+    <tr><td colspan="4" style="color:#6e7681">No conviction templates yet. Need 5+ resolved predictions with 60%+ hit rate.</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

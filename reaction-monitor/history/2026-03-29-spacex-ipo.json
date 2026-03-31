@@ -1,0 +1,547 @@
+{
+  "issue": "CL-1 — SpaceX IPO + Starlink 1천만 + DOGE 이해충돌",
+  "date": "2026-03-29",
+  "collected": "2026-03-28",
+  "depth": "Standard",
+  "scanner_origin": {
+    "scan_id": "CL-1",
+    "prefetch_used": true,
+    "assets_prefetched": ["TSLA", "RKLB", "ASTS", "LMT", "RTX", "ARKX", "012450.KS"]
+  },
+
+  "phase0": {
+    "watch_scan": {
+      "executed": true,
+      "date": "2026-03-29",
+      "due_tomorrow": [
+        {"id": "W-2026-03-24-UQ-010", "subject": "바이오·화장품 영향 — 매체과장 여부", "status": "closed", "note": "이미 closed"},
+        {"id": "W-2026-03-24-UQ-015", "subject": "카타르/쿠웨이트 GCC 신규 계약", "status": "active", "next_check": "2026-03-29"},
+        {"id": "W-2026-03-24-UQ-016", "subject": "Raytheon 대응 — 침묵 지속?", "status": "active", "next_check": "2026-03-29"},
+        {"id": "W-2026-03-24-UQ-017", "subject": "천궁-III 개발 일정 앞당김 여부", "status": "active", "next_check": "2026-03-29"},
+        {"id": "W-2026-03-26-UQ-020", "subject": "이란 counterproposal 공식 제출", "status": "active", "next_check": "2026-03-29"},
+        {"id": "W-2026-03-26-UQ-021", "subject": "파키스탄 중재 대면 회담 성사", "status": "active", "next_check": "2026-03-29"}
+      ],
+      "alert": "내일(2026-03-29) 기한 도래 Watch 5건. 별도 체크 세션 필요."
+    },
+    "state_unresolved": {
+      "prior_issue": "이란 전쟁+TLT+AI capex (2026-03-28 수집)",
+      "relation": "별도 쟁점 — 신규 첫 수집"
+    }
+  },
+
+  "fingerprint": {
+    "domain": "기업 IPO + 우주산업 구조변화 + 거버넌스/정치 리스크",
+    "geography": "글로벌 — 미국(IPO 발원) → 우주섹터 전체 → 한국(한화에어로스페이스, 미래에셋) → 인덱스 편입",
+    "touched_assets": {
+      "1차": ["TSLA", "RKLB", "ASTS", "ARKX"],
+      "2차": ["LMT", "RTX", "012450.KS(한화에어로스페이스)", "미래에셋생명/증권", "스피어", "에이치브이엠"],
+      "대조": ["S&P500", "채권(TLT)", "DOGE(crypto)"]
+    },
+    "stakeholders": [
+      "SpaceX/Elon Musk (공급자·발행자)",
+      "Goldman Sachs, JPMorgan, BofA, Morgan Stanley (IB 주관사)",
+      "기관투자자 (알로케이션 경쟁)",
+      "리테일 투자자 (30% 배분 계획)",
+      "SEC (S-1 거버넌스 심사)",
+      "DOGE 이해충돌 소송 원고 14건+",
+      "LMT/RTX/Northrop (경쟁 방산 레거시)",
+      "RKLB/ASTS/Firefly (공간 밸류체인 수혜)"
+    ],
+    "secondary_stakeholders": [
+      {"from": "SpaceX 인덱스 편입(S&P500)", "to": "패시브 펀드 강제 매수 → 기존 보유 종목 매도 압박"},
+      {"from": "RKLB/ASTS 섹터 리레이팅", "to": "공매도 포지션 손실, 롱 포지션 확대 기관"},
+      {"from": "Starlink 경쟁자(Amazon Leo/Kuiper)", "to": "Amazon 위성 상용화 일정 가속 압박"},
+      {"from": "DOGE 이해충돌 소송", "to": "SEC S-1 심사 연장 리스크 → IPO 일정 지연 가능성"},
+      {"from": "한국 우주 ETF 출시(KODEX)", "to": "국내 개인투자자 우주섹터 수요 급증 → 한화에어로스페이스/쎄트렉아이 편입 압력"}
+    ],
+    "time_character": "전개형 — S-1 제출 대기(이번 주~다음 주) → 6월 Nasdaq 상장 → 인덱스 편입(상장 후 3~6개월)"
+  },
+
+  "channels": {
+    "sns_judgment": {
+      "Q1": "YES — 머스크 본인이 X/Truth Social에서 SpaceX IPO, 30% 리테일 배분, DOGE 복귀 거부 발언 직접 게시",
+      "Q2": "YES — 리테일 투자자 관심도 극도 높음. Nasdaq IPO 이벤트",
+      "Q3": "YES — 트럼프 Truth Social에서 Golden Dome 정책 발언 가능",
+      "status": "활성",
+      "collected": "머스크 X 발언(DOGE 복귀 거부, 30% 리테일 배분) 정책④ 채널에 포함"
+    },
+    "expert_pre_selection": [
+      {"name": "Jay Ritter (UF IPO 연구자)", "role": "분석자", "status": "발견 — '고밸류 IPO 역사적 시장수익률 하회' 경고"},
+      {"name": "Russ Mould (AJ Bell 투자이사)", "role": "분석자", "status": "발견 — 'bull market 말기 리테일 진입' 경고. Buffett 인용"},
+      {"name": "Dan Coatsworth (AJ Bell)", "role": "분석자", "status": "발견 — IPO 카운트다운 긍정론"},
+      {"name": "Goldman Sachs / JPMorgan / BofA / Morgan Stanley (주관사)", "role": "공급자", "status": "발견 — 주관사 선정 확인. 공식 밸류에이션 리포트 미공개"},
+      {"name": "Elon Musk 본인", "role": "공급자", "status": "발견 — 'DOGE 다시 안 할 것' + 30% 리테일 배분 + IPO 확인"},
+      {"name": "Bret Johnsen (SpaceX CFO)", "role": "공급자", "status": "발견 — 주관사에 30% 리테일 배분 제안 전달 확인"},
+      {"name": "SEC (규제기관)", "role": "정책", "status": "발견 — S-1 심사 예정. DOGE 이해충돌 소송 14건+ SEC X 소송 병행"},
+      {"name": "Amazon Kuiper (경쟁자)", "role": "반대입장", "status": "발견 — 200+ LEO 위성 배치, 400+ 추가 예정. Starlink moat 도전"},
+      {"name": "Jay Ritter (반대입장 전문가)", "role": "반대입장", "status": "발견 — 94x 매출 배수 역사적 후행 근거 제시"},
+      {"name": "DOGE 소송 원고측 변호인", "role": "하류/2차", "status": "침묵 — 구체적 발언 미발견. 14건+ 소송 진행 중이나 원고측 코멘트 미수집. 검색 키워드: 'DOGE lawsuit SpaceX conflict attorney statement'"},
+      {"name": "FAA 규제당국", "role": "정책", "status": "침묵 — Starlink/SpaceX FAA 계약 체결 확인(Wikipedia)이나 IPO 관련 FAA 공식 입장 미발견"},
+      {"name": "미래에셋증권 리서치", "role": "하류(한국)", "status": "발견 — 4000억 SpaceX 투자 보유. IPO 시 대규모 평가익 예상 보도"}
+    ]
+  },
+
+  "reactions": {
+    "price": {
+      "note": "수집일 2026-03-28. 1개월 히스토리 기반 추세 계산",
+      "assets": [
+        {
+          "asset": "TSLA",
+          "current": 361.83,
+          "period_start": 403.32,
+          "period_end": 361.83,
+          "change_pct": -10.3,
+          "source": "[MCP] Yahoo Finance 2026-03-28",
+          "note": "1개월 -10.3%. IPO 서사에도 불구하고 하락. Magnificent 7 전체 $850B 시총 증발 컨텍스트. 이란전쟁 + 인플레 공포가 Mag7 전반 압박. Tesla deliveries Q1 우려 병행."
+        },
+        {
+          "asset": "RKLB (Rocket Lab)",
+          "current": 60.93,
+          "period_start": 70.97,
+          "period_end": 60.93,
+          "peak_intraday": 72.88,
+          "change_pct": -14.1,
+          "event_note": "2026-03-25 +10% 급등(SpaceX IPO 보도 당일). 이후 -16% 반납. $190M 극초음속 계약 신규 수주",
+          "source": "[MCP] Yahoo Finance 2026-03-28",
+          "note": "SpaceX IPO 발표 당일 +10% 급등 후 되돌림. 1개월 기준 -14.1% net. 단기 수혜-복귀 패턴."
+        },
+        {
+          "asset": "ASTS (AST SpaceMobile)",
+          "current": 78.67,
+          "period_start": 86.92,
+          "period_end": 78.67,
+          "peak_intraday_mar25": 96.06,
+          "change_pct": -9.5,
+          "event_note": "2026-03-25 +12% 급등(SpaceX IPO 발표 당일). 이후 되돌림",
+          "source": "[MCP] Yahoo Finance 2026-03-28",
+          "note": "RKLB와 동일 패턴. IPO 서사 당일 급등 후 매크로 압박에 되돌림."
+        },
+        {
+          "asset": "LMT (Lockheed Martin)",
+          "current": 615.84,
+          "period_start": 676.70,
+          "period_end": 615.84,
+          "change_pct": -8.9,
+          "source": "[MCP] Yahoo Finance 2026-03-28",
+          "note": "1개월 -8.9%. 방산 레거시 전반 하락. Golden Dome 계약 SpaceX 수주 → LMT 위성방어 점유율 경쟁 압박 가능성."
+        },
+        {
+          "asset": "RTX",
+          "current": 189.71,
+          "source": "[MCP] Yahoo Finance 2026-03-28",
+          "note": "현재가만 수집. LMT와 유사한 레거시 방산 하락 흐름 추정."
+        },
+        {
+          "asset": "ARKX (ARK Space ETF)",
+          "current": 28.93,
+          "period_start": 32.33,
+          "period_end": 28.93,
+          "change_pct": -10.6,
+          "source": "[MCP] Yahoo Finance 2026-03-28",
+          "note": "1개월 -10.6%. SpaceX IPO 기대에도 전반적 ETF 하락. 3월 25일 소폭 반등 후 재하락. IPO 직전 불확실성 포지션."
+        },
+        {
+          "asset": "한화에어로스페이스 (012450.KS)",
+          "current": 1335000,
+          "period_start_feb27": 1195000,
+          "peak_mar03": 1432000,
+          "change_pct_from_feb": "+11.7%",
+          "change_pct_from_peak": "-6.8%",
+          "source": "[MCP] Yahoo Finance 2026-03-28",
+          "note": "2월 말 대비 +11.7% 상승. 3월 초 1,432,000 피크 후 조정. 방산+우주 복합 수혜. 증권가 '우주 매출 비중 여전히 미미' 냉정한 시선 병존."
+        }
+      ]
+    },
+
+    "narrative": {
+      "bullish": [
+        {
+          "source": "CNBC (2026-03-25)",
+          "url": "https://www.cnbc.com/2026/03/25/space-stocks-.html",
+          "content": "Space stocks soared Wednesday. ASTS +10%, RKLB +10%, Firefly +16%. SpaceX IPO $75B+ 역대 최대 IPO 예상. $1.75T 밸류에이션.",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-25"
+        },
+        {
+          "source": "Reuters (2026-03-25)",
+          "url": "https://www.reuters.com/business/autos-transportation/spacex-aims-file-ipo-soon-this-week",
+          "content": "SpaceX 이번 주 또는 다음 주 S-1 제출 목표. $75B+ 조달 예상. 리테일 배분 20%+.",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-25"
+        },
+        {
+          "source": "Bloomberg (2026-03-26)",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-26/spacex-lines-up-april-investor-briefings",
+          "content": "부활절 이후 4월 투자자 브리핑(TTW 미팅) 예정. 6월 상장 목표 사실상 확인.",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-26"
+        },
+        {
+          "source": "augment.market (2026-03-27)",
+          "url": "https://augment.market/pulse/spacex-is-finally-going-public",
+          "content": "Starlink 10M 구독자 돌파. 2026E 매출 $24B. xAI 합병으로 AI 인프라 레이어 추가. 밸류에이션 $800B→$1.75T 급등.",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-27"
+        },
+        {
+          "source": "글로벌이코노믹 (2026-03-28, 한국어)",
+          "url": "https://www.g-enews.com/article/Global-Biz/2026/03/2026032807455558472bd56fbc3c_1",
+          "content": "스피어 +85%, 에이치브이엠 +17%, 미래에셋생명 +90%, 미래에셋증권 +70%. KODEX 미국우주항공 ETF SpaceX 25% 편입 설계. '산업 구조 변곡점' 분석.",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-28"
+        }
+      ],
+      "bearish_skeptical": [
+        {
+          "source": "Reuters Breakingviews (2026-03-25)",
+          "url": "https://www.reuters.com/business/finance/spacex-ipo-leaves-some-private-share-buyers-unsure-what-they-own-2026-03-25/",
+          "content": "사전 시장 사기 우려 급증. '내가 속았나 모르겠다'(Axiom Space 전직 CEO Bhatia). 다층 수수료 + 소유권 검증 불가 구조. Jay Ritter: '고밸류 IPO는 역사적으로 시장수익률 하회'",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-25"
+        },
+        {
+          "source": "EuroNews (2026-03-27)",
+          "url": "https://www.euronews.com/business/2026/03/27/spacex-ipo-musk-plans-to-allocate-up-to-30-of-shares-for-retail-investors",
+          "content": "AJ Bell Russ Mould: '불마켓 말기 패턴. 선구자→모방자→어리석은 자 순서.' Buffett 인용. 버블 우려.",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-27"
+        },
+        {
+          "source": "Morningstar/Yahoo Finance",
+          "content": "IPO 밸류에이션 $1.5T = 2025 매출 대비 94배. 소프트웨어 기업 멀티플을 하드웨어·발사체 기업에 적용 논란.",
+          "tag": "[MCP] Tavily"
+        },
+        {
+          "source": "글로벌이코노믹 증권가 방산 연구원 (2026-03-28)",
+          "content": "한국 우주 수혜주 중 실적 내는 곳은 쎄트렉아이 정도. 한화에어로스페이스 등 대형 방산도 우주 매출 비중 여전히 미미.",
+          "tag": "[MCP] Tavily",
+          "timestamp": "2026-03-28"
+        }
+      ]
+    },
+
+    "expert": [
+      {
+        "name": "Jay Ritter",
+        "affiliation": "University of Florida, IPO 연구자 (명예교수)",
+        "role": "반대입장/분석자",
+        "statement": "고밸류 기업의 역대 IPO는 시장수익률을 하회하는 경향. 이미 높은 밸류에이션에서 시작하면 투자자 상승 여력 제한.",
+        "direction": "부정/경고",
+        "source": "[MCP] Reuters via Tavily 2026-03-25"
+      },
+      {
+        "name": "Russ Mould",
+        "affiliation": "AJ Bell, 투자이사",
+        "role": "반대입장/분석자",
+        "statement": "bull market은 선구자→모방자→어리석은 자 순서로 끝난다. 리테일 30% 배분은 위험 신호 가능성. Buffett 관찰 인용.",
+        "direction": "부정/경고",
+        "source": "[MCP] EuroNews via Tavily 2026-03-27"
+      },
+      {
+        "name": "Dan Coatsworth",
+        "affiliation": "AJ Bell, 시장 헤드",
+        "role": "분석자",
+        "statement": "투자자들이 로켓 발사처럼 SpaceX IPO를 카운트다운하고 있다. 기대감 극도 고조.",
+        "direction": "긍정(센티먼트 관찰)",
+        "source": "[MCP] EuroNews via Tavily 2026-03-27"
+      },
+      {
+        "name": "Elon Musk",
+        "affiliation": "SpaceX CEO",
+        "role": "공급자",
+        "statement": "SpaceX IPO 확인. DOGE '다시 안 할 것' 시사. 리테일 투자자 30% 배분 계획. 투자자 로드쇼 대신 로켓 발사 현장으로 초청하는 '역(逆)로드쇼' 방식 채택.",
+        "direction": "긍정(발행사 포지션)",
+        "source": "[MCP] Yahoo Finance/Tavily 2026-03-25~27"
+      },
+      {
+        "name": "Bret Johnsen",
+        "affiliation": "SpaceX CFO",
+        "role": "공급자",
+        "statement": "BofA에 리테일 30% 배분 구조 전달. 주관사 역할 분리 완료.",
+        "direction": "긍정(발행사 포지션)",
+        "source": "[MCP] Reuters via Tavily 2026-03-26"
+      },
+      {
+        "name": "Goldman Sachs / JPMorgan / BofA / Morgan Stanley",
+        "affiliation": "주관사단",
+        "role": "공급자",
+        "statement": "주관사 선정 확인(FT보도). 공식 밸류에이션 리포트 미공개 — 침묵. S-1 제출 전 공식 의견 표명 제한.",
+        "direction": "침묵 — S-1 제출 전 발언 제한 관행",
+        "source": "[MCP] FT/Tavily 2026-01-22. 공식 의견: 미발견"
+      },
+      {
+        "name": "Amazon Kuiper팀",
+        "affiliation": "Amazon",
+        "role": "반대입장(경쟁자)",
+        "statement": "Kuiper 200+ LEO 위성 배치 완료. 400+ 추가 발사 계획. Starlink moat에 도전. 1Gbps 상용 서비스 수개월 내 시작 예정.",
+        "direction": "경쟁 위협(Starlink moat 도전)",
+        "source": "[MCP] AOL/24-7 Wall St via Tavily"
+      },
+      {
+        "name": "미래에셋그룹 리서치",
+        "affiliation": "미래에셋생명/증권",
+        "role": "하류(한국)",
+        "statement": "2022~2023년 SpaceX 약 4000억 원 투자. IPO 시 대규모 평가익 예상. 미래에셋생명 1개월 +90%, 미래에셋증권 +70%.",
+        "direction": "긍정(수혜)",
+        "source": "[MCP] 글로벌이코노믹 via Tavily 2026-03-28"
+      },
+      {
+        "name": "DOGE 소송 원고측 법률 대리인",
+        "affiliation": "미확인 다수",
+        "role": "하류/정책",
+        "statement": "침묵 — 소송 14건+ 진행 중이나 원고측 공식 코멘트 미발견.",
+        "direction": "침묵",
+        "note": "검색 키워드: 'DOGE lawsuit SpaceX conflict attorney statement plaintiff comment'. 침묵 가능 이유: 소송 계속 중 발언 제한, 또는 미국 법원 전략적 침묵",
+        "source": "미발견"
+      }
+    ],
+
+    "policy": {
+      "active": true,
+      "items": [
+        {
+          "actor": "SEC",
+          "content": "SpaceX S-1 제출 시 거버넌스 심사 예정. DOGE 이해충돌 이슈가 S-1 공시 요구사항에 포함될 가능성. Musk SEC X(트위터) 소송 병행 진행 중(2022 Twitter 지분 신고 지연 소송). 양측 합의 협상 보도.",
+          "direction": "감시/리스크",
+          "source": "[MCP] Rolling Stone/Econ Times via Tavily"
+        },
+        {
+          "actor": "Pentagon / Trump 행정부",
+          "content": "Golden Dome $2B 계약 SpaceX 수주 확정(WSJ 보도). 600개 위성 추적 시스템. 총 Golden Dome 예산 $185B(Breaking Defense). Anduril/Palantir도 참여 예정.",
+          "direction": "긍정(수혜)",
+          "source": "[MCP] Engadget/securityonline via Tavily"
+        },
+        {
+          "actor": "Elon Musk / DOGE",
+          "content": "머스크 DOGE 'won't do it again' 시사. DOGE NASA 감사 시 SpaceX $14.5B+ NASA 계약 이해충돌 우려. DOGE가 White House에 Starlink 터미널 설치(이해충돌 논란). FAA와 SpaceX 임대 계약 체결.",
+          "direction": "복합(IPO에 거버넌스 리스크)",
+          "source": "[MCP] LinkedIn/Wikipedia via Tavily"
+        },
+        {
+          "actor": "한국 자산운용사 (삼성자산운용, 하나자산운용)",
+          "content": "KODEX 미국우주항공 ETF 출시 — SpaceX 최대 25% 편입 설계. 1Q 미국우주항공테크 ETF 16% 편입 가능.",
+          "direction": "긍정(한국 수요 창출)",
+          "source": "[MCP] 글로벌이코노믹 via Tavily 2026-03-28"
+        }
+      ]
+    },
+
+    "positioning": {
+      "active": true,
+      "items": [
+        {
+          "channel": "ARKX ETF 자금 흐름",
+          "content": "1개월 -10.6% 하락에도 불구하고 평균 거래량 549,000주로 공간섹터 ETF 중 최고 유동성. 'SpaceX IPO 이전에 사야 할 3개 공간 ETF' 류 기사 급증. 자금 유입 신호.",
+          "direction": "유입 기대 vs 현재 하락의 괴리",
+          "source": "[MCP] Zacks/ETFtrends via Tavily"
+        },
+        {
+          "channel": "VC 2차 시장 / 사전 IPO 거래",
+          "content": "사전 시장 투자자들 소유권 검증 불가 우려 급증. '브로커를 통해 매수했는데 상장 후 내 것인지 확인 불가' 사례 보도. 사기 우려 증가.",
+          "direction": "리스크 상승",
+          "source": "[MCP] Reuters via Tavily 2026-03-25"
+        },
+        {
+          "channel": "RKLB 공매도",
+          "content": "RKLB 3/27 -7.6%(시장 대비 더 큰 하락). IPO 발표 당일 급등 이후 공매도 복귀 가능성. Simply Wall St: '10.31% 1일 상승 후 4.16% 30일 수익' — 단기 변동성 극심.",
+          "direction": "공매도 복귀 신호",
+          "source": "[MCP] Zacks/Simply Wall St via Yahoo Finance"
+        },
+        {
+          "channel": "한국 개인투자자 우주섹터 ETF",
+          "content": "삼성자산운용 KODEX 미국우주항공 출시(SpaceX 25% 편입). 하나자산운용 1Q 미국우주항공테크(16% 편입). 국내 ETF를 통한 간접 접근 수요 급증.",
+          "direction": "유입",
+          "source": "[MCP] 글로벌이코노믹 via Tavily 2026-03-28"
+        }
+      ]
+    }
+  },
+
+  "pattern_reading": {
+    "lens1_direction": {
+      "verdict": "분열",
+      "detail": "서사는 극강 긍정(역대 최대 IPO, Starlink moat, Golden Dome 수혜). 가격은 혼조 — TSLA -10.3%, RKLB -14.1%, ASTS -9.5%, ARKX -10.6% (1개월). 단, IPO 발표 당일(3/25)에는 RKLB +10%, ASTS +12% 급등. 매크로(이란전쟁+인플레) 압박이 서사 긍정 효과를 상쇄. 서사 극강 긍정 vs 가격 약세 '분열' 패턴. 한국 2차 수혜주(미래에셋+90%)는 반대로 서사+가격 수렴.",
+      "flag": "F-04 체크: 서사 '강세' + 접촉 자산 '하락' → 분열 명시"
+    },
+    "lens2_time_structure": {
+      "verdict": "서사주도(B)",
+      "detail": "3/25 The Information 보도 → 가격 급등 → 이후 매크로 압박에 복귀. 가격이 서사를 따라가다가 되돌림. 전통적 서사주도(B) 패턴: 미디어 보도 → 단기 가격 급등 → 펀더멘털/매크로 재조정. S-1 실제 제출 시 A형(시장주도)으로 전환 가능."
+    },
+    "lens3_proportionality": {
+      "verdict": "과잉(서사) + 과소(가격)",
+      "detail": "서사 반응 규모: 'IPO 역대 최대', '$1.75T', 'Musk 첫 조만장자' — 현재 상장도 안 된 기업에 대한 서사 과잉. 가격 반응: IPO 발표 당일 +10%~12% 급등이 며칠 만에 완전 반납 → 서사 대비 가격 반응 과소. 한국 2차 수혜주(미래에셋, 스피어)는 과잉 반응(+85~90%)."
+    },
+    "lens4_propagation": {
+      "verdict": "복합(A→B→C→D)",
+      "path": "보도(B: The Information 3/25) → 가격 즉각 반응(A: RKLB/ASTS +10~12%) → 정책 확인(C: Golden Dome $2B, Bloomberg TTW 미팅) → 분석 심화(D: Jay Ritter 경고, Morningstar 94x 배수 분석) → 한국 2차 전이(B→A: 한국 ETF 출시 + 미래에셋 +90%)",
+      "propagation_lag": "1차(미국 우주주): 즉시(당일). 2차(한국 수혜주): 3~5일 지연."
+    }
+  },
+
+  "stereo_recommendation": {
+    "verdict": "권장",
+    "trigger": "방향 일치도 '분열' + 비례성 '과잉(서사)/과소(가격)' 동시 감지",
+    "reason": "서사 극강 긍정 vs 접촉 자산 전반 하락(-10%대)의 구조적 괴리. S-1 제출 전 불확실성 + 매크로 역풍 속에서 서사와 가격이 반대 방향 진행 중. 표면(서사)과 심층(가격 하락의 이유) 해부 필요.",
+    "mode": "기본 + PSF/macro 교차(이란전쟁 매크로 역풍 교차 필요)",
+    "prompt": "⚠ Stereo 연계 판정 | 판정: 권장 | 이유: 서사 극강 긍정 vs 우주섹터 가격 전반 -10% 괴리 + 사전시장 사기 우려 급증 | 모드: 기본+PSF/macro교차 | 실행할까요?"
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-CL1-001",
+      "question": "S-1 실제 제출일과 DOGE 이해충돌 공시 요구사항 — SEC가 어떤 거버넌스 심사를 요구하는가?",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "SpaceX S-1 SEC 제출 공식 확인",
+      "check_channels": {
+        "price": ["TSLA", "RKLB"],
+        "narrative": ["SEC EDGAR", "WSJ", "FT"],
+        "positioning": ["space ETF 자금 흐름"]
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-04-07",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "이번 주~다음 주 제출 예상(Reuters/Bloomberg). 미확인.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-CL1-002",
+      "question": "DOGE 이해충돌 소송 14건+ 중 어느 것이 S-1 심사에 실제 영향을 미치는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SEC가 S-1에서 DOGE 이해충돌 공시 요구 또는 거부하는 판정",
+      "check_channels": {
+        "price": ["TSLA"],
+        "narrative": ["Bloomberg Law", "Reuters Legal", "Rolling Stone"],
+        "positioning": []
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-06-01",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "14건+ 소송 진행 중. SEC X 소송 합의 협상 보도. 구체적 S-1 영향 미확인.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-CL1-003",
+      "question": "Amazon Kuiper 상용 서비스 개시 시점이 SpaceX IPO 로드쇼 기간과 겹치는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "Amazon Kuiper 상용 서비스 개시 공식 발표",
+      "check_channels": {
+        "price": ["AMZN"],
+        "narrative": ["Amazon 공식 발표", "CNBC", "TechCrunch"],
+        "positioning": ["Starlink moat 관련 분석"]
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-06-30",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "400+ 위성 추가 배치 계획. '수개월 내' 상용 서비스 시작 예정. 정확한 일정 미확인.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-CL1-004",
+      "question": "S-1 제출 후 인덱스 편입(S&P500) 패스트트랙 검토 여부 및 패시브 강제 매수 규모",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "SpaceX 상장 후 S&P500 편입 심사 일정 공표",
+      "check_channels": {
+        "price": ["SPY", "RKLB", "ASTS"],
+        "narrative": ["S&P Dow Jones Indices 공식 발표", "FT"],
+        "positioning": ["패시브 ETF 자금 흐름"]
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-09-30",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "상장 후 최소 1개 분기 수익성 조건 충족 여부 심사 필요. 미확인.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-CL1-005",
+      "question": "한화에어로스페이스의 SpaceX 밸류체인 연결 실제 매출 비중 — 서사 대비 실체 갭은 어느 정도인가?",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "한화에어로스페이스 분기 실적 발표 또는 우주 사업부 매출 공시",
+      "check_channels": {
+        "price": ["012450.KS"],
+        "narrative": ["한화에어로스페이스 IR", "증권사 리포트"],
+        "positioning": ["국내 우주 ETF 편입 비중"]
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-05-15",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "글로벌이코노믹 증권가 연구원: '우주 매출 비중 여전히 미미'. 실체 갭 존재. 수치 미확인.",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+
+  "self_audit": {
+    "Q1_channel_reasons_recorded": "pass",
+    "Q2_both_sides_narrative_expert": "pass — 서사(Reuters fraud, EuroNews Mould, Morningstar 94x). 전문가(Jay Ritter 반대, Amazon Kuiper 경쟁)",
+    "Q3_price_narrative_divergence": "pass — 분열 명시. TSLA/RKLB/ASTS/ARKX 전반 하락 vs 서사 극강 긍정. F-04 발동 체크 완료",
+    "Q4_silence_recorded": "pass — Goldman/JPMorgan 공식 의견 침묵, DOGE 소송 원고측 침묵, FAA 침묵 기록",
+    "Q5_primary_source_mcp": "pass — 가격 전체 MCP Yahoo Finance. 서사 Tavily MCP 원본 URL 포함",
+    "overall": "5/5 pass — 완료"
+  },
+
+  "watch_proposals": [
+    {
+      "proposed_id": "W-2026-03-29-UQ-CL1-001",
+      "source_uq": "UQ-CL1-001",
+      "subject": "SpaceX S-1 SEC 제출 확인",
+      "type": "event_tracking",
+      "schedule": "D+5/10 체크 (2026-04-03, 2026-04-07)",
+      "close_condition": "S-1 SEC EDGAR 공개 확인",
+      "status": "제안 — 승인 필요"
+    },
+    {
+      "proposed_id": "W-2026-03-29-UQ-CL1-002",
+      "source_uq": "UQ-CL1-002",
+      "subject": "DOGE 이해충돌 소송이 S-1 심사에 미치는 영향",
+      "type": "policy_watch",
+      "schedule": "주 1회 (2026-04-05, 2026-04-12, ...)",
+      "close_condition": "SEC S-1 거버넌스 공시 요구 판정",
+      "status": "제안 — 승인 필요"
+    },
+    {
+      "proposed_id": "W-2026-03-29-UQ-CL1-003",
+      "source_uq": "UQ-CL1-003",
+      "subject": "Amazon Kuiper 상용 서비스 개시 — Starlink moat 도전",
+      "type": "event_tracking",
+      "schedule": "월 1회 (2026-04-29, 2026-05-29)",
+      "close_condition": "Amazon Kuiper 공식 상용 서비스 개시 발표",
+      "status": "제안 — 승인 필요"
+    },
+    {
+      "proposed_id": "W-2026-03-29-UQ-CL1-004",
+      "source_uq": "UQ-CL1-004",
+      "subject": "SpaceX S&P500 인덱스 편입 패스트트랙 여부",
+      "type": "event_tracking",
+      "schedule": "상장 후 D+30, D+60, D+90",
+      "close_condition": "S&P Dow Jones Indices 편입 결정 공표",
+      "status": "제안 — 승인 필요"
+    },
+    {
+      "proposed_id": "W-2026-03-29-UQ-CL1-005",
+      "source_uq": "UQ-CL1-005",
+      "subject": "한화에어로스페이스 우주 매출 비중 실체 확인",
+      "type": "data_check",
+      "schedule": "2026-05-15 1회 체크 (분기 실적 발표 시점)",
+      "close_condition": "한화에어로스페이스 우주사업부 매출 공시",
+      "status": "제안 — 승인 필요"
+    }
+  ],
+
+  "sources_summary": [
+    "Yahoo Finance MCP — TSLA, RKLB, ASTS, LMT, RTX, ARKX, 012450.KS (현재가 + 1개월 히스토리)",
+    "Tavily MCP — CNBC (2026-03-25), Reuters (2026-03-25), Bloomberg (2026-03-26), Cornell/CNBC (2026-03-26), EuroNews (2026-03-27), augment.market (2026-03-27), 글로벌이코노믹 (2026-03-28)",
+    "Tavily MCP — aviationoutlook.substack.com (SpaceX 분석보고서), techmarketbriefs.com, ainvest.com",
+    "Tavily MCP — Rolling Stone (DOGE 이해충돌), Huntsville Business Journal (NASA DOGE 감사), Wikipedia (DOGE 네트워크)",
+    "Tavily MCP — Zacks/ETFtrends (ARKX 자금 흐름), cryptobriefing.com (IB 선정), mexicobusiness.news",
+    "Yahoo Finance News MCP — RKLB 뉴스(Zacks, MarketBeat, GuruFocus, StockStory, 24/7 Wall St), TSLA 뉴스(Yahoo Finance, IBD, Benzinga)"
+  ]
+}

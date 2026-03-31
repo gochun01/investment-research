@@ -1,0 +1,143 @@
+{
+  "tc_id": "TC-018",
+  "created": "2026-03-29",
+  "updated": "2026-03-29",
+  "title": "K-우주주 리레이팅 — SpaceX IPO 기준점 등장 × 한화에어로·KAI 양면 노출",
+  "status": "active",
+
+  "issue_summary": "SpaceX IPO($1.75T)가 우주 섹터 최초 공식 PER 기준점을 만든다. 한화에어로스페이스·KAI는 섹터 서사 수혜(리레이팅)와 기술 격차 노출(상대 하락 압력)을 동시에 받는 양면 구조. KAI 지분 4.99% 재취득·누리호 민간이관·차세대 발사체가 국내 촉매. kg당 $24K → SpaceX $100 목표 달성 시 K-우주의 가격 경쟁 불가 구조 공식화.",
+
+  "phase": 1,
+  "phase_log": [
+    {
+      "date": "2026-03-29",
+      "from": null,
+      "to": 1,
+      "reason": "SA-20260329-001 L7 분석. SpaceX IPO가 K-우주주 리레이팅 촉매로 식별. 한화에어로·KAI 양면 노출 구조.",
+      "sa_id": "SA-20260329-001"
+    }
+  ],
+
+  "pre_read": {
+    "type": "STRUCT×EVENT",
+    "scp": 3,
+    "urgency": "WATCH",
+    "scp_basis": "SpaceX IPO가 우주 섹터 PER 기준점을 최초 생성. 한국 우주주의 상대 평가 시작점 = 구조 변화 초기 신호."
+  },
+
+  "scenarios": {
+    "A": {
+      "label": "SpaceX IPO 성공 → K-우주주 서사 리레이팅",
+      "probability": "30%",
+      "trigger": {
+        "condition": "SpaceX IPO 공모가 $1.5T+ 완판 + 한화에어로 PER 30x+ 달성",
+        "source": "서사적+통계적",
+        "recalibration": "SpaceX IPO 완수 후 1개월",
+        "notes": "TC-017 시나리오 A 연동. SpaceX 완판 → 섹터 서사 최고조 → K-우주주 동반 리레이팅."
+      },
+      "kc": {
+        "watch": "한화에어로 PER 20x 이하",
+        "alert": "KAI 주가 SpaceX IPO 당일 -5%+ 하락",
+        "hard": "SpaceX IPO 공모가 $1.2T 이하 OR IPO 철회",
+        "action": "A thesis 폐기. 섹터 서사 소멸. 한화/KAI 리레이팅 기대 제거."
+      }
+    },
+    "B": {
+      "label": "IPO 성공 + 기술 격차 노출 — 리레이팅 단기 후 반전",
+      "probability": "35%",
+      "trigger": {
+        "condition": "SpaceX IPO 완수 + S-1에서 kg당 비용 $500 이하 공개",
+        "source": "통계적",
+        "recalibration": "S-1 제출 즉시",
+        "notes": "서사 수혜 단기. 기술 격차($24K vs $500)가 숫자로 공개 → 상대 하락 전환."
+      },
+      "kc": {
+        "watch": "SpaceX S-1에서 kg당 비용 미공개",
+        "alert": "한화에어로 차세대 발사체 비용 공식 발표 (5.6조 확인)",
+        "hard": "K-우주 정부 예산 삭감 발표 OR 차세대 발사체 취소",
+        "action": "B thesis 확인. 리레이팅 단기 수혜 구간 포착 후 격차 노출 구간 주의."
+      }
+    },
+    "C": {
+      "label": "SpaceX IPO 실패 → K-우주주 리레이팅 소멸",
+      "probability": "20%",
+      "trigger": {
+        "condition": "SpaceX IPO 공식 연기 OR 철회",
+        "source": "서사적",
+        "recalibration": "TC-017 C시나리오 Trigger 연동",
+        "notes": "TC-017 C와 동기화. 리레이팅 기대 소멸."
+      },
+      "kc": {
+        "watch": "SpaceX IPO 재추진 보도",
+        "alert": "대형 글로벌 우주 ETF(UFO/ARKX) 반등",
+        "hard": "SpaceX IPO 완수 + 한화에어로 PER 재상승",
+        "action": "C thesis 재검토. SpaceX 재추진 시 리레이팅 기대 복원 여부 확인."
+      }
+    },
+    "D": {
+      "label": "누리호 민간이관 + 차세대 발사체 독자 추진 — 자체 트랙",
+      "probability": "15%",
+      "trigger": {
+        "condition": "누리호 민간이관 공식 완료 + 차세대 발사체 계획 확정 + KAI 주도권 확보",
+        "source": "정책적",
+        "recalibration": "2026년 하반기 정책 발표 시",
+        "notes": "SpaceX IPO 독립적 국내 모멘텀. LIG넥스원 경쟁 TF 결과에 의존."
+      },
+      "kc": {
+        "watch": "LIG넥스원 차세대 발사체 TF 수주",
+        "alert": "정부 예산안에서 우주 예산 삭감",
+        "hard": "차세대 발사체 사업 취소 OR 한화·KAI 컨소시엄 해체",
+        "action": "D thesis 재검토. 자체 모멘텀 소멸 시 SpaceX 연동 전략으로 전환."
+      }
+    }
+  },
+
+  "tracking_indicators": [
+    "SpaceX S-1의 kg당 발사 비용 공개 여부 (TC-017 연동)",
+    "SpaceX IPO 공모가 + 완판 여부 (TC-017 연동)",
+    "한화에어로스페이스 PER 변화 (리레이팅 추적)",
+    "KAI 주가 변화 (지분 4.99% 재취득 후 추세)",
+    "누리호 민간이관 공식 일정",
+    "차세대 발사체 2.29조→실비 5.6조 공식 예산 발표",
+    "LIG넥스원 경쟁 TF 결과",
+    "글로벌 우주 ETF (UFO/ARKX) 흐름",
+    "우주 섹터 PER 평균 변화 (SpaceX IPO 전후)"
+  ],
+
+  "heartbeat_thresholds": [
+    {
+      "metric": "한화에어로 PER",
+      "watch": 25,
+      "alert": 30,
+      "hard": 35,
+      "direction": "상향",
+      "unit": "배",
+      "notes": "A 시나리오 리레이팅 진행 추적."
+    },
+    {
+      "metric": "SpaceX IPO 공모가",
+      "watch": 1200000000000,
+      "alert": 1000000000000,
+      "hard": 750000000000,
+      "direction": "하향",
+      "unit": "USD",
+      "notes": "TC-017 연동. 이하 시 K-우주 리레이팅 기대 소멸."
+    }
+  ],
+
+  "analysis_ids": ["SA-20260329-001"],
+
+  "tags": ["k-space", "hanwha-aerospace", "kai", "spacex-ipo", "rerate", "nuriho", "launch-vehicle", "SCP3", "STRUCT"],
+
+  "cross_card_links": [
+    {"to": "TC-017", "link": "SpaceX IPO가 K-우주주 리레이팅 촉매. TC-017 시나리오 A↔B↔C가 TC-018 직결."},
+    {"to": "TC-012", "link": "K-방산(한화에어로) 공통 플레이어. 방산+우주 복합 밸류에이션."},
+    {"to": "TC-003", "link": "이란 전쟁 → Golden Dome 정당화 → K-방산·우주 통합 서사. 매크로 역풍 공유."}
+  ],
+
+  "close_condition": "SpaceX IPO 완수 후 6개월 + 기술 격차 PER에 반영 완료 확인 OR IPO 철회 + 리레이팅 소멸 확인",
+
+  "psf_link": "P3 🔴(수축기), MT-06(K-우주 섹터 신규), MT-04(우주 인프라). SpaceX IPO가 MT-04 최초 공식 밸류 기준점.",
+
+  "macro_ref": "VIX 31 (리레이팅 환경 제약), Brent $112 (K-방산 동반 서사), 실질금리 2.08% (성장주 할인 압력)"
+}

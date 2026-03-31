@@ -1,0 +1,199 @@
+{
+  "snapshot_date": "2026-03-28",
+  "slug": "tlt-inflation",
+  "tc_id": "TC-007",
+  "issue_summary": "TLT $86 — 10Y 4.4% 8개월 최고, Fed 인하 기대 소멸. Core PCE 3.1% YoY + GDP 0.7% = 스태그플레이션 정량 확인. Waller 매파. PCE 전망 2.4→2.7% 상향.",
+  "fingerprint": {
+    "domain": "통화정책 + 매크로경제 (스태그플레이션 정량 확인)",
+    "geo_scope": "글로벌 (미국 발원 → 전 자산시장 전파)",
+    "touched_assets": {
+      "primary": ["TLT", "DGS10", "DGS2", "DXY"],
+      "secondary": ["S&P500", "IYR", "EEM", "KRW"],
+      "contrast": ["GLD", "BTC", "TBT"]
+    },
+    "stakeholders": {
+      "primary": ["Fed (정책결정자)", "국채 보유자", "주식 롱 포지션"],
+      "secondary": ["모기지 차입자", "기업 CFO (조달비용)", "EM 중앙은행", "한국 기재부/한은"]
+    },
+    "secondary_stakeholders": [
+      "연금/보험사 ALM 담당 (국채 보유자 → 듀레이션 리스크)",
+      "모기지 차입자 (금리 6.43% 상승 직격)",
+      "백악관 경제참모 (인하 압력 vs 인플레 방어 갈등)",
+      "레버리지 채권 ETF 청산 압력 (TMF)",
+      "한국 수입업체 (KRW 약세 + 에너지 가격 이중 압박)"
+    ],
+    "temporal_character": "구조적 (GDP+PCE 동시 악화, 8개월 고점, 추세 전환 신호)"
+  },
+  "scanner_prefetch": {
+    "price_snapshot": {
+      "TLT": 86.0,
+      "DXY": 99.9,
+      "SP500": 6432,
+      "BTC": 66478
+    },
+    "provided_date": "2026-03-28"
+  },
+  "channel_selection": {
+    "sns_judgment": {
+      "Q1_core_figure_on_SNS": "부분 YES — Trump Truth Social 활성, Waller 직접 X 미확인",
+      "Q2_retail_interest": "YES — TLT/채권 개인 투자자, 금리 공포 리테일 관심",
+      "Q3_policymaker_SNS": "YES — Trump Truth Social '즉시 인하' 다수 포스팅",
+      "status": "부분 활성 — Trump Truth Social + 리테일 반응 수집"
+    },
+    "expert_preselection": [
+      {"name": "Christopher Waller", "role": "정책", "found": true},
+      {"name": "Jerome Powell", "role": "정책", "found": true},
+      {"name": "Mohamed El-Erian", "role": "분석자", "found": true},
+      {"name": "Austan Goolsbee", "role": "반대입장→매파 전환", "found": true},
+      {"name": "Neel Kashkari", "role": "반대입장/매파", "found": true, "note": "1월 발언. 3월 최신 없음"},
+      {"name": "Jeff Gundlach", "role": "분석자/채권왕", "found": false, "silence": "3월 직접 발언 미발견. 채권시장 전반 분석 있으나 Gundlach 개인 발언 없음. 의도적 침묵 또는 수집 한계."},
+      {"name": "Larry Summers", "role": "분석자", "found": false, "silence": "El-Erian이 더 vocal. Summers 3월 직접 발언 미발견."},
+      {"name": "BOK Rhee Chang-yong", "role": "하류/정책", "found": true}
+    ]
+  },
+  "reactions": {
+    "price": {
+      "TLT": {"value": 85.64, "trend": "하락 지속. 3mo: $90.5 → $85.64", "direction": "bearish", "source": "Yahoo Finance", "date": "2026-03-23", "tag": "prefetch+MCP"},
+      "DGS10": {"value": 4.42, "trend": "8개월 최고권. 3/24: 4.37% → 3/26: 4.42%", "direction": "bearish_bonds", "source": "FRED", "date": "2026-03-26", "tag": "MCP"},
+      "DGS2": {"value": 3.96, "trend": "상승 유지. 인하 기대 소멸 반영", "direction": "bearish_bonds", "source": "FRED", "date": "2026-03-26", "tag": "MCP"},
+      "T10Y2Y_spread": {"value": 0.46, "note": "10Y-2Y 스프레드 0.46%p. 역전 아니나 장기 평균 0.80% 대비 압축", "source": "FRED T10Y2Y", "date": "2026-03-26", "tag": "MCP"},
+      "TBT": {"value": 36.02, "trend": "12/29 $34.91 → 3/23 $36.02. 국채 숏 우위", "direction": "bearish_bonds_confirming", "source": "Yahoo Finance", "date": "2026-03-23", "tag": "MCP"},
+      "GLD": {"value": 414.70, "trend": "1/19 $458 고점 → 3/23 $414. -9.6% 급락. 스태그 내러티브와 역방향", "direction": "주목_역방향", "source": "Yahoo Finance", "date": "2026-03-23", "tag": "MCP"},
+      "IYR": {"value": 92.61, "trend": "금리 상승 직격. 모기지 6.43%", "direction": "bearish", "source": "Yahoo Finance", "date": "2026-03-27", "tag": "MCP"},
+      "EEM": {"value": 55.20, "trend": "2/09 $61.12 고점 → 3/23 $55.20. -9.6%. 달러 강세+금리 상승에 이머징 압박", "direction": "bearish", "source": "Yahoo Finance", "date": "2026-03-23", "tag": "MCP"},
+      "KRW": {"value": 1504.15, "trend": "2009년 3월 이후 최약세", "direction": "KRW_weak", "source": "FRED DEXKOUS", "date": "2026-03-20", "tag": "MCP"},
+      "DXY": {"value": 99.9, "note": "Broad Dollar Index 120.28. 상대적 달러 강세 유지", "source": "prefetch+FRED DTWEXBGS", "date": "2026-03-20", "tag": "prefetch+MCP"},
+      "GDP_Q4_2025": {"value": 0.7, "unit": "QoQ%", "trend": "Q3 +4.4% → Q4 +0.7% 급감", "source": "FRED A191RL1Q225SBEA", "date": "2025-10-01", "tag": "MCP"},
+      "CorePCE_index": {"value": 128.394, "note": "2026-01. YoY 약 3.1% 수준. FOMC PCE 전망 2.7%와 괴리", "source": "FRED PCEPILFE", "date": "2026-01-01", "tag": "MCP"},
+      "FedfundsRate": {"value": 3.64, "note": "실효 Fed Funds Rate. 목표범위 3.50~3.75%", "source": "FRED FEDFUNDS", "date": "2026-02-01", "tag": "MCP"}
+    },
+    "narrative": {
+      "mainstream_hawkish": [
+        {"channel": "FinancialContent/MarketMinute", "headline": "Stagflation Vise: GDP 0.7% + Core PCE 3.1% = 스태그플레이션 비스 그립", "source": "FinancialContent", "date": "2026-03-13"},
+        {"channel": "CNBC", "headline": "Markets now see the Fed's next move as a potential rate hike", "source": "CNBC", "date": "2026-03-27"},
+        {"channel": "Fortune", "headline": "Zero-cut year looks increasingly likely", "source": "Fortune", "date": "2026-03-13"},
+        {"channel": "FinancialContent", "headline": "Bond Market Rout Intensifies: 10-Year Treasury Hits 4.40% as 2026 Rate Cut Hopes Vanish", "source": "FinancialContent", "date": "2026-03-23"}
+      ],
+      "counter_narrative": [
+        {"channel": "Powell 프레스컨퍼런스", "headline": "스태그플레이션 부정. '훨씬 심각한 상황을 위해 아껴두겠다.' GDP 2.4% 유지.", "source": "Fed 공식", "date": "2026-03-18"},
+        {"channel": "Schwab/J.P.Morgan", "headline": "Fed Still Sees One Cut in 2026 (12월)", "source": "Schwab/JPM", "date": "2026-03-18"},
+        {"channel": "FOMC 업데이트", "headline": "GDP 2026 프로젝션 2.3%→2.4% 상향. 침체 아니다.", "source": "FOMC 공식", "date": "2026-03-18"}
+      ]
+    },
+    "expert": [
+      {"name": "Christopher Waller", "role": "정책", "statement": "Wait and see. 인플레이션이 일시적. 인하는 올해 후반 가능하나 지금은 조심. 기존 인하론에서 후퇴.", "direction": "매파_완화", "source": "CNBC", "date": "2026-03-20"},
+      {"name": "Jerome Powell", "role": "정책", "statement": "Stagflation이란 단어는 훨씬 심각한 상황을 위해 아껴두겠다. 인플레 hoped만큼 떨어지지 않고 있다. GDP 2.4% 유지.", "direction": "중립_방어적", "source": "Fed 프레스컨퍼런스", "date": "2026-03-18"},
+      {"name": "Mohamed El-Erian", "role": "분석자", "statement": "글로벌 스태그플레이션 리스크 현실적. Fed 정책 유연성 제한. 시장 랠리는 매수 신호 아님. 칩을 일부 내려놓겠다.", "direction": "경고/약세", "source": "Fortune/Yahoo Finance", "date": "2026-03-03"},
+      {"name": "Austan Goolsbee", "role": "반대입장→매파전환", "statement": "인플레 수준 not good enough. 인하는 인플레 진전이 먼저. 고용 걱정도 하지만 인플레 먼저 잡아야.", "direction": "매파_전환", "source": "CNBC", "date": "2026-03-23"},
+      {"name": "Neel Kashkari", "role": "반대입장/매파", "statement": "금리를 그다지 더 내릴 필요 없다. 하이크 가능성 배제 안 함. (1월 발언, 3월 최신 없음)", "direction": "매파", "source": "CNBC", "date": "2026-01-05"},
+      {"name": "Jeff Gundlach", "role": "분석자/채권왕", "statement": "침묵 — 공식 성명 또는 매체 인용 미발견", "direction": "침묵", "channel": "—", "note": "업계 최대 채권 전문가이나 3월 직접 발언 없음. 의도적 침묵 또는 수집 도구 한계."},
+      {"name": "Larry Summers", "role": "분석자", "statement": "침묵 — 3월 직접 발언 미발견. El-Erian이 더 vocal한 시기.", "direction": "침묵", "channel": "—"},
+      {"name": "BOK Rhee Chang-yong", "role": "하류/정책", "statement": "과도한 원화 약세는 인플레를 가중. 금리 2.50% 동결. Fed 인하 기대 소멸로 한국도 인하 불가 압박.", "direction": "동결_불가피", "source": "Bloomberg/FastBull", "date": "2026-02~03"}
+    ],
+    "policy": [
+      {"entity": "FOMC 3월 회의", "action": "금리 동결 3.50~3.75%. PCE 전망 2.4→2.7% 상향. GDP 2.4% 유지. Dot plot 1회 인하(12월)", "source": "Fed 공식", "date": "2026-03-18"},
+      {"entity": "CME FedWatch", "action": "4월 홀드 93.8%. 하이크 확률 40~52% 급등(3/27). 연말 하이크 50% 초과.", "source": "CME FedWatch/CNBC", "date": "2026-03-27"},
+      {"entity": "Trump (Truth Social)", "action": "즉시 금리 인하 요구. 1%까지. Powell 독립성 수호, 의회 소환장 → 판사 기각.", "source": "Fortune/crypto.news", "date": "2026-03-13"},
+      {"entity": "BOK 한국은행", "action": "기준금리 2.50% 동결. KRW 1,504 약세. 2026년 인하 없을 것 전망(다수 이코노미스트).", "source": "Bloomberg/KED Global", "date": "2026-02"}
+    ],
+    "positioning": [
+      {"channel": "TLT ETF 흐름", "observation": "최근 1년 누적 순유출 -$5.76B. 단 3/3일 하루 $914M 순유입 (저점 매수 vs 반등 베팅 혼재)", "source": "etf.com", "date": "2026-03"},
+      {"channel": "TBT (TLT 인버스 2x)", "observation": "$34.91(12/29) → $36.02(3/23): +3.2%. 국채 숏 포지션 우위", "source": "Yahoo Finance", "date": "2026-03-23"},
+      {"channel": "기관 포지션 혼재", "observation": "Heartwood Wealth TLT 매도. Sharkey Howes TLT +30% 매수. Kaydan Wealth TLT +149% 매수 → 방향 혼재", "source": "Daily Political", "date": "2026-03-26~27"},
+      {"channel": "GLD 포지션", "observation": "$398(12/29) → $458(1/19) 고점 → $414(3/23) 급락. 스태그 내러티브보다 이란 리스크 해소에 더 반응한 구조", "source": "Yahoo Finance", "date": "2026-03-23"},
+      {"channel": "KOSPI 외국인 대규모 매도", "observation": "외국인 매도 20조 원 초과. KOSPI 하루 -6.49%. 이머징 자금 이탈 패턴 확인", "source": "Seoul Economic Daily", "date": "2026-03-23"}
+    ]
+  },
+  "pattern_reading": {
+    "lens1_direction": {
+      "verdict": "수렴 (강한 수렴, 단 2개 채널 분열)",
+      "comment": "5계층 중 4.5계층이 스태그플레이션+금리 상승+위험자산 압박으로 수렴. 분열 포인트: (1) GLD 역방향 — 스태그플레이션 서사라면 금 상승해야 하나 -9.6% 하락 (2) TLT $914M 하루 순유입 — 일부 기관이 4.4%를 매력적 엔트리로 판단. 내러티브 균열 존재."
+    },
+    "lens2_time_structure": {
+      "verdict": "C형(정책주도) + A형(시장주도) 복합",
+      "comment": "FOMC 3/18 PCE 전망 상향(C형 정책 촉매) → FedWatch 하이크 확률 급등(A형 시장 선행). D→C→A→B 순환 구조. 이란 전쟁 에너지 쇼크가 독립 배경 변수."
+    },
+    "lens3_proportionality": {
+      "verdict": "비례~과잉 경계 (자산별 분화)",
+      "comment": "핵심(TLT, 수익률)은 비례. FedWatch 하이크 52% 돌파와 KOSPI -6.49%는 과잉 영역. GLD -9.6%는 과소(스태그 헤지 기대 대비). 비례성이 자산별로 분화하여 단일 판정 불가."
+    },
+    "lens4_propagation": {
+      "verdict": "D→C→A→B 순환 + 한국 2차 루프",
+      "comment": "FRED 데이터(분석, D) → FOMC 확인(정책, C) → FedWatch/선물(시장, A) → 미디어 증폭(B). 한국: 미국 가격(A)→BOK 동결(C)→KRW/KOSPI(A)의 2차 루프 가동. 수입물가→한국 인플레 악화 추가 루프 가능."
+    },
+    "stereo_recommendation": {
+      "verdict": "권장",
+      "reason": "①GLD 역방향 + TLT 저점 매수(표면-심층 괴리) ②한국 전이 경로 명확(PSF/macro 교차 필요) ③FedWatch 하이크 50% vs Powell 부정(시장-Fed 커뮤니케이션 괴리)",
+      "mode": "PSF+macro 교차 / 시간축 분해 병행"
+    }
+  },
+  "unresolved": [
+    {
+      "id": "UQ-TLT-001",
+      "question": "FedWatch 하이크 확률 52%는 시장 과잉인가, 아니면 Fed가 아직 소통 안 한 진짜 가능성인가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "다음 FOMC(5월) 전후 Powell/위원 발언에서 하이크 가능성 명시 또는 부정 확인",
+      "check_channels": {"price": ["DGS2", "DGS10"], "narrative": ["CME FedWatch", "FOMC 성명"], "positioning": ["TBT 포지션"]},
+      "created": "2026-03-28",
+      "deadline": "2026-05-07",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "3/27 기준 하이크 확률 52% 돌파. Powell은 '기저 시나리오 아님' 발언"
+    },
+    {
+      "id": "UQ-TLT-002",
+      "question": "GLD가 스태그플레이션 내러티브와 역방향인 이유: 달러 강세 때문인가, 이란 리스크 완화 때문인가?",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "GLD와 DXY 상관관계 추적 + 이란 전쟁 확전/완화 여부로 판단",
+      "check_channels": {"price": ["GLD", "DXY", "USO"], "narrative": ["이란 전쟁 전개 뉴스"], "positioning": []},
+      "created": "2026-03-28",
+      "deadline": "2026-04-11",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "GLD $414. 1월 $458 고점 대비 -9.6%"
+    },
+    {
+      "id": "UQ-TLT-003",
+      "question": "TLT $914M 하루 순유입 — 저점 매수 기관 정체와 그 확신의 근거는?",
+      "status": "open",
+      "resolve_type": "data",
+      "resolve_condition": "ETF.com 기관 흐름 데이터에서 매수 주체 파악, 또는 이후 흐름 전환 확인",
+      "check_channels": {"price": ["TLT"], "narrative": [], "positioning": ["etf.com 흐름", "13F 파일링"]},
+      "created": "2026-03-28",
+      "deadline": "2026-04-15",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "$914M 순유입(3/3). 이후 지속 하락하여 저점 매수 성공 여부 불명"
+    },
+    {
+      "id": "UQ-TLT-004",
+      "question": "한국 전이 루프(BOK 동결→KRW 약세→수입물가→인플레)가 실제로 가속화되는가?",
+      "status": "open",
+      "resolve_type": "threshold",
+      "resolve_condition": "KRW 1,530 돌파 또는 BOK 인플레 전망 상향 발표",
+      "check_channels": {"price": ["DEXKOUS", "KOSPI"], "narrative": ["BOK 발표"], "positioning": []},
+      "created": "2026-03-28",
+      "deadline": "2026-04-25",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "KRW 1,504 (2026-03-20). KOSPI -6.49% (3/23)"
+    }
+  ],
+  "sources": [
+    "CNBC: Fed interest rate decision March 2026 (2026-03-18)",
+    "CNBC: Fed Gov Waller urges caution, cuts possible later in year (2026-03-20)",
+    "CNBC: Goolsbee worried about inflation fraught climate (2026-03-23)",
+    "CNBC: Markets now see Fed's next move as potential rate hike (2026-03-27)",
+    "Fortune: El-Erian warns Iran could lead to global stagflation (2026-03-03)",
+    "Fortune: Trump Powell pressure oil no-cut plausible (2026-03-13)",
+    "FinancialContent: Bond Market Tremors 4.17% stagflation fears (2026-03-06)",
+    "FinancialContent: Stagflation Vise GDP stalls inflation sticky (2026-03-13)",
+    "FinancialContent: Bond Market Rout 4.40% rate cut hopes vanish (2026-03-23)",
+    "FinancialContent: Fed Hawkish Hold Middle East energy shock (2026-03-19)",
+    "FRED: DGS10, DGS2, T10Y2Y, PCEPILFE, A191RL1Q225SBEA, FEDFUNDS, DEXKOUS",
+    "Yahoo Finance: TLT, TBT, GLD, IYR, EEM, IEF (historical)",
+    "Federal Reserve: FOMC Projections March 2026 (2026-03-18)",
+    "CME FedWatch: Rate hike probability 52% (2026-03-27)",
+    "Bloomberg/FastBull: BOK warns weak won inflation risk",
+    "Seoul Economic Daily: KOSPI -6.49% foreign sell-off 20 trillion won (2026-03-23)",
+    "etf.com: TLT $914M inflow daily, -$5.76B 1-year outflow"
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "id": "RM-20260329-HANWHA-SPACE",
+  "subject": "한화에어로스페이스+KAI 동맹 — 한국판 SpaceX 구상",
+  "label": "독립 ⑦",
+  "date": "2026-03-29",
+  "depth": "Standard",
+  "collector": "reaction-monitor",
+  "scanner_origin": null,
+  "core_extract_origin": "2026-03-29-core-extract",
+
+  "phase_0": {
+    "status": "실행됨",
+    "state_json_check": "기존 state.json은 2026-03-28 이란·TLT·AI capex 이슈. 이번 수집과 무관.",
+    "unresolved_carry": 0,
+    "active_watches_check": "active-watches.json 파싱 불가 (빈 파일 또는 구조 불일치). Watch 기한 도래 없음으로 처리.",
+    "result": "Phase 1으로 진행"
+  },
+
+  "fingerprint": {
+    "domain": "방산+우주산업 — 기업전략(지분동맹) + 국가 우주정책(민간이관) + 글로벌 리레이팅 트리거(SpaceX IPO)",
+    "geography": "한국 국내(한화+KAI+우주항공청) → 글로벌(SpaceX IPO 연동, 방산 수출)",
+    "temporal_tag": "구조적 — 7년 만의 지분 재취득 + 2.29조 차세대발사체 + 2032년 달 착륙선 목표. 단기 이벤트가 아닌 전략 구조 재편.",
+    "touched_assets": {
+      "primary": ["한화에어로스페이스(012450.KS)", "한국항공우주(KAI, 047810.KS)", "이노스페이스(274400.KQ)"],
+      "secondary": ["TIGER 방산&우주 ETF(463250)", "한화시스템(272210.KS)", "KOSPI(^KS11)", "쎄트렉아이"],
+      "contrast": ["SpaceX(비상장)", "Rocket Lab(RKLB)", "KOSDAQ 우주 소형주"]
+    },
+    "stakeholders": {
+      "primary": [
+        "한화에어로스페이스 — 체계종합기업, 지분 매입 주체",
+        "KAI(한국항공우주산업) — 지분 매입 대상, 민영화 논의 중심",
+        "우주항공청(KASA) — 차세대발사체 발주처, 민간이관 결정권자",
+        "수출입은행(KAI 26.41% 최대주주) — 매각 결정권 보유",
+        "국민연금(KAI 8.20% 2대주주) — 민영화 영향 수혜/견제"
+      ],
+      "secondary": [
+        {"from": "한화에어로스페이스 지분 확대", "to": "LIG넥스원(KAI 인수 경쟁 가능성), 한화시스템(시너지 직수혜)"},
+        {"from": "SpaceX IPO 글로벌 리레이팅", "to": "이노스페이스(한빛-나노 재도전), 쎄트렉아이(위성 제작), 국내 방산 ETF 수급"},
+        {"from": "차세대발사체 2.29조 한화 우선협상", "to": "항우연(기술 이전 주체), 방산 중소협력사"}
+      ]
+    },
+    "scp_estimate": 4,
+    "note": "SCP 4 — 지분+정책+글로벌 트리거 3중 겹침. Deep 채널 수 기준 적용."
+  },
+
+  "channel_selection": {
+    "rationale": "지문: 국내 방산+우주 구조 재편 + SpaceX 글로벌 트리거. 5개 계층 모두 활성. SNS: Q1→YES (머스크가 SpaceX IPO 발언). Q2→YES (리테일 우주주 관심). Q3→YES (이재명 SNS 발언 가능). → SNS 활성(선별 수집).",
+    "sns_decision": "활성 — SpaceX IPO 리테일 관심 + 머스크 X 발언 + 이재명 방산독점 발언 트리거 가능",
+    "expert_advance_list": [
+      "☐ 한화에어로스페이스 IR/경영진 발언 (공급자)",
+      "☐ KAI 경영진/수출입은행 발언 (피해자/협력자)",
+      "☐ 증권사 방산 애널리스트 (분석자)",
+      "☐ 방산독점 우려 전문가 또는 이재명 대통령 발언 (반대입장)",
+      "☐ 우주항공청 박재성 부문장 (정책)",
+      "☐ 이노스페이스/쎄트렉아이 (하류 2차 영향권)"
+    ]
+  },
+
+  "reactions": {
+    "price": {
+      "collected_at": "2026-03-28 장 마감 기준 (Yahoo Finance MCP)",
+      "hanwha_aero": {
+        "ticker": "012450.KS",
+        "current": 1335000,
+        "month_high": 1488000,
+        "month_low": 1195000,
+        "month_start": 1195000,
+        "month_change_pct": "+11.7%",
+        "note": "3월 초 KAI 지분 공시(3/16) 후 3/17~23 조정(-11%). 3/24~25 반등 후 재차 1,369,000 횡보. 공시 직후 급등 후 차익매물 출현.",
+        "source": "Yahoo Finance MCP [MCP]",
+        "direction": "등락 혼조 (이벤트 후 차익실현 압력)"
+      },
+      "kai": {
+        "ticker": "047810.KS",
+        "current": 186500,
+        "month_high": 202000,
+        "month_low": 158500,
+        "month_start": 191500,
+        "month_change_pct": "-2.6%",
+        "note": "3/16 공시 후 3/17 202,000원 급등(+5.6%). 이후 조정. 현재 186,500원으로 공시 전 수준 근접. 인수 기대감 vs 단기 차익 균형.",
+        "source": "Yahoo Finance MCP [MCP]",
+        "direction": "공시 후 스파이크→되돌림"
+      },
+      "innospace": {
+        "ticker": "274400.KQ",
+        "current": 3750,
+        "note": "한빛-나노 2025년 12월 발사 실패 후 급락(-28.6%). 현재 3,750원. 2026년 재발사 계획 공지. 우주 리레이팅 수혜 여부는 재발사 성공 조건부.",
+        "source": "Yahoo Finance MCP [MCP]",
+        "direction": "발사 실패 충격 미해소, 소형주 리레이팅 후행 가능성"
+      },
+      "kospi": {
+        "ticker": "^KS11",
+        "current": 5438.87,
+        "month_start": 6244.13,
+        "month_change_pct": "-12.9%",
+        "note": "3월 KOSPI 급락(-12.9%). 이란 전쟁 충격 + 글로벌 리스크오프. 방산주가 방어적 상승 vs 시장 전반 하락이라는 환경.",
+        "source": "Yahoo Finance MCP [MCP]",
+        "direction": "전반적 하락 (방산 상대적 강세)"
+      },
+      "tiger_defense_etf": {
+        "ticker": "463250",
+        "note": "TIGER 방산&우주 ETF: 한화에어로(21.32%), KAI(19.53%), 한화시스템(14.98%), LIG넥스원(14.88%) 포함. 연초 대비 수익률 30%+ 기록 (2026년 1월 기준 보도). 3월 조정 후 현황 미확인.",
+        "source": "Investing.com 구성종목 + 네이트뉴스 [매체인용]",
+        "direction": "방산ETF 전반 강세 추세 유지 중"
+      }
+    },
+
+    "narrative": {
+      "pro_narrative": [
+        {
+          "title": "한국판 SpaceX/록히드마틴 구상 — 방산+우주 통합체",
+          "description": "한화에어로스페이스가 KAI 지분 4.99% 재취득(7년 만). 한화+한화시스템+에어로USA 연합. 2월 MOU 체결에 이어 지분 동맹 완성. '한국형 록히드마틴' 구상 가속 서사.",
+          "outlets": ["문화일보", "경남신문", "뉴스1", "머니투데이"],
+          "source_date": "2026-03-16~19",
+          "direction": "긍정",
+          "source": "Tavily MCP [MCP]"
+        },
+        {
+          "title": "차세대발사체 2.29조 재사용 전환 — 한화 체계종합기업 역할 확대",
+          "description": "우주항공청, 메탄 기반 재사용 발사체로 전환 확정. 2032년까지 2조2,921억원 투입. delta SDR 회의(3/19) 개최. 한화에어로스페이스가 체계종합기업으로 100명 참여. '우리도 스페이스X처럼' 프레이밍.",
+          "outlets": ["연합뉴스", "뉴시스", "동아사이언스", "전자신문"],
+          "source_date": "2026-03-18~19",
+          "direction": "긍정",
+          "source": "Tavily MCP [MCP]"
+        },
+        {
+          "title": "SpaceX IPO $1.75T — 글로벌 우주주 리레이팅 서사",
+          "description": "SpaceX, 3월 중 SEC 기밀 제출 예정. 6월 상장 목표. $75B 조달, $1.75T 밸류. Starlink 9.2M 가입자, 2025년 $10B+ 매출. 한화에어로+쎄트렉아이 수혜 종목으로 지목.",
+          "outlets": ["Yahoo Finance", "Motley Fool", "EuroNews", "네이버 프리미엄콘텐츠(유니베스트)"],
+          "source_date": "2026-03-26~27",
+          "direction": "긍정 (글로벌 리레이팅 트리거 서사)",
+          "source": "WebSearch + Tavily MCP [MCP]"
+        },
+        {
+          "title": "누리호 4차 성공 — 민간이관 완성 기정사실화",
+          "description": "2025년 11월 27일 누리호 4차 발사 성공. 한화에어로스페이스가 카운트다운 오퍼레이터까지 담당. 13기 위성 분리 완료. KASA 개청 이후 첫 발사. 민간이관 완성의 사실상 공식화.",
+          "outlets": ["나무위키", "뉴시스"],
+          "source_date": "2025-11-27 (역사적 사실)",
+          "direction": "긍정 (구조적 이전 완성)",
+          "source": "Tavily MCP [MCP]"
+        }
+      ],
+      "contra_narrative": [
+        {
+          "title": "방산 독점 우려 — 이재명 정부의 공식 경계",
+          "description": "이재명 대통령 발언: '방산 생태계가 특정 기업에 독점화되면 곤란하다'. 한화가 KAI까지 인수하면 육해공 방산 단일 지배. 방위사업비 증가, 기술경쟁력 하락 우려.",
+          "outlets": ["딜사이트", "시사저널", "BusinessPost"],
+          "source_date": "2026-03-17~22",
+          "direction": "부정 (구조적 견제 서사)",
+          "source": "WebSearch [MCP]"
+        },
+        {
+          "title": "한국 우주산업 현실 — SpaceX 격차 과소평가 우려",
+          "description": "SpaceX Falcon 9 kg당 $~1,000 (현재 운용). 한국 차세대발사체 목표: 2030년대 kg당 $1,000. 격차는 '목표 수렴'이 아니라 SpaceX도 계속 비용 감소($100/kg 목표). '우리도 스페이스X처럼' 서사 대비 기술 현실 격차 지적. 한빛-나노 발사 실패(2025년 12월)가 생태계 취약성 시사.",
+          "outlets": ["이코노미조선", "이노스페이스 관련 보도"],
+          "source_date": "2026-03 종합",
+          "direction": "부정/경계 (현실성 격차)",
+          "source": "WebSearch [MCP]"
+        },
+        {
+          "title": "LIG넥스원 KAI 인수 경쟁 가능성 — 동맹의 불확실성",
+          "description": "LIG넥스원 내부 TF 가동. LS 컨소시엄도 다크호스로 부상. KAI 인수가 '한화 단독' 시나리오로 확정되지 않음. 경쟁 구도가 주가에 불확실성 요인.",
+          "outlets": ["딜사이트", "아주경제"],
+          "source_date": "2026-03-17~22",
+          "direction": "중립/불확실",
+          "source": "WebSearch [MCP]"
+        }
+      ]
+    },
+
+    "expert": {
+      "found": [
+        {
+          "name": "박재성",
+          "role": "정책",
+          "affiliation": "우주항공청 우주수송부문장",
+          "statement": "'차세대발사체는 2030년대 국내 우주수송을 책임질 국가 주력 발사체로, 급변하는 우주발사체 기술 패러다임에 능동적으로 대응하기 위해 재사용발사체로 개발할 예정'",
+          "direction": "긍정",
+          "source": "연합뉴스 2026-03-18 [MCP]"
+        },
+        {
+          "name": "이재명 대통령",
+          "role": "반대입장",
+          "affiliation": "대한민국 대통령",
+          "statement": "'방산 생태계가 특정 기업에 독점화되면 곤란하다'",
+          "direction": "부정 (견제)",
+          "source": "딜사이트/BusinessPost 인용 2026-03 [WebSearch]"
+        },
+        {
+          "name": "DS투자증권 방산 애널리스트",
+          "role": "분석자",
+          "affiliation": "DS투자증권",
+          "statement": "한화에어로스페이스 목표주가 1,570,000원 유지. '2026년 수주의 해'. 노르웨이 천무 2.6조, 폴란드 K9 EC3 7조 파이프라인. 영업이익 4.5조 전망.",
+          "direction": "긍정",
+          "source": "WebSearch + DS투자증권 리포트 요약 [MCP보조]"
+        },
+        {
+          "name": "LS증권 방산 애널리스트",
+          "role": "분석자",
+          "affiliation": "LS증권",
+          "statement": "목표주가 1,520,000원. '잠재적 수요 열려있다'.",
+          "direction": "긍정",
+          "source": "머니투데이 2026-01-14 인용 [WebSearch]"
+        },
+        {
+          "name": "이코노미조선 전문가",
+          "role": "반대입장",
+          "affiliation": "이코노미조선",
+          "statement": "'우주는 기술이 아닌 경제 영역. K-저궤도 생태계 구축이 핵심. 발사체만으로는 부족, 상용화 연계 필요.'",
+          "direction": "경계 (구조적 접근 요구)",
+          "source": "이코노미조선 2026-03-13 [WebSearch]"
+        }
+      ],
+      "silence": [
+        {
+          "name": "KAI 경영진/신임 CEO",
+          "role": "피해자/당사자",
+          "statement": "침묵 — 미발견",
+          "direction": "침묵",
+          "note": "KAI 8개월 경영 공백 후 최근 경영진 교체 시기. 입장 표명 자제 가능. 수출입은행 협의 중일 가능성."
+        },
+        {
+          "name": "수출입은행 관계자",
+          "role": "공급자 (최대주주 26.41%)",
+          "statement": "침묵 — 미발견",
+          "direction": "침묵",
+          "note": "최대주주로서 매각/유지 결정권 보유. 공식 입장 미발표. 정부 방침 확인 전 침묵 중일 가능성."
+        },
+        {
+          "name": "우주항공청 장관",
+          "role": "정책",
+          "statement": "침묵 — 부문장 발언만 확인됨",
+          "direction": "침묵",
+          "note": "장관급 공식 발언 미확인. 부문장 기술 발언에 그침."
+        }
+      ]
+    },
+
+    "policy": {
+      "items": [
+        {
+          "institution": "우주항공청(KASA)",
+          "action": "차세대발사체 delta SDR 회의 개최 (2026-03-19). 메탄 기반 재사용 발사체 전환 확정. 총사업비 2조2,921억원.",
+          "direction": "강화 (민간이관 + 재사용 전환)",
+          "source": "연합뉴스/동아사이언스 2026-03-18 [MCP]"
+        },
+        {
+          "institution": "기획재정부",
+          "action": "차세대발사체 사업 변경 승인 (2025년 말). 재사용 전환에 따른 총사업비 증가 승인.",
+          "direction": "지원",
+          "source": "드론매거진 보고서 인용 [WebSearch]"
+        },
+        {
+          "institution": "이재명 정부",
+          "action": "KAI 민영화 공식 언급 자제. 방산독점 우려 발언.",
+          "direction": "견제 (민영화에 소극적)",
+          "source": "WebSearch [MCP보조]"
+        },
+        {
+          "institution": "SEC(미국)",
+          "action": "SpaceX 기밀 IPO 제출 임박. 3월 내 제출 → 6월 공개 상장 목표.",
+          "direction": "글로벌 트리거",
+          "source": "Yahoo Finance/EuroNews 2026-03-27 [MCP]"
+        }
+      ]
+    },
+
+    "positioning": {
+      "items": [
+        {
+          "channel": "TIGER 방산&우주 ETF(463250)",
+          "observation": "한화에어로(21.32%), KAI(19.53%) 상위 2위 구성. 2026년 연초 30%+ 수익률 기록 후 3월 이란 쇼크로 조정. 방산 ETF에 외국인·기관 매수 vs 개인 매도 수급 구조 유지 보도.",
+          "source": "Investing.com + 네이트뉴스 [WebSearch]",
+          "direction": "긍정 (수급 구조 건전)"
+        },
+        {
+          "channel": "애널리스트 컨센서스",
+          "observation": "21명 매수 의견. 평균 목표가 1,557,857원. 최고 1,900,000원. 현재가 1,335,000원 대비 약 +16.7% 상승여력. 'Strong Buy' 컨센서스.",
+          "source": "Investing.com 컨센서스 [WebSearch]",
+          "direction": "긍정"
+        },
+        {
+          "channel": "KAI 인수 경쟁 구도",
+          "observation": "LIG넥스원 내부 TF 가동, LS 컨소시엄 다크호스. 수출입은행 지분 26.41%의 최종 매각 여부 미결. 경쟁 구도가 KAI 밸류에이션 상방 압력으로 작용.",
+          "source": "딜사이트/아주경제 [WebSearch]",
+          "direction": "중립 (경쟁으로 밸류 상방 but 불확실성)"
+        },
+        {
+          "channel": "이노스페이스(소형주 리레이팅)",
+          "observation": "현재 3,750원. 한빛-나노 발사 실패(2025-12) 이후 저점 형성. 2026년 재발사 계획. SpaceX IPO 리레이팅 국면에서 후행 수혜 가능하나 발사 성공 조건부.",
+          "source": "Yahoo Finance MCP + WebSearch [MCP]",
+          "direction": "조건부 (재발사 성공 시 수혜)"
+        }
+      ]
+    }
+  },
+
+  "pattern_reading": {
+    "lens1_direction": {
+      "verdict": "분열 (서사 강세 vs 가격 조정)",
+      "detail": "서사 계층: 한화+KAI 동맹, 차세대발사체, SpaceX IPO 트리거 모두 강한 긍정 방향. 정책 계층: KASA 재사용 전환 확정으로 정책도 방향 일치. 그러나 가격 계층: 한화에어로는 공시 후 급등→조정→횡보 패턴. KAI는 공시 직후 스파이크→되돌림. KOSPI 전반 -12.9% 하락 환경. '서사↑ 가격→' 구조. F-04 경보: 매체 프레임 vs 시장 실제 반응 괴리 명시."
+    },
+    "lens2_time": {
+      "verdict": "복합 — 정책주도(C) + 서사주도(B)",
+      "detail": "KASA의 delta SDR 회의(3/19)와 차세대발사체 예산 확정이 정책이 먼저 움직인 구조(C). SpaceX IPO 기대감이 서사 증폭(B). 가격은 서사와 정책에 후행 중 — 아직 시장주도(A) 단계 미진입."
+    },
+    "lens3_proportion": {
+      "verdict": "과소 반응 (서사 대비)",
+      "detail": "입력: KAI 지분 4.99% + 차세대발사체 2.29조 + SpaceX IPO 트리거 3중 복합. 한화에어로 3월 중 실제 상승폭 +11.7% (월초 대비)이나 3/16 공시 후 오히려 조정. KAI도 공시 직후 스파이크→되돌림. 이란 전쟁 리스크오프 환경이 우주+방산 서사의 시장 흡수를 억제하고 있는 것으로 판독."
+    },
+    "lens4_propagation": {
+      "verdict": "D경로 (분석주도) — 시장 전파 지연",
+      "detail": "증권사 리포트(애널리스트 분석) → 서사 형성 → 가격 반응 지연. ETF 수급은 긍정적이나 개별 종목 시장 반응은 이란 쇼크에 묻힘. SpaceX IPO 리레이팅은 아직 서사 단계, 실질 수급 전환 미확인. 2차 전파(이노스페이스, 쎄트렉아이 등 소형 우주주)는 아직 미미."
+    },
+    "cumulative_signal": "해당. CUMULATIVE 성격 — 누리호 민간이관 + 지분 동맹 + 차세대발사체 + SpaceX IPO 4개 요소가 동시 수렴. 단일 이벤트가 아닌 전략 구조 재편 신호.",
+    "stereo_recommendation": {
+      "verdict": "권장",
+      "reason": "서사↑ vs 가격→(과소) 괴리 + CUMULATIVE + 한국 전이 경로 모두 해당. 특히 SpaceX IPO가 글로벌 트리거로 작동할 경우 국내 우주주 리레이팅 타이밍과 메커니즘 분석이 필요.",
+      "mode": "시간축분해 + PSF/macro교차",
+      "prompt": "⚠ Stereo 연계 판정 | 판정: 권장 | 이유: 서사-가격 괴리(과소반응) + CUMULATIVE(4중 수렴) + 한국 전이 경로 식별 | 모드: 시간축분해+PSF교차 | 실행할까요?"
+    }
+  },
+
+  "unresolved": [
+    {
+      "id": "UQ-HANWHA-001",
+      "question": "SpaceX SEC 기밀 제출 후 공식 S-1 공개(~5월 말) 시 한국 우주주(한화에어로, KAI, 이노스페이스) 수급에 어떤 변화가 발생하는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SpaceX S-1 공개 보도 확인 시",
+      "check_channels": {
+        "price": ["012450.KS", "047810.KS", "274400.KQ"],
+        "narrative": ["한국 방산/우주 매체", "Bloomberg Korea"],
+        "positioning": ["TIGER 방산&우주 ETF 수급", "외국인 순매수 데이터"]
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-06-30",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "아직 S-1 미공개. 기밀 제출 임박 보도만 있음.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-HANWHA-002",
+      "question": "수출입은행(KAI 26.41%)이 한화에어로스페이스의 추가 지분 매입 또는 인수에 응할 의향을 표명하는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "수출입은행 공식 발표 또는 정부의 KAI 민영화 추진 확정 보도",
+      "check_channels": {
+        "price": ["047810.KS"],
+        "narrative": ["딜사이트", "연합뉴스"],
+        "positioning": ["KAI 지분 변동 공시"]
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-12-31",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "수출입은행 공식 입장 미발표. 이재명 정부 민영화 언급 자제.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-HANWHA-003",
+      "question": "이노스페이스 한빛-나노 2026년 재발사(브라질 알칸타라) 성공 여부 — SpaceX IPO 리레이팅 환경에서 소형 우주주 수혜 전파 트리거",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "이노스페이스 재발사 일정 공식 발표 및 발사 결과",
+      "check_channels": {
+        "price": ["274400.KQ"],
+        "narrative": ["이노스페이스 공식 발표", "국내 우주 전문 매체"],
+        "positioning": ["이노스페이스 주가 급등락"]
+      },
+      "created": "2026-03-29",
+      "deadline": "2026-12-31",
+      "last_checked": "2026-03-29",
+      "last_checked_result": "2026년 상반기 재도전 검토 중. 구체 일정 미확정.",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+
+  "self_audit": {
+    "Q1_channel_rationale": "✅ 모든 채널에 선정 이유 기록됨",
+    "Q2_contra_both": "✅ 서사 반대(방산독점, 현실성 격차, 경쟁 불확실성) + 전문가 반대(이재명 대통령, 이코노미조선) 각 1건+ 포함",
+    "Q3_price_narrative_gap": "✅ F-04 발동 — 서사↑ vs 가격→ 괴리 명시. 이란 쇼크 환경 억제 원인 기록",
+    "Q4_silence_recorded": "✅ KAI 경영진, 수출입은행, 우주항공청 장관 침묵 기록",
+    "Q5_primary_source": "✅ 가격 데이터 전량 Yahoo Finance MCP 직접 수집. 분석·서사는 [MCP]/[WebSearch] 태그 부착",
+    "result": "5✅ — 완료"
+  },
+
+  "watch_proposals": [
+    {
+      "id": "W-20260329-UQ-001",
+      "type": "event_tracking",
+      "subject": "SpaceX S-1 공개 → 한국 우주주 수급 체크",
+      "schedule": "condition (S-1 공개 보도 확인 시)",
+      "end_condition": "SpaceX IPO 완료 또는 취소",
+      "data_sources": ["Yahoo Finance MCP", "WebSearch"]
+    },
+    {
+      "id": "W-20260329-UQ-002",
+      "type": "policy_watch",
+      "subject": "수출입은행/이재명 정부 KAI 민영화 공식 입장",
+      "schedule": "월 1회",
+      "end_condition": "KAI 민영화 확정 또는 공식 포기 선언",
+      "data_sources": ["DART MCP", "연합뉴스/딜사이트 WebSearch"]
+    }
+  ],
+
+  "sources_summary": [
+    {"tool": "Yahoo Finance MCP", "items": ["012450.KS 현재가 및 1개월 히스토리", "047810.KS 현재가 및 1개월 히스토리", "274400.KQ 현재가", "^KS11 1개월 히스토리"]},
+    {"tool": "Tavily MCP", "items": ["한화에어로스페이스 KAI 지분 공시", "차세대발사체 delta SDR 회의", "누리호 4차 민간이관 발사"]},
+    {"tool": "WebSearch", "items": ["SpaceX IPO $1.75T S-1 기밀 제출", "방산 애널리스트 목표주가 컨센서스", "KAI 민영화 반대/경쟁 구도", "이노스페이스 발사 실패/재도전", "발사비용 kg당 추이", "TIGER 방산ETF 수급", "xAI Terafab", "X Money 4월 베타"]},
+    {"tool": "DART MCP", "items": ["한화에어로스페이스 corp_code 확인"]}
+  ],
+
+  "metadata": {
+    "created": "2026-03-29",
+    "version": "1.0",
+    "next_check": "SpaceX S-1 공개 시 또는 수출입은행 공식 입장 발표 시"
+  }
+}

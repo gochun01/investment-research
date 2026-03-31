@@ -1,0 +1,540 @@
+{
+  "meta": {
+    "issue_id": "RM-2026-03-28-SKH-ADR",
+    "slug": "skh-adr",
+    "created": "2026-03-28",
+    "analyst": "reaction-monitor",
+    "phase_completed": "Phase 0~4.5 + Phase 5 제안",
+    "stereo_trigger": "권장",
+    "source_system": "reaction-monitor v1"
+  },
+
+  "fingerprint": {
+    "domain": "기업 자본시장 + 코리아 디스카운트 구조 개혁",
+    "geo_scope": "한국(원산지) → 글로벌(미국 자본시장 접근)",
+    "touched_assets": {
+      "primary": ["000660.KS (SK하이닉스)", "005930.KS (삼성전자)"],
+      "secondary": ["^KS11 (KOSPI)", "EWY (한국 ETF)", "USDKRW=X (원화)", "MU (Micron ADR — 비교기준)", "TSM (TSMC ADR — 비교기준)"],
+      "contrast": ["SOX (필라델피아 반도체 지수 — 편입 기대 자산)"]
+    },
+    "stakeholders_primary": [
+      "SK하이닉스 (ADR 추진 주체)",
+      "삼성전자 (후속 ADR 압력 대상)",
+      "Artisan Partners (삼성 ADR 촉구)",
+      "외국인 투자자 (접근성 수혜)",
+      "기존 국내 기관/개인 투자자 (희석 우려)"
+    ],
+    "secondary_stakeholders": [
+      "한국 금융위원회/FSS (밸류업 프로그램 연계 정책 정당화)",
+      "국민연금 (최대 국내 기관주주 — 반대 포지션 확인됨)",
+      "한국기업거버넌스포럼 (공식 반대 입장)",
+      "NVIDIA / HBM 수요 생태계 (ADR 자금의 capex 수혜)",
+      "Google / AI 효율화 진영 (TurboQuant — ADR 타이밍 교란 변수)",
+      "코스피 상장 여타 반도체·대형주 (코리아 디스카운트 해소 연쇄 기대)",
+      "EWY 패시브 펀드 투자자 (한국 노출 ETF 흐름)"
+    ],
+    "temporal_type": "전개형",
+    "temporal_detail": "2026 H2 상장 목표 — 6~9개월 궤적. 현재 SEC 비공개 제출(F-1) 단계.",
+    "scanner_origin": {
+      "temporal_tag": "DEVELOPING",
+      "scp_score": 4,
+      "note": "issue-scanner 사전 prefetch 활용. 가격 snapshot 포함."
+    }
+  },
+
+  "channels": {
+    "selection_rationale": {
+      "price": "지문 접촉 자산 — SKH, SAM, KOSPI, EWY, USDKRW, MU(비교), TSM(비교) 7개 채널",
+      "narrative": "기업 자본시장 + 코리아 디스카운트 영역 — 국내·해외 양면 + 반대 서사 필수",
+      "expert": "ADR 추진/반대 이해관계자 전 유형 선행 목록화 후 수집",
+      "policy": "한국 정부 밸류업 프로그램 + 상법 개정 — 이해관계자에 공공기관 포함",
+      "positioning": "전개형 이슈 — EWY 자금 흐름, 외국인 순매수, 원화 선물",
+      "sns": {
+        "status": "활성",
+        "reason": "Q2 YES — 한국 개인투자자 커뮤니티(네이버 증권, 주총 반발 주주) 활성. 국내 리테일 커뮤니티 프록시 수집 대상.",
+        "collected": "주총 반발 주주 발언 (한겨레 보도 경유) 수집됨. SNS 직접 수집은 접근 한계로 제한적."
+      }
+    }
+  },
+
+  "reactions": {
+
+    "price": {
+      "collected_at": "2026-03-28",
+      "method": "[MCP] Yahoo Finance",
+      "assets": {
+        "000660.KS": {
+          "current": 922000,
+          "change_1mo": "-12.1% (2/27 1,061,000 → 3/27 933,000)",
+          "change_adr_event": "3/24 986,000 → 3/25 +5% 장중 급등(1,035,000 추정) → 3/26-27 TurboQuant 충격 → 3/27 종가 933,000",
+          "net_from_filing_date": "-5.4% (3/24 종가 대비 3/27 기준)",
+          "note": "ADR 발표 즉시 반응(+5%)이 TurboQuant(구글 메모리 압축 알고리즘, 3/25-26 발표)에 의해 상쇄됨. 두 이벤트 동시 충돌로 순효과 측정 어려움.",
+          "ytd_context": "YTD +약 60% (CNBC 기준). 2025년 전체 +274%."
+        },
+        "005930.KS": {
+          "current": 179700,
+          "change_1mo": "-16.8% (2/27 216,500 → 3/27 180,100)",
+          "change_adr_event": "3/24 189,700 → 3/27 180,100, -5.1%",
+          "note": "Artisan Partners ADR 촉구(3/27 Bloomberg) 발표 후 가격 하락 지속 — ADR 서사와 가격 방향 괴리 존재. 삼성 자체 공식 발언 없음 = 침묵.",
+          "ytd_context": "SAM이 SKH보다 낙폭 큼 — HBM 주도권 SKH 유지 + 삼성 HBM4 경쟁 우려 병존"
+        },
+        "EWY": {
+          "current": 120.98,
+          "change_1mo": "-18.0% (3/2 147.54 → 3/27 120.98)",
+          "march_inflow": "3/11 주간 EWY 유입 $1.1B (ETF Channel 보도) — AI 반도체 테마 유입",
+          "note": "1개월 낙폭 -18%로 KOSPI(-12.9%)보다 큰 이유는 원화 약세(5.3%) + 지수 이중 효과. 단 3/11주간 대규모 유입($1.1B) 확인 — 기관 패시브 매수가 가격 하락에도 유입 지속 중."
+        },
+        "USDKRW": {
+          "current": 1508.06,
+          "change_1mo": "+5.3% (1,432 → 1,508, 원화약세 방향)",
+          "note": "ADR 상장은 달러 자금 조달 → 원화 환전 수요 증가 → 이론상 원화 강세 압력. 그러나 현재 원화는 오히려 약세. 매크로 요인(중동 리스크, Fed 동결 기대 흔들림)이 지배적.",
+          "adr_fx_hypothesis": "ADR 조달 원화 환전 효과는 실제 상장 시점(H2)에 발현 가능. 현재 단계에서는 매크로 우세."
+        },
+        "MU_comparison": {
+          "current": 357.22,
+          "change_1mo": "-13.4%",
+          "change_adr_week": "3/25 382.09 → 3/27 357.22, -6.5%",
+          "note": "MU도 TurboQuant 충격 동조 하락. SKH ADR이 MU와 동일 시장에서 경쟁하는 구도 — 기존 MU 투자자 일부 SKH ADR 전환 가능성 논의됨."
+        },
+        "TSM_comparison": {
+          "current": 326.74,
+          "change_1mo": "-11.2%",
+          "note": "TSMC ADR 비교 기준. SKH가 TSMC 수준 PER 인정받으면 현재가 대비 3~4배 업사이드 논의됨 — 서사 주장. 현재 주가는 TurboQuant로 동반 하락 중."
+        },
+        "KOSPI": {
+          "current": 5438.87,
+          "change_1mo": "-12.9% (2/27 6,244 → 3/27 5,439)",
+          "note": "코스피 전반 약세 환경 — ADR 재평가 테마와 역풍 구조 충돌."
+        }
+      }
+    },
+
+    "narrative": {
+      "pro_adr": [
+        {
+          "source": "CNBC",
+          "url": "https://www.cnbc.com/2026/03/25/sk-hynix-confidential-us-listing-adr-ai-memory.html",
+          "author": "Dylan Butts",
+          "date": "2026-03-25",
+          "frame": "자금 조달 + 글로벌 AI 인프라 확장",
+          "key_quote": "SK Hynix rides 'unprecedented growth' in memory market. CEO Kwak says aims to secure more than 100 trillion won in net cash for long-term strategic investments.",
+          "direction": "친ADR",
+          "tag": "[MCP-Firecrawl]"
+        },
+        {
+          "source": "BusinessKorea",
+          "url": "https://www.businesskorea.co.kr/news/articleView.html?idxno=266192",
+          "author": "Yoon Young-sil",
+          "date": "2026-03-26",
+          "frame": "코리아 디스카운트 해소 + PER 재평가",
+          "key_quote": "If SK hynix trades in the same market as NVIDIA and TSMC through an ADR listing, there is a strong likelihood of a value re-rating aligned with global benchmarks.",
+          "direction": "친ADR (단 희석 우려도 병기)",
+          "tag": "[MCP-Firecrawl]"
+        },
+        {
+          "source": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-03-27/fund-that-bet-big-on-samsung-pushes-for-adrs-to-raise-valuation",
+          "author": "Youkyung Lee",
+          "date": "2026-03-27",
+          "frame": "삼성도 후속 ADR — 코리아 디스카운트 해소 논쟁 재점화",
+          "key_quote": "Artisan Partners urges Samsung to float ADRs after SK Hynix filed. David Samra: Samsung has been actively evaluating the cost-benefit analysis of an ADR listing for several years.",
+          "direction": "친ADR (삼성 확장 가능성)",
+          "tag": "[MCP-Firecrawl]"
+        },
+        {
+          "source": "한국경제 (Daum)",
+          "url": "https://v.daum.net/v/20260323172459226",
+          "date": "2026-03-23",
+          "frame": "신주 발행 방식 단독 보도",
+          "key_quote": "SKH PER 5.7배로 MU(12.1배)의 절반. ADR 성공 시 주가 190만원대 업사이드. SOX 편입 → 패시브 자금 유입 기대.",
+          "direction": "친ADR",
+          "tag": "[WebSearch]"
+        }
+      ],
+      "anti_adr": [
+        {
+          "source": "한겨레",
+          "url": "https://www.hani.co.kr/arti/economy/economy_general/1251017.html",
+          "date": "2026-03-25",
+          "frame": "신주 발행 = 주주가치 훼손 논란",
+          "key_quote": "자사주 소각 발표 두 달 만에 다시 신주를 발행해야 하는 처지. 주총에서 주주: '돈을 이렇게 잘 버는 회사가 왜 신주 발행인지 이해할 수 없다'",
+          "direction": "반ADR (신주 발행 방식)",
+          "tag": "[MCP-Tavily]",
+          "note": "R-03 준수 — 반대 매체 포함"
+        },
+        {
+          "source": "쿠키뉴스",
+          "url": "https://www.kukinews.com/article/view/kuk202603250199",
+          "date": "2026-03-25",
+          "frame": "잉여현금 넘치는데 신주 발행 — 거버넌스포럼 반대",
+          "key_quote": "한국기업거버넌스포럼: ADR 발행은 찬성, 잉여현금이 넘치는데 기존 주주 지분이 희석되는 신주 발행 방식은 반대.",
+          "direction": "조건부 반대",
+          "tag": "[MCP-Tavily]"
+        }
+      ],
+      "turboquant_counter_narrative": {
+        "source": "CNBC + Yahoo Finance News",
+        "date": "2026-03-25~26",
+        "frame": "AI 메모리 수요 6배 압축 — SKH ADR 타이밍 역풍",
+        "key_quote": "Google TurboQuant: 6x AI memory reduction. 'Did Alphabet Just End the AI Memory Boom?' (Zacks, 3/27). SK Hynix and Samsung fell 6% and nearly 5% following announcement.",
+        "direction": "ADR 타이밍 역풍 (메모리 수요 불확실성 증폭)",
+        "tag": "[WebSearch + Yahoo Finance MCP]",
+        "note": "★ 핵심 서사 교란 변수. ADR 발표(3/24~25)와 TurboQuant 공개(3/25~26)가 동시 충돌. 시장은 TurboQuant에 더 크게 반응하여 ADR 호재 상쇄."
+      }
+    },
+
+    "expert": {
+      "pro_adr": [
+        {
+          "name": "김영건",
+          "org": "미래에셋증권",
+          "role": "분석자",
+          "date": "2026-03-26",
+          "statement": "MU PER 7.8배, SanDisk 17.6배 대비 SKH PER 5.9배. ADR 발행으로 SKH 한국 상장주 밸류에이션 자극 효과 기대.",
+          "direction": "친ADR",
+          "source": "BusinessKorea / 쿠키뉴스",
+          "tag": "[WebSearch]"
+        },
+        {
+          "name": "김선우",
+          "org": "메리츠증권",
+          "role": "분석자",
+          "date": "2026-03-26",
+          "statement": "SKH가 수익성·기술·고객 대응력에서 MU보다 우월함에도 저평가. 이를 탈피하는 가장 효율적 방법은 ADR 주주환원. 해외 신주 발행 추진 시 주주가치 증대 목적에 부합할 것.",
+          "direction": "친ADR",
+          "source": "BusinessKorea",
+          "tag": "[WebSearch]"
+        },
+        {
+          "name": "Goldman Sachs Korea팀",
+          "org": "Goldman Sachs",
+          "role": "분석자",
+          "date": "2026-03 (정확일 미확인)",
+          "statement": "SKH 12개월 목표주가 1.2M→1.35M KRW. Buy 유지. PER 4.5x, PBR 1.7x — 여전히 저평가. ADR 상장 포함 자본 계획 긍정적 시각.",
+          "direction": "친ADR",
+          "source": "WebSearch (Goldman Sachs Korea analyst)",
+          "tag": "[WebSearch]",
+          "note": "1차 리포트 원문 미확인 — 매체 인용 기반"
+        },
+        {
+          "name": "David Samra",
+          "org": "Artisan Partners (MD)",
+          "role": "피해자측/압력 행사자",
+          "date": "2026-03-27",
+          "statement": "Samsung should follow SK Hynix's example and list ADRs. Samsung has been actively evaluating the cost-benefit analysis of an ADR listing for several years.",
+          "direction": "친ADR (삼성 대상)",
+          "source": "Bloomberg 2026-03-27",
+          "tag": "[MCP-Firecrawl]"
+        },
+        {
+          "name": "최태원",
+          "org": "SK그룹 회장",
+          "role": "공급자측 (추진 주체)",
+          "date": "2026-03-16 (GTC 2026 발언) + 2026-03-25 (주총 간접)",
+          "statement": "ADR 상장 검토 중. 한국·미국·글로벌 주주들에 노출돼 더 글로벌한 회사가 될 수 있다.",
+          "direction": "친ADR",
+          "source": "뉴시스 / WebSearch",
+          "tag": "[WebSearch]"
+        },
+        {
+          "name": "곽노정",
+          "org": "SK하이닉스 CEO",
+          "role": "공급자측 (실행 주체)",
+          "date": "2026-03-25 (주총)",
+          "statement": "하반기 상장 목표. 규모·방식 미확정. 주주들의 다양한 의견 경청. 주주가치 제고 방향으로 추진.",
+          "direction": "친ADR",
+          "source": "한겨레 / 뉴시스",
+          "tag": "[MCP-Tavily]"
+        }
+      ],
+      "anti_adr": [
+        {
+          "name": "이남우",
+          "org": "한국기업거버넌스포럼 (회장)",
+          "role": "반대입장",
+          "date": "2026-03-25",
+          "statement": "ADR 발행 자체는 찬성. 단 잉여현금이 넘치는 상황에서 기존 주주 지분 희석하는 신주 발행 방식은 반대. 근본적 거버넌스 개혁이 ADR 상장에 선행해야 한다.",
+          "direction": "조건부 반대",
+          "source": "BusinessKorea / 쿠키뉴스",
+          "tag": "[MCP-Firecrawl + WebSearch]",
+          "note": "R-03 + F-01 준수 — 반대 전문가 포함"
+        }
+      ],
+      "silence_records": [
+        {
+          "name": "국민연금 (ADR 찬반 공식 입장)",
+          "role": "피해자측 (희석 대상 최대 주주)",
+          "statement": "침묵 — ADR 자체에 대한 공식 입장 미발견",
+          "direction": "침묵",
+          "note": "자사주 처분(임직원 보상 목적) 반대는 확인됨. ADR 신주 발행 찬반 공식 발언은 수집 범위 내 미발견. 가능한 이유: (1) 내부 검토 중, (2) 의결권 행사 전 공식 발언 자제",
+          "search_keywords_used": "국민연금 SK하이닉스 ADR 신주 입장",
+          "tag": "[R-04 + R-09]"
+        },
+        {
+          "name": "JPMorgan Korea팀",
+          "role": "분석자",
+          "statement": "침묵 — 미발견",
+          "direction": "침묵",
+          "note": "Goldman Sachs 발언은 확인됨. JPMorgan 발언은 수집 범위 내 미발견. 검색 키워드: 'JPMorgan SK Hynix ADR 2026'",
+          "tag": "[R-09]"
+        },
+        {
+          "name": "삼성전자 (공식 IR/이사회)",
+          "role": "후속 ADR 대상",
+          "statement": "침묵 — 공식 발언 없음 확인",
+          "direction": "침묵",
+          "note": "Bloomberg 보도에서 'Samsung has yet to comment'. 삼성 GDR(런던)은 기존 상장. 미국 ADR 관련 공식 검토 발표 없음. 의도적 침묵 또는 내부 평가 중 가능성 공존.",
+          "tag": "[R-04 + R-09]"
+        }
+      ]
+    },
+
+    "policy": {
+      "collected_at": "2026-03-28",
+      "items": [
+        {
+          "channel": "한국 금융위원회 — 밸류업 프로그램",
+          "reason": "ADR 상장이 밸류업 프로그램의 정책 목표(코리아 디스카운트 해소)와 정렬",
+          "observation": "2026년 6월 정기심사부터 공시이행기업 중심 지수 구성. 밸류업 공시기업 우대방안 마련 중. ADR 상장을 명시적으로 장려하는 발언은 미발견.",
+          "direction": "간접 지지",
+          "source": "금융위 공시 / Kim & Chang 분석",
+          "tag": "[WebSearch]"
+        },
+        {
+          "channel": "상법 개정안 — 자사주 소각 의무화",
+          "reason": "SKH가 신주 발행 방식 선택한 배경",
+          "observation": "자사주 소각 의무 조항 국회 통과. SKH가 기존 자사주 소각(2/9 1530만주) 후 가용 자사주 없어 신주 발행 방식으로 전환. 거버넌스포럼은 이를 밸류업에 역행이라 비판.",
+          "direction": "중립 (구조적 제약 설명)",
+          "source": "뉴시스 2026-03-26",
+          "tag": "[MCP-Tavily]"
+        },
+        {
+          "channel": "SK하이닉스 + 삼성전자 — 전(前) 금융위 출신 이사회 의장",
+          "reason": "2차 이해관계자 — 정책 네트워크 채널",
+          "observation": "SK하이닉스와 삼성전자 모두 전직 금융위원장 출신을 이사회 의장으로 선임(2026-03-27 Seoul Economic Daily). 밸류업 정책 접점 강화 구조.",
+          "direction": "정책 채널 강화",
+          "source": "Seoul Economic Daily 2026-03-27",
+          "tag": "[WebSearch]"
+        }
+      ]
+    },
+
+    "positioning": {
+      "collected_at": "2026-03-28",
+      "items": [
+        {
+          "channel": "EWY 자금 흐름",
+          "reason": "한국 ADR ETF 패시브 포지션 — 코리아 디스카운트 재평가 기대 자금 추적",
+          "observation": "3/11 주간 EWY 유입 $1.1B (ETF Channel 보도). YTD +약 37% (3/11 기준 36.65% 보도). 단 3/11 이후 가격 하락세(-18% 1mo)에도 유입 지속 중 — 기관 패시브 접근.",
+          "direction": "매수 기조 유입 (가격 하락에도)",
+          "source": "ETF Channel / 247wallst.com",
+          "tag": "[WebSearch]"
+        },
+        {
+          "channel": "외국인 코스피 수급",
+          "reason": "코리아 디스카운트 해소 시 외국인 순매수 가속 여부 추적 채널",
+          "observation": "헤럴드경제: 개미 26조 순매수 vs 외국인 22조 순매도 — 코스피 수급 전쟁 진행 중. 12월 주간 기준 외국인 SKH 순매수 1.6조 (Threads 데이터, 과거). 3/25 ADR 발표 직후 외국인 대규모 매수 이탈 데이터는 미확인.",
+          "direction": "혼재 (월간 외국인 순매도 우세, 단기 ADR 기대 매수 교차)",
+          "source": "헤럴드경제 / WebSearch",
+          "tag": "[WebSearch]",
+          "note": "1차 수급 데이터(KRX 공시 직접) 미확보 — 매체 인용 기반. 한계 명기."
+        },
+        {
+          "channel": "원화 선물 / USDKRW",
+          "reason": "ADR 자금 조달 → 달러→원화 환전 수요 → 원화 강세 경로 추적",
+          "observation": "USDKRW 1,432 → 1,508 (+5.3%, 원화 약세). ADR 조달 원화 전환 효과는 미실현. 매크로 요인(중동 리스크, 이란 오일 제재, Fed 동결 기대 재조정)이 원화 약세 우세 구조.",
+          "direction": "ADR 원화강세 경로 현재 비활성",
+          "source": "Yahoo Finance MCP",
+          "tag": "[MCP]"
+        },
+        {
+          "channel": "TurboQuant 충격 — 메모리 섹터 포지셔닝 변화",
+          "reason": "★ 교란 변수 — ADR 발표와 TurboQuant 동시 충돌",
+          "observation": "Google TurboQuant(3/25-26 공개): AI 모델 메모리 6배 압축. SKH/SAM -6%/-5%, MU -6.5%, TSM -5.5% 동조 하락. 메모리 수요 장기 불확실성 증폭. 단 HBM/DRAM은 NAND/Flash보다 영향 제한적이라는 분석도 존재(GuruFocus).",
+          "direction": "단기 포지셔닝 이탈 압력",
+          "source": "Yahoo Finance News MCP + WebSearch",
+          "tag": "[MCP + WebSearch]",
+          "note": "ADR 호재와 TurboQuant 역풍이 동시 충돌 → 시장이 TurboQuant에 더 크게 반응한 구조가 관건. ICLR 2026 (4월 말)에서 TurboQuant 전체 논문 발표 예정 — 추가 충격 가능."
+        }
+      ]
+    }
+  },
+
+  "pattern_analysis": {
+
+    "lens1_direction": {
+      "verdict": "분열 (서사↑ ADR 긍정 vs 가격↓ TurboQuant 하락 — 복합 괴리)",
+      "detail": "ADR 발표(3/24-25) 서사는 친ADR 우세(CNBC, Bloomberg, 국내 증권사). 그러나 가격은 ADR 발표 직후 +5% 급등 후 TurboQuant(3/25-26) 충격으로 되돌려 3/27 순 -5.4%. 서사는 호재를 말하는데 가격은 음(-) 마감 — 복합 괴리 구조. F-04 해당: '매체 프레임 vs 시장 반응 괴리' 명시.",
+      "sub_pattern": "가격→서사 괴리 (서사↑ 가격↓, TurboQuant 교란으로 두 이벤트 분리 불가)",
+      "silence_signal": "삼성전자 공식 침묵 — ADR 압력 대상인데 발언 없음. 이 침묵 자체가 '현 단계 미검토' 또는 '내부 평가 중' 신호.",
+      "turboquant_note": "TurboQuant가 없었다면 ADR 발표 후 가격 수렴이 예상되는 구조. TurboQuant가 방향 판독을 교란하는 핵심 변수."
+    },
+
+    "lens2_time_structure": {
+      "verdict": "D 분석주도 → B 미디어주도 (혼합 전환 중)",
+      "detail": "최초 신호: 12월 자사주 소각 + GTC 2026(3/16) 최태원 발언 — 분석자·공급자가 먼저(D형). 3/23 한경 단독 보도 후 3/25 공시로 B형(미디어→가격) 전환. 가격은 서사 이후 5% 급등하나 TurboQuant로 단절. 포지셔닝(EWY 유입)은 3/11부터 선행 — 일부 A형(시장주도) 혼재. 결론: D→B 혼합, TurboQuant로 C형(정책/외부충격) 개입."
+    },
+
+    "lens3_proportionality": {
+      "verdict": "과소반응 (ADR 서사 대비 가격 반응 불충분)",
+      "detail": "ADR 발표의 서사 강도(10~14B 규모, 코리아 디스카운트 해소, 삼성 후속 가능)에 비해 가격 순반응은 3/27 기준 음수(-5.4%). TurboQuant를 제거하면 +5%는 서사 강도 대비 과소로 해석 가능. EWY $1.1B 유입은 비례에 가깝지만 가격 하락과 병존. 전문가 서사 과잉(소수 반대), 가격 과소 → F-04 패턴.",
+      "turboquant_adjustment": "TurboQuant 충격 제거 시 ADR 단독 반응 추정: +5~8% 수준 (비례에 가까울 수 있음). 두 이벤트 분리 불가로 최종 판정 유보 표시.",
+      "per_gap_context": "SKH PER 5.9x vs MU 7.8x~12.1x — 구조적 과소평가는 서사가 맞음. 단 ADR이 실제로 PER 격차를 해소할지는 미해소 질문."
+    },
+
+    "lens4_propagation": {
+      "verdict": "D→B 복합 경로 (전문가→서사→일부 가격, Tier 1 채택 미완료)",
+      "detail": "Goldman, Mirae Asset, Meritz가 D형(전문가→서사) 채택. Bloomberg/CNBC가 B형(서사→가격) 전파. 포지셔닝(EWY)은 선행 유입으로 A형 일부. 그러나 MU/TSM/해외 기관의 SKH ADR 직접 타겟 포지셔닝은 미확인 — Tier 1 확산 불완전. TurboQuant가 B형 연쇄를 단절시킨 구조.",
+      "samsung_propagation": "Artisan→Bloomberg→서사 확산(3/27)까지는 D형 진행 중. 삼성 침묵으로 다음 단계 전파 중단."
+    },
+
+    "combined_pattern": "D→B 전환형 + 외부충격 단절 (TurboQuant) + 삼성 침묵 + 전문가-서사 과잉 vs 가격 과소 괴리",
+
+    "stereo_recommendation": {
+      "verdict": "권장",
+      "trigger": "방향 일치도 == 복합 괴리 + 비례성 == 과소반응 + 한국 전이 경로 + DEVELOPING 이슈",
+      "message": "표면과 심층의 괴리 확인. Stereo 입체 분석 권장. 한국 전이 경로(코리아 디스카운트 → KOSPI 리레이팅 → 원화)도 식별됨. Stereo + PSF/macro 교차 권장.",
+      "mode": "기본 + PSF/macro 교차",
+      "note": "승인 시 state.json 전체 + scanner_prefetch + stereo_trigger를 Stereo에 전달. Layer 집중 지시 없이 Stereo Pre-Read 자율 판독."
+    }
+  },
+
+  "unresolved_questions": [
+    {
+      "id": "UQ-SKH-001",
+      "question": "SKH ADR 실제 상장 완료 시 PER 격차가 축소되는가? (MU 대비 5.9x → 7x+ 이상 수렴 여부)",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SKH ADR 나스닥/NYSE 첫 거래일 이후 30일 PER 비교",
+      "check_channels": {
+        "price": ["000660.KS", "MU", "SKH ADR ticker (미정)"],
+        "narrative": ["Goldman ADR 발표 후 리포트", "Bloomberg 반응"],
+        "positioning": ["ADR 거래량", "KS 주가 상관관계"]
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-12-31",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "미상장 단계. ADR 발표 후 3/27 순 -5.4%. TurboQuant 교란으로 ADR 단독 효과 미측정.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-SKH-002",
+      "question": "TurboQuant가 HBM 수요에 실질적 영향을 미치는가? (NAND 편향 vs HBM 면책 여부)",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "ICLR 2026 논문 발표(4월 말) 후 업계 컨센서스 형성 여부",
+      "check_channels": {
+        "price": ["MU", "000660.KS", "HBM 관련주"],
+        "narrative": ["ICLR 2026 발표 보도", "SKH/삼성 IR 발언"],
+        "positioning": ["메모리 섹터 포지셔닝 복귀 여부"]
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-05-15",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "TurboQuant 발표 후 SKH -6%, MU -6.5% 하락. HBM/DRAM은 제한적 영향이라는 반론 존재(GuruFocus).",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-SKH-003",
+      "question": "삼성전자가 ADR 공식 검토를 발표하는가? (Artisan 압력 → 이사회 결정 경로)",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "삼성전자 공식 IR/공시에서 ADR 검토 언급 또는 거부 발표",
+      "check_channels": {
+        "price": ["005930.KS", "SMSN (삼성 GDR)"],
+        "narrative": ["삼성 IR 공시", "Bloomberg Korea"],
+        "positioning": ["삼성 외국인 지분율 변화"]
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-06-30",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "삼성 공식 침묵 확인. Artisan 요구(3/27)는 Bloomberg 보도됨. 삼성 이사회 반응 없음.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-SKH-004",
+      "question": "신주 발행 방식이 유지되는가, 아니면 자사주 재매입 후 전환 방식으로 변경되는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SKH 공시에서 ADR 발행 구조(신주 vs 자사주 전환) 최종 확정",
+      "check_channels": {
+        "price": ["000660.KS — 신주 확정 시 희석 압력 반응"],
+        "narrative": ["한국거버넌스포럼 후속 논평", "SKH IR"],
+        "positioning": ["국민연금 의결권 행사 방향"]
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-09-30",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "신주 발행 방식 내부 확정 보도(한경 3/23). 공식 미확정. 거버넌스포럼·국민연금 반발 존재.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-SKH-005",
+      "question": "SOX 편입 실현 시 패시브 자금 유입 규모와 시점은?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SKH ADR 나스닥 상장 후 SOX 편입 발표 및 첫 리밸런싱",
+      "check_channels": {
+        "price": ["SOX ETF (SOXX)", "000660.KS ADR"],
+        "narrative": ["인덱스 편입 발표"],
+        "positioning": ["SOXX 포함 패시브 자금 흐름"]
+      },
+      "created": "2026-03-28",
+      "deadline": "2027-03-31",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "SOX 편입 기대는 서사 단계. 실제 편입은 ADR 상장 이후.",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+
+  "self_audit": {
+    "Q1_channel_rationale": "PASS — 모든 채널 선정 이유 Phase 2 및 channels 필드에 기록",
+    "Q2_both_sides": "PASS — 찬성(Goldman, 미래에셋, 메리츠, Artisan) / 반대(거버넌스포럼 이남우, 국민연금, 주총 반발 주주) 양면 포함",
+    "Q3_price_narrative_divergence": "PASS — F-04 해당: 서사↑(ADR 호재) vs 가격↓(TurboQuant 상쇄) 괴리 명시. 매체 과장 가능성 검토됨.",
+    "Q4_silence_records": "WARN (1건) — 국민연금 ADR 공식 찬반 미발견(자사주 처분 반대만). JPMorgan 미발견. 삼성전자 침묵 확인 및 기록됨. R-04/R-09 준수.",
+    "Q5_primary_sources": "PASS — 가격 수치 모두 Yahoo Finance MCP 직접 수집. PER 수치 일부 매체 인용 → '매체 인용 — 1차 미확인' 명기됨."
+  },
+
+  "watch_proposals": [
+    {
+      "proposed_id": "W-2026-03-28-UQ-SKH-001",
+      "topic": "SKH ADR 상장 완료 후 PER 격차 수렴 추적",
+      "type": "event_tracking",
+      "schedule": "분기 1회 (2026 Q2, Q3, Q4)",
+      "end_condition": "SKH ADR 첫 거래일 + 30일 경과",
+      "data_sources": ["Yahoo Finance — 000660.KS, MU, SKH ADR", "Goldman 리포트 업데이트"],
+      "approval_required": true
+    },
+    {
+      "proposed_id": "W-2026-03-28-UQ-SKH-002",
+      "topic": "TurboQuant ICLR 2026 발표 후 HBM 면책 여부",
+      "type": "event_tracking",
+      "schedule": "1회 (2026-04-30 이후)",
+      "end_condition": "ICLR 발표 + 업계 컨센서스 형성",
+      "data_sources": ["Yahoo Finance MCP — MU, 000660.KS", "WebSearch — ICLR TurboQuant"],
+      "approval_required": true
+    },
+    {
+      "proposed_id": "W-2026-03-28-UQ-SKH-003",
+      "topic": "삼성전자 ADR 공식 입장 모니터링",
+      "type": "threshold_watch",
+      "schedule": "2주 1회",
+      "end_condition": "삼성 공식 ADR 검토 발표 또는 거부 선언",
+      "data_sources": ["WebSearch — Samsung ADR 2026", "Bloomberg Korea"],
+      "approval_required": true
+    }
+  ],
+
+  "key_findings": {
+    "narrative_mismatch": "ADR 발표(3/24-25) 서사는 친ADR 우세였으나 동시에 터진 Google TurboQuant(3/25-26)가 메모리 섹터 포지셔닝 전반 이탈을 유발. ADR 단독 시장 반응은 분리 불가. 이 서사-가격 괴리가 핵심 관찰 대상.",
+    "silence_finding": "삼성전자 공식 침묵이 가장 중요한 미결 신호. Bloomberg Artisan 보도(3/27) 이후 삼성 IR 반응이 없음 — ADR 도미노 논쟁의 다음 단계가 삼성 결정에 달려 있음.",
+    "structural_constraint": "신주 발행 방식 vs 자사주 전환 논쟁은 상법 개정(자사주 소각 의무화)이 만든 구조적 제약. 단순 거버넌스 의지 문제가 아님.",
+    "turboquant_timing": "TurboQuant 발표 타이밍은 SKH ADR에 최악의 교란. ADR 호재를 소화하기 전에 메모리 수요 불확실성 서사가 덮음. ICLR 2026(4월 말) 이후 TurboQuant 실질 영향 명확화 시 ADR 서사 재부상 가능.",
+    "korea_discount_catalyst": "SKH ADR은 코리아 디스카운트 해소 논쟁의 실질적 촉매제. 성공 시 삼성→후발 대형주로 ADR 도미노 가능. 실패(상장 철회 또는 저조한 밸류에이션) 시 디스카운트 고착 서사 강화."
+  }
+}

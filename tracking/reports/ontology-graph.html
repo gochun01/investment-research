@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>invest_ontology — DB Ontology & Knowledge Graph</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0e17; color: #e0e6f0; font-family: 'Segoe UI', system-ui, sans-serif; overflow: hidden; }
+
+  /* ── Top Bar ── */
+  .topbar { position: fixed; top: 0; left: 0; right: 0; height: 48px; background: #111827; border-bottom: 1px solid #1e293b; display: flex; align-items: center; padding: 0 24px; z-index: 100; gap: 16px; }
+  .topbar h1 { font-size: 15px; font-weight: 600; color: #93c5fd; }
+  .topbar .stat { font-size: 12px; color: #64748b; }
+  .topbar .stat b { color: #cbd5e1; }
+  .legend { display: flex; gap: 12px; margin-left: auto; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #94a3b8; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* ── Tab Bar ── */
+  .tabs { position: fixed; top: 48px; left: 0; right: 0; height: 36px; background: #0f172a; border-bottom: 1px solid #1e293b; display: flex; align-items: center; padding: 0 24px; gap: 4px; z-index: 99; }
+  .tab { padding: 6px 16px; font-size: 12px; color: #64748b; cursor: pointer; border-radius: 6px 6px 0 0; border: 1px solid transparent; border-bottom: none; transition: all .2s; }
+  .tab:hover { color: #93c5fd; background: #1e293b; }
+  .tab.active { color: #e0f2fe; background: #1e293b; border-color: #334155; }
+
+  /* ── Canvas ── */
+  .canvas { position: fixed; top: 84px; left: 0; right: 0; bottom: 0; }
+  svg { width: 100%; height: 100%; }
+
+  /* ── View panels ── */
+  .view { display: none; position: fixed; top: 84px; left: 0; right: 0; bottom: 0; overflow: auto; padding: 32px; }
+  .view.active { display: block; }
+
+  /* ── Table in schema view ── */
+  .schema-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .tbl-card { background: #111827; border: 1px solid #1e293b; border-radius: 8px; overflow: hidden; }
+  .tbl-card .hdr { padding: 10px 14px; font-size: 13px; font-weight: 600; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; }
+  .tbl-card .cols { padding: 8px 14px; font-size: 11px; line-height: 1.8; color: #94a3b8; }
+  .tbl-card .cols .pk { color: #fbbf24; }
+  .tbl-card .cols .fk { color: #818cf8; }
+
+  /* ── Layer colors ── */
+  .L1 .hdr { background: #1e3a5f; color: #7dd3fc; }
+  .L2 .hdr { background: #1a3328; color: #6ee7b7; }
+  .L3 .hdr { background: #3b1f2b; color: #fda4af; }
+  .L4 .hdr { background: #2d2438; color: #c4b5fd; }
+  .L5 .hdr { background: #2a2415; color: #fcd34d; }
+  .L6 .hdr { background: #1a2e35; color: #67e8f9; }
+  .L7 .hdr { background: #1c1c1c; color: #a1a1aa; }
+
+  /* ── Tooltip ── */
+  .tooltip { position: fixed; background: #1e293b; border: 1px solid #334155; border-radius: 6px; padding: 10px 14px; font-size: 11px; line-height: 1.6; color: #e2e8f0; pointer-events: none; z-index: 200; max-width: 320px; display: none; box-shadow: 0 8px 24px rgba(0,0,0,.5); }
+  .tooltip .tt-title { font-weight: 600; color: #93c5fd; margin-bottom: 4px; }
+
+  /* ── Stats view ── */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .stat-card { background: #111827; border: 1px solid #1e293b; border-radius: 8px; padding: 20px; text-align: center; }
+  .stat-card .num { font-size: 36px; font-weight: 700; }
+  .stat-card .label { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+  /* ── ER view ── */
+  .er-section { margin-bottom: 32px; }
+  .er-section h2 { font-size: 16px; color: #93c5fd; margin-bottom: 12px; border-bottom: 1px solid #1e293b; padding-bottom: 8px; }
+  .er-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .er-table th { text-align: left; padding: 8px 12px; background: #1e293b; color: #cbd5e1; }
+  .er-table td { padding: 8px 12px; border-bottom: 1px solid #1e293b; color: #94a3b8; }
+  .er-table .arrow { color: #818cf8; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>invest_ontology</h1>
+  <span class="stat"><b>36</b> tables</span>
+  <span class="stat"><b>22</b> views</span>
+  <span class="stat"><b>7</b> layers</span>
+  <span class="stat"><b>58</b> relationships</span>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#7dd3fc"></div>L1 Ontology</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#6ee7b7"></div>L2 Market</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fda4af"></div>L3 Tracking</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#c4b5fd"></div>L4 Bridge</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fcd34d"></div>L5 Transition</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#67e8f9"></div>L6 Megatrend</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a1a1aa"></div>L7 Quality</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" data-view="graph">Knowledge Graph</div>
+  <div class="tab" data-view="schema">Schema Cards</div>
+  <div class="tab" data-view="er">ER Relationships</div>
+  <div class="tab" data-view="stats">Statistics</div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<!-- ═══ TAB 1: Knowledge Graph (SVG) ═══ -->
+<div class="canvas view active" id="view-graph">
+<svg id="kg" viewBox="0 0 1400 900">
+  <defs>
+    <marker id="arrowGray" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto"><path d="M0,0 L10,3 L0,6" fill="#475569"/></marker>
+    <marker id="arrowBlue" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto"><path d="M0,0 L10,3 L0,6" fill="#60a5fa"/></marker>
+    <marker id="arrowPurple" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto"><path d="M0,0 L10,3 L0,6" fill="#818cf8"/></marker>
+    <marker id="arrowYellow" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto"><path d="M0,0 L10,3 L0,6" fill="#fbbf24"/></marker>
+    <marker id="arrowCyan" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto"><path d="M0,0 L10,3 L0,6" fill="#22d3ee"/></marker>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- ── Background grid ── -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+  </pattern>
+  <rect width="1400" height="900" fill="url(#grid)"/>
+
+  <!-- ── Layer labels ── -->
+  <text x="140" y="32" fill="#7dd3fc" font-size="11" font-weight="600" opacity=".6">L1 ONTOLOGY CORE</text>
+  <text x="700" y="32" fill="#6ee7b7" font-size="11" font-weight="600" opacity=".6">L2 MARKET DATA</text>
+  <text x="700" y="360" fill="#fda4af" font-size="11" font-weight="600" opacity=".6">L3 TRACKING CARDS</text>
+  <text x="140" y="560" fill="#c4b5fd" font-size="11" font-weight="600" opacity=".6">L4 BRIDGE</text>
+  <text x="700" y="660" fill="#fcd34d" font-size="11" font-weight="600" opacity=".6">L5 TRANSITION</text>
+  <text x="1100" y="32" fill="#67e8f9" font-size="11" font-weight="600" opacity=".6">L6 MEGATREND</text>
+  <text x="1100" y="660" fill="#a1a1aa" font-size="11" font-weight="600" opacity=".6">L7 QUALITY</text>
+
+  <!-- ═══════════ L1: ONTOLOGY CORE ═══════════ -->
+  <g class="layer1">
+    <!-- ont_object -->
+    <rect x="60" y="60" width="160" height="50" rx="8" fill="#0c2340" stroke="#7dd3fc" stroke-width="1.5" class="node" data-table="ont_object" data-info="PSF 6개 객체|PK: object_id|layer: pan/structure/flow|current_state"/>
+    <text x="140" y="82" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">ont_object</text>
+    <text x="140" y="98" text-anchor="middle" fill="#64748b" font-size="10">6 PSF objects</text>
+
+    <!-- ont_property -->
+    <rect x="60" y="150" width="160" height="50" rx="8" fill="#0c2340" stroke="#7dd3fc" stroke-width="1.5" class="node" data-table="ont_property" data-info="PSF 14개 속성|PK: property_id|FK: object_id → ont_object|trigger_links TEXT[]"/>
+    <text x="140" y="172" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">ont_property</text>
+    <text x="140" y="188" text-anchor="middle" fill="#64748b" font-size="10">14 properties</text>
+
+    <!-- ont_link -->
+    <rect x="280" y="60" width="160" height="50" rx="8" fill="#0c2340" stroke="#7dd3fc" stroke-width="1.5" class="node" data-table="ont_link" data-info="인과 링크 L1~L8|PK: link_id|FK: source/target → ont_object|direction, path_type, mechanism|is_active, activated_at"/>
+    <text x="360" y="82" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">ont_link</text>
+    <text x="360" y="98" text-anchor="middle" fill="#64748b" font-size="10">causal links L1~L8</text>
+
+    <!-- ont_metric -->
+    <rect x="60" y="240" width="160" height="50" rx="8" fill="#0c2340" stroke="#7dd3fc" stroke-width="1.5" class="node" data-table="ont_metric" data-info="46개 관측 지표|PK: metric_id|FK: property_id → ont_property|data_source, macro_layer, macro_id"/>
+    <text x="140" y="262" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">ont_metric</text>
+    <text x="140" y="278" text-anchor="middle" fill="#64748b" font-size="10">46 metrics</text>
+
+    <!-- ont_threshold -->
+    <rect x="60" y="330" width="160" height="50" rx="8" fill="#0c2340" stroke="#7dd3fc" stroke-width="1.5" class="node" data-table="ont_threshold" data-info="3중 밴드 임계값|band: watch/alert/hard|FK: metric_id, link_id|threshold_value, direction"/>
+    <text x="140" y="352" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">ont_threshold</text>
+    <text x="140" y="368" text-anchor="middle" fill="#64748b" font-size="10">3-band thresholds</text>
+
+    <!-- ont_scenario -->
+    <rect x="280" y="150" width="160" height="50" rx="8" fill="#0c2340" stroke="#7dd3fc" stroke-width="1.5" class="node" data-table="ont_scenario" data-info="Base/Bull/Bear 시나리오|pivot_property FK|3개 시나리오 JSONB|monitoring_triggers"/>
+    <text x="360" y="172" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">ont_scenario</text>
+    <text x="360" y="188" text-anchor="middle" fill="#64748b" font-size="10">scenario sets</text>
+
+    <!-- History tables -->
+    <rect x="280" y="240" width="130" height="36" rx="6" fill="#091a30" stroke="#3b82f6" stroke-width="1" class="node" data-table="ont_link_log" data-info="링크 활성화 이력|FK: link_id"/>
+    <text x="345" y="262" text-anchor="middle" fill="#60a5fa" font-size="11">ont_link_log</text>
+
+    <rect x="420" y="240" width="130" height="36" rx="6" fill="#091a30" stroke="#3b82f6" stroke-width="1" class="node" data-table="ont_status_log" data-info="PSF 속성 스냅샷|FK: object_id, property_id|UNIQUE(date, property_id)"/>
+    <text x="485" y="262" text-anchor="middle" fill="#60a5fa" font-size="11">ont_status_log</text>
+
+    <rect x="420" y="290" width="130" height="36" rx="6" fill="#091a30" stroke="#3b82f6" stroke-width="1" class="node" data-table="ont_regime_log" data-info="레짐 이력|regime, quadrant|l7_score, l8_score|keystone_value"/>
+    <text x="485" y="312" text-anchor="middle" fill="#60a5fa" font-size="11">ont_regime_log</text>
+
+    <!-- L1 edges -->
+    <line x1="140" y1="110" x2="140" y2="150" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="140" y1="200" x2="140" y2="240" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="140" y1="290" x2="140" y2="330" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="220" y1="85" x2="280" y2="85" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="220" y1="175" x2="280" y2="175" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+    <line x1="360" y1="110" x2="345" y2="240" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowBlue)"/>
+    <line x1="180" y1="85" x2="420" y2="258" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+  </g>
+
+  <!-- ═══════════ L2: MARKET DATA ═══════════ -->
+  <g class="layer2">
+    <rect x="620" y="60" width="160" height="50" rx="8" fill="#0a2318" stroke="#6ee7b7" stroke-width="1.5" class="node" data-table="daily_macro" data-info="일별 거시 지표 35컬럼|UNIQUE(snapshot_date)|fed_funds_rate, us_10y_yield...|macro-bridge 8컬럼 추가"/>
+    <text x="700" y="82" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="600">daily_macro</text>
+    <text x="700" y="98" text-anchor="middle" fill="#64748b" font-size="10">35 columns, daily</text>
+
+    <rect x="620" y="130" width="160" height="50" rx="8" fill="#0a2318" stroke="#6ee7b7" stroke-width="1.5" class="node" data-table="daily_market" data-info="종목별 일별 시세|UNIQUE(date, ticker)|close, change%, volume|ma_20/60/200, rsi_14"/>
+    <text x="700" y="152" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="600">daily_market</text>
+    <text x="700" y="168" text-anchor="middle" fill="#64748b" font-size="10">per ticker, daily</text>
+
+    <rect x="620" y="200" width="160" height="50" rx="8" fill="#0a2318" stroke="#6ee7b7" stroke-width="1.5" class="node" data-table="daily_crypto" data-info="크립토 일별|UNIQUE(date, coin_id)|price, 24h/7d change|market_cap, dominance"/>
+    <text x="700" y="222" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="600">daily_crypto</text>
+    <text x="700" y="238" text-anchor="middle" fill="#64748b" font-size="10">per coin, daily</text>
+
+    <!-- L2→L1 via view v_macro_to_ontology -->
+    <line x1="620" y1="85" x2="220" y2="265" stroke="#6ee7b7" stroke-width="1" stroke-dasharray="6,4" opacity=".5"/>
+    <text x="400" y="160" fill="#6ee7b7" font-size="9" opacity=".6">v_macro_to_ontology</text>
+  </g>
+
+  <!-- ═══════════ L3: TRACKING CARDS ═══════════ -->
+  <g class="layer3">
+    <!-- tc_cards (center hub) -->
+    <rect x="620" y="390" width="180" height="56" rx="10" fill="#2a0f1a" stroke="#fda4af" stroke-width="2" filter="url(#glow)" class="node" data-table="tc_cards" data-info="투자 추적 카드 (핵심 허브)|PK: tc_id|scenarios/pre_read/tracking JSONB|Phase 0~5, status, tags"/>
+    <text x="710" y="415" text-anchor="middle" fill="#fda4af" font-size="14" font-weight="700">tc_cards</text>
+    <text x="710" y="434" text-anchor="middle" fill="#64748b" font-size="10">central hub — 16 cards</text>
+
+    <!-- sd_cards -->
+    <rect x="850" y="390" width="140" height="44" rx="8" fill="#2a0f1a" stroke="#fb7185" stroke-width="1.5" class="node" data-table="sd_cards" data-info="씨드 감시 카드|PK: sd_id|promoted_to FK → tc_cards|appearance_count"/>
+    <text x="920" y="416" text-anchor="middle" fill="#fb7185" font-size="12" font-weight="600">sd_cards</text>
+
+    <!-- watches -->
+    <rect x="480" y="390" width="120" height="44" rx="8" fill="#2a0f1a" stroke="#fb7185" stroke-width="1.5" class="node" data-table="watches" data-info="추적 감시 40건|PK: watch_id|type: event/data/threshold/policy|schedule, close_condition JSONB"/>
+    <text x="540" y="416" text-anchor="middle" fill="#fb7185" font-size="12" font-weight="600">watches</text>
+
+    <!-- predictions -->
+    <rect x="620" y="480" width="140" height="44" rx="8" fill="#2a0f1a" stroke="#fb7185" stroke-width="1.5" class="node" data-table="predictions" data-info="예측 원장 35건|FK: tc_id|claim, probability, deadline|status: open/hit/miss/partial"/>
+    <text x="690" y="506" text-anchor="middle" fill="#fb7185" font-size="12" font-weight="600">predictions</text>
+
+    <!-- sa_history -->
+    <rect x="790" y="480" width="140" height="44" rx="8" fill="#2a0f1a" stroke="#fb7185" stroke-width="1.5" class="node" data-table="sa_history" data-info="Stereo 분석 이력 26건|PK: sa_id|layer_summary, scenarios JSONB|quality_score"/>
+    <text x="860" y="506" text-anchor="middle" fill="#fb7185" font-size="12" font-weight="600">sa_history</text>
+
+    <!-- tc_analysis_links -->
+    <rect x="790" y="445" width="130" height="28" rx="5" fill="#1a0a12" stroke="#f43f5e" stroke-width="1" class="node" data-table="tc_analysis_links" data-info="TC↔SA 다:다 링크|PK(tc_id, analysis_id)"/>
+    <text x="855" y="463" text-anchor="middle" fill="#f43f5e" font-size="10">tc_analysis_links</text>
+
+    <!-- watch_tc_links -->
+    <rect x="490" y="445" width="120" height="28" rx="5" fill="#1a0a12" stroke="#f43f5e" stroke-width="1" class="node" data-table="watch_tc_links" data-info="Watch↔TC 다:다 링크|PK(watch_id, tc_id)"/>
+    <text x="550" y="463" text-anchor="middle" fill="#f43f5e" font-size="10">watch_tc_links</text>
+
+    <!-- learning_log -->
+    <rect x="480" y="490" width="120" height="36" rx="6" fill="#1a0a12" stroke="#f43f5e" stroke-width="1" class="node" data-table="learning_log" data-info="학습 규칙 (DB-first)|pattern, correction|hit_rate_before/after"/>
+    <text x="540" y="512" text-anchor="middle" fill="#f43f5e" font-size="10">learning_log</text>
+
+    <!-- L3 edges -->
+    <line x1="850" y1="412" x2="800" y2="412" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+    <text x="825" y="406" fill="#64748b" font-size="8">promote</text>
+    <line x1="600" y1="412" x2="620" y2="412" stroke="#f43f5e" stroke-width="1.5"/>
+    <line x1="710" y1="446" x2="690" y2="480" stroke="#f43f5e" stroke-width="1"/>
+    <line x1="750" y1="446" x2="855" y2="460" stroke="#f43f5e" stroke-width="1"/>
+    <line x1="550" y1="445" x2="550" y2="434" stroke="#f43f5e" stroke-width="1"/>
+  </g>
+
+  <!-- ═══════════ L4: BRIDGE ═══════════ -->
+  <g class="layer4">
+    <rect x="100" y="590" width="160" height="44" rx="8" fill="#1a1030" stroke="#c4b5fd" stroke-width="1.5" class="node" data-table="tc_ont_links" data-info="TC ↔ ont_link 브릿지|PK(tc_id, link_id, role)|role: trigger/kc/impact/context"/>
+    <text x="180" y="616" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="600">tc_ont_links</text>
+
+    <rect x="300" y="590" width="160" height="44" rx="8" fill="#1a1030" stroke="#c4b5fd" stroke-width="1.5" class="node" data-table="tc_metric_links" data-info="TC ↔ ont_metric 브릿지|PK(tc_id, metric_id)|band, threshold_value"/>
+    <text x="380" y="616" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="600">tc_metric_links</text>
+
+    <!-- Bridge edges -->
+    <path d="M180,590 Q180,500 620,418" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+    <path d="M180,590 Q180,450 360,110" fill="none" stroke="#c4b5fd" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+    <path d="M380,590 Q380,470 620,418" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+    <path d="M380,590 Q300,420 140,290" fill="none" stroke="#c4b5fd" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arrowPurple)"/>
+  </g>
+
+  <!-- ═══════════ L5: TRANSITION ═══════════ -->
+  <g class="layer5">
+    <rect x="620" y="690" width="160" height="50" rx="8" fill="#1a1a08" stroke="#fcd34d" stroke-width="1.5" class="node" data-table="th_cards" data-info="전이 가설 카드 (DB-first)|PK: th_id|hypothesis, from/to_regime|confidence, causal_chain JSONB"/>
+    <text x="700" y="712" text-anchor="middle" fill="#fcd34d" font-size="13" font-weight="600">th_cards</text>
+    <text x="700" y="728" text-anchor="middle" fill="#64748b" font-size="10">transition hypotheses</text>
+
+    <rect x="820" y="690" width="130" height="36" rx="6" fill="#151408" stroke="#eab308" stroke-width="1" class="node" data-table="th_evidence" data-info="증거 축적 (DB-first)|FK: th_id|ev_type: completion/kill/manual|confidence_delta"/>
+    <text x="885" y="712" text-anchor="middle" fill="#eab308" font-size="11">th_evidence</text>
+
+    <rect x="820" y="740" width="130" height="36" rx="6" fill="#151408" stroke="#eab308" stroke-width="1" class="node" data-table="th_link_path" data-info="TH 인과 경로|PK(th_id, link_id)|step_order, is_active"/>
+    <text x="885" y="762" text-anchor="middle" fill="#eab308" font-size="11">th_link_path</text>
+
+    <rect x="620" y="760" width="160" height="32" rx="6" fill="#151408" stroke="#eab308" stroke-width="1" class="node" data-table="th_tc_links" data-info="TH↔TC 다:다|role: convergence/cascade/evidence"/>
+    <text x="700" y="780" text-anchor="middle" fill="#eab308" font-size="10">th_tc_links</text>
+
+    <!-- L5 edges -->
+    <line x1="780" y1="708" x2="820" y2="708" stroke="#eab308" stroke-width="1" marker-end="url(#arrowYellow)"/>
+    <line x1="780" y1="720" x2="820" y2="755" stroke="#eab308" stroke-width="1" marker-end="url(#arrowYellow)"/>
+    <line x1="700" y1="740" x2="700" y2="760" stroke="#eab308" stroke-width="1" marker-end="url(#arrowYellow)"/>
+    <path d="M700,760 Q700,820 710,446" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="5,3" opacity=".4"/>
+    <path d="M885,740 Q500,500 360,110" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="5,3" opacity=".3"/>
+  </g>
+
+  <!-- ═══════════ L6: MEGATREND ═══════════ -->
+  <g class="layer6">
+    <rect x="1080" y="60" width="160" height="50" rx="8" fill="#0a1a20" stroke="#67e8f9" stroke-width="1.5" class="node" data-table="ont_megatrend" data-info="메가트렌드 MT-01~07|PK: mt_id|direction, confidence, horizon|bull/bear_case, kill_condition"/>
+    <text x="1160" y="82" text-anchor="middle" fill="#67e8f9" font-size="13" font-weight="600">ont_megatrend</text>
+    <text x="1160" y="98" text-anchor="middle" fill="#64748b" font-size="10">MT-01~07</text>
+
+    <rect x="1080" y="130" width="130" height="36" rx="6" fill="#071318" stroke="#22d3ee" stroke-width="1" class="node" data-table="mt_indicators" data-info="MT별 추적 지표|FK: mt_id|current_value, threshold|verdict"/>
+    <text x="1145" y="152" text-anchor="middle" fill="#22d3ee" font-size="11">mt_indicators</text>
+
+    <rect x="1080" y="180" width="130" height="36" rx="6" fill="#071318" stroke="#22d3ee" stroke-width="1" class="node" data-table="mt_status_log" data-info="MT 방향 변경 이력|prev/new direction|prev/new confidence"/>
+    <text x="1145" y="202" text-anchor="middle" fill="#22d3ee" font-size="11">mt_status_log</text>
+
+    <rect x="1080" y="240" width="130" height="36" rx="6" fill="#071318" stroke="#22d3ee" stroke-width="1" class="node" data-table="tc_mt_links" data-info="TC↔MT 다:다|role: evidence/counter/catalyst|note"/>
+    <text x="1145" y="262" text-anchor="middle" fill="#22d3ee" font-size="11">tc_mt_links</text>
+
+    <rect x="1080" y="290" width="130" height="36" rx="6" fill="#071318" stroke="#22d3ee" stroke-width="1" class="node" data-table="th_mt_links" data-info="TH↔MT 다:다|alignment: aligned/counter/partial"/>
+    <text x="1145" y="312" text-anchor="middle" fill="#22d3ee" font-size="11">th_mt_links</text>
+
+    <!-- L6 edges -->
+    <line x1="1160" y1="110" x2="1145" y2="130" stroke="#22d3ee" stroke-width="1" marker-end="url(#arrowCyan)"/>
+    <line x1="1160" y1="110" x2="1145" y2="180" stroke="#22d3ee" stroke-width="1" marker-end="url(#arrowCyan)"/>
+    <path d="M1080,258 Q900,300 800,418" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowCyan)"/>
+    <path d="M1080,308 Q900,500 780,708" fill="none" stroke="#22d3ee" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arrowCyan)"/>
+  </g>
+
+  <!-- ═══════════ L7: QUALITY ═══════════ -->
+  <g class="layer7">
+    <rect x="1080" y="690" width="160" height="44" rx="8" fill="#1a1a1a" stroke="#a1a1aa" stroke-width="1.5" class="node" data-table="tc_scenario_history" data-info="시나리오 확률 이력|FK: tc_id|snapshot_date, probability|delta_reason, kc_status"/>
+    <text x="1160" y="716" text-anchor="middle" fill="#a1a1aa" font-size="11" font-weight="600">tc_scenario_history</text>
+
+    <rect x="1080" y="750" width="160" height="44" rx="8" fill="#1a1a1a" stroke="#a1a1aa" stroke-width="1.5" class="node" data-table="quality_diagnostics" data-info="품질 진단|UNIQUE(run_date)|critical/warning/info counts|details JSONB"/>
+    <text x="1160" y="776" text-anchor="middle" fill="#a1a1aa" font-size="11" font-weight="600">quality_diagnostics</text>
+
+    <path d="M1080,712 Q900,500 800,418" fill="none" stroke="#a1a1aa" stroke-width="1" stroke-dasharray="4,3" opacity=".4"/>
+  </g>
+
+  <!-- ═══════════ Cross-layer highlight: tc_cards HUB ═══════════ -->
+  <g opacity=".15">
+    <line x1="710" y1="390" x2="700" y2="258" stroke="#fda4af" stroke-width="2"/>
+    <line x1="710" y1="446" x2="700" y2="690" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="800" y1="418" x2="1080" y2="258" stroke="#67e8f9" stroke-width="2"/>
+    <line x1="620" y1="418" x2="260" y2="600" stroke="#c4b5fd" stroke-width="2"/>
+  </g>
+
+</svg>
+</div>
+
+<!-- ═══ TAB 2: Schema Cards ═══ -->
+<div class="view" id="view-schema">
+  <div class="schema-grid">
+    <!-- L1 -->
+    <div class="tbl-card L1"><div class="hdr"><span>ont_object</span><span>L1</span></div><div class="cols"><span class="pk">object_id VARCHAR(10) PK</span><br>name VARCHAR(100)<br>layer VARCHAR(20) — pan/structure/flow<br>core_question TEXT<br>current_state VARCHAR(50)<br>updated_at TIMESTAMP</div></div>
+    <div class="tbl-card L1"><div class="hdr"><span>ont_property</span><span>L1</span></div><div class="cols"><span class="pk">property_id VARCHAR(10) PK</span><br><span class="fk">object_id FK → ont_object</span><br>name, layer, description<br>trigger_links TEXT[]</div></div>
+    <div class="tbl-card L1"><div class="hdr"><span>ont_link</span><span>L1</span></div><div class="cols"><span class="pk">link_id VARCHAR(10) PK</span><br><span class="fk">source_object, target_object FK → ont_object</span><br>direction: forward/reverse<br>path_type, mechanism, channels<br>speed, is_active BOOLEAN, activated_at</div></div>
+    <div class="tbl-card L1"><div class="hdr"><span>ont_metric</span><span>L1</span></div><div class="cols"><span class="pk">metric_id VARCHAR(10) PK</span><br><span class="fk">property_id FK → ont_property</span><br>name, data_source, source_detail<br>unit, macro_layer, macro_id</div></div>
+    <div class="tbl-card L1"><div class="hdr"><span>ont_threshold</span><span>L1</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br><span class="fk">metric_id FK → ont_metric</span><br><span class="fk">link_id FK → ont_link (nullable)</span><br>band: watch/alert/hard<br>threshold_value, threshold_direction<br>duration_days, source_type</div></div>
+    <div class="tbl-card L1"><div class="hdr"><span>ont_scenario</span><span>L1</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br><span class="fk">pivot_property FK → ont_property</span><br>scenario_set_name, current_regime<br>base/bull/bear JSONB<br>monitoring_triggers, is_active</div></div>
+    <div class="tbl-card L1"><div class="hdr"><span>ont_megatrend</span><span>L6</span></div><div class="cols"><span class="pk">mt_id VARCHAR(10) PK</span><br>name, hypothesis, direction<br>confidence NUMERIC, horizon, status<br>bull_case, bear_case, kill_condition<br>psf_impact TEXT[], asset_beneficiaries/victims<br>tags TEXT[]</div></div>
+
+    <!-- L2 -->
+    <div class="tbl-card L2"><div class="hdr"><span>daily_macro</span><span>L2</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br>snapshot_date DATE UNIQUE<br>fed_funds_rate, us_10y/2y_yield<br>yield_spread, dxy, usd_krw/jpy/cny<br>vix, move, wti, brent, gold<br>tips_10y_real, bei_10y, hy_oas<br>core_pce_yoy, ism_pmi, term_premium<br>... (35 columns total)</div></div>
+    <div class="tbl-card L2"><div class="hdr"><span>daily_market</span><span>L2</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br>snapshot_date + ticker UNIQUE<br>name, close_price, change_pct<br>volume, market_cap<br>ma_20/60/200, rsi_14<br>exchange, asset_type</div></div>
+    <div class="tbl-card L2"><div class="hdr"><span>daily_crypto</span><span>L2</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br>snapshot_date + coin_id UNIQUE<br>symbol, price_usd<br>price_change_24h/7d<br>market_cap, dominance_pct</div></div>
+
+    <!-- L3 -->
+    <div class="tbl-card L3"><div class="hdr"><span>tc_cards</span><span>L3 HUB</span></div><div class="cols"><span class="pk">tc_id VARCHAR(10) PK</span><br>title, created, updated, status<br>phase (0~5), issue_summary<br>pre_read JSONB, scenarios JSONB<br>tracking_indicators JSONB<br>phase_log JSONB, rm_watches JSONB<br>cross_card_links JSONB<br>source, close_condition, tags TEXT[]</div></div>
+    <div class="tbl-card L3"><div class="hdr"><span>sd_cards</span><span>L3</span></div><div class="cols"><span class="pk">sd_id VARCHAR(10) PK</span><br>title, status, appearance_count<br>last_seen, source, next_check<br><span class="fk">promoted_to FK → tc_cards</span></div></div>
+    <div class="tbl-card L3"><div class="hdr"><span>watches</span><span>L3</span></div><div class="cols"><span class="pk">watch_id VARCHAR(40) PK</span><br>subject, watch_type, status<br>schedule JSONB, check_template JSONB<br>close_condition, source_report<br>completed_checks JSONB</div></div>
+    <div class="tbl-card L3"><div class="hdr"><span>predictions</span><span>L3</span></div><div class="cols"><span class="pk">pred_id VARCHAR(30) PK</span><br><span class="fk">tc_id FK → tc_cards</span><br>pred_type, claim, scenario<br>probability, trigger_condition<br>deadline, status, outcome</div></div>
+    <div class="tbl-card L3"><div class="hdr"><span>sa_history</span><span>L3</span></div><div class="cols"><span class="pk">sa_id VARCHAR(30) PK</span><br>sa_date, title, pipeline<br>pre_read JSONB, core_finding<br>layer_summary JSONB<br>scenarios, uncertainty, feedback JSONB<br>quality_score NUMERIC(4,3)</div></div>
+    <div class="tbl-card L3"><div class="hdr"><span>learning_log</span><span>L3 DB-first</span></div><div class="cols"><span class="pk">rule_id VARCHAR(10) PK</span><br>pattern, correction, pred_type<br>hit_rate_before/after<br>source_predictions TEXT[]</div></div>
+
+    <!-- L4 -->
+    <div class="tbl-card L4"><div class="hdr"><span>tc_ont_links</span><span>L4</span></div><div class="cols"><span class="pk">PK(tc_id, link_id, role)</span><br><span class="fk">tc_id FK → tc_cards</span><br><span class="fk">link_id FK → ont_link</span><br>role: trigger/kc/impact/context<br>note TEXT</div></div>
+    <div class="tbl-card L4"><div class="hdr"><span>tc_metric_links</span><span>L4</span></div><div class="cols"><span class="pk">PK(tc_id, metric_id)</span><br><span class="fk">tc_id FK → tc_cards</span><br><span class="fk">metric_id FK → ont_metric</span><br>band, threshold_value/direction<br>duration_days</div></div>
+
+    <!-- L5 -->
+    <div class="tbl-card L5"><div class="hdr"><span>th_cards</span><span>L5 DB-first</span></div><div class="cols"><span class="pk">th_id VARCHAR(10) PK</span><br>hypothesis, from/to_regime<br>horizon, confidence NUMERIC(4,3)<br>causal_chain, convergence JSONB<br>completion_triggers, kill_conditions<br>cascade JSONB, status</div></div>
+    <div class="tbl-card L5"><div class="hdr"><span>th_evidence</span><span>L5 DB-first</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br><span class="fk">th_id FK → th_cards</span><br>ev_date, ev_type<br>description, confidence_delta/after</div></div>
+    <div class="tbl-card L5"><div class="hdr"><span>th_link_path</span><span>L5</span></div><div class="cols"><span class="pk">PK(th_id, link_id)</span><br><span class="fk">th_id FK → th_cards</span><br><span class="fk">link_id FK → ont_link</span><br>step_order, is_active, note</div></div>
+
+    <!-- L7 -->
+    <div class="tbl-card L7"><div class="hdr"><span>tc_scenario_history</span><span>L7</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br><span class="fk">tc_id FK → tc_cards</span><br>snapshot_date, scenario<br>probability, prev_probability<br>delta_reason, kc_status</div></div>
+    <div class="tbl-card L7"><div class="hdr"><span>quality_diagnostics</span><span>L7</span></div><div class="cols"><span class="pk">id SERIAL PK</span><br>run_date DATE UNIQUE<br>total_checks, critical/warning/info<br>details JSONB, fixed_count</div></div>
+  </div>
+</div>
+
+<!-- ═══ TAB 3: ER Relationships ═══ -->
+<div class="view" id="view-er">
+  <div class="er-section">
+    <h2>L1 Ontology Core — Internal Relations</h2>
+    <table class="er-table">
+      <tr><th>Source</th><th></th><th>Target</th><th>Cardinality</th><th>FK Column</th></tr>
+      <tr><td>ont_object</td><td class="arrow">1 → N</td><td>ont_property</td><td>1:N</td><td>property.object_id</td></tr>
+      <tr><td>ont_object</td><td class="arrow">N ← → N</td><td>ont_link</td><td>N:M (self)</td><td>link.source_object, target_object</td></tr>
+      <tr><td>ont_property</td><td class="arrow">1 → N</td><td>ont_metric</td><td>1:N</td><td>metric.property_id</td></tr>
+      <tr><td>ont_metric</td><td class="arrow">1 → N</td><td>ont_threshold</td><td>1:N</td><td>threshold.metric_id</td></tr>
+      <tr><td>ont_link</td><td class="arrow">1 → N</td><td>ont_threshold</td><td>1:N (opt)</td><td>threshold.link_id</td></tr>
+      <tr><td>ont_property</td><td class="arrow">1 → N</td><td>ont_scenario</td><td>1:N</td><td>scenario.pivot_property</td></tr>
+      <tr><td>ont_object</td><td class="arrow">1 → N</td><td>ont_status_log</td><td>1:N</td><td>log.object_id</td></tr>
+      <tr><td>ont_link</td><td class="arrow">1 → N</td><td>ont_link_log</td><td>1:N</td><td>log.link_id</td></tr>
+      <tr><td>ont_megatrend</td><td class="arrow">1 → N</td><td>mt_indicators</td><td>1:N</td><td>ind.mt_id</td></tr>
+      <tr><td>ont_megatrend</td><td class="arrow">1 → N</td><td>mt_status_log</td><td>1:N</td><td>log.mt_id</td></tr>
+    </table>
+  </div>
+
+  <div class="er-section">
+    <h2>L3 Tracking Cards — Internal Relations</h2>
+    <table class="er-table">
+      <tr><th>Source</th><th></th><th>Target</th><th>Cardinality</th><th>FK Column</th></tr>
+      <tr><td>tc_cards</td><td class="arrow">1 ← N</td><td>sd_cards</td><td>1:N (promote)</td><td>sd.promoted_to</td></tr>
+      <tr><td>tc_cards</td><td class="arrow">N ← → N</td><td>sa_history</td><td>N:M</td><td>tc_analysis_links(tc_id, analysis_id)</td></tr>
+      <tr><td>tc_cards</td><td class="arrow">N ← → N</td><td>watches</td><td>N:M</td><td>watch_tc_links(watch_id, tc_id)</td></tr>
+      <tr><td>tc_cards</td><td class="arrow">1 → N</td><td>predictions</td><td>1:N</td><td>pred.tc_id</td></tr>
+      <tr><td>tc_cards</td><td class="arrow">1 → N</td><td>tc_scenario_history</td><td>1:N</td><td>tsh.tc_id</td></tr>
+    </table>
+  </div>
+
+  <div class="er-section">
+    <h2>L4 Bridge — Cross-Layer Relations</h2>
+    <table class="er-table">
+      <tr><th>Source</th><th></th><th>Target</th><th>Via</th><th>Role</th></tr>
+      <tr><td>tc_cards (L3)</td><td class="arrow">← → </td><td>ont_link (L1)</td><td>tc_ont_links</td><td>trigger / kc / impact / context</td></tr>
+      <tr><td>tc_cards (L3)</td><td class="arrow">← → </td><td>ont_metric (L1)</td><td>tc_metric_links</td><td>band + threshold</td></tr>
+      <tr><td>tc_cards (L3)</td><td class="arrow">← → </td><td>ont_megatrend (L6)</td><td>tc_mt_links</td><td>evidence / counter / catalyst</td></tr>
+    </table>
+  </div>
+
+  <div class="er-section">
+    <h2>L5 Transition — Relations</h2>
+    <table class="er-table">
+      <tr><th>Source</th><th></th><th>Target</th><th>Via</th><th>Role</th></tr>
+      <tr><td>th_cards (L5)</td><td class="arrow">← → </td><td>tc_cards (L3)</td><td>th_tc_links</td><td>convergence / cascade / evidence</td></tr>
+      <tr><td>th_cards (L5)</td><td class="arrow">← → </td><td>ont_link (L1)</td><td>th_link_path</td><td>step_order (causal path)</td></tr>
+      <tr><td>th_cards (L5)</td><td class="arrow">← → </td><td>ont_megatrend (L6)</td><td>th_mt_links</td><td>aligned / counter / partial</td></tr>
+      <tr><td>th_cards (L5)</td><td class="arrow">1 → N</td><td>th_evidence</td><td>direct FK</td><td>confidence accumulation</td></tr>
+    </table>
+  </div>
+
+  <div class="er-section">
+    <h2>Data Flow: JSON → DB</h2>
+    <table class="er-table">
+      <tr><th>JSON Source</th><th></th><th>DB Table</th><th>Direction</th><th>sync function</th></tr>
+      <tr><td>tracking/cards/TC-*.json</td><td class="arrow">→</td><td>tc_cards + tc_analysis_links</td><td>JSON-first</td><td>sync_tc_cards()</td></tr>
+      <tr><td>tracking/cards/SD-*.json</td><td class="arrow">→</td><td>sd_cards</td><td>JSON-first</td><td>sync_sd_cards()</td></tr>
+      <tr><td>tracking/active-watches.json</td><td class="arrow">→</td><td>watches + watch_tc_links</td><td>JSON-first</td><td>sync_watches()</td></tr>
+      <tr><td>tracking/prediction-ledger.json</td><td class="arrow">→</td><td>predictions</td><td>JSON-first</td><td>sync_predictions()</td></tr>
+      <tr><td>Stereo Analyzer/history/*.json</td><td class="arrow">→</td><td>sa_history</td><td>JSON-first</td><td>sync_sa_history()</td></tr>
+      <tr><td style="color:#fcd34d">(no file)</td><td class="arrow">←</td><td>th_cards, th_evidence</td><td style="color:#fcd34d">DB-first</td><td>—</td></tr>
+      <tr><td style="color:#fcd34d">(no file)</td><td class="arrow">←</td><td>learning_log</td><td style="color:#fcd34d">DB-first</td><td>—</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ TAB 4: Statistics ═══ -->
+<div class="view" id="view-stats">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="num" style="color:#7dd3fc">10</div><div class="label">Ontology Tables</div></div>
+    <div class="stat-card"><div class="num" style="color:#6ee7b7">3</div><div class="label">Market Tables</div></div>
+    <div class="stat-card"><div class="num" style="color:#fda4af">8</div><div class="label">Tracking Tables</div></div>
+    <div class="stat-card"><div class="num" style="color:#c4b5fd">2</div><div class="label">Bridge Tables</div></div>
+    <div class="stat-card"><div class="num" style="color:#fcd34d">4</div><div class="label">Transition Tables</div></div>
+    <div class="stat-card"><div class="num" style="color:#67e8f9">4</div><div class="label">Megatrend Tables</div></div>
+    <div class="stat-card"><div class="num" style="color:#a1a1aa">2</div><div class="label">Quality Tables</div></div>
+    <div class="stat-card"><div class="num" style="color:#e2e8f0">22</div><div class="label">Views</div></div>
+  </div>
+
+  <div class="er-section">
+    <h2>Live Data Counts (from latest db_sync)</h2>
+    <table class="er-table">
+      <tr><th>Table</th><th>Count</th><th>Note</th></tr>
+      <tr><td>tc_cards</td><td><b>16</b></td><td>Active tracking cards</td></tr>
+      <tr><td>sd_cards</td><td><b>3</b></td><td>Seed cards watching</td></tr>
+      <tr><td>watches</td><td><b>40</b></td><td>+7 today (TQ/SKH)</td></tr>
+      <tr><td>predictions</td><td><b>35</b></td><td>0 resolved yet</td></tr>
+      <tr><td>sa_history</td><td><b>26</b></td><td>Stereo analyses</td></tr>
+      <tr><td>tc_scenario_history</td><td><b>34</b></td><td>Across 8 TCs</td></tr>
+      <tr><td>watch_tc_links</td><td><b>28</b></td><td>Watch↔TC mappings</td></tr>
+      <tr><td>th_cards</td><td><b>2</b></td><td>Transition hypotheses</td></tr>
+      <tr><td>th_evidence</td><td><b>4</b></td><td>Evidence entries</td></tr>
+      <tr><td>learning_log</td><td><b>0</b></td><td>No rules yet</td></tr>
+    </table>
+  </div>
+
+  <div class="er-section">
+    <h2>Schema Files</h2>
+    <table class="er-table">
+      <tr><th>File</th><th>Content</th></tr>
+      <tr><td>schema-v2.sql</td><td>Base schema — 26 tables, 9 views</td></tr>
+      <tr><td>schema-v2-patch.sql</td><td>+2 tables (tc_scenario_history, quality_diagnostics) + 3 views</td></tr>
+      <tr><td>schema-v2-views.sql</td><td>+9 views (scenario_detail, trigger_proximity, etc.)</td></tr>
+      <tr><td>schema-v2-macro-bridge.sql</td><td>daily_macro +8 columns + v_macro_to_ontology</td></tr>
+      <tr><td>schema-v2-psf-verdict.sql</td><td>v_psf_dashboard, v_threshold_check</td></tr>
+      <tr><td>schema-v2-megatrend.sql</td><td>+4 tables (ont_megatrend, mt_*) + 3 views</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('view-' + tab.dataset.view).classList.add('active');
+  });
+});
+
+// Tooltip for graph nodes
+const tooltip = document.getElementById('tooltip');
+document.querySelectorAll('.node').forEach(node => {
+  node.addEventListener('mouseenter', e => {
+    const table = node.dataset.table;
+    const info = node.dataset.info;
+    if (!info) return;
+    const lines = info.split('|');
+    tooltip.innerHTML = `<div class="tt-title">${table}</div>` + lines.map(l => l.trim()).join('<br>');
+    tooltip.style.display = 'block';
+  });
+  node.addEventListener('mousemove', e => {
+    tooltip.style.left = (e.clientX + 14) + 'px';
+    tooltip.style.top = (e.clientY + 14) + 'px';
+  });
+  node.addEventListener('mouseleave', () => {
+    tooltip.style.display = 'none';
+  });
+  // Highlight on hover
+  node.style.cursor = 'pointer';
+  node.addEventListener('mouseenter', () => { node.style.opacity = '1'; node.style.filter = 'brightness(1.3)'; });
+  node.addEventListener('mouseleave', () => { node.style.opacity = '1'; node.style.filter = ''; });
+});
+</script>
+</body>
+</html>

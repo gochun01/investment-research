@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "report_id": "RM-2026-03-28-AI-CAPEX",
+    "issue_label": "AI $700B capex vs $1.35T 시총 증발 — 양극화",
+    "tc_match": "TC-010 (신규)",
+    "sd_origin": "SD-002 3회째 → TC 승격",
+    "date": "2026-03-28",
+    "depth": "Standard",
+    "execution": "Phase 0~4.5 풀 실행 / BATCH 1·2·3 모두",
+    "scanner_prefetch": {
+      "NVDA": 169.49,
+      "SP500": 6432,
+      "BTC": 66478,
+      "note": "prefetch 기준. 실제 수집값으로 대체."
+    }
+  },
+
+  "phase0_watch_scan": {
+    "date_scanned": "2026-03-28",
+    "watches_due_today": [],
+    "watches_due_tomorrow": [
+      "W-2026-03-26-UQ-020 (이란 counterproposal — next_check 2026-03-29)",
+      "W-2026-03-26-UQ-021 (파키스탄 중재 회담 — next_check 2026-03-29)",
+      "W-2026-03-26-UQ-023 (Brent $100 임계선 — next_check 2026-03-29)",
+      "W-2026-03-26-UQ-031 (EU 의회 미-EU 무역협정 — next_check 2026-03-29)"
+    ],
+    "summary": "오늘(3/28) 만료 Watch 없음. 내일(3/29) 체크 예정 4건. 이란·EU 관련 Watch는 AI capex 이슈와 직접 교차 없음. Phase 1 진행."
+  },
+
+  "phase1_fingerprint": {
+    "issue": "AI $700B capex vs $1.35T 시총 증발 — 양극화",
+    "domain": "기술(AI 인프라) + 금융(capex ROI) + 산업정책(수출통제) + 공급망(헬륨·반도체)",
+    "geography": "글로벌 — 미국(하이퍼스케일러, NVDA, SMCI) → 아시아(TSMC, SK하이닉스, 삼성) → 유럽(AI 인프라 수요)",
+    "touched_assets": {
+      "1차": ["NVDA", "SMCI", "AMD", "SOXX/반도체지수", "Nasdaq/QQQ"],
+      "2차": ["META", "GOOGL", "MSFT", "AMZN", "TSM", "MU(Micron)", "AVGO"],
+      "대조": ["S&P500", "BTC", "TLT", "산업재/에너지 섹터(Great Rotation 수혜)"]
+    },
+    "stakeholders": {
+      "공급자측": ["Nvidia(Jensen Huang)", "AMD", "TSMC", "SMCI"],
+      "monetizer(수요자)": ["Meta", "Google", "Microsoft", "Amazon", "Oracle"],
+      "분석자": ["JPMorgan(Revenue Gap)", "Goldman Sachs", "Bank of America", "PineBridge"],
+      "규제/정책": ["US DOJ(SMCI 기소)", "US 수출통제 체계(BIS)", "USTR"],
+      "기술 disruptor": ["Google TurboQuant 팀"],
+      "피해자(물리적 병목)": ["TSMC", "SK하이닉스", "삼성전자(헬륨 의존)"]
+    },
+    "secondary_stakeholders": [
+      {"from": "Nvidia capex 피킹 우려", "to": "HBM/NAND 수요 하향 → SK하이닉스·Micron 주가 → 한국 반도체 수출"},
+      {"from": "Google TurboQuant", "to": "메모리 수요 전망 재설정 → HBM 투자 ROI 의문 → 삼성전자 DDR5/HBM 경쟁력"},
+      {"from": "SMCI DOJ 기소", "to": "AI 서버 공급망 신뢰 훼손 → Dell/HPE AI 서버 경쟁 구도 변화"},
+      {"from": "헬륨 부족(카타르 FM)", "to": "AI $650B capex 물리적 실행 불가 → 하이퍼스케일러 데이터센터 건설 차질"},
+      {"from": "자금조달 비용(금리 4.4%)", "to": "capex 채권 발행(Big Tech $630B AI 채권 발행 경쟁) → 투자등급 스프레드 압박"}
+    ],
+    "time_character": "충격(2026-02 ROI Fatigue 촉발) → 전개(3월 SMCI기소·TurboQuant·Great Rotation) → 구조적(capex vs revenue gap 해소에 수년 소요)",
+    "sns_judgment": {
+      "Q1": "YES — Jensen Huang LinkedIn/X 발언 가능. 트럼프 Truth Social: AI 산업 정책 언급 가능",
+      "Q2": "YES — 리테일 투자자(r/wallstreetbets) NVDA 관심 매우 높음",
+      "Q3": "YES — 트럼프 수출통제 발언 가능 (SMCI 사건 관련)",
+      "status": "부분 활성 — Q1 Jensen Huang 발언(공급자), Q2 리테일 반응(NVDA 커뮤니티). 트럼프 발언은 정책(④)에 포함"
+    }
+  },
+
+  "phase2_channels": {
+    "depth": "Standard (18~25 도구 호출)",
+    "price_channels": {
+      "selected": ["NVDA", "SMCI", "AMD", "AVGO", "MSFT", "GOOGL", "META", "AMZN", "TSM", "INTC", "SOXX(iShares 반도체 ETF)", "MU"],
+      "reason": "공급자(NVDA, SMCI, AMD, AVGO, TSM, INTC) + monetizer(MSFT, GOOGL, META, AMZN) + 섹터지수(SOXX) + 메모리(MU). 헬륨 물리 경로 추적을 위해 TSM 포함."
+    },
+    "narrative_channels": {
+      "selected": ["Fortune", "CNBC", "Seeking Alpha", "Tom's Hardware", "TechCrunch", "VentureBeat", "FinancialContent(Pivot 서사)", "Barron's", "Motley Fool", "Goldman Sachs Research", "JPMorgan Research"],
+      "reason": "AI capex 강세(Fortune/CNBC/GTC) + 기술 disruption(Tom's Hardware/VentureBeat) + 반대측 ROI Fatigue(FinancialContent) + 밸류에이션(Barron's)"
+    },
+    "expert_pre_selected": [
+      {"name": "Jensen Huang (Nvidia CEO)", "role": "공급자측", "rationale": "capex 지속 정당화 주장의 핵심 발언자"},
+      {"name": "JPMorgan 애널리스트(Revenue Gap 보고서)", "role": "분석자/경고", "rationale": "$650B 연매출 필요 계산"},
+      {"name": "Goldman Sachs AI Capex 팀", "role": "분석자", "rationale": "capex 상향 전망 제시"},
+      {"name": "Bank of America AI 섹터 팀", "role": "반대입장(강세)", "rationale": "매수 기회 주장"},
+      {"name": "PineBridge Investments", "role": "분석자(신중)", "rationale": "capex 감속 내비게이션 보고서"},
+      {"name": "Google TurboQuant 팀", "role": "기술 disruption", "rationale": "HBM 수요 전망 직접 충격"},
+      {"name": "US DOJ", "role": "정책/규제", "rationale": "SMCI 기소 → 수출통제 강화"},
+      {"name": "TSMC/삼성/Micron(팹 경영진)", "role": "피해자(헬륨)", "rationale": "헬륨 위기 직접 피해자, 침묵 여부 확인 필요"},
+      {"name": "Cathie Wood (ARK Invest)", "role": "포지셔닝 지표", "rationale": "이례적 매도 = 기술 사이클 경보"},
+      {"name": "반대입장: Motley Fool/Barron's 강세론자", "role": "반대입장", "rationale": "R-03: NVDA 저평가 매수 주장"}
+    ],
+    "policy_channel": {
+      "active": true,
+      "channels": ["US DOJ(SMCI 기소)", "BIS 수출통제 체계", "트럼프 AI 행정명령 동향"],
+      "reason": "수출통제가 AI 공급망 직접 규제. SMCI 사건으로 집행 강도 가시화"
+    },
+    "positioning_channel": {
+      "active": true,
+      "channels": ["SOXX 1개월 궤적", "NVDA 3개월 주간 흐름", "ARK Invest 포지션 변화", "NVDA 애널리스트 컨센서스 vs 주가 괴리"],
+      "reason": "전개형 이상 — AI capex 사이클의 방향 전환 여부가 핵심. 기관 포지션 변화가 선행 신호"
+    }
+  },
+
+  "phase3_reactions": {
+
+    "batch1_price": [
+      {
+        "asset": "NVDA",
+        "value": "$167.52",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "prefetch $169.49 대비 -$1.97. 3월 궤적: $186.03(3/11 고점) → $167.52(3/27). 고점 대비 -9.9%. 월간 -5.3%. YTD 약 -12% (연초 ~$190대)"
+      },
+      {
+        "asset": "SMCI",
+        "value": "$21.97",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "3/19 DOJ 기소 발표 전 $30.79 → 3/20 $20.53 (-33.3%) → 현재 $21.97. 기소 이후 회복 제한적. 증권사기 집단소송 추가(5/26 데드라인)"
+      },
+      {
+        "asset": "AMD",
+        "value": "$201.99",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "AI GPU 2위 경쟁자. NVDA 약세 대비 상대적 견조. MI300X 수요 유지 반영"
+      },
+      {
+        "asset": "AVGO (Broadcom)",
+        "value": "$300.68",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "커스텀 AI 칩(ASIC) 수혜주. NVDA 피킹 논란 속 대안으로 부각. 하이퍼스케일러 자체칩 트렌드 수혜"
+      },
+      {
+        "asset": "MSFT",
+        "value": "$356.77",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "monetizer 대표. capex $120B+ 집행에도 주가 상대적 안정. AI 매출(Azure AI) 성장이 capex 정당화 역할"
+      },
+      {
+        "asset": "GOOGL",
+        "value": "$274.34",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "TurboQuant 발표 주체. 자체 알고리즘 효율화 = 하드웨어 capex 감속 가능 신호. capex $185B 집행 중"
+      },
+      {
+        "asset": "META",
+        "value": "$525.72",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "capex $135B 집행. FCF 90% 감소 경고(Barclays)에도 Superintelligence 전략으로 주가 방어"
+      },
+      {
+        "asset": "AMZN",
+        "value": "$199.34",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "capex $200B 집행(가장 공격적). FCF 마이너스 전환 경고. AWS AI 수요 vs capex 과부하 논란"
+      },
+      {
+        "asset": "TSM (TSMC ADR)",
+        "value": "$326.74",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "헬륨 60~90일 재고. 카타르 공급 30% 제거에도 현재까지 생산 영향 없음. 단, 2~3주 재고 소진 시 전이 가능"
+      },
+      {
+        "asset": "INTC",
+        "value": "$43.13",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "AI capex 사이클 소외. 파운드리 사업 재건 중. NVDA 대비 AI GPU 경쟁력 열세 지속"
+      },
+      {
+        "asset": "SOXX (iShares 반도체 ETF)",
+        "value": "$323.48",
+        "source": "[MCP] Yahoo Finance 2026-03-27",
+        "note": "3/25 $345.25(월간 고점) → 3/26 -4.9% → 3/27 $323.48. TurboQuant 발표(3/25) + Great Rotation 매도 직격. 3월 초 $351.83 대비 -8.1%"
+      },
+      {
+        "asset": "NVDA 3개월 주간 궤적",
+        "value": "2025-12-29: $188.84 → 2026-01-26: $191.12(고점) → 2026-02-23: $177.18 → 2026-03-23: $167.52",
+        "source": "[MCP] Yahoo Finance historical",
+        "note": "1월 고점 $191 → 3월 말 $167. 2개월 만에 -12.4%. 2025년 전고점(~$250) 대비 -33%. 밸류에이션: NVDA P/E가 S&P500 P/E 아래로 하락(Barron's 3/27)"
+      }
+    ],
+
+    "batch1_narrative": [
+      {
+        "headline": "$1.35T 시총 증발 — 1주일간 MSFT·NVDA·Oracle·META·AMZN·GOOGL 합산 손실",
+        "direction": "ROI Fatigue 우세",
+        "source": "[WebSearch] TechBuzz.ai, Techi.com 2026-03",
+        "note": "2026년 2월 중순 earnings 시즌 이후 ROI Fatigue 공론화. capex $660B 집행인데 AI 서비스 매출 $25B(JPM 추산). ROI 4% = '텔레콤 버블 재현' 우려"
+      },
+      {
+        "headline": "Google TurboQuant: LLM 메모리 6배 절감, 8배 속도 향상 — 3/25 발표",
+        "direction": "하드웨어 수요 전망 충격",
+        "source": "[WebSearch] Google Research Blog, Tom's Hardware, CNBC, TechCrunch 2026-03-25~26",
+        "note": "KV cache를 3비트로 압축. 정확도 손실 없음. 훈련/파인튜닝 불필요 → 즉시 배포 가능. CNBC: 메모리 주식(Micron, WD) 하락. HBM 수요 전망 재설정 가능성"
+      },
+      {
+        "headline": "'Great Pivot 2026' — 기관투자자, AI 테크 매도 → 산업재·소재·소비재 매수",
+        "direction": "섹터 로테이션 가속",
+        "source": "[WebSearch] FinancialContent, MarketMinute 2026-03-12, 2026-03-26",
+        "note": "3/12~3/26 연속 보도. Nasdaq YTD -7.8%(3/24 기준). 2024~2025 3년간 AI/테크 지배 후 자본 이동. 중형주 급등 vs AI 대형주 하락(3/27 기사)"
+      },
+      {
+        "headline": "[반대측] NVDA 이제 S&P500 P/E 아래로 저평가 — 매수 기회",
+        "direction": "강세/매수 권장",
+        "source": "[WebSearch] Barron's 2026-03-27",
+        "note": "R-03 양면 충족. NVDA forward P/E가 S&P500 forward P/E 하락 = 역사적으로 드문 저평가 신호. Motley Fool도 '2026 말까지 급등' 예측 기사(3/27)"
+      },
+      {
+        "headline": "[반대측] Micron HBM4 양산 시작 — Nvidia Vera Rubin GPU용 공급",
+        "direction": "AI 수요 건재",
+        "source": "[WebSearch] Motley Fool 2026-03-27",
+        "note": "Micron HBM capacity 2026년 완판. SK하이닉스 US IPO 검토($10~14B 조달) — RAMmageddon 해소 위해. 수요 피킹 주장에 대한 공급 측 반박"
+      },
+      {
+        "headline": "Big Tech $630B AI 채권 발행 — capex를 부채로 조달",
+        "direction": "자금조달 압박 가시화",
+        "source": "[WebSearch] FinancialContent 2026-03-03",
+        "note": "금리 4.4%에서 대규모 채권 발행. Amazon FCF 마이너스 전환 경고. Meta FCF 90% 감소. 금리 상승(TLT 이슈와 교차)이 capex 자금조달 비용 직접 가중"
+      }
+    ],
+
+    "batch1_policy": [
+      {
+        "actor": "US DOJ",
+        "action": "SMCI 공동창업자 Yih-Shyan Liaw 등 3인 기소 — Nvidia AI 서버 $2.5B 중국 밀수 (3/19)",
+        "source": "[WebSearch] Fast Company, Seeking Alpha 2026-03-19~20",
+        "note": "SMCI 본사는 피고인 아님. Liaw 등 행정 휴직/계약 해지. 수출통제 집행 강도 가시화 = AI 공급망 준법 비용 증가"
+      },
+      {
+        "actor": "US BIS 수출통제 체계",
+        "action": "SMCI 사건 계기로 AI 칩 수출통제 실질 집행 강화 가시화",
+        "source": "[WebSearch] CNBC, Motley Fool 2026-03",
+        "note": "AI 서버의 간접 수출(중국 중개 경로)까지 집행 대상 확대 우려. AI 공급망 컴플라이언스 비용 상승"
+      }
+    ],
+
+    "batch2_expert": [
+      {
+        "name": "Jensen Huang (Nvidia CEO)",
+        "role": "공급자측",
+        "statement": "GTC 2026: '$700B AI capex는 시작일 뿐. Agentic AI → Physical AI로 수요 지속 확대. Blackwell+Rubin 칩 $1T+ 판매 전망(2027까지). GPU는 수익 창출 자산, 투기적 과잉이 아님.'",
+        "direction": "강세/지속",
+        "source": "[WebSearch] Fortune 2026-02-25, NVIDIA GTC 2026, IEEE ComSoc 2026-02-07",
+        "note": "GTC 3/13 기조연설. Vera Rubin(차세대 GPU) 발표. 그러나 Wall Street는 '충분한 보상 없다' 반응 — GTC 발표 후에도 주가 반등 미흡(Sherwood News)"
+      },
+      {
+        "name": "JPMorgan (Revenue Gap 보고서)",
+        "role": "분석자/경고",
+        "statement": "'$650B 연매출이 현 AI 인프라 투자에 10% ROI를 위한 최소 요건. 현 AI 서비스 수익 ~$25B = 4% ROI. iPhone 사용자에 월 $34.72, Netflix 구독자 월 $180 영구 추가 부담 수준.' Price Target NVDA $265 (2026-02-26, J.P. Morgan)",
+        "direction": "경고 + 불확실성",
+        "source": "[WebSearch] Tom's Hardware, Techstrong.ai, InvestorsObserver 2026-03",
+        "note": "2030년까지 AI 투자 기준. 텔레콤/광케이블 버블 재현 리스크 명시. 그러나 JPM 자신의 NVDA PT는 여전히 $265(49% 상승 여력) — 경고와 강세 혼재"
+      },
+      {
+        "name": "Goldman Sachs AI 팀",
+        "role": "분석자",
+        "statement": "'AI capex $527B → $700B 상향 가능. 반도체/인프라 롱(picks & shovels) 유효. 단, 2030년까지 예상 AI 이익의 절반도 달성 못할 수 있음(Fortune 1월 경고).'",
+        "direction": "강세 + 유보",
+        "source": "[WebSearch] Fortune 2026-01-07, Yahoo Finance, Daily Hodl 2026-03-24",
+        "note": "강세 기조 유지하면서도 이익 달성 불확실성 인정. 이란 전쟁을 AI capex에 대한 지정학적 충격으로 별도 경고"
+      },
+      {
+        "name": "Bank of America AI 섹터 팀",
+        "role": "반대입장(강세)",
+        "statement": "'AI 셀오프는 매수 기회. 구조적 AI 수요 건재. 2026년 $1T 칩 서지 선도 6종목 제시.' (3/24: AI 인프라 수요 주식 추가 상승 권고)",
+        "direction": "강세",
+        "source": "[WebSearch] Yahoo Finance, CNBC 2026-03-24",
+        "note": "R-03 충족. 단, Savita Subramanian: S&P 연말 7100 목표, 4~5% 상승에 그침 경고. 밸류에이션 재설정 경보"
+      },
+      {
+        "name": "PineBridge Investments",
+        "role": "분석자(신중)",
+        "statement": "'capex 감속은 하이퍼스케일러가 현실적 수익 기대에 맞추는 것 = AI 사이클 연장. 조정은 건설적. 단, 동시에 에쿼티 흔들리면 AI 채권 조달 부담 급증.'",
+        "direction": "조건부 긍정",
+        "source": "[WebSearch] PineBridge Investments 2026",
+        "note": "capex 감속을 나쁜 신호가 아닌 성숙의 신호로 해석. 채권 조달 리스크를 별도 경보로 제시"
+      },
+      {
+        "name": "Google TurboQuant 팀",
+        "role": "기술 disruption",
+        "statement": "'LLM KV cache를 3비트로 압축, 메모리 6배 절감, 속도 8배 향상. 훈련/파인튜닝 불필요. ICLR 2026 제출.'",
+        "direction": "하드웨어 수요 disruption",
+        "source": "[WebSearch] Google Research Blog, MarkTechPost, Tom's Hardware 2026-03-25",
+        "note": "소프트웨어만으로 하드웨어 비용 절감. HBM 수요 전망 하향 트리거. CNBC: 메모리 주식 하락. 단, GPU 자체 수요에는 중립~소폭 부정(추론 속도 향상 = GPU당 더 많은 처리 가능 = 수요 상쇄)"
+      },
+      {
+        "name": "TSMC/삼성전자/Micron 경영진",
+        "role": "피해자(헬륨)",
+        "statement": "침묵 — 헬륨 수급 및 가동률 영향 관련 공식 발언 미발견",
+        "direction": "침묵",
+        "channel": "—",
+        "note": "R-09 침묵 기록. TSMC 60~90일 재고로 현재 생산 영향 없음. 경쟁 민감 정보로 비공개 가능. SK하이닉스 카타르 의존도 64.7% — IPO 계획 발표($10~14B)로 공급 확대 의지 간접 시사"
+      },
+      {
+        "name": "Cathie Wood (ARK Invest)",
+        "role": "포지셔닝 지표",
+        "statement": "Nasdaq 조정 시 ARK가 이례적으로 NVDA·META·Broadcom 매도(Barron's 3/27). 'ARK Loves Buying the Dip. It's Selling This One.'",
+        "direction": "경고 신호",
+        "source": "[WebSearch] Barron's via Yahoo Finance 2026-03-27",
+        "note": "평소 딥 바이어인 ARK가 매도 전환 = 기술 사이클 경보로 해석 가능. 단, ARK는 개별 판단이므로 단일 데이터 포인트"
+      },
+      {
+        "name": "반대입장: Motley Fool 강세론",
+        "role": "반대입장",
+        "statement": "'NVDA는 2026 말까지 급등할 No-Brainer 주식. Micron HBM4 양산 → AI 수요 최고조. 현 주가는 심각한 저평가.'",
+        "direction": "강세",
+        "source": "[WebSearch] Motley Fool 2026-03-27",
+        "note": "R-03 양면 충족. Barron's '이미 S&P P/E 이하' 동조. 단, ROI Gap과 물리적 병목(헬륨)은 다루지 않음"
+      }
+    ],
+
+    "batch2_positioning": [
+      {
+        "indicator": "SOXX 3월 궤적",
+        "observation": "3/2: $351.83 → 3/11: $341.88(고점) → 3/20: $332.51 → 3/25: $345.25 → 3/27: $323.48. TurboQuant 발표 후 3/25→27 -6.3%. 3월 초 대비 -8.1%",
+        "source": "[MCP] Yahoo Finance historical 2026-03"
+      },
+      {
+        "indicator": "NVDA 애널리스트 컨센서스 vs 주가 괴리",
+        "observation": "컨센서스 PT $266~276 (38~69인 Strong Buy). 현재가 $167.52. 괴리 59~65%. 이 괴리가 6개월 만에 확대 — 주가가 하락하는 동안 PT는 거의 유지 = 월가 강세론과 시장 현실의 분열",
+        "source": "[WebSearch] MarketBeat, StockAnalysis 2026-03 / [MCP] Yahoo Finance Recommendations"
+      },
+      {
+        "indicator": "NVDA 애널리스트 추천 변화",
+        "observation": "0m: Strong Buy 9 + Buy 48 + Hold 2 + Sell 1. vs -1m: Strong Buy 12. Strong Buy 소폭 감소(12→9)했으나 전체 Buy 유지. Sell은 1개로 고정",
+        "source": "[MCP] Yahoo Finance Recommendations 2026-03-28"
+      },
+      {
+        "indicator": "NVDA Short Interest",
+        "observation": "단기 공매도 256.76M주(전월 264.29M에서 감소). 전체 유통주의 1.1%. Days to Cover 1.66일. 단기 공매도 포지션은 오히려 축소 — 현재 하락은 롱 청산(투자자 매도) 성격",
+        "source": "[WebSearch] MarketBeat 2026-03"
+      },
+      {
+        "indicator": "ARK Invest NVDA/META/AVGO 매도",
+        "observation": "3/27 Barron's: ARK가 평소 딥바이 전략 포기하고 AI 테크 매도 전환. 구체 매도량 미공개",
+        "source": "[WebSearch] Barron's 2026-03-27"
+      },
+      {
+        "indicator": "Big Tech 시총 Mag7 주간 손실",
+        "observation": "3/27: Mag7 합산 $850B+ 시총 증발(주간). 전주 포함 누적 $1.35T+. 이란 긴장 + AI capex 우려 복합",
+        "source": "[MCP] Yahoo Finance News 2026-03-27"
+      }
+    ],
+
+    "batch3_corrections": {
+      "양면_체크_R03": {
+        "narrative_반대측": "Barron's(NVDA 저평가), Motley Fool(매수 기회), Micron(HBM 수요 건재), SK하이닉스(IPO로 공급 확대) — 충족",
+        "expert_반대측": "BofA(AI capex 매수 기회), Goldman Sachs(picks & shovels 롱), Motley Fool 강세론 — 충족",
+        "status": "R-03 충족"
+      },
+      "침묵_기록_R09": {
+        "targets": ["TSMC/삼성/Micron 헬륨 영향 — 침묵 기록(경쟁 민감)", "트럼프 SMCI 사건 공식 반응 — 침묵(정책 연계 가능하나 미발견)", "OpenAI/Anthropic 수익 관련 공식 발언 — 침묵(비상장사 공개 제한)"]
+      },
+      "추가_발견": {
+        "SK하이닉스 US IPO": "TechCrunch 3/27: SK하이닉스 미국 IPO 검토($10~14B). 헬륨 위기 + RAMmageddon 속 공급 확대 의지. AI capex 강세론 근거 추가",
+        "Micron HBM4 양산": "Motley Fool 3/27: Micron이 Nvidia Vera Rubin GPU용 HBM4 양산 개시. 2026년 HBM capacity 완판. 수요 피킹 주장에 대한 반증",
+        "Anthropic IPO 검토": "Yahoo Finance 3/27: Anthropic이 Q4 2026 IPO 검토. AI 수익화 전선에서 중요한 신호"
+      },
+      "헬륨_과소반응_교차_확인": {
+        "현황": "HPCwire 3/27: 헬륨 부족이 AI 고밀도 컴퓨팅 시스템 제약 시작. Air Liquide 대만 공장 개설(Tom's Hardware). 헬륨 200개 특수 컨테이너 호르무즈 인근 억류",
+        "팹_재고": "TSMC/삼성/Intel: 60~90일 재고. SK하이닉스: 카타르 의존도 64.7% — 다각화 필요성 인지",
+        "판단": "여전히 과소 반영. 헬륨 경로가 AI capex $650B 집행에 물리적 병목이 될 수 있으나 AI 테마주에 미반영 지속"
+      }
+    }
+  },
+
+  "phase4_pattern": {
+    "lens1_direction": {
+      "판독": "분열 — 강세(Jensen/GS/BofA/수요 건재론) vs 약세(JPM Revenue Gap/ROI Fatigue/Great Rotation) 양 진영 활발한 대립. 단, 주가는 약세 방향으로 먼저 이동",
+      "comment": "NVDA -12%(연초), SMCI -33%(기소 후), SOXX -8%(3월). 주가는 약세 진영 지지. 반면 애널리스트 컨센서스 PT $266(강세)와 현재가 $167 사이에 59% 괴리 — 월가 분석과 시장 현실의 분열 자체가 이 이슈의 본질. Jensen Huang은 계속 강세 발언이지만 주가는 GTC 발표 후에도 반등 실패(Sherwood News). 서사는 양분, 가격은 이미 선택"
+    },
+    "lens2_time": {
+      "판독": "A (시장주도) — 가격 하락이 먼저(2월 ROI Fatigue 충격), 서사(Great Rotation 보도)가 뒤따름. TurboQuant(3/25)가 예외적으로 서사→가격 전달. SMCI 기소(3/19)는 정책→가격",
+      "comment": "주가 하락(2/27 Nasdaq 급락 '캐팩스 청구서') → 매체 서사(Great Pivot, ROI Fatigue) → 전문가 해석(JPM $650B 계산). 주가가 선행하고 서사가 설명하는 A구조. 단 TurboQuant는 B구조(서사 발표→메모리 주식 즉각 하락) 예외 사례"
+    },
+    "lens3_proportionality": {
+      "판독": "SMCI 과잉(-33%) / NVDA 비례(-12%) / 헬륨 리스크 과소 / 전체 섹터(SOXX) 비례~과소",
+      "comment": "SMCI -33%: 기소 피고인이 본사가 아닌 임직원임에도 주가 급락. 과잉 반응 가능(사업 기반 건재). NVDA -12%: capex 피킹 우려에 비례하는 하락. 중요 포인트: NVDA forward P/E가 S&P500 이하로 하락(Barron's) = 역사적 저평가 신호 → 과잉 가능성. 헬륨 과소: 카타르 30% 공급 제거가 AI $650B 물리적 병목 가능성이 있으나 AI 테마주 미반영. 이것이 가장 주목할 과소 영역"
+    },
+    "lens4_propagation": {
+      "판독": "복합 3경로: (1)규제 경로 SMCI기소→수출통제 강화→AI공급망 비용, (2)물리 경로 헬륨부족→팹가동률→GPU공급→capex집행차질, (3)기술 경로 TurboQuant→메모리수요↓→HBM ROI↓",
+      "comment": "세 경로가 동시에 AI capex 내러티브를 흔들고 있으나 상호 독립적. (1)규제는 단기 충격(SMCI 주가), (2)물리 경로는 2~3개월 지연 충격(헬륨 재고 소진 후), (3)기술 경로는 수년간 소프트웨어 효율화로 하드웨어 수요 점진적 잠식. 가장 장기적이고 구조적인 위협은 (3). 단기 주가에는 (1)(2)가 더 직접적"
+    },
+    "stereo_recommendation": {
+      "trigger": "방향 == 분열 + 비례성에 과소 영역(헬륨, NVDA 과잉 가능성) + 월가 PT vs 현재가 59% 괴리",
+      "recommendation": "Stereo 기본 모드 권장",
+      "reason": "monetizer vs manufacturer 분열 + 헬륨 과소반응 + TurboQuant 구조적 disruption + 월가 낙관론과 시장 현실의 심층 괴리. 표면(주가 -12%)과 심층(Revenue Gap $650B, 물리적 병목, 기술 압박) 구조적 분리 확인 필요",
+      "mode": "기본 모드 (capex ROI 분석, 전파 3경로 분해)"
+    }
+  },
+
+  "unresolved_new": [
+    {
+      "id": "UQ-090",
+      "question": "Q1 실적 콜(4~5월)에서 Meta/Google/Amazon/Microsoft 중 capex 가이던스 하향 신호 나오는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "4개 하이퍼스케일러 중 1사 이상이 2026H2 capex 감속 가이던스 공시",
+      "check_channels": {"narrative": ["CNBC", "Bloomberg"], "price": ["META", "GOOGL", "AMZN", "MSFT"]},
+      "created": "2026-03-28",
+      "deadline": "2026-05-15"
+    },
+    {
+      "id": "UQ-091",
+      "question": "헬륨 부족이 AI 데이터센터 건설 일정에 실질적 차질을 야기하는가? (60~90일 재고 소진 이후)",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "TSMC/삼성/SK하이닉스의 헬륨 관련 가동률 영향 공식 보고 또는 Air Liquide 대만 공장 가동으로 공급 회복 확인",
+      "check_channels": {"narrative": ["Tom's Hardware", "HPCwire", "Data Centre Magazine"], "price": ["TSM", "000660.KS", "005930.KS"]},
+      "created": "2026-03-28",
+      "deadline": "2026-04-25"
+    },
+    {
+      "id": "UQ-092",
+      "question": "Google TurboQuant이 HBM/NAND 수요 전망을 실질적으로 하향시키는가? (타사 채택 여부가 관건)",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "Google 외 1개 이상 하이퍼스케일러 TurboQuant 채택 또는 주요 반도체 애널리스트 HBM 수요 전망 공식 하향",
+      "check_channels": {"narrative": ["TrendForce", "Seeking Alpha", "Tom's Hardware"], "price": ["MU", "000660.KS", "005930.KS"]},
+      "created": "2026-03-28",
+      "deadline": ""
+    },
+    {
+      "id": "UQ-093",
+      "question": "SMCI DOJ 기소가 AI 서버 공급망 재편(Dell/HPE 시장점유율 확대)으로 이어지는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SMCI 시장점유율 5%+ 감소 또는 Dell/HPE AI 서버 수주 급증 보고",
+      "check_channels": {"narrative": ["CNBC", "Seeking Alpha"], "price": ["SMCI", "DELL", "HPE"]},
+      "created": "2026-03-28",
+      "deadline": ""
+    },
+    {
+      "id": "UQ-094",
+      "question": "Anthropic Q4 2026 IPO 성사 여부 — AI 수익화 증거가 될 것인가?",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "Anthropic IPO 공식 신청(S-1 제출) 또는 연기 발표",
+      "check_channels": {"narrative": ["TechCrunch", "Bloomberg", "WSJ"]},
+      "created": "2026-03-28",
+      "deadline": "2026-10-01"
+    },
+    {
+      "id": "UQ-095",
+      "question": "SK하이닉스 US IPO 성사 — $10~14B 조달로 HBM 공급 병목 해소되는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "SK하이닉스 미국 증시 IPO 공식 신청 또는 HBM4 추가 생산 공시",
+      "check_channels": {"narrative": ["TechCrunch", "Bloomberg"], "price": ["000660.KS"]},
+      "created": "2026-03-28",
+      "deadline": ""
+    }
+  ],
+
+  "cross_issue_linkage": {
+    "AI_capex_to_TLT": "금리 4.4% 유지 → Big Tech $630B 채권 발행 비용 상승 → FCF 압박 → capex 지속 가능성 의문 (이란 전쟁 → 유가 → 인플레 → Fed 매파 체인의 말단 효과)",
+    "AI_capex_to_helium": "이란 전쟁 → 카타르 Ras Laffan 헬륨 FM → 반도체 팹 위협 → AI $650B capex 물리적 병목. CL-1 이슈와 AI capex 이슈의 직접 교차점",
+    "note": "이 이슈의 해소 촉매는 크게 3가지: (1)하이퍼스케일러 AI 매출 급증으로 ROI 증명, (2)이란 전쟁 해소 → 헬륨 공급 회복, (3)TurboQuant 확산 차단(GPU per token 수요 상쇄 효과로 상쇄 가능)"
+  },
+
+  "sources": [
+    "Fortune 2026-02-25: Nvidia Jensen Huang $700B AI capex statement",
+    "NAI500 2026-03: Nvidia NVDA Beats But Is AI Capex Peaking",
+    "TechBuzz.ai 2026-03: Big Tech loses $1.35T AI spending fears selloff",
+    "FinancialContent 2026-03-26: The Great Pivot of 2026 investors abandon AI hype",
+    "FinancialContent 2026-03-12: Great Sector Rotation 2026",
+    "Google Research Blog 2026-03-25: TurboQuant",
+    "Tom's Hardware 2026-03-25: Google TurboQuant LLM KV cache 6x",
+    "CNBC 2026-03-26: Google TurboQuant memory chip stocks",
+    "TechCrunch 2026-03-25: Google TurboQuant Pied Piper",
+    "Seeking Alpha 2026-03-19: SMCI co-founder DOJ indictment",
+    "Fast Company 2026-03-19~20: SMCI DOJ China AI scheme",
+    "Tom's Hardware: Qatar helium shutdown SK hynix 30% global supply",
+    "Fortune 2026-03-21: Iran war helium shortage chip supply chains",
+    "HPCwire 2026-03-27: Global helium shortage HPC cooling",
+    "Tom's Hardware: Air Liquide Taiwan helium containers Hormuz",
+    "Techstrong.ai: JPMorgan $650B annual revenue AI returns",
+    "Tom's Hardware: JPMorgan $650B iPhone Netflix analogy",
+    "Fortune 2026-01-07: Goldman Sachs AI profit capex half",
+    "PineBridge Investments 2026: Navigating Decelerating AI Capex",
+    "FinancialContent 2026-03-27: Great Rotation mid-caps surge AI giants falter",
+    "Barron's 2026-03-27: Nvidia stock cheaper than S&P500",
+    "Barron's 2026-03-27: Cathie Wood ARK sells META NVDA AVGO",
+    "Motley Fool 2026-03-27: Micron HBM4 Nvidia Vera Rubin",
+    "TechCrunch 2026-03-27: SK hynix US IPO RAMmageddon",
+    "Yahoo Finance News 2026-03-27: Mag7 $850B weekly loss",
+    "Yahoo Finance News 2026-03-27: Tech stocks Big Tech selloff Anthropic IPO",
+    "[MCP] Yahoo Finance: NVDA $167.52, SMCI $21.97, AMD $201.99, AVGO $300.68, MSFT $356.77, GOOGL $274.34, META $525.72, AMZN $199.34, TSM $326.74, INTC $43.13",
+    "[MCP] Yahoo Finance SOXX historical",
+    "[MCP] Yahoo Finance NVDA historical 1mo/3mo",
+    "[MCP] Yahoo Finance NVDA Recommendations"
+  ]
+}

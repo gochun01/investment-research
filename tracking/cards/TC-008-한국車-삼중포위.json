@@ -34,29 +34,49 @@
     "A": {
       "label": "관세 25% + EU IAA → 구조 전환 가속",
       "probability": "40%",
-      "trigger": "IEEPA 25% 공식 시행",
-      "kc": {"watch": "현대차 ₩430K", "alert": "현대차 ₩400K×3d", "hard": "현대차 ₩370K×5d"},
+      "trigger": {"condition": "IEEPA 25% 공식 시행", "source": "구조적", "distance": "15%→25% 미확정", "recalibration": "정기 4/28(301 청문회) + 비정기(USTR 발표)"},
+      "kc": {
+        "watch": "현대차 ₩430K",
+        "alert": "현대차 ₩400K × 3d",
+        "hard": "현대차 ₩370K × 5d",
+        "action": "TC-008 Phase 3. 구조 전환 가속 확인. 현지생산 전환 진척도 모니터링 강화."
+      },
       "current_status": "미진입 (감시)"
     },
     "B": {
       "label": "관세 협상 타결 (15% 유지)",
       "probability": "15%",
-      "trigger": "한미 통상 합의 공식 발표",
-      "kc": {"invalidation": "관세 25% 시행시 B 무효"},
+      "trigger": {"condition": "한미 통상 합의 공식 발표", "source": "서사적", "recalibration": "정기 4/28(301 청문회) + 비정기(정상회담)"},
+      "kc": {
+        "watch": "관세 25% 시행 보도",
+        "alert": "USTR 25% 관세 목록 한국 포함 확정",
+        "hard": "관세 25% 공식 시행",
+        "action": "TC-008 B(타결) thesis 폐기. A로 전환."
+      },
       "current_status": "미발생"
     },
     "C": {
       "label": "삼중 압박 극대화",
       "probability": "30%",
-      "trigger": "25%관세 + BYD 유럽 분기1위 + 이란전쟁 3개월+",
-      "kc": {"watch": "현대차 ₩420K", "alert": "현대차 ₩380K×3d", "hard": "현대차 ₩350K×5d"},
+      "trigger": {"condition": "25%관세 + BYD 유럽 분기1위 + 이란전쟁 3개월+", "source": "구조적", "distance": "3조건 중 1개만 충족", "recalibration": "정기 월별 + 비정기(관세/전쟁 이벤트)"},
+      "kc": {
+        "watch": "현대차 ₩420K",
+        "alert": "현대차 ₩380K × 3d",
+        "hard": "현대차 ₩350K × 5d",
+        "action": "TC-008 Phase 4. 삼중 포위 극대화 확정. 현대차 구조 전환 + 방어주 전환 모니터."
+      },
       "current_status": "미진입 (감시)"
     },
     "D": {
       "label": "SDV 경쟁 부상 — 관세 뒤의 기술 전쟁",
       "probability": "15%",
-      "trigger": "BYD L4 자율주행 + 현대 NVIDIA 파트너십 성과 지연",
-      "kc": {"invalidation": "현대 SDV 시연 성공 + OTA 상용화"},
+      "trigger": {"condition": "BYD L4 자율주행 시연 + 현대 NVIDIA 파트너십 성과 지연", "source": "구조적", "recalibration": "정기 6개월 + 비정기(SDV 이벤트)"},
+      "kc": {
+        "watch": "현대 SDV 로드맵 구체화 발표",
+        "alert": "현대 SDV 시연 성공 + OTA 상용화 공시",
+        "hard": "현대 SDV 양산 확정 OR BYD L4 좌절",
+        "action": "TC-008 D(SDV) thesis 재검토. 기술 격차 해소면 A/C로 전환."
+      },
       "current_status": "미진입"
     }
   },
@@ -67,6 +87,11 @@
     {"indicator": "현대차 주가", "current": "₩490,000", "threshold": "₩430K 이탈", "last_check": "2026-03-26", "next_check": "2026-04-02"},
     {"indicator": "BYD 유럽 월간 판매 순위", "current": "연속 1위", "threshold": "분기 1위 확정", "last_check": "2026-03-26", "next_check": "2026-04-15"},
     {"indicator": "HMGMA 분기 생산량", "current": "가동 중", "threshold": "Q2 실적 발표", "last_check": "2026-03-26", "next_check": "2026-07-15"}
+  ],
+
+  "heartbeat_thresholds": [
+    {"indicator": "현대차", "symbol": "005380.KS", "watch": 430000, "alert": 400000, "hard": 370000, "direction": "below"},
+    {"indicator": "기아", "symbol": "000270.KS", "watch": 95000, "alert": 88000, "hard": 80000, "direction": "below"}
   ],
 
   "analysis_ids": ["SA-20260326-002", "SA-20260326-007"],
