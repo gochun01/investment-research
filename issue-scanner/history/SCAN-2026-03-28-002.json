@@ -1,0 +1,268 @@
+{
+  "date": "2026-03-28",
+  "scan_id": "SCAN-20260328-002",
+  "seed": {
+    "provided": "구글 TurboQuant — AI 모델 메모리 6배 압축 알고리즘 공개, 삼성전자/SK하이닉스 급락",
+    "axis_injection": "A"
+  },
+  "sources_used": [
+    {"axis": "A", "tool": "mcp__tavily-mcp__tavily_search", "query": "Reuters OR Bloomberg OR CNBC market stocks semiconductor memory AI today March 2026 Google TurboQuant Samsung SK Hynix", "result_count": 8},
+    {"axis": "A", "tool": "WebSearch", "query": "증시 급등 급락 삼성전자 SK하이닉스 구글 TurboQuant 메모리 AI 2026년 3월 28일", "result_count": 10},
+    {"axis": "B", "tool": "mcp__tavily-mcp__tavily_search", "query": "central bank regulation tariff policy semiconductor AI chip export control March 2026", "result_count": 7},
+    {"axis": "B", "tool": "WebSearch", "query": "금리 결정 규제 관세 제재 정부 발표 반도체 AI 메모리 정책 2026년 3월", "result_count": 10},
+    {"axis": "C", "tool": "mcp__tavily-mcp__tavily_search", "query": "supply chain disruption semiconductor memory HBM AI infrastructure shortage March 2026", "result_count": 7},
+    {"axis": "C", "tool": "WebSearch", "query": "반도체 공급 차질 HBM 메모리 수급 AI 인프라 투자 2026년 3월", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "GENIUS Act stablecoin 규제 2026년 3월 최신 진행 상황", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "SK hynix US IPO ADR listing 2026 March semiconductor memory valuation", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "Chip Security Act export control AI semiconductor China smuggling 2026 March House passed", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "Taiwan US ART trade deal semiconductor export control FDPR 2026 March implications Korea", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "Micron HBM4 실적 어닝 서프라이즈 2026년 3월 반도체 슈퍼사이클", "result_count": 10},
+    {"axis": "Q1_supplement", "tool": "WebSearch", "query": "US Treasury yield bond 10Y Fed rate March 2026 semiconductor AI capex inflation", "result_count": 10}
+  ],
+  "seeds": {
+    "heartbeat": [],
+    "macro": "이란 전쟁 확전 + TLT 4.4% + AI capex 양극화 수집 중",
+    "ghs": [],
+    "user_seed": "구글 TurboQuant — 메모리 6배 압축 알고리즘, 삼성/SKH 급락"
+  },
+  "raw_headlines": [
+    "[A-EN] Chip selloff deepens after Google touts memory breakthrough (Taipei Times 3/27)",
+    "[A-EN] Did Alphabet Just End the AI Memory Boom? (Yahoo Finance)",
+    "[A-EN] Memory chip giant SK hynix could help end RAMmageddon with blockbuster US IPO (TechCrunch 3/27)",
+    "[A-EN] Google unveils TurboQuant, a new AI memory compression algorithm (TechCrunch 3/25)",
+    "[A-EN] Micron: Don't Try To Call The Top — MU fell $460→$360 (Seeking Alpha)",
+    "[A-KR] 구글 터보퀀트 뭐길래…삼성·하이닉스 주가 쇼크 (Daum/뉴스 3/27)",
+    "[A-KR] 삼성전자 -4.71% 18만100원, SK하이닉스 -6.23% 93만3000원 (Investing.com KR)",
+    "[A-KR] 터보퀀트 뭐길래? 반도체주 급락‥ (MBC imnews 3/27)",
+    "[B-EN] Legal Authority for Export Controls and Tariffs on Semiconductor Chips Sold to China — CRS 3/23",
+    "[B-EN] The Security Architecture of the Taiwan-US Trade Deal — The Diplomat 3/2026",
+    "[B-EN] Trump 2.0 tariff tracker — Section 301 Taiwan/Singapore 3/11, 3/12 개시",
+    "[B-EN] US Chip Export Control Policy Is Incoherent — Former Biden Official (Export Compliance Daily 3/27)",
+    "[B-EN] Chip Security Act: House Committee Passes — House Foreign Affairs 3/26",
+    "[B-EN] Legal Basis for Chip Export Fees Questioned — CRS 3/24",
+    "[B-KR] AI·연준·관세전쟁…2026 월별 변수 총정리",
+    "[C-EN] How AI and Geopolitics Forge a Memory Market Crisis — EE Times 3/25",
+    "[C-EN] SK Group: Memory Shortage Could Last Until 2030 — SK Chairman Chey Tae-won",
+    "[C-EN] Middle East Conflict Risks Disrupting Critical Semiconductor Materials — helium/bromine",
+    "[C-EN] Micron Crushes Expectations — Q2 FY2026 $23.86B, EPS $12.20, HBM4 sold out (3/26)",
+    "[C-EN] HBM supply: Near-total allocation through 2026, AI data centers 70% of high-end memory",
+    "[C-KR] HBM 슈퍼사이클 지속 — SKH 2026 전망 매진 (SK hynix Newsroom)",
+    "[D-EN] GENIUS Act — Crypto Clarity Act 스테이블코인 이자 금지 논란 (CoinDesk 3/23)",
+    "[D-EN] SK Hynix Files Confidential SEC Filing for US ADR Listing — $10-14B (CNBC 3/25)",
+    "[D-EN] SK Hynix → Samsung ADR 압박 (Artisan Partners Bloomberg 3/27)",
+    "[D-EN] Chip Security Act — Super Micro co-founder arrested $2.5B chip smuggling scheme",
+    "[D-EN] Taiwan ART deal — FDPR alignment obligation Article 5.2(3) (The Diplomat)",
+    "[D-EN] Micron Q2 FY2026: $23.86B revenue 196% YoY, EPS $12.20 (FinancialContent 3/26)",
+    "[Q1] 10Y Treasury 4.41~4.48% near 8-month high, Fed 25bp cut odds falling (3/27)"
+  ],
+  "issues": [
+    {
+      "id": "IS-20260328-001",
+      "title": "구글 TurboQuant — LLM KV캐시 6배 압축, 삼성/SK하이닉스/Micron 주가 충격",
+      "summary": "구글 리서치가 KV캐시를 6배 압축하는 TurboQuant 알고리즘을 공개(3/25). 추가 학습 없이 Gemma/Mistral 등 적용 가능. H100 성능 최대 8배. ICLR 2026(4/23~27) 발표 예정. 삼성전자 -4.71%, SKH -6.23%, Micron -7%, SanDisk -11%. Cloudflare CEO '구글의 딥시크 모먼트' 비유.",
+      "root_cause": "AI 메모리 효율화 소프트웨어 돌파구 — HBM 수요 전제 흔들기",
+      "scan_axis": "A",
+      "sources": ["TechCrunch 3/25", "Taipei Times 3/27", "Yahoo Finance", "Investing.com KR", "MBC 3/27", "Daum 뉴스 3/27"],
+      "market_contact": ["삼성전자(005930.KS)", "SK하이닉스(000660.KS)", "Micron(MU)", "SanDisk(SNDK)", "WDC", "Nvidia(NVDA)", "코스피", "원화(KRW)"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식 — 삼성/SKH/Micron/SanDisk/WDC", "통화 — 원화(KRW) 간접"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "AI 메모리 수요 전제 자체를 흔드는 최초 대형 소프트웨어 압축 돌파구. 기존 HBM 슈퍼사이클 논리에 정면 도전. 새로운 힘의 투입."},
+        "G3": {"score": 2, "type": "free", "chain": "TurboQuant 상용화 기대 → HBM 수요 하향 조정 → 삼성/SKH/Micron 실적 전망 하향 → AI 인프라 capex 재평가 → Nvidia/GPU 수요 재산정 → 반도체 전 섹터"},
+        "G3_5": {"tag": "SNAPSHOT", "note": "논문 발표, 아직 상용화 전. 단기 반응이나 구조적 의미 내포"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전 신규"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-001"
+    },
+    {
+      "id": "IS-20260328-002",
+      "title": "Micron Q2 FY2026 어닝 서프라이즈 — $23.86B (+196% YoY), HBM4 2026년 매진",
+      "summary": "Micron이 3/26 Q2 FY2026 실적 발표. 매출 $23.86B(컨센서스 $19.4B 대폭 상회). EPS $12.20(컨센서스 $9.00). HBM4 2026년 전량 매진. 비GAAP 총이익률 74.9% 사상 최고. TurboQuant 쇼크와 반대 벡터: '슈퍼사이클은 구조적'.",
+      "root_cause": "AI HBM 슈퍼사이클 — 구조적 수요 지속",
+      "scan_axis": "C",
+      "sources": ["FinancialContent 3/26", "MarketMinute 3/24"],
+      "market_contact": ["Micron(MU)", "ASML", "Applied Materials", "삼성전자(HBM4 경쟁)", "SK하이닉스(HBM4 경쟁)", "반도체 섹터"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식 — MU, 반도체 섹터", "원자재 — 반도체 소재 간접"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 슈퍼사이클 추세의 강력한 가속 확인. 새 방향 아님. TurboQuant와 반대 서사로 투자자 분열 심화."},
+        "G3": {"score": 2, "type": "free", "chain": "Micron 실적 호조 → 삼성/SKH HBM 비교 압박 → HBM4 공급 경쟁 강화 → NVIDIA 공급망 확신 → 반도체 섹터 분기 랠리"},
+        "G3_5": {"tag": "CUMULATIVE", "note": "HBM 슈퍼사이클 장기 진행 맥락"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전 신규"}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-001"
+    },
+    {
+      "id": "IS-20260328-003",
+      "title": "SK하이닉스 미국 ADR 상장 비밀 SEC 파일링 — $10~14B, 삼성 연쇄 압박",
+      "summary": "SK하이닉스가 3/24 SEC에 비밀 파일링. 2026년 하반기 상장 목표, $10~14B 조달 예상(시가총액 2~3% 해당). 삼성전자 ADR 압박으로 연쇄 파급. Artisan Partners '삼성도 ADR 상장하라' 촉구. 코리아 디스카운트 해소 논쟁 재점화.",
+      "root_cause": "한국 반도체 기업 글로벌 벨류에이션 격차 해소 — 코리아 디스카운트",
+      "scan_axis": "A",
+      "sources": ["CNBC 3/25", "TechCrunch 3/27", "KED Global", "Yahoo Finance"],
+      "market_contact": ["SK하이닉스(000660.KS)", "삼성전자(005930.KS)", "코스피", "원화(KRW)", "신규 ADR 채권 발행"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식 — SKH, 삼성, 코스피", "채권 — 신주발행 $8~14B"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "한국 대형 반도체 기업 최초 미국 직접 상장. 삼성 연쇄 압박. 코리아 디스카운트 구조적 해소 경로 첫 개시. 새로운 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "SKH ADR → 삼성 ADR 압박 강화 → 한국 대형주 벨류에이션 디스카운트 해소 논쟁 → 코스피 외국인 수급 개선 기대"},
+        "G3_5": {"tag": "SNAPSHOT", "note": "파일링 신규 이벤트(3/24)"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전 신규"}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-004",
+      "title": "Chip Security Act 하원 외교위 통과 (3/26) — AI 칩 위치추적 의무화",
+      "summary": "하원 외교위원회가 3/26 초당파로 Chip Security Act 통과. 고급 AI칩에 물리적 위치추적 기술 내장 의무화, 밀수 방지 보고 체계. Super Micro 공동창업자 $2.5B 칩 밀수 혐의 체포와 동시 진행. 본회의 상정 예정.",
+      "root_cause": "미국 AI 칩 수출통제 집행 체계 강화 — 기술적 검증 레이어 추가",
+      "scan_axis": "B",
+      "sources": ["House CCP Select Committee Press Release 3/26", "IndexBox 3/26", "The Cyber Express"],
+      "market_contact": ["Nvidia(NVDA)", "AMD", "SMCI", "반도체 수출 ETF", "달러(DXY)"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식 — Nvidia/AMD/SMCI", "통화 — 달러 간접"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "첨단 AI칩 물리적 위치추적 의무화 — 반도체 수출통제 집행 체계의 신규 레이어. 기존 리스트 기반 통제에서 기술적 검증으로 전환. 새로운 힘의 투입."},
+        "G3": {"score": 2, "type": "free", "chain": "Chip Security Act 통과 → Nvidia/AMD 칩 위치추적 내장 의무 → 중간국 우회경로 차단 → 중국 AI 칩 조달 비용 급등 → 중국 AI 개발 병목 심화 → 미중 AI 격차 확대"},
+        "G3_5": {"tag": "SNAPSHOT", "note": "위원회 통과, 본회의 미정"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전 신규"}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-002"
+    },
+    {
+      "id": "IS-20260328-005",
+      "title": "대만-미국 ART 딜 FDPR 조약 의무화 — 한국 반도체 수출통제 압박 연쇄",
+      "summary": "미국-대만 ART(2/12 서명) Article 5.2(3)에서 대만이 미국 FDPR(외국직접제품규칙)을 조약 수준으로 의무화. 전례 없는 수출통제 통합. CRS 3/23 분석 보고서. 한국도 동조화 압박 불가피 — 삼성/SKH 중국 사업 추가 제한 위험.",
+      "root_cause": "미국 주도 반도체 수출통제 동맹 확장 — FDPR 의무화",
+      "scan_axis": "B",
+      "sources": ["The Diplomat 3/2026", "CFR", "Thompson Hine SmartTrade 2026/01"],
+      "market_contact": ["삼성전자(005930.KS)", "SK하이닉스(000660.KS)", "TSMC(TSM)", "원화(KRW)"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식 — 삼성/SKH/TSMC", "통화 — 원화"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "대만의 미국 FDPR 완전 동조화 조약 의무. 기존 미중 기술전쟁 추세의 구조적 가속. 새 방향 아님이나 조약 레벨 구속력은 신규."},
+        "G3": {"score": 1, "type": "free", "chain": "대만 FDPR 의무 → 한국도 동조화 압박 → 삼성/SKH 중국 매출 추가 제한 → 한국 반도체 중국 노출 감소"},
+        "G3_5": {"tag": "CUMULATIVE", "note": "2022년 이후 진행 중인 미중 기술전쟁 연장선"},
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전 신규"}
+      },
+      "total_score": 4,
+      "status": "약함",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-006",
+      "title": "TurboQuant vs RAMageddon — AI 메모리 수요 서사 충돌, 반도체 변동성 증폭",
+      "summary": "구글 TurboQuant(소프트웨어 효율화) vs SK그룹 '2030년까지 메모리 부족' + Micron HBM4 매진(구조적 공급 부족)이 정면 충돌. 애널리스트 보고서 분기: 일부 '딥시크 모먼트 — 장기 수요 감소', 일부 '소프트웨어 논문이 하드웨어 사이클 못 바꿈'. 반도체 섹터 변동성 확대.",
+      "root_cause": "AI 메모리 효율화 충격 — TurboQuant vs 슈퍼사이클 서사 충돌",
+      "scan_axis": "C",
+      "sources": ["EE Times 3/25", "IndexBox 3/2026", "Yahoo Finance", "TechCrunch"],
+      "market_contact": ["삼성전자(005930.KS)", "SK하이닉스(000660.KS)", "Micron(MU)", "반도체 ETF(SOXX)", "Nvidia(NVDA)"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식 — 전체 메모리/AI 섹터", "채권 — AI capex 대출 간접"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "두 상반된 힘이 충돌하는 새로운 국면. TurboQuant 쇼크 vs HBM 구조적 공급 부족. 투자자 확신 분열 심화. 서사 전쟁 발발."},
+        "G3": {"score": 2, "type": "free", "chain": "서사 충돌 → 애널리스트 보고서 분기 → 기관 매수/매도 이분 → 반도체 변동성 확대 → ETF 유출입 급변 → 신용 리스크 피드백"},
+        "G3_5": {"tag": "CUMULATIVE", "note": "HBM 슈퍼사이클 장기 맥락 위에 올라온 신규 쇼크"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "", "overlap": "IS-001과 같은 근인 — 클러스터 내 처리"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-001"
+    },
+    {
+      "id": "IS-20260328-007",
+      "title": "미국 AI 칩 수출통제 정책 공백 장기화 — AI 확산 규칙 대체 실패",
+      "summary": "전 NSC 관리 McGuire '칩 수출통제 정책이 비일관적(incoherent)'. BIS가 AI 확산 규칙 폐기 후 대체 규칙 미공표. 법안 초안 3/16 철회. 중국 H200 판매 지속 vs 장기 디커플링 불가피 사이 정책 공백. Export Compliance Daily 3/27.",
+      "root_cause": "AI 칩 수출통제 — 정책 공백과 집행 불일치",
+      "scan_axis": "B",
+      "sources": ["Export Compliance Daily 3/27", "East Asia Forum 3/11"],
+      "market_contact": ["Nvidia(NVDA)", "AMD", "반도체 수출 관련주"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["주식 — Nvidia/AMD"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 규제 불확실성의 지속 확인. 의도적 공백 장기화는 새로운 정책 신호이나 시장 반응 이미 선반영."},
+        "G3": {"score": 1, "type": "free", "chain": "수출통제 공백 → 중국 AI 칩 합법 경로 → 의회 압박 → Chip Security Act 강화"},
+        "G3_5": {"tag": "CUMULATIVE"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": "IS-004와 근인 유사 — CL-002에 보조 이슈로 포함 가능"}
+      },
+      "total_score": 3,
+      "status": "약함",
+      "cluster_id": "CL-20260328-002"
+    },
+    {
+      "id": "IS-20260328-008",
+      "title": "Super Micro 공동창업자 $2.5B AI 칩 밀수 혐의 체포 (DOJ)",
+      "summary": "법무부가 Super Micro Computer 공동창업자 Yih-Shyan Liaw 등 3인을 AI 서버 $2.5B 중국 밀수 혐의로 기소. 대만→동남아→중국 우회 루트. 2024~2025년 진행. Chip Security Act와 동시 진행으로 수출통제 집행 강화 신호.",
+      "root_cause": "AI 칩 수출통제 집행 — 형사 집행 강화",
+      "scan_axis": "D",
+      "sources": ["House CCP Select Committee 3/26", "Tech Insider", "Prism News"],
+      "market_contact": ["SMCI(Super Micro)", "Nvidia(NVDA)", "반도체 유통망 관련주"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식 — SMCI, Nvidia"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "AI 칩 밀수 단속 최초 주요 체포 사례. 수출통제 집행 강화 실증. 법적 집행 현실화 — 새로운 힘."},
+        "G3": {"score": 1, "type": "free", "chain": "SMCI 체포 → 반도체 유통망 컴플라이언스 강화 → 중간국 경로 차단 → 중국 AI 칩 조달 비용 상승"},
+        "G3_5": {"tag": "SNAPSHOT"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": "IS-004와 근인 동일 — CL-002 클러스터"}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-002"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "CL-20260328-001",
+      "root_label": "AI 메모리 효율화 충격 — TurboQuant vs HBM 슈퍼사이클",
+      "issues": ["IS-20260328-001", "IS-20260328-006", "IS-20260328-002"],
+      "priority_score": 12,
+      "urgency": "즉시 🔴",
+      "market_contact_combined": ["삼성전자(005930.KS)", "SK하이닉스(000660.KS)", "Micron(MU)", "SanDisk(SNDK)", "WDC", "Nvidia(NVDA)", "반도체 ETF(SOXX)", "코스피", "원화(KRW)"],
+      "rm_input_title": "구글 TurboQuant vs HBM 슈퍼사이클 — 삼성/SKH 급락, Micron 어닝 서프라이즈, AI 메모리 수요 서사 충돌",
+      "propagation_chain": "TurboQuant 상용화 기대 → HBM 수요 하향 조정 → 삼성/SKH/Micron 실적 전망 분열 → AI capex 재평가 → Nvidia/GPU 수요 재산정 → 반도체 변동성 확대 → 코스피 외국인 수급 영향",
+      "new_followup_ratio": "0/3 (🆕후속 없음 — 전체 신규)"
+    },
+    {
+      "id": "CL-20260328-002",
+      "root_label": "미국 AI 칩 수출통제 집행 강화 — 법제화 + 형사 집행 동시",
+      "issues": ["IS-20260328-004", "IS-20260328-008", "IS-20260328-007"],
+      "priority_score": 10,
+      "urgency": "표준 🟡",
+      "market_contact_combined": ["Nvidia(NVDA)", "AMD", "SMCI", "반도체 수출 ETF", "달러(DXY)", "중국 AI 기업"],
+      "rm_input_title": "미국 AI 칩 수출통제 집행 강화 — Chip Security Act 위원회 통과 + SMCI 공동창업자 $2.5B 밀수 체포",
+      "propagation_chain": "Chip Security Act 통과 + SMCI 체포 → AI칩 위치추적 의무 + 밀수 경로 차단 → 중국 AI 칩 조달 급등 → 중국 AI 개발 병목 → 미중 AI 격차 확대 → Nvidia 수출 경로 재조정",
+      "new_followup_ratio": "0/3 (전체 신규)"
+    }
+  ],
+  "independent": ["IS-20260328-003", "IS-20260328-005"],
+  "backlogged_new": ["IS-20260328-005"],
+  "blind_spot_checks": {
+    "Q1_missing_asset": "채권: 10Y 4.41~4.48% — rm 기존 수집 중(TLT TC-007). 독립 이슈 추가 불필요. 원자재: 헬륨/브롬 공급 리스크는 C축 이슈에 포함. 부동산: 오늘 시그널 없음.",
+    "Q2_geo_balance": "글로벌 5건 / 한국(삼성SKH 주가, SKH ADR) 2건. 보충 불필요.",
+    "Q3_backlog_promotion": "BL-001 GENIUS Act — 5회 반복. Crypto Clarity Act 신규 전개 D축 재등장. Gate 2점 (4점 미달). 승격 불가. appearance_count 4→5. 신규 전개 노트 추가.",
+    "Q4_diversity": "CL-001(메모리/AI) + CL-002(수출통제) + IS-003(ADR 상장) 세 축. 다양성 확보."
+  },
+  "user_selection": [],
+  "handoff": {
+    "to": "reaction-monitor",
+    "titles": [],
+    "timestamp": null
+  },
+  "priority_scanner_output": {
+    "gap_1": "TC-001 갱신 필요 3일 후 — Section 301 관세 법체계",
+    "gap_2": "TC-003 갱신 필요 3일 후 — 이란 전쟁",
+    "gap_3": "TC-007 갱신 필요 3일 후 — TLT/인플레",
+    "gap_4": "TC-016 갱신 필요 3일 후 — 신용 역류/VIX",
+    "matching": {
+      "CL-001": "TC-016 매칭 🎯+1점 (TurboQuant 쇼크 → 반도체 매도 → VIX 상승)",
+      "CL-002": "TC-001 매칭 🎯+2점 (수출통제 강화 → 관세/통제 법체계 진화 동일 맥락)"
+    }
+  }
+}

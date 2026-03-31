@@ -1,0 +1,552 @@
+{
+  "meta": {
+    "id": "RM-2026-03-28-IRAN",
+    "created": "2026-03-28",
+    "issue": "이란 전쟁 확전 + 호르무즈 다층 충격",
+    "tc_match": "TC-003",
+    "depth": "Deep",
+    "scanner_prefetch": {
+      "price_snapshot": {
+        "Brent": 103.5,
+        "WTI": 97.4,
+        "Gold": 4570,
+        "KRW": 1508
+      }
+    }
+  },
+  "fingerprint": {
+    "domain": "지정학(군사 확전) + 에너지 공급 충격 + 원자재 공급망 복합",
+    "geo_scope": "글로벌 → 중동(발원) → 아시아(한국·일본·대만) → 유럽",
+    "touched_assets": {
+      "primary": ["Brent", "WTI", "TTF_Gas", "Helium", "Naphtha", "KRW"],
+      "secondary": ["반도체(삼성·SK하이닉스·TSMC)", "석화(LG화학·롯데케미칼)", "자동차 공급망"],
+      "contrast": ["USD", "Gold", "US_Defense_stocks"]
+    },
+    "stakeholders": {
+      "primary": [
+        "이란 (공급자/전쟁 당사자)",
+        "카타르 (헬륨·LNG 공급자, Force Majeure 선언)",
+        "미국 행정부 (82nd Airborne 투입 검토, 트럼프 Truth Social 직접 발언)",
+        "한국 LG화학·롯데케미칼 (나프타 셧다운, 피해자)",
+        "글로벌 반도체 팹 — TSMC·삼성·SK하이닉스 (헬륨 공급 충격)"
+      ],
+      "secondary": [
+        "플라스틱 가공업체·자동차부품사 (LG화학 셧다운 → 2차 도미노)",
+        "BASF 등 독일 화학기업 (유럽 가스 급등 → 생산비 압박)",
+        "ECB (TTF 급등 → 유럽 인플레이션 경로 변화)",
+        "여수 지역 고용 (NCC 셧다운 → 지역경제)",
+        "MRI 의료서비스 (헬륨 부족 → 진단 지연)",
+        "미국 우주항공 (헬륨 → 로켓 발사 스케줄)",
+        "아시아 주둔 미군 재배치 리스크 (82nd Airborne 중동 이동)"
+      ]
+    },
+    "temporal_character": "충격(즉시) + 전개(2주 반도체 타임라인 → 4월초) + 구조적(걸프 $25B 복구 5년)",
+    "sns_judgment": {
+      "status": "활성",
+      "reason": "Q1=YES(트럼프 Truth Social 직접 정책 발언), Q3=YES(정책결정자 SNS 발언 Tier 1)"
+    }
+  },
+  "channels_selected": {
+    "rationale": "Deep 모드 — 지정학+에너지+공급망 3중 충격. 한국 전이 경로 명확. 전 계층 풀 수집.",
+    "price": [
+      "Brent/WTI [prefetch + FRED 교차확인]",
+      "Gold [prefetch + Yahoo Finance]",
+      "KRW/USD [prefetch + Yahoo Finance]",
+      "LG화학(051910.KS) [Yahoo Finance]",
+      "롯데케미칼(011170.KS) [Yahoo Finance]",
+      "삼성전자(005930.KS) [Yahoo Finance]",
+      "SK하이닉스(000660.KS) [Yahoo Finance]",
+      "Air Products(APD) / Linde(LIN) [헬륨 대체 공급자, Yahoo Finance]",
+      "TSM / CVX / XLE [반도체·에너지 섹터, Yahoo Finance]"
+    ],
+    "narrative": [
+      "Reuters/NPR/BBC: 이란 휴전 결렬 헤드라인",
+      "CNBC/Bloomberg: 유가 전망 + 전문가 코멘트",
+      "한국 매체(서울경제·YTN·헤럴드): LG화학 셧다운 + 나프타 수출제한",
+      "Tom's Hardware/Fortune: 헬륨-반도체 공급망 2주 타임라인",
+      "트럼프 Truth Social: 에너지 플랜트 공격 10일 연장 발언",
+      "FT/Bruegel/HSBC: 유럽 가스 위기 2027 전망",
+      "반대쪽(NPR): 시장 '4주 분쟁' 기대 + 단기 완화 시나리오"
+    ],
+    "expert": [
+      "Chevron CEO Mike Wirth (공급자/분석자) — 공급자 측",
+      "Goldman Sachs Daan Struyven (분석자) — 4주 분쟁 가정 포워드 커브",
+      "Phil Kornbluth 헬륨 컨설턴트 (분석자) — 2주 타임라인",
+      "LG화학 익명 업계 관계자 (피해자) — 추가 수급 불가 발언",
+      "KPIA 한국석유화학협회 — 침묵",
+      "TSMC/삼성 공식 IR 발언 — 부분침묵(SK하이닉스만 공시)",
+      "IEA/미 에너지부 (정책 관련자) — 400MB 방출 결정",
+      "반대입장: JPMorgan($60/bbl 연간 기준) + 단기분쟁 기대 트레이더"
+    ],
+    "policy": [
+      "트럼프 Truth Social: 에너지 공격 10일 연장(→4월6일 데드라인)",
+      "Witkoff 15점 평화안 — 이란 거부",
+      "IEA 400MB 역대최대 방출 결정",
+      "한국 산업부: 나프타 수출제한 고시 시행, 비축유 방출 준비",
+      "82nd Airborne 2,000~3,000명 + Marines 5,000명 파병 명령"
+    ],
+    "positioning": [
+      "헤지펀드: 이란전쟁 충격으로 3월 -3.4% (장/단 기존 포지션 강제 청산)",
+      "의심거래: 트럼프 발표 15분 전 $580M 선물 집중 체결 (내부자거래 의혹)",
+      "에너지 롱: XLE 가격 움직임 / CVX $211 유지 — 전통에너지 롱 유효",
+      "반도체 쇼트 가능성: 삼성 ₩179,700 — 헬륨 6개월 재고로 방어 중"
+    ]
+  },
+  "reactions": {
+    "price": [
+      {
+        "asset": "Brent Crude",
+        "value": 106.84,
+        "prefetch": 103.5,
+        "delta_vs_prefetch": "+3.2%",
+        "source": "Yahoo Finance BZ=F / FRED DCOILBRENTEU $103.79(03-23)",
+        "timestamp": "2026-03-28",
+        "note": "[prefetch] scanner: $103.5 / [MCP] Yahoo: $106.84 / FRED(03-23): $103.79. 계속 상승 중."
+      },
+      {
+        "asset": "WTI Crude",
+        "value": 101.18,
+        "prefetch": 97.4,
+        "delta_vs_prefetch": "+3.9%",
+        "source": "Yahoo Finance CL=F / FRED DCOILWTICO $89.33(03-23)",
+        "timestamp": "2026-03-28",
+        "note": "[prefetch] $97.4 / [MCP] $101.18. FRED 03-23 데이터($89)와 괴리 큼 — 주말 이후 급등 반영."
+      },
+      {
+        "asset": "Gold",
+        "value": 4521.3,
+        "prefetch": 4570,
+        "delta_vs_prefetch": "-1.1%",
+        "source": "Yahoo Finance GC=F",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] Gold 소폭 하락. 피난처 수요 정점 논란 — 협상 연장 10일로 리스크 일부 완화 반영 가능."
+      },
+      {
+        "asset": "KRW/USD",
+        "value": 1508.06,
+        "prefetch": 1508,
+        "delta_vs_prefetch": "0%",
+        "source": "Yahoo Finance USDKRW=X",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 1508 고착. 한국 경상수지 악화 압력(유가 +10%→ CA -0.3%p) 반영. 달러 강세 구조적."
+      },
+      {
+        "asset": "LG화학(051910.KS)",
+        "value": 313000,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] NCC 2공장 셧다운 발표 후 주가. 적자 우려 확대(InvestChosun 2026-03-27)."
+      },
+      {
+        "asset": "롯데케미칼(011170.KS)",
+        "value": 82700,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 여수공장 가동 중단 확산. '나프타 쇼크' 2차 피해 반영 중."
+      },
+      {
+        "asset": "삼성전자(005930.KS)",
+        "value": 179700,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 헬륨 6개월 재고 확보 발표 후 방어. DRAM AI수요 vs 헬륨 불확실성 상충."
+      },
+      {
+        "asset": "SK하이닉스(000660.KS)",
+        "value": 922000,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 카타르 헬륨 30% 차단 노출도 높음(한국 65% 의존). 공급처 다변화 발표 후 방어."
+      },
+      {
+        "asset": "Air Products(APD)",
+        "value": 292.19,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 헬륨 대체공급자. AirGas(Air Products 자회사)가 50% 공급축소+$13.5 할증 발표."
+      },
+      {
+        "asset": "Linde(LIN)",
+        "value": 491.12,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 헬륨 대체공급자. 수혜 포지셔닝 가능성."
+      },
+      {
+        "asset": "TSMC(TSM)",
+        "value": 326.74,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 2개월+ 헬륨 재고 + 다공급선으로 상대적 방어력 높음."
+      },
+      {
+        "asset": "Chevron(CVX)",
+        "value": 211.15,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 에너지 롱 대표주. CEO '유가 과소평가' 발언."
+      },
+      {
+        "asset": "XLE(에너지 섹터 ETF)",
+        "value": 62.56,
+        "source": "Yahoo Finance",
+        "timestamp": "2026-03-28",
+        "note": "[MCP] 에너지 섹터 포지셔닝 지표."
+      }
+    ],
+    "narrative": [
+      {
+        "outlet": "NPR / OPB / CBC / PBS",
+        "direction": "위험 강조",
+        "headline": "이란, 미국 15점 평화안 거부 — 자체 5점 역제안 제시",
+        "source": "npr.org/2026/03/25 + 03/26",
+        "timestamp": "2026-03-25~26",
+        "note": "[MCP] 이란 외무장관 '휴전 안 원한다' 명시. 전쟁 지속 의지 확인."
+      },
+      {
+        "outlet": "Fox News / CNN",
+        "direction": "협상 진행 중 (트럼프 직접 발언)",
+        "headline": "트럼프 Truth Social: 에너지 공격 10일 연장 → 4월6일 데드라인. '협상 진행 중 잘 되고 있다'",
+        "source": "foxnews.com/live-news 2026-03-26 / CNN Day27",
+        "timestamp": "2026-03-26",
+        "note": "[MCP] Q3 SNS Tier 1. 트럼프가 SNS로 직접 시장에 신호 발신. 공격 연장=단기 리스크 완화 신호."
+      },
+      {
+        "outlet": "Tom's Hardware / Fortune",
+        "direction": "반도체 위기 경고",
+        "headline": "카타르 헬륨 셧다운 — 반도체 공급망 2주 타임라인",
+        "source": "tomshardware.com / fortune.com/2026/03/21",
+        "timestamp": "2026-03-13~21",
+        "note": "[MCP] 카타르 헬륨 30% → AirGas 50% 공급 축소+할증. 4월초 소진 예상."
+      },
+      {
+        "outlet": "Euronews / HSBC/Bloomberg",
+        "direction": "유럽 가스 위기 장기화",
+        "headline": "TTF €54→60 (70% 상승, 13개월 최고) — HSBC: 2027년까지 고가 지속",
+        "source": "euronews.com/2026/03/27 / bloomberg.com/2026-03-16",
+        "timestamp": "2026-03-16~27",
+        "note": "[MCP] Goldman Sachs Q2 TTF 전망 €72→€89(극단). 유럽 저장고 이미 LNG 경쟁 중."
+      },
+      {
+        "outlet": "YTN / 서울경제 / 헤럴드경제",
+        "direction": "국내 산업 비상",
+        "headline": "LG화학 여수 NCC 2공장 셧다운 — 롯데케미칼 확산 — '앞으로 한달치 원료'",
+        "source": "ytn.co.kr / sedaily.com / heraldcorp.com 2026-03-24~25",
+        "timestamp": "2026-03-23~25",
+        "note": "[MCP] 정부 나프타 수출제한 고시 시행. 비축유 방출 준비(4월 중순)."
+      },
+      {
+        "outlet": "NPR (반대쪽)",
+        "direction": "시장 4주 기대 + 단기 완화 가능",
+        "headline": "골드만 헤드: 시장은 '4주 분쟁'으로 기대 중 — 이전 위기처럼 빠른 해소 역사도",
+        "source": "npr.org/2026/03/27 + fortune.com/2026/03/03",
+        "timestamp": "2026-03-03~27",
+        "note": "[MCP] R-03 반대쪽 수집. '늑대가 왔다 이제는 진짜' vs '이번도 과장'의 구조."
+      }
+    ],
+    "expert": [
+      {
+        "name": "Mike Wirth (Chevron CEO)",
+        "role": "공급자",
+        "statement": "유가 선물은 공급 충격을 '완전히 반영하지 않고 있다'. '희소한 정보'와 '인식'으로 거래 중. 실물 공급은 선물보다 훨씬 타이트.",
+        "direction": "상방 압력 지속",
+        "source": "CNBC / Fortune 2026-03-23 (CERAWeek)",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "name": "Daan Struyven (Goldman Sachs 원유 리서치 헤드)",
+        "role": "분석자",
+        "statement": "Brent Q2 평균 $105→$115(4월), 연말 $80 복귀 예상(6주 분쟁 가정). 지속 시 2008 최고가($147) 돌파 가능. 최악 $135.",
+        "direction": "단기 상방, 하반기 하락 복귀",
+        "source": "Bloomberg / CNBC 2026-03-20~23",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "name": "Phil Kornbluth (헬륨 컨설턴트)",
+        "role": "분석자",
+        "statement": "2주 이상 지속 시 산업용 가스 유통사 재배치+재검증 필요 → 수개월 걸림. '아직은 부족 없지만 몇 주 내 심각'",
+        "direction": "헬륨 위기 임박",
+        "source": "Tom's Hardware 2026-03-13",
+        "timestamp": "2026-03-13"
+      },
+      {
+        "name": "LG화학/석화업계 익명 관계자",
+        "role": "피해자",
+        "statement": "현재 중동전쟁으로 나프타 추가 확보 불가능. 전쟁 종결 없으면 운임·판가 상승 불가피.",
+        "direction": "공급 절벽 경고",
+        "source": "CEO Score Daily 2026-03-26",
+        "timestamp": "2026-03-26"
+      },
+      {
+        "name": "JPMorgan (반대입장)",
+        "role": "반대입장",
+        "statement": "연간 Brent 평균 $60/bbl 전망 유지(기본). Q2 $100→연말 $80 복귀. 골드만보다 현저히 낮은 분쟁 지속 기대.",
+        "direction": "단기 spike + 조기 회복",
+        "source": "JPMorgan Global Research 2026",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "name": "IEA (정책 관련자)",
+        "role": "정책",
+        "statement": "역대 최대 400MB 비축유 방출 결의. '20일치 Hormuz 물량 커버' — 물리적 한계 명시.",
+        "direction": "긴급 완충 — 구조적 해결 아님",
+        "source": "IEA 공식 보도 2026-03-11",
+        "timestamp": "2026-03-11"
+      },
+      {
+        "name": "한국석유화학협회(KPIA)",
+        "role": "피해자",
+        "statement": "침묵 — 공식 성명 또는 매체 인용 미발견",
+        "direction": "침묵",
+        "channel": "ICIS 2026-03-24 에서도 업계 관계자 익명 인용만. KPIA 공식 입장 없음.",
+        "note": "내부 조율 중이거나 정부 대응 기다리는 것으로 추정. 단정 불가."
+      },
+      {
+        "name": "TSMC/삼성 공식 IR",
+        "role": "피해자",
+        "statement": "SK하이닉스만 공식 입장(공급처 다변화+충분 재고). 삼성전자·TSMC 공식 IR 발언 미발견.",
+        "direction": "부분침묵",
+        "channel": "—",
+        "note": "삼성 6개월 헬륨 재고 파이낸셜뉴스 보도(2026-03-16)는 익명 출처. 공식 IR 아님."
+      }
+    ],
+    "policy": [
+      {
+        "actor": "트럼프 (Truth Social)",
+        "action": "이란 에너지 공격 10일 연장 → 데드라인 4월6일. '협상 진행 중 잘 됨'",
+        "direction": "단기 완화 신호 + 불확실성 유지",
+        "source": "CBSNews / CNN Day 27 / 2026-03-26",
+        "timestamp": "2026-03-26"
+      },
+      {
+        "actor": "Witkoff (미 특사)",
+        "action": "15점 평화안 제시 — 이란 거부. 이란 5점 역제안(전쟁 배상 포함). 중재국(파키스탄 등) 통해 메시지 교환.",
+        "direction": "협상 교착",
+        "source": "IranIntl / AlJazeera 2026-03-25",
+        "timestamp": "2026-03-25"
+      },
+      {
+        "actor": "미 국방부",
+        "action": "82nd Airborne 2,000~3,000명 + Marines 5,000명 파병 명령. '핵심지역·공항 확보 훈련' 부대.",
+        "direction": "지상군 투입 준비 확인",
+        "source": "OPB / idahostatejournal.com 2026-03-25",
+        "timestamp": "2026-03-25"
+      },
+      {
+        "actor": "IEA",
+        "action": "역대 최대 400MB 비축유 방출 — 20일치 Hormuz 물량. '역대 최대 방출도 구조적 해결 아님' 경고.",
+        "direction": "긴급 완충",
+        "source": "IEA.org 2026-03-11",
+        "timestamp": "2026-03-11"
+      },
+      {
+        "actor": "한국 산업부",
+        "action": "나프타 수출제한 고시 시행(3월27일~). 비축유 2,246만 배럴 방출 준비(4월 중순). UAE 계약 2,400만 배럴 순차 입항.",
+        "direction": "비상 공급 안정 조치",
+        "source": "서울신문 / EBN / getNews 2026-03-24~27",
+        "timestamp": "2026-03-27"
+      }
+    ],
+    "positioning": [
+      {
+        "actor": "글로벌 헤지펀드",
+        "action": "이란전쟁 충격으로 3월 평균 -3.4% 손실. 기존 성장 롱/달러 숏/EM 롱 포지션 강제 청산.",
+        "direction": "리스크오프 강제 전환",
+        "source": "CNBC 2026-03-18",
+        "timestamp": "2026-03-18"
+      },
+      {
+        "actor": "의심 트레이더 (내부자거래 의혹)",
+        "action": "트럼프 Truth Social 발표 15분 전 $580M Brent/WTI 선물 집중 체결 (6,000 계약)",
+        "direction": "사전 정보 포지셔닝 의혹",
+        "source": "DailyCaller / WSWS 2026-03-25",
+        "timestamp": "2026-03-23"
+      },
+      {
+        "actor": "Anaconda Invest (헤지펀드)",
+        "action": "'트럼프 수사(rhetoric) 무시' 전략 — 에너지 주식 롱 유지. 협상 연장 발표 전에 매수.",
+        "direction": "에너지 롱 유지",
+        "source": "Bloomberg 2026-03-25",
+        "timestamp": "2026-03-25"
+      },
+      {
+        "actor": "에너지 섹터 (XLE·CVX)",
+        "action": "XLE $62.56 / CVX $211.15 유지 — 전통에너지 롱 포지션 지속",
+        "direction": "에너지 수혜 포지셔닝",
+        "source": "Yahoo Finance [MCP]",
+        "timestamp": "2026-03-28"
+      }
+    ]
+  },
+  "pattern_reading": {
+    "lens1_direction": {
+      "verdict": "수렴 (위험 방향)",
+      "detail": "가격(유가+TTF↑, Gold 일시 정점) + 서사(이란 거부 + 셧다운 확산) + 전문가(Chevron '과소평가') + 정책(파병 명령) — 4개 계층 모두 '위험 지속' 방향으로 수렴. 단, Gold 소폭 하락(-1.1%)은 협상 연장 10일 신호에 따른 단기 리스크 완화 포지션 조정 가능성.",
+      "exception": "반대 서사(JPMorgan '조기 회복') + 단기 분쟁 기대 트레이더 → 분열 요소 존재. 완전 수렴은 아님."
+    },
+    "lens2_time": {
+      "verdict": "복합형 (B 미디어주도 + C 정책주도 동시)",
+      "detail": "트럼프 Truth Social 발언이 시장을 직접 이동시킴(C 정책주도). 동시에 Tom's Hardware 헬륨-반도체 보도가 반도체주 포지셔닝을 선행(B 미디어주도). 두 경로가 병렬 작동 중.",
+      "note": "트럼프 발표 15분 전 $580M 선물 체결 의혹 → 정보 비대칭 가능성(A 시장주도 선행 요소도 혼재)"
+    },
+    "lens3_proportion": {
+      "verdict": "비례 (단, 헬륨-반도체는 과소반응 후보)",
+      "detail": "Brent +3.2% (prefetch→현재) / WTI +3.9% — 'IEA 역대최대 방출+협상 연장' 발표 후에도 유가 상승 지속 = 실물 타이트 반영. 유가는 비례 반응. 반면 삼성(₩179,700)/SK하이닉스(₩922,000)는 '6개월 재고' 발표로 방어 중 = 헬륨 위기 주가 반영 과소 가능 (4월초 실제 소진 시 갭 메움 위험).",
+      "exception": "Gold -1.1%는 단기 완화 신호 = 즉각 반응. 피난처 수요가 협상 연장에 예민."
+    },
+    "lens4_propagation": {
+      "verdict": "복합 (C→A→B 경로)",
+      "detail": "트럼프 정책 발언(C) → 유가 이동(A) → 서사 확산(B). 헬륨 경로는 D→B→A (Phil Kornbluth 전문가→Tom's Hardware 보도→반도체주 포지셔닝). 한국 나프타 경로는 B→C→A (서사→산업부 수출제한→석화 주가).",
+      "key_observation": "트럼프 Truth Social이 '정책→가격' 직결 채널로 작동. 4월6일 데드라인이 다음 변곡점."
+    }
+  },
+  "stereo_recommendation": {
+    "verdict": "권장",
+    "triggers": [
+      "한국 전이 경로 명확 (KRW 1,508 + LG화학 셧다운 + 삼성·SK 헬륨 노출)",
+      "과소반응 후보 존재 (반도체주 vs 헬륨 4월초 소진 타임라인)",
+      "내부자거래 의혹 포지셔닝 (트럼프 발표 선행 $580M 체결)"
+    ],
+    "mode": "PSF+macro 교차 권장 (한국 전이 경로 + KRW 1,508 구조)"
+  },
+  "unresolved": [
+    {
+      "id": "UQ-IRAN-001",
+      "question": "트럼프 4월6일 데드라인 — 이란이 호르무즈 재개통 않으면 실제 에너지 공격 재개되는가?",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "4월6일 20:00 ET 이후 트럼프 발표 또는 군사행동 여부",
+      "check_channels": {
+        "price": ["Brent 선물", "WTI 선물"],
+        "narrative": ["CNN live blog", "Al Jazeera war updates"],
+        "positioning": ["VIX", "원유 선물 미결제약정"]
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-04-06",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "10일 연장 발표됨. 4월6일 데드라인 확정.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-IRAN-002",
+      "question": "카타르 헬륨 Force Majeure — 4월초 실제 팹 생산 차질 발생하는가? (삼성·SK 6개월 재고 주장의 실체)",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "삼성전자/SK하이닉스의 헬륨 부족 관련 공식 생산 차질 공시 OR 4월초 팹 가동률 변화 보도",
+      "check_channels": {
+        "price": ["삼성전자 005930.KS", "SK하이닉스 000660.KS"],
+        "narrative": ["TrendForce", "Tom's Hardware", "연합뉴스"],
+        "positioning": []
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-04-10",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "현재 방어 중. SK하이닉스 공식 다변화 발표. 4월초가 실질 검증 시점.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-IRAN-003",
+      "question": "걸프 $25B 인프라 복구 — 복구 완료까지 5년 예측이 맞는가? 한국 건설·엔지니어링 수혜 가능성?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "걸프 복구 발주 프로세스 시작 보도 OR 한국 기업(현대건설·삼성E&A 등) 수주 관련 발언",
+      "check_channels": {
+        "price": ["현대건설", "삼성E&A"],
+        "narrative": ["Rystad Energy", "World Pipelines", "한국경제"],
+        "positioning": []
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-04-30",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "Rystad: 5년 복구 추정, 가스터빈 2~4년 백오더 확인.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-IRAN-004",
+      "question": "LG화학 NCC 1공장(80만t) — 나프타 수출제한 후에도 원료 확보 가능하여 가동 유지되는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "LG화학 1공장 가동 중단 발표 OR 4월 원료 수급 안정 발표",
+      "check_channels": {
+        "price": ["LG화학 051910.KS"],
+        "narrative": ["서울경제", "YTN", "ICIS"],
+        "positioning": []
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-04-15",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "2공장 셧다운. 1공장은 원료 소진 전까지 가동. 정부 비축유+UAE 2,400만 배럴 4월 순차 입항.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-IRAN-005",
+      "question": "트럼프 에너지 공격 연장 전 $580M 선물 내부자거래 의혹 — 미 당국 조사 개시 여부?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "CFTC/SEC 조사 개시 보도 OR 의회 청문회 요구",
+      "check_channels": {
+        "price": [],
+        "narrative": ["Reuters", "Bloomberg", "WSWS"],
+        "positioning": ["CFTC 포지셔닝 데이터"]
+      },
+      "created": "2026-03-28",
+      "deadline": "2026-04-14",
+      "last_checked": "2026-03-28",
+      "last_checked_result": "DailyCaller / WSWS 보도. 6,000 계약 $580M. 공식 조사 개시 미확인.",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+  "watch_proposals": [
+    {
+      "proposed_id": "W-2026-03-28-UQ-IRAN-001",
+      "subject": "트럼프 4월6일 이란 데드라인 — 공격 재개 또는 추가 연장",
+      "type": "policy_watch",
+      "schedule": "2026-04-06 (데드라인 당일)",
+      "close_condition": "트럼프 공식 발표 (공격 재개 OR 재연장 OR 합의)",
+      "data_sources": ["Brent 선물", "CNN live blog", "Al Jazeera"]
+    },
+    {
+      "proposed_id": "W-2026-03-28-UQ-IRAN-002",
+      "subject": "반도체 팹 헬륨 실제 생산 차질 여부 (삼성·SK 4월초 소진 타임라인)",
+      "type": "event_tracking",
+      "schedule": "D+5(2026-04-02) / D+10(2026-04-07)",
+      "close_condition": "공식 생산 차질 공시 OR 헬륨 재고 안정 확인",
+      "data_sources": ["005930.KS", "000660.KS", "TrendForce"]
+    },
+    {
+      "proposed_id": "W-2026-03-28-UQ-IRAN-004",
+      "subject": "LG화학 NCC 1공장 가동 지속 여부",
+      "type": "event_tracking",
+      "schedule": "D+7(2026-04-04) / D+14(2026-04-11)",
+      "close_condition": "1공장 가동 중단 공시 OR 원료 수급 안정 발표",
+      "data_sources": ["051910.KS", "서울경제", "ICIS"]
+    }
+  ],
+  "sources": {
+    "price_mcp": [
+      "Yahoo Finance: BZ=F, CL=F, GC=F, USDKRW=X, 051910.KS, 011170.KS, 005930.KS, 000660.KS, APD, LIN, TSM, CVX, XLE",
+      "FRED: DCOILBRENTEU (2026-03-23 $103.79), DCOILWTICO (2026-03-23 $89.33)"
+    ],
+    "narrative_web": [
+      "npr.org/2026/03/25 + 03/26 — 이란 15점 거부",
+      "military.com/2026/03/25 — 82nd Airborne 파병",
+      "foxnews.com live-news 2026-03-26 — 트럼프 연장 발표",
+      "tomshardware.com — 헬륨 2주 타임라인",
+      "fortune.com/2026/03/21 — 헬륨-AI boom 공급망",
+      "bloomberg.com/2026-03-25 — 걸프 $25B",
+      "bloomberg.com/2026-03-16 — HSBC TTF 2027 고가",
+      "ytn.co.kr 2026-03-24 — LG화학 NCC 셧다운",
+      "cnbc.com/2026/03/23 — Chevron CEO 유가 과소평가",
+      "cnbc.com/2026/03/20 — Goldman $105/$115 예측",
+      "iea.org 2026-03-11 — 400MB 방출 결의",
+      "getnews.co.kr 2026-03-27 — 한국 정부 4월 위기설 대응",
+      "trendforce.com/2026/03/23 — 헬륨 한국 65% 의존 분석",
+      "wsws.org/dailycaller.com 2026-03-25 — 내부자거래 의혹"
+    ]
+  }
+}

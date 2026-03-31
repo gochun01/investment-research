@@ -1,0 +1,242 @@
+{
+  "date": "2026-03-31",
+  "scan_id": "SCAN-20260331-001",
+  "gap_days": 3,
+  "sources_used": [
+    {"axis": "A", "tool": "WebSearch", "query": "Reuters Bloomberg CNBC market stocks oil gold today March 31 2026", "result_count": 10},
+    {"axis": "A", "tool": "WebSearch", "query": "증시 급등 급락 유가 환율 금 오늘 2026년 3월 31일", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "central bank regulation sanctions tariff policy March 31 2026", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "금리 결정 규제 관세 제재 정부 발표 2026년 3월 31일", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "supply chain shortage disruption force majeure infrastructure March 2026", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "공급 차질 물량 부족 가동 중단 수급 불안 2026년 3월 31일", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "GENIUS Act stablecoin crypto regulation update March 2026", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "트럼프 상호관세 4월 2일 liberation day 한국 영향", "result_count": 10}
+  ],
+  "seeds": {
+    "heartbeat": [],
+    "macro": "Q4→Q3 전이 구간. 한은 2.50% 동결. 연준 3.50~3.75% 동결.",
+    "ghs": []
+  },
+  "raw_headlines_count": 22,
+
+  "issues": [
+    {
+      "id": "IS-20260331-001",
+      "title": "QatarEnergy LNG Force Majeure 선언 + 헬륨 글로벌 30% 공급 중단",
+      "summary": "이란 공격으로 카타르 LNG 시설 피해. 글로벌 LNG 20% 차단. 헬륨 30% 공급 중단. 한국 헬륨 65% 카타르 의존.",
+      "root_cause": "이란 전쟁 → 호르무즈 봉쇄",
+      "scan_axis": "C",
+      "sources": ["Middle East Briefing", "Supply Chain Dive", "SPTA타임스"],
+      "market_contact": ["LNG", "헬륨", "반도체", "에너지", "KRW"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["LNG", "헬륨", "반도체", "에너지"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "QatarEnergy FM은 호르무즈 봉쇄의 실물 확인. LNG+헬륨 동시 차단은 최초. 새로운 전파 경로 개시."},
+        "G3": {"score": 2, "type": "free", "chain": "호르무즈 봉쇄 → 카타르 FM → LNG 20% 차단 → 가스 가격↑ + 헬륨 30% 중단 → 반도체 생산 지연(6주+) → 글로벌 칩 수급 불안 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "3/4 FM 선언 이후 누적 진행 중"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "이란 전쟁 기존 추적의 새 전개: LNG→헬륨→반도체 경로"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260331-001"
+    },
+    {
+      "id": "IS-20260331-002",
+      "title": "브렌트 $116.68 — 월간 +55% 사상 최대 상승폭 기록",
+      "summary": "이란 전쟁+호르무즈 봉쇄로 브렌트유 월간 55%+ 급등. 사상 최대 월간 상승폭. 아시아 증시 일제 급락.",
+      "root_cause": "이란 전쟁 → 원유 공급 차단",
+      "scan_axis": "A",
+      "sources": ["Reuters", "BetaNews", "CNN Business"],
+      "market_contact": ["Brent", "S&P500", "KOSPI", "닛케이", "KRW", "인플레"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["Brent", "S&P", "KOSPI", "KRW"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "월간 +55%는 사상 최대. 기존 추세의 극단적 가속. 임계값 돌파."},
+        "G3": {"score": 2, "type": "free", "chain": "유가 $116 → 인플레 재점화 → 연준/한은 인하 불가 → 금리 고착 → 주담대 7%+ 고착 → 소비 위축 (5단계)"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "TC-003, TC-007에서 지속 추적"}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260331-001"
+    },
+    {
+      "id": "IS-20260331-003",
+      "title": "나프타 $1,100+ — 롯데케미칼 여수 가동 중단, 석유화학 도미노",
+      "summary": "나프타 가격 급등. 롯데케미칼 여수공장 가동 중단 검토. 대구 성서공단 비닐·플라스틱 업체 수급 불안.",
+      "root_cause": "이란 전쟁 → 나프타 공급 차단",
+      "scan_axis": "C",
+      "sources": ["중앙이코노미뉴스", "Aboda", "무역경제신문"],
+      "market_contact": ["나프타", "석유화학", "PE", "비닐", "롯데케미칼", "생활물가"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["나프타", "석유화학", "비닐", "생활물가"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "나프타 $1,100은 2022년 이후 최고. 롯데케미칼 가동 중단은 한국 석유화학 역사상 드문 사건. 새로운 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "나프타↑ → 에틸렌↑ → PE 부족 → 비닐·포장재 부족 → 종량제봉투 대란 → 생활 인플레 + 정치 이슈화 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "3월 중순부터 누적. 가동 중단은 신규."},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "이란 전쟁의 비석유 전이 경로. 기존 추적에 없던 새 전개."}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": "CL-20260331-001"
+    },
+    {
+      "id": "IS-20260331-004",
+      "title": "트럼프 상호관세 15% 적용 1년 — 한국 GDP -0.6%p 충격",
+      "summary": "Liberation Day 1주년. 한국 상호관세 15% 적용 중. 한은 분석 GDP -0.6%p. 301조 조사 진행 중.",
+      "root_cause": "미국 통상 정책",
+      "scan_axis": "B",
+      "sources": ["이코노미조선", "신김장법률", "미주중앙일보"],
+      "market_contact": ["수출기업", "자동차", "철강", "KRW", "KOSPI"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["수출기업", "자동차", "철강", "KRW"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "1주년은 기존 정책의 확인. 새 벡터 아님. 다만 301조 조사가 진행 중 = 추가 관세 가능성."},
+        "G3": {"score": 2, "type": "free", "chain": "관세 15% → 수출기업 마진↓ → 고용 조정 → 소비↓ → GDP -0.6%p. 301조 결과에 따라 추가 관세 → 2차 충격 (4단계)"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "관세 기존 추적 중. 301조가 새 전개."}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260331-002"
+    },
+    {
+      "id": "IS-20260331-005",
+      "title": "종량제봉투 대란 — PE 부족 → 사재기 → 생활밀착 인플레",
+      "summary": "PE 원료(나프타) 부족으로 종량제봉투 생산 차질. 전국 사재기 확산. 정부 '걱정 없다'이나 현장은 불안.",
+      "root_cause": "이란 전쟁 → 나프타 → PE 부족",
+      "scan_axis": "C",
+      "sources": ["시정일보", "더쎈뉴스", "news-wa"],
+      "market_contact": ["PE", "생활물가", "정치"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["PE", "생활물가"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "봉투 대란은 이란 전쟁이 한국 일상에 도달한 첫 사례. 표면은 봉투지만 본질은 에너지 전이."},
+        "G3": {"score": 1, "type": "free", "chain": "봉투 부족 → 사재기 → 정치 이슈화 → 정부 대응 → 에너지 정책 재검토 (3단계)"},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕", "overlap": "완전히 새로운 이슈"}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": "CL-20260331-001"
+    },
+    {
+      "id": "IS-20260331-006",
+      "title": "반도체 헬륨 공급 — 카타르 30% 차단, 6주+ 시 SK하이닉스·삼성 지연",
+      "summary": "한국 헬륨 65% 카타르 의존. 현재 수개월분 비축이나 6주+ 차단 시 생산 지연 불가피.",
+      "root_cause": "이란 전쟁 → 헬륨 공급 차단",
+      "scan_axis": "C",
+      "sources": ["SPTA타임스코리아", "Supply Chain Dive"],
+      "market_contact": ["반도체", "SK하이닉스", "삼성전자", "HBM"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["반도체", "SK하이닉스", "삼성전자"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "헬륨 차단은 확인됐으나 아직 '6주 버퍼' 내. 즉시 영향 아님. 기존 상태의 시간 경과."},
+        "G3": {"score": 1, "type": "free", "chain": "헬륨 차단 6주+ → 반도체 생산 지연 → AI GPU 수급 → 빅테크 CAPEX 영향 (3단계)"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🆕", "overlap": "새로운 이슈"}
+      },
+      "total_score": 5,
+      "status": "후보",
+      "cluster_id": "CL-20260331-001"
+    },
+    {
+      "id": "IS-20260331-007",
+      "title": "금 $4,430 → 1주 -3% — 전쟁인데 금 하락, 달러 강세 역설",
+      "summary": "전쟁 시 안전자산 금이 오히려 하락. 달러 강세(DXY↑)가 금을 압도. 1983년 이후 최악 주간 하락.",
+      "root_cause": "달러 강세 vs 안전자산",
+      "scan_axis": "A",
+      "sources": ["Fortune", "르몽드 디플로마티크", "증권가 분석"],
+      "market_contact": ["금", "DXY", "달러"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["금", "DXY"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "금 하락 자체보다 '전쟁인데 금이 빠진다'는 역설이 변화. 달러 강세가 모든 것을 압도하는 구조 확인."},
+        "G3": {"score": 1, "type": "free", "chain": "달러 강세 → 금↓ + 신흥국 통화↓ → 한국 원화↓ → 수입물가↑ (3단계)"},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "TC-007 인플레공포에서 추적 중"}
+      },
+      "total_score": 5,
+      "status": "후보",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260331-008",
+      "title": "GENIUS Act — OCC NPRM 발표, 스테이블코인 규제 프레임워크 구체화",
+      "summary": "OCC가 GENIUS Act 시행규칙 제안. 스테이블코인 = 증권도 상품도 아닌 독립 금융상품. 코멘트 5/1 마감. 시행 2027/1/18.",
+      "root_cause": "크립토 규제 프레임워크",
+      "scan_axis": "D",
+      "sources": ["Sullivan & Cromwell", "Davis Polk", "KuCoin"],
+      "market_contact": ["크립토", "스테이블코인", "USDT", "USDC"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["크립토", "스테이블코인"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "OCC NPRM은 미국 최초의 스테이블코인 구체적 규제안. 새로운 벡터. 그러나 시행 2027년."},
+        "G3": {"score": 1, "type": "free", "chain": "규제 확정 → 은행 스테이블코인 발행 허용 → 전통금융+크립토 통합 가속 (2단계)"},
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": "🔁6회", "overlap": "BL-001에서 6회 등장"}
+      },
+      "total_score": 4,
+      "status": "약함",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260331-009",
+      "title": "동남아 5개국 원전 부활 — 이란 전쟁발 에너지 안보 재편",
+      "summary": "이란 전쟁으로 에너지 불안. 동남아 5개국 원전 재도입 논의. SMR 수요 장기 확대 신호.",
+      "root_cause": "에너지 안보 + 원전 재평가",
+      "scan_axis": "D",
+      "sources": ["backlog BL-005"],
+      "market_contact": ["원전", "SMR", "두산에너빌리티", "우라늄"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["원전", "우라늄"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "기존 흐름의 확인. 새 벡터 아님."},
+        "G3": {"score": 1, "type": "free", "chain": "원전 부활 → 우라늄 수요↑ → SMR 수주 가속 (2단계)"},
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": "BL-005", "overlap": "backlog 재검증"}
+      },
+      "total_score": 2,
+      "status": "탈락",
+      "cluster_id": null
+    }
+  ],
+
+  "clusters": [
+    {
+      "id": "CL-20260331-001",
+      "root_label": "호르무즈 공급 차단 → 실물 경제 전이",
+      "issues": ["IS-20260331-001", "IS-20260331-002", "IS-20260331-003", "IS-20260331-005", "IS-20260331-006"],
+      "priority_score": 12,
+      "market_contact_combined": ["Brent", "LNG", "나프타", "헬륨", "PE", "비닐", "반도체", "생활물가", "KRW", "S&P", "KOSPI"],
+      "rm_input_title": "호르무즈 실물 전이 — LNG FM + 나프타 가동중단 + 헬륨 반도체 + 봉투 대란",
+      "propagation": "호르무즈→LNG→헬륨→반도체 / 나프타→PE→봉투→생활인플레 (6단계)",
+      "key_finding": "이란 전쟁이 석유가 아닌 경로(LNG·헬륨·나프타·PE)로 한국 실물 경제를 치기 시작. '비석유 전이 경로' 개시."
+    },
+    {
+      "id": "CL-20260331-002",
+      "root_label": "트럼프 관세 체제 1년",
+      "issues": ["IS-20260331-004"],
+      "priority_score": 8,
+      "market_contact_combined": ["수출기업", "자동차", "철강", "KRW", "KOSPI"],
+      "rm_input_title": "트럼프 관세 1년 — 15% 적용 + 301조 조사 진행",
+      "propagation": "관세→수출마진↓→고용→소비→GDP. 301조→추가관세 가능."
+    }
+  ],
+
+  "independent": ["IS-20260331-007", "IS-20260331-008"],
+
+  "blind_spot_checks": {
+    "Q1_missing_asset": "부동산 — 시그널 없음.",
+    "Q2_geo_balance": "글로벌 7건 / 한국 2건. 균형 OK.",
+    "Q3_backlog_promotion": "BL-001 GENIUS 6회. Gate 4점 = 승격 경계. 다음 5점+시 승격.",
+    "Q4_diversity": "비전쟁 이슈 4건(관세, 봉투, 금, GENIUS). OK."
+  },
+
+  "user_selection": ["CL-20260331-001", "CL-20260331-002", "IS-20260331-007", "IS-20260331-008"],
+  "selection_note": "전부",
+
+  "handoff": {
+    "to": "reaction-monitor 또는 Stereo Analyzer",
+    "titles": [
+      "호르무즈 실물 전이 — LNG FM + 나프타 가동중단 + 헬륨 반도체 + 봉투 대란",
+      "트럼프 관세 1년 — 15% 적용 + 301조 조사",
+      "금 -3% 달러 강세 역설",
+      "GENIUS Act OCC NPRM"
+    ],
+    "timestamp": "2026-03-31T09:00:00+09:00"
+  }
+}

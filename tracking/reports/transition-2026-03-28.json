@@ -1,0 +1,770 @@
+{
+  "generated": "2026-03-28",
+  "horizon": "2026-03 ~ 2027-03",
+  "paths": [
+    {
+      "th_id": "TH-001",
+      "hypothesis": "글로벌 통상 재편(301+EU제3극+이란)이 복합 작용하여 risk-off 국면으로 전이",
+      "confidence": 0.475,
+      "from_regime": "neutral",
+      "to_regime": "risk-off",
+      "horizon": "mid",
+      "start_date": "2026-03-27",
+      "target_date": "2026-09-27 00:00:00",
+      "convergence_count": 5,
+      "evidence_count": 3,
+      "recent_delta_trend": 0.058333333333333334,
+      "members": [
+        {
+          "tc_id": "TC-002",
+          "role": "cascade_target"
+        },
+        {
+          "tc_id": "TC-001",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-003",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-005",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-008",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-009",
+          "role": "convergence_member"
+        }
+      ],
+      "waypoints": [
+        {
+          "date": "2026-06-30",
+          "event": "Brent>$115 × 3d + 호르무즈 완전 봉쇄 또는 IRGC 보복",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-003",
+              "tc_id": "TC-003",
+              "claim": "이란 확전 심화 — Brent $120+",
+              "scenario": "A",
+              "probability": "45%",
+              "trigger": "Brent>$115 × 3d + 호르무즈 완전 봉쇄 또는 IRGC 보복",
+              "deadline": "2026-06-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-004",
+              "tc_id": "TC-003",
+              "claim": "이란 정전/타협 → Brent 정상화",
+              "scenario": "C",
+              "probability": "15%",
+              "trigger": "이란-미국 공식 정전 + 호르무즈 재개방",
+              "deadline": "2026-06-30",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-24",
+          "event": "301 관세율 공고",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260327-001",
+              "tc_id": "TC-001",
+              "claim": "Section 301 한국 관세 부과 (7/24)",
+              "scenario": "A",
+              "probability": "45%",
+              "trigger": "301 관세율 공고",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260326-001",
+              "tc_id": "TC-008",
+              "claim": "한국車 관세 25% + EU IAA → 구조 전환 가속",
+              "scenario": "A",
+              "probability": "40%",
+              "trigger": "IEEPA 25% 공식 시행",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260326-002",
+              "tc_id": "TC-008",
+              "claim": "한국車 관세 협상 타결 (15% 유지)",
+              "scenario": "B",
+              "probability": "15%",
+              "trigger": "한미 통상 합의 공식 발표",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260327-002",
+              "tc_id": "TC-001",
+              "claim": "Section 301 한국 면제/경감",
+              "scenario": "B",
+              "probability": "20%",
+              "trigger": "한-미 합의 면제 조건 명시",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260326-003",
+              "tc_id": "TC-008",
+              "claim": "한국車 삼중 압박 극대화",
+              "scenario": "C",
+              "probability": "30%",
+              "trigger": "25%관세 + BYD 유럽 분기1위 + 이란전쟁 3개월+",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260327-004",
+              "tc_id": "TC-001",
+              "claim": "법적 공백 → 관세 급락",
+              "scenario": "D",
+              "probability": "10%",
+              "trigger": "Section 122 만료 + 301 미부과",
+              "deadline": "2026-07-24",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-30",
+          "event": "KRW 1,550+ × 5d",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-001",
+              "tc_id": "TC-002",
+              "claim": "KRW 1,530+ 지속 (구조적 고환율 유지)",
+              "scenario": "A",
+              "probability": "40%",
+              "trigger": "KRW 1,550+ × 5d",
+              "deadline": "2026-09-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-002",
+              "tc_id": "TC-002",
+              "claim": "WGBI 편입 결정 → KRW 구조적 반전",
+              "scenario": "C",
+              "probability": "20%",
+              "trigger": "WGBI 편입 공식 발표",
+              "deadline": "2026-09-30",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2027-06-30",
+          "event": "BYD L4 자율주행 + 현대 NVIDIA 성과 지연",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260326-004",
+              "tc_id": "TC-008",
+              "claim": "SDV 경쟁 부상 — 관세 뒤의 기술 전쟁",
+              "scenario": "D",
+              "probability": "15%",
+              "trigger": "BYD L4 자율주행 + 현대 NVIDIA 성과 지연",
+              "deadline": "2027-06-30",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2028-03-31",
+          "event": "EU ACI 발동 또는 IAA 발효",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260327-003",
+              "tc_id": "TC-009",
+              "claim": "EU 제3극화 가속 → 한-EU 통상 재편",
+              "scenario": "C",
+              "probability": "25%",
+              "trigger": "EU ACI 발동 또는 IAA 발효",
+              "deadline": "2028-03-31",
+              "status": "open"
+            }
+          ]
+        }
+      ],
+      "chain_progress": [
+        {
+          "order": 1,
+          "description": "P2(관세) 변경 → 룰 충격",
+          "estimated": "2026-05",
+          "active": false
+        },
+        {
+          "order": 2,
+          "description": "룰 충격 → 신용 스프레드 확대",
+          "estimated": "2026-06",
+          "active": false
+        },
+        {
+          "order": 3,
+          "description": "금리 상승 → 유동성 축소",
+          "estimated": "2026-08",
+          "active": false
+        },
+        {
+          "order": 4,
+          "description": "유동성 축소 → 포지션 청산 → risk-off",
+          "estimated": "2026-10",
+          "active": false
+        }
+      ],
+      "kc_zones": [
+        {
+          "key": "vix_calm",
+          "condition": "VIX 15 이하 10일 지속",
+          "weight": -0.2
+        },
+        {
+          "key": "peace_deal",
+          "condition": "301 철회 + 이란 휴전 동시",
+          "weight": -0.5
+        },
+        {
+          "key": "fed_emergency",
+          "condition": "Fed 긴급 완화 (50bp+ 인하)",
+          "weight": -0.3
+        }
+      ],
+      "evidence_trail": [
+        {
+          "date": "2026-03-27",
+          "type": "tc_join",
+          "description": "TC-001,003,008,009 4개 TC 수렴 그룹 형성. SA-20260327-001 풀 파이프라인에서 통상 재편 확인.",
+          "delta": 0.05,
+          "confidence_after": 0.35
+        },
+        {
+          "date": "2026-03-27",
+          "type": "tc_join",
+          "description": "TC-005 수렴 합류",
+          "delta": 0.05,
+          "confidence_after": 0.4
+        },
+        {
+          "date": "2026-03-28",
+          "type": "psf_accel",
+          "description": "L7 통합: 공통 노드 5개 risk-off 정렬. PSF 3판 적색. 하이크 52%. 이란-TLT-AI 단일 도미노 확인.",
+          "delta": 0.075,
+          "confidence_after": 0.475
+        }
+      ],
+      "predictions": [
+        {
+          "pred_id": "PRED-20260328-003",
+          "tc_id": "TC-003",
+          "claim": "이란 확전 심화 — Brent $120+",
+          "scenario": "A",
+          "probability": "45%",
+          "trigger": "Brent>$115 × 3d + 호르무즈 완전 봉쇄 또는 IRGC 보복",
+          "deadline": "2026-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-004",
+          "tc_id": "TC-003",
+          "claim": "이란 정전/타협 → Brent 정상화",
+          "scenario": "C",
+          "probability": "15%",
+          "trigger": "이란-미국 공식 정전 + 호르무즈 재개방",
+          "deadline": "2026-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260327-001",
+          "tc_id": "TC-001",
+          "claim": "Section 301 한국 관세 부과 (7/24)",
+          "scenario": "A",
+          "probability": "45%",
+          "trigger": "301 관세율 공고",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-001",
+          "tc_id": "TC-008",
+          "claim": "한국車 관세 25% + EU IAA → 구조 전환 가속",
+          "scenario": "A",
+          "probability": "40%",
+          "trigger": "IEEPA 25% 공식 시행",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-002",
+          "tc_id": "TC-008",
+          "claim": "한국車 관세 협상 타결 (15% 유지)",
+          "scenario": "B",
+          "probability": "15%",
+          "trigger": "한미 통상 합의 공식 발표",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260327-002",
+          "tc_id": "TC-001",
+          "claim": "Section 301 한국 면제/경감",
+          "scenario": "B",
+          "probability": "20%",
+          "trigger": "한-미 합의 면제 조건 명시",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-003",
+          "tc_id": "TC-008",
+          "claim": "한국車 삼중 압박 극대화",
+          "scenario": "C",
+          "probability": "30%",
+          "trigger": "25%관세 + BYD 유럽 분기1위 + 이란전쟁 3개월+",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260327-004",
+          "tc_id": "TC-001",
+          "claim": "법적 공백 → 관세 급락",
+          "scenario": "D",
+          "probability": "10%",
+          "trigger": "Section 122 만료 + 301 미부과",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-001",
+          "tc_id": "TC-002",
+          "claim": "KRW 1,530+ 지속 (구조적 고환율 유지)",
+          "scenario": "A",
+          "probability": "40%",
+          "trigger": "KRW 1,550+ × 5d",
+          "deadline": "2026-09-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-002",
+          "tc_id": "TC-002",
+          "claim": "WGBI 편입 결정 → KRW 구조적 반전",
+          "scenario": "C",
+          "probability": "20%",
+          "trigger": "WGBI 편입 공식 발표",
+          "deadline": "2026-09-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-004",
+          "tc_id": "TC-008",
+          "claim": "SDV 경쟁 부상 — 관세 뒤의 기술 전쟁",
+          "scenario": "D",
+          "probability": "15%",
+          "trigger": "BYD L4 자율주행 + 현대 NVIDIA 성과 지연",
+          "deadline": "2027-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260327-003",
+          "tc_id": "TC-009",
+          "claim": "EU 제3극화 가속 → 한-EU 통상 재편",
+          "scenario": "C",
+          "probability": "25%",
+          "trigger": "EU ACI 발동 또는 IAA 발효",
+          "deadline": "2028-03-31",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "th_id": "TH-002",
+      "hypothesis": "이란 정전 + Fed 인하 + AI 수익 확인 → risk-on 전이",
+      "confidence": 0.3,
+      "from_regime": "neutral",
+      "to_regime": "risk-on",
+      "horizon": "mid",
+      "start_date": "2026-03-28",
+      "target_date": "2026-09-28 00:00:00",
+      "convergence_count": 3,
+      "evidence_count": 1,
+      "recent_delta_trend": 0.3,
+      "members": [
+        {
+          "tc_id": "TC-010",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-011",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-014",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-003",
+          "role": "evidence"
+        },
+        {
+          "tc_id": "TC-016",
+          "role": "evidence"
+        }
+      ],
+      "waypoints": [
+        {
+          "date": "2026-04-02",
+          "event": "VIX 30+ x 5일 연속",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-023",
+              "tc_id": "TC-016",
+              "claim": "VIX 30+ 5일 지속(4/2까지) → 시나리오 B Trigger 발동. Phase 1→2 전환.",
+              "scenario": "B",
+              "probability": "45%",
+              "trigger": "VIX 30+ x 5일 연속",
+              "deadline": "2026-04-02",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2026-04-11",
+          "event": "HY OAS 350bp 접근",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-024",
+              "tc_id": "TC-016",
+              "claim": "HY OAS 350bp 접근 시 공포→신용 전이 시작. VIX→HY 지연 전이는 1~2주.",
+              "scenario": "B",
+              "probability": "45%",
+              "trigger": "HY OAS 350bp 접근",
+              "deadline": "2026-04-11",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2026-06-30",
+          "event": "Brent>$115 × 3d + 호르무즈 완전 봉쇄 또는 IRGC 보복",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-003",
+              "tc_id": "TC-003",
+              "claim": "이란 확전 심화 — Brent $120+",
+              "scenario": "A",
+              "probability": "45%",
+              "trigger": "Brent>$115 × 3d + 호르무즈 완전 봉쇄 또는 IRGC 보복",
+              "deadline": "2026-06-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-009",
+              "tc_id": "TC-010",
+              "claim": "AI capex 감속 + 구조 조정",
+              "scenario": "B",
+              "probability": "35%",
+              "trigger": "Q1 실적에서 capex 가이던스 하향 OR 헬륨 병목 팹 셧다운",
+              "deadline": "2026-06-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-021",
+              "tc_id": "TC-016",
+              "claim": "VIX 30+ 돌파 (공포 영역 진입)",
+              "scenario": "B",
+              "probability": "25%",
+              "trigger": "VIX 30 × 3d",
+              "deadline": "2026-06-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-004",
+              "tc_id": "TC-003",
+              "claim": "이란 정전/타협 → Brent 정상화",
+              "scenario": "C",
+              "probability": "15%",
+              "trigger": "이란-미국 공식 정전 + 호르무즈 재개방",
+              "deadline": "2026-06-30",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-30",
+          "event": "PJM 신규 데이터센터 접속 거부 보도",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-017",
+              "tc_id": "TC-014",
+              "claim": "PJM 전력 부족으로 데이터센터 건설 지연",
+              "scenario": "B",
+              "probability": "30%",
+              "trigger": "PJM 신규 데이터센터 접속 거부 보도",
+              "deadline": "2026-09-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-022",
+              "tc_id": "TC-016",
+              "claim": "HY OAS 500bp 돌파 (신용 스트레스)",
+              "scenario": "C",
+              "probability": "15%",
+              "trigger": "HY OAS 500bp × 5d",
+              "deadline": "2026-09-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-026",
+              "tc_id": "TC-014",
+              "claim": "중국 Linglong One SMR 2026 H1 상용 운전 성공 시 미국 NRC SMR 규제 완화 압력 증가",
+              "scenario": "C",
+              "probability": "22%",
+              "trigger": "Linglong One 상용 운전 공식 발표",
+              "deadline": "2026-09-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-012",
+              "tc_id": "TC-011",
+              "claim": "Intel 18A 수율 문제로 양산 지연",
+              "scenario": "D",
+              "probability": "15%",
+              "trigger": "Intel 18A 수율 70% 미달 보도",
+              "deadline": "2026-09-30",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260328-010",
+              "tc_id": "TC-010",
+              "claim": "헬륨 위기 → AI 인프라 물리적 차질",
+              "scenario": "D",
+              "probability": "15%",
+              "trigger": "반도체 팹 가동률 공식 감소 + GPU 공급 차질 보고",
+              "deadline": "2026-09-30",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2026-12-31",
+          "event": "TSMC Fab2 양산 공식 발표",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-011",
+              "tc_id": "TC-011",
+              "claim": "TSMC Arizona Fab2 3nm 양산 시작",
+              "scenario": "A",
+              "probability": "35%",
+              "trigger": "TSMC Fab2 양산 공식 발표",
+              "deadline": "2026-12-31",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2027-06-30",
+          "event": "SMR 건설 착공 또는 NRC 승인",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260328-018",
+              "tc_id": "TC-014",
+              "claim": "MS/Google SMR 계약 구체화",
+              "scenario": "C",
+              "probability": "20%",
+              "trigger": "SMR 건설 착공 또는 NRC 승인",
+              "deadline": "2027-06-30",
+              "status": "open"
+            }
+          ]
+        }
+      ],
+      "chain_progress": [],
+      "kc_zones": [
+        {
+          "key": "TC-003_A",
+          "condition": "Brent>50 확전 심화",
+          "weight": -0.3
+        },
+        {
+          "key": "TC-007_D",
+          "condition": "스태그플레이션 확정 (Fed 인상)",
+          "weight": -0.3
+        },
+        {
+          "key": "TC-016_C",
+          "condition": "VIX 40+ 급성 위기",
+          "weight": -0.4
+        }
+      ],
+      "evidence_trail": [
+        {
+          "date": "2026-03-28",
+          "type": "tc_join",
+          "description": "신규 생성. risk-on 방향. 전제: 이란 정전 + Fed 인하 + AI 수익 확인. 현재 3개 전제 모두 미충족. 월가 컨센서스(S&P 7800, Fed -75bp)와 정렬되",
+          "delta": 0.3,
+          "confidence_after": 0.3
+        }
+      ],
+      "predictions": [
+        {
+          "pred_id": "PRED-20260328-023",
+          "tc_id": "TC-016",
+          "claim": "VIX 30+ 5일 지속(4/2까지) → 시나리오 B Trigger 발동. Phase 1→2 전환.",
+          "scenario": "B",
+          "probability": "45%",
+          "trigger": "VIX 30+ x 5일 연속",
+          "deadline": "2026-04-02",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-024",
+          "tc_id": "TC-016",
+          "claim": "HY OAS 350bp 접근 시 공포→신용 전이 시작. VIX→HY 지연 전이는 1~2주.",
+          "scenario": "B",
+          "probability": "45%",
+          "trigger": "HY OAS 350bp 접근",
+          "deadline": "2026-04-11",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-003",
+          "tc_id": "TC-003",
+          "claim": "이란 확전 심화 — Brent $120+",
+          "scenario": "A",
+          "probability": "45%",
+          "trigger": "Brent>$115 × 3d + 호르무즈 완전 봉쇄 또는 IRGC 보복",
+          "deadline": "2026-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-009",
+          "tc_id": "TC-010",
+          "claim": "AI capex 감속 + 구조 조정",
+          "scenario": "B",
+          "probability": "35%",
+          "trigger": "Q1 실적에서 capex 가이던스 하향 OR 헬륨 병목 팹 셧다운",
+          "deadline": "2026-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-021",
+          "tc_id": "TC-016",
+          "claim": "VIX 30+ 돌파 (공포 영역 진입)",
+          "scenario": "B",
+          "probability": "25%",
+          "trigger": "VIX 30 × 3d",
+          "deadline": "2026-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-004",
+          "tc_id": "TC-003",
+          "claim": "이란 정전/타협 → Brent 정상화",
+          "scenario": "C",
+          "probability": "15%",
+          "trigger": "이란-미국 공식 정전 + 호르무즈 재개방",
+          "deadline": "2026-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-017",
+          "tc_id": "TC-014",
+          "claim": "PJM 전력 부족으로 데이터센터 건설 지연",
+          "scenario": "B",
+          "probability": "30%",
+          "trigger": "PJM 신규 데이터센터 접속 거부 보도",
+          "deadline": "2026-09-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-022",
+          "tc_id": "TC-016",
+          "claim": "HY OAS 500bp 돌파 (신용 스트레스)",
+          "scenario": "C",
+          "probability": "15%",
+          "trigger": "HY OAS 500bp × 5d",
+          "deadline": "2026-09-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-026",
+          "tc_id": "TC-014",
+          "claim": "중국 Linglong One SMR 2026 H1 상용 운전 성공 시 미국 NRC SMR 규제 완화 압력 증가",
+          "scenario": "C",
+          "probability": "22%",
+          "trigger": "Linglong One 상용 운전 공식 발표",
+          "deadline": "2026-09-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-012",
+          "tc_id": "TC-011",
+          "claim": "Intel 18A 수율 문제로 양산 지연",
+          "scenario": "D",
+          "probability": "15%",
+          "trigger": "Intel 18A 수율 70% 미달 보도",
+          "deadline": "2026-09-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-010",
+          "tc_id": "TC-010",
+          "claim": "헬륨 위기 → AI 인프라 물리적 차질",
+          "scenario": "D",
+          "probability": "15%",
+          "trigger": "반도체 팹 가동률 공식 감소 + GPU 공급 차질 보고",
+          "deadline": "2026-09-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-011",
+          "tc_id": "TC-011",
+          "claim": "TSMC Arizona Fab2 3nm 양산 시작",
+          "scenario": "A",
+          "probability": "35%",
+          "trigger": "TSMC Fab2 양산 공식 발표",
+          "deadline": "2026-12-31",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260328-018",
+          "tc_id": "TC-014",
+          "claim": "MS/Google SMR 계약 구체화",
+          "scenario": "C",
+          "probability": "20%",
+          "trigger": "SMR 건설 착공 또는 NRC 승인",
+          "deadline": "2027-06-30",
+          "status": "open"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "active_th": 2,
+    "total_predictions": 35,
+    "resolved_predictions": 0,
+    "overall_hit_rate": null,
+    "active_watches": 33,
+    "conviction_templates": 0
+  },
+  "self_reinforcement": {
+    "templates": [],
+    "system_confidence_trend": "rising"
+  }
+}

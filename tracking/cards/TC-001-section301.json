@@ -1,47 +1,102 @@
 {
-  "id": "TC-001",
-  "type": "stereo",
-  "title": "Section 301 — 관세 법체계 3단 진화",
-  "source": "SA-20260326-001",
+  "tc_id": "TC-001",
   "created": "2026-03-26",
-  "status": "tracking",
+  "updated": "2026-03-28",
+  "title": "Section 301 — 관세 법체계 3단 진화",
+  "status": "active",
+
+  "issue_summary": "301 청문회(4/28) → 관세 범위 확정 OR Section 122 만료(7/24) 전 관세 부과. 한국 16국 명시 포함. $167B 환급 혼란+EU 제3극.",
+
   "phase": 1,
-  "scp": 4,
+  "phase_log": [
+    {"phase": 1, "date": "2026-03-26", "trigger": "첫 분석. 조사 중.", "note": "SA-20260326-001"},
+    {"phase": 1, "date": "2026-03-27", "trigger": "파이프라인 풀 실행. 한국 301 16국 명시 포함 확인. Phase 1→2 접근.", "note": "SA-20260327-001"}
+  ],
 
-  "trigger": {
-    "condition": "301 청문회(4/28) → 관세 범위 확정 OR Section 122 만료(7/24) 전 관세 부과",
-    "current": "조사 중. 코멘트 마감 4/15.",
-    "fired": false
+  "pre_read": {
+    "type": "POLICY",
+    "scp": 4,
+    "urgency": "WATCH"
   },
-  "kc": {
-    "watch": "한국 대미 수출 -5% YoY",
-    "alert": "301 관세율 확정 공고",
-    "hard": "301 철회 OR 한미 합의 면제 확인",
-    "fired": false
-  },
+
   "scenarios": {
-    "A": {"label": "교란해소+역풍지연", "prob": "25%"},
-    "B": {"label": "교착+역풍가시화", "prob": "35%", "base": true},
-    "C": {"label": "이중충격", "prob": "15%"},
-    "D": {"label": "교란해소+역풍동시", "prob": "25%", "key": true}
+    "A": {
+      "label": "교란해소+역풍지연",
+      "probability": "25%",
+      "trigger": {"condition": "한미 통상 합의 발표 OR 301 조사 종료(관세 없음)", "source": "서사적", "distance": "협상 미개시", "recalibration": "정기 4/15 + 비정기(한미 정상회담)"},
+      "kc": {
+        "watch": "301 재조사 개시 보도",
+        "alert": "USTR 한국 관세 목록 초안 유출",
+        "hard": "301 관세 공식 부과",
+        "action": "TC-001 Phase 3. A(해소) thesis 폐기. B 또는 C로 전환."
+      },
+      "current_status": "미진입. 조사 진행 중."
+    },
+    "B": {
+      "label": "교착+역풍가시화",
+      "probability": "35%",
+      "base": true,
+      "trigger": {"condition": "301 청문회(4/28) 후 결론 미확정 + 코멘트 기간 재연장", "source": "구조적", "distance": "코멘트 마감 4/15", "recalibration": "정기 4/28 청문회 + 비정기(USTR 발표)"},
+      "kc": {
+        "watch": "한국 대미 수출 -5% YoY",
+        "alert": "301 관세율 확정 공고 (한국 포함)",
+        "hard": "301 철회 OR 한미 합의 면제 확인",
+        "action": "TC-001 Phase 4. 교착 종료. 관세 확정이면 C, 철회면 A로 전환."
+      },
+      "current_status": "Phase 1. 조사 중. 코멘트 마감 4/15."
+    },
+    "C": {
+      "label": "이중충격 (301 관세 + 이란 교란 동시)",
+      "probability": "15%",
+      "trigger": {"condition": "301 관세 확정 + Brent>$120 동시 발생", "source": "구조적+통계적", "distance": "301 미확정, Brent $112.57", "recalibration": "정기 4/28 + 비정기(이란/관세 이벤트)"},
+      "kc": {
+        "watch": "한 축만 해소(관세 타결 OR Brent<$100)",
+        "alert": "관세 OR 유가 중 1개 정상화 x 5d",
+        "hard": "양쪽 모두 정상화",
+        "action": "TC-001 Phase 4. 이중충격 thesis 해소. B 또는 A로 전환."
+      },
+      "current_status": "미진입."
+    },
+    "D": {
+      "label": "교란해소+역풍동시 (관세 없으나 수출 둔화)",
+      "probability": "25%",
+      "key": true,
+      "trigger": {"condition": "301 철회/무관세 + 한국 대미 수출 3개월 연속 감소", "source": "통계적", "recalibration": "정기 월별 수출 통계 + 비정기(관세 결정)"},
+      "kc": {
+        "watch": "수출 회복(+전환)",
+        "alert": "수출 반등 2개월 연속",
+        "hard": "수출 YoY 양전환 3개월",
+        "action": "TC-001 Phase 4. 역풍 thesis 해소. 카드 아카이브."
+      },
+      "current_status": "미진입."
+    }
   },
 
-  "events": ["EC-003", "EC-004", "EC-005", "EC-006"],
-  "rm_watches": ["W-UQ-030", "W-UQ-031", "W-UQ-032", "W-UQ-033"],
-  "psf_link": "L_trade (emerging)",
-  "macro_ref": "B1 trend_note",
+  "tracking_indicators": [
+    {"indicator": "Brent", "symbol": "BZ=F", "current": "$112.57", "threshold": "$120 (C시나리오 진입)", "last_check": "2026-03-28", "next_check": "2026-03-31"},
+    {"indicator": "DXY", "symbol": "DX-Y.NYB", "current": "103.2", "threshold": "106 (달러 강세 압박)", "last_check": "2026-03-28", "next_check": "2026-04-04"},
+    {"indicator": "한국 대미 수출", "current": "미발표", "threshold": "-5% YoY (B 진입)", "last_check": "2026-03-28", "next_check": "2026-04-15"},
+    {"indicator": "301 청문회", "current": "4/28 예정", "threshold": "청문회 결과 발표", "last_check": "2026-03-28", "next_check": "2026-04-28"}
+  ],
 
   "heartbeat_thresholds": [
     {"indicator": "Brent", "symbol": "BZ=F", "watch": 120, "alert": 135, "hard": 150, "direction": "above"},
     {"indicator": "DXY", "symbol": "DX-Y.NYB", "watch": 103, "alert": 106, "hard": 110, "direction": "above"}
   ],
 
-  "analysis_ids": ["SA-20260326-001", "SA-20260327-001"],
+  "events": ["EC-003", "EC-004", "EC-005", "EC-006"],
+  "rm_watches": ["W-UQ-030", "W-UQ-031", "W-UQ-032", "W-UQ-033"],
+  "psf_link": "L_trade (emerging)",
+  "macro_ref": "B1 trend_note",
 
-  "check_log": [
-    {"date": "2026-03-26", "observation": "시장 무반응(과소). 조사 진행 중. Phase 1 유지.", "next_check": "2026-04-15"},
-    {"date": "2026-03-27", "observation": "파이프라인 풀 실행. 한국 301 16국 명시 포함 확인(core BURIED). $167B 환급 혼란+EU 제3극 신규. 시나리오 A 45%, Phase 1→2 접근. 4/15까지 19일.", "next_check": "2026-04-01"}
+  "cross_card_links": [
+    {"to": "TC-003", "link": "이란→유가→301+이란 이중충격 시나리오 C"},
+    {"to": "TC-008", "link": "301 관세가 자동차 직격. 301 확정 시 TC-008 시나리오 A 가속."},
+    {"to": "TC-009", "link": "301+EU 제3극 통상자율성. 양쪽 관세 동시 압박."}
   ],
+
+  "analysis_ids": ["SA-20260326-001", "SA-20260327-001"],
+  "tags": ["POLICY", "관세", "301", "통상", "한미", "Section122", "MT-07"],
 
   "close_condition": "301 관세 확정 → 시나리오 확정 OR 301 철회 → KC 발동 OR 6개월 무변화 → 아카이브"
 }

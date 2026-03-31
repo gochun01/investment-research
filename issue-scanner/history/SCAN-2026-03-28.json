@@ -1,0 +1,315 @@
+{
+  "date": "2026-03-28",
+  "scan_id": "SCAN-20260328-001",
+  "sources_used": [
+    {"axis": "A", "tool": "Firecrawl", "query": "Reuters OR Bloomberg OR CNBC market stocks oil gold today March 28 2026", "result_count": 10},
+    {"axis": "A", "tool": "WebSearch", "query": "증시 급등 급락 유가 환율 금 오늘 2026년 3월 28일", "result_count": 10},
+    {"axis": "B", "tool": "Firecrawl", "query": "central bank regulation sanctions tariff policy trade March 28 2026", "result_count": 10},
+    {"axis": "B", "tool": "WebSearch", "query": "금리 결정 규제 관세 제재 정부 발표 오늘 2026년 3월", "result_count": 10},
+    {"axis": "C", "tool": "Firecrawl", "query": "supply chain shortage disruption force majeure infrastructure energy March 2026", "result_count": 10},
+    {"axis": "C", "tool": "WebSearch", "query": "공급 차질 물량 부족 가동 중단 수급 불안 2026년 3월", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "GENIUS Act stablecoin regulation March 2026 progress", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "AI investment sentiment split sell-off Nvidia Microsoft capex 2026 March", "result_count": 10},
+    {"axis": "D", "tool": "WebSearch", "query": "에너지 전환 AI 디지털 탈탄소 재편 투자 2026년 3월", "result_count": 10},
+    {"axis": "D-seed", "tool": "WebSearch", "query": "Fed rate cut QE liquidity easing rally risk-on MMF SOFR March 2026", "result_count": 10},
+    {"axis": "D-seed", "tool": "WebSearch", "query": "helium shortage semiconductor chip supply Qatar 2026 AI data center impact", "result_count": 10},
+    {"axis": "context", "tool": "WebSearch", "query": "이란 전쟁 휴전 협상 최신 소식 2026년 3월 27일 28일", "result_count": 10},
+    {"axis": "context", "tool": "WebSearch", "query": "미국 장기채 TLT 인플레이션 금리 전망 2026년 3월", "result_count": 10},
+    {"axis": "context", "tool": "WebSearch", "query": "Core PCE inflation February 2026 data release March 28", "result_count": 10},
+    {"axis": "price", "tool": "Yahoo Finance", "query": "S&P500, WTI, Gold, USD/KRW, TLT, Brent, DXY", "result_count": 7},
+    {"axis": "price", "tool": "CoinGecko", "query": "BTC", "result_count": 1}
+  ],
+  "seeds": {
+    "heartbeat": [],
+    "macro": "hawkish hold (3.50-3.75%), Core PCE 3.1% YoY, oil-driven inflation persistence",
+    "ghs": [],
+    "priority_scanner": [
+      "TH 'transition' 방향 부재 — 전환, 재편, AI, 에너지, 탈탄소, 디지털",
+      "TH 'risk-on' 방향 부재 — 완화, 금리인하, 유동성, QE, Fed, rally, MMF, SOFR",
+      "TC-003 갱신 필요 (오늘 만기) — 이란 전쟁 교란",
+      "TC-007 갱신 필요 (오늘 만기) — 미 장기채 ETF 인플레",
+      "SD-002 TC 승격 후보 — AI 투자 심리 분열 (2회 출현)"
+    ]
+  },
+  "price_snapshot": {
+    "S&P500": 6431.98,
+    "WTI": 97.36,
+    "Brent": 103.50,
+    "Gold": 4569.80,
+    "USD_KRW": 1508.28,
+    "DXY": 99.92,
+    "TLT": 86.02,
+    "BTC": 66478
+  },
+  "raw_headlines": [
+    "[A] Gold jumps as oil slump eases inflation fears amid Trump Iran talks — CNBC",
+    "[A] Oil Falls, US Stock Futures Climb on Iran Hopes — Bloomberg",
+    "[A] 금값 2.31% 하락 4405달러, 유가 급등→인플레→금리인하 기대 후퇴→달러강세 연쇄",
+    "[A] 원/달러 1,508원 유지, 안전자산 → 현금 전환 현상",
+    "[A] BTC $66,478 (-3.5% 24h), 리스크오프 강화",
+    "[B] 이란 15-point 휴전안 거부 + 5개 자체 조건 제시. 트럼프 에너지시설 공격 유예 4/6 연장",
+    "[B] 이스라엘 3/28 휴전 가능성 보도 vs 전군 총공격 지시 — 상충 신호",
+    "[B] 트럼프 82nd 공수사단 최대 10,000명 추가 파병 검토 (호르무즈/카르그섬 장악 옵션)",
+    "[B] 한은 기준금리 2.50% 동결 6차 연속, 추가 인하 문구 삭제. 매파 전환",
+    "[B] Fed 3.50-3.75% 동결, Waller 매파 발언 (고유가→인플레 지속 경고)",
+    "[B] OCC GENIUS Act 시행규칙 제안 (3/2). 코멘트 기한 5/1. 시행일 2027/1/18",
+    "[B] 정부 나프타 수출제한 고시 (3/27). 중동전쟁 수급 차질 대응",
+    "[C] 걸프 에너지 인프라 $25B 복구 비용 — Rystad Energy",
+    "[C] 카타르 헬륨 Force Majeure — 글로벌 30% 공급 차단, 반도체 2주 타임라인",
+    "[C] SK하이닉스 헬륨 65% 카타르 의존, 대체 불가. NAND 공정 직격",
+    "[C] 호르무즈 비료 33% 공급 차단 → 식량 인플레 경로",
+    "[C] LG화학 여수 NCC 2공장 가동 중단 (나프타 부족)",
+    "[C] 기아 모닝/레이 4월 생산 전면 중단 (부품 공급 차질)",
+    "[C] 유럽 가스 가격 13개월 최고치 — 유럽 에너지 위기 재점화",
+    "[C] 종량제 봉투 대란 — PE 원료(나프타) 부족 → 생활물가",
+    "[D] AI 투자 분열: Big Tech $700B capex vs 시장 $1.35T 시총 증발. Nvidia capex 피킹 논란",
+    "[D] AI 트레이드 양극화: monetizer vs manufacturer 분리 — CNBC/Motley Fool",
+    "[D] 전력망 재편 본격화 — HVDC, 송전망, 스마트그리드 투자 가속",
+    "[D] 한국형 전환금융(K-GX) 도입 — 탈탄소 민간투자 유치 체계",
+    "[D-seed] Fed QT 종료(1월), 12월 자산매입 재개 → 유동성 완화 신호. 그러나 3월 매파 홀드로 기대 후퇴",
+    "[D-seed] 10년물 4.4%+ 8개월 최고 → TLT 86.02. 트레이더 올해 인하 기대 소멸",
+    "[D-seed] HP/Dell/Lenovo 기업고객에 H2 15-20% 가격인상 경고 (헬륨 부족+반도체)"
+  ],
+  "issues": [
+    {
+      "id": "IS-20260328-001",
+      "title": "이란 휴전 결렬 + 트럼프 지상군 투입 검토 (3/28 데드라인)",
+      "summary": "이란 15-point 안 거부 후 5개 자체 조건 제시. 트럼프 82nd 공수사단 1만 명 추가 파병 검토. 에너지시설 공격 유예 4/6 연장했으나 호르무즈/카르그섬 장악 군사옵션 대두. 이스라엘 전군 총공격 지시와 휴전 보도 상충.",
+      "root_cause": "미-이란 전쟁 — 호르무즈 봉쇄 + 휴전 교섭 결렬",
+      "scan_axis": "A+B",
+      "sources": ["NPR", "CBS News", "CNBC", "CSMonitor", "Fox News", "MBC"],
+      "market_contact": ["Brent", "WTI", "S&P500", "Gold", "USD/KRW", "방산주", "LNG"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["Brent/WTI(유가)", "Gold(안전자산)", "S&P500", "USD/KRW", "방산주", "LNG선"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "15-point 안 거부 후 지상군 투입 검토는 전쟁 확전의 새 국면. 호르무즈 봉쇄 해제를 위한 군사적 옵션(카르그섬 장악)이 구체화된 것은 최초. 방향 전환 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "휴전 결렬 → 지상군 투입 → 호르무즈 장기 봉쇄 확정 → 유가 $110+ → 글로벌 인플레 재점화 → Fed 인하 연기 → 신흥국 자본유출 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2/28 전쟁 개시 이후 1개월 누적. 단순 스냅샷 아님."},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-003 이란 교란의 새 전개 (지상군 옵션 최초 등장)"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-001"
+    },
+    {
+      "id": "IS-20260328-002",
+      "title": "카타르 헬륨 Force Majeure → 반도체 공급 2주 타임라인",
+      "summary": "카타르 Ras Laffan 드론 피격 후 헬륨 글로벌 30% 공급 차단. SK하이닉스 65% 카타르 의존. 반도체 웨이퍼 냉각용 헬륨은 대체 불가. 2-3개월 최소 셧다운, 정상화 4-6개월. HP/Dell 등 H2 15-20% 가격인상 경고.",
+      "root_cause": "미-이란 전쟁 — 호르무즈 봉쇄 → 카타르 LNG/헬륨 차단",
+      "scan_axis": "C",
+      "sources": ["Fortune", "Tom's Hardware", "CNBC", "Data Centre Magazine", "Washington Times"],
+      "market_contact": ["SK하이닉스(000660)", "삼성전자(005930)", "TSMC", "Nvidia", "DRAM", "HBM"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["반도체(SK하이닉스, 삼성전자, TSMC)", "AI 인프라(Nvidia)", "PC/서버 OEM"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "헬륨 Force Majeure는 반도체 업계 최초의 희귀가스 병목. 기존 공급망에서 한 번도 임계점에 도달하지 않았던 헬륨이 전쟁으로 글로벌 30% 차단. 새로운 힘의 투입."},
+        "G3": {"score": 2, "type": "free", "chain": "헬륨 차단 → 반도체 생산 차질(2주 내) → DRAM/NAND 가격 급등 → AI 데이터센터 $650B 투자 지연 → PC/서버 15-20% 가격인상 → 기업 IT 투자 위축 (5단계)"},
+        "G3.5": {"tag": "SNAPSHOT", "note": "3/2 Force Majeure 선언 이후 4주차. 2주 타임라인이 도래 중."},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-003 이란 교란의 새 전개 (헬륨 경로 최초 부각). TC-006 SK하이닉스 관련."}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-001"
+    },
+    {
+      "id": "IS-20260328-003",
+      "title": "나프타 수출제한 고시 + LG화학 NCC 가동 중단 → 석화 도미노",
+      "summary": "정부 3/27 나프타 수출제한 규정 고시. LG화학 여수 NCC 2공장 가동 중단. 나프타 수출 22% 급감. PE 원료 부족으로 종량제 봉투 대란. 호르무즈 비료 33% 차단과 결합하여 생활물가 직격.",
+      "root_cause": "미-이란 전쟁 — 호르무즈 봉쇄 → 나프타/비료 공급 차질",
+      "scan_axis": "C",
+      "sources": ["뉴스핌", "EBN", "news-wa", "AA통신", "헤럴드경제"],
+      "market_contact": ["LG화학(051910)", "석화섹터", "비료(농업)", "생활물가(PE)", "식량"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["석화(LG화학)", "비료/농업", "생활물가(PE/봉투)", "식량 인플레"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "정부의 나프타 수출제한 '고시'는 규제적 개입의 새 벡터. NCC 가동 중단은 석화 밸류체인 첫 번째 공식 셧다운. 새로운 힘의 투입."},
+        "G3": {"score": 2, "type": "free", "chain": "나프타 부족 → NCC 가동 중단 → PE 부족 → 종량제봉투/비닐 대란 → 생활물가 상승 + 비료 33% 차단 → 식량 인플레 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "호르무즈 봉쇄 1개월차. 석화 영향은 3주차부터 가시화."},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-003 이란 교란의 새 전개 (한국 석화 밸류체인 최초 셧다운)"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-001"
+    },
+    {
+      "id": "IS-20260328-004",
+      "title": "TLT 86.02 — 10년물 4.4%+ 8개월 최고, Fed 인하 기대 소멸",
+      "summary": "10년물 국채 수익률 4.4% 돌파 8개월 최고. TLT $86.02. Fed Waller 매파 발언(고유가→인플레 지속). 트레이더 올해 인하 기대 소멸. Core PCE 3.1% YoY(전월 3.0% 대비 상승). 인플레 전망 상향(2.4%→2.7%).",
+      "root_cause": "유가발 인플레 지속 → 연준 매파 전환 → 장기채 매도",
+      "scan_axis": "A+B",
+      "sources": ["Trading Economics", "Investing.com", "한국경제", "Econbrowser", "Goldman Sachs"],
+      "market_contact": ["TLT", "US 10Y", "USD", "금리민감주", "부동산/모기지"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["채권(TLT, 10Y)", "통화(USD/DXY)", "부동산/모기지", "금리민감 성장주"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "Fed 인하 기대 완전 소멸은 2024년 이후 시장 기조의 방향 전환. 12월에 QT 종료+자산매입 재개로 완화 기대가 있었으나, 유가발 인플레로 3월 매파 반전. 새로운 벡터."},
+        "G3": {"score": 2, "type": "free", "chain": "유가 $100+ 지속 → Core PCE 3%+ 고착 → Fed 인하 불가 → 장기금리 상승 → 모기지 8%+ → 부동산 침체 + 기업 자금조달 비용 상승 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2025년 12월 완화 전환 이후 3개월 만에 매파 재역전. 구조적 전환 진행 중."},
+        "G4": {"score": 2, "urgency": "즉시"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-007 미 장기채 인플레의 새 전개 (인하 기대 완전 소멸 국면)"}
+      },
+      "total_score": 12,
+      "status": "핵심",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-005",
+      "title": "AI 투자 $700B capex vs $1.35T 시총 증발 — 양극화 심화",
+      "summary": "Big Tech AI capex $700B(2026). Goldman 추정 $465B→$527B 상향. 그러나 시장은 $1.35T 시총 증발로 응답. Nvidia capex 피킹 논란. AI 트레이드가 monetizer vs manufacturer로 분열. 헬륨 부족이 AI 인프라 투자 $650B 위협.",
+      "root_cause": "AI capex 사이클 성숙 + 수익화 의문 + 공급 병목(헬륨)",
+      "scan_axis": "D",
+      "sources": ["CNBC", "Motley Fool", "TradingView", "Investing.com", "NAI500"],
+      "market_contact": ["Nvidia", "MSFT", "AMZN", "GOOGL", "META", "SK하이닉스(000660)", "반도체장비"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식(Big Tech, 반도체)", "AI 인프라 섹터", "크립토(AI 토큰)"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "AI 트레이드의 분열(monetizer vs manufacturer)은 AI 투자 사이클의 질적 전환. capex 피킹 논란은 2023년 이후 일방향 AI 강세의 첫 구조적 균열. 방향 전환."},
+        "G3": {"score": 2, "type": "free", "chain": "AI capex 피킹 → 반도체 수요 둔화 기대 → 헬륨 부족이 공급도 제한 → AI 인프라 투자 지연 → 데이터센터 건설 연기 → 전력/냉각 관련주 조정 (5단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2025 Q4 이후 분열 누적. 3월 Nvidia 실적 후 확대."},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "SD-002 AI 분열→ADR의 새 전개 (3회째 등장, TC 승격 조건 충족)"}
+      },
+      "total_score": 10,
+      "status": "핵심",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-006",
+      "title": "걸프 에너지 인프라 $25B 복구비 — 유럽 가스 13개월 최고",
+      "summary": "Rystad Energy: 걸프 에너지 인프라 복구 $25B 추산. LNG/정유 시설 파괴. 유럽 가스 가격 13개월 최고. 유럽 가스 저장소 충전이 러시아 가스 없이 더욱 어려워짐. 에너지 위기 재점화.",
+      "root_cause": "미-이란 전쟁 — 걸프 에너지 인프라 파괴 → 유럽 에너지 안보",
+      "scan_axis": "C",
+      "sources": ["Rystad Energy", "Reuters", "Atlantic Council", "Watson Farley Williams"],
+      "market_contact": ["유럽 가스(TTF)", "유럽 주식(VGK)", "EUR/USD", "LNG 운임"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["원자재(LNG, 가스)", "유럽 주식", "통화(EUR)"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "$25B 복구비 추산은 기존 전쟁 피해의 정량화. 새로운 힘은 아니나 규모 확인은 가속 신호. 기존 추세 가속."},
+        "G3": {"score": 2, "type": "free", "chain": "인프라 $25B 파괴 → 복구 수년 → LNG 장기 공급부족 → 유럽 가스 위기 재연 → EU 에너지 정책 전환 가속 (4단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "전쟁 1개월 누적. 복구비 추산은 장기 시계열 신호."},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "🆕후속", "overlap": "TC-003의 새 전개 (복구 비용 정량화)"}
+      },
+      "total_score": 8,
+      "status": "핵심",
+      "cluster_id": "CL-20260328-001"
+    },
+    {
+      "id": "IS-20260328-007",
+      "title": "한은 6차 연속 동결(2.50%) + 인하 문구 삭제 — 한국 매파 전환",
+      "summary": "한은 기준금리 2.50% 6차 연속 동결. 추가 인하 고려 문구 삭제. 지정학 위험, 자본유출 압력, Fed 불확실성. 한국도 유가발 인플레에 매파 전환.",
+      "root_cause": "글로벌 매파 동조화 — 유가 인플레 + 지정학 불확실성",
+      "scan_axis": "B",
+      "sources": ["Investing.com", "한국은행", "토스뱅크", "Trading Economics"],
+      "market_contact": ["KRW", "KOSPI", "한국 채권", "부동산/모기지"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["통화(KRW)", "주식(KOSPI)", "채권(한국 국채)", "부동산"]},
+        "G2": {"score": 2, "type": "free", "reasoning": "인하 문구 삭제는 한은의 명시적 매파 전환. 2025년 하반기 인하 사이클 기대의 종료. 방향 전환."},
+        "G3": {"score": 1, "type": "free", "chain": "한은 매파 → 모기지 금리 유지/상승 → 부동산 거래 위축 + 가계부채 이자부담 지속 (2단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "6차 연속 동결 = 누적 신호. 인하 문구 삭제는 새 전환점."},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "TC-002 KRW 구조적 + 기존 한은 금리 추적"}
+      },
+      "total_score": 8,
+      "status": "후보",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-008",
+      "title": "전력망 재편 + K-GX 전환금융 — 에너지 전환 투자 가속",
+      "summary": "HVDC, 송전망, 스마트그리드 대규모 CapEx 시작. 한국형 전환금융(K-GX) 도입으로 탈탄소 민간투자 유치. AI 데이터센터 전력 수요가 전력망 투자의 핵심 드라이버. 2026년 에너지 산업 키워드는 '운영 효율'.",
+      "root_cause": "에너지 전환 + AI 전력수요 + 탈탄소 규제",
+      "scan_axis": "D",
+      "sources": ["한국경제", "Today Energy", "GS칼텍스", "전국인력신문", "ASK inno"],
+      "market_contact": ["전력기기(LS일렉트릭)", "HVDC", "재생에너지", "그린본드"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["주식(전력기기, 재생에너지)", "채권(그린본드)", "인프라"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "K-GX 도입은 새 정책 프레임이나 아직 초기 단계. 전력망 투자는 기존 추세의 가속."},
+        "G3": {"score": 2, "type": "free", "chain": "AI 전력수요 급증 → 전력망 병목 → HVDC/송전망 CapEx 확대 → 전력기기 수요 폭발 → 구리/변압기 원재료 수급 긴장 (4단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "수년간 누적. 2026년 본격 가시화."},
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전히 새로운 이슈 (transition 빈곳 채움)"}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-009",
+      "title": "Fed QT 종료 → 유동성 완화 기대 → 유가발 매파 반전",
+      "summary": "2025/12 QT 종료 + 자산매입 재개로 유동성 완화 시작. SOFR 상단 근접. MMF 듀레이션 확대. 그러나 3월 유가발 인플레로 매파 홀드. 인하 기대 소멸. '완화 시그널과 긴축 현실'의 괴리.",
+      "root_cause": "Fed 유동성 정책 비대칭 — QT 종료했으나 금리는 못 내려",
+      "scan_axis": "D-seed",
+      "sources": ["International Banker", "Seeking Alpha", "JP Morgan", "Think Capital", "Goldman Sachs"],
+      "market_contact": ["TLT", "SPY", "SOFR", "MMF", "금리선물"],
+      "gates": {
+        "G1": {"score": 2, "contacts": ["채권(TLT)", "주식(SPY)", "단기금리(SOFR)", "MMF"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "QT 종료는 이미 1월 발생. 3월 매파 반전으로 기대가 꺾인 것은 확인에 가까움. 기존 추세의 감속."},
+        "G3": {"score": 1, "type": "free", "chain": "유동성 공급은 했으나 금리는 내릴 수 없음 → 채권 포트폴리오 혼란 → 장단기 스프레드 왜곡 (2단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2025/12~2026/3 유동성 정책 전환 과정 누적."},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": 0, "tag": "", "overlap": "완전히 새로운 이슈 (risk-on 빈곳 채움)"}
+      },
+      "total_score": 6,
+      "status": "후보",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-010",
+      "title": "GENIUS Act OCC 시행규칙 제안 — 스테이블코인 규제 본격화",
+      "summary": "OCC 3/2 시행규칙 제안. 코멘트 기한 5/1. FDIC 예금보험 불가 선언. 시행일 2027/1/18. Fed, Treasury 후속 규정 발표 예정. 글로벌 3중주(GENIUS Act + 홍콩 + MiCA) 동시 진행.",
+      "root_cause": "미국 스테이블코인 규제 프레임워크 형성",
+      "scan_axis": "D",
+      "sources": ["OCC Bulletin", "Sullivan & Cromwell", "Jones Day", "Sidley Austin", "PANews"],
+      "market_contact": ["USDT/USDC", "크립토 거래소", "Tether", "Circle", "DeFi"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["크립토(스테이블코인, DeFi)"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "OCC 시행규칙은 기존 GENIUS Act의 구현 단계. 새 힘이 아닌 기존 경로의 진전. 가속."},
+        "G3": {"score": 1, "type": "free", "chain": "OCC 규칙 확정 → 은행 스테이블코인 발행 허용 → DeFi 유동성 구조 변화 (2단계)"},
+        "G3.5": {"tag": "CUMULATIVE", "note": "2025년 법안 통과 이후 규칙 제정 과정 누적."},
+        "G4": {"score": 0, "urgency": "관찰"},
+        "G5": {"score": 0, "tag": "", "overlap": "BL-001 GENIUS Act 3회 반복. 승격 검토."}
+      },
+      "total_score": 3,
+      "status": "약함",
+      "cluster_id": null
+    },
+    {
+      "id": "IS-20260328-011",
+      "title": "기아 모닝/레이 4월 생산 전면 중단 + 대전 화재 영향",
+      "summary": "기아 경차 모닝·레이 4월 생산 전면 중단. 대전 자동차 부품 공장 화재 + 호르무즈 봉쇄 부품 수급 이중 충격. 10개월 이상 출고 대기.",
+      "root_cause": "자동차 부품 공급 차질 (국내 화재 + 중동 전쟁)",
+      "scan_axis": "C",
+      "sources": ["news-wa"],
+      "market_contact": ["기아(000270)", "자동차 부품주"],
+      "gates": {
+        "G1": {"score": 1, "contacts": ["주식(기아, 부품주)"]},
+        "G2": {"score": 1, "type": "free", "reasoning": "생산 중단은 기존 부품 부족의 가속. 대전 화재는 새 변수이나 개별 기업 사안."},
+        "G3": {"score": 1, "type": "free", "chain": "부품 부족 → 생산 중단 → 출고 지연 → 소비자 이탈 (2단계)"},
+        "G3.5": {"tag": "SNAPSHOT", "note": "4월 한정 생산 중단."},
+        "G4": {"score": 1, "urgency": "표준"},
+        "G5": {"score": -2, "tag": "🔄추적중", "overlap": "TC-008 한국車 삼중포위에 포함"}
+      },
+      "total_score": 1,
+      "status": "탈락",
+      "cluster_id": null
+    }
+  ],
+  "clusters": [
+    {
+      "id": "CL-20260328-001",
+      "root_label": "이란 전쟁 확전 + 호르무즈 봉쇄 다층 충격",
+      "issues": ["IS-20260328-001", "IS-20260328-002", "IS-20260328-003", "IS-20260328-006"],
+      "priority_score": 12,
+      "market_contact_combined": ["Brent", "WTI", "Gold", "S&P500", "USD/KRW", "방산", "LNG", "SK하이닉스", "삼성전자", "TSMC", "Nvidia", "LG화학", "석화", "비료", "식량", "유럽가스(TTF)", "EUR/USD"],
+      "rm_input_title": "이란 전쟁 확전 — 휴전 결렬·지상군 검토·헬륨 반도체 위기·나프타 석화 셧다운·걸프 $25B 복구",
+      "urgency": "즉시"
+    }
+  ],
+  "independent": ["IS-20260328-004", "IS-20260328-005", "IS-20260328-007", "IS-20260328-008", "IS-20260328-009", "IS-20260328-010"],
+  "blind_spot_checks": {
+    "Q1_missing_asset": "6개 자산군: 달러(O, DXY 99.92) / 금(O, $4569) / 주가(O, S&P 6432) / 채권(O, TLT 86.02) / BTC(O, $66,478 -3.5%) / 부동산(한은 동결로 간접 커버). 전 자산군 커버 완료.",
+    "Q2_geo_balance": "글로벌 7건 / 한국 4건(나프타, 한은, 기아, 전력망). 균형 양호. 보충 불필요.",
+    "Q3_backlog_promotion": "BL-001 GENIUS Act — 3회 반복 + 오늘 D축 재등장. Gate 3점(약함). 4점 미달로 승격 불가. backlog 유지(appearance_count 4로 갱신). BL-003 AI 규제 — 미등장. 유지. BL-005 동남아 원전 — 미등장. 유지.",
+    "Q4_diversity": "클러스터 1(이란 전쟁)이 4건으로 과집중. 독립 이슈 6건 중 비전쟁: IS-004(장기채), IS-005(AI), IS-008(에너지전환), IS-009(Fed 유동성), IS-010(GENIUS). 비전쟁 5건 확보. 다양성 충분."
+  },
+  "user_selection": [],
+  "handoff": null
+}

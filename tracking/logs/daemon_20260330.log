@@ -1,0 +1,43 @@
+2026-03-30 07:13:55,347 [INFO] ━━ 1회 실행 모드 ━━
+2026-03-30 07:13:55,354 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-30 07:13:55,889 [INFO] Cycle 1 완료 (9590 chars)
+2026-03-30 07:15:44,803 [INFO] Telegram listener started
+2026-03-30 07:15:46,081 [INFO] Daemon 시작. 7개 스케줄 등록.
+2026-03-30 07:15:46,081 [INFO] 텔레그램 명령어: /status /record /help
+2026-03-30 08:55:03,155 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-30 08:55:28,352 [INFO] Cycle 1 완료 (1590 chars)
+2026-03-30 08:55:49,248 [INFO] DB sync 실행
+2026-03-30 08:55:52,372 [INFO] DB sync: ━━ DB Flush 시작 ━━
+
+❌ DB Flush 실패: insert or update on table "tc_analysis_links" violates foreign key constraint "fk_analysis_sa"
+DETAIL:  Key (analysis_id)=(SA-20260329-001) is not present in table "s
+2026-03-30 08:55:52,375 [INFO] 온톨로지 브릿지 실행
+2026-03-30 08:55:54,566 [INFO] 브릿지: ━━ Ontology Bridge (2026-03-30) ━━
+
+  [1/5] TC → ont_link 브릿지
+2026-03-30 08:55:54,567 [INFO] 품질 진단 실행
+2026-03-30 08:55:56,996 [INFO] 품질 진단: quality_diagnostics 저장 완료 (2026-03-30)
+
+━━ 데이터 품질 진단 결과 (2026-03-30) ━━
+  전체: 42건 | 🔴 CRITICAL: 3 | 🟡 WARNING: 2 | 🔵 INFO: 37
+  자동 수정 가능: 3건
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-30 09:00:28,263 [INFO] ━━ Cycle 2 실행 ━━
+2026-03-30 09:00:29,931 [INFO] Cycle 2 완료
+2026-03-30 13:26:22,857 [INFO] Watch W-2026-03-24-UQ-012 recorded: ongoing | synced: []
+2026-03-30 13:26:23,877 [INFO] Watch W-2026-03-24-UQ-013 recorded: ongoing | synced: []
+2026-03-30 20:40:11,942 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-30 20:40:45,602 [INFO] Cycle 1 완료 (0 chars)
+2026-03-31 08:58:36,531 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-31 09:06:32,797 [INFO] Cycle 1 완료 (0 chars)
+2026-03-31 09:06:36,712 [INFO] DB sync 실행
+2026-03-31 09:07:38,301 [ERROR] DB sync failed: Command '['C:\\Program Files\\Python312\\python.exe', 'C:\\Users\\이미영\\Downloads\\에이전트\\01-New project\\tracking\\db_sync.py']' timed out after 60 seconds
+2026-03-31 09:07:38,305 [INFO] 온톨로지 브릿지 실행
+2026-03-31 09:08:19,926 [INFO] 브릿지: 
+2026-03-31 09:08:19,927 [INFO] 품질 진단 실행
+2026-03-31 09:08:53,972 [INFO] 품질 진단: ━━ 데이터 품질 진단 결과 (2026-03-31) ━━
+  전체: 1건 | 🔴 CRITICAL: 1 | 🟡 WARNING: 0 | 🔵 INFO: 0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2026-03-31 20:25:36,464 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-31 20:25:41,617 [INFO] Cycle 1 완료 (0 chars)
+2026-03-31 20:25:41,682 [ERROR] TG send failed: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot8007127959:AAEwETGmQ9VMgPO3y4WDwr34Nl5Lp54RoMg/sendMessage (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))

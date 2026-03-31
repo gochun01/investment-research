@@ -191,6 +191,15 @@ Review Mode (자기 점검):
 6. 파일 삭제 금지: SKILL.md, errors.md, GUARDRAILS.md 등 시스템 파일 삭제 금지.
 
 7. 가드레일 자기 수정 금지: GUARDRAILS.md의 Red Zone을 스스로 변경할 수 없다.
+
+8. v1 TC 형식 생성 금지: 다음은 절대 사용하지 않는다.
+   - `id` 필드 (반드시 `tc_id`)
+   - `status: "tracking"` (반드시 `active` 또는 `archived`)
+   - top-level `trigger`/`kc` (반드시 `scenarios.*.trigger` / `scenarios.*.kc`)
+   - trigger를 문자열로 (반드시 dict: `{"condition": "...", ...}`)
+   - kc에 `action` 누락 (반드시 watch/alert/hard/action 4개)
+   - `heartbeat_thresholds` 누락 (정량 없으면 빈 배열 `[]`)
+   정규 스키마: SCHEMAS.md 참조. quality_check.py가 매일 검증.
 ```
 
 ## Phase 0 Gate (분석 시작 전 차단문 — 최우선)
@@ -243,14 +252,24 @@ Gate를 통과하지 않으면 Phase 1(수집) 진입을 금지한다.
 2. 공용 tracking/cards/ TC 카드 생성 또는 갱신
    경로: C:\Users\이미영\Downloads\에이전트\01-New project\tracking\cards\
    ★ Stereo Analyzer 내부에 tracking/cards/를 만들지 않는다. 공용 1곳만.
+   ★ v2 스키마 필수. tracking/SCHEMAS.md 참조. v1 형식 생성 절대 금지.
+
    신규 이슈 → TC-NNN-키워드.json 생성 (기존 최대 번호 + 1)
-     Phase 1로 시작. 시나리오별 Trigger/KC, 추적 지표 포함.
+     Phase 1로 시작.
+     시나리오별 trigger(dict) + KC(3-band + action) + probability(합계100%) 필수.
+     heartbeat_thresholds(정량 자동체크) + tracking_indicators(전체 지표) 필수.
    기존 이슈 재분석 → 해당 TC 카드의 Phase/시나리오/지표 갱신
      phase_log에 변경 이력 추가. analysis_ids에 새 SA-ID 추가.
    dashboard.json도 함께 갱신.
-   TC 카드 필드: tc_id, created, updated, title, status, issue_summary,
-     phase, phase_log, pre_read, scenarios, tracking_indicators,
-     analysis_ids, tags
+
+   TC 카드 필수 필드:
+     tc_id, created, updated, title, status(active/archived),
+     issue_summary, phase, phase_log, pre_read({type, scp, urgency}),
+     scenarios({A/B/C/D: {trigger(dict), kc(3-band+action), probability}}),
+     tracking_indicators, heartbeat_thresholds, analysis_ids, tags,
+     cross_card_links, close_condition,
+     psf_link (PSF 속성/링크 참조 — 온톨로지 브릿지 원천),
+     macro_ref (macro 지표 참조 — daily_macro 교차 검증)
 
 3. git commit + push (git 연결 시)
    위 1~3 저장 후 자동으로:

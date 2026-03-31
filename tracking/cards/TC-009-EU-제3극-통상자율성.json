@@ -28,40 +28,49 @@
     "A": {
       "label": "EU 이사회 승인 → ACI 미발동 → 현상유지",
       "probability": "40%",
-      "trigger": "EU 이사회 최종 승인 (sunset 18개월 시작)",
+      "trigger": {"condition": "EU 이사회 최종 승인 (sunset 18개월 시작)", "source": "구조적+서사적", "recalibration": "EU 이사회 결과 후"},
       "kc": {
         "watch": "EU 이사회 심의 개시",
         "alert": "ACI 발동 검토 공식화",
-        "hard": "ACI 발동 확정"
+        "hard": "ACI 발동 확정",
+        "action": "TC-009 A(현상유지) thesis 폐기. B(ACI 발동)로 전환. 한-EU 통상 전략 재검토."
       },
-      "source": "구조적 (EU 의회 투표) + 서사적 (sunset 프레임)",
-      "action_on_kc": "한-EU 통상 전략 재검토. EU 역내산 비율 확인.",
-      "recalibration": "EU 이사회 결과 후",
       "current_status": "미진입"
     },
     "B": {
       "label": "ACI 발동 → 미-EU 무역 긴장 → 한국 선택 강요",
       "probability": "25%",
-      "trigger": "EU ACI 공식 발동 (비율: EU 보복관세율/미국 관세율)",
-      "kc": {"hard": "미-EU 무역 협상 타결 → ACI 철회"},
-      "source": "구조적 (ACI 법적 근거 확보) + 서사적 (의회 보복 권한 부여)",
+      "trigger": {"condition": "EU ACI 공식 발동", "source": "구조적"},
+      "kc": {
+        "watch": "미-EU 무역 협상 개시",
+        "alert": "미-EU 잠정 합의 보도",
+        "hard": "미-EU 무역 협상 타결 → ACI 철회",
+        "action": "TC-009 B(ACI) thesis 해소. A(현상유지) 또는 새 균형으로 전환."
+      },
       "current_status": "미발생"
     },
     "C": {
       "label": "IAA 발효 → 한국 부품사 역내산 비율 부족 → 시장 접근 제한",
       "probability": "25%",
-      "trigger": "IAA 발효 + 70% 역내산 요건 시행 (비율: 한국 현지화율/EU 요건)",
-      "kc": {"hard": "IAA 완화 또는 한국 부품사 역내산 70% 달성"},
-      "source": "구조적 (EU 산업정책)",
-      "recalibration": "IAA 의회 심의 진행에 따라",
+      "trigger": {"condition": "IAA 발효 + 70% 역내산 요건 시행", "source": "구조적", "recalibration": "IAA 의회 심의 진행에 따라"},
+      "kc": {
+        "watch": "한국 부품사 현지화 투자 발표",
+        "alert": "역내산 비율 50%+ 달성 보도",
+        "hard": "IAA 완화 또는 한국 부품사 역내산 70% 달성",
+        "action": "TC-009 C(IAA) thesis 해소. 시장 접근 정상화."
+      },
       "current_status": "미발생"
     },
     "D": {
       "label": "sunset 만료(2028/3) → EU 보복관세 시행",
       "probability": "10%",
-      "trigger": "sunset 만료 + 미국 관세 유지 + EU 보복 발동",
-      "kc": {"hard": "미-EU 관세 협상 타결"},
-      "source": "서사적 (18개월 시한)",
+      "trigger": {"condition": "sunset 만료 + 미국 관세 유지 + EU 보복 발동", "source": "서사적"},
+      "kc": {
+        "watch": "sunset 6개월 전 재협상 개시",
+        "alert": "미-EU 재협상 진전 보도",
+        "hard": "미-EU 관세 협상 타결",
+        "action": "TC-009 D(보복) thesis 해소. 무역 정상화."
+      },
       "current_status": "미발생"
     }
   },
@@ -71,6 +80,8 @@
     {"indicator": "ACI 발동 검토 여부", "current": "미검토", "threshold": "공식 검토 개시", "last_check": "2026-03-27", "next_check": "2026-04-24"},
     {"indicator": "IAA 의회 심의", "current": "추진 중", "threshold": "의회 제출 + 최종안 공개", "last_check": "2026-03-27", "next_check": "2026-06-30"}
   ],
+
+  "heartbeat_thresholds": [],
 
   "analysis_ids": ["SA-20260327-001"],
 

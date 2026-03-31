@@ -1,0 +1,166 @@
+{
+  "tc_id": "TC-011",
+  "created": "2026-03-28",
+  "updated": "2026-03-28",
+  "title": "CHIPS Act 생산 시대 진입 — TSMC 4nm 양산 + Intel 18A 1.8nm 돌파",
+  "status": "active",
+  "issue_summary": "TSMC Arizona Fab1 풀가동(4nm), Intel Fab52 HVM(18A/1.8nm, 미국 최초 2nm 이하), Samsung Taylor 2nm GAA 착수. TSMC $65B 투자. 미국 본토 최첨단 칩 생산 현실화. 반도체 지도 재편.",
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "TSMC Fab1 풀가동 + Intel 18A HVM + Samsung Taylor 착수. CHIPS Act 생산 시대 개막.",
+      "note": "신규 생성."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "MCP 수집. TSM $326.74, INTC $43.13. 초기 데이터.",
+      "note": "pipeline-gap-fill"
+    }
+  ],
+  "pre_read": {
+    "type": "STRUCT",
+    "scp": 4,
+    "urgency": "WATCH"
+  },
+  "scenarios": {
+    "A": {
+      "label": "생산 정상화 + 미국 자급 가속",
+      "probability": "35%",
+      "trigger": {
+        "condition": "TSMC Fab1 가동률 80%+ 달성 + Intel 18A 수율 70%+ 확인",
+        "source": "구조적",
+        "recalibration": "Q2 가동률 발표(6월)"
+      },
+      "kc": {
+        "watch": "가동률 60% 미만 3개월 연속",
+        "alert": "CHIPS Act 추가 예산 동결",
+        "hard": "TSMC 투자 축소 발표 OR Intel 18A 양산 연기",
+        "action": "TC-011 Phase 4. 자급 가속 thesis 재검토."
+      },
+      "current_status": "Phase 1. TSMC Fab1 풀가동 시작, 수율 모니터링 중."
+    },
+    "B": {
+      "label": "비용 문제로 가동률 저조",
+      "probability": "30%",
+      "trigger": {
+        "condition": "미국 팹 웨이퍼 비용 대만 대비 40%+ 프리미엄 지속 + 가동률 50% 미만",
+        "source": "구조적",
+        "recalibration": "Q3 원가 분석(9월)"
+      },
+      "kc": {
+        "watch": "웨이퍼 비용 프리미엄 30% 이하 달성",
+        "alert": "TSMC 대만 동등 원가 로드맵 발표",
+        "hard": "3사 모두 가동률 70%+ 달성",
+        "action": "TC-011 Phase 4. 비용 thesis 재검토."
+      },
+      "current_status": "Phase 0. 원가 데이터 미공개."
+    },
+    "C": {
+      "label": "지정학 악화 → CHIPS 가속",
+      "probability": "20%",
+      "trigger": {
+        "condition": "대만 해협 긴장 고조 OR 중국 반도체 수출통제 강화",
+        "source": "지정학적",
+        "recalibration": "지정학 이벤트 발생 시"
+      },
+      "kc": {
+        "watch": "양안 관계 안정화",
+        "alert": "중국 성숙공정 자급률 70%+ 달성",
+        "hard": "대만 해협 위기 해소 + 미중 반도체 합의",
+        "action": "TC-011 Phase 4. 지정학 가속 thesis 재검토."
+      },
+      "current_status": "Phase 0. 현재 지정학 리스크 배경 수준."
+    },
+    "D": {
+      "label": "기술 지연 + 수율 미달",
+      "probability": "15%",
+      "trigger": {
+        "condition": "Intel 18A 수율 40% 미만 6개월 지속 OR Samsung 2nm GAA 일정 1년+ 지연",
+        "source": "기술적",
+        "recalibration": "분기별 수율 보고"
+      },
+      "kc": {
+        "watch": "Intel 18A 수율 개선 트렌드 확인",
+        "alert": "TSMC Fab2 일정 정상 진행",
+        "hard": "3사 모두 목표 수율 달성",
+        "action": "TC-011 Phase 4. 기술 지연 thesis 재검토."
+      },
+      "current_status": "Phase 0. 수율 데이터 대기."
+    }
+  },
+  "tracking_indicators": [
+    {
+      "indicator": "TSMC Arizona 가동률",
+      "current": "Fab1 풀가동 시작",
+      "threshold": "가동률 80%+ 달성 여부",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-30"
+    },
+    {
+      "indicator": "Intel 18A 수율",
+      "current": "HVM 시작",
+      "threshold": "수율 70%+ 확인",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-30"
+    },
+    {
+      "indicator": "Samsung Taylor 일정",
+      "current": "2nm GAA 착수",
+      "threshold": "양산 일정 지연 여부",
+      "last_check": "2026-03-28",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "CHIPS Act 예산 집행률",
+      "current": "집행 진행 중",
+      "threshold": "예산 동결 또는 삭감 여부",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-30"
+    }
+  ],
+  "heartbeat_thresholds": [
+    {
+      "indicator": "TSMC",
+      "symbol": "TSM",
+      "watch": 170,
+      "alert": 155,
+      "hard": 140,
+      "direction": "below"
+    },
+    {
+      "indicator": "Intel",
+      "symbol": "INTC",
+      "watch": 25,
+      "alert": 22,
+      "hard": 18,
+      "direction": "below"
+    }
+  ],
+  "cross_card_links": [
+    {
+      "to": "TC-006",
+      "link": "SK하이닉스 ADR — HBM 수요 + 반도체 밸류에이션"
+    },
+    {
+      "to": "TC-010",
+      "link": "AI capex → 반도체 수요 연결"
+    }
+  ],
+  "tags": [
+    "STRUCT",
+    "반도체",
+    "CHIPS",
+    "TSMC",
+    "Intel",
+    "삼성",
+    "리쇼어링",
+    "MT-05"
+  ],
+  "psf_link": "P2 관세(반도체 보조금), S4 실물(제조업 회귀)",
+  "macro_ref": "",
+  "analysis_ids": [],
+  "close_condition": "TSMC Fab2 양산 시작 OR CHIPS 예산 중단 OR 3사 모두 정상 가동"
+}

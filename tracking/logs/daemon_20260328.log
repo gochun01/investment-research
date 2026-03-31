@@ -1,0 +1,25 @@
+2026-03-28 11:08:23,061 [INFO] ━━ 1회 실행 모드 ━━
+2026-03-28 11:08:23,065 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-28 11:08:23,272 [INFO] Cycle 1 완료 (13461 chars)
+2026-03-28 11:13:34,788 [INFO] ━━ 1회 실행 모드 ━━
+2026-03-28 11:13:34,792 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-28 11:13:35,036 [INFO] Cycle 1 완료 (13461 chars)
+2026-03-28 11:13:38,335 [INFO] Telegram listener started
+2026-03-28 11:13:39,611 [INFO] Daemon 시작. 5개 스케줄 등록.
+2026-03-28 11:13:39,612 [INFO] 텔레그램 명령어: /status /record /help
+2026-03-28 12:01:15,171 [INFO] ━━ 1회 실행 모드 ━━
+2026-03-28 12:01:15,177 [INFO] ━━ Cycle 1 실행 ━━
+2026-03-28 12:01:15,511 [INFO] Cycle 1 완료 (13461 chars)
+2026-03-28 12:02:02,530 [INFO] Telegram listener started
+2026-03-28 12:02:03,867 [INFO] Daemon 시작. 5개 스케줄 등록.
+2026-03-28 12:02:03,868 [INFO] 텔레그램 명령어: /status /record /help
+2026-03-28 12:17:35,200 [INFO] Watch W-2026-03-24-UQ-010 recorded: hit
+2026-03-28 12:18:36,634 [INFO] Watch W-2026-03-24-UQ-011 recorded: hit
+2026-03-28 12:18:37,333 [INFO] Watch W-2026-03-24-UQ-011 recorded: hit
+2026-03-28 12:19:35,895 [INFO] Watch W-2026-03-24-UQ-012 recorded: ongoing
+2026-03-28 12:19:36,831 [INFO] Watch W-2026-03-24-UQ-012 recorded: ongoing
+2026-03-28 12:20:25,455 [INFO] Watch W-2026-03-24-UQ-013 recorded: ongoing
+2026-03-28 12:20:48,410 [INFO] Watch W-2026-03-24-UQ-014 recorded: hit
+2026-03-28 12:40:17,946 [INFO] Telegram listener started
+2026-03-28 12:40:19,845 [INFO] Daemon 시작. 5개 스케줄 등록.
+2026-03-28 12:40:19,845 [INFO] 텔레그램 명령어: /status /record /help

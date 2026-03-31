@@ -32,8 +32,15 @@
           "price: 051900"
         ]
       },
-      "status": "active",
-      "completed_checks": [],
+      "status": "closed",
+      "completed_checks": [
+        {
+          "date": "2026-03-28",
+          "verdict": "hit",
+          "evidence": "207940.KS 5일 +5.4% — 유의미한 상승",
+          "source": "telegram"
+        }
+      ],
       "close_condition": "삼성바이오/셀트리온/LG생건/아모레의 EO·계면활성제 수급 관련 공식 발언 또는 공시",
       "closed_at": null,
       "close_reason": null
@@ -68,8 +75,21 @@
           "price: 042660"
         ]
       },
-      "status": "active",
-      "completed_checks": [],
+      "status": "closed",
+      "completed_checks": [
+        {
+          "date": "2026-03-28",
+          "verdict": "hit",
+          "evidence": "042660.KS 5일 +5.7% — 유의미한 상승",
+          "source": "telegram"
+        },
+        {
+          "date": "2026-03-28",
+          "verdict": "hit",
+          "evidence": "042660.KS 5일 +5.7% — 유의미한 상승",
+          "source": "telegram"
+        }
+      ],
       "close_condition": "HD한국조선/한화오션의 납기 지연 또는 패널티 관련 공시",
       "closed_at": null,
       "close_reason": null
@@ -104,7 +124,26 @@
         ]
       },
       "status": "active",
-      "completed_checks": [],
+      "completed_checks": [
+        {
+          "date": "2026-03-28",
+          "verdict": "ongoing",
+          "evidence": "데이터 부족, 추가 관찰 필요하지만 소비자 물가 전이 중에 있음",
+          "source": "telegram"
+        },
+        {
+          "date": "2026-03-28",
+          "verdict": "ongoing",
+          "evidence": "데이터 부족, 추가 관찰 필요하지만 소비자 물가 전이 중에 있음",
+          "source": "telegram"
+        },
+        {
+          "date": "2026-03-30",
+          "verdict": "ongoing",
+          "evidence": "데이터 부족, 추가 관찰(CPI) 필요",
+          "source": "telegram"
+        }
+      ],
       "close_condition": "소비자 물가 지수(CPI) 또는 소비재 기업 가격 인상 공시",
       "closed_at": null,
       "close_reason": null
@@ -139,7 +178,20 @@
         ]
       },
       "status": "active",
-      "completed_checks": [],
+      "completed_checks": [
+        {
+          "date": "2026-03-28",
+          "verdict": "ongoing",
+          "evidence": "데이터 부족, 추가 관찰 필요",
+          "source": "telegram"
+        },
+        {
+          "date": "2026-03-30",
+          "verdict": "ongoing",
+          "evidence": "데이터 부족, 추가 관찰 필요",
+          "source": "telegram"
+        }
+      ],
       "close_condition": "조선소 에틸렌 재고 현황 + 가동 지속 여부 보도",
       "closed_at": null,
       "close_reason": null
@@ -173,8 +225,15 @@
           "narrative: 증권사 리포트"
         ]
       },
-      "status": "active",
-      "completed_checks": [],
+      "status": "closed",
+      "completed_checks": [
+        {
+          "date": "2026-03-28",
+          "verdict": "hit",
+          "evidence": "079550.KS 5일 +14.8% — 유의미한 상승",
+          "source": "telegram"
+        }
+      ],
       "close_condition": "LIG넥스원 분기 실적 발표. 매출 성장률 vs PSR 비교",
       "closed_at": null,
       "close_reason": null
@@ -300,7 +359,10 @@
       "type": "event_tracking",
       "schedule": {
         "mode": "fixed_interval",
-        "check_dates": ["2026-03-29", "2026-03-31"],
+        "check_dates": [
+          "2026-03-29",
+          "2026-03-31"
+        ],
         "next_check": "2026-03-29",
         "rationale": "event_tracking: 이란 대응 시한 촉박. D+5까지 집중 모니터링"
       },
@@ -309,8 +371,15 @@
         "resolve_condition": "이란의 공식 counterproposal 제출 또는 협상 완전 결렬 선언"
       },
       "check_template": {
-        "questions": ["이란이 counterproposal을 공식 제출하는가? 아니면 거부만으로 끝나는가?"],
-        "data_sources": ["narrative: Al Jazeera", "narrative: AP", "narrative: Reuters", "policy: Iran Foreign Ministry"]
+        "questions": [
+          "이란이 counterproposal을 공식 제출하는가? 아니면 거부만으로 끝나는가?"
+        ],
+        "data_sources": [
+          "narrative: Al Jazeera",
+          "narrative: AP",
+          "narrative: Reuters",
+          "policy: Iran Foreign Ministry"
+        ]
       },
       "status": "active",
       "completed_checks": [],
@@ -327,7 +396,10 @@
       "type": "event_tracking",
       "schedule": {
         "mode": "fixed_interval",
-        "check_dates": ["2026-03-29", "2026-04-02"],
+        "check_dates": [
+          "2026-03-29",
+          "2026-04-02"
+        ],
         "next_check": "2026-03-29",
         "rationale": "event_tracking: NBC 'coming days'에 대면 가능. D+3/7 체크"
       },
@@ -336,8 +408,15 @@
         "resolve_condition": "파키스탄 주재 US-Iran 대면 회담 성사 또는 무산 확인"
       },
       "check_template": {
-        "questions": ["파키스탄 중재 대면 회담이 성사되는가?"],
-        "data_sources": ["narrative: NBC", "narrative: DW", "narrative: Al Jazeera", "policy: Pakistan Foreign Ministry"]
+        "questions": [
+          "파키스탄 중재 대면 회담이 성사되는가?"
+        ],
+        "data_sources": [
+          "narrative: NBC",
+          "narrative: DW",
+          "narrative: Al Jazeera",
+          "policy: Pakistan Foreign Ministry"
+        ]
       },
       "status": "active",
       "completed_checks": [],
@@ -354,7 +433,11 @@
       "type": "event_tracking",
       "schedule": {
         "mode": "fixed_interval",
-        "check_dates": ["2026-03-31", "2026-04-03", "2026-04-07"],
+        "check_dates": [
+          "2026-03-31",
+          "2026-04-03",
+          "2026-04-07"
+        ],
         "next_check": "2026-03-31",
         "rationale": "event_tracking: Kpler이 일부 선박 통과 보고. 주 1회 추적"
       },
@@ -363,8 +446,14 @@
         "resolve_condition": "호르무즈 해협 일일 통행량이 전쟁 전(70~80척) 대비 50%+ 회복"
       },
       "check_template": {
-        "questions": ["호르무즈 해협 교통량 복구 시점 — 현재 80% 감소. 부분 재개 조짐?"],
-        "data_sources": ["narrative: Reuters shipping", "narrative: Kpler", "positioning: Brent crude"]
+        "questions": [
+          "호르무즈 해협 교통량 복구 시점 — 현재 80% 감소. 부분 재개 조짐?"
+        ],
+        "data_sources": [
+          "narrative: Reuters shipping",
+          "narrative: Kpler",
+          "positioning: Brent crude"
+        ]
       },
       "status": "active",
       "completed_checks": [],
@@ -381,7 +470,10 @@
       "type": "threshold_watch",
       "schedule": {
         "mode": "fixed_interval",
-        "check_dates": ["2026-03-29", "2026-03-31"],
+        "check_dates": [
+          "2026-03-29",
+          "2026-03-31"
+        ],
         "next_check": "2026-03-29",
         "rationale": "threshold_watch: $100 심리선 기준. 주 2회 체크"
       },
@@ -390,8 +482,14 @@
         "resolve_condition": "Brent 5영업일 연속 $100 하회 (안정화) 또는 $110+ 재돌파 (재충격)"
       },
       "check_template": {
-        "questions": ["Brent $100 하회가 지속되는가, 아니면 이란 재공격에 다시 $110+ 회귀?"],
-        "data_sources": ["price: BZ=F", "narrative: MarketWatch", "narrative: Reuters oil"]
+        "questions": [
+          "Brent $100 하회가 지속되는가, 아니면 이란 재공격에 다시 $110+ 회귀?"
+        ],
+        "data_sources": [
+          "price: BZ=F",
+          "narrative: MarketWatch",
+          "narrative: Reuters oil"
+        ]
       },
       "status": "active",
       "completed_checks": [],
@@ -408,7 +506,9 @@
       "type": "data_check",
       "schedule": {
         "mode": "deadline",
-        "check_dates": ["2026-04-15"],
+        "check_dates": [
+          "2026-04-15"
+        ],
         "next_check": "2026-04-15",
         "rationale": "data_check: 봄 파종 시즌 데드라인. 4/15에 1회 집중 체크"
       },
@@ -417,8 +517,14 @@
         "resolve_condition": "USDA 또는 FAO의 2026 파종 시즌 비료 공급 영향 평가 발표"
       },
       "check_template": {
-        "questions": ["비료 공급 부족의 carry-forward — 전쟁 종결되더라도 LNG→비료 복구에 수개월. 2026 봄 파종 시즌 타격 규모?"],
-        "data_sources": ["narrative: Reuters agriculture", "narrative: Globe&Mail", "positioning: urea price"]
+        "questions": [
+          "비료 공급 부족의 carry-forward — 전쟁 종결되더라도 LNG→비료 복구에 수개월. 2026 봄 파종 시즌 타격 규모?"
+        ],
+        "data_sources": [
+          "narrative: Reuters agriculture",
+          "narrative: Globe&Mail",
+          "positioning: urea price"
+        ]
       },
       "status": "active",
       "completed_checks": [],
@@ -435,7 +541,10 @@
       "type": "event_tracking",
       "schedule": {
         "mode": "fixed_interval",
-        "check_dates": ["2026-04-03", "2026-04-10"],
+        "check_dates": [
+          "2026-04-03",
+          "2026-04-10"
+        ],
         "next_check": "2026-04-03",
         "rationale": "event_tracking: ECB 4월 회의 접근. 2주 간격 체크"
       },
@@ -444,8 +553,14 @@
         "resolve_condition": "ECB 위원 발언 또는 시장 금리 선물에서 2026H2 인하 확률 변화 확인"
       },
       "check_template": {
-        "questions": ["ECB 금리 인하 기대 완전 후퇴하는가? 원유 $100+ 지속 시 유로존 인플 +0.6~0.7%p"],
-        "data_sources": ["narrative: ECB speeches", "narrative: European Business Mag", "positioning: Euribor futures"]
+        "questions": [
+          "ECB 금리 인하 기대 완전 후퇴하는가? 원유 $100+ 지속 시 유로존 인플 +0.6~0.7%p"
+        ],
+        "data_sources": [
+          "narrative: ECB speeches",
+          "narrative: European Business Mag",
+          "positioning: Euribor futures"
+        ]
       },
       "status": "active",
       "completed_checks": [],
@@ -460,10 +575,34 @@
       "source_uq": "UQ-030",
       "subject": "Section 301 → 실제 관세 부과 시점 (Section 122 만료 7/24 전?)",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-15", "2026-04-28", "2026-05-15"], "next_check": "2026-04-15", "rationale": "코멘트 마감(4/15) → 청문회(4/28) → 중간 점검(5/15)"},
-      "original_context": {"issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결", "resolve_condition": "USTR Section 301 조사 결과 발표 또는 관세 부과 공고"},
-      "check_template": {"questions": ["Section 301 조사가 실제 관세로 이어지는 시점?"], "data_sources": ["narrative: USTR Federal Register", "narrative: Reuters trade"]},
-      "status": "active", "completed_checks": [], "close_condition": "USTR Section 301 조사 결과 발표 또는 관세 부과 공고", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-15",
+          "2026-04-28",
+          "2026-05-15"
+        ],
+        "next_check": "2026-04-15",
+        "rationale": "코멘트 마감(4/15) → 청문회(4/28) → 중간 점검(5/15)"
+      },
+      "original_context": {
+        "issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결",
+        "resolve_condition": "USTR Section 301 조사 결과 발표 또는 관세 부과 공고"
+      },
+      "check_template": {
+        "questions": [
+          "Section 301 조사가 실제 관세로 이어지는 시점?"
+        ],
+        "data_sources": [
+          "narrative: USTR Federal Register",
+          "narrative: Reuters trade"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "USTR Section 301 조사 결과 발표 또는 관세 부과 공고",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-031",
@@ -472,10 +611,34 @@
       "source_uq": "UQ-031",
       "subject": "EU 의회 미-EU 무역 협정 비준 투표 결과",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-03-29", "2026-04-07"], "next_check": "2026-03-29", "rationale": "무역위 목요일 투표 → 본회의 3월 말~4월"},
-      "original_context": {"issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결", "resolve_condition": "EU 의회 본회의 투표 결과"},
-      "check_template": {"questions": ["EU 미-EU 무역협정 비준 통과하는가?"], "data_sources": ["narrative: Euronews", "narrative: Bloomberg EU", "policy: EU Parliament"]},
-      "status": "active", "completed_checks": [], "close_condition": "EU 의회 본회의 투표 결과", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-03-29",
+          "2026-04-07"
+        ],
+        "next_check": "2026-03-29",
+        "rationale": "무역위 목요일 투표 → 본회의 3월 말~4월"
+      },
+      "original_context": {
+        "issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결",
+        "resolve_condition": "EU 의회 본회의 투표 결과"
+      },
+      "check_template": {
+        "questions": [
+          "EU 미-EU 무역협정 비준 통과하는가?"
+        ],
+        "data_sources": [
+          "narrative: Euronews",
+          "narrative: Bloomberg EU",
+          "policy: EU Parliament"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "EU 의회 본회의 투표 결과",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-032",
@@ -484,10 +647,33 @@
       "source_uq": "UQ-032",
       "subject": "Fed 5월 FOMC 방향 — Barr 매파 vs Miran 비둘기",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-15", "2026-05-07"], "next_check": "2026-04-15", "rationale": "중간 점검(4/15) → FOMC 당일(5/7)"},
-      "original_context": {"issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결", "resolve_condition": "5월 FOMC 성명서 + 점도표"},
-      "check_template": {"questions": ["Fed 5월 FOMC에서 방향 전환?"], "data_sources": ["narrative: Bloomberg Fed", "positioning: CME FedWatch"]},
-      "status": "active", "completed_checks": [], "close_condition": "5월 FOMC 성명서 + 점도표", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-15",
+          "2026-05-07"
+        ],
+        "next_check": "2026-04-15",
+        "rationale": "중간 점검(4/15) → FOMC 당일(5/7)"
+      },
+      "original_context": {
+        "issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결",
+        "resolve_condition": "5월 FOMC 성명서 + 점도표"
+      },
+      "check_template": {
+        "questions": [
+          "Fed 5월 FOMC에서 방향 전환?"
+        ],
+        "data_sources": [
+          "narrative: Bloomberg Fed",
+          "positioning: CME FedWatch"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "5월 FOMC 성명서 + 점도표",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-033",
@@ -496,10 +682,33 @@
       "source_uq": "UQ-033",
       "subject": "한국 Section 301 타격 섹터 (반도체/자동차/철강)",
       "type": "data_check",
-      "schedule": {"mode": "deadline", "check_dates": ["2026-04-15"], "next_check": "2026-04-15", "rationale": "USTR 코멘트 마감일에 1회 집중 체크"},
-      "original_context": {"issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결", "resolve_condition": "USTR Federal Register 한국 관련 조사 범위 확인"},
-      "check_template": {"questions": ["한국이 Section 301에서 어떤 섹터 타격?"], "data_sources": ["policy: USTR", "policy: 산업부", "narrative: 한경"]},
-      "status": "active", "completed_checks": [], "close_condition": "USTR Federal Register 한국 관련 조사 범위 확인", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-04-15"
+        ],
+        "next_check": "2026-04-15",
+        "rationale": "USTR 코멘트 마감일에 1회 집중 체크"
+      },
+      "original_context": {
+        "issue": "트럼프 Section 301 재개 + Fed 금리 장기 동결",
+        "resolve_condition": "USTR Federal Register 한국 관련 조사 범위 확인"
+      },
+      "check_template": {
+        "questions": [
+          "한국이 Section 301에서 어떤 섹터 타격?"
+        ],
+        "data_sources": [
+          "policy: USTR",
+          "policy: 산업부",
+          "narrative: 한경"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "USTR Federal Register 한국 관련 조사 범위 확인",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-040",
@@ -508,10 +717,35 @@
       "source_uq": "UQ-040",
       "subject": "25조 전쟁추경 국회 통과 여부",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-03", "2026-04-10", "2026-04-15"], "next_check": "2026-04-03", "rationale": "당정 협의 완료(3/26). 국회 제출→심의→본회의 일정 추적."},
-      "original_context": {"issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경", "resolve_condition": "국회 본회의 추경안 의결"},
-      "check_template": {"questions": ["25조 추경이 국회 통과하는가?"], "data_sources": ["narrative: 연합뉴스", "narrative: 한경", "policy: 국회"]},
-      "status": "active", "completed_checks": [], "close_condition": "국회 본회의 추경안 의결", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-03",
+          "2026-04-10",
+          "2026-04-15"
+        ],
+        "next_check": "2026-04-03",
+        "rationale": "당정 협의 완료(3/26). 국회 제출→심의→본회의 일정 추적."
+      },
+      "original_context": {
+        "issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경",
+        "resolve_condition": "국회 본회의 추경안 의결"
+      },
+      "check_template": {
+        "questions": [
+          "25조 추경이 국회 통과하는가?"
+        ],
+        "data_sources": [
+          "narrative: 연합뉴스",
+          "narrative: 한경",
+          "policy: 국회"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "국회 본회의 추경안 의결",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-041",
@@ -520,10 +754,33 @@
       "source_uq": "UQ-041",
       "subject": "RIA 귀환투자계좌 $400M 환류 지속 여부",
       "type": "data_check",
-      "schedule": {"mode": "deadline", "check_dates": ["2026-04-30"], "next_check": "2026-04-30", "rationale": "4월 리테일 자금 흐름 데이터 확인 시점."},
-      "original_context": {"issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경", "resolve_condition": "4월 리테일 해외→국내 자금 흐름 데이터"},
-      "check_template": {"questions": ["RIA 효과 — $400M 환류가 지속되는가?"], "data_sources": ["narrative: Seoul Economic Daily", "positioning: KRW", "narrative: Seibro"]},
-      "status": "active", "completed_checks": [], "close_condition": "4월 리테일 자금 흐름 데이터 확인", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-04-30"
+        ],
+        "next_check": "2026-04-30",
+        "rationale": "4월 리테일 자금 흐름 데이터 확인 시점."
+      },
+      "original_context": {
+        "issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경",
+        "resolve_condition": "4월 리테일 해외→국내 자금 흐름 데이터"
+      },
+      "check_template": {
+        "questions": [
+          "RIA 효과 — $400M 환류가 지속되는가?"
+        ],
+        "data_sources": [
+          "narrative: Seoul Economic Daily",
+          "positioning: KRW",
+          "narrative: Seibro"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "4월 리테일 자금 흐름 데이터 확인",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-042",
@@ -532,10 +789,35 @@
       "source_uq": "UQ-042",
       "subject": "KRW 1,500 뉴노멀 고착 vs WGBI 편입 구원",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-30", "2026-06-30", "2026-09-30"], "next_check": "2026-04-30", "rationale": "WGBI 편입은 6~12개월 호라이즌. 분기별 체크."},
-      "original_context": {"issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경", "resolve_condition": "WGBI 편입 결정(FTSE Russell) 또는 KRW 1,450 이하 복귀"},
-      "check_template": {"questions": ["KRW 1,500이 뉴노멀로 고착되는가?"], "data_sources": ["narrative: Reuters KRW", "positioning: KRW=X", "policy: FTSE Russell WGBI"]},
-      "status": "active", "completed_checks": [], "close_condition": "WGBI 편입 결정 또는 KRW 1,450 이하 복귀", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-30",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "next_check": "2026-04-30",
+        "rationale": "WGBI 편입은 6~12개월 호라이즌. 분기별 체크."
+      },
+      "original_context": {
+        "issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경",
+        "resolve_condition": "WGBI 편입 결정(FTSE Russell) 또는 KRW 1,450 이하 복귀"
+      },
+      "check_template": {
+        "questions": [
+          "KRW 1,500이 뉴노멀로 고착되는가?"
+        ],
+        "data_sources": [
+          "narrative: Reuters KRW",
+          "positioning: KRW=X",
+          "policy: FTSE Russell WGBI"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "WGBI 편입 결정 또는 KRW 1,450 이하 복귀",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-043",
@@ -544,10 +826,34 @@
       "source_uq": "UQ-043",
       "subject": "이란 전쟁 종결 시 KRW 반등 폭 (유가 $80 → 1,400대?)",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-15", "2026-05-15"], "next_check": "2026-04-15", "rationale": "이란 휴전 진행 상황과 유가 연동."},
-      "original_context": {"issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경", "resolve_condition": "이란 휴전 + Brent $80 이하 + KRW 1,450 이하"},
-      "check_template": {"questions": ["전쟁 종결 시 KRW 반등 폭은?"], "data_sources": ["price: BZ=F", "price: KRW=X", "narrative: RBC FX"]},
-      "status": "active", "completed_checks": [], "close_condition": "이란 휴전 + Brent $80 이하 + KRW 1,450 이하", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-15",
+          "2026-05-15"
+        ],
+        "next_check": "2026-04-15",
+        "rationale": "이란 휴전 진행 상황과 유가 연동."
+      },
+      "original_context": {
+        "issue": "이란 전쟁의 한국 전이 — KRW 1,500 + 25조 전쟁추경",
+        "resolve_condition": "이란 휴전 + Brent $80 이하 + KRW 1,450 이하"
+      },
+      "check_template": {
+        "questions": [
+          "전쟁 종결 시 KRW 반등 폭은?"
+        ],
+        "data_sources": [
+          "price: BZ=F",
+          "price: KRW=X",
+          "narrative: RBC FX"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "이란 휴전 + Brent $80 이하 + KRW 1,450 이하",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-060",
@@ -555,10 +861,33 @@
       "source_report": "pipeline-orchestrator → rm (한국車 삼중포위)",
       "subject": "한미 관세 15% 유지 vs 25% 복원 (대미투자특별법 입법)",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-03-31", "2026-04-05", "2026-04-09"], "next_check": "2026-03-31"},
-      "original_context": {"issue": "미 관세+EU 규제+중국 물량공세 — 한국車 3면 포위", "resolve_condition": "특별법 통과 또는 25% 복원 공식 발표"},
-      "check_template": {"questions": ["관세율 확정 여부?"], "data_sources": ["narrative: 한경/연합뉴스", "policy: 산업부/USTR"]},
-      "status": "active", "completed_checks": [], "close_condition": "특별법 통과 또는 25% 복원 공식 발표", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-03-31",
+          "2026-04-05",
+          "2026-04-09"
+        ],
+        "next_check": "2026-03-31"
+      },
+      "original_context": {
+        "issue": "미 관세+EU 규제+중국 물량공세 — 한국車 3면 포위",
+        "resolve_condition": "특별법 통과 또는 25% 복원 공식 발표"
+      },
+      "check_template": {
+        "questions": [
+          "관세율 확정 여부?"
+        ],
+        "data_sources": [
+          "narrative: 한경/연합뉴스",
+          "policy: 산업부/USTR"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "특별법 통과 또는 25% 복원 공식 발표",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-061",
@@ -566,10 +895,33 @@
       "source_report": "pipeline-orchestrator → rm (한국車 삼중포위)",
       "subject": "EU IAA 70% 역내산 → 한국 부품사 실질 영향",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-06-30", "2026-09-30"], "next_check": "2026-06-30"},
-      "original_context": {"issue": "EU IAA 의회 심의", "resolve_condition": "IAA 수정안 확정 또는 현대모비스/만도 대응 발표"},
-      "check_template": {"questions": ["IAA 최종안 확정?", "한국 부품사 대응?"], "data_sources": ["policy: EU Parliament/CLEPA", "narrative: Automotive News Europe"]},
-      "status": "active", "completed_checks": [], "close_condition": "IAA 수정안 확정 또는 현대모비스/만도 대응 발표", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "next_check": "2026-06-30"
+      },
+      "original_context": {
+        "issue": "EU IAA 의회 심의",
+        "resolve_condition": "IAA 수정안 확정 또는 현대모비스/만도 대응 발표"
+      },
+      "check_template": {
+        "questions": [
+          "IAA 최종안 확정?",
+          "한국 부품사 대응?"
+        ],
+        "data_sources": [
+          "policy: EU Parliament/CLEPA",
+          "narrative: Automotive News Europe"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "IAA 수정안 확정 또는 현대모비스/만도 대응 발표",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-062",
@@ -577,10 +929,31 @@
       "source_report": "pipeline-orchestrator → rm (한국車 삼중포위)",
       "subject": "BYD 유럽 점유율 3% 돌파 시점",
       "type": "data_check",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-09-30"], "next_check": "2026-09-30"},
-      "original_context": {"issue": "중국 EV 유럽 공세", "resolve_condition": "BYD 유럽 월간 3만대+ 또는 점유율 3%+"},
-      "check_template": {"questions": ["BYD 유럽 월간 판매 및 점유율?"], "data_sources": ["narrative: CNEVPost/Electrek", "data: ACEA 통계"]},
-      "status": "active", "completed_checks": [], "close_condition": "BYD 유럽 월간 3만대+ 또는 점유율 3%+", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-09-30"
+        ],
+        "next_check": "2026-09-30"
+      },
+      "original_context": {
+        "issue": "중국 EV 유럽 공세",
+        "resolve_condition": "BYD 유럽 월간 3만대+ 또는 점유율 3%+"
+      },
+      "check_template": {
+        "questions": [
+          "BYD 유럽 월간 판매 및 점유율?"
+        ],
+        "data_sources": [
+          "narrative: CNEVPost/Electrek",
+          "data: ACEA 통계"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "BYD 유럽 월간 3만대+ 또는 점유율 3%+",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-063",
@@ -588,10 +961,31 @@
       "source_report": "pipeline-orchestrator → rm (한국車 삼중포위)",
       "subject": "HMGMA 연간 50만대 달성 시점",
       "type": "data_check",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-06-30"], "next_check": "2026-06-30"},
-      "original_context": {"issue": "현대차 북미 현지화", "resolve_condition": "연환산 30만대+ 확인"},
-      "check_template": {"questions": ["HMGMA 분기 생산량?"], "data_sources": ["narrative: 한경/Automotive News", "price: 005380.KS"]},
-      "status": "active", "completed_checks": [], "close_condition": "연환산 30만대+ 확인", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-30"
+        ],
+        "next_check": "2026-06-30"
+      },
+      "original_context": {
+        "issue": "현대차 북미 현지화",
+        "resolve_condition": "연환산 30만대+ 확인"
+      },
+      "check_template": {
+        "questions": [
+          "HMGMA 분기 생산량?"
+        ],
+        "data_sources": [
+          "narrative: 한경/Automotive News",
+          "price: 005380.KS"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "연환산 30만대+ 확인",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-26-UQ-064",
@@ -599,10 +993,32 @@
       "source_report": "pipeline-orchestrator → rm (한국車 삼중포위)",
       "subject": "Section 122 임시 관세 만료(7/24) 후 대체 조치",
       "type": "policy_watch",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-06-15", "2026-07-15"], "next_check": "2026-06-15"},
-      "original_context": {"issue": "Section 122 150일 한도", "resolve_condition": "Section 122 만료 또는 후속 관세 조치 발표"},
-      "check_template": {"questions": ["Section 122 연장/대체?"], "data_sources": ["policy: USTR Federal Register", "narrative: Reuters trade"]},
-      "status": "active", "completed_checks": [], "close_condition": "Section 122 만료 또는 후속 관세 조치 발표", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-15",
+          "2026-07-15"
+        ],
+        "next_check": "2026-06-15"
+      },
+      "original_context": {
+        "issue": "Section 122 150일 한도",
+        "resolve_condition": "Section 122 만료 또는 후속 관세 조치 발표"
+      },
+      "check_template": {
+        "questions": [
+          "Section 122 연장/대체?"
+        ],
+        "data_sources": [
+          "policy: USTR Federal Register",
+          "narrative: Reuters trade"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "Section 122 만료 또는 후속 관세 조치 발표",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-27-UQ-070",
@@ -610,10 +1026,40 @@
       "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
       "subject": "Section 301 한국 관세율 확정",
       "type": "policy_watch",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-03", "2026-04-10", "2026-04-17", "2026-04-24", "2026-05-01", "2026-05-15", "2026-06-01", "2026-07-01", "2026-07-24"], "next_check": "2026-04-03"},
-      "original_context": {"issue": "Section 301 16국 과잉생산 조사 — 한국 명시 포함", "resolve_condition": "301 관세율 공고 또는 한국 면제 확인"},
-      "check_template": {"questions": ["301 한국 관세율 확정?", "한국 품목 범위?"], "data_sources": ["policy: USTR Federal Register", "narrative: White & Case trade alerts"]},
-      "status": "active", "completed_checks": [], "close_condition": "301 관세율 공고 또는 한국 면제 확인", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-03",
+          "2026-04-10",
+          "2026-04-17",
+          "2026-04-24",
+          "2026-05-01",
+          "2026-05-15",
+          "2026-06-01",
+          "2026-07-01",
+          "2026-07-24"
+        ],
+        "next_check": "2026-04-03"
+      },
+      "original_context": {
+        "issue": "Section 301 16국 과잉생산 조사 — 한국 명시 포함",
+        "resolve_condition": "301 관세율 공고 또는 한국 면제 확인"
+      },
+      "check_template": {
+        "questions": [
+          "301 한국 관세율 확정?",
+          "한국 품목 범위?"
+        ],
+        "data_sources": [
+          "policy: USTR Federal Register",
+          "narrative: White & Case trade alerts"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "301 관세율 공고 또는 한국 면제 확인",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-27-UQ-071",
@@ -621,10 +1067,34 @@
       "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
       "subject": "CBP CAPE 포털 런칭 ($166B 환급)",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-01", "2026-04-06", "2026-04-10"], "next_check": "2026-04-01"},
-      "original_context": {"issue": "IEEPA 위헌 → $166-175B 관세 환급 행정혼란", "resolve_condition": "CBP CAPE 포털 가동 또는 환급 절차 안내 공식 발표"},
-      "check_template": {"questions": ["CAPE 포털 런칭?", "환급 진행 상황?"], "data_sources": ["policy: CBP.gov", "narrative: InternationalTradeToday"]},
-      "status": "active", "completed_checks": [], "close_condition": "CAPE 포털 가동 또는 환급 절차 공식화", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-01",
+          "2026-04-06",
+          "2026-04-10"
+        ],
+        "next_check": "2026-04-01"
+      },
+      "original_context": {
+        "issue": "IEEPA 위헌 → $166-175B 관세 환급 행정혼란",
+        "resolve_condition": "CBP CAPE 포털 가동 또는 환급 절차 안내 공식 발표"
+      },
+      "check_template": {
+        "questions": [
+          "CAPE 포털 런칭?",
+          "환급 진행 상황?"
+        ],
+        "data_sources": [
+          "policy: CBP.gov",
+          "narrative: InternationalTradeToday"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "CAPE 포털 가동 또는 환급 절차 공식화",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-27-UQ-072",
@@ -632,10 +1102,34 @@
       "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
       "subject": "EU 이사회 최종 승인",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-10", "2026-04-17", "2026-04-24"], "next_check": "2026-04-10"},
-      "original_context": {"issue": "EU 의회 관세 딜 조건부 승인 (417:154:71)", "resolve_condition": "EU 이사회 최종 승인 또는 수정안 발표"},
-      "check_template": {"questions": ["이사회 승인?", "ACI 발동 검토?"], "data_sources": ["policy: EU Council", "narrative: Euronews/Politico EU"]},
-      "status": "active", "completed_checks": [], "close_condition": "EU 이사회 최종 승인 또는 ACI 발동", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-10",
+          "2026-04-17",
+          "2026-04-24"
+        ],
+        "next_check": "2026-04-10"
+      },
+      "original_context": {
+        "issue": "EU 의회 관세 딜 조건부 승인 (417:154:71)",
+        "resolve_condition": "EU 이사회 최종 승인 또는 수정안 발표"
+      },
+      "check_template": {
+        "questions": [
+          "이사회 승인?",
+          "ACI 발동 검토?"
+        ],
+        "data_sources": [
+          "policy: EU Council",
+          "narrative: Euronews/Politico EU"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "EU 이사회 최종 승인 또는 ACI 발동",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-27-UQ-073",
@@ -643,10 +1137,35 @@
       "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
       "subject": "미중 정상회담 합의 범위",
       "type": "policy_watch",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-17", "2026-05-01", "2026-05-08", "2026-05-15"], "next_check": "2026-04-17"},
-      "original_context": {"issue": "트럼프-시진핑 정상회담 5/14-15", "resolve_condition": "회담 합의문 또는 관세 관련 구체 조건 발표"},
-      "check_template": {"questions": ["회담 의제 확정?", "관세 합의 범위?"], "data_sources": ["narrative: AP/Reuters/SCMP", "policy: White House"]},
-      "status": "active", "completed_checks": [], "close_condition": "회담 합의문 발표", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-17",
+          "2026-05-01",
+          "2026-05-08",
+          "2026-05-15"
+        ],
+        "next_check": "2026-04-17"
+      },
+      "original_context": {
+        "issue": "트럼프-시진핑 정상회담 5/14-15",
+        "resolve_condition": "회담 합의문 또는 관세 관련 구체 조건 발표"
+      },
+      "check_template": {
+        "questions": [
+          "회담 의제 확정?",
+          "관세 합의 범위?"
+        ],
+        "data_sources": [
+          "narrative: AP/Reuters/SCMP",
+          "policy: White House"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "회담 합의문 발표",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-27-UQ-074",
@@ -654,10 +1173,35 @@
       "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
       "subject": "Section 122 만료 후 공백 여부",
       "type": "policy_watch",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-06-15", "2026-07-01", "2026-07-15", "2026-07-24"], "next_check": "2026-06-15"},
-      "original_context": {"issue": "Section 122 150일 한도 만료 7/24", "resolve_condition": "Section 122 연장 또는 301 부과 확정 또는 법적 공백 확인"},
-      "check_template": {"questions": ["122 연장/대체?", "301 준비 상황?"], "data_sources": ["policy: USTR/AAF", "narrative: Tax Policy Center"]},
-      "status": "active", "completed_checks": [], "close_condition": "122 만료 또는 301 부과 확정", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-15",
+          "2026-07-01",
+          "2026-07-15",
+          "2026-07-24"
+        ],
+        "next_check": "2026-06-15"
+      },
+      "original_context": {
+        "issue": "Section 122 150일 한도 만료 7/24",
+        "resolve_condition": "Section 122 연장 또는 301 부과 확정 또는 법적 공백 확인"
+      },
+      "check_template": {
+        "questions": [
+          "122 연장/대체?",
+          "301 준비 상황?"
+        ],
+        "data_sources": [
+          "policy: USTR/AAF",
+          "narrative: Tax Policy Center"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "122 만료 또는 301 부과 확정",
+      "closed_at": null,
+      "close_reason": null
     },
     {
       "id": "W-2026-03-27-UQ-075",
@@ -665,20 +1209,2035 @@
       "source_report": "pipeline-orchestrator → rm (글로벌 통상 재편)",
       "subject": "한국 반도체 관세 vs 비관세 장벽 형태",
       "type": "event_tracking",
-      "schedule": {"mode": "fixed_interval", "check_dates": ["2026-04-10", "2026-04-17"], "next_check": "2026-04-10"},
-      "original_context": {"issue": "Section 301 16국 과잉생산 — 한국 반도체 직격 가능", "resolve_condition": "301 공청회(4/28)에서 반도체 관세 형태 명시"},
-      "check_template": {"questions": ["반도체 관세 형태?", "비관세 장벽(수출 통제 등)?"], "data_sources": ["narrative: Seoul Economic Daily/한경", "policy: USTR"]},
-      "status": "active", "completed_checks": [], "close_condition": "301 공청회에서 형태 명시", "closed_at": null, "close_reason": null
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-10",
+          "2026-04-17"
+        ],
+        "next_check": "2026-04-10"
+      },
+      "original_context": {
+        "issue": "Section 301 16국 과잉생산 — 한국 반도체 직격 가능",
+        "resolve_condition": "301 공청회(4/28)에서 반도체 관세 형태 명시"
+      },
+      "check_template": {
+        "questions": [
+          "반도체 관세 형태?",
+          "비관세 장벽(수출 통제 등)?"
+        ],
+        "data_sources": [
+          "narrative: Seoul Economic Daily/한경",
+          "policy: USTR"
+        ]
+      },
+      "status": "active",
+      "completed_checks": [],
+      "close_condition": "301 공청회에서 형태 명시",
+      "closed_at": null,
+      "close_reason": null
+    },
+    {
+      "id": "W-2026-03-28-UQ-080",
+      "created": "2026-03-28",
+      "source_report": "SA-20260328-001 (이란 3차 갱신)",
+      "source_uq": "UQ-080",
+      "subject": "이란 호르무즈 톨부스 수익모델화 — 종전 후에도 지속되는가?",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-04",
+          "2026-04-11",
+          "2026-04-18"
+        ],
+        "next_check": "2026-04-04",
+        "rationale": "event_tracking: 톨부스 매주 체크"
+      },
+      "original_context": {
+        "issue": "이란 CIPS $2M/척 톨부스 수익모델. 종전 이후에도 호르무즈 레버리지 유지 가능성.",
+        "resolve_condition": "이란 톨부스 철회 공식 발표 OR 호르무즈 자유 통행 재개 확인"
+      },
+      "check_template": {
+        "questions": [
+          "이란이 호르무즈 톨부스를 지속하고 있는가?",
+          "국제 해운사 대응(우회/지불/거부) 비율 변화"
+        ],
+        "data_sources": [
+          "narrative: Reuters 해운",
+          "price: BZ=F"
+        ]
+      },
+      "close_condition": "이란 톨부스 철회 OR 호르무즈 자유 통행 재개",
+      "completed_checks": []
+    },
+    {
+      "id": "W-2026-03-28-UQ-081",
+      "created": "2026-03-28",
+      "source_report": "SA-20260328-001 (이란 3차 갱신)",
+      "source_uq": "UQ-081",
+      "subject": "Airgas 헬륨 50% 삭감 — 반도체 팹 가동률 실제 영향",
+      "type": "data_check",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-15",
+          "2026-05-01",
+          "2026-05-15"
+        ],
+        "next_check": "2026-04-15",
+        "rationale": "data_check: 팹 가동률 2주 간격"
+      },
+      "original_context": {
+        "issue": "Airgas 헬륨 50% 삭감 공식화. 팹 재고 60~90일. 5~6월 가동률 저하 위협.",
+        "resolve_condition": "팹 가동률 공식 발표 OR 카타르 헬륨 부분 재가동 확인"
+      },
+      "check_template": {
+        "questions": [
+          "반도체 팹 가동률에 실제 영향이 발생했는가?",
+          "헬륨 대체 조달처 확보 여부"
+        ],
+        "data_sources": [
+          "expert: TSMC/삼성/SK하이닉스",
+          "narrative: 반도체 업계"
+        ]
+      },
+      "close_condition": "팹 가동률 감소 공식 보고 OR 헬륨 정상 공급 재개",
+      "completed_checks": []
+    },
+    {
+      "id": "W-2026-03-28-UQ-082",
+      "created": "2026-03-28",
+      "source_report": "SA-20260328-001 (이란 3차 갱신)",
+      "source_uq": "UQ-082",
+      "subject": "탄그시리 IRGC 사령관 사살 — 이란 보복 행동 발생 여부",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-03-31",
+          "2026-04-06",
+          "2026-04-13"
+        ],
+        "next_check": "2026-03-31",
+        "rationale": "event_tracking: 보복 주기 3~7일. D+3/D+9/D+16 체크"
+      },
+      "original_context": {
+        "issue": "탄그시리 IRGC 지역사령관 사살. 이란 보복 동기 폭발. 4/6 데드라인.",
+        "resolve_condition": "이란 보복 공격 발생 OR 4/6 데드라인 경과 무사건"
+      },
+      "check_template": {
+        "questions": [
+          "이란의 보복 행동이 발생했는가?",
+          "호르무즈 봉쇄 강화 또는 완화 여부"
+        ],
+        "data_sources": [
+          "narrative: Reuters/AP 중동",
+          "price: BZ=F",
+          "price: ^VIX"
+        ]
+      },
+      "close_condition": "보복 발생 확인 OR 4/6 이후 2주 무사건",
+      "completed_checks": []
+    },
+    {
+      "id": "W-TQ-001",
+      "created": "2026-03-28",
+      "source_report": "pipeline-orchestrator → rm (TurboQuant/SKH)",
+      "source_tc": "TC-010",
+      "subject": "TurboQuant 업계 채택 동향",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-02",
+          "2026-04-07",
+          "2026-04-11"
+        ],
+        "next_check": "2026-04-02",
+        "rationale": "event_tracking: D+5(4/2), D+10(4/7), D+14(4/11) 체크"
+      },
+      "original_context": {
+        "issue": "TurboQuant 알고리즘 업계 채택 여부",
+        "resolve_condition": "OpenAI/Meta/Anthropic 공식 채택 발표"
+      },
+      "check_template": {
+        "questions": [
+          "OpenAI/Meta/Anthropic 중 TurboQuant 공식 채택 발표가 있었는가?"
+        ],
+        "data_sources": [
+          "narrative: OpenAI/Meta/Anthropic 공식 블로그",
+          "narrative: 업계 테크 미디어"
+        ]
+      },
+      "close_condition": "OpenAI/Meta/Anthropic 공식 채택 발표",
+      "completed_checks": []
+    },
+    {
+      "id": "W-TQ-002",
+      "created": "2026-03-28",
+      "source_report": "pipeline-orchestrator → rm (TurboQuant/SKH)",
+      "source_tc": "TC-010",
+      "subject": "MU $380 회복 여부",
+      "type": "threshold_watch",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-03-30",
+          "2026-04-01",
+          "2026-04-03",
+          "2026-04-05",
+          "2026-04-07",
+          "2026-04-09",
+          "2026-04-10"
+        ],
+        "next_check": "2026-03-30",
+        "rationale": "threshold_watch: 격일 → 4/10 마감"
+      },
+      "original_context": {
+        "issue": "MU(Micron) 주가 $380 임계선 회복 여부",
+        "resolve_condition": "MU $380 돌파 확인"
+      },
+      "check_template": {
+        "questions": [
+          "MU 주가가 $380을 돌파했는가?"
+        ],
+        "data_sources": [
+          "price: MU",
+          "narrative: Yahoo Finance/Bloomberg"
+        ]
+      },
+      "close_condition": "MU $380 돌파 확인",
+      "completed_checks": []
+    },
+    {
+      "id": "W-TQ-003",
+      "created": "2026-03-28",
+      "source_report": "pipeline-orchestrator → rm (TurboQuant/SKH)",
+      "source_tc": "TC-006",
+      "subject": "SKH ADR IPO 일정",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-03-30",
+          "2026-04-06",
+          "2026-04-13",
+          "2026-04-20",
+          "2026-04-27"
+        ],
+        "next_check": "2026-03-30",
+        "rationale": "event_tracking: 주 1회(월) 체크"
+      },
+      "original_context": {
+        "issue": "SK하이닉스 ADR IPO 공식 일정 발표 여부",
+        "resolve_condition": "SKH 공식 IPO 일정 발표"
+      },
+      "check_template": {
+        "questions": [
+          "SK하이닉스 ADR 공식 IPO 일정이 발표되었는가?"
+        ],
+        "data_sources": [
+          "narrative: SK하이닉스 IR",
+          "narrative: Reuters/Bloomberg ADR",
+          "policy: SEC EDGAR"
+        ]
+      },
+      "close_condition": "SKH 공식 IPO 일정 발표",
+      "completed_checks": []
+    },
+    {
+      "id": "W-TQ-004",
+      "created": "2026-03-28",
+      "source_report": "pipeline-orchestrator → rm (TurboQuant/SKH)",
+      "source_tc": "TC-010, TC-006",
+      "subject": "ICLR 4/23 후 가격 반응",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-04-28"
+        ],
+        "next_check": "2026-04-28",
+        "rationale": "event_tracking: ICLR 4/23 발표 후 4/28에 1회 체크 (5거래일 반응 확인)"
+      },
+      "original_context": {
+        "issue": "ICLR 2026 발표 후 관련 종목 가격 방향",
+        "resolve_condition": "ICLR 발표 후 5거래일 가격 방향 확인"
+      },
+      "check_template": {
+        "questions": [
+          "ICLR 4/23 발표 후 5거래일 가격 방향은 어떠한가?",
+          "TurboQuant/HBM 관련 종목 반응?"
+        ],
+        "data_sources": [
+          "price: MU",
+          "price: 000660.KS",
+          "narrative: ICLR 발표 리뷰"
+        ]
+      },
+      "close_condition": "ICLR 발표 후 5거래일 가격 방향 확인",
+      "completed_checks": []
+    },
+    {
+      "id": "W-SKH-001",
+      "created": "2026-03-28",
+      "source_report": "pipeline-orchestrator → rm (TurboQuant/SKH)",
+      "source_tc": "TC-006",
+      "subject": "SKH ADR PER 격차 수렴",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-30",
+          "2026-09-30",
+          "2026-12-31"
+        ],
+        "next_check": "2026-06-30",
+        "rationale": "event_tracking: 분기 1회 체크. ADR 첫 거래일+30일 도달 시 종료."
+      },
+      "original_context": {
+        "issue": "SK하이닉스 ADR과 원주 간 PER 격차 수렴 여부",
+        "resolve_condition": "ADR 첫 거래일+30일"
+      },
+      "check_template": {
+        "questions": [
+          "SKH ADR과 원주 PER 격차가 수렴하고 있는가?",
+          "ADR 프리미엄/디스카운트 수준?"
+        ],
+        "data_sources": [
+          "price: 000660.KS",
+          "narrative: Bloomberg ADR",
+          "narrative: SK하이닉스 IR"
+        ]
+      },
+      "close_condition": "ADR 첫 거래일+30일",
+      "completed_checks": []
+    },
+    {
+      "id": "W-SKH-002",
+      "created": "2026-03-28",
+      "source_report": "pipeline-orchestrator → rm (TurboQuant/SKH)",
+      "source_tc": "TC-010",
+      "subject": "TurboQuant HBM 영향",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-04-30"
+        ],
+        "next_check": "2026-04-30",
+        "rationale": "event_tracking: ICLR 발표 후 기술 영향 재평가. 2026-04-30 이후 1회."
+      },
+      "original_context": {
+        "issue": "TurboQuant 알고리즘이 HBM 수요에 미치는 영향",
+        "resolve_condition": "ICLR 발표 후 기술 영향 재평가"
+      },
+      "check_template": {
+        "questions": [
+          "TurboQuant이 HBM 수요에 긍정/부정적 영향을 미치는가?",
+          "SKH HBM 공급 계약 변화 여부?"
+        ],
+        "data_sources": [
+          "narrative: ICLR 기술 리뷰",
+          "narrative: SKH/TSMC 공급망",
+          "price: 000660.KS"
+        ]
+      },
+      "close_condition": "ICLR 발표 후 기술 영향 재평가 완료",
+      "completed_checks": []
+    },
+    {
+      "id": "W-SKH-003",
+      "created": "2026-03-28",
+      "source_report": "pipeline-orchestrator → rm (TurboQuant/SKH)",
+      "source_tc": "TC-006",
+      "subject": "삼성전자 ADR 공식 입장",
+      "type": "threshold_watch",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-11",
+          "2026-04-25",
+          "2026-05-09",
+          "2026-05-23"
+        ],
+        "next_check": "2026-04-11",
+        "rationale": "threshold_watch: 2주 1회 체크"
+      },
+      "original_context": {
+        "issue": "삼성전자 ADR 상장 관련 공식 입장 발표 여부",
+        "resolve_condition": "삼성 발표 또는 거부"
+      },
+      "check_template": {
+        "questions": [
+          "삼성전자가 ADR 상장에 대한 공식 입장을 발표했는가?",
+          "거부 또는 추진 방향?"
+        ],
+        "data_sources": [
+          "narrative: 삼성전자 IR",
+          "narrative: 한경/매경",
+          "policy: SEC EDGAR"
+        ]
+      },
+      "close_condition": "삼성 ADR 공식 발표 또는 거부 확인",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL1-001",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "SpaceX S-1 SEC 제출 확인",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-03",
+          "2026-04-07"
+        ],
+        "next_check": "2026-04-03",
+        "rationale": "event_tracking: D+5(4/3), D+10(4/7) 체크"
+      },
+      "original_context": {
+        "issue": "SpaceX IPO — S-1 SEC 제출 여부",
+        "resolve_condition": "S-1 제출 확인 또는 연기 발표"
+      },
+      "check_template": {
+        "questions": [
+          "SpaceX가 SEC에 S-1을 제출했는가?",
+          "제출 연기 또는 취소 발표가 있었는가?"
+        ],
+        "data_sources": [
+          "policy: SEC EDGAR",
+          "narrative: Reuters/Bloomberg IPO"
+        ]
+      },
+      "close_condition": "S-1 제출 확인 또는 연기 발표",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL1-002",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "DOGE 이해충돌 소송 → S-1 심사 영향",
+      "type": "policy_watch",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-04",
+          "2026-04-11",
+          "2026-04-18",
+          "2026-04-25",
+          "2026-05-02"
+        ],
+        "next_check": "2026-04-04",
+        "rationale": "policy_watch: 주 1회 체크"
+      },
+      "original_context": {
+        "issue": "DOGE 이해충돌 소송이 SpaceX S-1 SEC 심사에 미치는 영향",
+        "resolve_condition": "SEC 심사 결과 또는 소송 판결"
+      },
+      "check_template": {
+        "questions": [
+          "DOGE 이해충돌 소송이 SEC의 SpaceX S-1 심사에 영향을 미쳤는가?",
+          "소송 판결 동향?"
+        ],
+        "data_sources": [
+          "policy: SEC",
+          "narrative: Reuters/Bloomberg 법원",
+          "narrative: WSJ"
+        ]
+      },
+      "close_condition": "SEC 심사 결과 또는 소송 판결",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL1-003",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "Amazon Kuiper 상용 서비스 개시",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-28",
+          "2026-05-28",
+          "2026-06-28"
+        ],
+        "next_check": "2026-04-28",
+        "rationale": "event_tracking: 월 1회 체크"
+      },
+      "original_context": {
+        "issue": "Amazon Kuiper 상용 서비스 개시 — SpaceX Starlink 경쟁 구도",
+        "resolve_condition": "Kuiper 상용 서비스 발표"
+      },
+      "check_template": {
+        "questions": [
+          "Amazon Kuiper 상용 서비스가 공식 개시되었는가?",
+          "서비스 지역 및 요금제?"
+        ],
+        "data_sources": [
+          "narrative: Amazon PR",
+          "narrative: TechCrunch/The Verge"
+        ]
+      },
+      "close_condition": "Kuiper 상용 서비스 발표",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL1-004",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "SpaceX S&P500 인덱스 편입 패스트트랙",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [],
+        "next_check": null,
+        "rationale": "event_tracking: 상장 후 D+30/60/90 체크 (상장일 확정 후 날짜 입력)"
+      },
+      "original_context": {
+        "issue": "SpaceX 상장 후 S&P500 인덱스 편입 패스트트랙 가능성",
+        "resolve_condition": "인덱스 편입 확정 또는 불가 판정"
+      },
+      "check_template": {
+        "questions": [
+          "SpaceX가 S&P500 패스트트랙 편입 요건을 충족하는가?",
+          "S&P 지수위원회 편입 결정 여부?"
+        ],
+        "data_sources": [
+          "narrative: S&P Global",
+          "narrative: Bloomberg 인덱스",
+          "narrative: Reuters ETF"
+        ]
+      },
+      "close_condition": "인덱스 편입 확정 또는 불가 판정",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL1-005",
+      "created": "2026-03-28",
+      "source_tc": "TC-018",
+      "subject": "한화에어로스페이스 우주 매출 비중 실체 확인",
+      "type": "data_check",
+      "status": "active",
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-05-15"
+        ],
+        "next_check": "2026-05-15",
+        "rationale": "data_check: 1회(2026-05-15) — Q1 실적 발표 시점"
+      },
+      "original_context": {
+        "issue": "한화에어로스페이스 우주 매출 비중 실체 — 발사체/위성 vs 부품 구분",
+        "resolve_condition": "Q1 실적 발표 시 우주 매출 비중 공시"
+      },
+      "check_template": {
+        "questions": [
+          "한화에어로스페이스 Q1 실적에서 우주 매출 비중이 공시되었는가?",
+          "발사체/위성 직접 사업 vs 부품 비중 구분?"
+        ],
+        "data_sources": [
+          "policy: 한화에어로스페이스 IR/DART",
+          "narrative: 한경/매경 실적 보도"
+        ]
+      },
+      "close_condition": "Q1 실적 발표 시 우주 매출 비중 공시",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL3-001",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "NY DFS 면허 결정",
+      "type": "policy_watch",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-11",
+          "2026-04-25",
+          "2026-05-09",
+          "2026-05-23"
+        ],
+        "next_check": "2026-04-11",
+        "rationale": "policy_watch: 격주 체크"
+      },
+      "original_context": {
+        "issue": "X Money NY DFS(뉴욕 금융서비스국) 머니트랜스미터 면허 결정",
+        "resolve_condition": "NY DFS 승인 또는 거부"
+      },
+      "check_template": {
+        "questions": [
+          "NY DFS가 X Money 면허 신청을 승인했는가?",
+          "심사 진행 상황 또는 거부 사유?"
+        ],
+        "data_sources": [
+          "policy: NY DFS",
+          "narrative: Reuters/Bloomberg 핀테크"
+        ]
+      },
+      "close_condition": "NY DFS 승인 또는 거부",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL3-002",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "X Money 사용자 전환율",
+      "type": "data_check",
+      "status": "active",
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-05-15"
+        ],
+        "next_check": "2026-05-15",
+        "rationale": "data_check: 1회(2026-05-15) — 베타 이후 전환율 확인"
+      },
+      "original_context": {
+        "issue": "X Money 베타 이후 MAU→결제 전환율 실측",
+        "resolve_condition": "베타 후 MAU→결제 전환율 확인"
+      },
+      "check_template": {
+        "questions": [
+          "X Money 베타 사용자의 MAU 대비 결제 전환율 수치가 공개되었는가?",
+          "경쟁사(PayPal/Venmo) 대비 전환율 비교?"
+        ],
+        "data_sources": [
+          "narrative: X/Elon Musk 공식 발표",
+          "narrative: TechCrunch/Bloomberg 핀테크"
+        ]
+      },
+      "close_condition": "베타 후 MAU→결제 전환율 확인",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL3-003",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "DOGE/크립토 통합 공식 발표",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [],
+        "next_check": null,
+        "rationale": "event_tracking: X Money 출시일 기준 D+30/60/90 (출시일 확정 후 날짜 입력)"
+      },
+      "original_context": {
+        "issue": "X Money 크립토(DOGE 포함) 결제 기능 공식 통합 발표",
+        "resolve_condition": "X Money 크립토 결제 기능 공식 발표"
+      },
+      "check_template": {
+        "questions": [
+          "X Money가 DOGE/크립토 결제를 공식 통합 발표했는가?",
+          "지원 코인 종류 및 한도?"
+        ],
+        "data_sources": [
+          "narrative: X 공식 계정",
+          "narrative: CoinDesk/CoinTelegraph"
+        ]
+      },
+      "close_condition": "X Money 크립토 결제 기능 공식 발표",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL3-004",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "PYPL/SQ Q1 실적 대응",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-05-07"
+        ],
+        "next_check": "2026-05-07",
+        "rationale": "event_tracking: 1회(2026-05-07) — PayPal/Block Q1 실적 발표일"
+      },
+      "original_context": {
+        "issue": "PayPal/Block Q1 실적 발표에서 X Money 언급 및 경쟁 대응 여부",
+        "resolve_condition": "PayPal/Block Q1 실적에서 X Money 언급 여부"
+      },
+      "check_template": {
+        "questions": [
+          "PayPal/Block Q1 실적 컨퍼런스콜에서 X Money를 경쟁 위협으로 언급했는가?",
+          "대응 전략 발표 여부?"
+        ],
+        "data_sources": [
+          "narrative: PayPal IR",
+          "narrative: Block(Square) IR",
+          "narrative: Bloomberg 핀테크"
+        ]
+      },
+      "close_condition": "PayPal/Block Q1 실적에서 X Money 언급 여부 확인",
+      "completed_checks": []
+    },
+    {
+      "id": "W-CL3-005",
+      "created": "2026-03-28",
+      "source_tc": "TC-017",
+      "subject": "Starlink-X Money 연계 공식 발표",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-28",
+          "2026-09-28",
+          "2026-12-28"
+        ],
+        "next_check": "2026-06-28",
+        "rationale": "event_tracking: 분기 1회 체크"
+      },
+      "original_context": {
+        "issue": "Starlink 구독자 X Money 결제 연동 공식 발표",
+        "resolve_condition": "Starlink 구독자 X Money 결제 연동 발표"
+      },
+      "check_template": {
+        "questions": [
+          "Starlink 구독 결제에 X Money가 공식 연동되었는가?",
+          "번들링 할인 또는 인센티브 구조?"
+        ],
+        "data_sources": [
+          "narrative: SpaceX/Starlink 공식 발표",
+          "narrative: Bloomberg 핀테크/우주"
+        ]
+      },
+      "close_condition": "Starlink 구독자 X Money 결제 연동 발표",
+      "completed_checks": []
+    },
+    {
+      "id": "W-KSP-001",
+      "created": "2026-03-28",
+      "source_tc": "TC-018",
+      "subject": "수출입은행 KAI 지분 입장 확인",
+      "type": "policy_watch",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-28",
+          "2026-05-28",
+          "2026-06-28"
+        ],
+        "next_check": "2026-04-28",
+        "rationale": "policy_watch: 월 1회 체크"
+      },
+      "original_context": {
+        "issue": "수출입은행의 KAI(한국항공우주산업) 지분 매각 또는 유지 공식 입장",
+        "resolve_condition": "수출입은행 매각 또는 유지 공식 발표"
+      },
+      "check_template": {
+        "questions": [
+          "수출입은행이 KAI 지분 매각 또는 유지 입장을 공식 발표했는가?",
+          "매각 시 인수 후보 및 가격?"
+        ],
+        "data_sources": [
+          "policy: 수출입은행 IR",
+          "narrative: 한경/매경 M&A"
+        ]
+      },
+      "close_condition": "수출입은행 매각 또는 유지 공식 발표",
+      "completed_checks": []
+    },
+    {
+      "id": "W-KSP-002",
+      "created": "2026-03-28",
+      "source_tc": "TC-018",
+      "subject": "이노스페이스 재발사 일정",
+      "type": "event_tracking",
+      "status": "active",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-28",
+          "2026-05-28",
+          "2026-06-28"
+        ],
+        "next_check": "2026-04-28",
+        "rationale": "event_tracking: 월 1회 체크"
+      },
+      "original_context": {
+        "issue": "이노스페이스 발사체 재발사 일정 확정 및 성공 여부",
+        "resolve_condition": "이노스페이스 재발사 성공 또는 취소"
+      },
+      "check_template": {
+        "questions": [
+          "이노스페이스가 재발사 일정을 공식 발표했는가?",
+          "발사 성공 또는 실패 여부?"
+        ],
+        "data_sources": [
+          "narrative: 이노스페이스 공식 발표",
+          "narrative: 연합뉴스/항공우주연구원"
+        ]
+      },
+      "close_condition": "이노스페이스 재발사 성공 또는 취소",
+      "completed_checks": []
+    },
+    {
+      "id": "W-2026-03-30-MA-001",
+      "created": "2026-03-30",
+      "source_report": "ma-scanner SCAN-2026-03-30-001",
+      "source_uq": "MON-001",
+      "subject": "Merck-Revolution Medicines 최종 가격 확정 여부",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-07",
+          "2026-04-14",
+          "2026-04-28"
+        ],
+        "next_check": "2026-04-07",
+        "rationale": "M&A deal_close: 주간 체크 → 2주 → 월말"
+      },
+      "original_context": {
+        "issue": "Merck 6개월간 3연속 딜(Verona $10B + Cidara $9.2B + Revolution ~$32B). $170B 특허절벽 대응. Pfizer-Seagen 이후 최대 바이오 딜 가능성.",
+        "resolve_condition": "SEC EDGAR에 확정 가격 공시 OR 딜 철회/재협상 보도"
+      },
+      "check_template": {
+        "questions": [
+          "Merck-Revolution Medicines 최종 가격이 확정 공시되었는가?",
+          "딜 철회 또는 재협상 보도가 있는가?",
+          "FTC 반독점 심사 관련 언급이 있는가?"
+        ],
+        "data_sources": [
+          "narrative: SEC EDGAR Merck filing",
+          "narrative: 웹서치 Merck Revolution Medicines deal",
+          "narrative: FiercePharma"
+        ]
+      },
+      "status": "active",
+      "close_condition": "가격 확정 공시 OR 딜 철회 발표",
+      "completed_checks": [],
+      "tags": [
+        "M&A",
+        "바이오",
+        "Merck",
+        "A등급",
+        "MT-2"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-MA-002",
+      "created": "2026-03-30",
+      "source_report": "ma-scanner SCAN-2026-03-30-001",
+      "source_uq": "MON-002",
+      "subject": "Netflix-Warner Bros 규제 심사 진행 상황",
+      "type": "policy_watch",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-14",
+          "2026-05-12",
+          "2026-06-09",
+          "2026-07-07",
+          "2026-08-04",
+          "2026-09-01"
+        ],
+        "next_check": "2026-04-14",
+        "rationale": "M&A regulatory: 월 1회 체크. Q3 2026 클로징 예정."
+      },
+      "original_context": {
+        "issue": "Netflix $82.7B(TEV) Warner Bros 인수. Discovery Global 분리 후 클로징 예정. $5.8B 위약금. 미디어 M&A 전체 방향 결정하는 딜.",
+        "resolve_condition": "FTC/DOJ 승인 OR 조건부 승인 OR 차단 결정"
+      },
+      "check_template": {
+        "questions": [
+          "FTC/DOJ가 Netflix-WB 딜에 대해 공식 입장을 발표했는가?",
+          "Discovery Global 분리(스핀오프)가 예정대로 진행 중인가?",
+          "경쟁사(Disney, Comcast)의 규제 반대 로비 동향이 있는가?"
+        ],
+        "data_sources": [
+          "narrative: FTC.gov press releases",
+          "narrative: 웹서치 Netflix Warner Bros regulatory approval",
+          "narrative: Variety/Hollywood Reporter"
+        ]
+      },
+      "status": "active",
+      "close_condition": "FTC/DOJ 최종 결정 (승인/조건부/차단)",
+      "completed_checks": [],
+      "tags": [
+        "M&A",
+        "미디어",
+        "Netflix",
+        "A등급",
+        "MT-4",
+        "규제"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-MA-003",
+      "created": "2026-03-30",
+      "source_report": "ma-scanner SCAN-2026-03-30-001",
+      "source_uq": "MON-003",
+      "subject": "Union Pacific-Norfolk Southern 반독점 심사",
+      "type": "policy_watch",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-28",
+          "2026-05-26",
+          "2026-06-29",
+          "2026-08-31",
+          "2026-10-26",
+          "2026-12-28"
+        ],
+        "next_check": "2026-04-28",
+        "rationale": "M&A regulatory: 월 1회 체크. STB 심사 장기 예상."
+      },
+      "original_context": {
+        "issue": "미국 최초 대륙횡단 철도 단일 기업 $85B. 리쇼어링 메가트렌드 인프라 독점. STB가 인프라 독점 허용 범위의 선례를 설정하는 딜.",
+        "resolve_condition": "STB(Surface Transportation Board) 승인 OR 조건부 승인 OR 차단"
+      },
+      "check_template": {
+        "questions": [
+          "STB가 Union Pacific-NS 합병에 대해 공식 심사 일정을 발표했는가?",
+          "화주·경쟁 철도사의 반대 의견 제출이 있는가?",
+          "트럼프 행정부의 인프라 독점 관련 정책 발언이 있는가?"
+        ],
+        "data_sources": [
+          "narrative: STB.gov",
+          "narrative: 웹서치 Union Pacific Norfolk Southern antitrust STB",
+          "narrative: Railway Age / FreightWaves"
+        ]
+      },
+      "status": "active",
+      "close_condition": "STB 최종 결정 (승인/조건부/차단)",
+      "completed_checks": [],
+      "tags": [
+        "M&A",
+        "물류",
+        "철도",
+        "A등급",
+        "MT-3",
+        "규제"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-MA-004",
+      "created": "2026-03-30",
+      "source_report": "ma-scanner SCAN-2026-03-30-001",
+      "source_uq": "MON-004",
+      "subject": "삼성전자 반도체 추가 M&A 가능성",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-14",
+          "2026-05-11",
+          "2026-06-08"
+        ],
+        "next_check": "2026-04-14",
+        "rationale": "M&A deal_watch: 2주 간격. $73B capex 발표 후 후속 딜 모니터링."
+      },
+      "original_context": {
+        "issue": "삼성전자 110조원($73B) 반도체 투자 발표(2026.03.19). 역대 최대 단일 기업 연간 투자. 후공정·AI 인프라 관련 M&A 추가 가능성.",
+        "resolve_condition": "삼성전자 M&A 발표 OR 인수 대상 거론 보도 3건+"
+      },
+      "check_template": {
+        "questions": [
+          "삼성전자가 반도체 관련 M&A를 발표했는가?",
+          "삼성전자의 인수 대상으로 거론되는 기업이 있는가?",
+          "$73B 투자의 구체적 배분(후공정/HBM/파운드리)이 공개되었는가?"
+        ],
+        "data_sources": [
+          "narrative: DART 삼성전자 공시",
+          "narrative: 웹서치 삼성전자 인수합병 반도체",
+          "narrative: Bloomberg Samsung semiconductor M&A"
+        ]
+      },
+      "status": "active",
+      "close_condition": "M&A 발표 OR 2026 Q2까지 딜 없음 확인",
+      "completed_checks": [],
+      "tags": [
+        "M&A",
+        "반도체",
+        "삼성전자",
+        "deal_watch",
+        "MT-1"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-SC-001",
+      "created": "2026-03-30",
+      "source_report": "sector-chain SC-20260330-001 (AI 전력 인프라)",
+      "source_uq": "다음 병목 포지션 1",
+      "subject": "POSCO GOES(전기강판) — 변압기 병목의 상위 원인",
+      "type": "data_check",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-14",
+          "2026-05-12",
+          "2026-06-09"
+        ],
+        "next_check": "2026-04-14",
+        "rationale": "1Q26 실적 발표(4/14 전후) → GOES ASP·물량 확인. 이후 분기별."
+      },
+      "original_context": {
+        "issue": "변압기 부족의 상위 원인 = GOES 전기강판 부족. 전 세계 한·일·미 3국만 생산. POSCO 광양 라인 리뱀프 → 프리미엄 GOES 30% 증산 중. 시장은 POSCO를 '철강사'로만 평가, GOES 수혜 미반영.",
+        "resolve_condition": "GOES ASP 하락 전환 OR 변압기 리드타임 100주 이하 복귀 → 병목 완화 신호"
+      },
+      "check_template": {
+        "questions": [
+          "POSCO 1Q26 실적에서 GOES 부문 ASP·물량이 확인되는가?",
+          "광양 증설 라인 가동률은 몇 %인가?",
+          "변압기 리드타임이 단축되고 있는가? (병목 완화 선행 신호)"
+        ],
+        "data_sources": [
+          "narrative: DART POSCO홀딩스 실적 공시",
+          "price: 005490",
+          "narrative: 웹서치 POSCO GOES electrical steel"
+        ]
+      },
+      "status": "active",
+      "close_condition": "GOES ASP 2분기 연속 하락 → 병목 완화 확인 → 포지션 재검토",
+      "completed_checks": [],
+      "tags": [
+        "sector-chain",
+        "AI전력",
+        "변압기",
+        "GOES",
+        "POSCO",
+        "숨은티어2",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-SC-002",
+      "created": "2026-03-30",
+      "source_report": "sector-chain SC-20260330-001 (AI 전력 인프라)",
+      "source_uq": "다음 병목 포지션 2",
+      "subject": "일진전기 — 데이터센터 배전 변압기 증설 효과 추적",
+      "type": "data_check",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-14",
+          "2026-05-12",
+          "2026-06-09"
+        ],
+        "next_check": "2026-04-14",
+        "rationale": "1Q26 실적(4/14 전후) → 제2공장 증설 효과 반영 확인."
+      },
+      "original_context": {
+        "issue": "일진전기 = HD현대일렉의 숨은 보완재. 초고압(HD) vs 배전용(일진). DC 1곳당 배전 변압기 수십~수백 대. 2026 CAPA 3,000억→4,330억 증설. OPM +86.2% YoY. 시장은 'HD의 작은 버전'으로 50% 할인 중.",
+        "resolve_condition": "제2공장 가동률 80%+ 확인 OR 데이터센터 수주 비중 하락 시 논리 약화"
+      },
+      "check_template": {
+        "questions": [
+          "1Q26 매출에서 제2공장 증설 효과가 반영되었는가?",
+          "데이터센터 직접 납품 수주가 추가되었는가?",
+          "영업이익률이 전분기 대비 유지/확대되는가?"
+        ],
+        "data_sources": [
+          "narrative: DART 일진전기 실적 공시",
+          "price: 103590",
+          "narrative: 웹서치 일진전기 데이터센터 수주"
+        ]
+      },
+      "status": "active",
+      "close_condition": "데이터센터 수주 비중 20%+ 확인 → 논리 확정 OR 하락 시 재검토",
+      "completed_checks": [],
+      "tags": [
+        "sector-chain",
+        "AI전력",
+        "변압기",
+        "일진전기",
+        "숨은티어2",
+        "MT-01"
+      ],
+      "kc_added_20260330": "GE Prolec 통합 완료(2027+) 시 일진전기 GE 고객 이탈 여부 모니터링"
+    },
+    {
+      "id": "W-2026-03-30-SC-006",
+      "created": "2026-03-30",
+      "source_report": "sector-chain SC-20260330-001 × ma-scanner SCAN-2026-03-30-001 교차 분석",
+      "source_uq": "M&A 교차 패턴3 — GE 변압기 수직통합",
+      "subject": "GE Vernova Prolec 통합 → K-변압기사 고객 이탈 리스크 추적",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-30",
+          "2026-09-29",
+          "2026-12-29",
+          "2027-03-30"
+        ],
+        "next_check": "2026-06-30",
+        "rationale": "Prolec 통합 2026 중반 완료 예정. 분기별 추적. 실질 영향은 2027년+."
+      },
+      "original_context": {
+        "issue": "GE Vernova가 Prolec GE 잔여 50% 지분을 $5.275B에 완전 인수(2026.02). 북미 변압기 7개 공장 확보. '터빈+변압기 번들' 수직통합 전략. 현재는 변압기 수요 폭증으로 모든 업체 수혜이나, GE 자체 변압기 양산 본격화 시 독립 변압기사(HD현대일렉·효성·일진전기)의 GE 계열 고객 일부 이탈 가능.",
+        "resolve_condition": "GE Prolec 북미 공장 가동률 80%+ 도달 OR GE 고객사가 K-변압기 발주 감소 보도"
+      },
+      "check_template": {
+        "questions": [
+          "GE Vernova Prolec 통합 진행 상황은? 북미 공장 가동률은?",
+          "GE가 자사 가스터빈 고객에게 Prolec 변압기를 번들 공급하기 시작했는가?",
+          "HD현대일렉·효성·일진전기의 북미 수주에서 GE 계열 고객 비중 변화가 있는가?",
+          "Hitachi Energy 미국 $1B 투자 공장 건설 진행 상황은?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 GE Vernova Prolec integration transformer production",
+          "narrative: 웹서치 Hitachi Energy US factory construction",
+          "narrative: DART HD현대일렉트릭 수주 공시 — 북미 비중",
+          "narrative: 웹서치 HD Hyundai Electric US order backlog"
+        ]
+      },
+      "status": "active",
+      "close_condition": "GE Prolec 가동률 80%+ AND K-변압기 북미 수주 YoY -10% → 이탈 시작 확인 OR 2027년 말까지 변화 없음 → 리스크 해소",
+      "completed_checks": [],
+      "tags": [
+        "sector-chain",
+        "AI전력",
+        "변압기",
+        "GE-Vernova",
+        "Prolec",
+        "수직통합",
+        "M&A교차",
+        "KC",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-SC-003",
+      "created": "2026-03-30",
+      "source_report": "sector-chain SC-20260330-001 (AI 전력 인프라)",
+      "source_uq": "다음 병목 포지션 3",
+      "subject": "서진시스템 — 800V DC 부스바 + 데이터센터 랙 매출 비중 추적",
+      "type": "data_check",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-21",
+          "2026-05-19",
+          "2026-06-16"
+        ],
+        "next_check": "2026-04-21",
+        "rationale": "1Q26 실적(4월 말) → DC 랙·부스바 매출 비중 확인."
+      },
+      "original_context": {
+        "issue": "AI DC가 AC→800V DC 전환 중. DC 전환 핵심 = 부스바 + DC 배전. 서진시스템: ESS 2조 계약 + DC 랙 양산 + SOFC 연료전지. 시총 3,000억대. 시장은 'ESS 회사'로만 인식. 부스바/DC 맥락 리포트 없음.",
+        "resolve_condition": "데이터센터 랙·부스바 매출 비중 10%+ → 논리 확정 OR ESS 편중 유지 시 워치 지속"
+      },
+      "check_template": {
+        "questions": [
+          "1Q26 매출에서 데이터센터 랙·부스바 비중은 몇 %인가?",
+          "미국 800V DC 아키텍처 채택 관련 뉴스가 있는가?",
+          "최대주주 지분 추가 매입이 지속되는가? (내부자 확신 지표)"
+        ],
+        "data_sources": [
+          "narrative: DART 서진시스템 실적 공시",
+          "price: 178320",
+          "narrative: 웹서치 서진시스템 데이터센터 부스바"
+        ]
+      },
+      "status": "active",
+      "close_condition": "DC 매출 비중 10%+ → 본격 추적 전환 OR 2분기 연속 ESS 편중 → 워치 유지",
+      "completed_checks": [],
+      "tags": [
+        "sector-chain",
+        "AI전력",
+        "부스바",
+        "DC배전",
+        "서진시스템",
+        "숨은티어2",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-SC-004",
+      "created": "2026-03-30",
+      "source_report": "sector-chain SC-20260330-001 (AI 전력 인프라)",
+      "source_uq": "다음 병목 포지션 4",
+      "subject": "두산에너빌리티 — 가스터빈 추가 수주 + SMR 진행 양다리 추적",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-28",
+          "2026-05-26",
+          "2026-06-23"
+        ],
+        "next_check": "2026-04-28",
+        "rationale": "1Q26 실적(4월 말) → 가스터빈 수주 + NuScale 진행 확인."
+      },
+      "original_context": {
+        "issue": "가스터빈 유일한 여유 CAPA(1년 납기, GE 2028 매진). 빅테크 19기 수주. SMR 핵심 부품 공급자(두산→NuScale). GE Vernova 시총 $230B vs 두산 ~13조원 = 상대 저평가. '한국판 GE Vernova' 프레이밍 소수.",
+        "resolve_condition": "빅테크 추가 수주 발표 → 가스터빈 모멘텀 확인 OR 6개월 미발생 → 약화"
+      },
+      "check_template": {
+        "questions": [
+          "1Q26에 가스터빈 추가 수주가 발표되었는가?",
+          "NuScale SMR 1호기 진행 상황은?",
+          "GE Vernova 대비 밸류에이션 격차가 축소되고 있는가?"
+        ],
+        "data_sources": [
+          "narrative: DART 두산에너빌리티 수주 공시",
+          "narrative: 웹서치 두산에너빌리티 가스터빈 수주",
+          "narrative: 웹서치 NuScale SMR progress 2026"
+        ]
+      },
+      "status": "active",
+      "close_condition": "추가 수주 3건+ → 모멘텀 확정 OR SMR 지연 2년+ → 미래 스토리 약화",
+      "completed_checks": [],
+      "tags": [
+        "sector-chain",
+        "AI전력",
+        "가스터빈",
+        "SMR",
+        "두산에너빌리티",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-30-SC-005",
+      "created": "2026-03-30",
+      "source_report": "sector-chain SC-20260330-001 (AI 전력 인프라)",
+      "source_uq": "다음 병목 포지션 5",
+      "subject": "액침냉각 유체 대체재 — 3M Novec 단종 후 공급 병목 추적",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-05-12",
+          "2026-06-09",
+          "2026-07-07"
+        ],
+        "next_check": "2026-05-12",
+        "rationale": "장기 워치. 월 1회. 대체재 양산 보도 시 직접 투자 기회."
+      },
+      "original_context": {
+        "issue": "3M Novec(불소계 냉각 유체) 2025 생산 중단. 액침냉각 시장 $6B→$38B(CAGR 28.7%). GPU 열밀도 10kW+ → 공냉 한계 → 액침 필수. 그러나 냉각 유체 대체재 부족. Shell·Calumet 대안이나 제한적. 한국 상장사 직접 생산 없음.",
+        "resolve_condition": "냉각 유체 대체재 양산 성공 보도 OR 관련 기업 IPO → 투자 기회 열림"
+      },
+      "check_template": {
+        "questions": [
+          "3M Novec 대체 냉각 유체의 양산 성공 보도가 있는가?",
+          "GRC·Submer·LiquidStack 등 냉각 스타트업 IPO 계획이 있는가?",
+          "한국 기업 중 냉각 유체 또는 액침냉각 시스템 진출 기업이 있는가?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 immersion cooling fluid alternative 3M Novec 2026",
+          "narrative: 웹서치 liquid immersion cooling IPO startup",
+          "narrative: 웹서치 데이터센터 액침냉각 한국 기업"
+        ]
+      },
+      "status": "active",
+      "close_condition": "대체재 양산 + 투자 가능 종목 출현 → 본격 분석 전환 OR 2026년 내 미출현 → 장기 워치 유지",
+      "completed_checks": [],
+      "tags": [
+        "sector-chain",
+        "AI전력",
+        "냉각",
+        "액침냉각",
+        "냉각유체",
+        "워치",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-RM-031",
+      "created": "2026-03-31",
+      "source_report": "rm 2026-03-31 + SA-20260331-001",
+      "source_uq": "UQ-031",
+      "subject": "헬륨 비축 4월 초 이후 실제 바닥나는가? (반도체 생산 지연)",
+      "type": "data_check",
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-04-07"
+        ],
+        "next_check": "2026-04-07",
+        "rationale": "TrendForce: 4월 초 헬륨 제약 즉시. 7일 후 확인."
+      },
+      "original_context": {
+        "issue": "QatarEnergy FM → 글로벌 헬륨 30% 차단. 한국 65% 의존. 삼성·SK하이닉스 버퍼 수주분.",
+        "resolve_condition": "반도체 팹 감산 공시 OR 헬륨 대체 수입 확보 보도"
+      },
+      "check_template": {
+        "questions": [
+          "삼성전자·SK하이닉스가 헬륨 부족으로 생산 조정을 공시했는가?",
+          "미국산 헬륨 긴급 수입 보도가 있는가?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 Korea helium semiconductor production delay",
+          "narrative: DART 삼성전자 SK하이닉스 공시"
+        ]
+      },
+      "status": "active",
+      "close_condition": "감산 공시 OR 대체 확보 확인",
+      "completed_checks": [],
+      "tags": [
+        "rm",
+        "헬륨",
+        "반도체",
+        "QatarFM",
+        "TC-003"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-RM-032",
+      "created": "2026-03-31",
+      "source_report": "rm 2026-03-31 + SA-20260331-001",
+      "source_uq": "UQ-032",
+      "subject": "나프타 수출 제한이 국내 공급 안정시키는가? (석화 가동률 회복)",
+      "type": "data_check",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-14"
+        ],
+        "next_check": "2026-04-14",
+        "rationale": "정부 수출 제한 발표 후 2주. 가동률 변화 확인."
+      },
+      "original_context": {
+        "issue": "나프타 $1,100+. LG화학 54%, 롯데 70% 가동률. 정부 수출 제한 발표.",
+        "resolve_condition": "석화 가동률 70%→80% 회복 OR 추가 감산 보도"
+      },
+      "check_template": {
+        "questions": [
+          "석화 가동률이 회복되었는가?",
+          "나프타 수출 제한 효과가 나타나는가?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 롯데케미칼 LG화학 가동률 나프타",
+          "narrative: DART 석화 공시"
+        ]
+      },
+      "status": "active",
+      "close_condition": "가동률 80%+ 회복 OR 추가 감산 확인",
+      "completed_checks": [],
+      "tags": [
+        "rm",
+        "나프타",
+        "석화",
+        "가동중단",
+        "TC-003"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-RM-033",
+      "created": "2026-03-31",
+      "source_report": "rm 2026-03-31 + SA-20260331-001",
+      "source_uq": "UQ-033",
+      "subject": "봉투·비닐 가격 실제 20~40% 인상 확정되는가?",
+      "type": "data_check",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-21"
+        ],
+        "next_check": "2026-04-21",
+        "rationale": "전문가 전망 20~40%. 3주 후 실제 인상 여부 확인."
+      },
+      "original_context": {
+        "issue": "PE 부족 → 종량제봉투 사재기 → 생활밀착 인플레. 전문가 20~40% 인상 전망.",
+        "resolve_condition": "봉투 가격 인상 확정 공시 OR 정부 가격 동결 발표"
+      },
+      "check_template": {
+        "questions": [
+          "종량제봉투 가격 인상이 확정되었는가?",
+          "인상폭은?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 종량제봉투 가격 인상 확정"
+        ]
+      },
+      "status": "active",
+      "close_condition": "인상 확정 OR 안정화 확인",
+      "completed_checks": [],
+      "tags": [
+        "rm",
+        "봉투",
+        "PE",
+        "생활물가",
+        "TC-003"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-RM-034",
+      "created": "2026-03-31",
+      "source_report": "rm 2026-03-31 + SA-20260331-001",
+      "source_uq": "UQ-034",
+      "subject": "한은 4/24 금통위에서 나프타/인플레 언급하는가?",
+      "type": "policy_watch",
+      "schedule": {
+        "mode": "deadline",
+        "check_dates": [
+          "2026-04-24"
+        ],
+        "next_check": "2026-04-24",
+        "rationale": "정책 반응 시작점. 나프타·유가 인플레를 공식 인정하는가."
+      },
+      "original_context": {
+        "issue": "유가 $108 + 나프타 $1,100 + 봉투 대란. 한은 아직 침묵. 정책 반응 미감지.",
+        "resolve_condition": "금통위 의사록에서 나프타/에너지/공급충격 언급 여부"
+      },
+      "check_template": {
+        "questions": [
+          "한은이 나프타/에너지 공급충격을 공식 언급했는가?",
+          "금리 경로 변경 시사가 있는가?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 한은 금통위 2026년 4월",
+          "narrative: 한국은행 의사록"
+        ]
+      },
+      "status": "active",
+      "close_condition": "금통위 의사록 확인",
+      "completed_checks": [],
+      "tags": [
+        "rm",
+        "한은",
+        "금통위",
+        "인플레",
+        "정책",
+        "TC-019"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-DA-001",
+      "created": "2026-03-31",
+      "source_report": "DA-20260331-001 (TurboQuant 제번스역설)",
+      "source_uq": "TurboQuant 후속 추적",
+      "subject": "TurboQuant 후속 — DDR5 가격 추이 + 메모리 수요 실제 영향",
+      "type": "data_check",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-14",
+          "2026-05-12",
+          "2026-06-09"
+        ],
+        "next_check": "2026-04-14",
+        "rationale": "1Q26 실적 시즌(4/14~)에서 HBM 수주·DDR5 수요 실제 확인. 이후 월 1회."
+      },
+      "original_context": {
+        "issue": "Google TurboQuant(3/24 발표). 추론 KV캐시 6배 압축. SK하이닉스 -6%, 삼성 -5%. Deep Approach 분석: 제번스 역설 — 효율화는 역사적으로 수요를 줄이지 않고 늘렸다. 주가 -6%는 3개월 4배 폭등 후 차익실현 구실. 진짜 리스크는 TurboQuant 아니라 헬륨 임계(W-RM-031).",
+        "resolve_condition": "1Q26 실적에서 HBM 수주 전년 대비 +50%+ 확인 = '슈퍼사이클 건재' → TurboQuant 우려 완전 해소. 또는 수주 둔화 확인 시 thesis 재검토."
+      },
+      "check_template": {
+        "questions": [
+          "DDR5 가격이 TurboQuant 발표 전 수준으로 회복했는가?",
+          "SK하이닉스·삼성·마이크론 1Q26 실적에서 HBM 수주가 전년 대비 +50%+ 유지되는가?",
+          "TurboQuant가 실제 배포(deployment) 시작했는가? 배포 시 메모리 수요 변화 보도는?",
+          "빅테크(Google·Meta·MS) AI 모델 크기가 TurboQuant 이후 확대되었는가? (제번스 검증)"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 DDR5 price trend April 2026",
+          "narrative: 웹서치 SK hynix Samsung HBM order Q1 2026 earnings",
+          "narrative: 웹서치 TurboQuant deployment production",
+          "price: 000660"
+        ]
+      },
+      "status": "active",
+      "close_condition": "HBM 수주 +50%+ 확인(thesis 유지) OR 수주 둔화 확인(thesis 재검토) OR TurboQuant 배포 후 메모리 수요 실제 감소 확인(thesis 폐기)",
+      "completed_checks": [],
+      "tags": [
+        "TurboQuant",
+        "제번스역설",
+        "메모리",
+        "HBM",
+        "DDR5",
+        "SK하이닉스",
+        "삼성전자",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-DA-002",
+      "created": "2026-03-31",
+      "source_report": "DA-20260331-002 (의료AI 단일보험자)",
+      "source_uq": "의료AI 수가 정식 등재 추적",
+      "subject": "의료AI 건강보험 정식 등재 + 수가 현실화 여부",
+      "type": "policy_watch",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-30",
+          "2026-09-29",
+          "2026-12-29"
+        ],
+        "next_check": "2026-06-30",
+        "rationale": "정부 '2026 정식 등재' 약속. 분기별 진행 확인."
+      },
+      "original_context": {
+        "issue": "한국 의료AI 3대 장벽의 뿌리 = 단일 보험자 시스템. 정부가 2026년 정식 등재를 약속했으나 10년째 '곧 풀린다'→안 풀림 반복. 수가가 현실화(기존 3배+)되지 않으면 등재해도 사업 불가.",
+        "resolve_condition": "정식 등재 공시 + 수가 현실화(기존 3배+) 동시 충족 = thesis 확인. 하나만 되면 의미 없음."
+      },
+      "check_template": {
+        "questions": [
+          "의료AI 건강보험 정식 등재가 공시되었는가?",
+          "등재 수가가 기존 임시 등재 대비 몇 배인가? (3배+ = 현실화)",
+          "뷰노·루닛 등 의료AI 기업의 국내 매출이 변화했는가?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 의료AI 건강보험 정식 등재 수가 2026",
+          "narrative: DART 뷰노 루닛 실적 공시"
+        ]
+      },
+      "status": "active",
+      "close_condition": "정식 등재 + 수가 3배+ 동시 확인 OR 2026년 내 미등재 확인",
+      "completed_checks": [],
+      "tags": [
+        "DA",
+        "의료AI",
+        "건강보험",
+        "수가",
+        "단일보험자",
+        "정책"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-DA-003",
+      "created": "2026-03-31",
+      "source_report": "DA-20260331-003 (노란봉투법 보호역설)",
+      "source_uq": "근로자추정제 5월 입법 + 노란봉투법 후속",
+      "subject": "근로자추정제 5월 입법 형태 + 노란봉투법 하청 축소 추적",
+      "type": "policy_watch",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-21",
+          "2026-05-19",
+          "2026-06-16"
+        ],
+        "next_check": "2026-04-21",
+        "rationale": "5월 입법 추진. 4월 말 입법안 형태 확인. 노란봉투법 시행 1개월 후 하청 축소 데이터."
+      },
+      "original_context": {
+        "issue": "노란봉투법 3/10 시행 → 첫날 407건 교섭. 5월 근로자추정제 입법 추진 → 200만 라이더 인건비 +30~50%. 핵심 역설: '보호가 보호 대상을 없앤다.' 법은 왔는데 절차(시행령)가 2027/3.",
+        "resolve_condition": "근로자추정제 입법 형태 확인(일괄 vs 산업별 유연) + 원청 하청 계약 해지 건수 데이터"
+      },
+      "check_template": {
+        "questions": [
+          "근로자추정제 입법안이 발의되었는가? 형태는? (일괄/산업별 유연/지연)",
+          "노란봉투법 시행 후 원청의 하청 계약 해지 건수가 보도되었는가?",
+          "플랫폼 기업(배민·쿠팡)의 라이더 정책 변화가 있는가? (요금 인상/인원 축소)"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 근로자추정제 입법 발의 2026년 5월",
+          "narrative: 웹서치 노란봉투법 하청 계약 해지 원청",
+          "narrative: 웹서치 배달의민족 쿠팡이츠 라이더 정책 변화"
+        ]
+      },
+      "status": "active",
+      "close_condition": "근로자추정제 입법 완료(형태 확정) + 노란봉투법 1분기 영향 데이터 확보",
+      "completed_checks": [],
+      "tags": [
+        "DA",
+        "노란봉투법",
+        "근로자추정제",
+        "플랫폼",
+        "라이더",
+        "정책",
+        "자동화수혜"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-DA-004",
+      "created": "2026-03-31",
+      "source_report": "DA-20260331-006 (로봇핸드 피지컬AI)",
+      "subject": "Tesla Optimus 공장 투입 성과 공개",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-30",
+          "2026-09-29",
+          "2026-12-29"
+        ],
+        "next_check": "2026-06-30",
+        "rationale": "2026 양산 선언. 분기별 성과 확인."
+      },
+      "original_context": {
+        "issue": "Tesla Optimus V3 22DoF 손. 2026 양산 목표. 공장 내부 투입 시작 선언. 성과 데이터 미공개.",
+        "resolve_condition": "공장 투입 성과 데이터 공개 OR 양산 일정 변경 발표"
+      },
+      "check_template": {
+        "questions": [
+          "Tesla Optimus 공장 내부 투입 성과가 공개되었는가?",
+          "양산 일정에 변경이 있는가?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 Tesla Optimus factory deployment results 2026"
+        ]
+      },
+      "status": "active",
+      "close_condition": "성과 공개(양산 확정) OR 양산 지연 공식 발표",
+      "completed_checks": [],
+      "tags": [
+        "DA",
+        "피지컬AI",
+        "로봇핸드",
+        "Tesla",
+        "Optimus",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-DA-005",
+      "created": "2026-03-31",
+      "source_report": "DA-20260331-006 (로봇핸드 피지컬AI)",
+      "subject": "Figure BMW 공장 상업적 성과",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-09-29",
+          "2027-03-30",
+          "2027-06-30"
+        ],
+        "next_check": "2026-09-29",
+        "rationale": "BMW 실전 배치 중. 분기별 성과 확인. 2027 상반기가 핵심."
+      },
+      "original_context": {
+        "issue": "Figure 03 48DoF+. BMW 공장 실전 투입. 기업가치 $40억. 제조업 자동화 첫 상업적 성공 여부가 핵심.",
+        "resolve_condition": "BMW 공장 성과 보도(생산성·비용 효과) OR Figure 추가 고객 확보 발표"
+      },
+      "check_template": {
+        "questions": [
+          "Figure의 BMW 공장 성과가 보도되었는가?",
+          "Figure가 BMW 외 추가 고객을 확보했는가?"
+        ],
+        "data_sources": [
+          "narrative: 웹서치 Figure AI BMW factory results commercial"
+        ]
+      },
+      "status": "active",
+      "close_condition": "상업적 성과 확인(시장 형성) OR 실전 투입 실패·철수 보도",
+      "completed_checks": [],
+      "tags": [
+        "DA",
+        "피지컬AI",
+        "로봇핸드",
+        "Figure",
+        "BMW",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-DA-006",
+      "created": "2026-03-31",
+      "source_report": "DA-20260331-006 (로봇핸드 피지컬AI)",
+      "subject": "에스피지 감속기 흑자 전환 + 글로벌 공급망 편입",
+      "type": "data_check",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-05-12",
+          "2026-08-11",
+          "2026-11-09"
+        ],
+        "next_check": "2026-05-12",
+        "rationale": "1Q26 실적(5월 전후). 흑자 전환 확인. 이후 분기별."
+      },
+      "original_context": {
+        "issue": "에스피지: 유일 국산 3종 감속기. 2026 매출 300억 예상. 첫 흑자 전환 가시권. 탈중국 기조로 미국 시장 기회. 그러나 Tesla·Figure 공급사 목록 편입 미확인.",
+        "resolve_condition": "1Q26 흑자 확인 + 글로벌 로봇기업 공급 계약 공시"
+      },
+      "check_template": {
+        "questions": [
+          "에스피지 1Q26 실적에서 감속기 부문 흑자 전환이 확인되는가?",
+          "글로벌 로봇기업(Tesla·Figure 등) 공급 계약 보도가 있는가?"
+        ],
+        "data_sources": [
+          "narrative: DART 에스피지 실적 공시",
+          "price: 281940",
+          "narrative: 웹서치 에스피지 로봇 감속기 수주"
+        ]
+      },
+      "status": "active",
+      "close_condition": "흑자 확인 + 글로벌 공급 계약 OR 2분기 연속 적자 지속",
+      "completed_checks": [],
+      "tags": [
+        "DA",
+        "피지컬AI",
+        "로봇핸드",
+        "감속기",
+        "에스피지",
+        "숨은티어2",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-DA-007",
+      "created": "2026-03-31",
+      "source_report": "DA-20260331-006 + 매경 A14면 기사 분석",
+      "subject": "레인보우로보틱스 2026 휴머노이드 출시 + 삼성 핸드랩 성과",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-06-30",
+          "2026-09-29",
+          "2026-12-29"
+        ],
+        "next_check": "2026-06-30",
+        "rationale": "오준호 단장 '2026 출시 가능' 긍정 발언. 세종 신공장 3월 가동. 분기별 확인."
+      },
+      "original_context": {
+        "issue": "삼성전자가 레인보우로보틱스를 계열사화(35%). '핸드랩' 신설. 세종 신공장 2026.3 가동. 2026 휴머노이드 출시 '그렇다'. 시총 13조. CAGR 120%+. 삼성 자체 공장 투입 시 한국 로봇핸드 부품의 확정 수요 발생.",
+        "resolve_condition": "휴머노이드 출시 공식 발표 OR 출시 지연 발표. 핸드랩 성과(로봇핸드 시제품) 공개."
+      },
+      "check_template": {
+        "questions": [
+          "레인보우로보틱스 휴머노이드 출시가 공식 발표되었는가?",
+          "삼성 핸드랩의 덱스터러스 핸드 성과가 공개되었는가?",
+          "삼성전자 공장(반도체·가전)에 로봇 투입 계획이 발표되었는가?"
+        ],
+        "data_sources": [
+          "narrative: DART 레인보우로보틱스 공시",
+          "price: 277810",
+          "narrative: 웹서치 레인보우로보틱스 휴머노이드 출시 삼성 핸드랩"
+        ]
+      },
+      "status": "active",
+      "close_condition": "휴머노이드 출시 확인 OR 2026년 내 미출시 확인",
+      "completed_checks": [],
+      "tags": [
+        "DA",
+        "피지컬AI",
+        "로봇핸드",
+        "레인보우로보틱스",
+        "삼성",
+        "핸드랩",
+        "MT-01"
+      ]
+    },
+    {
+      "id": "W-2026-03-31-CT-001",
+      "created": "2026-03-31",
+      "source_report": "CT-20260331-001-stagflation (Crowd Temperature)",
+      "source_tc": "TC-007",
+      "subject": "BEI 2.50% 돌파 여부 — 채권시장 스태그플레이션 동의 신호",
+      "type": "threshold_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-07",
+          "2026-04-14",
+          "2026-04-21"
+        ],
+        "next_check": "2026-04-07",
+        "rationale": "BEI 일일 변동 추적. 주간 체크로 충분. FOMC 5/7 전까지."
+      },
+      "original_context": {
+        "issue": "군중은 1970s 스태그플레이션을 말하지만 10Y BEI 2.31%는 극단 인플레 미반영. 채권시장(스마트머니)이 군중과 괴리.",
+        "resolve_condition": "BEI 2.50% x 3d 돌파 = 채권 동의 시작 (서사→실체 전환) OR BEI 2.20% 이하 복귀 = 인플레 공포 해소",
+        "gap": "GAP-3: 군중 서사 vs 채권시장. 현재 채권이 파월 편."
+      },
+      "check_template": {
+        "questions": [
+          "BEI가 2.50%를 향해 가고 있는가?",
+          "군중 서사와 채권시장의 괴리가 좁혀지고 있는가?"
+        ],
+        "data_sources": [
+          "FRED T10YIE",
+          "Yahoo ^TNX"
+        ],
+        "thresholds": {
+          "watch": 2.4,
+          "alert": 2.5,
+          "hard": 2.6
+        }
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-03-31-CT-002",
+      "created": "2026-03-31",
+      "source_report": "CT-20260331-001-stagflation (Crowd Temperature)",
+      "source_tc": "TC-007",
+      "subject": "GLD 반등 시점 — 유동성 위기 해소 vs 인플레 재프라이싱",
+      "type": "threshold_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-07",
+          "2026-04-14"
+        ],
+        "next_check": "2026-04-07",
+        "rationale": "GLD 3월 -15% 투매. 반등 시점이 유동성 위기 해소 신호."
+      },
+      "original_context": {
+        "issue": "군중은 스태그플레이션을 말하면서 금을 -15% 매도. 말≠돈 간극. 실체는 유동성 경색/디레버리징.",
+        "resolve_condition": "GLD $440 회복 (3d) = 유동성 위기 해소, 진짜 인플레 프라이싱 시작 OR GLD $380 이하 = 유동성 위기 심화",
+        "gap": "GAP-1: 군중 말 vs 군중 돈. 2020.03 코로나 초기 패턴과 유사."
+      },
+      "check_template": {
+        "questions": [
+          "GLD가 반등하고 있는가?",
+          "반등이 달러 약세 때문인가, 인플레 재프라이싱 때문인가?"
+        ],
+        "data_sources": [
+          "Yahoo GLD",
+          "Yahoo DXY"
+        ],
+        "thresholds": {
+          "watch": 430,
+          "alert": 440,
+          "hard": 380
+        }
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-03-31-CT-003",
+      "created": "2026-03-31",
+      "source_report": "CT-20260331-002-iran-war-nature (Crowd Temperature)",
+      "source_tc": "TC-003",
+      "subject": "방산주 vs 에너지주 괴리 — 전쟁의 진짜 성격 판정",
+      "type": "divergence_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-07",
+          "2026-04-14"
+        ],
+        "next_check": "2026-04-07",
+        "rationale": "LMT -10.5% vs XLE +37%. 전쟁 중 방산 하락 = 안보 프레임 거부. 주간 체크."
+      },
+      "original_context": {
+        "issue": "전쟁 중에 방산(LMT)이 -10.5% 하락하고 에너지(XLE)가 +37% 상승. 시장은 이 전쟁을 군사가 아닌 에너지 이벤트로 프라이싱.",
+        "resolve_condition": "LMT $650 회복 = 장기전 리프라이싱 (안보 복귀) OR LMT $550 이하 = 에너지 이벤트 확정",
+        "gap": "GAP-1: 방산 하락 = 안보 프레임 거부의 가장 순수한 가격 증거"
+      },
+      "check_template": {
+        "questions": [
+          "LMT가 반등하고 있는가?",
+          "방산 vs 에너지 괴리가 좁혀지는가 벌어지는가?"
+        ],
+        "data_sources": [
+          "Yahoo LMT",
+          "Yahoo XLE"
+        ],
+        "thresholds": {
+          "watch_up": 650,
+          "watch_down": 550
+        }
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-03-31-CT-004",
+      "created": "2026-03-31",
+      "source_report": "CT-20260331-002-iran-war-nature (Crowd Temperature)",
+      "source_tc": "TC-003",
+      "subject": "Polymarket 이란 내부자 거래 패턴 반복 여부",
+      "type": "anomaly_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-04-14",
+          "2026-04-28"
+        ],
+        "next_check": "2026-04-14",
+        "rationale": "$580M(16분 전 이동) + Magamyman $553K. 이상 거래 패턴 반복 감시."
+      },
+      "original_context": {
+        "issue": "Axios: 유가 선물 $580M이 공습 중단 발표 16분 전 이동. NPR: Magamyman이 하메네이 사망에 $553K 수익. Frame E(시장 조작)의 관측 가능한 데이터.",
+        "resolve_condition": "SEC/CFTC 조사 착수 = Frame E 공식화 OR 3번째 이상 거래 패턴 = 구조적 반복 확인 OR 6주간 추가 패턴 없음 = 해소",
+        "gap": "GAP-3: 내부자 거래 = Frame E 데이터화. 음모론에서 미검증 시그널로 격상."
+      },
+      "check_template": {
+        "questions": [
+          "새로운 이상 거래 패턴이 발견되었는가?",
+          "SEC/CFTC 조사가 시작되었는가?"
+        ],
+        "data_sources": [
+          "WebSearch Axios/NPR",
+          "WebSearch SEC CFTC Iran insider trading"
+        ],
+        "thresholds": {}
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-04-01-SC-001",
+      "created": "2026-04-01",
+      "source_report": "SC-20260401-001-robotics (Sector Chain)",
+      "source_tc": "TC-020",
+      "subject": "하모닉드라이브 이익률 회복 — 감속기 해자 복원 vs 확정 붕괴",
+      "type": "threshold_tracking",
+      "schedule": {
+        "mode": "event_driven",
+        "check_dates": [
+          "2026-05-15"
+        ],
+        "next_check": "2026-05-15",
+        "rationale": "FY2026(2026/3) 실적 발표 시점. OPM 0.01%에서 복귀 여부가 핵심."
+      },
+      "original_context": {
+        "issue": "하모닉드라이브 OPM FY2023 14.3%→FY2025 0.01%. 중국 추격+FY2024 감손 28.2B JPY. 병목이지만 해자가 아닌 전형적 사례(SF-07).",
+        "resolve_condition": "OPM 5%+ = 해자 복원 가능성 / OPM 0% 지속 = 확정 붕괴 / OPM 10%+ = purple 복원 검토"
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-04-01-SC-002",
+      "created": "2026-04-01",
+      "source_report": "SC-20260401-001-robotics (Sector Chain)",
+      "source_tc": "TC-020",
+      "subject": "NVIDIA 로보틱스 매출 분리 공시 — Isaac 플랫폼 해자 시장 인식 전환점",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "event_driven",
+        "check_dates": [
+          "2026-05-30",
+          "2026-08-30"
+        ],
+        "next_check": "2026-05-30",
+        "rationale": "분기 실적 또는 GTC에서 로보틱스 매출 별도 세그먼트 표시 시 = 시장 인식 전환."
+      },
+      "original_context": {
+        "issue": "NVIDIA Isaac이 로보틱스의 안드로이드화. FANUC/ABB/야스카와/KUKA 통합. 그러나 시장은 AI칩 회사로만 인식. 로보틱스 해자 미프라이싱.",
+        "resolve_condition": "로보틱스 매출 별도 공시 시작 = 시장 인식 전환점 / 1년 내 미공시 = 아직 매출 규모 미달"
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-04-01-SC-003",
+      "created": "2026-04-01",
+      "source_report": "SC-20260401-001-robotics (Sector Chain)",
+      "source_tc": "TC-020",
+      "subject": "Schaeffler 휴머노이드 액추에이터 수주 — 숨은 티어2 실체 확인",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "fixed_interval",
+        "check_dates": [
+          "2026-07-01",
+          "2026-10-01"
+        ],
+        "next_check": "2026-07-01",
+        "rationale": "CES 2026 공개 후 6개월. 실제 계약 발표 여부로 실체 판정."
+      },
+      "original_context": {
+        "issue": "Schaeffler가 CES 2026에서 올인원 휴머노이드 액추에이터 공개. 시장 미반영. 실제 수주가 나와야 숨은 티어2 확정.",
+        "resolve_condition": "수주 계약 발표 = 실체 확인 / 1년 미발생 = KC 발동(실체 없음)"
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-04-01-PIPE-001",
+      "created": "2026-04-01",
+      "source_report": "SA-20260401-001 (Pipeline Phase 3)",
+      "source_tc": "TC-003",
+      "subject": "헬륨 D-Day (4/04) — 팹 가동률 실제 변화 확인",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "daily",
+        "check_dates": [
+          "2026-04-04",
+          "2026-04-05",
+          "2026-04-07"
+        ],
+        "next_check": "2026-04-04",
+        "rationale": "헬륨 재고 소진 예상일. 삼성/SK하이닉스 가동률 변화가 핵심."
+      },
+      "original_context": {
+        "issue": "카타르 헬륨 30% 차단. 아시아 팹 재고 4월 초 소진 전망. 정부 \"6월 충분\" vs 시장 SK -15%. 이 괴리 해소 방향이 결정적.",
+        "resolve_condition": "팹 가동률 공식 감소 보고 = 실제 위기 / 정부 대체 공급 확보 발표 = 완화"
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-04-01-PIPE-002",
+      "created": "2026-04-01",
+      "source_report": "SA-20260401-001 (Pipeline Phase 3)",
+      "source_tc": "TC-003",
+      "subject": "에틸렌 하류 가격 전이 — 포장재·생필품 소비자물가 경로",
+      "type": "threshold_tracking",
+      "schedule": {
+        "mode": "weekly",
+        "check_dates": [
+          "2026-04-07",
+          "2026-04-14"
+        ],
+        "next_check": "2026-04-07",
+        "rationale": "나프타→PE→포장재→식품의약 전이 속도 추적."
+      },
+      "original_context": {
+        "issue": "나프타 ,050(+69%). NCC 가동률 60%. 에틸렌→PE→포장재→소비자물가 전이 경로. 한국 미시적 스태그플레이션 트리거.",
+        "resolve_condition": "PE 가격 +30% 이상 = 하류 전이 확인 / 나프타 00 이하 복귀 = 완화"
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-04-01-PIPE-003",
+      "created": "2026-04-01",
+      "source_report": "SA-20260401-002 (Pipeline Phase 3)",
+      "source_tc": "TC-016",
+      "subject": "HY OAS 350bp 돌파 — 3단계 전이(보험→연금) 방아쇠",
+      "type": "threshold_tracking",
+      "schedule": {
+        "mode": "daily",
+        "check_dates": [
+          "2026-04-02",
+          "2026-04-03",
+          "2026-04-04"
+        ],
+        "next_check": "2026-04-02",
+        "rationale": "346bp에서 350bp까지 4bp. 일일 감시 필요."
+      },
+      "original_context": {
+        "issue": "HY OAS 321→346bp(+25bp 급등). Apollo 45% 게이트. 전이 2단계(사모→BDC) 진행 중. 350bp 돌파 시 3단계(보험→연금) 방아쇠.",
+        "resolve_condition": "HY OAS 350bp x 3d = 3단계 전이 확인 / HY OAS 320bp 복귀 = 완화"
+      },
+      "status": "active"
+    },
+    {
+      "id": "W-2026-04-01-PIPE-004",
+      "created": "2026-04-01",
+      "source_report": "SA-20260401-002 (Pipeline Phase 3)",
+      "source_tc": "TC-016",
+      "subject": "BDC 추가 환매 제한 — 사모신용 전이 확산 확인",
+      "type": "event_tracking",
+      "schedule": {
+        "mode": "weekly",
+        "check_dates": [
+          "2026-04-07",
+          "2026-04-14"
+        ],
+        "next_check": "2026-04-07",
+        "rationale": "Apollo+Ares 이후 3번째 BDC 환매 제한 발생 여부."
+      },
+      "original_context": {
+        "issue": "Blue Owl→Apollo→Ares 순차 전파(2~3주 간격). 3번째 발생 시 구조적 전이 확정.",
+        "resolve_condition": "3사+ 환매 제한 = 구조적 전이 / Q2 환매 정상화 = 고립 이벤트"
+      },
+      "status": "active"
     }
   ],
   "summary": {
-    "total_active": 33,
-    "next_due": "2026-03-29",
+    "total_active": 73,
+    "next_due": "2026-04-07",
     "types": {
-      "event_tracking": 20,
-      "data_check": 9,
-      "threshold_watch": 1,
-      "policy_watch": 3
+      "event_tracking": 42,
+      "data_check": 18,
+      "threshold_watch": 3,
+      "policy_watch": 12
     }
   }
 }

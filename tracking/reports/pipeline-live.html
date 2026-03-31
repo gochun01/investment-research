@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="10">
+<title>Pipeline Live — 2026-03-28</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',sans-serif; background:#0a0a1a; color:#e0e0e0; padding:24px; }
+  h1 { color:#58a6ff; font-size:22px; margin-bottom:4px; }
+  .sub { color:#8b949e; font-size:13px; margin-bottom:20px; }
+  .stats { display:flex; gap:12px; margin:16px 0; flex-wrap:wrap; }
+  .stat { background:#161b22; border:1px solid #21262d; border-radius:8px; padding:12px 18px; text-align:center; min-width:90px; }
+  .stat .num { font-size:22px; font-weight:700; color:#58a6ff; }
+  .stat .label { font-size:10px; color:#8b949e; }
+
+  .phases { display:flex; gap:4px; margin:16px 0; align-items:center; }
+  .phase {
+    padding:8px 14px; border-radius:6px; font-size:11px; font-weight:600;
+    border:1px solid #21262d; background:#161b22; color:#6e7681;
+    position:relative;
+  }
+  .phase.running { background:#0d419d; color:#79c0ff; border-color:#1f6feb; animation:pulse 1.5s infinite; }
+  .phase.completed { background:#1a4731; color:#56d364; border-color:#238636; }
+  .phase.pending { opacity:0.5; }
+  .phase-arrow { color:#484f58; font-size:16px; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+
+  .agents { margin:16px 0; }
+  .agent-row {
+    display:flex; align-items:center; gap:12px; padding:10px 16px;
+    background:#161b22; border:1px solid #21262d; border-radius:8px; margin:6px 0;
+    transition:all 0.3s;
+  }
+  .agent-row.running { border-color:#1f6feb; background:#0d1b3d; }
+  .agent-row.completed { border-color:#238636; }
+  .agent-id { font-weight:700; min-width:70px; font-size:13px; }
+  .agent-id.running { color:#58a6ff; }
+  .agent-id.completed { color:#56d364; }
+  .agent-id.pending { color:#6e7681; }
+  .model-tag { font-size:10px; padding:2px 6px; border-radius:8px; }
+  .model-sonnet { background:#1f3a5f; color:#58a6ff; }
+  .model-opus { background:#3b1f5e; color:#a78bfa; }
+  .topic { font-size:12px; color:#c9d1d9; min-width:120px; }
+  .duration { font-size:12px; color:#8b949e; min-width:70px; }
+  .tools { font-size:11px; color:#6e7681; min-width:60px; }
+  .status-dot { width:8px; height:8px; border-radius:50%; }
+  .status-dot.running { background:#58a6ff; animation:pulse 1s infinite; }
+  .status-dot.completed { background:#56d364; }
+  .status-dot.pending { background:#484f58; }
+  .finding { font-size:11px; color:#e3b341; margin-top:4px; padding-left:82px; }
+  .signal { font-size:12px; color:#f0883e; font-weight:600; }
+
+  .gaps { background:#161b22; border:1px solid #21262d; border-radius:8px; padding:14px; margin:16px 0; }
+  .gaps h3 { font-size:13px; color:#79c0ff; margin-bottom:8px; }
+  .gap-item { font-size:12px; color:#c9d1d9; padding:3px 0; }
+  .gap-icon { margin-right:6px; }
+
+  .timeline { margin:16px 0; }
+  .timeline h3 { font-size:13px; color:#79c0ff; margin-bottom:8px; }
+  .findings-list { padding-left:16px; }
+  .findings-list li { font-size:12px; color:#c9d1d9; padding:3px 0; list-style:none; }
+  .findings-list li::before { content:''; display:inline-block; width:6px; height:6px; border-radius:50%; background:#56d364; margin-right:8px; }
+</style>
+</head>
+<body>
+<h1>Pipeline Live Dashboard</h1>
+<div class="sub">2026-03-28 | Mode A | 3 topics: 이란 전쟁, TLT 인플레, AI 양극화 | Updated 09:38:31</div>
+
+<div class="stats">
+  <div class="stat"><div class="num">11</div><div class="label">Total Agents</div></div>
+  <div class="stat"><div class="num" style="color:#58a6ff">0</div><div class="label">Running</div></div>
+  <div class="stat"><div class="num" style="color:#56d364">7</div><div class="label">Completed</div></div>
+  <div class="stat"><div class="num">114</div><div class="label">MCP Calls</div></div>
+  <div class="stat"><div class="num">404K</div><div class="label">Tokens</div></div>
+</div>
+
+<div class="phases">
+  <div class="phase completed">Phase 0: 사전 점검</div>
+  <span class="phase-arrow">&#x25B6;</span>
+  <div class="phase completed">Phase 1: Scanner + Macro</div>
+  <span class="phase-arrow">&#x25B6;</span>
+  <div class="phase completed">사용자 선택</div>
+  <span class="phase-arrow">&#x25B6;</span>
+  <div class="phase completed">Phase 2: RM + Core + PSF</div>
+  <span class="phase-arrow">&#x25B6;</span>
+  <div class="phase running">Phase 3-A: Stereo L1~L6</div>
+  <span class="phase-arrow">&#x25B6;</span>
+  <div class="phase pending">Phase 3-B: L7 통합 (Opus)</div>
+  <span class="phase-arrow">&#x25B6;</span>
+  <div class="phase pending">Phase 4: 저장 + DB sync</div>
+</div>
+<div class="gaps"><h3>Priority Gaps</h3>
+  <div class="gap-item"><span class="gap-icon">🔴</span>TH transition 방향 부재</div>
+  <div class="gap-item"><span class="gap-icon">🔴</span>TH risk-on 방향 부재</div>
+  <div class="gap-item"><span class="gap-icon">🟠</span>TC-003 갱신 오늘 만기</div>
+  <div class="gap-item"><span class="gap-icon">🟠</span>TC-007 갱신 오늘 만기</div>
+  <div class="gap-item"><span class="gap-icon">🟡</span>SD-002 TC 승격 후보 (3회)</div>
+</div>
+<div class="agents">
+<div style="font-size:11px;color:#6e7681;margin:12px 0 4px;font-weight:600;">Phase 1</div>
+<div class="agent-row completed">
+  <div class="status-dot completed"></div>
+  <div class="agent-id completed">Scanner</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">4축 글로벌 스캔</div>
+  <div class="duration">7m24s</div>
+  <div class="tools">45 tool</div>
+  <div class="signal">이슈 10건, 클러스터 1+독립 6</div>
+</div>
+<div style="font-size:11px;color:#6e7681;margin:12px 0 4px;font-weight:600;">Phase 2 RM</div>
+<div class="agent-row completed">
+  <div class="status-dot completed"></div>
+  <div class="agent-id completed">RM-1</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">이란 전쟁</div>
+  <div class="duration">8m36s</div>
+  <div class="tools">48 tool</div>
+  <div class="signal">4/6 데드라인 변곡점 + 헬륨 4월초 소진</div>
+</div>
+<div class="finding">반도체주 과소반응 갭</div>
+<div class="finding">트럼프 15분전 $580M 내부자거래 의혹</div>
+<div class="agent-row completed">
+  <div class="status-dot completed"></div>
+  <div class="agent-id completed">RM-2</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">TLT 인플레</div>
+  <div class="duration">8m24s</div>
+  <div class="tools">45 tool</div>
+  <div class="signal">GLD 역방향 — 스태그 내러티브와 불일치</div>
+</div>
+<div class="finding">GLD -9.6% 스태그 역방향</div>
+<div class="finding">TLT $914M 저점매수 정체불명</div>
+<div class="finding">FedWatch 하이크 52%</div>
+<div class="agent-row completed">
+  <div class="status-dot completed"></div>
+  <div class="agent-id completed">RM-3</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">AI 양극화</div>
+  <div class="duration">10m23s</div>
+  <div class="tools">53 tool</div>
+  <div class="signal">분열 패턴: 헬륨 과소반응 + NVDA 59% PT괴리 + 3경로 병렬</div>
+</div>
+<div class="finding">NVDA P/E가 S&P500 아래 (역사적 드문)</div>
+<div class="finding">ARK 매도 전환</div>
+<div class="finding">Revenue Gap $650B vs $25B</div>
+<div style="font-size:11px;color:#6e7681;margin:12px 0 4px;font-weight:600;">Phase 2 Core</div>
+<div class="agent-row completed">
+  <div class="status-dot completed"></div>
+  <div class="agent-id completed">Core-1</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">이란 전쟁</div>
+  <div class="duration">3m29s</div>
+  <div class="tools">13 tool</div>
+  <div class="signal">Brent $112.57 → TC-003 A 임계값까지 $2.43</div>
+</div>
+<div class="finding">5건 전부 D통과</div>
+<div class="finding">호르무즈 톨부스 위안화 결제 D-1/D-2/D-3</div>
+<div class="agent-row completed">
+  <div class="status-dot completed"></div>
+  <div class="agent-id completed">Core-2</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">TLT 인플레</div>
+  <div class="duration">2m38s</div>
+  <div class="tools">13 tool</div>
+  <div class="signal">MT-05×MT-02 교차점: 에너지→인플레→Fed봉쇄</div>
+</div>
+<div class="finding">D-1/D-2/D-3 전부 통과</div>
+<div class="finding">7년물 테일 46.5bp 발견</div>
+<div class="agent-row completed">
+  <div class="status-dot completed"></div>
+  <div class="agent-id completed">Core-3</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">AI 양극화</div>
+  <div class="duration">3m43s</div>
+  <div class="tools">16 tool</div>
+  <div class="signal">MT-01 방향전환: capex발표→주가하락 역전</div>
+</div>
+<div class="finding">capex/수익 28:1 괴리</div>
+<div class="finding">OECD Brent $200/b 위기시나리오 BURIED</div>
+<div style="font-size:11px;color:#6e7681;margin:12px 0 4px;font-weight:600;">Phase 3-A</div>
+<div class="agent-row pending">
+  <div class="status-dot pending"></div>
+  <div class="agent-id pending">Stereo-L16-1</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">이란 L1~L6</div>
+  <div class="duration"></div>
+  <div class="tools">0 </div>
+</div>
+<div class="agent-row pending">
+  <div class="status-dot pending"></div>
+  <div class="agent-id pending">Stereo-L16-2</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">TLT L1~L6</div>
+  <div class="duration"></div>
+  <div class="tools">0 </div>
+</div>
+<div class="agent-row pending">
+  <div class="status-dot pending"></div>
+  <div class="agent-id pending">Stereo-L16-3</div>
+  <span class="model-tag model-sonnet">sonnet</span>
+  <div class="topic">AI L1~L6</div>
+  <div class="duration"></div>
+  <div class="tools">0 </div>
+</div>
+<div style="font-size:11px;color:#6e7681;margin:12px 0 4px;font-weight:600;">Phase 3-B</div>
+<div class="agent-row pending">
+  <div class="status-dot pending"></div>
+  <div class="agent-id pending">L7-통합</div>
+  <span class="model-tag model-opus">opus</span>
+  <div class="topic">교차분석+시나리오</div>
+  <div class="duration"></div>
+  <div class="tools">0 </div>
+</div>
+</div>
+<div class="timeline"><h3>Key Signals</h3><ul class="findings-list">
+  <li><b>Scanner</b>: 이슈 10건, 클러스터 1+독립 6</li>
+  <li><b>Core-1</b>: Brent $112.57 → TC-003 A 임계값까지 $2.43</li>
+  <li><b>Core-2</b>: MT-05×MT-02 교차점: 에너지→인플레→Fed봉쇄</li>
+  <li><b>Core-3</b>: MT-01 방향전환: capex발표→주가하락 역전</li>
+  <li><b>RM-1</b>: 4/6 데드라인 변곡점 + 헬륨 4월초 소진</li>
+  <li><b>RM-2</b>: GLD 역방향 — 스태그 내러티브와 불일치</li>
+  <li><b>RM-3</b>: 분열 패턴: 헬륨 과소반응 + NVDA 59% PT괴리 + 3경로 병렬</li>
+</ul></div>
+</body></html>

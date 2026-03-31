@@ -1,38 +1,98 @@
 {
-  "id": "TC-002",
-  "type": "stereo",
-  "title": "KRW 구조적 고환율 — NPS 70% + 3단계 누적",
-  "source": "SA-20260326-002",
+  "tc_id": "TC-002",
   "created": "2026-03-26",
-  "status": "tracking",
-  "phase": 1,
-  "scp": 3,
+  "updated": "2026-03-28",
+  "title": "KRW 구조적 고환율 — NPS 70% + 3단계 누적",
+  "status": "active",
 
-  "trigger": {
-    "condition": "KRW 1,550+ × 5d (추가 악화) OR WGBI 편입 결정 (구조적 반전)",
-    "current": "KRW 1,506. WGBI 미결정.",
-    "fired": false
+  "issue_summary": "KRW 1,506. NPS 해외투자 70% + 추경 25조 + RIA $400M. WGBI 편입 미결정. 구조적 원화 약세 3단계 누적.",
+
+  "phase": 1,
+  "phase_log": [
+    {"phase": 1, "date": "2026-03-26", "trigger": "첫 분석. KRW 1,506. 추경 당정.", "note": "SA-20260326-002"}
+  ],
+
+  "pre_read": {
+    "type": "MACRO×STRUCT",
+    "scp": 3,
+    "urgency": "WATCH"
   },
-  "kc": {
-    "watch": "KRW 1,450 하회 × 3d",
-    "alert": "NPS 해외투자 비율 축소 정책 발표",
-    "hard": "KRW 1,400 하회 × 5d (구조적 판단 무효화)",
-    "fired": false
+
+  "scenarios": {
+    "A": {
+      "label": "구조적 고환율 지속 (1,500~1,550)",
+      "probability": "40%",
+      "trigger": {"condition": "KRW 1,550+ × 5d (추가 악화)", "source": "통계적", "distance": "KRW 1,506 → 1,550까지 44원", "recalibration": "정기 4/15 + 비정기(WGBI/NPS 이벤트)"},
+      "kc": {
+        "watch": "KRW 1,470 하회 × 3d",
+        "alert": "NPS 해외투자 비율 축소 정책 발표",
+        "hard": "KRW 1,400 하회 × 5d",
+        "action": "TC-002 Phase 4. 고환율 thesis 무효화. 카드 아카이브 또는 C(반전)으로 전환."
+      },
+      "current_status": "Phase 1. KRW 1,506."
+    },
+    "B": {
+      "label": "급격 악화 (1,550+)",
+      "probability": "25%",
+      "trigger": {"condition": "KRW 1,550+ × 5d + 이란 교란 OR 301 관세 동시", "source": "구조적+통계적"},
+      "kc": {
+        "watch": "KRW 1,600 접근",
+        "alert": "외환당국 구두개입",
+        "hard": "KRW 1,650+ × 3d OR 스무딩 오퍼레이션 공식 발동",
+        "action": "TC-002 Phase 3. 위기 모드 진입. 별도 Watch 생성."
+      },
+      "current_status": "미진입."
+    },
+    "C": {
+      "label": "구조적 반전 (WGBI 편입)",
+      "probability": "20%",
+      "trigger": {"condition": "WGBI 편입 결정 공식 발표", "source": "서사적", "recalibration": "정기 9월(WGBI 리뷰) + 비정기(사전 발표)"},
+      "kc": {
+        "watch": "WGBI 리뷰 연기",
+        "alert": "WGBI 편입 조건 미충족 판정",
+        "hard": "WGBI 편입 불가 확정",
+        "action": "TC-002 C(반전) thesis 폐기. A로 전환."
+      },
+      "current_status": "미진입. WGBI 미결정."
+    },
+    "D": {
+      "label": "점진적 안정화 (1,450~1,500)",
+      "probability": "15%",
+      "trigger": {"condition": "무역흑자 3개월 연속 확대 + 외인 순매수 3개월", "source": "통계적"},
+      "kc": {
+        "watch": "무역적자 전환",
+        "alert": "외인 순매도 전환 × 2주",
+        "hard": "KRW 1,530+ 재돌파 × 5d",
+        "action": "TC-002 D(안정화) thesis 폐기. A로 회귀."
+      },
+      "current_status": "미진입."
+    }
   },
+
+  "tracking_indicators": [
+    {"indicator": "KRW", "symbol": "KRW=X", "current": "1,506", "threshold": "1,550 (A 악화 진입)", "last_check": "2026-03-26", "next_check": "2026-04-03"},
+    {"indicator": "NPS 해외투자비율", "current": "70%", "threshold": "75% (구조적 확대 확인)", "last_check": "2026-03-26", "next_check": "2026-06-30"},
+    {"indicator": "WGBI 편입", "current": "미결정", "threshold": "편입 결정 발표", "last_check": "2026-03-26", "next_check": "2026-09-30"}
+  ],
+
+  "heartbeat_thresholds": [
+    {"indicator": "KRW", "symbol": "KRW=X", "watch": 1530, "alert": 1550, "hard": 1600, "direction": "above"},
+    {"indicator": "KRW반등", "symbol": "KRW=X", "watch": 1470, "alert": 1450, "hard": 1400, "direction": "below"}
+  ],
 
   "events": ["EC-005"],
   "rm_watches": ["W-UQ-040", "W-UQ-041", "W-UQ-042", "W-UQ-043"],
   "psf_link": "F1 DXY 미반영 괴리",
   "macro_ref": "B2 DXY trend_note, C7 Brent",
 
-  "heartbeat_thresholds": [
-    {"indicator": "KRW", "symbol": "KRW=X", "watch": 1530, "alert": 1550, "hard": 1600, "direction": "above"},
-    {"indicator": "KRW반등", "symbol": "KRW=X", "watch": 1470, "alert": 1450, "hard": 1400, "direction": "below", "note": "KC방향"}
+  "cross_card_links": [
+    {"to": "TC-001", "link": "301 관세→수출감소→경상수지 악화→KRW 추가 약세"},
+    {"to": "TC-003", "link": "이란→유가→경상수지 악화→KRW 약세"},
+    {"to": "TC-006", "link": "SK하이닉스 ADR 달러 유입→KRW 반등 잠재력"}
   ],
 
-  "check_log": [
-    {"date": "2026-03-26", "observation": "1,506. 25조 추경 당정. RIA $400M. Phase 1 유지.", "next_check": "2026-04-03"}
-  ],
+  "analysis_ids": ["SA-20260326-002"],
+  "tags": ["MACRO", "STRUCT", "KRW", "환율", "NPS", "WGBI", "경상수지"],
 
   "close_condition": "WGBI 편입 확정 OR KRW 1,400↓ 복귀 OR 6개월 무변화 → 아카이브"
 }

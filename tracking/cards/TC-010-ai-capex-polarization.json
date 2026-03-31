@@ -93,7 +93,7 @@
     {"to": "TC-016", "link": "AI capex 불확실성 → 실질금리 2.08% 환경 성장주 할인율 상승 → 크레딧 역류 방향 일치"}
   ],
 
-  "analysis_ids": ["SA-20260328-001", "SA-20260328-L7", "SA-20260328-TQ"],
+  "analysis_ids": ["SA-20260328-001", "SA-20260328-L7", "SA-20260328-TQ", "SA-20260328-L7-TQ-SKH"],
   "psf_link": "P3 🔴(격화+이란) + P5 🔴(Brent $112) + F5 🔴(VIX 31) + S1 🔴(실질금리 2.08%) — 수축 레짐 AI 기술 충격 과잉반응 환경. S1 실질금리 상승으로 efficiency 혁신이 생존 조건화.",
   "macro_ref": "B1 실질금리 2.08%(+28bp 4wk), B5 HY OAS 321bp, F5 VIX 31.05, P3 이란 전쟁(Brent $112.57), 레짐 🔴 Contraction",
   "tags": ["STRUCT", "NARR", "EVENT", "AI", "capex", "NVDA", "Groq", "LPU", "SRAM", "HBM", "헬륨", "반도체", "TurboQuant", "inference", "양극화", "MT-01", "MT-06"]

@@ -2,12 +2,10 @@
   "tc_id": "TC-007",
   "prev_id": "Stereo/TC-001 → 공용 TC-007로 이관",
   "created": "2026-03-26",
-  "updated": "2026-03-26",
-  "title": "인플레 공포에 미 장기채 ETF 투자자 눈물",
+  "updated": "2026-03-31",
+  "title": "인플레 공포에 미 장기채 ETF 투자자 눈물 — 스태그플레이션 정량 확인",
   "status": "active",
-
-  "issue_summary": "이란전쟁발 인플레 공포 → 장기채 투매 → TLT/TMF 급락. 본체는 재정적자+관세+인하기대붕괴의 텀 프리미엄 팽창.",
-
+  "issue_summary": "이란전쟁발 인플레 공포 → 장기채 투매 → TLT $85.64. Core PCE 3.05% + GDP 0.7% = 스태그플레이션 정량 2/3 충족. 하이크 확률 52% 돌파. GLD -9.6%는 달러 강세 압도 신호. 텀프리미엄 0.87%(+13bp)+BEI(+3bp) 합산 시작. D2 $2.994T 유동성 경보.",
   "phase": 1,
   "phase_log": [
     {
@@ -15,46 +13,220 @@
       "date": "2026-03-26",
       "trigger": "첫 분석. 30Y 4.94%, TLT -5.3% since 개전",
       "note": "SA-20260326-001에서 생성"
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "갱신. TLT $85.94(추가하락). 10Y 4.414%. MOVE 115. 인상 40%. 스태그플레이션 D시나리오 추가.",
+      "note": "SA-20260328-001. 시나리오 갱신."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "L7 통합 갱신. 하이크 52% 돌파. GLD -9.6% 달러 강세 신호. A 50%(+5), B 10%(-5), C 25%(-5), D 15%(+5).",
+      "note": "SA-20260328-L7. 3TC 교차 분석 기반."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "MCP 갱신. 10Y 4.44%, TLT $85.64, MOVE 111.95, VIX 31.05(30+).",
+      "note": "pipeline-update"
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-31",
+      "trigger": "CT(군중 온도) 분석 교차. GLD -15.4%(유동성 투매 확인). BEI 2.31%(극단 인플레 미반영). 군중 공포72 vs 제도권 20-40%. 말≠돈 간극 발견.",
+      "note": "CT-20260331-001. 군중은 스태그플레이션을 말하지만 실체는 유동성 경색. D시나리오 군중 서사 과열, 채권 미동의."
     }
   ],
-
   "pre_read": {
     "type": "MACRO×NARR",
-    "scp": 2,
+    "scp": 3,
     "urgency": "WATCH"
   },
-
   "scenarios": {
     "A": {
-      "label": "전쟁 장기화 + 유가 $110+",
-      "probability": "35%",
-      "trigger": "Brent>$110 × 5d",
-      "kc": {"watch": "Brent<$90", "alert": "Brent<$85×3d", "hard": "Brent<$80×3d"},
-      "current_status": "미진입"
+      "label": "전쟁 장기화 + 유가 $110+ → 금리 상승 가속",
+      "probability": "50%",
+      "trigger": {
+        "condition": "Brent>$110 × 5d + 10Y>4.5%",
+        "source": "통계적+구조적",
+        "recalibration": "정기 4/15 + 비정기(FOMC, 정전)"
+      },
+      "kc": {
+        "watch": "Brent<$95",
+        "alert": "Brent<$90 × 3d",
+        "hard": "Brent<$80 × 3d",
+        "action": "TC-007 Phase 4. 전쟁 인플레 thesis 재검토. B 전환 검토."
+      },
+      "current_status": "10Y 4.44%. 4.5%까지 0.06%p. VIX 31.05(30+). Brent $105.32."
     },
     "B": {
       "label": "휴전 → 장기채 반등",
-      "probability": "25%",
-      "trigger": "이란 공식 휴전 + 30Y<4.5%",
-      "kc": {"watch": "30Y>4.7%", "alert": "30Y>4.9%×3d", "hard": "30Y>5.0%×5d"},
-      "current_status": "미발생"
+      "probability": "10%",
+      "trigger": {
+        "condition": "이란 공식 휴전 + 10Y<4.1%",
+        "source": "서사적"
+      },
+      "kc": {
+        "watch": "10Y>4.3%",
+        "alert": "10Y>4.5% × 3d",
+        "hard": "10Y>4.7% × 5d",
+        "action": "TC-007 B(반등) thesis 폐기. A(금리 상승) 또는 C(횡보)로 전환."
+      },
+      "current_status": "미발생. 협상 결렬 상태."
     },
     "C": {
       "label": "현상유지 횡보",
-      "probability": "40%",
-      "trigger": "30Y 4.8~5.0% 밴드 2주+ 유지",
-      "kc": {"to_A": "30Y>5.2%×3d", "to_B": "30Y<4.5%×3d"},
-      "current_status": "진입 중"
+      "probability": "25%",
+      "trigger": {
+        "condition": "10Y 4.2~4.5% 밴드 2주+ 유지",
+        "source": "통계적"
+      },
+      "kc": {
+        "watch": "10Y 밴드 이탈 접근 (4.15% 또는 4.55%)",
+        "alert": "10Y>4.6% × 3d OR 10Y<4.1% × 3d",
+        "hard": "10Y>4.7% × 5d (→A) OR 10Y<4.0% × 5d (→B)",
+        "action": "TC-007 C(횡보) 종료. 상방 이탈이면 A, 하방 이탈이면 B로 방향 확정."
+      },
+      "current_status": "진입 중. 10Y 4.414%."
+    },
+    "D": {
+      "label": "스태그플레이션 확인",
+      "probability": "15%",
+      "trigger": {
+        "condition": "GDP<1.0% + Core PCE>3.0% + Fed 인상 1회+",
+        "source": "구조적",
+        "distance": "GDP+Core PCE 충족. Fed 인상 미결(FedWatch 52%)",
+        "recalibration": "FOMC(5/7) + Core PCE(4/11)"
+      },
+      "kc": {
+        "watch": "GDP>1.5%",
+        "alert": "Core PCE<2.8%",
+        "hard": "Fed 인하 재개",
+        "action": "TC-007 D(스태그) thesis 해소. 경기 회복+인플레 완화 확인. A 또는 B로 전환."
+      },
+      "current_status": "부분 충족. GDP 0.7%+Core PCE 3.1% 확인. Fed 인상 미결. CT 교차: 군중 서사 과열, BEI 미동의."
     }
   },
-
   "tracking_indicators": [
-    {"indicator": "30Y 국채 금리", "current": "4.94%", "threshold": "5.0% 돌파", "last_check": "2026-03-26", "next_check": "2026-03-28"},
-    {"indicator": "Brent 유가", "current": "$103.79", "threshold": "$110 돌파", "last_check": "2026-03-26", "next_check": "2026-03-28"},
-    {"indicator": "CME FedWatch 인상 확률", "current": "23.4%", "threshold": "30% 돌파", "last_check": "2026-03-26", "next_check": "2026-04-02"},
-    {"indicator": "5Y BEI", "current": "2.51%", "threshold": "2.7% 돌파", "last_check": "2026-03-26", "next_check": "2026-03-28"}
+    {
+      "indicator": "10Y yield",
+      "symbol": "^TNX",
+      "current": "4.44%",
+      "threshold": "4.5% 돌파",
+      "last_check": "2026-03-31",
+      "next_check": "2026-04-04"
+    },
+    {
+      "indicator": "TLT",
+      "symbol": "TLT",
+      "current": "$86.78",
+      "threshold": "$84 (추가 하락)",
+      "last_check": "2026-03-31",
+      "next_check": "2026-04-04"
+    },
+    {
+      "indicator": "Brent",
+      "symbol": "BZ=F",
+      "current": "$112.57",
+      "threshold": "$110 돌파 (이미 초과)",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-04"
+    },
+    {
+      "indicator": "CME FedWatch 인상 확률",
+      "current": "52%",
+      "threshold": "50% 돌파 (이미 초과)",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-02"
+    },
+    {
+      "indicator": "MOVE",
+      "symbol": "^MOVE",
+      "current": "111.95",
+      "threshold": "120 (패닉)",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-04"
+    },
+    {
+      "indicator": "Core PCE (2월)",
+      "current": "4월 초 발표 대기",
+      "threshold": ">3.0% 지속",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-11"
+    },
+    {
+      "indicator": "GLD (유동성 프록시)",
+      "symbol": "GLD",
+      "current": "$414.58",
+      "threshold": "$440 회복 = 유동성 위기 해소",
+      "last_check": "2026-03-31",
+      "next_check": "2026-04-07",
+      "note": "CT 발견: 군중 말≠돈 간극. GLD -15%는 스태그플레이션이 아닌 디레버리징."
+    },
+    {
+      "indicator": "10Y BEI (인플레 기대)",
+      "symbol": "T10YIE",
+      "current": "2.31%",
+      "threshold": "2.50% 돌파 = 채권시장 동의 시작",
+      "last_check": "2026-03-31",
+      "next_check": "2026-04-07",
+      "note": "CT 발견: 채권시장은 극단 인플레 미프라이싱. 파월과 일치."
+    }
   ],
-
-  "analysis_ids": ["SA-20260326-001"],
-  "tags": ["MACRO", "NARR", "장기채", "TLT", "TMF", "인플레", "이란전쟁", "텀프리미엄"]
+  "heartbeat_thresholds": [
+    {
+      "indicator": "10Y yield",
+      "symbol": "^TNX",
+      "watch": 4.5,
+      "alert": 4.7,
+      "hard": 5.0,
+      "direction": "above"
+    },
+    {
+      "indicator": "TLT",
+      "symbol": "TLT",
+      "watch": 84,
+      "alert": 80,
+      "hard": 75,
+      "direction": "below"
+    },
+    {
+      "indicator": "MOVE",
+      "symbol": "^MOVE",
+      "watch": 120,
+      "alert": 135,
+      "hard": 150,
+      "direction": "above"
+    }
+  ],
+  "cross_card_links": [
+    {
+      "to": "TC-003",
+      "link": "이란→유가→인플레→Fed매파→10Y"
+    },
+    {
+      "to": "TC-010",
+      "link": "금리상승→성장주할인+capex자금조달비용"
+    }
+  ],
+  "analysis_ids": [
+    "SA-20260326-001",
+    "SA-20260328-001",
+    "SA-20260328-L7",
+    "CT-20260331-001"
+  ],
+  "tags": [
+    "MACRO",
+    "NARR",
+    "장기채",
+    "TLT",
+    "TMF",
+    "인플레",
+    "이란전쟁",
+    "텀프리미엄",
+    "스태그플레이션",
+    "MOVE"
+  ]
 }

@@ -1,38 +1,96 @@
 {
-  "id": "TC-004",
-  "type": "stereo",
-  "title": "ISA→ETF 구조 전환 — 807만 명의 행동 변화",
-  "source": "SA-20260326-004",
+  "tc_id": "TC-004",
   "created": "2026-03-26",
-  "status": "tracking",
+  "updated": "2026-03-28",
+  "title": "ISA→ETF 구조 전환 — 807만 명의 행동 변화",
+  "status": "active",
+
+  "issue_summary": "ISA 64조, 807만 가입자. 해외ETF 53.2%($7.6B). 1월 +6.4조 역대최대. 버팀목 vs 고점 시그널 분기점.",
+
   "phase": 0,
-  "scp": 3,
+  "phase_log": [
+    {"phase": 0, "date": "2026-03-26", "trigger": "첫 분석. 64조. Phase 0 (추가 데이터 필요).", "note": "SA-20260326-004"}
+  ],
 
-  "trigger": {
-    "condition": "ISA 80조+ OR 가입자 1,000만 (버팀목 확인) OR 월간 유입 마이너스 × 2개월 (고점 시그널)",
-    "current": "64조. 807만. 1월 +6.4조 역대최대.",
-    "fired": false
-  },
-  "kc": {
-    "watch": "KOSPI -15% from peak",
-    "alert": "KOSPI -20% × 5d",
-    "hard": "KOSPI -30% (807만 트라우마 시나리오)",
-    "fired": false
+  "pre_read": {
+    "type": "STRUCT",
+    "scp": 3,
+    "urgency": "SLOW"
   },
 
-  "events": [],
-  "rm_watches": [],
-  "psf_link": null,
-  "macro_ref": null,
-  "extra": {"overseas_etf_share": "53.2%", "overseas_etf_amount": "$7.6B", "krw_impact": "NPS 대비 5~6%. 성장 중."},
+  "scenarios": {
+    "A": {
+      "label": "구조적 버팀목 확인 (ISA 80조+)",
+      "probability": "45%",
+      "trigger": {"condition": "ISA 80조+ OR 가입자 1,000만", "source": "통계적", "distance": "64조→80조. 807만→1,000만.", "recalibration": "월별 ISA 통계 발표"},
+      "kc": {
+        "watch": "월간 유입 감소 2개월 연속",
+        "alert": "월간 순유출 전환",
+        "hard": "ISA 잔고 감소 3개월 연속",
+        "action": "TC-004 A(버팀목) thesis 폐기. B(고점) 또는 C(둔화)로 전환."
+      },
+      "current_status": "Phase 0. 1월 +6.4조 역대최대."
+    },
+    "B": {
+      "label": "고점 시그널 (유입 반전)",
+      "probability": "20%",
+      "trigger": {"condition": "월간 유입 마이너스 × 2개월", "source": "통계적"},
+      "kc": {
+        "watch": "유입 재반등 (+전환)",
+        "alert": "유입 3개월 연속 증가",
+        "hard": "ISA 신고 갱신",
+        "action": "TC-004 B(고점) thesis 폐기. A로 전환."
+      },
+      "current_status": "미진입."
+    },
+    "C": {
+      "label": "성장 둔화 (정체)",
+      "probability": "25%",
+      "trigger": {"condition": "6개월간 ISA 잔고 ±5% 이내 횡보", "source": "통계적"},
+      "kc": {
+        "watch": "급격한 유입/유출 발생",
+        "alert": "ISA 정책 변경 발표",
+        "hard": "ISA 80조 돌파 OR ISA 50조 이탈",
+        "action": "TC-004 C(정체) 종료. A 또는 B로 방향 확정."
+      },
+      "current_status": "미진입."
+    },
+    "D": {
+      "label": "KOSPI 급락 → 807만 트라우마",
+      "probability": "10%",
+      "trigger": {"condition": "KOSPI -20%+ from peak × 5d", "source": "통계적+서사적"},
+      "kc": {
+        "watch": "KOSPI 반등 +10%",
+        "alert": "ISA 환매 진정 (순유입 복귀)",
+        "hard": "KOSPI 전고점 회복",
+        "action": "TC-004 D(트라우마) thesis 종료. 시장 정상화."
+      },
+      "current_status": "미진입."
+    }
+  },
+
+  "tracking_indicators": [
+    {"indicator": "ISA 잔고", "current": "64조", "threshold": "80조 (A 확인)", "last_check": "2026-03-26", "next_check": "2026-04-15"},
+    {"indicator": "ISA 가입자", "current": "807만", "threshold": "1,000만", "last_check": "2026-03-26", "next_check": "2026-04-15"},
+    {"indicator": "해외ETF 비중", "current": "53.2%", "threshold": "60% (집중 경고)", "last_check": "2026-03-26", "next_check": "2026-04-15"},
+    {"indicator": "KOSPI", "symbol": "^KS11", "current": "미확인", "threshold": "-15% from peak", "last_check": "2026-03-26", "next_check": "2026-04-03"}
+  ],
 
   "heartbeat_thresholds": [
     {"indicator": "KOSPI", "symbol": "^KS11", "watch": 5000, "alert": 4700, "hard": 4200, "direction": "below"}
   ],
 
-  "check_log": [
-    {"date": "2026-03-26", "observation": "64조. 해외ETF 53.2%. Phase 0 (데이터 추가 필요: 2~3월 유입).", "next_check": "2026-04-15"}
+  "events": [],
+  "rm_watches": [],
+  "psf_link": null,
+  "macro_ref": null,
+
+  "cross_card_links": [
+    {"to": "TC-002", "link": "ISA 해외ETF 53.2% → NPS와 같은 방향으로 KRW 약세 압력"}
   ],
+
+  "analysis_ids": ["SA-20260326-004"],
+  "tags": ["STRUCT", "ISA", "ETF", "개인투자자", "해외투자", "버팀목"],
 
   "close_condition": "ISA 100조+ 확인 (구조 확정) OR KOSPI -30% (thesis 무효) OR 1년 무변화 → 아카이브"
 }

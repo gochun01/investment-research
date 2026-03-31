@@ -1,45 +1,254 @@
 {
-  "last_updated": "2026-03-28",
+  "last_updated": "2026-04-01",
   "summary": {
-    "active_stereo": 10,
+    "active_stereo": 12,
     "active_events": 6,
     "active_seeds": 2,
-    "total_active": 18,
-    "next_check": "2026-03-31 (이란 데드라인 → TC-003, 분기말 D2 유동성 → TC-007)",
-    "l7_integration": "SA-20260328-L7: TC-003/007/010 교차 통합 완료. SA-20260328-003: TC-016 VIX 30 돌파 Stereo. SA-20260328-TQ: TurboQuant L1~L6 풀 해부. BURIED-1(Groq3LPX) 발견 = inference 아키텍처 분리 구조 확인. SKH 이중 포지션. TSMC CoWoS-R 숨은 수혜."
+    "total_active": 20,
+    "next_check": "2026-04-02 (HY OAS 350bp 감시 → TC-016). 4/04 헬륨 D-Day(TC-003). 4/06 이란 에너지 공격 데드라인(TC-003). 4/10 한은 금통위(TC-002/019). 4/11 Core PCE(TC-007).",
+    "l7_integration": "SA-20260329-001: SpaceX Orbital Sovereignty 10조각 L7 통합. 균열선(6)>시너지선(4). S-1 FCF 행이 서사($5T)vs공모($75B) 간극 최초 계량. TC-017(SpaceX)/TC-018(K-우주) 신규 생성. 이전: SA-20260328-L7-TQ-SKH."
   },
   "cards": {
-    "TC-001": {"title": "Section 301 관세", "phase": 1, "status": "tracking", "next": "4/15"},
-    "TC-002": {"title": "KRW 구조적", "phase": 1, "status": "tracking", "next": "4/03"},
-    "TC-003": {"title": "이란 교란 — 톨부스화+$115임계$2.43", "phase": 1, "status": "tracking", "next": "3/31", "scenarios": "A45% B25% C15% D15%"},
-    "TC-004": {"title": "ISA/ETF", "phase": 0, "status": "tracking", "next": "4/15"},
-    "TC-005": {"title": "VW 방산", "phase": 0, "status": "tracking", "next": "4/30"},
-    "TC-006": {"title": "SK하이닉스 ADR", "phase": 1, "status": "tracking", "next": "4/15"},
-    "TC-007": {"title": "미장기채 스태그+GLD역방향", "phase": 1, "status": "tracking", "next": "3/31", "scenarios": "A50% B10% C25% D15%"},
-    "TC-008": {"title": "한국車 삼중포위", "phase": 2, "status": "tracking", "next": "3/31"},
-    "TC-009": {"title": "EU 제3극 통상자율성", "phase": 1, "status": "tracking", "next": "4/10"},
-    "TC-010": {"title": "AI capex 양극화+Groq3LPX inference분리+헬륨병목", "phase": 1, "status": "tracking", "next": "4/04", "scenarios": "A25% B35% C25% D15%", "note": "TurboQuant 독립 Stereo 완료(SA-20260328-TQ). BURIED-1=Groq3LPX SRAM inference. LP40 SKH DRAM. LPU Gen2 삼성SF4X."},
-    "TC-012": {"title": "K-방산 Indra €45.5억 K9 공급망내재화2단계", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A50% B20% C15% D15%"},
-    "TC-013": {"title": "BRICS금 6000톤 탈달러 옵션확보", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A35% B25% C28% D12%"},
-    "TC-014": {"title": "AI전력 양방향리스크(부족+역류)+SMR", "phase": 1, "status": "active", "next": "6/30", "scenarios": "A30% B35% C22% D13%"},
-    "TC-016": {"title": "신용역류 VIX30돌파 공포-신용디커플링", "phase": 1, "status": "active", "next": "3/31", "scenarios": "A25% B45% C18% D12%"},
-    "SD-001": {"title": "GENIUS Act", "status": "watching", "count": 1},
-    "SD-003": {"title": "자동차→방산", "status": "watching", "count": 1}
+    "TC-001": {
+      "title": "Section 301 관세",
+      "phase": 1,
+      "status": "tracking",
+      "next": "4/15"
+    },
+    "TC-002": {
+      "title": "KRW 구조적",
+      "phase": 1,
+      "status": "tracking",
+      "next": "4/03"
+    },
+    "TC-003": {
+      "title": "이란 교란 — 톨부스화+$115임계$2.43",
+      "phase": 2,
+      "status": "active",
+      "next": "4/07",
+      "scenarios": "A45% B25% C15% D15%",
+      "note": "PIPE-20260401: 비석유 전이 물리적 임계. 나프타 ,050(+69%) 재고2주. 헬륨 D-3. 삼성 외국인 12년반 최저. W-PIPE-001(헬륨)+W-PIPE-002(에틸렌) 등록."
+    },
+    "TC-004": {
+      "title": "ISA/ETF",
+      "phase": 0,
+      "status": "tracking",
+      "next": "4/15"
+    },
+    "TC-005": {
+      "title": "VW 방산",
+      "phase": 0,
+      "status": "tracking",
+      "next": "4/30"
+    },
+    "TC-006": {
+      "title": "SK하이닉스 ADR",
+      "phase": 1,
+      "status": "tracking",
+      "next": "4/15",
+      "scenarios": "A45% B30% C25%",
+      "note": "L7-TQ-SKH 교차 완료. LP40 DRAM 이중포지션(잠재 3번째 다리). ICLR 4/23 공통분기. 매크로🔴 할인 유지."
+    },
+    "TC-007": {
+      "title": "미장기채 스태그+GLD역방향",
+      "phase": 1,
+      "status": "active",
+      "next": "4/07",
+      "scenarios": "A50% B10% C25% D15%",
+      "note": "CT-20260331: 군중72 vs 제도권20-40%. GLD-15%투매. BEI2.31%채권미동의. W-CT-001(BEI)+W-CT-002(GLD) 등록."
+    },
+    "TC-008": {
+      "title": "한국車 삼중포위",
+      "phase": 2,
+      "status": "tracking",
+      "next": "3/31"
+    },
+    "TC-009": {
+      "title": "EU 제3극 통상자율성",
+      "phase": 1,
+      "status": "tracking",
+      "next": "4/10"
+    },
+    "TC-010": {
+      "title": "AI capex 양극화+Groq3LPX inference분리+헬륨병목",
+      "phase": 1,
+      "status": "tracking",
+      "next": "4/04",
+      "scenarios": "A25% B35% C25% D15%",
+      "note": "L7-TQ-SKH 교차 완료. LP40 SKH DRAM=TC-006 교차점. ICLR 4/23 공통 분기점. 확률 유지."
+    },
+    "TC-012": {
+      "title": "K-방산 Indra €45.5억 K9 공급망내재화2단계",
+      "phase": 1,
+      "status": "active",
+      "next": "6/30",
+      "scenarios": "A50% B20% C15% D15%"
+    },
+    "TC-013": {
+      "title": "BRICS금 6000톤 탈달러 옵션확보",
+      "phase": 1,
+      "status": "active",
+      "next": "6/30",
+      "scenarios": "A35% B25% C28% D12%"
+    },
+    "TC-014": {
+      "title": "AI전력 양방향리스크(부족+역류)+SMR",
+      "phase": 1,
+      "status": "active",
+      "next": "6/30",
+      "scenarios": "A30% B35% C22% D13%"
+    },
+    "TC-016": {
+      "title": "신용역류 VIX30돌파 공포-신용디커플링",
+      "phase": 1,
+      "status": "active",
+      "next": "3/31",
+      "scenarios": "A25% B55% C18% D12%",
+      "note": "PIPE-20260401: Apollo 45% 게이트 통합. HY OAS 346bp(350 균열 4bp). B 45→55% 상향. W-PIPE-003(HY 350bp)+W-PIPE-004(BDC 추가) 등록."
+    },
+    "SD-001": {
+      "title": "GENIUS Act",
+      "status": "watching",
+      "count": 1
+    },
+    "SD-003": {
+      "title": "자동차→방산",
+      "status": "watching",
+      "count": 1
+    },
+    "TC-017": {
+      "title": "SpaceX Orbital Sovereignty — IPO×수직통합×서사vs물리",
+      "phase": 1,
+      "status": "active",
+      "next": "이번 주 (S-1 제출 감시)",
+      "scenarios": "A25% B35% C25% D15%",
+      "note": "S-1 FCF 행이 단일 최중요 지표. VIX+Brent TC-003 연동."
+    },
+    "TC-018": {
+      "title": "K-우주 리레이팅 — SpaceX IPO 기준점 × 한화에어로·KAI 양면",
+      "phase": 1,
+      "status": "active",
+      "next": "SpaceX IPO 완수 후",
+      "scenarios": "A30% B35% C20% D15%",
+      "note": "서사 수혜+기술격차 노출 양면. TC-017 연동."
+    },
+    "TC-020": {
+      "title": "로보틱스 플랫폼 해자 — 감속기 신화 붕괴 × Isaac lock-in",
+      "phase": 1,
+      "status": "active",
+      "next": "5/15(하모닉 실적) + 5/30(NVDA 분기)",
+      "scenarios": "A40% B25% C15% D20%",
+      "note": "SC-20260401: 감속기 V2🔴V3🔴. Isaac V1🟢V2🟢. 서사≠자본(부품vs시스템+AI). 숨은 티어2: Schaeffler/THK/SKF. W-SC-001~003 등록."
+    }
   },
   "upcoming_week": [
-    {"date": "3/31", "event": "분기말 D2 유동성 스트레스", "affects": ["TC-007"], "importance": "high"},
-    {"date": "4/04", "event": "헬륨 팹 재고 첫 소진 징후", "affects": ["TC-010", "TC-003"], "importance": "medium"},
-    {"date": "4/06", "event": "이란 에너지 공격 데드라인", "affects": ["TC-003", "TC-007"], "importance": "critical"},
-    {"date": "4/11", "event": "2월 Core PCE 발표", "affects": ["TC-007", "TC-003"], "importance": "high"}
+    {
+      "date": "4/02",
+      "event": "HY OAS 350bp 돌파 감시",
+      "affects": [
+        "TC-016"
+      ],
+      "importance": "high"
+    },
+    {
+      "date": "4/04",
+      "event": "헬륨 팹 재고 D-Day",
+      "affects": [
+        "TC-003",
+        "TC-010"
+      ],
+      "importance": "critical"
+    },
+    {
+      "date": "4/06",
+      "event": "이란 에너지 공격 데드라인",
+      "affects": [
+        "TC-003",
+        "TC-007"
+      ],
+      "importance": "critical"
+    },
+    {
+      "date": "4/07",
+      "event": "CT Watch 4건 첫 체크 (BEI/GLD/방산/내부자)",
+      "affects": [
+        "TC-007",
+        "TC-003"
+      ],
+      "importance": "medium"
+    },
+    {
+      "date": "4/10",
+      "event": "한은 금통위",
+      "affects": [
+        "TC-002",
+        "TC-019"
+      ],
+      "importance": "high"
+    },
+    {
+      "date": "4/11",
+      "event": "2월 Core PCE 발표",
+      "affects": [
+        "TC-007",
+        "TC-003"
+      ],
+      "importance": "high"
+    }
   ],
   "cross_card_links": [
-    {"from": "TC-003", "to": "TC-007", "link": "이란→유가→인플레→Fed매파→10Y. L7 교차 확인."},
-    {"from": "TC-003", "to": "TC-010", "link": "이란→카타르헬륨→팹→GPU물리적병목. L7 교차 확인."},
-    {"from": "TC-007", "to": "TC-010", "link": "금리상승→AI채권이자$27.7B→capex ROI 악화. L7 발견."},
-    {"from": "TC-006", "to": "TC-001", "link": "301 전자장비=반도체. ADR과 관세 동시."},
-    {"from": "TC-006", "to": "TC-002", "link": "ADR 달러 유입 → KRW 강세 역방향."}
+    {
+      "from": "TC-003",
+      "to": "TC-007",
+      "link": "이란→유가→인플레→Fed매파→10Y. L7 교차 확인."
+    },
+    {
+      "from": "TC-003",
+      "to": "TC-010",
+      "link": "이란→카타르헬륨→팹→GPU물리적병목. L7 교차 확인."
+    },
+    {
+      "from": "TC-007",
+      "to": "TC-010",
+      "link": "금리상승→AI채권이자$27.7B→capex ROI 악화. L7 발견."
+    },
+    {
+      "from": "TC-006",
+      "to": "TC-001",
+      "link": "301 전자장비=반도체. ADR과 관세 동시."
+    },
+    {
+      "from": "TC-006",
+      "to": "TC-002",
+      "link": "ADR 달러 유입 → KRW 강세 역방향."
+    },
+    {
+      "from": "TC-017",
+      "to": "TC-018",
+      "link": "SpaceX IPO 공모가 → K-우주주 PER 기준점 등장. 직결."
+    },
+    {
+      "from": "TC-017",
+      "to": "TC-003",
+      "link": "이란 확전 → Brent $115+ → IPO 환경 악화. C 시나리오 연동."
+    },
+    {
+      "from": "TC-017",
+      "to": "TC-016",
+      "link": "VIX 30+ → $75B 소화 가능성 제약."
+    },
+    {
+      "from": "TC-017",
+      "to": "TC-013",
+      "link": "X Money 규제 돌파 시 BRICS 탈달러 교차 (장기)."
+    }
   ],
   "th_status": {
-    "TH-001": {"confidence": 0.475, "direction": "통상→risk-off", "members": 8, "last_update": "2026-03-28 L7 통합"}
+    "TH-001": {
+      "confidence": 0.475,
+      "direction": "통상→risk-off",
+      "members": 8,
+      "last_update": "2026-03-28 L7 통합"
+    }
   }
 }

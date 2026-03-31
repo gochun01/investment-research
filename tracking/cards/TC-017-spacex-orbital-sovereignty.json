@@ -1,0 +1,160 @@
+{
+  "tc_id": "TC-017",
+  "created": "2026-03-29",
+  "updated": "2026-03-29",
+  "title": "SpaceX Orbital Sovereignty — IPO × 수직통합 × 서사vs물리 간극",
+  "status": "active",
+
+  "issue_summary": "SpaceX S-1 제출 임박 ($1.75T / 공모 $75B / 6월 상장). Starlink 1,000만 + Golden Dome $2B + xAI 합병 + X Money 베타가 단일 IPO 밸류에이션 극대화 시퀀스. 서사($5T 인프라 필요)와 공모 자금($75B) 사이의 간극이 밸류에이션 리스크의 본질. S-1 FCF 행이 최초 공식 계량.",
+
+  "phase": 1,
+  "phase_log": [
+    {
+      "date": "2026-03-29",
+      "from": null,
+      "to": 1,
+      "reason": "SA-20260329-001 L7 분석 완료. S-1 미제출. 시나리오 감시 시작.",
+      "sa_id": "SA-20260329-001"
+    }
+  ],
+
+  "pre_read": {
+    "type": "STRUCT×POLICY×EVENT",
+    "scp": 5,
+    "urgency": "WATCH",
+    "scp_basis": "발사체+위성+AI+반도체+금융+정치 동시 수직통합 시도. AT&T 분할(1984) 이후 전례 없는 수준."
+  },
+
+  "scenarios": {
+    "A": {
+      "label": "Orbital Sovereignty 확인 — IPO 성공 + 수직통합 가속",
+      "probability": "25%",
+      "trigger": {
+        "condition": "S-1 FCF > $0 + IPO 공모가 $1.5T+ + 공모 완판",
+        "source": "구조적+통계적",
+        "recalibration": "S-1 제출 후 즉시 재설정",
+        "notes": "FCF 양수가 1차 조건. 완판이 2차 조건."
+      },
+      "kc": {
+        "watch": "IPO 공모가 $1.2T 이하",
+        "alert": "IPO 연기 보도 × 3일",
+        "hard": "IPO 철회 OR S-1 FCF 음수 공개",
+        "action": "A thesis 즉시 폐기. B/C 전환. 한화/KAI 리레이팅 소멸 포지션 조정 준비."
+      }
+    },
+    "B": {
+      "label": "선별 성공 + 부분 실패 — IPO 축소 + 일부 조각 탈락",
+      "probability": "35%",
+      "trigger": {
+        "condition": "S-1 FCF 양수 but IPO 공모 $60B 이하 OR X Money DAU 50만 미만",
+        "source": "통계적",
+        "recalibration": "S-1 제출 후 즉시 재설정",
+        "notes": "Starlink 확인 + xAI/Terafab 지연의 부분 성공 구조."
+      },
+      "kc": {
+        "watch": "IPO $60B+ 완판 + X Money DAU 200만+",
+        "alert": "Terafab JV 파트너 공식 확정",
+        "hard": "IPO 재공모 $1.5T+ + xAI 매출 공개",
+        "action": "B thesis 재검토. A 방향 전환 조건 재확인."
+      }
+    },
+    "C": {
+      "label": "IPO 연기/실패 + DOGE 폭탄 — 수직통합 좌초",
+      "probability": "25%",
+      "trigger": {
+        "condition": "DOGE 소송 이해충돌 인정 판결 OR IPO 공식 연기 발표",
+        "source": "서사적+정책적",
+        "recalibration": "DOGE 판결 후 즉시 재설정",
+        "notes": "TC-003 이란 경로 연동: Brent $120+ + VIX 35+ 조합이 C 가속 조건."
+      },
+      "kc": {
+        "watch": "소송 기각 + VIX 25↓",
+        "alert": "IPO 재추진 보도 + 새 S-1 제출",
+        "hard": "IPO 재개 완판 + 소송 전면 취하",
+        "action": "C thesis 재검토. 한화/KAI K-우주 리레이팅 소멸 → 최대 하락 구간 인식."
+      }
+    },
+    "D": {
+      "label": "반독점 분할 + 궤도 주권 해체 — 장기 구조 리스크",
+      "probability": "15%",
+      "trigger": {
+        "condition": "DOJ/FTC 반독점 공식 조사 개시 OR EU DMA 게이트키퍼 지정",
+        "source": "정책적",
+        "recalibration": "IPO 완수 후 6개월 이내 조사 여부 확인",
+        "notes": "AT&T(1984) 선례. 분할 시 개별 자산 가치 합산 > 현재 통합 가치 가능성."
+      },
+      "kc": {
+        "watch": "반독점 논의 소멸",
+        "alert": "정치적 지지 확보 (행정부 방어 공식화)",
+        "hard": "분할 명령 기각 + 대법원 확정",
+        "action": "D thesis 폐기. 분할 시 Starlink/xAI/X Money 개별 상장 가치 재평가."
+      }
+    }
+  },
+
+  "tracking_indicators": [
+    "S-1 제출 여부 (이번 주)",
+    "S-1 FCF 행 (양수/음수)",
+    "IPO 공모 규모 ($40B~$75B 범위)",
+    "IPO 공모가 (vs $1.75T 2차 시장)",
+    "X Money 4월 베타 DAU",
+    "X Money CA/NY 라이선스 여부",
+    "DOGE 소송 판결 일정 + 결과",
+    "Terafab JV 파트너 공시 여부",
+    "Starlink 해지율 (S-1 공개 시)",
+    "xAI 공동창업자 이탈 추가 여부",
+    "VIX (TC-016 연동: $75B 소화 가능성)",
+    "Brent (TC-003 연동: 매크로 역풍)",
+    "한화에어로 PER 변화 (K-우주 리레이팅 추적)"
+  ],
+
+  "heartbeat_thresholds": [
+    {
+      "metric": "VIX",
+      "watch": 28,
+      "alert": 32,
+      "hard": 38,
+      "direction": "상향",
+      "unit": "포인트",
+      "notes": "IPO 환경 악화. Hard 도달 시 C 시나리오 확률 급상승."
+    },
+    {
+      "metric": "Brent",
+      "watch": 115,
+      "alert": 120,
+      "hard": 130,
+      "direction": "상향",
+      "unit": "USD/barrel",
+      "notes": "TC-003 연동. C 시나리오 매크로 가속 조건."
+    },
+    {
+      "metric": "IPO 공모가 (S-1 후)",
+      "watch": 1200000000000,
+      "alert": 1000000000000,
+      "hard": 750000000000,
+      "direction": "하향",
+      "unit": "USD",
+      "notes": "A 시나리오 KC 기준. $1.2T 이하 = A thesis 약화."
+    }
+  ],
+
+  "analysis_ids": ["SA-20260329-001"],
+
+  "tags": ["spacex", "ipo", "musk", "orbital-sovereignty", "starlink", "xai", "terafab", "x-money", "doge", "golden-dome", "SCP5", "STRUCT", "POLICY"],
+
+  "cross_card_links": [
+    {"to": "TC-003", "link": "이란 확전 → Brent $115+ → 매크로 역풍 → IPO 환경 악화. C 시나리오 연동."},
+    {"to": "TC-010", "link": "AI capex 양극화 → 궤도AI 서사 소구력 + Terafab 경쟁 구도."},
+    {"to": "TC-012", "link": "K-방산 Golden Dome 맥락 + 한화에어로 교차."},
+    {"to": "TC-013", "link": "BRICS 탈달러 × X Money 다통화 → 장기 교차. X Money 규제 돌파 시."},
+    {"to": "TC-014", "link": "AI 전력 위기 → 궤도 연산의 에너지 제약 + 지상 대안 경쟁."},
+    {"to": "TC-016", "link": "VIX 30+ 수축기 → $75B IPO 소화 가능성 직결 제약."},
+    {"to": "TC-018", "link": "SpaceX IPO → K-우주주 PER 기준점 등장 → TC-018 한화/KAI 리레이팅 직결."}
+  ],
+
+  "close_condition": "IPO 완수 + 6개월 이후 FCF 지속 확인 OR IPO 철회 + 5년 이상 재추진 없음",
+
+  "psf_link": "P3 🔴(수축, VIX 31), L3-Orbital-Sovereignty(신규), D1(엔캐리 활성). IPO는 risk-on 이벤트 but PSF 레짐 🔴. 역방향 텐션.",
+
+  "macro_ref": "C7 Brent $112, C8 BEI ~2.34%, 실질금리 2.08%, VIX 31. D1 완전 활성."
+}

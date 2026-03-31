@@ -1,0 +1,147 @@
+{
+  "tc_id": "TC-020",
+  "created": "2026-04-01",
+  "updated": "2026-04-01",
+  "title": "로보틱스 플랫폼 해자 — 감속기 신화 붕괴 × Isaac lock-in × 부품→시스템 가치 이동",
+  "status": "active",
+
+  "issue_summary": "로보틱스 밸류체인 해부 결과: 감속기(통념 병목)는 V2🔴+V3🔴(중국 추격+이익률 0%). 진짜 해자는 NVIDIA Isaac(TYPE-B 플랫폼 lock-in, V1🟢V2🟢). 서사≠자본 간극: 서사는 부품, 자본은 시스템+AI. 숨은 티어2: Schaeffler(액추에이터), THK(정밀나사), SKF(베어링).",
+
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-04-01",
+      "trigger": "SC-20260401-001 로보틱스 밸류체인 분석. M1 재조정 3회. Q-E 2개(이익률 역설, 자본 방향).",
+      "note": "sector-chain 첫 분석. 감속기 purple→teal 격하. Isaac coral 판정. TYPE-A→A×B 재설정."
+    }
+  ],
+
+  "pre_read": {
+    "type": "STRUCT×MACRO",
+    "scp": 3,
+    "urgency": "WATCH"
+  },
+
+  "scenarios": {
+    "A": {
+      "label": "Isaac 독주 — 플랫폼 해자 심화",
+      "probability": "40%",
+      "trigger": {
+        "condition": "NVIDIA 로보틱스 매출 별도 공시 + 주요 로봇사 3곳+ Isaac 전면 채택",
+        "source": "구조적",
+        "recalibration": "정기 GTC 2027 + 비정기(경쟁 플랫폼 등장 시)"
+      },
+      "kc": {
+        "watch": "ROS2 커뮤니티가 Isaac급 시뮬레이션 출시",
+        "alert": "주요 로봇사 1곳이 Isaac 이탈 선언",
+        "hard": "중국 대안 플랫폼이 FANUC/ABB 급 기업 채택",
+        "action": "TC-020 A thesis 재검토. 플랫폼 독주 약화 시 B로 전환."
+      },
+      "current_status": "GTC 2026 풀스택 공개. FANUC/ABB/야스카와/KUKA 통합. 아직 매출 미분리."
+    },
+    "B": {
+      "label": "플랫폼 분산 — 오픈소스 추격",
+      "probability": "25%",
+      "trigger": {
+        "condition": "ROS2+Gazebo 시뮬레이션이 Isaac 90% 수준 도달 + 대형 로봇사 채택",
+        "source": "기술적"
+      },
+      "kc": {
+        "watch": "NVIDIA Isaac 채택 기업 수 감소",
+        "alert": "오픈소스 시뮬레이션 벤치마크가 Isaac과 동등",
+        "hard": "NVIDIA 로보틱스 사업 축소/철수",
+        "action": "TC-020 B 확정. 플랫폼 해자 소멸. 가치가 시스템 레이어로 하강."
+      },
+      "current_status": "ROS2는 활발하나 시뮬레이션 인프라 격차 큼."
+    },
+    "C": {
+      "label": "감속기 해자 복원 — 중국 추격 실패",
+      "probability": "15%",
+      "trigger": {
+        "condition": "하모닉 OPM 10%+ 복귀 + 중국산 품질 이슈 발생 + Tesla 일본 회귀",
+        "source": "구조적"
+      },
+      "kc": {
+        "watch": "중국 감속기 품질 이슈 보도",
+        "alert": "Tesla가 일본 공급자 비중 재확대",
+        "hard": "하모닉 OPM 15%+ 복귀",
+        "action": "TC-020 감속기 재평가. purple 복원 검토."
+      },
+      "current_status": "해소 방향. 하모닉 OPM 0.01%. 그린하모닉스 증설 중."
+    },
+    "D": {
+      "label": "휴머노이드 수요 지연 — 전체 thesis 약화",
+      "probability": "20%",
+      "trigger": {
+        "condition": "Gartner '<20사 2028 양산' 전망 하향 + Tesla Optimus 양산 1년+ 지연",
+        "source": "서사적+구조적"
+      },
+      "kc": {
+        "watch": "Optimus 양산 타임라인 연기 발표",
+        "alert": "Figure AI/Unitree 대량 출하 실패",
+        "hard": "로보틱스 ETF(ROBO) 고점 대비 -30%",
+        "action": "TC-020 전체 thesis 약화. 모니터링 전환."
+      },
+      "current_status": "CES 2026에서 21개 중국 휴머노이드 전시. 초기 시장은 형성 중."
+    }
+  },
+
+  "tracking_indicators": [
+    {
+      "indicator": "NVIDIA 로보틱스 매출 공시",
+      "current": "미분리",
+      "threshold": "별도 세그먼트 표시 = 전환점",
+      "next_check": "2026-05 분기 실적"
+    },
+    {
+      "indicator": "하모닉드라이브 OPM",
+      "symbol": "6324.T",
+      "current": "0.01%",
+      "threshold": "5%+ 복귀 = 해자 복원 가능성, 0% 지속 = 확정 붕괴",
+      "next_check": "2026-05 FY2026 실적"
+    },
+    {
+      "indicator": "Schaeffler 휴머노이드 수주",
+      "symbol": "SHA.DE",
+      "current": "CES 2026 공개만, 수주 미발표",
+      "threshold": "실제 수주 계약 발표",
+      "next_check": "2026-07"
+    },
+    {
+      "indicator": "ROBO ETF",
+      "symbol": "ROBO",
+      "current": "$66.90",
+      "threshold": "$60 이하 = 섹터 약세 심화",
+      "next_check": "2026-04-14"
+    },
+    {
+      "indicator": "그린하모닉스 증설 진행",
+      "current": "연 50만 → 159만 목표",
+      "threshold": "2027 목표 달성 여부",
+      "next_check": "2026-10"
+    }
+  ],
+
+  "heartbeat_thresholds": [
+    {
+      "indicator": "ROBO ETF",
+      "symbol": "ROBO",
+      "watch": 60,
+      "alert": 55,
+      "hard": 50,
+      "direction": "below"
+    }
+  ],
+
+  "cross_card_links": [
+    {
+      "to": "TC-010",
+      "link": "AI capex → GPU 수요 → NVIDIA 로보틱스 확장. capex 축소 시 Isaac 투자도 약화."
+    }
+  ],
+
+  "analysis_ids": ["SC-20260401-001"],
+  "tags": ["STRUCT", "로보틱스", "감속기", "NVIDIA", "Isaac", "플랫폼", "휴머노이드", "MT-04"],
+  "close_condition": "NVIDIA 로보틱스 매출 분리 + 시장 프라이싱 확인 → thesis 실현 OR 플랫폼 분산(B) 확정 → thesis 소멸"
+}

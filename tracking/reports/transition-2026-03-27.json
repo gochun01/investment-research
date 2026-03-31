@@ -1,0 +1,301 @@
+{
+  "generated": "2026-03-27",
+  "horizon": "2026-03 ~ 2027-03",
+  "paths": [
+    {
+      "th_id": "TH-001",
+      "hypothesis": "글로벌 통상 재편(301+EU제3극+이란)이 복합 작용하여 risk-off 국면으로 전이",
+      "confidence": 0.4,
+      "from_regime": "neutral",
+      "to_regime": "risk-off",
+      "horizon": "mid",
+      "start_date": "2026-03-27",
+      "target_date": "2026-09-27 00:00:00",
+      "convergence_count": 5,
+      "evidence_count": 2,
+      "recent_delta_trend": 0.05,
+      "members": [
+        {
+          "tc_id": "TC-002",
+          "role": "cascade_target"
+        },
+        {
+          "tc_id": "TC-001",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-003",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-005",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-008",
+          "role": "convergence_member"
+        },
+        {
+          "tc_id": "TC-009",
+          "role": "convergence_member"
+        }
+      ],
+      "waypoints": [
+        {
+          "date": "2026-07-24",
+          "event": "301 관세율 공고",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260327-001",
+              "tc_id": "TC-001",
+              "claim": "Section 301 한국 관세 부과 (7/24)",
+              "scenario": "A",
+              "probability": "45%",
+              "trigger": "301 관세율 공고",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260326-001",
+              "tc_id": "TC-008",
+              "claim": "한국車 관세 25% + EU IAA → 구조 전환 가속",
+              "scenario": "A",
+              "probability": "40%",
+              "trigger": "IEEPA 25% 공식 시행",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260326-002",
+              "tc_id": "TC-008",
+              "claim": "한국車 관세 협상 타결 (15% 유지)",
+              "scenario": "B",
+              "probability": "15%",
+              "trigger": "한미 통상 합의 공식 발표",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260327-002",
+              "tc_id": "TC-001",
+              "claim": "Section 301 한국 면제/경감",
+              "scenario": "B",
+              "probability": "20%",
+              "trigger": "한-미 합의 면제 조건 명시",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260326-003",
+              "tc_id": "TC-008",
+              "claim": "한국車 삼중 압박 극대화",
+              "scenario": "C",
+              "probability": "30%",
+              "trigger": "25%관세 + BYD 유럽 분기1위 + 이란전쟁 3개월+",
+              "deadline": "2026-07-24",
+              "status": "open"
+            },
+            {
+              "pred_id": "PRED-20260327-004",
+              "tc_id": "TC-001",
+              "claim": "법적 공백 → 관세 급락",
+              "scenario": "D",
+              "probability": "10%",
+              "trigger": "Section 122 만료 + 301 미부과",
+              "deadline": "2026-07-24",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2027-06-30",
+          "event": "BYD L4 자율주행 + 현대 NVIDIA 성과 지연",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260326-004",
+              "tc_id": "TC-008",
+              "claim": "SDV 경쟁 부상 — 관세 뒤의 기술 전쟁",
+              "scenario": "D",
+              "probability": "15%",
+              "trigger": "BYD L4 자율주행 + 현대 NVIDIA 성과 지연",
+              "deadline": "2027-06-30",
+              "status": "open"
+            }
+          ]
+        },
+        {
+          "date": "2028-03-31",
+          "event": "EU ACI 발동 또는 IAA 발효",
+          "branch": true,
+          "predictions": [
+            {
+              "pred_id": "PRED-20260327-003",
+              "tc_id": "TC-009",
+              "claim": "EU 제3극화 가속 → 한-EU 통상 재편",
+              "scenario": "C",
+              "probability": "25%",
+              "trigger": "EU ACI 발동 또는 IAA 발효",
+              "deadline": "2028-03-31",
+              "status": "open"
+            }
+          ]
+        }
+      ],
+      "chain_progress": [
+        {
+          "order": 1,
+          "description": "P2(관세) 변경 → 룰 충격",
+          "estimated": "2026-05",
+          "active": false
+        },
+        {
+          "order": 2,
+          "description": "룰 충격 → 신용 스프레드 확대",
+          "estimated": "2026-06",
+          "active": false
+        },
+        {
+          "order": 3,
+          "description": "금리 상승 → 유동성 축소",
+          "estimated": "2026-08",
+          "active": false
+        },
+        {
+          "order": 4,
+          "description": "유동성 축소 → 포지션 청산 → risk-off",
+          "estimated": "2026-10",
+          "active": false
+        }
+      ],
+      "kc_zones": [
+        {
+          "key": "vix_calm",
+          "condition": "VIX 15 이하 10일 지속",
+          "weight": -0.2
+        },
+        {
+          "key": "peace_deal",
+          "condition": "301 철회 + 이란 휴전 동시",
+          "weight": -0.5
+        },
+        {
+          "key": "fed_emergency",
+          "condition": "Fed 긴급 완화 (50bp+ 인하)",
+          "weight": -0.3
+        }
+      ],
+      "evidence_trail": [
+        {
+          "date": "2026-03-27",
+          "type": "tc_join",
+          "description": "TC-001,003,008,009 4개 TC 수렴 그룹 형성. SA-20260327-001 풀 파이프라인에서 통상 재편 확인.",
+          "delta": 0.05,
+          "confidence_after": 0.35
+        },
+        {
+          "date": "2026-03-27",
+          "type": "tc_join",
+          "description": "TC-005 수렴 합류",
+          "delta": 0.05,
+          "confidence_after": 0.4
+        }
+      ],
+      "predictions": [
+        {
+          "pred_id": "PRED-20260327-001",
+          "tc_id": "TC-001",
+          "claim": "Section 301 한국 관세 부과 (7/24)",
+          "scenario": "A",
+          "probability": "45%",
+          "trigger": "301 관세율 공고",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-001",
+          "tc_id": "TC-008",
+          "claim": "한국車 관세 25% + EU IAA → 구조 전환 가속",
+          "scenario": "A",
+          "probability": "40%",
+          "trigger": "IEEPA 25% 공식 시행",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-002",
+          "tc_id": "TC-008",
+          "claim": "한국車 관세 협상 타결 (15% 유지)",
+          "scenario": "B",
+          "probability": "15%",
+          "trigger": "한미 통상 합의 공식 발표",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260327-002",
+          "tc_id": "TC-001",
+          "claim": "Section 301 한국 면제/경감",
+          "scenario": "B",
+          "probability": "20%",
+          "trigger": "한-미 합의 면제 조건 명시",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-003",
+          "tc_id": "TC-008",
+          "claim": "한국車 삼중 압박 극대화",
+          "scenario": "C",
+          "probability": "30%",
+          "trigger": "25%관세 + BYD 유럽 분기1위 + 이란전쟁 3개월+",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260327-004",
+          "tc_id": "TC-001",
+          "claim": "법적 공백 → 관세 급락",
+          "scenario": "D",
+          "probability": "10%",
+          "trigger": "Section 122 만료 + 301 미부과",
+          "deadline": "2026-07-24",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260326-004",
+          "tc_id": "TC-008",
+          "claim": "SDV 경쟁 부상 — 관세 뒤의 기술 전쟁",
+          "scenario": "D",
+          "probability": "15%",
+          "trigger": "BYD L4 자율주행 + 현대 NVIDIA 성과 지연",
+          "deadline": "2027-06-30",
+          "status": "open"
+        },
+        {
+          "pred_id": "PRED-20260327-003",
+          "tc_id": "TC-009",
+          "claim": "EU 제3극화 가속 → 한-EU 통상 재편",
+          "scenario": "C",
+          "probability": "25%",
+          "trigger": "EU ACI 발동 또는 IAA 발효",
+          "deadline": "2028-03-31",
+          "status": "open"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "active_th": 1,
+    "total_predictions": 8,
+    "resolved_predictions": 0,
+    "overall_hit_rate": null,
+    "active_watches": 33,
+    "conviction_templates": 0
+  },
+  "self_reinforcement": {
+    "templates": [],
+    "system_confidence_trend": "rising"
+  }
+}

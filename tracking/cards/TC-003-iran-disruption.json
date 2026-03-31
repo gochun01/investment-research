@@ -1,38 +1,267 @@
 {
-  "id": "TC-003",
-  "type": "stereo",
-  "title": "이란 전쟁 교란 — 약화 구간에서 역풍 부상",
-  "source": "SA-20260326-003 (통합)",
+  "tc_id": "TC-003",
+  "title": "이란 전쟁 교란 — 재격화 확정, MT-02 키스톤",
+  "source": "SA-20260328-001 (통합)",
   "created": "2026-03-26",
-  "status": "tracking",
-  "phase": 1,
+  "updated": "2026-03-31T23:00",
+  "status": "active",
+  "phase": 2,
   "scp": 4,
-
-  "trigger": {
-    "condition": "이란 휴전 공식 합의 OR Brent <$80 × 5d (교란 해소)",
-    "current": "15-point 안 거부. Brent $99. 비적성 선박 통행 허용.",
-    "fired": false
+  "issue_summary": "이란 전쟁 26일차. 호르무즈 톨부스화($2M/척 CIPS) + Brent $112.57($115 임계 $2.43) + 탄그시리 IRGC 사살→보복 동기 폭발 + Airgas 헬륨 50% 삭감 공식화. 톨부스=종전 후에도 이란 레버리지 유지 수익모델. 4/6 데드라인 접근.",
+  "pre_read": {
+    "type": "MACRO×STRUCT",
+    "scp": 4,
+    "urgency": "URGENT"
   },
-  "kc": {
-    "watch": "Brent $120 도달",
-    "alert": "Brent $135 × 3d",
-    "hard": "Brent $150 × 3d OR 호르무즈 완전 재봉쇄",
-    "fired": false
+  "scenarios": {
+    "A": {
+      "label": "확전 심화 (Brent $120+)",
+      "probability": "45%",
+      "trigger": {
+        "condition": "Brent>$115 x 3d + 호르무즈 완전 봉쇄 또는 IRGC 보복 공격",
+        "source": "구조적+통계적",
+        "distance": "Brent $2.43 남음",
+        "recalibration": "정기 4/15 + 비정기(정전/봉쇄/보복 이벤트)"
+      },
+      "kc": {
+        "watch": "정전 합의 보도 OR 트럼프 데드라인 재연장",
+        "alert": "Brent<$100 x 3d",
+        "hard": "이란 공식 항복 OR Brent<$85 x 5d",
+        "action": "TC-003 Phase 4. 확전 thesis 폐기. B 또는 C로 전환."
+      },
+      "current_status": "Brent $105.32. $115까지 $9.68. VIX 31.05(30 돌파)."
+    },
+    "B": {
+      "label": "교착 지속 ($95~$110)",
+      "probability": "25%",
+      "trigger": {
+        "condition": "Brent $100~$115 밴드 2주+ 유지",
+        "source": "통계적"
+      },
+      "kc": {
+        "watch": "Brent $115+",
+        "alert": "Brent>$120 × 3d",
+        "hard": "완전 봉쇄 OR 정전",
+        "action": "TC-003 Phase 3. 교착 thesis 종료. 봉쇄면 A/D로, 정전이면 C로 전환."
+      },
+      "current_status": "Phase 1. Brent $112.57 밴드 상단 초과 접근."
+    },
+    "C": {
+      "label": "정전/타협",
+      "probability": "15%",
+      "trigger": {
+        "condition": "이란-미국 공식 정전 + 호르무즈 재개방",
+        "source": "서사적"
+      },
+      "kc": {
+        "watch": "이란 재도발",
+        "alert": "호르무즈 재봉쇄",
+        "hard": "전쟁 재개",
+        "action": "TC-003 Phase 4. 정전 thesis 폐기. A로 전환. 교란 재격화 추적 재개."
+      },
+      "current_status": "Phase 0. 미진입. 협상 결렬 상태."
+    },
+    "D": {
+      "label": "확전 → 글로벌 에너지 위기",
+      "probability": "15%",
+      "trigger": {
+        "condition": "Brent>$150 x 3d + 호르무즈 완전 폐쇄 + 제3국 관여",
+        "source": "구조적"
+      },
+      "kc": {
+        "watch": "제3국 개입",
+        "alert": "NATO/아랍 연합",
+        "hard": "WTI $200",
+        "action": "TC-003 Phase 5. 글로벌 에너지 위기 확정. 별도 TC 카드 생성. TH 긴급 갱신."
+      },
+      "current_status": "Phase 0. 미진입."
+    }
   },
-
-  "events": ["EC-001", "EC-002"],
-  "rm_watches": ["W-UQ-020", "W-UQ-021", "W-UQ-022", "W-UQ-023"],
-  "psf_link": "L3 약화↓, L5 약화↓, P3 🟠",
-  "macro_ref": "C7 Brent, C8 BEI",
-
+  "tracking_indicators": [
+    {
+      "indicator": "Brent",
+      "symbol": "BZ=F",
+      "current": "$105.32",
+      "threshold": "$115 (A진입, $2.43 남음)",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    },
+    {
+      "indicator": "VIX",
+      "symbol": "^VIX",
+      "current": "31.05",
+      "threshold": "30 (L7 급성)",
+      "last_check": "2026-03-28",
+      "next_check": "2026-03-31"
+    },
+    {
+      "indicator": "HY OAS",
+      "symbol": "BAMLH0A0HYM2",
+      "current": "321bp",
+      "threshold": "350bp (크레딧 균열)",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-04"
+    },
+    {
+      "indicator": "헬륨 팹 가동률",
+      "current": "미공개(침묵)",
+      "threshold": "팹 가동률 감소 공식 보고",
+      "last_check": "2026-03-28",
+      "next_check": "2026-04-15"
+    },
+    {
+      "indicator": "이란 협상",
+      "current": "결렬 (15-point 제안 거부)",
+      "threshold": "대면 회담 성사 또는 공식 결렬",
+      "last_check": "2026-03-31",
+      "next_check": "2026-04-07"
+    },
+    {
+      "indicator": "LMT (방산 vs 에너지 괴리)",
+      "symbol": "LMT",
+      "current": "$598.57 (고점 $668 대비 -10.5%)",
+      "threshold": "$650 회복 = 장기전 리프라이싱. $550 이하 = 에너지 이벤트 확정.",
+      "last_check": "2026-03-31",
+      "next_check": "2026-04-07",
+      "note": "CT 발견: 전쟁 중 방산 하락 = 안보 프레임 거부의 가격 증거. XLE +37%와 대비."
+    },
+    {
+      "indicator": "Polymarket 이란 휴전",
+      "current": "4월 48%, 연말 74%",
+      "threshold": "4월 60%+ 시 Frame D(딜) 부상",
+      "last_check": "2026-03-31",
+      "next_check": "2026-04-07"
+    }
+  ],
   "heartbeat_thresholds": [
-    {"indicator": "Brent", "symbol": "BZ=F", "watch": 110, "alert": 120, "hard": 150, "direction": "above"},
-    {"indicator": "VIX", "symbol": "^VIX", "watch": 30, "alert": 35, "hard": 45, "direction": "above"}
+    {
+      "indicator": "Brent",
+      "symbol": "BZ=F",
+      "watch": 115,
+      "alert": 125,
+      "hard": 150,
+      "direction": "above"
+    },
+    {
+      "indicator": "VIX",
+      "symbol": "^VIX",
+      "watch": 30,
+      "alert": 35,
+      "hard": 45,
+      "direction": "above"
+    },
+    {
+      "indicator": "HY OAS",
+      "symbol": "BAMLH0A0HYM2",
+      "watch": 350,
+      "alert": 400,
+      "hard": 500,
+      "direction": "above"
+    }
   ],
-
+  "events": [
+    "EC-001",
+    "EC-002"
+  ],
+  "rm_watches": [
+    "W-UQ-020",
+    "W-UQ-021",
+    "W-UQ-022",
+    "W-UQ-023",
+    "W-UQ-080",
+    "W-UQ-081",
+    "W-UQ-082"
+  ],
+  "psf_link": "P3 🔴(격화), P5 🔴(Brent$112.57), L5 활성★(재강화), L3 활성★(BEI 방향전환)",
+  "macro_ref": "C7 Brent $112.57, C8 BEI 2.34%",
+  "cross_card_links": [
+    {
+      "to": "TC-007",
+      "link": "이란→유가→인플레→Fed매파→10Y"
+    },
+    {
+      "to": "TC-010",
+      "link": "이란→카타르헬륨→팹→GPU물리적병목"
+    }
+  ],
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-03-26",
+      "trigger": "첫 분석. Brent $99, 교란 약화 판정.",
+      "note": "SA-20260326-003"
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "갱신. 교란 약화→재격화 역전. Brent $104, 이란 협상 결렬, IRGC 사살.",
+      "note": "SA-20260328-001. 시나리오 전면 갱신. A 확전 40%, C 이중충격 35%."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "L7 통합 갱신. Brent $112.57($115까지 $2.43). 톨부스화 구조 확인. A 45%(+5), B 25%(-10), D 15%(+5).",
+      "note": "SA-20260328-L7. 3TC 교차 분석 기반."
+    },
+    {
+      "phase": 1,
+      "date": "2026-03-28",
+      "trigger": "MCP 갱신. Brent $105.32(+$4.62). VIX 31.05(30 돌파). $115까지 $9.68.",
+      "note": "pipeline-update. VIX 30 돌파."
+    },
+    {
+      "phase": 2,
+      "date": "2026-03-31",
+      "trigger": "Phase 1→2 전환. 부산물 네트워크 붕괴 시작. LNG FM→헬륨→반도체(4월초 임계) + 나프타→PE→봉투(이미 도달). 비석유 전이 경로 3개 동시 활성. Macro 레짐 🟢→🔴 역전(B 4/5→1/5). VIX 30.61, HY 342bp, 지준 $2.994T. 봉투 대란·석화 감산·헬륨 위기 = 전쟁이 석유 밖에서 한국 실물 타격 시작.",
+      "note": "SA-20260331-001 + SCAN-20260331-001 + Core Extract + rm 5계층 수집. scanner→core-extractor→rm→Stereo 풀 파이프라인 실행."
+    },
+    {
+      "phase": 2,
+      "date": "2026-03-31",
+      "trigger": "CT(군중 온도) 교차. 6프레임 분석. Frame A(안보) 사망 — 트럼프 'take the oil'로 자기 파괴. 군중+제도권 모두 Frame B(유가) 합의. 방산 LMT -10.5%(전쟁 중 하락) = 안보 프레임 거부의 가격 증거. 내부자 거래 패턴($580M, 16분 전). 군중 냉소 78/100, 입=손 일치(확신 H).",
+      "note": "CT-20260331-002. 돌발 Q-E1(방산 하락)→M1 재조정. W-CT-003(방산vs에너지)+W-CT-004(내부자거래) 등록."
+    },
+    {
+      "phase": 2,
+      "date": "2026-04-01",
+      "trigger": "풀 파이프라인 Phase 3. 비석유 전이 물리적 임계 도달. 나프타 $1,050(+69%), 재고 2주. 헬륨 현물 +40%, 팹 D-3(4/04). 삼성 외국인 48.62%(12년반 최저). SK하이닉스 이틀 -15%. 정부-시장 서사 괴리('6월 충분' vs 주가 급락). 4/6 에너지 공격 데드라인 = A/C 분기점.",
+      "note": "SA-20260401-001 + SCAN-20260401 + RM-CL001 + core + PSF. W-헬륨D-Day + W-에틸렌하류 등록."
+    }
+  ],
   "check_log": [
-    {"date": "2026-03-26", "observation": "Brent $99(<$100). L3/L5 약화. 비적성 통행. Phase 1 유지.", "next_check": "2026-03-28"}
+    {
+      "date": "2026-03-26",
+      "observation": "Brent $99(<$100). L3/L5 약화. 비적성 통행. Phase 1 유지.",
+      "next_check": "2026-03-28"
+    },
+    {
+      "date": "2026-03-28",
+      "observation": "Brent $104(재상회). 이란 협상 결렬. IRGC 사살. MOVE 115. VIX 28.9. HY +4bp. '교란 약화' 전제 역전. Phase 1 유지하나 2 접근.",
+      "next_check": "2026-03-31"
+    },
+    {
+      "date": "2026-03-28",
+      "observation": "L7 통합: Brent $112.57. 톨부스 수익모델화 확인. A 45%, B 25%, D 15%. 3TC 교차 인과 체인(이란→Core PCE→Fed→AI capex) 확인.",
+      "next_check": "2026-03-31"
+    }
   ],
-
-  "close_condition": "이란 휴전 확정 → 교란 해소 → 카드 종료 OR Brent $150 → 확전 시나리오 → 새 카드"
+  "analysis_ids": [
+    "SA-20260326-003",
+    "SA-20260328-001",
+    "SA-20260328-L7",
+    "SA-20260331-001",
+    "CT-20260331-002"
+  ],
+  "tags": [
+    "MACRO",
+    "STRUCT",
+    "이란",
+    "에너지",
+    "헬륨",
+    "나프타",
+    "호르무즈",
+    "MT-02",
+    "키스톤"
+  ],
+  "close_condition": "이란 휴전 확정 → 교란 해소 → 카드 종료 OR Brent $150 → D시나리오 새 카드"
 }

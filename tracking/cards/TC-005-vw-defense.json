@@ -1,24 +1,84 @@
 {
-  "id": "TC-005",
-  "type": "stereo",
-  "title": "VW-방산 전환 — 유럽 자동차→방산 80년 역전",
-  "source": "SA-20260326-005",
+  "tc_id": "TC-005",
   "created": "2026-03-26",
-  "status": "tracking",
-  "phase": 0,
-  "scp": 4,
+  "updated": "2026-03-28",
+  "title": "VW-방산 전환 — 유럽 자동차→방산 80년 역전",
+  "status": "active",
 
-  "trigger": {
-    "condition": "VW-라파엘 계약 체결 + 셰플러-헬싱 양산 시작",
-    "current": "협상 중. VW '구체적 결정 없음'.",
-    "fired": false
+  "issue_summary": "VW-라파에엘 방산 합작 협상 중. 셰플러-헬싱 전환. IG Metall 동의 미확인. 유럽 자동차→방산 산업 구조 전환 80년 역전 시그널.",
+
+  "phase": 0,
+  "phase_log": [
+    {"phase": 0, "date": "2026-03-26", "trigger": "FT 보도. 협상 확인.", "note": "SA-20260326-005"}
+  ],
+
+  "pre_read": {
+    "type": "STRUCT",
+    "scp": 4,
+    "urgency": "SLOW"
   },
-  "kc": {
-    "watch": "유럽 방산주 -15%",
-    "alert": "IG Metall 방산 전환 공식 반대",
-    "hard": "독일 정부 방산 예산 삭감",
-    "fired": false
+
+  "scenarios": {
+    "A": {
+      "label": "VW-라파엘 계약 체결 + 방산 전환 가속",
+      "probability": "35%",
+      "trigger": {"condition": "VW-라파엘 계약 체결 + 셰플러-헬싱 양산 시작", "source": "서사적", "distance": "협상 중. 구체적 결정 없음.", "recalibration": "정기 4/30 + 비정기(VW 이사회 결정)"},
+      "kc": {
+        "watch": "VW 이사회 부결 보도",
+        "alert": "IG Metall 방산 전환 공식 반대",
+        "hard": "VW 협상 결렬 공식 발표",
+        "action": "TC-005 A(전환) thesis 폐기. C(결렬)로 전환."
+      },
+      "current_status": "미진입. 협상 진행 중."
+    },
+    "B": {
+      "label": "부분 전환 (소규모 합작)",
+      "probability": "30%",
+      "trigger": {"condition": "VW 소규모 방산 파트너십 (합작이 아닌 부품 공급)", "source": "구조적"},
+      "kc": {
+        "watch": "풀 합작으로 확대 보도",
+        "alert": "VW 방산 사업부 독립 발표",
+        "hard": "VW 방산 매출 10%+ 달성",
+        "action": "TC-005 B(부분) → A(풀 전환) 확대. Phase 전환."
+      },
+      "current_status": "미진입."
+    },
+    "C": {
+      "label": "협상 결렬 / 전환 지연",
+      "probability": "25%",
+      "trigger": {"condition": "VW 공식 결렬 발표 OR 2026년 말 미결정", "source": "서사적"},
+      "kc": {
+        "watch": "재협상 보도",
+        "alert": "타 자동차사(BMW/Stellantis) 방산 진출",
+        "hard": "유럽 방산주 -20% 조정",
+        "action": "TC-005 C(결렬) 종료. 유럽 방산 트렌드 자체 재평가."
+      },
+      "current_status": "미진입."
+    },
+    "D": {
+      "label": "K-방산 영향 (한국 수혜/타격)",
+      "probability": "10%",
+      "trigger": {"condition": "유럽 방공망 입찰에서 한국산 제외 OR 다층 방공 한국산 포함", "source": "구조적"},
+      "kc": {
+        "watch": "유럽 방공 입찰 공고",
+        "alert": "한국산 포함/제외 확정",
+        "hard": "천궁-II 유럽 수주 확정 OR 완전 제외",
+        "action": "TC-005 D(K-방산) 방향 확정. 수혜면 추적 강화, 타격이면 별도 TC."
+      },
+      "current_status": "미진입."
+    }
   },
+
+  "tracking_indicators": [
+    {"indicator": "VW 주가", "symbol": "VOW3.DE", "current": "미확인", "threshold": "방산 프리미엄 반영 여부", "last_check": "2026-03-26", "next_check": "2026-04-30"},
+    {"indicator": "유럽 방산 ETF", "current": "미확인", "threshold": "-15% (과열 조정)", "last_check": "2026-03-26", "next_check": "2026-04-30"},
+    {"indicator": "IG Metall 성명", "current": "미발표", "threshold": "방산 전환 찬성/반대 공식 입장", "last_check": "2026-03-26", "next_check": "2026-04-30"}
+  ],
+
+  "heartbeat_thresholds": [
+    {"indicator": "VW", "symbol": "VOW3.DE", "watch": 95, "alert": 85, "hard": 70, "direction": "below"}
+  ],
+
   "korea_impact": {
     "competition": "아이언돔(단거리) vs 천궁-II(중거리). 니치 분할 가능.",
     "risk": "유럽산 방공 선호 시 K-방산 수입 감소",
@@ -28,11 +88,13 @@
   "events": [],
   "rm_watches": [],
 
-  "heartbeat_thresholds": [],
-
-  "check_log": [
-    {"date": "2026-03-26", "observation": "FT 보도. 협상 확인. 노동자 동의 미확인. Phase 0.", "next_check": "2026-04-30"}
+  "cross_card_links": [
+    {"to": "TC-008", "link": "VW 방산 전환 = 유럽 자동차 판 붕괴의 증거. EU IAA 배경."},
+    {"to": "TC-009", "link": "EU 제3극 통상자율성의 방산 측면."}
   ],
+
+  "analysis_ids": ["SA-20260326-005"],
+  "tags": ["STRUCT", "방산", "VW", "유럽", "자동차", "라파엘", "K-방산", "MT-06"],
 
   "close_condition": "VW-라파엘 계약 확정 OR 협상 결렬 OR 2026년 말 결정 데드라인"
 }
