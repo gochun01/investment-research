@@ -1,0 +1,474 @@
+{
+  "issue": "GENIUS Act Treasury NPRM 4/1 발동 — 스테이블코인 주·연방 이중 규제",
+  "date": "2026-04-02",
+  "depth": "Standard",
+  "phase0": {
+    "watch_scan": "active-watches.json 기한 도래 항목 스캔 완료. 본 쟁점은 신규 수집. 기존 state.json은 스키마 오류 상태(이전 다른 쟁점 잔존). Phase 1으로 진행.",
+    "prior_state": "해당 없음 — 신규 수집"
+  },
+  "fingerprint": {
+    "domain": "산업규제 (금융·디지털자산)",
+    "geography": "미국 국내 + 글로벌 영향 (Tether 외국 발행자 포함)",
+    "touched_assets": {
+      "primary": ["USDT (Tether 시가총액 $184B)", "USDC (Circle 시가총액 $77B)", "BTC ($68,272)", "ETH ($2,140)"],
+      "secondary": ["COIN (Coinbase 주식)", "Circle (CRCL)", "DeFi TVL (전체 $93.8B, ETH체인 $54B)", "PayPal USD (PYUSD)", "USD1 (World Liberty Financial)"],
+      "contrast": ["금 (안전자산 대조군)", "전통은행 예금 (규제 비교 대조군)"]
+    },
+    "stakeholders": {
+      "primary": [
+        "Treasury / OCC — 규제 당국",
+        "Circle (USDC 발행자, 연방 준수 옹호)",
+        "Tether (USDT 발행자, 외국 본사, 비준수 위험)",
+        "Coinbase (COIN, 유통플랫폼 + USDC 파트너)",
+        "각 주(州) 금융규제당국 (CSBS 등)",
+        "소형 스테이블코인 발행자 ($10B 미만)"
+      ],
+      "secondary_stakeholders": [
+        {"from": "Circle/USDC", "to": "Circle IPO 투자자, BlackRock (BUIDL), 기관 채택 기업 (JPMorgan, Citi)"},
+        {"from": "Tether/USDT", "to": "US 거래소 (상장 유지 압박), KPMG (감사 계약), 신흥국 USDT 사용자"},
+        {"from": "소형 발행자", "to": "각 주 은행감독관, 지역 핀테크 스타트업, VC (a16z 등)"},
+        {"from": "DeFi 프로토콜", "to": "DAI·USDS 사용자, 수익형 스테이블코인 보유자, Aave·Compound TVL"},
+        {"from": "OCC 규제 프레임워크", "to": "국채 수요 (준비자산 요건 → T-bill 수요 증가 가능성)"}
+      ]
+    },
+    "temporal_character": "전개형 — 60일 의견수렴 + 2026년 11월 전면 시행 목표. 즉각 시장 충격보다 구조 재편 성격."
+  },
+  "channels": {
+    "sns": {
+      "status": "조건부 활성",
+      "reason": "Q2 YES — 크립토 리테일 투자자 관심사. Reddit r/CryptoCurrency에서 서사 프록시 수집. Q3: 트럼프 관련 USD1 (World Liberty Financial) 간접 이해관계. Tier 2 포함."
+    },
+    "price": {
+      "선정_이유": "스테이블코인 시장 전체($314B)와 접촉 자산(BTC, ETH, USDT, USDC, COIN) 직접 수집",
+      "channels": ["CoinGecko (BTC/ETH/USDT/USDC)", "DeFiLlama (총 스테이블코인 시장캡, TVL)", "CoinMetrics (USDC 추세)"]
+    },
+    "narrative": {
+      "선정_이유": "규제 쟁점이므로 크립토 전문매체 + 주류 금융매체 + 규제 비판 매체 양면 수집",
+      "channels": ["The Block (크립토 전문)", "CoinDesk (비판적 시각)", "PYMNTS.com (핀테크/결제 전문)", "AMBCrypto", "Brookings (정책 연구 비판)", "CSIS (국가안보 비판)"]
+    },
+    "expert": {
+      "선정_이유": "규제 수혜자(Circle), 규제 압박 대상(Tether), 반대 입장(Sen.Reed), 분석자(K&L Gates, Gibson Dunn, Sullivan&Cromwell), DeFi 대표(a16z) 포함",
+      "channels": ["Circle 공식 성명", "Tether KPMG 감사 동향", "a16z 로비 서한", "K&L Gates 분석", "Jones Day/OCC 분석", "Sen.Jack Reed 성명"]
+    },
+    "policy": {
+      "선정_이유": "Treasury가 쟁점의 직접 생산자. OCC NPRM(3월), Treasury NPRM(4/1) 이중 발동.",
+      "channels": ["Treasury 공식 보도자료", "OCC NPRM 상세", "CSBS (주 은행감독관 협의회)", "상원 Banking Committee"]
+    },
+    "positioning": {
+      "선정_이유": "전개형 쟁점. USDC 시총 추세, DeFi TVL, 기관 채택(BlackRock BUIDL) 포지셔닝 신호 포함",
+      "channels": ["CoinMetrics USDC 30일 추세", "DeFiLlama 글로벌 TVL", "BlackRock BUIDL 시총", "Fear & Greed Index"]
+    }
+  },
+  "expert_target_list": {
+    "사전_선정": [
+      {"name": "Jeremy Allaire (Circle CEO)", "role": "피해자/수혜자", "status": "찾음 — Circle 공식 성명으로 포착"},
+      {"name": "Paolo Ardoino (Tether CEO)", "role": "피해자", "status": "직접 발언 미발견 — 침묵"},
+      {"name": "Brian Armstrong (Coinbase CEO)", "role": "피해자/수혜자", "status": "2025년 발언 다수, 4/1 NPRM 직접 반응 미발견"},
+      {"name": "Sen. Jack Reed (RI)", "role": "반대입장", "status": "찾음 — Foreign Stablecoin Transparency Act 발의"},
+      {"name": "K&L Gates / Jones Day / Sullivan&Cromwell", "role": "분석자", "status": "찾음 — OCC NPRM 상세 분석 발표"},
+      {"name": "a16z crypto", "role": "하류/DeFi", "status": "찾음 — Treasury 서한 제출"},
+      {"name": "CSBS (주 은행감독관 협의회)", "role": "정책", "status": "찾음 — GENIUS Act 의견서 제출"}
+    ]
+  },
+  "reactions": {
+    "price": [
+      {
+        "asset": "BTC",
+        "value": "$68,272",
+        "change_24h": "+0.52%",
+        "change_7d": "-4.30%",
+        "note": "NPRM 발동 당일 소폭 상승. 7일 기준 하락세 지속. 직접 반응 신호 없음.",
+        "source": "CoinGecko [MCP]",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "asset": "ETH",
+        "value": "$2,140",
+        "change_24h": "+1.98%",
+        "change_7d": "-1.56%",
+        "note": "BTC보다 소폭 강세. DeFi TVL 회복(4/1 $93.77B → 4/2 $93.77B 횡보) 연동.",
+        "source": "CoinGecko [MCP]",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "asset": "USDT",
+        "value": "$0.9999",
+        "market_cap": "$184.1B",
+        "volume_24h": "$74.5B",
+        "note": "페그 완전 유지. 시총 $184B. 규제 불확실성에도 시장 점유율 변동 없음 — 단기 무반응.",
+        "source": "CoinGecko [MCP]",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "asset": "USDC",
+        "value": "$0.9998",
+        "market_cap": "$77.1B",
+        "trend_30d": "고점($76.9B, 3/17) 이후 3/31 $74.2B까지 하락. 3/26~3/31 약 -1.2B 연속 감소.",
+        "note": "[MCP 교차] CoinGecko $77.1B vs CoinMetrics 3/31 $74.2B — 약 $2~3B 차이. 단기 유출 가능성 또는 집계 시차. GENIUS Act 기대 선반영 후 차익 실현 가능성.",
+        "source": "CoinGecko + CoinMetrics [MCP 2개 교차]",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "asset": "스테이블코인 총 시장",
+        "value": "$314.8B",
+        "composition": "USDT 58.5% / USDC 24.5% / 기타 17%",
+        "notable": "USD1 (World Liberty Financial) $4.4B, PYUSD $4.0B, BlackRock BUIDL $2.8B — 신규 기관 발행자 진입 가시화",
+        "source": "DeFiLlama [MCP]",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "asset": "COIN (Coinbase)",
+        "note": "실시간 주가 미수집 (Yahoo Finance 티커 오류). 컨텍스트 정보: 2025년 GENIUS Act 상원 통과 당시 +16.32% ($295.29) 기록. NPRM 4/1 직접 반응 데이터 없음 — 매체 인용 기반.",
+        "source": "매체 인용 — 1차 미확인",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "asset": "Fear & Greed Index",
+        "value": 12,
+        "classification": "Extreme Fear",
+        "note": "크립토 시장 전반 공포 국면. NPRM 호재적 요인이 Extreme Fear 환경에서 흡수되지 않는 구도.",
+        "source": "crypto-feargreed MCP [MCP]",
+        "timestamp": "2026-04-02"
+      }
+    ],
+    "narrative": [
+      {
+        "media": "The Block",
+        "direction": "중립-긍정",
+        "headline": "Treasury issues GENIUS Act rule proposal, seeks comment on state oversight for smaller issuers",
+        "framing": "Treasury 첫 번째 GENIUS Act 규칙 제안. 소형 발행자($10B 이하) 주(州) 감독 선택권 명문화. 절차적 이정표로 보도.",
+        "url": "https://www.theblock.co/post/396093/treasury-genius-act-rule-proposal-seeks-comment-oversight-smaller-issuers",
+        "timestamp": "2026-04-01"
+      },
+      {
+        "media": "PYMNTS.com",
+        "direction": "긍정",
+        "headline": "Treasury Proposes Its First Regulation to Implement GENIUS Act",
+        "framing": "최초 규제 제안 = 제도화 진전. 결제 산업 관점에서 긍정적 이정표.",
+        "url": "https://www.pymnts.com/news/regulation/2026/treasury-proposes-its-first-regulation-to-implement-genius-act/",
+        "timestamp": "2026-04-01"
+      },
+      {
+        "media": "CoinDesk",
+        "direction": "부정-비판",
+        "headline": "U.S. regulator's GENIUS pitch puts dark cloud over crypto sector's stablecoin model",
+        "framing": "OCC NPRM이 수익형 스테이블코인 모델에 타격. 크립토 업계 '싸워야 할 것'으로 인식. R-03 반대 매체.",
+        "url": "https://www.coindesk.com/policy/2026/02/26/u-s-regulator-s-genius-pitch-puts-dark-cloud-over-crypto-sector-s-stablecoin-model",
+        "timestamp": "2026-02-26"
+      },
+      {
+        "media": "AMBCrypto",
+        "direction": "중립",
+        "headline": "Treasury moves to lock in stablecoin rules with state–federal hybrid framework",
+        "framing": "하이브리드 프레임워크로 주·연방 이중 트랙 공식화. 구조적 변화 관찰.",
+        "url": "https://ambcrypto.com/treasury-moves-to-lock-in-stablecoin-rules-with-state-federal-hybrid-framework/",
+        "timestamp": "2026-04-01"
+      },
+      {
+        "media": "Brookings Institution",
+        "direction": "비판-학술",
+        "headline": "Stablecoins: Issues for regulators as they implement GENIUS Act",
+        "framing": "준비자산에 미보험 은행 예금 허용 → 은행-스테이블코인 리스크 연동. 금융안정 우려. R-03 반대 입장.",
+        "url": "https://www.brookings.edu/articles/stablecoins-issues-for-regulators-as-they-implement-genius-act/",
+        "timestamp": "2026-04"
+      },
+      {
+        "media": "Reddit r/CryptoCurrency (SNS 프록시)",
+        "direction": "혼재",
+        "signals": [
+          "긍정 서사: BlackRock 'GENIUS Act가 스테이블코인을 결제 수단으로 정착시킨다' 발언 공유. 높은 upvote.",
+          "비판 서사: 'GENIUS Act 통과가 현명하지 않을 수 있는 이유' 스레드 존재.",
+          "중립 관찰: USDC 3.5~4% 수익률 vs 체이스 0.01% — $6조 예금 이동 가능성 서사 확산 (Bank of America CEO 발언 인용)"
+        ],
+        "note": "[SNS 프록시 — MCP 미수집, Reddit MCP 텍스트 기반]",
+        "timestamp": "2026-04-02"
+      }
+    ],
+    "expert": [
+      {
+        "name": "Circle (Jeremy Allaire / 기관)",
+        "role": "피해자/수혜자 (USDC 발행자)",
+        "statement": "GENIUS Act는 Circle이 이미 하던 것을 법제화한 것. USDC는 완전 준수 준비 완료. '강력한 국가 체제 (consistent national regime) 구축' 지지.",
+        "direction": "강력 지지",
+        "channel": "Circle 공식 블로그 + Treasury 의견서 (2025-11-04)",
+        "source": "https://www.circle.com/blog/circle-genius-act-readiness-and-path-forward",
+        "timestamp": "2025-11-04"
+      },
+      {
+        "name": "a16z Crypto",
+        "role": "하류/DeFi 대표 (분석자+로비)",
+        "statement": "탈중앙화 스테이블코인(LUSD 등)을 GENIUS Act 적용에서 면제하도록 Treasury에 요청. '자율 스마트컨트랙트는 법적 발행자 아님' 논리.",
+        "direction": "부분 반대 (DeFi 보호 목적)",
+        "channel": "Treasury 서한 (2025년 11월 ANPRM 응답)",
+        "source": "https://www.theblock.co/post/378498/a16z-decentralized-stablecoins-genius-act",
+        "timestamp": "2025-11"
+      },
+      {
+        "name": "K&L Gates",
+        "role": "분석자 (로펌)",
+        "statement": "OCC NPRM이 '실질적 시장 파급 효과'를 가짐. 수익 프로그램(yield/rewards)에 대한 추정 위반 조항이 크립토 플랫폼 비즈니스 모델에 타격.",
+        "direction": "우려 / 비판적 분석",
+        "channel": "K&L Gates HUB 분석 (2026-03-11)",
+        "source": "https://www.klgates.com/OCC-Proposes-Comprehensive-Rules-to-Implement-the-GENIUS-Act-That-Carry-Substantial-Market-Implications-3-11-2026",
+        "timestamp": "2026-03-11"
+      },
+      {
+        "name": "Sen. Jack Reed (D-RI)",
+        "role": "반대입장 (정책)",
+        "statement": "GENIUS Act에 심각한 허점 존재. Tether(엘살바도르 법인)는 감사 없이 미국 내 유통 가능. 'Foreign Stablecoin Transparency Act' 발의로 감사 의무 부과 추진.",
+        "direction": "반대 / 보완 입법 추진",
+        "channel": "상원 성명 (2026-02-27)",
+        "source": "https://www.reed.senate.gov/news/releases/reed-seeks-to-close-alarming-loophole-in-genius-act",
+        "timestamp": "2026-02-27"
+      },
+      {
+        "name": "Tether (Paolo Ardoino)",
+        "role": "피해자",
+        "statement": "침묵 — 4/1 NPRM 직접 반응 발언 미발견. 탐색 키워드: 'Tether GENIUS Act NPRM response April 2026 Ardoino'.",
+        "direction": "침묵",
+        "note": "KPMG 감사 선임(2026년 초)과 USAT(미국 규제 준수 스테이블코인) 출시(2026-01)가 간접 대응으로 해석 가능. 공개 성명 부재.",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "name": "Coinbase (Brian Armstrong)",
+        "role": "피해자/수혜자",
+        "statement": "침묵 — 4/1 NPRM 직접 반응 미발견. 탐색 키워드: 'Coinbase Armstrong GENIUS Act NPRM April 2026'. 단, Coinbase 공식 블로그에서 GENIUS Act 지지 입장 다수 기록됨.",
+        "direction": "침묵 (4/1 직접 반응 한정)",
+        "note": "60일 의견수렴 기간 내 공식 코멘트 서한 제출 가능성 높음. 현재는 미발견.",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "name": "CSBS (Conference of State Bank Supervisors)",
+        "role": "정책 (주 규제당국 대표)",
+        "statement": "GENIUS Act 시행 의견서 제출 확인. 주 감독 체계 주권 유지 입장. 상세 내용 미확인.",
+        "direction": "조건부 지지 (주 권한 보호 전제)",
+        "channel": "CSBS 공식 사이트",
+        "source": "https://www.csbs.org/csbs-genius-act-implementation-comment-letter",
+        "timestamp": "2026-04"
+      }
+    ],
+    "policy": [
+      {
+        "actor": "U.S. Department of the Treasury",
+        "action": "NPRM 발동 (2026-04-01)",
+        "content": "주(州) 규제 체계가 연방 기준과 '실질적으로 유사(substantially similar)'한지 판단하는 원칙 제안. 핵심: 준비자산, AML 준수, 소비자 보호에서 연방 기준 '충족 또는 초과(meet or exceed)'. 60일 의견수렴.",
+        "direction": "구조적 명확화",
+        "source": "https://home.treasury.gov/news/press-releases/sb0428",
+        "timestamp": "2026-04-01"
+      },
+      {
+        "actor": "OCC (Office of the Comptroller of the Currency)",
+        "action": "NPRM 발동 (2026-03-02)",
+        "content": "국법 은행·연방저축은행의 스테이블코인 발행 규제. 수익 지급 금지 추정 조항, $25B+ 발행자 0.5% 준비금 별도 예치(상한 $500M). 의견 마감 2026-05-01.",
+        "direction": "강력 규제",
+        "source": "https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-3.html",
+        "timestamp": "2026-03-02"
+      },
+      {
+        "actor": "Treasury (GENIUS Act 배경)",
+        "action": "법률 서명 (2025-07-18)",
+        "content": "GENIUS Act 발효. 상원 68-30, 하원 307-122 통과. $10B 이하 발행자: 주 감독 선택 가능. $10B 초과: 연방 감독 의무. 준수 전환 기간: 2026년 11월까지.",
+        "direction": "입법 완료",
+        "source": "Congress.gov",
+        "timestamp": "2025-07-18"
+      },
+      {
+        "actor": "Congressional Opposition (Sen. Reed 등)",
+        "action": "보완 입법 추진",
+        "content": "Foreign Stablecoin Transparency Act — 외국 발행 스테이블코인(Tether) 감사 의무 부과. 현재 GENIUS Act의 맹점 보완 목적.",
+        "direction": "반대/보완",
+        "source": "https://www.reed.senate.gov/news/releases/reed-seeks-to-close-alarming-loophole-in-genius-act",
+        "timestamp": "2026-02-27"
+      }
+    ],
+    "positioning": [
+      {
+        "signal": "USDC 시총 추세 (CoinMetrics 30일)",
+        "observation": "3/10 고점 $76.3B → 3/31 저점 $74.2B. 3주 연속 감소 (-$2.1B, -2.8%). GENIUS Act 법 통과 이후 기대 선반영 → 차익 실현 또는 대기 포지션 전환 가능성.",
+        "note": "[MCP 수집] 단, CoinGecko 현재 $77.1B과의 약 $2~3B 차이는 집계 시차 또는 방법론 차이.",
+        "source": "CoinMetrics [MCP]",
+        "timestamp": "2026-03-31"
+      },
+      {
+        "signal": "DeFi 글로벌 TVL",
+        "observation": "4/1 $93.77B (7일 -2.54%). Ethereum TVL 4/1 $53.9B. 3/17 고점($100.1B) 대비 -6.3%. NPRM 발동일 전후 TVL 반등 신호 없음.",
+        "source": "DeFiLlama [MCP]",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "signal": "기관 스테이블코인 진입 가시화",
+        "observation": "BlackRock BUIDL $2.8B, PYUSD (PayPal) $4.0B, USD1 (World Liberty Financial) $4.4B, Ripple RLUSD $1.3B — GENIUS Act 이후 기관/준기관 발행자 다변화 진행 중. 규제 명확성에 수혜하는 포지셔닝.",
+        "source": "DeFiLlama 스테이블코인 데이터 [MCP]",
+        "timestamp": "2026-04-02"
+      },
+      {
+        "signal": "Tether 방어적 포지셔닝",
+        "observation": "KPMG 감사 선임 + USAT 출시(Anchorage Digital Bank, OCC 감독). Tether가 USDT 외 준수 라인을 별도 구축하는 투트랙 전략. 방어적 적응 신호.",
+        "source": "매체 종합 [WebSearch]",
+        "timestamp": "2026-01 ~ 2026-04"
+      },
+      {
+        "signal": "Fear & Greed: Extreme Fear (12)",
+        "observation": "시장 전반 공포 국면에서 NPRM 발동. 규제 호재가 현재 공포 환경에서 가격 상승 촉매로 작동하지 않는 상태.",
+        "source": "crypto-feargreed MCP [MCP]",
+        "timestamp": "2026-04-02"
+      }
+    ]
+  },
+  "pattern": {
+    "lens1_direction": {
+      "verdict": "분열 (방향성 불일치)",
+      "comment": "정책(Treasury NPRM) + 서사 상당수(긍정 프레임) + Circle(강력 지지)는 '제도화 진전' 방향. 그러나 가격 계층은 무반응(BTC +0.5%, ETH +2% — NPRM 특정 반응 아님). Extreme Fear(12) 환경. CoinDesk·Brookings·Sen.Reed는 '허점·위험' 프레임. 서사와 가격의 방향이 일치하지 않는다. — 전형적 F-04 패턴 경계."
+    },
+    "lens2_timing": {
+      "verdict": "정책주도(C형)",
+      "comment": "시장이 먼저 움직이지 않았다. Treasury NPRM 발동이 서사·전문가 반응을 촉발. 가격은 후행 또는 무반응. GENIUS Act 법 통과(2025-07) 당시 이미 COIN +16%, CRCL +34% 선반영. 4/1 NPRM은 이미 알려진 로드맵의 절차적 단계 — 신규 가격 정보 효과 제한."
+    },
+    "lens3_proportion": {
+      "verdict": "과소 (시장 반응이 서사 기대보다 작음)",
+      "comment": "스테이블코인 $314B 시장에 영향을 미치는 최초 시행 규칙임에도 가격 계층 반응은 미미. 원인 후보: (1) 법 통과 시 선반영 완료, (2) Extreme Fear 국면 (공포 환경에서 규제 호재 흡수 안 됨), (3) 60일 의견수렴 = 즉각 효력 없음으로 인식. 과소 반응 → Stereo 분석 검토 대상."
+    },
+    "lens4_propagation": {
+      "verdict": "C형 (정책 → 서사 → 전문가, 가격 미도달)",
+      "comment": "전파 경로: Treasury NPRM(4/1) → 크립토 전문 매체 즉각 보도 → 법률 분석 발표(K&L Gates, Jones Day, Sullivan&Cromwell) → 전문가 의견 분화. 가격까지 전파는 현재 차단. DeFi TVL 및 USDC 시총에도 즉각 반응 없음. 서사-전문가 계층이 '해석 전쟁' 단계에 있음."
+    },
+    "stereo_recommendation": {
+      "verdict": "권장",
+      "trigger": "비례성 == 과소 AND 방향 일치도 == 분열",
+      "reason": "표면 서사('제도화 호재')와 시장 심층(Extreme Fear + USDC 시총 3주 감소 + TVL 하락)의 괴리. 60일 의견수렴 기간 내 어떤 시점에 포지셔닝 변화가 발생할지 시간축 분해 필요.",
+      "mode": "기본 + 시간축 분해",
+      "message": "표면과 심층의 괴리 확인. Stereo 입체 분석을 권장합니다. 실행할까요?"
+    }
+  },
+  "self_audit": {
+    "Q1_channel_reason": "✅ 모든 채널에 선정 이유 기록됨",
+    "Q2_both_sides": "✅ 서사: CoinDesk·Brookings(비판) 포함. 전문가: Sen.Reed(반대입장), a16z(부분 반대) 포함",
+    "Q3_price_narrative_gap": "✅ 렌즈1(분열) + 렌즈3(과소)에서 명시. F-04 경계 주석 포함",
+    "Q4_silence_recorded": "✅ Tether CEO 침묵, Coinbase CEO 침묵 명시적 기록",
+    "Q5_primary_source": "⚠ COIN 주가: Yahoo Finance MCP 오류 → 매체 인용 기반. '1차 미확인' 표기 완료. USDT/USDC/BTC/ETH: CoinGecko MCP 1차 확인. USDC 추세: CoinMetrics 교차 확인."
+  },
+  "unresolved": [
+    {
+      "id": "UQ-001",
+      "question": "60일 의견수렴 종료(2026-06-01 전후) 후 Treasury가 'substantially similar' 기준을 얼마나 엄격하게 확정하는가?",
+      "status": "open",
+      "resolve_type": "date",
+      "resolve_condition": "60일 의견수렴 마감 후 Treasury 최종 규칙 발표 (예상 2026년 여름~가을)",
+      "check_channels": {
+        "policy": ["Treasury 연방관보 (Federal Register)", "home.treasury.gov"],
+        "narrative": ["The Block", "CoinDesk"]
+      },
+      "created": "2026-04-02",
+      "deadline": "2026-06-15",
+      "last_checked": "2026-04-02",
+      "last_checked_result": "NPRM 발동 직후. 의견수렴 진행 중.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-002",
+      "question": "Tether(USDT)가 GENIUS Act 시행(2026-11) 전까지 미국 거래소 상장 유지 가능한가? KPMG 감사 결과가 트리거가 되는가?",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "KPMG 풀 감사 결과 발표 OR 미국 주요 거래소(Coinbase, Kraken)의 USDT 상장 유지/폐지 결정",
+      "check_channels": {
+        "price": ["USDT 시총 추이", "US 거래소 USDT 거래량"],
+        "narrative": ["CoinDesk", "The Block"],
+        "expert": ["거래소 CEO 발언"]
+      },
+      "created": "2026-04-02",
+      "deadline": "2026-11-01",
+      "last_checked": "2026-04-02",
+      "last_checked_result": "현재 시총 $184B 유지. Tether KPMG 감사 진행 중 (결과 미발표).",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-003",
+      "question": "OCC yield 금지 추정 조항이 Coinbase·Kraken의 USDC 수익 프로그램에 실제로 적용되는가? (발행자 vs 비발행자 해석)",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "OCC 의견수렴 마감(2026-05-01) 후 규칙 확정 OR Coinbase/Kraken의 공식 법률 해석 발표",
+      "check_channels": {
+        "policy": ["OCC 최종 규칙", "연방관보"],
+        "expert": ["Coinbase 법무팀 성명", "K&L Gates 후속 분석"]
+      },
+      "created": "2026-04-02",
+      "deadline": "2026-05-15",
+      "last_checked": "2026-04-02",
+      "last_checked_result": "현재 크립토 업계 '싸워야 할 것' 인식. 공식 해석 미확정.",
+      "resolved_date": "",
+      "resolution": ""
+    },
+    {
+      "id": "UQ-004",
+      "question": "Sen. Reed의 Foreign Stablecoin Transparency Act가 입법으로 이어지는가? (GENIUS Act 허점 보완)",
+      "status": "open",
+      "resolve_type": "condition",
+      "resolve_condition": "상원 Banking Committee 입법 스케줄 확정 OR 법안 폐기",
+      "check_channels": {
+        "policy": ["congress.gov", "상원 Banking Committee 공식"],
+        "narrative": ["Politico", "Axios"]
+      },
+      "created": "2026-04-02",
+      "deadline": "2026-12-31",
+      "last_checked": "2026-04-02",
+      "last_checked_result": "2026-02-27 법안 발의. 공화당 다수 환경에서 진행 어려울 것으로 관측됨.",
+      "resolved_date": "",
+      "resolution": ""
+    }
+  ],
+  "watch_proposals": [
+    {
+      "id": "W-2026-04-02-UQ-001",
+      "subject": "Treasury GENIUS Act 'substantially similar' 기준 최종 확정",
+      "type": "policy_watch",
+      "schedule": "주 1회 (2026-06-01까지)",
+      "close_condition": "Treasury 최종 규칙 발표",
+      "data_sources": ["home.treasury.gov", "The Block", "CoinDesk"]
+    },
+    {
+      "id": "W-2026-04-02-UQ-002",
+      "subject": "Tether KPMG 감사 결과 + US 거래소 상장 결정",
+      "type": "event_tracking",
+      "schedule": "D+14 / D+30 / D+60 체크",
+      "close_condition": "KPMG 감사 공개 OR 주요 거래소 상장 결정",
+      "data_sources": ["CoinGecko USDT 시총", "Coinbase/Kraken 공지", "The Block"]
+    },
+    {
+      "id": "W-2026-04-02-UQ-003",
+      "subject": "OCC yield 금지 조항 최종 해석 (비발행자 적용 여부)",
+      "type": "policy_watch",
+      "schedule": "주 1회 (2026-05-15까지)",
+      "close_condition": "OCC 최종 규칙 또는 Coinbase 공식 입장",
+      "data_sources": ["OCC.treas.gov", "K&L Gates HUB", "Coinbase 블로그"]
+    }
+  ],
+  "next_check": "2026-04-09",
+  "sources": [
+    "https://home.treasury.gov/news/press-releases/sb0428",
+    "https://www.theblock.co/post/396093/treasury-genius-act-rule-proposal-seeks-comment-oversight-smaller-issuers",
+    "https://www.occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-3.html",
+    "https://www.circle.com/blog/circle-genius-act-readiness-and-path-forward",
+    "https://www.reed.senate.gov/news/releases/reed-seeks-to-close-alarming-loophole-in-genius-act",
+    "https://www.theblock.co/post/378498/a16z-decentralized-stablecoins-genius-act",
+    "https://www.klgates.com/OCC-Proposes-Comprehensive-Rules-to-Implement-the-GENIUS-Act-That-Carry-Substantial-Market-Implications-3-11-2026",
+    "https://www.coindesk.com/policy/2026/02/26/u-s-regulator-s-genius-pitch-puts-dark-cloud-over-crypto-sector-s-stablecoin-model",
+    "https://www.brookings.edu/articles/stablecoins-issues-for-regulators-as-they-implement-genius-act/",
+    "https://www.ccn.com/education/crypto/why-usat-and-usdc-are-genius-act-compliant-and-usdt-isnt/",
+    "https://ambcrypto.com/treasury-moves-to-lock-in-stablecoin-rules-with-state-federal-hybrid-framework/",
+    "https://www.gibsondunn.com/the-genius-act-a-new-era-of-stablecoin-regulation/",
+    "https://www.csbs.org/csbs-genius-act-implementation-comment-letter"
+  ],
+  "mcp_tools_used": [
+    "mcp__coingecko__get_coin_market_data (BTC, ETH, USDT, USDC)",
+    "mcp__coingecko__get_global_market_data",
+    "mcp__defillama__get_stablecoins",
+    "mcp__defillama__get_chain_tvl (Ethereum)",
+    "mcp__defillama__get_global_tvl",
+    "mcp__coinmetrics__coinmetrics_get_metric (USDC CapMrktCurUSD 30일)",
+    "mcp__crypto-feargreed__get_current_fng_tool",
+    "mcp__reddit__reddit_search_subreddit (r/CryptoCurrency)",
+    "WebSearch x7 (Treasury NPRM, Circle, Tether, OCC, a16z, Sen.Reed, Coinbase)"
+  ]
+}

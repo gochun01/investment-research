@@ -1,0 +1,181 @@
+{
+  "tc_id": "TC-021",
+  "created": "2026-04-02",
+  "updated": "2026-04-02",
+  "title": "GENIUS Act 스테이블코인 규제 — 민간화폐 공적 인프라화",
+  "status": "active",
+  "issue_summary": "Treasury NPRM(4/1) + OCC NPRM(3/2) 이중 발동. $314B 스테이블코인 시장의 규제 패러다임 전환. Circle(USDC) 수혜 구조화, Tether(USDT) 구조적 압박, T-bill 수요 창출 경로 개시. 준수 전환 기한 2026-11. 3개 묻힌 경로: USDT 퇴출, yield 금지 역설, USD1 이해충돌.",
+  "source": "SA-20260402-005",
+  "phase": 1,
+  "phase_log": [
+    {
+      "phase": 1,
+      "date": "2026-04-02",
+      "trigger": "Treasury NPRM 4/1 발동. 60일 의견수렴 개시.",
+      "note": "SD-001 → TC 승격. L7 미실행(Phase 3-B Opus 이관). SCP=4, POLICY×STRUCT 확인."
+    }
+  ],
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "scp": 4,
+    "urgency": "WATCH"
+  },
+  "scenarios": {
+    "A": {
+      "label": "Circle 독점 완성 — Tether 미국 내 퇴출",
+      "probability": "35%",
+      "trigger": {
+        "condition": "Treasury 'substantially similar' 기준을 엄격하게 확정 + KPMG 감사 기준 미충족 OR 미국 주요 거래소 USDT 상장 폐지 결정",
+        "source": "구조적+서사적",
+        "distance": "Treasury 최종 규칙까지 약 5~6개월",
+        "recalibration": "정기 2026-06-15(의견수렴 마감) + 비정기(KPMG 감사 발표)"
+      },
+      "kc": {
+        "watch": "미국 주요 거래소(Coinbase, Kraken)가 USDT 정책 재검토 공식 성명",
+        "alert": "USDT 미국 내 거래량 30일 -20% 이상 감소 × 2주 지속",
+        "hard": "Coinbase OR Kraken의 USDT 상장 폐지 공식 발표",
+        "action": "TC-021 Phase 2 전환. USDC 독점 시나리오 확률 상향. USDT 포지션 청산 조건 검토.",
+        "source": "구조적"
+      }
+    },
+    "B": {
+      "label": "Tether 준수 전환 — 시장 공존",
+      "probability": "30%",
+      "trigger": {
+        "condition": "KPMG 풀 감사 결과 공개 + GENIUS Act 기준 충족 확인 + USAT를 통한 연방 준수 선언",
+        "source": "구조적+서사적",
+        "distance": "KPMG 감사 결과 2026 Q3 추정",
+        "recalibration": "정기 2026-07-01 + 비정기(KPMG 발표)"
+      },
+      "kc": {
+        "watch": "Tether CEO 공개 성명에서 GENIUS Act 준수 의지 명시",
+        "alert": "KPMG 감사 결과 발표 + 준비자산 기준 충족 확인",
+        "hard": "Treasury가 USAT를 연방 기준 준수 발행자로 공식 인정",
+        "action": "TC-021 Phase 2 전환. USDT vs USDC 점유율 경쟁 시나리오로 업데이트. Tether 준수 비용 추적.",
+        "source": "구조적+서사적"
+      }
+    },
+    "C": {
+      "label": "DeFi 이분화 — 중앙화 규제 vs 탈중앙화 성장",
+      "probability": "25%",
+      "trigger": {
+        "condition": "OCC yield 금지 조항 확정 + a16z 면제 요청 승인 → DeFi 스테이블코인(LUSD/USDS/DAI) 시총 2배 이상 성장",
+        "source": "구조적",
+        "distance": "OCC 의견수렴 마감 2026-05-01 이후 규칙 확정",
+        "recalibration": "정기 2026-06-01 + 비정기(OCC 최종 규칙)"
+      },
+      "kc": {
+        "watch": "탈중앙화 스테이블코인 시총 합계 $20B 돌파",
+        "alert": "DeFi TVL 중 탈중앙화 스테이블코인 비중 10%→20% 전환 × 4주",
+        "hard": "탈중앙화 스테이블코인 시총 $50B 돌파 + 중앙화 DeFi TVL 동반 감소",
+        "action": "DeFi 이분화 구조 확정. CE에 탈중앙화 스테이블코인 구조 분석 의뢰.",
+        "source": "통계적"
+      }
+    },
+    "D": {
+      "label": "규제 지연 / USD1 이해충돌 정치화",
+      "probability": "10%",
+      "trigger": {
+        "condition": "USD1 이해충돌 청문회 개최 OR 11월 시행 기한 공식 연기 발표",
+        "source": "서사적",
+        "distance": "현재 가능성 낮음 — 공화당 다수 + 트럼프 행정부 주도",
+        "recalibration": "비정기(청문회 일정 공지 OR 연기 발표)"
+      },
+      "kc": {
+        "watch": "의회 청문회에서 USD1 이해충돌 공식 질의",
+        "alert": "주요 언론(NYT, WSJ) 1면 USD1 이해충돌 보도 + Treasury 해명 요구",
+        "hard": "Treasury 시행 기한 연기 공식 발표 OR USD1 관련 법적 이의제기",
+        "action": "TC-021 Phase 지연. 11월 시행 전제 모든 시나리오 확률 재조정.",
+        "source": "서사적"
+      }
+    }
+  },
+  "heartbeat_thresholds": [
+    {
+      "indicator": "USDC 시총",
+      "symbol": "USDC-USD",
+      "watch": 80000000000,
+      "alert": 85000000000,
+      "hard": 90000000000,
+      "direction": "above",
+      "note": "GENIUS Act 수혜 선반영 지표"
+    },
+    {
+      "indicator": "USDT 시총 (하락 감시)",
+      "symbol": "USDT-USD",
+      "watch": 175000000000,
+      "alert": 160000000000,
+      "hard": 140000000000,
+      "direction": "below",
+      "note": "USDT 퇴출 압박 지표. 하향 돌파 시 시나리오 A 촉발"
+    },
+    {
+      "indicator": "DeFi TVL",
+      "symbol": "N/A-DeFiLlama",
+      "watch": 100000000000,
+      "alert": 85000000000,
+      "hard": 70000000000,
+      "direction": "below",
+      "note": "yield 금지 역설 지표. 하향 압박 시 시나리오 C 촉발"
+    }
+  ],
+  "tracking_indicators": [
+    {
+      "indicator": "Treasury NPRM 의견수렴 진행 상태",
+      "current": "진행 중 (2026-04-01~2026-06-01 추정)",
+      "threshold": "최종 규칙 발표",
+      "last_check": "2026-04-02",
+      "next_check": "2026-06-15"
+    },
+    {
+      "indicator": "OCC NPRM 의견수렴 마감",
+      "current": "진행 중",
+      "threshold": "2026-05-01 마감",
+      "last_check": "2026-04-02",
+      "next_check": "2026-05-01"
+    },
+    {
+      "indicator": "Tether KPMG 감사 결과",
+      "current": "미발표 (감사 진행 중)",
+      "threshold": "결과 공개 발표",
+      "last_check": "2026-04-02",
+      "next_check": "2026-06-30"
+    },
+    {
+      "indicator": "USDC 시총 30일 추세",
+      "current": "$74.2B (CoinMetrics 3/31)",
+      "threshold": "3주 연속 증가 복귀 = 기대 재점화",
+      "last_check": "2026-04-02",
+      "next_check": "2026-04-09"
+    },
+    {
+      "indicator": "USD1 시총 (이해충돌 모니터)",
+      "current": "$4.4B",
+      "threshold": "$10B 돌파 시 연방 감독 의무 전환",
+      "last_check": "2026-04-02",
+      "next_check": "2026-05-01"
+    },
+    {
+      "indicator": "Fear & Greed Index",
+      "current": "12 (Extreme Fear)",
+      "threshold": ">50으로 회복 시 NPRM 서사 시장 흡수 가능",
+      "last_check": "2026-04-02",
+      "next_check": "2026-04-09"
+    }
+  ],
+  "analysis_ids": ["SA-20260402-005"],
+  "tags": ["stablecoin", "GENIUS-Act", "USDC", "USDT", "DeFi", "T-bill", "Treasury", "OCC", "crypto-regulation", "dollar-hegemony"],
+  "cross_card_links": [
+    {
+      "to": "TC-007",
+      "link": "T-bill 수요 창출 경로 — 스테이블코인 준비자산 요건이 단기 국채 수요 창출 → 수익률 곡선 영향"
+    },
+    {
+      "to": "TC-013",
+      "link": "달러 패권 방어 vs BRICS 탈달러화 — 스테이블코인 제도화가 달러 디지털화 가속, BRICS 우회 경로 대항"
+    }
+  ],
+  "close_condition": "GENIUS Act 전면 시행(2026-11) + 주요 발행자 준수/퇴출 결정 완료 + 시장 구조 안정화 확인",
+  "psf_link": "P6 🟡(스테이블코인 $314B, GENIUS Q2 시행 예정). P1 🔴(Core PCE 3.1% — T-bill 금리 고원 = 준비자산 수익 유리). DXY 99.35(달러 약세 = 스테이블코인 달러화 수요 증가 맥락).",
+  "macro_ref": "Core PCE 3.1%(FRED), DXY 99.35, T-bill 수익률(준비자산 수익 구조 관련), BTC $68,177"
+}

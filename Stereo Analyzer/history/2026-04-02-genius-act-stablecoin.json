@@ -1,0 +1,425 @@
+{
+  "sa_id": "SA-20260402-005",
+  "date": "2026-04-02",
+  "title": "GENIUS Act Treasury NPRM 4/1 — 스테이블코인 규제 입체 분석",
+  "one_line": "Treasury NPRM = 민간 스테이블코인의 공적 인프라 편입 + 재정지배 민간 매개 경로 개시. Circle 수혜 구조화, Tether 구조적 압박 진행형, DeFi yield 역설이 묻힌 핵심.",
+  "l7_executed": false,
+  "l7_note": "Phase 3-B에서 Opus가 교차 통합 예정. L7 null.",
+
+  "phase0_gate": {
+    "gate1_history_scan": {
+      "result": "없음 — 첫 분석",
+      "matched_files": [],
+      "note": "history/*.json 전체 스캔. 'GENIUS', 'stablecoin', '스테이블코인' 키워드 매칭 파일 없음."
+    },
+    "gate2_tracking_scan": {
+      "result": "있음 — SD-001-genius-act.json",
+      "matched": "SD-001",
+      "tc_phase": null,
+      "tc_status": "watching",
+      "appearance_count": 1,
+      "last_seen": "2026-03-26",
+      "note": "SD-001: Seed 카드. 'GENIUS Act 스테이블코인 규제 시행 Q2'. appearance_count=1 → 오늘 2회차. 3회+ 시 Stereo 승격 기준. 본 분석이 2회차이므로 승격 근거 준비."
+    },
+    "gate3_context_output": {
+      "prior_context": "없음 (Stereo 첫 분석)",
+      "connection": "SD-001 Seed 카드 존재. 2회차 확인됨.",
+      "mode": "풀 모드 (처음부터)"
+    },
+    "gate4_cycle_data": {
+      "conviction": "매칭 없음 — POLICY×STRUCT 유형 LS 템플릿 미등록",
+      "bias": "없음",
+      "th": "없음 — TH 활성 목록에 스테이블코인 관련 항목 미존재",
+      "prediction_history": "첫 예측"
+    }
+  },
+
+  "pre_read": {
+    "type": "POLICY×STRUCT",
+    "type_rationale": "Treasury+OCC 이중 NPRM(POLICY) + 스테이블코인 시장 구조 재편(STRUCT). 단발 이벤트가 아니라 60일 의견수렴 → 11월 시행으로 이어지는 구조 변화의 초입.",
+    "scp": 4,
+    "scp_rationale": "SCP 4 — 스테이블코인($314B) 시장의 규제 패러다임이 '자율 민간화폐'에서 '공적 인프라 준수 발행자'로 전환되는 구조 재편 진행 중. 기존 비준수 발행자(Tether) 퇴출 경로, 준수 발행자(Circle) 독점 경로, T-bill 수요 구조 변화 3개 경로 동시 발동.",
+    "urgency": "WATCH",
+    "urgency_rationale": "60일 의견수렴 + 2026년 11월 전면 시행. 즉각 행동 불필요. 1~4주 단위 추적 필요 구간.",
+    "analysis_strategy": "SCP 4이므로 L5(구조) + L6(2차 효과)에 최대 가중치. L4(왜 지금)는 Treasury-OCC 이중 NPRM의 정치경제학적 타이밍에 집중. L1~L3은 표준 수준."
+  },
+
+  "layers": {
+
+    "L1": {
+      "label": "헤드라인 디코딩 (What They Say)",
+      "surface_claim": "Treasury가 GENIUS Act 첫 번째 시행 규칙을 NPRM으로 발동. 주(州) 규제 체계가 연방 기준과 '실질적으로 유사(substantially similar)'한지 판단하는 원칙을 60일 의견수렴에 부침. 소형 발행자($10B 이하)의 주 감독 선택권을 명문화.",
+      "framing_tags": ["[권위호소]", "[이정표]", "[절차적 진전]"],
+      "framing_analysis": "The Block·PYMNTS는 '최초 규제 제안 = 제도화 진전' 프레임으로 긍정적 이정표를 강조. CoinDesk·Brookings는 '허점·위험' 프레임으로 OCC yield 금지 및 외국 발행자 문제를 부각. 헤드라인 수준에서 이미 서사 분열 확인."
+    },
+
+    "L2": {
+      "label": "팩트 스켈레톤 (What Actually Happened)",
+      "verified_facts": [
+        {
+          "fact": "Treasury NPRM 발동 2026-04-01. 주·연방 이중 감독 프레임워크 원칙 제안. 60일 의견수렴.",
+          "confidence": "green",
+          "source": "home.treasury.gov/news/press-releases/sb0428"
+        },
+        {
+          "fact": "OCC NPRM 발동 2026-03-02. 수익 지급(yield) 금지 추정 조항. $25B+ 발행자 0.5% 준비금 별도 예치(상한 $500M). 의견수렴 마감 2026-05-01.",
+          "confidence": "green",
+          "source": "occ.treas.gov/news-issuances/bulletins/2026/bulletin-2026-3.html"
+        },
+        {
+          "fact": "GENIUS Act 2025-07-18 발효. 상원 68-30, 하원 307-122. $10B 이하=주 감독 선택. $10B 초과=연방 의무. 준수 전환 기간 2026-11.",
+          "confidence": "green",
+          "source": "Congress.gov"
+        },
+        {
+          "fact": "스테이블코인 총 시장 $314.8B. USDT $184.1B (58.5%), USDC $77.1B (24.5%). DeFi TVL $93.77B.",
+          "confidence": "green",
+          "source": "CoinGecko + DeFiLlama [MCP 교차]"
+        },
+        {
+          "fact": "USDC 시총 CoinMetrics 3/31 $74.2B — CoinGecko 4/2 $77.1B. $2~3B 차이. 단기 유출 또는 집계 시차.",
+          "confidence": "yellow",
+          "source": "CoinGecko + CoinMetrics [MCP 2개 교차 — 불일치]"
+        },
+        {
+          "fact": "Circle: GENIUS Act 완전 준수 준비 완료. '강력한 국가 체제 구축' 지지.",
+          "confidence": "green",
+          "source": "Circle 공식 블로그"
+        },
+        {
+          "fact": "Tether CEO Paolo Ardoino: 4/1 NPRM 직접 반응 발언 없음. 침묵.",
+          "confidence": "green",
+          "source": "탐색 키워드 'Tether GENIUS Act NPRM response April 2026 Ardoino' — 결과 없음"
+        },
+        {
+          "fact": "Fear & Greed Index 12 (Extreme Fear). 4/2 기준.",
+          "confidence": "green",
+          "source": "crypto-feargreed MCP"
+        },
+        {
+          "fact": "USD1 (World Liberty Financial) 시총 $4.4B. BlackRock BUIDL $2.8B. PYUSD $4.0B.",
+          "confidence": "green",
+          "source": "DeFiLlama [MCP]"
+        }
+      ],
+      "gaps": [
+        {
+          "gap": "USDT의 미국 거래소 상장 유지 조건 — 구체적 규제 요건 미공개",
+          "note": "GENIUS Act 기준 미충족 시 상장 폐지 조건이 아직 미확정. 60일 의견수렴 이후 명확화 예상."
+        },
+        {
+          "gap": "OCC yield 금지 조항이 비발행자(거래소)에도 적용되는가",
+          "note": "K&L Gates: '크립토 플랫폼 비즈니스 모델에 타격'. 그러나 발행자 vs 비발행자 해석 미확정."
+        },
+        {
+          "gap": "트럼프 USD1(World Liberty Financial)의 GENIUS Act 준수 경로",
+          "note": "$4.4B → GENIUS Act 시행 시 연방 감독 대상($10B 기준 아직 하회). 그러나 정치적 이해충돌 문제 미논의."
+        },
+        {
+          "gap": "T-bill 수요 증가 규모의 정량 추정",
+          "note": "준비자산 100% T-bill 요건 → 스테이블코인 시총 $314B 모두 T-bill로 교환 시 최대 $314B 수요. 그러나 현재 준수 발행자만 적용. 실제 규모 미추정."
+        }
+      ],
+      "phase2_3_booster": {
+        "gap_selected": "T-bill 수요 증가 규모 — L5 구조 판정의 핵심 비교 근거",
+        "note": "현재 USDC+PYUSD+BUIDL+USD1 = 약 $88.3B 준수 경로. 만약 USDT도 준수 시 $272B 추가. T-bill 수요 폭발 규모는 L6 재정 경로 분석의 핵심 근거. 현재 FRED T-bill 수익률 데이터로 교차 가능하나 MCP 한도 유지를 위해 PSF 상태값 활용."
+      }
+    },
+
+    "L3": {
+      "label": "이해관계 지도 (Who Benefits, Who Loses)",
+      "player_map": [
+        {
+          "player": "Circle (USDC 발행자)",
+          "position": "최대 수혜자",
+          "logic": "연방 준수 경로 = USDC 독점 구조화. GENIUS Act가 Circle이 이미 하던 것을 법제화. 경쟁자(Tether) 제도적 배제 시 시장 점유율 확대. Circle IPO(CRCL) 기업가치 직결.",
+          "hidden_motive": "Circle은 규제를 경쟁 해자(moat)로 사용하는 전략. 규제 강화 = 진입장벽 = 독점력 강화."
+        },
+        {
+          "player": "Tether (USDT 발행자, 엘살바도르 본사)",
+          "position": "구조적 피해자",
+          "logic": "외국 발행자. 현행 GENIUS Act에서 미국 내 유통은 허용되나 Sen. Reed Foreign Stablecoin Transparency Act가 통과되면 감사 의무 부과. KPMG 감사 진행 중이나 결과 미공개. 침묵 = 방어적 대기.",
+          "hidden_motive": "Tether 침묵은 전략적. USAT(미국 준수 라인)와 KPMG 감사로 간접 대응 중. 완전 철수 vs 준수 전환 갈림길."
+        },
+        {
+          "player": "Coinbase (COIN, 유통플랫폼 + USDC 파트너)",
+          "position": "조건부 수혜자",
+          "logic": "USDC 성장 = Coinbase 수익 직결(USDC 이자 수익 분배). 그러나 OCC yield 금지 조항이 Coinbase의 USDC 수익 프로그램에 적용될 시 타격.",
+          "hidden_motive": "Coinbase는 발행자(Circle)와 유통자(자신)의 규제 분리를 원한다. 비발행자 면제 주장이 핵심 로비 포인트."
+        },
+        {
+          "player": "DeFi 프로토콜 (Aave, Compound, MakerDAO)",
+          "position": "yield 역설 피해자",
+          "logic": "OCC yield 금지 = USDC 기반 DeFi 수익 모델 타격. 탈중앙화 스테이블코인(LUSD, USDS)으로 이동 가능하나 규모의 경제 불리. a16z의 '자율 스마트컨트랙트 발행자 아님' 논리가 방어선.",
+          "hidden_motive": "DeFi TVL $93.8B의 유지가 목표. 규제가 중앙화 스테이블코인을 죽이면 탈중앙화 대안 수요 증가 — 역설적 이익."
+        },
+        {
+          "player": "U.S. Treasury (재정부)",
+          "position": "구조적 수혜자 (숨겨진)",
+          "logic": "준비자산 요건 = T-bill 수요 창출. 스테이블코인 성장 → 국채 수요 자동 증가 → 재정 조달 비용 경감. 민간화폐의 공적 인프라화 = 달러 패권 강화 + 재정지배 민간 매개.",
+          "hidden_motive": "GENIUS Act의 진짜 목적은 달러 디지털화 + 국채 소화 경로 확보. 스테이블코인 규제 = 재정 정책의 연장."
+        },
+        {
+          "player": "트럼프 / World Liberty Financial (USD1)",
+          "position": "규제 아비트라지 수혜자",
+          "logic": "USD1 $4.4B. GENIUS Act 시행 시 $10B 기준 하회로 주 감독 선택 가능. 정치적 이해충돌: 대통령이 규제를 설계하고 자신의 스테이블코인이 그 규제의 아비트라지를 활용.",
+          "hidden_motive": "공개되지 않은 가장 큰 이해충돌. 언론·감독기관이 아직 충분히 주목하지 않음."
+        },
+        {
+          "player": "소형 발행자 ($10B 미만)",
+          "position": "주 감독 선택 혜택 + 진입장벽 위기",
+          "logic": "주 감독 선택 = 유연성. 그러나 연방 기준 '충족 또는 초과' 요건이 실제로는 동등한 비용 부담 → 규모의 경제 불리 → 대형 발행자 중심 재편."
+        }
+      ]
+    },
+
+    "L4": {
+      "label": "인과 역추적 (Why Now, Why This Way)",
+      "core_question": "왜 Treasury가 GENIUS Act 발효 8.5개월 후(2025-07 → 2026-04) 첫 NPRM을 4/1에 발동했는가?",
+      "causal_chain_tree": [
+        {
+          "level": "표면적 원인",
+          "items": [
+            "GENIUS Act 법률 상 의무: 시행 규칙 제정 기한 (법 발효 후 1년 = 2026-07 전 필요)",
+            "OCC NPRM(3월) 선행 발동으로 Treasury도 즉각 대응 압박",
+            "60일 의견수렴 → 여름 최종 규칙 → 11월 시행 로드맵 준수"
+          ]
+        },
+        {
+          "level": "구조적 원인 — 재정 경로",
+          "items": [
+            "Core PCE 3.1%(PSF P1 RED) → 연준 금리 인하 제약 지속",
+            "DXY 99.35 → 달러 약세 지속 압박",
+            "국채 발행 부담 증가 → T-bill 민간 수요 창출 경로 필요",
+            "스테이블코인 준비자산 요건 = T-bill 의무 매입 경로 → 재정 수요 흡수"
+          ]
+        },
+        {
+          "level": "구조적 원인 — 지정학 경로",
+          "items": [
+            "BRICS Unit 달러 비중 우회 가속(TC-013) → 달러 디지털 패권 방어 필요",
+            "중국 디지털 위안화(e-CNY) 국제화 → 달러 스테이블코인으로 대항",
+            "스테이블코인 = 글로벌 달러화 디지털 연장 — 신흥국 달러 사용 채널 확보"
+          ]
+        },
+        {
+          "level": "구조적 원인 — 정치 경로",
+          "items": [
+            "트럼프 USD1(World Liberty Financial) 간접 이해관계 — 제도화 = 자산 가치 제고",
+            "공화당 친크립토 기조 + 2025-07 대선 공약 이행",
+            "Sen. Reed 반대 입법(Foreign Stablecoin Transparency Act) 선제 차단 — 행정부가 먼저 규칙을 만들어 입법 공간 축소"
+          ]
+        }
+      ],
+      "timing_signal": "4/1 발동 타이밍은 우연이 아님. OCC NPRM(3/2) + Treasury NPRM(4/1) = 행정부 전방위 규제 선점 → 의회 입법 주도권 박탈 전략. 2026 중간선거 전 '크립토 친화 행정부' 서사 구축 목적."
+    },
+
+    "L5": {
+      "label": "구조 레이어 (What System Is This Part Of)",
+      "system_identification": "GENIUS Act는 '민간화폐 공적 인프라화' 시스템의 구조 전환점. 상위 시스템: 달러 패권 유지 + 재정지배 민간 매개 + 크립토 제도화 3개 시스템의 교차점.",
+      "pattern_verdict": "전환(CONVERSION)",
+      "pattern_rationale": "스테이블코인이 '자율 민간화폐(2014~2024)' 단계에서 '규제 준수 공적 인프라(2025~)' 단계로 전환 중. 반복이 아닌 비가역적 구조 전환.",
+      "historical_precedent": [
+        {
+          "case": "은행권 규제화 (1863 National Banking Act)",
+          "parallel": "남북전쟁 중 乱立한 주(州) 은행권(free banking)을 연방 통화로 통합. 준비금 요건 + 연방 감독 도입 → 비준수 은행권 10% 세금으로 퇴출. GENIUS Act = 디지털 시대의 National Banking Act.",
+          "key_difference": "1863: 강제 대체(세금). 2026: 절충(주 감독 선택권). 그러나 방향은 동일 — 연방 기준으로의 수렴."
+        },
+        {
+          "case": "머니마켓펀드 규제 (2010 SEC Rule 2a-7 개정)",
+          "parallel": "리먼 사태 후 MMF가 준비자산 요건 강화 → 국채 편중. 민간 유동성 수단이 국채 수요 채널로 전환된 선례. GENIUS Act + 준비자산 T-bill 요건 = 동일 경로.",
+          "key_difference": "MMF: $7조 시장. 스테이블코인: $314B → 성장 중. 국채 수요 창출 잠재력은 상대적으로 작지만 성장 경로."
+        }
+      ],
+      "temporal_decomposition": {
+        "timeline": [
+          {
+            "period": "2014~2019",
+            "force": "USDT 출범 — 자율 민간화폐 시대. 무규제 + 달러 페깅 + 글로벌 유통",
+            "removal_simulation": "제거 시: 크립토 거래 유동성 수단 부재. 시장 규모 대폭 축소."
+          },
+          {
+            "period": "2020~2022",
+            "force": "DeFi 폭발 + 알고리즘 스테이블코인(UST) 붕괴. 규제 필요성 인식 확산",
+            "removal_simulation": "제거 시: UST 붕괴 없었으면 규제 압박 지연. GENIUS Act 2~3년 후퇴."
+          },
+          {
+            "period": "2023~2024",
+            "force": "USDC + Circle의 연방 준수 전략 선택. 자율 규율 선례 구축",
+            "removal_simulation": "제거 시: 규제 기준 설정자 부재 → GENIUS Act 내용이 다른 방향으로 설계됐을 것."
+          },
+          {
+            "period": "2025-07",
+            "force": "GENIUS Act 발효. 법적 프레임워크 확정",
+            "removal_simulation": "제거 시: 행정 규칙(NPRM) 단계 없음. 입법 완료가 현재 상태의 직접 원인."
+          },
+          {
+            "period": "2026-03~04",
+            "force": "OCC+Treasury 이중 NPRM 발동. 시행 규칙 구체화",
+            "removal_simulation": "제거 시(NPRM 없으면): 11월 시행 기한에 규제 공백. 발행자들의 준비 기간 없음."
+          }
+        ],
+        "transition_point": "2022 UST 붕괴가 현재 규제 구조의 진짜 원점. 이 사건 없이는 GENIUS Act 없음."
+      },
+      "structural_map": {
+        "inner_ring": "스테이블코인 발행자 (Circle, Tether, USD1, PYUSD)",
+        "middle_ring": "규제기관 (Treasury, OCC, CSBS, Fed 잠재적)",
+        "outer_ring": "수요자 (DeFi, CEX, 기관, 글로벌 달러 사용자)",
+        "external_forces": "달러 패권 방어(지정학), 재정 수요(T-bill), 트럼프 정치(USD1)"
+      }
+    },
+
+    "L6": {
+      "label": "2차 효과 체인 (What Happens Next That Nobody Is Talking About)",
+      "effects": [
+        {
+          "timeframe": "단기 (0~60일, 의견수렴 기간)",
+          "effect": "해석 전쟁 (Narrative Battle)",
+          "detail": "60일 의견수렴 기간에 Circle(지지) vs a16z(DeFi 면제 요구) vs Sen.Reed(감사 강화) vs Tether(침묵+간접 대응) 4개 진영이 규칙 내용을 놓고 충돌. 최종 규칙이 어느 방향으로 기우는가가 11월 이후 구조를 결정. 이 기간이 포지셔닝 최대 기회.",
+          "secondary_impact": "COIN 주가와 CRCL 주가는 해석 전쟁의 진행 방향에 선행 반응할 것."
+        },
+        {
+          "timeframe": "단기 — 묻힌 이슈 1: USDT 진입장벽",
+          "effect": "USDT 퇴출 경로 실제화",
+          "detail": "현재 GENIUS Act는 USDT를 즉각 퇴출하지 않음. 그러나 11월 시행 후 '연방 기준 미준수 스테이블코인의 미국 내 유통 금지' 조항이 발동되면: 미국 CEX(Coinbase, Kraken)의 USDT 상장 폐지 의무화 가능. USDT $184B 중 미국 거래량 비중이 15~20% 추정($27~37B). 이 유동성이 USDC로 이전 시 USDC 시총 +35~48% 잠재.",
+          "buried_signal": "USDT 침묵은 이 경로를 인지하고 있음을 시사. USAT 출시(준수 라인 사전 구축)가 증거.",
+          "secondary_impact": "신흥국의 USDT 사용자(달러화 도피 수단)는 영향 없음. 규제는 미국 내 유통에만 적용. 글로벌 USDT 사용은 계속됨."
+        },
+        {
+          "timeframe": "중기 — 묻힌 이슈 2: Yield 금지 역설",
+          "effect": "DeFi로의 수요 이전 vs 규제 준수 스테이블코인의 수익 소멸",
+          "detail": "OCC yield 금지 조항이 확정되면: USDC 기반 Aave/Compound 수익률 소멸 → $314B 스테이블코인 중 수익 추구 자금이 탈중앙화 스테이블코인(LUSD, USDS, DAI)으로 이동. 역설: 규제가 DeFi를 죽이려다 탈중앙화 촉진. 그러나 탈중앙화 스테이블코인 시총 현재 $12B 수준 — 흡수 규모 불충분.",
+          "buried_signal": "a16z가 '탈중앙화 스테이블코인 면제' 서한을 제출한 이유. 이것이 승인되면 DeFi TVL $93.8B 방어 가능.",
+          "secondary_impact": "yield 금지 + 탈중앙화 면제 = 크립토 내부의 이중 구조 확립. 중앙화(규제) vs 탈중앙화(비규제)의 분리 가속."
+        },
+        {
+          "timeframe": "중기 — T-bill 수요 경로",
+          "effect": "국채 수요 구조적 증가",
+          "detail": "준비자산 100% T-bill 요건 → 스테이블코인 성장 = T-bill 수요 자동 증가. 현재 준수 발행자: USDC $77B + PYUSD $4B + BUIDL $2.8B ≈ $84B. USDT가 준수 전환 시: +$184B. 합계 최대 $268B의 신규 T-bill 수요. 미국 재무부 2026년 국채 발행 목표 $2.4조 대비 약 11% 흡수 가능 경로.",
+          "cross_connect": "TC-007(미 장기채 인플레 공포)와 교차: 장기채 수요 압박 환경에서 단기(T-bill) 수요 창출 → 수익률 곡선 영향 가능.",
+          "secondary_impact": "재무부는 스테이블코인을 통해 '유동성 흡수 + 달러 패권 + 디지털화' 3개 목표를 동시 달성."
+        },
+        {
+          "timeframe": "장기 — 달러 패권 경로",
+          "effect": "디지털 달러화(Digital Dollarization) 가속",
+          "detail": "신흥국에서 달러화 도피 수단으로 USDT를 사용하는 패턴이 공적 인프라화된 USDC로 전환될 조건. 공적 인프라 = 신뢰 + 규제 안정성 → 기관 채택 가속 → 글로벌 달러 사용 기반 강화. BRICS Unit 탈달러화(TC-013)의 반대 경로: 서방 권역에서는 달러 스테이블코인 패권 강화.",
+          "secondary_impact": "e-CNY 국제화와의 경쟁에서 달러 스테이블코인이 선제 제도화로 우위 확보."
+        },
+        {
+          "timeframe": "장기 — 트럼프 USD1 역설",
+          "effect": "정치적 이해충돌이 규제 설계를 왜곡하는 경로",
+          "detail": "USD1 $4.4B($10B 기준 하회). GENIUS Act 시행 시 주 감독 선택 가능 = 연방 규제 회피 가능. 대통령이 규제 설계권을 갖고 자신의 스테이블코인은 규제 강도가 낮은 주 감독 선택. 이해충돌이 법적으로 허용되는 구조. Sen. Reed의 Foreign Stablecoin Transparency Act는 Tether를 겨냥하지만 구조적으로는 USD1 이해충돌도 포함.",
+          "note": "이것이 현재 언론에서 가장 논의가 적은 영역. 묻힌 핵심 3번째."
+        }
+      ],
+      "nonlinear_connections": [
+        {
+          "from": "GENIUS Act 준비자산 T-bill",
+          "to": "TC-007 미 장기채 인플레 공포",
+          "mechanism": "단기 T-bill 수요 증가 → 단기-장기 스프레드 영향 → 장기채 수익률 압박 완충 또는 가중 (방향 불확실)"
+        },
+        {
+          "from": "USDT 미국 내 퇴출 가능성",
+          "to": "TC-013 BRICS 탈달러화",
+          "mechanism": "USDT 퇴출이 신흥국에서는 적용 안 됨. 글로벌 USDT 사용 계속 → BRICS 권역의 달러화 도피 채널 유지. 역설: 미국 규제가 신흥국 달러 사용을 차단 못 함."
+        },
+        {
+          "from": "DeFi yield 금지",
+          "to": "탈중앙화 스테이블코인 성장",
+          "mechanism": "중앙화 스테이블코인 yield 금지 → 탈중앙화 대안 수요 증가 → 규제 회피 경제 성장"
+        }
+      ]
+    }
+  },
+
+  "feedback_loops": {
+    "FB1": {
+      "label": "FB-1: L2 → L4 역방향 보강",
+      "question": "L2의 팩트 중 L4 인과 역추적을 바꿀 수 있는 것이 있는가?",
+      "finding": "USDC 시총 3주 감소 (-$2.1B, CoinMetrics)는 'GENIUS Act 기대 선반영 후 차익 실현' 패턴. L4에서 Treasury가 NPRM을 서두른 이유 중 하나: 기대 선반영이 꺼지기 전에 규제 서사를 재점화할 필요. 투자자 관심 유지 목적의 타이밍.",
+      "adjustment": "L4 타이밍 원인에 '기대 선반영 소진 방지' 추가 확인됨."
+    },
+    "FB2": {
+      "label": "FB-2: L3 → L5 역방향 보강",
+      "question": "이해관계 지도에서 L5 구조 판정을 바꾸는 플레이어가 있는가?",
+      "finding": "트럼프 USD1의 이해충돌 구조는 L5 역사적 선례(National Banking Act)와 결정적으로 다름. 1863년 규제는 중립적 재정 목적. 2026년 규제는 대통령 본인의 자산이 포함된 이해충돌 구조. 이것이 규제 왜곡의 리스크이자, 규제의 신뢰성 훼손 요인.",
+      "adjustment": "L5 구조 판정: '전환' 유지. 단 '정치적 이해충돌이 전환 경로를 왜곡할 수 있음' 추가."
+    },
+    "FB3": {
+      "label": "FB-3: L6 → L1 역방향 보강",
+      "question": "2차 효과 체인이 헤드라인 프레이밍을 다시 읽게 만드는가?",
+      "finding": "헤드라인의 '절차적 이정표' 프레임은 표면적으로 맞다. 그러나 L6에서 T-bill 수요 창출($268B 잠재), USD1 이해충돌, DeFi yield 역설을 포함하면: 헤드라인은 가장 중요한 3가지를 모두 빠트린 것. 언론 서사가 정책 의도(재정 수요 창출)를 숨기는 구조적 은폐 기능을 하고 있음.",
+      "adjustment": "L1 프레이밍 태그에 '[재정 은폐]' 추가. 절차적 이정표 프레임이 재정 목적을 가린다."
+    }
+  },
+
+  "emergent_questions": [
+    {
+      "id": "EQ-001",
+      "question": "Treasury가 'substantially similar' 기준을 좁게 설정(엄격)하면 모든 주 감독 발행자가 연방으로 강제 전환 → Circle 독점 완성. 넓게 설정(관대)하면 소형 발행자 생존 + 시장 분산. Treasury가 어느 방향을 선택할 조건은 무엇인가?",
+      "importance": "high",
+      "resolve_condition": "60일 의견수렴 결과 + Treasury 최종 규칙 발표"
+    },
+    {
+      "id": "EQ-002",
+      "question": "Tether의 USAT 출시 + KPMG 감사는 진짜 준수 전환인가, 아니면 시장 지위 유지를 위한 쇼인가? 두 경로의 분기점은 무엇인가?",
+      "importance": "high",
+      "resolve_condition": "KPMG 감사 결과 공개 (예상 2026 Q3)"
+    },
+    {
+      "id": "EQ-003",
+      "question": "T-bill 수요 창출 경로: 스테이블코인이 현재 MMF($7조) 규모로 성장하는 조건은 무엇인가? 그 조건이 달성되면 미국 단기 금리에 어떤 영향을 미치는가?",
+      "importance": "medium",
+      "resolve_condition": "스테이블코인 시총 $500B 달성 시점 + T-bill 수익률 교차"
+    },
+    {
+      "id": "EQ-004",
+      "question": "트럼프 USD1의 GENIUS Act 준수 경로가 공개적으로 문제화되는 시점은? 감독기관이나 의회가 이 이해충돌을 공식 쟁점화하는 조건은?",
+      "importance": "high",
+      "resolve_condition": "청문회 개최 OR 미디어 집중 보도 OR 법적 이의제기"
+    }
+  ],
+
+  "uncertainty_map": {
+    "high_confidence": [
+      "GENIUS Act 법률 내용 (68-30, 307-122 통과, 2025-07-18 발효)",
+      "Treasury NPRM 4/1 발동 사실",
+      "Circle 수혜 구조 (연방 준수 = USDC 경쟁 해자)",
+      "Fear & Greed 12 (Extreme Fear) 현재 시장 심리"
+    ],
+    "medium_confidence": [
+      "USDT 미국 내 퇴출 가능성 — 규칙 최종 확정 전. 방향은 압박이나 속도 불확실",
+      "T-bill 수요 규모 추정 ($268B 잠재) — 준수 전환율 가정 의존",
+      "DeFi yield 금지의 비발행자 적용 여부 — OCC 해석 미확정"
+    ],
+    "low_confidence": [
+      "USD1 이해충돌이 실제로 규제 내용을 왜곡했는가 — 증거 없음. 구조적 유인만 존재",
+      "11월 시행 기한 준수 여부 — 의견수렴 + 최종 규칙 → 시행 사이에 지연 가능"
+    ],
+    "weakest_link": "Tether의 실제 전략 판단 — 침묵이 방어적 대기인지 철수 준비인지 분기점 불명. KPMG 감사 결과가 유일한 해소 신호."
+  },
+
+  "scp_upgrade_basis": {
+    "current_scp": 4,
+    "tc_upgrade_case": "Case 3 (SD-001 → TC 승격)",
+    "upgrade_rationale": "SD-001 appearance_count = 2회(scanner backlog BL-001 + 오늘 파이프라인). 기준(3회+)에 1회 부족. 그러나 L1~L6 분석 결과 SCP=4 확인 + POLICY×STRUCT 복합 유형 + 3개 이상 독립 시나리오 분기점(USDT 퇴출, yield 금지, T-bill 경로) 존재. L7에서 TC 승격 최종 판단 권고.",
+    "note": "L7 미실행으로 승격 결정은 Phase 3-B Opus에게 이관. 본 분석은 승격 근거 준비 완료."
+  },
+
+  "quality_score_raw": {
+    "coverage": 1.0,
+    "cross_verify": 0.8,
+    "discovery_rate": 0.7,
+    "freshness": 1.0,
+    "quality_score": 0.875,
+    "note": "5개 반응 계층 전체 커버(1.0). MCP 2개+ 교차: USDC(CoinGecko+CoinMetrics), BTC/ETH/USDT(CoinGecko), TVL(DeFiLlama) — 주요 수치 대부분 교차(0.8). Buried 3개 + L2 미언급 3개 (0.7). 당일 데이터: macro PSF 상태 + CoinGecko + CoinMetrics + DeFiLlama + FearGreed (1.0)."
+  },
+
+  "key_insight": "GENIUS Act = 민간화폐의 공적 인프라화. 표면은 '제도화 호재'이나 심층은 T-bill 수요 창출(재정 경로) + Circle 독점 구조화(산업 경로) + 달러 디지털 패권(지정학 경로)의 3개 경로가 동시 발동되는 구조 전환. 묻힌 3가지: USDT 진입장벽(퇴출 경로), yield 금지 역설(DeFi 촉진), USD1 이해충돌(규제 왜곡).",
+
+  "rm_pattern_cross": {
+    "lens1_direction": "분열 — RM 확인. 정책+서사 긍정 vs 가격 무반응+Extreme Fear",
+    "lens3_proportion": "과소 — RM 확인. $314B 시장 대비 가격 반응 미미",
+    "stereo_trigger": "비례성 과소 + 방향 분열 = Stereo 실행 조건 충족"
+  }
+}
