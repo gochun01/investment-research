@@ -1,10 +1,10 @@
 {
   "tc_id": "TC-013",
   "created": "2026-03-28",
-  "updated": "2026-03-28",
-  "title": "BRICS Unit 금본위 출범 + 달러 비중 58.5% — 5,000톤 금 준비금 $4T",
+  "updated": "2026-04-02",
+  "title": "달러 기축 구조 균열 — 중앙은행 금 $4T > 미 국채 역전 + USD COFER 56.8% 31년 최저",
   "status": "active",
-  "issue_summary": "BRICS Unit(40% 금+60% BRICS통화) 2025.10 파일럿 출범. 러·인·중 무역 90% 비달러. 중앙은행 금 준비금 $4T>미국채 보유(역전). 달러 글로벌 외환보유 비중 71%→58.5%. BRICS Pay 블록 내 달러 사용 2/3 감소.",
+  "issue_summary": "BRICS Unit(40% 금+60% BRICS통화) 2026 런칭. 중앙은행 금 준비금 $4T > 미국채 보유 역전(1996년 이후 최초). USD COFER 56.8%(IMF Q4 2025, 31년 최저). Gold $4,790 신고가. DXY 99.35, 100 하회 4일 연속. 스테이블코인 $314B(달러 디지털 채널 역설적 팽창). 달러 기능적 분화: 준비자산↓ + 결제·디지털↑.",
   "phase": 1,
   "phase_log": [
     {
@@ -24,12 +24,18 @@
       "date": "2026-03-28",
       "trigger": "SA-20260328-006 Stereo 해부. BRICS 금 50% 통제 + WGC 73% 설문.",
       "note": "대체 아닌 옵션 확보. 금 구조적 바닥 $3,500~4,000 + 순환적 프리미엄. A 35%로 상향."
+    },
+    {
+      "phase": 1,
+      "date": "2026-04-02",
+      "trigger": "SA-20260402-004 Stereo 해부. Gold $4,790(Watch $4,800 $10 하회) + DXY <100 4일 연속 + USD COFER 56.8%(Q4 2025, 31년 최저) + RM 5계층 수렴.",
+      "note": "SCP 3→4 상향. urgency SLOW→WATCH 상향. 금 구조적 바닥 $4,200~4,500 재설정 필요. 스테이블코인 $314B 이중 경로 해부. 달러 기능적 분화 확인. 시나리오 방향: A↑40%, B↓20%, C↑32%, D↓8% (Opus 교차 후 확정)."
     }
   ],
   "pre_read": {
     "type": "MACRO×STRUCT",
-    "scp": 3,
-    "urgency": "SLOW"
+    "scp": 4,
+    "urgency": "WATCH"
   },
   "scenarios": {
     "A": {
@@ -164,10 +170,15 @@
     "탈달러",
     "CIPS",
     "위안",
-    "MT-03"
+    "스테이블코인",
+    "사모신용",
+    "이중경로",
+    "MT-03",
+    "MT-05",
+    "MT-06"
   ],
-  "psf_link": "F1 DXY(달러 약세), F3 DM-EM(신흥국 재편)",
-  "macro_ref": "B2 DXY 99.90",
-  "analysis_ids": ["SA-20260328-006"],
-  "close_condition": "달러 비중 55% 이하 확인 OR BRICS Unit 좌초 OR 달러 비중 62%+ 반등"
+  "psf_link": "F1 DXY↓(99.35, <100 4일) + Gold↑($4,790 신고가) + P6 스테이블코인 $314B. S1 긴장(실질금리 2.00%). 레짐 🟡 경계(Transition).",
+  "macro_ref": "F1 DXY 99.35 / Gold $4,790.30 / TLT $86.26 / S1 실질금리 2.00%",
+  "analysis_ids": ["SA-20260328-006", "SA-20260402-004"],
+  "close_condition": "달러 COFER 비중 52% 이하 확인 OR BRICS Unit 좌초 OR 달러 비중 62%+ 반등 3개월 지속"
 }

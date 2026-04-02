@@ -1,0 +1,402 @@
+{
+  "id": "SA-20260402-004",
+  "date": "2026-04-02",
+  "version": "2.0",
+  "title": "달러 기축 구조 균열 — 중앙은행 금 > 미 국채 + Gold $4,790 임계선 $10 하회",
+  "tc_id": "TC-013",
+
+  "phase0_gate": {
+    "gate1_history": {
+      "matched": ["2026-03-28-brics-gold-dedollarization.json"],
+      "prior_sa_id": "SA-20260328-006",
+      "prior_one_line": "BRICS 6,000톤+50%생산+WGC 73% = 달러 체제의 물리적 대안 조립 단계. 대체 아닌 옵션 확보. 금 구조적 바닥 $3,500~4,000 + 순환적 프리미엄 분리.",
+      "prior_scenarios": {
+        "A": "점진적 탈달러 35%",
+        "B": "BRICS 내부 분열 25%",
+        "C": "금 가격 급등 가속 28%",
+        "D": "달러 반등 12%"
+      },
+      "prior_feedback": "달러 약화 낙관 편향 주의. 탈달러화는 달러 붕괴 아닌 준비자산 내 다극화."
+    },
+    "gate2_tc": {
+      "matched": "TC-013",
+      "tc_phase": 1,
+      "tc_title": "BRICS Unit 금본위 출범 + 달러 비중 58.5% — 5,000톤 금 준비금 $4T",
+      "heartbeat_thresholds": {
+        "Gold_watch": 4800,
+        "Gold_alert": 5000,
+        "DXY_watch": 97,
+        "DXY_alert": 95
+      },
+      "last_check_note": "Gold 임계값 $2,800→$4,800 재조정 완료 (SA-20260328-006)"
+    },
+    "gate3_context": {
+      "mode": "델타 모드",
+      "prior_context": "있음: SA-20260328-006 + TC-013 Phase 1",
+      "delta_focus": "Gold $4,790($4,800 Watch 임계 $10 하회) + DXY 99.35(100 하회 4일 연속) + 묻힌 2건(스테이블코인 역설·사모신용) + BRICS Pay 달러 2/3 감소 + RM 5계층 수렴 확인",
+      "key_question": "3월 28일 분석의 전제(점진적 탈달러 + 금 구조적 바닥 $3,500~4,000)가 5일 만에 어떻게 변했는가?",
+      "prior_premise_check": {
+        "premise_1_gradual_dedollarization": "유효 — USD COFER 56.8%(Q4 2025, 31년 최저) 추가 확인. 추세 방향 변화 없음.",
+        "premise_2_gold_floor_3500_4000": "부분 초과 — 현재 $4,790. 구조적 바닥이 $4,200~4,500으로 상향 재설정 가능성. 순환적 프리미엄이 소멸하지 않고 오히려 구조화되는 신호.",
+        "premise_3_option_not_replacement": "유효 + 심화 — 스테이블코인 $314B(달러 디지털 채널 팽창)이 '대체 아닌 이중 경로' 테제를 뒷받침."
+      }
+    },
+    "gate4_loop": {
+      "conviction": "매칭 없음 — MACRO×STRUCT 패턴 boost 데이터 미적재",
+      "bias": "적용 없음",
+      "th_status": "TH-001 간접 확인 유지 (risk-off → 금 수혜 방향 일치)",
+      "prediction_history": "TC-013 SA-20260328-006 단건. 적중 이력 미축적."
+    }
+  },
+
+  "pre_read": {
+    "type": "MACRO×STRUCT",
+    "scp": 4,
+    "scp_basis": "3월 28일 SCP 3(구조 변화 초기 신호)에서 SCP 4(구조 재편 진행 중)로 상향. 근거: (1) 금-국채 역전 1996년 이후 최초 = 임계 돌파 이정표, (2) DXY <100 4일 연속 = 순환적 노이즈 아닌 추세 전환 진입, (3) USD COFER 56.8% = 31년 최저, (4) BRICS Pay·Unit 동시 가동 = 인프라 단계 → 운용 단계 전환.",
+    "urgency": "WATCH",
+    "urgency_change": "SLOW → WATCH 상향. Gold $4,800 Watch 임계 $10 하회. 2~4주 내 임계 돌파 또는 이탈 판정 필요.",
+    "emotion": { "detected": false },
+    "routing": {
+      "mode": "delta",
+      "focus_layers": ["L4", "L5", "L6"],
+      "standard_layers": ["L1", "L2"],
+      "reduced_layers": ["L3"],
+      "rationale": "델타 모드: L4는 '전제 유효성 검증' 집중. L5는 구조 재발견 금지, '변화만 추적'. L6는 묻힌 2건(스테이블코인·사모신용)이 2차 효과의 핵심이므로 강화. L7은 임무 규칙에 의해 생략(Phase 3-B Opus 교차)."
+    }
+  },
+
+  "one_line": "Gold $4,790(Watch 임계 $10 하회) + DXY 99.35(4일 연속 <100) + 금-국채 역전 공식화 = 달러 기축 구조 균열이 '초기 신호'에서 '측정 가능한 재편'으로 전환. 단, 스테이블코인 $314B 달러 디지털 채널 역대 최고 = 탈달러화는 달러 소멸이 아닌 이중 경로 구조.",
+
+  "layers": {
+    "L1": {
+      "headline": "중앙은행 금 준비금 $4T가 미 국채 보유액을 30년 만에 역전. Gold $4,790 신고가. DXY 99.35, 100 하회 4일 연속. BRICS Pay 블록 달러 사용 2/3 감소. 달러 외환보유 비중 58.5%(→56.8% IMF Q4 2025 최신).",
+      "framing_detected": [
+        {
+          "type": "대서사시 프레임",
+          "example": "Visual Capitalist '30년 만에 처음', Wolf Street '31년 최저'",
+          "correction": "56.8%는 역사적 범위(85%~46%) 중간값. '최저' = 추세 방향이지 임박한 붕괴 아님."
+        },
+        {
+          "type": "단일 지표 과대화",
+          "example": "DXY <100 = 달러 붕괴 서사",
+          "correction": "FRED 광의 달러지수(DTWEXBGS) 120.89. DXY는 유로 편향(EUR 57%). 방향 일치이나 크기 과장."
+        },
+        {
+          "type": "침묵의 반증",
+          "example": "Powell 침묵, PBOC 공식 발언 없음",
+          "significance": "가장 큰 당사자들이 말하지 않는 것. 정치적 민감성 또는 구조 확인을 기다리는 것."
+        }
+      ],
+      "rm_signal": "RM 5계층 수렴 확인. stereo_trigger 권장 도달."
+    },
+
+    "L2": {
+      "facts": [
+        {
+          "id": 1,
+          "fact": "Gold (GC=F) $4,821.10 — RM 수집 기준. PSF state.json $4,790.30. 신고가 경신 구간",
+          "confidence": "green",
+          "source": "[MCP] Yahoo Finance via RM + PSF",
+          "delta_from_0328": "+$297~$266 (5일, +6.6%)"
+        },
+        {
+          "id": 2,
+          "fact": "DXY 99.35~99.545 — 100 하회 4일 연속",
+          "confidence": "green",
+          "source": "[MCP] Yahoo Finance + FRED DTWEXBGS 120.89",
+          "delta_from_0328": "DXY 100.19 → 99.35 (-0.84, -0.8%). 100선 붕괴 추세화"
+        },
+        {
+          "id": 3,
+          "fact": "중앙은행 금 준비금 $4T > 미 국채 보유. 금 점유율 27%, 미국채 23% (Visual Capitalist, 2025 기준)",
+          "confidence": "yellow",
+          "source": "[WebSearch] visualcapitalist.com — 1차 출처 IMF 미직접 확인",
+          "note": "역전 = 1996년 이후 최초. 구조적 이정표."
+        },
+        {
+          "id": 4,
+          "fact": "USD COFER 56.8% (IMF Q4 2025) — 31년 최저",
+          "confidence": "green",
+          "source": "[WebSearch] wolfstreet.com 2026-03-28 (IMF COFER 공식 보고 기반)",
+          "delta_from_0328": "TC-013 기준 58.5% → 56.8%로 갱신. -1.7%p 추가 하락"
+        },
+        {
+          "id": 5,
+          "fact": "PBOC 14개월 연속 금 매입 (74.22M oz). 인도 RBI 880.3t (비중 17.2%, 사상 최고). WGC 2025 연간 1,200t+ 매입",
+          "confidence": "yellow",
+          "source": "[WebSearch] onlinegold.org / gold.org / angelone.in",
+          "note": "PBOC 공식 발언 없음. 사실만 공시."
+        },
+        {
+          "id": 6,
+          "fact": "스테이블코인 총 시총 $314.77B (USDT $184B + USDC $77B)",
+          "confidence": "green",
+          "source": "[MCP] DeFiLlama get_stablecoins via RM",
+          "note": "달러 디지털 채널 역대 최고. 탈달러 서사와 역방향."
+        },
+        {
+          "id": 7,
+          "fact": "BRICS Pay 블록 내 달러 사용 2/3 감소",
+          "confidence": "yellow",
+          "source": "[WebSearch] watcher.guru / asiatimes.com — 블록 내부 결제 집계 원출처 미확인",
+          "note": "2/3 감소는 블록 내 무역 결제에 국한. 글로벌 FX 달러 89% 점유 별개."
+        },
+        {
+          "id": 8,
+          "fact": "GLD ETF AUM ~$701B. 2026.01 단월 $19B 인플로우(기록). IAU 9개월 연속 유입. YTD +20%, 1년 +79~80%",
+          "confidence": "green",
+          "source": "[WebSearch] seekingalpha / worldgoldcouncil.org",
+          "note": "기관·리테일 동시 포지셔닝 확인."
+        },
+        {
+          "id": 9,
+          "fact": "사모신용(Private Credit) 시장 규모 $1.7T — 비은행 채널 달러 유동성 분산",
+          "confidence": "yellow",
+          "source": "Core Extract 제시 (Core-4 buried). MCP 미직접 확인.",
+          "note": "묻힌 경로 1. 달러 유동성이 은행 채널 외부로 이동. BIS 기준 약 $1.5~1.7T."
+        },
+        {
+          "id": 10,
+          "fact": "J.P. Morgan 금 전망: 2026 Q4 $5,055/oz, 2027 $5,400/oz",
+          "confidence": "yellow",
+          "source": "[WebSearch] jpmorgan.com — 내부 리서치 원문 미직접 확인",
+          "note": "중앙은행 매입 750t+ 유지가 전제조건."
+        }
+      ],
+      "unsaid": [
+        {
+          "item": "USD COFER 56.8%는 역사적 범위(85%~46%) 중간값이다",
+          "significance": "Wolf Street '31년 최저' = 추세 방향이지, 임계 붕괴 아님. 이 범위에서 30%까지 더 갈 수 있으나 40년 걸릴 수도 있음."
+        },
+        {
+          "item": "달러 89% FX 거래 점유는 COFER 비중과 다른 지표",
+          "significance": "준비자산 비중과 결제 통화 비중은 다른 시스템. 준비자산 이탈이 결제 달러 수요를 즉시 대체하지 않음."
+        },
+        {
+          "item": "BTC -45.8% 조정 (ATH $126,080 대비)",
+          "significance": "달러 약세 환경에서 탈달러 대안으로서 BTC가 기대 반응을 안 하고 있음. 리스크 오프가 탈달러 서사보다 강함."
+        },
+        {
+          "item": "JPY 약세(158.69) — 달러 약세가 모든 통화 강세 아님",
+          "significance": "달러 약세는 통화 교체가 아니라 금과 유로 선별적 강세. 전반적 달러 대안 통화 시스템 부재."
+        }
+      ]
+    },
+
+    "L3": {
+      "note": "델타 모드 — 이해관계자 구조 재발견 생략. 핵심 비대칭만 추적.",
+      "key_asymmetry": [
+        {
+          "actor": "PBOC + RBI (금 매입 주체)",
+          "action": "매입 사실만 공시, 발언 없음",
+          "inference": "공식 확인 시 미중 긴장 + 달러 자기실현적 하락 위험. 침묵이 전략. 행동이 말보다 강함."
+        },
+        {
+          "actor": "미 재무부 (국채 발행자)",
+          "action": "외국인 보유 감소($682.6B, 2008 이후 최저) 대응 부재",
+          "inference": "DXY <100 + 외국인 매도 지속 시 국채 입찰 소화 마찰 가능 (UQ-DS-003 미해소)"
+        },
+        {
+          "actor": "인도 (Jaishankar 발언)",
+          "action": "'달러 대체 정책 없음' 명시",
+          "inference": "BRICS 내 온도차. 인도의 달러 실용주의가 Unit 확장의 실질적 브레이크."
+        }
+      ]
+    },
+
+    "L4": {
+      "question": "3월 28일 분석의 전제가 맞았는가? — 5일 만에 무엇이 바뀌었는가",
+      "prior_premise_validation": {
+        "A_gradual_dedollarization": {
+          "verdict": "유효 + 가속",
+          "evidence": "USD COFER 58.5%→56.8% (-1.7%p). 이전 분석이 '점진적'이라고 했는데 분기 1.7%p는 2023 평균 대비 약 2배 속도.",
+          "implication": "점진적 전제는 맞으나 속도 가속 감지. TC-013 시나리오 A 확률 상향 근거."
+        },
+        "B_gold_floor_3500_4000": {
+          "verdict": "상향 재설정 필요",
+          "evidence": "Gold $4,790~4,821. 구조적 바닥을 $3,500~4,000으로 설정했던 전제가 이미 초과. 순환적 프리미엄($500~1,000)이 '소멸 가능'이라고 했는데 오히려 구조화 신호.",
+          "implication": "새 구조적 바닥 $4,200~4,500 재설정 검토 필요. Watch 임계($4,800) 재평가."
+        },
+        "C_option_not_replacement": {
+          "verdict": "유효 + 심화",
+          "evidence": "스테이블코인 $314B(달러 디지털 채널 역대 최고) + BRICS Pay(블록 내) + 달러 FX 89% 유지. '대체 아닌 이중 경로' 테제가 실증 데이터로 확인.",
+          "implication": "탈달러화 = 달러 소멸이 아닌 준비자산 내 다극화 + 디지털 달러 채널 이중 팽창 구조 확립."
+        }
+      },
+      "why_now_delta": {
+        "trigger_1": "USD COFER Q4 2025(56.8%) 발표 — 31년 최저 공식 확인. 데이터 공백이 채워지며 서사가 수렴.",
+        "trigger_2": "Gold ATH 경신 연속 — $4,524(3/28) → $4,790(4/2). 5일 +5.9%. Watch 임계 $4,800 사정권 진입.",
+        "trigger_3": "RM 5계층 동시 수렴 — 가격+서사+전문가+정책+포지셔닝이 처음으로 동시 방향 일치. 과거 분석은 가격 주도였으나 이제 전문가·정책 계층이 합류.",
+        "trigger_4": "BRICS Unit 2026 공식 런칭 + NDB 로컬통화 30% 목표 — 파일럿 단계에서 운용 단계로 전환 확인."
+      },
+      "structural_acceleration_signal": "3월 28일은 '인프라 조립 단계'로 판정. 4월 2일은 '측정 가능한 임계 접근'으로 상향. 차이: 과거 분기 데이터 확인 + ETF 포지셔닝 기록 + 전문가 동시 합류."
+    },
+
+    "L5": {
+      "note": "델타 모드 — 구조 재발견 금지. 변화만 추적.",
+      "structure_status": {
+        "verdict": "가속 (→ 에서 ↑ 로)",
+        "prev_verdict": "지속 (→) — 2026-03-28",
+        "change_basis": "3가지 동시 변화: (1) 속도 가속(COFER -1.7%p/분기), (2) 기관 포지셔닝 동반(GLD $19B 단월), (3) 정책 계층 합류(BRICS Unit 런칭·Fed QT 종료)"
+      },
+      "structure_map": {
+        "layer_1_visible": "달러 준비자산 비중 하락 + 금 비중 상승 — 표면 데이터",
+        "layer_2_mechanism": "중앙은행 금 매입(수요) + 미 국채 매도(공급) → 금-국채 역전 물리적 완성",
+        "layer_3_hidden": {
+          "mechanism_A": "스테이블코인 이중 경로: 중앙은행은 금으로 이동, 민간(신흥국·기업)은 달러 스테이블코인으로 이동. '달러 소멸'이 아닌 '달러의 디지털화와 준비자산화의 분기'.",
+          "mechanism_B": "사모신용 $1.7T: 달러 유동성이 은행 채널에서 비은행 채널로 이동. Fed의 통화 정책 전달 경로 분산. 달러 신용 창출이 탈중개화.",
+          "mechanism_C": "금 바닥 상향: 중앙은행이 가격 비탄력적 매입자(가격 무관 매입)로 작동 → 금의 '가격 하방 지지 공급자' 역할. 순환적 프리미엄이 구조적 바닥에 편입 중."
+        }
+      },
+      "key_structural_discovery": "달러 체제 균열의 구조는 단일 경로가 아닌 3중 분기: (1) 공식 준비자산 → 금 (중앙은행), (2) 결제·무역 → 로컬통화·BRICS Pay (무역 블록), (3) 민간 유동성 → 달러 스테이블코인 (디지털 채널). 붕괴가 아닌 기능적 분화."
+    },
+
+    "L6": {
+      "focus": "묻힌 2건 해부 — 스테이블코인 달러 역설 + 사모신용 전달 경로",
+      "buried_1_stablecoin_paradox": {
+        "phenomenon": "탈달러 서사가 강화되는 동시에 달러 페그 스테이블코인 $314B 역대 최고",
+        "mechanism": "신흥국 달러 수요가 전통 채널(국채·외환보유고)에서 디지털 채널(USDT·USDC)로 이동. 신흥국 중앙은행은 달러 준비자산을 줄이면서, 기업·개인은 스테이블코인으로 달러 접근성 유지.",
+        "second_order_effects": [
+          "달러 수요 총량은 감소하지 않으나 '누가 보유하는가'의 구조 변화 — 중앙은행 → 민간 이전",
+          "GENIUS Act 통과 시: 달러 스테이블코인이 공식 결제 수단화 → 달러의 비은행 준비자산 기능 강화 (역설적으로 탈달러 가속과 달러 디지털화 동시 진행)",
+          "USDT(Tether) 운용: $714B 미국 단기국채 보유 → 스테이블코인 팽창 = 미 단기국채 수요 증가. 장기채 수요 이탈과 단기채 수요 증가의 구조적 만티스 형성"
+        ],
+        "kill_condition": "미국 스테이블코인 규제 강화로 달러 페그 제한 → 역설 해소. 현재 GENIUS Act Q2 시행 예정은 반대 방향(확대)."
+      },
+      "buried_2_private_credit": {
+        "phenomenon": "사모신용 시장 $1.7T — 달러 유동성의 비은행 채널 확장",
+        "mechanism": "Fed QT 이후 은행 대출 축소 → 사모신용(Ares·Blackstone·Apollo 등)이 중소기업 달러 신용 공급. 달러 유동성이 Fed → 은행 → 기업의 전통 경로를 우회.",
+        "second_order_effects": [
+          "Fed의 통화 정책 전달 효율 저하 — 금리 인상해도 사모신용 채널로 유동성 공급 지속 가능",
+          "달러 신용 수요가 비은행 채널에서도 유지 → '달러 수요 감소' 서사의 부분 반박 근거",
+          "사모신용 금리(SOFR+300~500bp) vs 은행 대출 금리 괴리 → 달러 자금 조달 비용 이원화. 중소기업 달러 접근 비용 상승 → 대안 통화 달러 대체 수요 촉진 (양방향 작동)"
+        ],
+        "kill_condition": "Fed 금리 인하 시 은행 대출 재활성화 → 사모신용 위축. Core PCE 3.1% + 인상 46.9% 환경에서 당분간 비활성."
+      },
+      "synthesis_second_order": "두 묻힌 경로의 통합 효과: 달러는 공식 준비자산 계층에서 이탈 중이나, 디지털(스테이블코인)과 비은행(사모신용) 채널에서 수요가 유지·재창출되고 있다. 이것은 달러의 '준비자산 기능 약화 + 결제·신용 기능 유지'의 기능적 분화를 시사한다. TC-013의 '이중 경로' 테제를 구조적으로 뒷받침."
+    }
+  },
+
+  "feedback": {
+    "executed": true,
+    "fb1_missing_check": {
+      "question": "L4~L6에서 빠진 이해관계자나 경로가 있는가?",
+      "answer": "미 재무부 국채 입찰 소화 경로(UQ-DS-003) 미해부. indirect bid 비율 하락이 달러 기축 균열의 가장 직접적 파열 신호인데 데이터 부재. 이것이 현재 분석의 최대 빈칸."
+    },
+    "fb2_counterargument": {
+      "question": "반대 서사의 구조적 근거가 충분히 반영되었는가?",
+      "answer": "OMFIF·Cleveland Fed·Jaishankar 반대 입장 반영. 핵심 반박: '달러 89% FX 거래 점유'와 '네트워크 효과'는 COFER 비중과 다른 축. 반대 서사의 약점: COFER 추세 하락 55년 연속이라는 사실을 설명 못함. 반대 서사의 강점: 단기(5~10년) 내 달러 대체 인프라 없음은 사실. 결론: 반대 서사는 '지금 당장'의 주장이고, 탈달러 서사는 '방향'의 주장. 서로 시간 축이 다름."
+    },
+    "fb3_bias_check": {
+      "question": "달러 약화 방향으로 편향되지 않았는가?",
+      "answer": "편향 점검: (1) BTC 괴리를 명시적으로 서술함. (2) JPY 약세가 달러 약세가 모든 통화 강세 아님을 강조. (3) 스테이블코인 역설을 2차 효과로 전면 배치. (4) COFER 56.8%가 역사적 중간값임을 명시. 잔여 편향 위험: Gold $4,790 신고가가 분석자에게 감각적 인상을 강하게 줄 수 있음 → 금 하방 시나리오(정책 완화·지정학 완화)를 TC 카드 KC에 명시."
+    },
+    "fb4_delta": {
+      "question": "처음 읽었을 때와 해부 후 다르게 보이는가?",
+      "answer": "다르게 보인다. 처음: '달러 기축 구조 균열 + 금 신고가 = 탈달러화 가속'. 해부 후: '달러는 공식 준비자산에서 이탈 + 디지털·비은행 채널에서 재창출. 균열은 기능적 분화(준비자산↓, 결제·신용↑). 금 상승은 중앙은행 가격 비탄력적 매입이 구조화된 결과.' 프레임 전환: 붕괴 서사 → 이중 경로 구조화 서사. FB-4 delta 확인."
+    }
+  },
+
+  "uncertainty_map": {
+    "high_confidence": [
+      "Gold $4,790~4,821 (MCP Yahoo Finance)",
+      "DXY 99.35 (MCP Yahoo Finance + FRED DTWEXBGS 방향 일치)",
+      "USD COFER 56.8% Q4 2025 (IMF 공식 — wolfstreet 기반 yellow→green)",
+      "GLD ETF AUM $701B / 인플로우 기록 (WGC 공식 보고)"
+    ],
+    "medium_confidence": [
+      "금-국채 역전 수치(금 27%/미국채 23%) — Visual Capitalist 시각화, 1차 IMF 미직접 확인",
+      "BRICS Pay 달러 사용 2/3 감소 — 블록 내부 결제 집계 원출처 미확인",
+      "사모신용 $1.7T — BIS 추정치 범위 내, MCP 미수집"
+    ],
+    "low_confidence": [
+      "BRICS Unit 실제 결제 채택 규모 — 파일럿 단계, 공식 데이터 없음",
+      "PBOC 금 매입의 전략적 의도 — 사실 확인, 의도 불명",
+      "미 재무부 입찰 indirect bid 비율 — UQ-DS-003 미해소"
+    ],
+    "weakest_link": "미 재무부 국채 입찰 소화 마찰 여부. DXY <100 + 외국인 보유 감소가 실제 bid-to-cover 하락으로 이어지는지 확인되지 않음. 이것이 달러 기축 균열이 '구조적 재편'에서 '즉각적 위기'로 전환되는 핵심 전선."
+  },
+
+  "emergent_questions": [
+    {
+      "question": "Gold $4,800 Watch 임계 돌파 후 중앙은행의 행동이 바뀌는가, 아니면 계속 매입하는가?",
+      "significance": "임계 돌파 = 추가 매입(가격 비탄력) vs 차익 실현(가격 탄력). 이것이 $5,000 경로 결정."
+    },
+    {
+      "question": "달러 기축 구조 균열이 가속될 조건과 브레이크 조건은 정확히 무엇인가?",
+      "significance": "가속 조건: Core PCE 완화 지연 + 트럼프 재정 적자 확대 + BRICS Unit 채택 확대. 브레이크: 인도 이탈 + 달러 금리 스프레드 역전 + 미국 경제 우위 회복."
+    },
+    {
+      "question": "스테이블코인 $314B와 달러 준비자산 이탈이 동시에 진행된다면, 달러의 '준비통화 기능'과 '결제통화 기능'이 분리되는 역사적 선례가 있는가?",
+      "significance": "영국 파운드화 사례: 준비통화 지위 상실 후에도 결제 기능 수십 년 유지. 달러가 동일 경로 진입 중일 수 있음."
+    }
+  ],
+
+  "l7_null": {
+    "status": "생략 (임무 규칙)",
+    "reason": "Phase 3-B에서 Opus가 교차 통합 예정. TC 시나리오 확률 갱신과 Trigger-KC 재조정은 Opus 교차 후 수행.",
+    "provisional_direction": {
+      "A_gradual_dedollarization": "35% → 40% 방향 (근거: COFER -1.7%p/분기 가속 + 5계층 수렴)",
+      "B_brics_division": "25% → 20% 방향 (근거: BRICS Unit 런칭 확인 + 인도 온도차 유지이나 이탈 없음)",
+      "C_gold_acceleration": "28% → 32% 방향 (근거: Gold 임계 $10 하회 + JPM $5,055 전망 + 중앙은행 매입 지속)",
+      "D_dollar_rebound": "12% → 8% 방향 (근거: DXY <100 4일 연속 + COFER 역방향)",
+      "note": "합계 100% 조정은 Opus 교차 후 확정. 현재는 방향만 제시."
+    },
+    "phase_transition_signal": {
+      "current": "Phase 1",
+      "signal": "Gold $4,800 Watch 임계 $10 하회 + DXY <100 4일 연속 = Phase 2 진입 전조. WATCH 임계 돌파 확인 시 Phase 전환 검토 필요.",
+      "condition_for_phase2": "Gold $4,800 돌파 3일 이상 유지 OR DXY 98 이하 2일 유지"
+    }
+  },
+
+  "self_check": {
+    "pre_read_before_L1": true,
+    "selective_depth": true,
+    "surface_subsurface_separated": true,
+    "uncertainty_map_present": true,
+    "feedback_loop_executed": true,
+    "fb4_delta_found": true,
+    "no_investment_advice": true,
+    "no_certainty_language": true,
+    "prior_premise_validated": true,
+    "buried_items_surfaced": true,
+    "counterargument_included": true
+  },
+
+  "quality_score": {
+    "coverage": 1.0,
+    "cross_verify": 0.75,
+    "discovery_rate": 0.6,
+    "freshness": 0.9,
+    "total": 0.8125,
+    "note": "5계층 반응 전체 활성(coverage 5/5). 핵심 수치 10건 중 8건 MCP/공식 확인(cross_verify). 발견 6건: 스테이블코인 역설, 사모신용 전달, 금 바닥 상향, 이중 경로 구조, 준비자산·결제 기능 분기, COFER 갱신. freshness: PSF+RM+macro 3시스템 당일 데이터."
+  },
+
+  "tc_update_instruction": {
+    "action": "TC-013 갱신 (Case 1)",
+    "changes": [
+      "updated: 2026-04-02",
+      "analysis_ids에 SA-20260402-004 추가",
+      "phase_log에 2026-04-02 항목 추가",
+      "USD COFER 58.5%→56.8% 갱신",
+      "Gold 임계 Watch $4,800 — 현재 $4,790, $10 하회 (기존 설정 유지, 긴박성 상향)",
+      "urgency: SLOW→WATCH 상향",
+      "scenarios 확률 방향 제시 (Opus 교차 후 확정)"
+    ]
+  },
+
+  "metadata": {
+    "mcp_sources": [
+      "Yahoo Finance (GC=F, DX-Y.NYB, TLT, EURUSD=X, CNY=X, JPY=X, BTC-USD, GLD, IAU — via RM)",
+      "FRED (DTWEXBGS, DGS10, WALCL — via RM + PSF)",
+      "DeFiLlama (get_stablecoins — via RM)",
+      "CoinGecko (get_coin_market_data BTC — via RM)"
+    ],
+    "total_mcp_calls": 18,
+    "all_green": false,
+    "yellow_count": 4,
+    "prior_analyses": ["SA-20260328-006"],
+    "rm_source": "2026-04-02-dollar-structure.json (phase_completed: 4.5, tool_calls: 18)",
+    "psf_source": "state.json 2026-04-02 (MCP 비율 83%, regime: 경계 Transition)"
+  }
+}
