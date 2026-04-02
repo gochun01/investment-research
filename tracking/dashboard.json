@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-04-01",
+  "last_updated": "2026-04-02",
   "summary": {
-    "active_stereo": 12,
+    "active_stereo": 13,
     "active_events": 6,
-    "active_seeds": 2,
-    "total_active": 20,
+    "active_seeds": 1,
+    "total_active": 21,
     "next_check": "2026-04-02 (HY OAS 350bp 감시 → TC-016). 4/04 헬륨 D-Day(TC-003). 4/06 이란 에너지 공격 데드라인(TC-003). 4/10 한은 금통위(TC-002/019). 4/11 Core PCE(TC-007).",
     "l7_integration": "SA-20260329-001: SpaceX Orbital Sovereignty 10조각 L7 통합. 균열선(6)>시너지선(4). S-1 FCF 행이 서사($5T)vs공모($75B) 간극 최초 계량. TC-017(SpaceX)/TC-018(K-우주) 신규 생성. 이전: SA-20260328-L7-TQ-SKH."
   },
@@ -106,10 +106,13 @@
       "scenarios": "A25% B55% C18% D12%",
       "note": "PIPE-20260401: Apollo 45% 게이트 통합. HY OAS 346bp(350 균열 4bp). B 45→55% 상향. W-PIPE-003(HY 350bp)+W-PIPE-004(BDC 추가) 등록."
     },
-    "SD-001": {
-      "title": "GENIUS Act",
-      "status": "watching",
-      "count": 1
+    "TC-021": {
+      "title": "GENIUS Act 스테이블코인 — 민간화폐 공적 인프라화",
+      "phase": 1,
+      "status": "active",
+      "next": "2026-05-01 (OCC 의견수렴 마감) + 2026-06-15 (Treasury)",
+      "scenarios": "A35% B30% C25% D10%",
+      "note": "SA-20260402-005. SD-001 → TC 승격. L7 Phase3-B 대기. USDT 퇴출·yield역설·USD1이해충돌 3개 묻힌 경로. T-bill 수요 잠재 $268B."
     },
     "SD-003": {
       "title": "자동차→방산",
@@ -197,6 +200,16 @@
     }
   ],
   "cross_card_links": [
+    {
+      "from": "TC-021",
+      "to": "TC-007",
+      "link": "스테이블코인 준비자산 T-bill 수요 창출 → 단기 국채 수요 구조적 증가 → 수익률 곡선 영향"
+    },
+    {
+      "from": "TC-021",
+      "to": "TC-013",
+      "link": "달러 스테이블코인 제도화 = 달러 디지털 패권 강화 ↔ BRICS 탈달러화 반대 경로"
+    },
     {
       "from": "TC-003",
       "to": "TC-007",
